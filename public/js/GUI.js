@@ -7,7 +7,6 @@ import PaydayTable from "./PaydayTable.js";
 export default class GUI {
     
     /**
-     * @requires module:Builder
      * @param {Builder} builder 
      */
     constructor(builder) {  
@@ -644,27 +643,36 @@ export default class GUI {
     }
 
     /**
-     * Allow or disallow double deployable options according to the jack of all trades skill state. 
-     * @param {Object} jackOfAllTradesSkill 
+     * The unlocks of the object containing the properties of the type above for it to be unlocked
+     * @typedef {Object} Unlocked
+     * @property {String} type The type of the unlocked object
+     * @property {String=} name The name of the unlocked object (if none, that means all objects of that type wouldnt exist without the object handling this unlocks)
      */
-    HandleJackOfAllTrades(jackOfAllTradesSkill) {
-        if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2) {
-            document.querySelectorAll(".dp_icon").forEach(({ classList }) => {
-                if (classList.contains("dp_selected")) {
-                    classList.remove("dp_selected"); 
-                    classList.add("dp_primary"); 
+
+    /**
+     * Allow or disallow double deployable options according to the jack of all trades skill state. 
+     * @param {Object} object
+     * @param {String=} object.type Type of the object
+     * @param {String} object.id ID of the object
+     * @param {Unlocked[]} object.unlocks
+     * @returns {Unlocked[]} The unlocked of the objects which arent unlocked anymore
+     */
+    HandleUnlocks(...objects) {
+        const ret = [];
+        for(const { type, id, unlocks } of objects) {
+            switch(type) {
+            case "skill": {
+                const { state } = this.builder.exp.skills.get(id) || { state: 0 };
+                for(const unlock of unlocks) {
+                    if(state >= unlock.whenState) ret.push(unlock);
                 }
-            });
-        }
-        else {
-            const query = document.querySelector(".dp_secondary");
-            if(query) this.Deployable_Unselect(query);
-            document.querySelectorAll(".dp_icon").forEach(({ classList }) => {
-                if (classList.contains("dp_primary")) {
-                    classList.remove("dp_primary"); 
-                    classList.add("dp_selected"); 
+                break;
+            }
+            default: 
+                for(const unlock of unlocks) {
+                    if(unlock === id) ret.push(unlock);
                 }
-            });
+            }
         }
     }
 

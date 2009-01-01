@@ -137,7 +137,7 @@ document.onreadystatechange = async () => {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `added skill ${id}`,
-                        `?${Util.setParams(["s", builder.io.compressData(builder.io.encodeSkills())])}`
+                        builder.io.GetEncodedBuild()
                     );
                 }
             } else {
@@ -160,7 +160,7 @@ document.onreadystatechange = async () => {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `removed skill ${id}`,
-                        `?${Util.setParams(["s", builder.io.compressData(builder.io.encodeSkills())])}`
+                        builder.io.GetEncodedBuild()
                     );
                 }
             } else {
@@ -234,7 +234,7 @@ document.onreadystatechange = async () => {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
-                    `?${Util.setParams(["p", builder.io.compressData(builder.io.encodePerkDeck())])}`
+                    builder.io.GetEncodedBuild()
                 );
             }
         });
@@ -281,7 +281,7 @@ document.onreadystatechange = async () => {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used armor ${id}`,
-                    `?${Util.setParams(["a", builder.io.compressData(builder.io.encodeArmor().toString())])}`
+                    builder.io.GetEncodedBuild()
                 );
             }
         });
@@ -329,7 +329,7 @@ document.onreadystatechange = async () => {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used throwable ${id}`,
-                    `?${Util.setParams(["t", builder.io.compressData(builder.io.encodeThrowable())])}`
+                    builder.io.GetEncodedBuild()
                 );
             }
         });
@@ -348,7 +348,7 @@ document.onreadystatechange = async () => {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
-                    `?${Util.setParams(["d", builder.io.compressData(builder.io.encodeDeployables())])}`
+                    builder.io.GetEncodedBuild()
                 );
             }
         });
@@ -365,7 +365,7 @@ document.onreadystatechange = async () => {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `used perk ${id}`,
-                        `?${Util.setParams(["d", builder.io.compressData(builder.io.encodeDeployables())])}`
+                        builder.io.GetEncodedBuild()
                     );
                 }
             } else {
