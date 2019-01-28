@@ -1,0 +1,32 @@
+{
+  "name": "newpd2tools",
+  "version": "1.0.0",
+  "description": "repost of pd2tools",
+  "main": "pd2tools.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImUrX/newpd2tools.git"
+  },
+  "keywords": [
+    "pd2",
+    "payday",
+    "2",
+    "express",
+    "website"
+  ],
+  "author": "ImUrX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ImUrX/newpd2tools/issues"
+  },
+  "homepage": "https://github.com/ImUrX/newpd2tools#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1"
+  }
+}
