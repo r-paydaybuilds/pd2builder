@@ -1,0 +1,293 @@
+/*
+    Fonts
+*/
+
+@font-face {
+	font-family: 'Padaloma';
+	font-style:  normal;
+	font-weight: 400;
+	src:         url('/public/css/fonts/Padaloma.ttf');
+}
+
+@font-face {
+	font-family: 'CC';
+	src:         url('/public/css/fonts/CC.ttf') format('truetype');
+}
+
+/*
+    Datatables
+*/
+
+table.dataTable td.dataTables_empty {
+	text-align: center
+}
+
+table.dataTable td.select-checkbox:before {
+	border: 1px solid white;
+}
+
+.dataTables_message {
+	background-blend-mode: normal;
+	float:                 left;
+	left:                  15px;
+	margin-bottom:         0 !important;
+	padding:               5px 15px 5px 15px;
+	position:              relative;
+	z-index:               1047;
+}
+
+.dataTables_message a {
+	color: inherit !important;
+}
+
+.dataTables_processing {
+	background-color: black;
+	border:           0 !important;
+	filter:           alpha(opacity=85);
+	height:           100%;
+	left:             0 !important;
+	margin:           0 !important;
+	position:         absolute;
+	opacity:          0.85;
+	top:              0 !important;
+	width:            100% !important;
+	-moz-opacity:     0.85;
+}
+
+.dataTables_processing #loading {
+	position: absolute;
+	top:      calc(50% - 84px);
+	left:     calc(50% - 87px);
+}
+
+.dt-button {
+	cursor: pointer;
+}
+
+.dt-buttons {
+	float: left;
+}
+
+/*
+    Global
+*/
+
+.body,html {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-width: 800px !important;
+}
+
+#wrapper {
+    padding-top: 55px;
+    padding-bottom: 20px;
+}
+
+#header {
+    margin: 15px 0 10px 0;
+}
+
+#title {
+    float: left;
+}
+
+/*
+    Etc
+*/
+
+#wp_mods {
+	display:          none;
+	position:         absolute;
+	top:              0;
+	left:             0;
+	height:           692px;
+	width:            100%;
+	z-index:          1048;
+	background-color: rgba(0, 0, 0, 0.97);
+}
+
+#wp_mods_close {
+	float:        right;
+	cursor:       pointer;
+	margin:       15px;
+	font-size:    24px;
+	border:       12px solid transparent;
+	border-image: url('/public/img/border.png') 16 stretch;
+	width:        55px;
+	text-align:   center;
+}
+
+#wp_target {
+	float:     left;
+	height:    90px;
+	font-size: 13px;
+	margin:    15px;
+}
+
+.wp_blueprint_control {
+	cursor:        pointer;
+	text-align:    center;
+	padding-right: 5px !important;
+	padding-left:  5px !important;
+}
+
+.wp_rules_control {
+	cursor:        pointer;
+	text-align:    center;
+	padding-right: 0 !important;
+	padding-left:  0 !important;
+}
+
+.wp_target_border {
+	border:       12px solid transparent;
+	border-image: url('/public/img/border.png') 16 stretch;
+	width:        144px;
+	height:       90px;
+
+}
+
+.wp_target_cell {
+	display: table-cell !important;
+	padding: 3px;
+}
+
+.wp_target_cell_border {
+	border-top: 1px solid #fff;
+}
+
+.wp_target_cell_name {
+	line-height: 1.2em;
+}
+
+.wp_target_cell_value {
+	text-align:     right;
+	padding-left:   10px;
+	line-height:    1.5 !important;
+	font-family:    "Fjalla One", Helvetica, Arial, sans-serif !important;
+	vertical-align: baseline !important;
+}
+
+.wp_target_column {
+	display: table-column;
+}
+
+.wp_target_row {
+	display: table-row;
+}
+
+.wp_target_spacing {
+	display: inline;
+	padding: 0 4px;
+}
+
+.wp_target_table {
+	display: inline-table;
+}
+
+.wp_target_table_cell {
+	display:        table-cell;
+	vertical-align: middle;
+}
+
+.sk_aced {
+	background: url("/public/img/skills/ace.png") no-repeat center center;
+}
+
+.sk_action {
+	display: inline-block;
+}
+
+.sk_container {
+	padding:    0;
+	text-align: center;
+}
+
+.sk_details {
+	border:       16px solid transparent;
+	border-image: url('/public/img/border.png') 18 stretch;
+	margin-top:   10px;
+}
+
+.sk_locked {
+	background: url("/public/img/skills/padlock.png") no-repeat center center;
+}
+
+.sk_name {
+	visibility: hidden;
+}
+
+.sk_panel {
+	padding-right: 0;
+}
+
+.sk_points {
+	font-size:      20px;
+	display:        inline-block;
+	line-height:    30px;
+	vertical-align: bottom;
+}
+
+.sk_sprite {
+	margin:  0;
+	padding: 0;
+	cursor:  pointer;
+	height:  80px;
+}
+
+.sk_sprite li {
+	min-height: 80px;
+	width:      80px;
+	background: url("/public/img/skills/icons.png") no-repeat;
+	list-style: none;
+	display:    inline-block;
+	position:   relative;
+	opacity:    0.2;
+}
+
+.sk_sprite.sk_basic li {
+	opacity: 1;
+}
+
+.sk_subtree {
+	background:         bottom center url('/public/img/skills/background.png') no-repeat;
+	background-size:    99% 0;
+	-webkit-transition: background-size 0.4s ease;
+	-moz-transition:    background-size 0.4s ease;
+	-o-transition:      background-size 0.4s ease;
+	transition:         background-size 0.4s ease;
+}
+
+.sk_subtree_container {
+	padding: 0;
+}
+
+.sk_subtree_name {
+	padding:    10px 0 0 0;
+	font-size:  24px;
+	border-top: 1px solid #ddd;
+	color:      #005581;
+	text-align: center;
+}
+
+.sk_tier {
+	height:  140px;
+	padding: 0;
+}
+
+.sk_tier_border {
+	border-bottom: 1px solid #005581;
+}
+
+.sk_tier_cost, .sk_tiers_cost {
+	visibility: hidden;
+	color:      #005581;
+	padding:    5px 0 0 0;
+}
+
+.sk_tiers_cost {
+	text-align: left;
+}
+
+.sk_tier_cost {
+	text-align: right;
+}
