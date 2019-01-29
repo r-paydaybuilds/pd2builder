@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/ImUrX/newpd2tools#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-rate-limit": "^3.3.2",
+    "helmet": "^3.15.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1"
