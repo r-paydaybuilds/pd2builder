@@ -30,11 +30,6 @@ body {
 
 .sk_icon {
   cursor: pointer; 
-
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  -moz-transition:    opacity 0.2s ease, background 0.2s ease;
-  -o-transition:      opacity 0.2s ease, background 0.2s ease;
-  transition:         opacity 0.2s ease, background 0.2s ease; /* Doesn't work? no idea */ 
 }
 
 .sk_icon > div {
@@ -42,23 +37,17 @@ body {
   min-height: 80px;
   margin: 0 auto; 
   position: relative; 
-  z-index: 1; 
+  z-index: 1002; 
   background: url("/img/skills/icons.png") no-repeat;
   opacity: 0.2; 
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  -moz-transition:    opacity 0.2s ease, background 0.2s ease;
+  -o-transition:      opacity 0.2s ease, background 0.2s ease;
+  transition:         opacity 0.2s ease, background 0.2s ease; /* Doesn't work? no idea */ 
 }
 
-.sk_icon.sk_locked > div::after {
-  content: ""; 
-  width: 32px; 
-  min-height: 32px; 
-  margin: 0 auto; 
-  position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  z-index: 1; 
-  background: url("/img/skills/padlock.png") no-repeat;
-  opacity: 1; 
+.sk_icon.sk_locked {
+  background: url("/img/skills/padlock.png") no-repeat center center;
 }
 
 .sk_icon.sk_selected_basic > div {
@@ -69,18 +58,8 @@ body {
   opacity: 1; 
 }
 
-.sk_icon.sk_selected_aced > div::after {
-  content: ""; 
-  width: 128px; 
-  min-height: 128px; 
-  margin: 0 auto; 
-  position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  z-index: -1;  /* find a way to put parent before child, can't seem to do it */ 
-  background: url("/img/skills/ace.png") no-repeat; 
-  opacity: 0.9; 
+.sk_icon.sk_selected_aced {
+  background: url("/img/skills/ace.png") no-repeat center center; 
 }
 
 
