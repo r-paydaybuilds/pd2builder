@@ -1,5 +1,3 @@
-import { gunzipSync } from "zlib";
-
 /**
  * Class-like object for management of the GUI functions. 
  */
@@ -87,4 +85,4 @@ GUI.prototype.Skill_Remove = function (skillObj) {
   //MoveBackground(sT, skills.pointsSpent[sT.split("_")[1]]); 
 }
 
-var gui = new GUI();  
+const gui = new GUI();  

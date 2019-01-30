@@ -1,5 +1,6 @@
 $(document).ready(function () {
   
+  //
   // Bind Events on page 
   
   // Skill tab navigation //
