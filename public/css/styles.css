@@ -57,7 +57,7 @@ body {
   left: 50%; 
   transform: translate(-50%, -50%);
   z-index: 1; 
-  background: url("/img/skills/lock.png") no-repeat;
+  background: url("/img/skills/padlock.png") no-repeat;
   opacity: 1; 
 }
 
