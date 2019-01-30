@@ -3656,24 +3656,3 @@ var Page            = {
 };
 
 $( Page._init );
-/*
-     FILE ARCHIVED ON 03:15:24 Nov 30, 2018 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 16:08:28 Jan 28, 2019.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  LoadShardBlock: 160.264 (3)
-  esindex: 0.005
-  captures_list: 177.361
-  CDXLines.iter: 12.315 (3)
-  PetaboxLoader3.datanode: 162.685 (5)
-  exclusion.robots: 0.128
-  exclusion.robots.policy: 0.116
-  RedisCDXSource: 1.456
-  PetaboxLoader3.resolve: 67.047 (2)
-  load_resource: 80.394
-*/
