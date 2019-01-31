@@ -1,0 +1,293 @@
+{
+    "combat_medic": {
+        "name": "Combat Medic",
+        "description": "BASIC: 1 point\tYou gain a 30% damage reduction for 5 seconds both after and during reviving another player.\nACE: 3 points\tReviving a crew member gives them 30% more health.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "quick_fix": {
+        "name": "Quick Fix",
+        "description": "BASIC: 2 points\tDecreases your First Aid Kit and Doctor Bag deploy time by 50%.\nACE: 4 points\tCrew Members that use your First Aid Kits or Doctor Bags take 10% less damage for 120 seconds.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "painkillers": {
+        "name": "Painkillers",
+        "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "uppers": {
+        "name": "Uppers",
+        "description": "BASIC: 3 points\tAdds 7 more First Aid Kits to your inventory.\nACE: 6 points\tAdds 3 First Aid Kits to your inventory. Your deployed First Aid Kits will be automatically used if a player is downed within a 5 meter radius of the First Aid Kit. This cannot occur more than once every 20 seconds.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "combat_doctor": {
+        "name": "Combat Doctor",
+        "description": "BASIC: 3 points\tYou can now deploy 2 Doctor Bags instead of just one.\nACE: 6 points\tYour doctor bags have 2 more charges.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "inspire": {
+        "name": "Inspire",
+        "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "medic",
+        "tree": "mastermind"
+    },
+    "forced_friendship": {
+        "name": "Forced Friendship",
+        "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "confident": {
+        "name": "Confident",
+        "description": "BASIC: 2 points\tThe power and range of your intimidation is increased by 50%.\nACE: 4 points\tYou can now have 2 converted enemies at the same time.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "joker": {
+        "name": "Joker",
+        "description": "BASIC: 2 points\tYou can convert a non-special enemy to fight on your side.\tThis can not be done during stealth and the enemy must have surrendered in order for you to convert them.\nYou can only convert one non-special enemy at a time.\nACE: 4 points\tYour converted enemy deals 35% more damage. The time to convert an enemy is reduced by 65%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "stockholm_syndrome": {
+        "name": "Stockholm Syndrome",
+        "description": "BASIC: 3 points\tCivilians are intimidated by the noise you make and remain intimidated 50% longer.\nACE: 6 points\tYour hostages will not flee when they have been rescued by law enforcers. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only 1 time during a heist.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "partners_in_crime": {
+        "name": "Partners in Crime",
+        "description": "BASIC: 3 points\tHaving a converted enemy increases your movement speed by 10%.\nYour converted enemy takes 45% less damage.\nACE: 6 points\tHaving a converted enemy increases your health by 30%.\nYour converted enemy takes an additional 54% less damage.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "hostage_taker": {
+        "name": "Hostage Taker",
+        "description": "BASIC: 4 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 1.5% health every 5 seconds.\nACE: 8 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 4.5% health every 5 seconds.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "controller",
+        "tree": "mastermind"
+    },
+    "stable_shot": {
+        "name": "Stable Shot",
+        "description": "BASIC: 1 point\tYou gain 8 weapon stability.\nACE: 3 points\tYou gain 16 weapon accuracy while standing still.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "rifleman": {
+        "name": "Rifleman",
+        "description": "BASIC: 2 points\tYour snap to zoom is 100% faster with all weapons.\nYour movement speed is unhindered while using steel sight.\nACE: 4 points\tYour weapon zoom level is increased by 25% with all weapons. Your weapon accuracy while moving with SMGs, Assault Rifles and Sniper Rifles is increased by 16.",
+        "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina.\tEvery 25 points of stamina consumed by dashing will refill 5% of their ammo pool to single shot weapons.\tACE: The improved accuracy lasts from 1 up to a maximum of 5 seconds after dashing.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "marksman": {
+        "name": "Marksman",
+        "description": "BASIC: 2 points\tYou gain 8 weapon accuracy with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 4 points\tYou gain a 20% accuracy bonus while aiming down sights with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "ammo_efficiency": {
+        "name": "Ammo Efficiency",
+        "description": "BASIC: 3 points\tGetting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 6 points\tThe amount of headshots required is reduced to 2.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "aggressive_reload": {
+        "name": "Aggressive Reload",
+        "description": "BASIC: 3 points\tIncreases your reload speed with SMGs, Assault Rifles and Sniper Rifles by 15%.\nACE: 6 points\tAny killing headshot will increase your reload speed by 100% for 4 seconds. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "graze": {
+        "name": "Graze",
+        "description": "BASIC: 4 points\tSnipers that hit their target deal 20% of the damage dealth in a 100cm radius around the bullet trajectory.\nACE: 8 points\tIf a bullet would headshot-kill someone, the graze skill will deal 100% of the weapon's damage instead of 20%.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "sharpshooter",
+        "tree": "mastermind"
+    },
+    "underdog": {
+        "name": "Underdog",
+        "description": "BASIC: 1 point\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "shotgun_cqb": {
+        "name": "Shotgun CQB",
+        "description": "BASIC: 2 points\tYou reload Shotguns 15% faster.\nACE: 4 points\tYou reload Shotguns 35% faster. You gain a 125% increased steel sight zoom speed when using Shotguns.",
+        "vr_description": "Addition in VR:\tACE: Every kill while aiming down sight will regenerate 2% stamina.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "shotgun_impact": {
+        "name": "Shotgun Impact",
+        "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "far_away": {
+        "name": "Far Away",
+        "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "close_by": {
+        "name": "Close By",
+        "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells",
+        "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "overkill": {
+        "name": "Overkill",
+        "description": "BASIC: 4 points\tWhen you kill an enemy with a Shotgun or the OVE9000 portable saw, you receive 75% damage increase for 20 seconds.\nACE: 8 points\tThe damage bonus now applies to all weapons. Skill must still be activated using a Shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "shotgunner",
+        "tree": "enforcer"
+    },
+    "resilience": {
+        "name": "Resilience",
+        "description": "BASIC: 1 point\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "die_hard": {
+        "name": "Die Hard",
+        "description": "BASIC: 2 points\tYou take 50% less damage while interacting with objects.\nACE: 4 points\tIncreases the armor of all Ballistic vests by 20.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "transporter": {
+        "name": "Transporter",
+        "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penaly is reduced by 1%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "shock_and_awe": {
+        "name": "Shock and Awe",
+        "description": "BASIC: 3 points\tIncreases the armor recovery rate for you and your crew by 25%.\nACE: 6 points\tEnables your weapons to have a chance to knock back Shield enemies when attacking them. Ranged weapons' knockback chance is increased the higher the total damage of the weapon is. Melee weapons' knockback chance is 100%.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "bullseye": {
+        "name": "Bullseye",
+        "description": "BASIC: 3 points\tYou regenerate 5 armor for each succesful headshot. This can not occur more than once every 2 seconds.\nACE: 6 points\tYou regenerate an additional 20 armor for each succesful headshot.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "iron_man": {
+        "name": "Iron Man",
+        "description": "BASIC: 4 points\tYour total armor value is increased by 30%.\nACE: 8 points\tUnlocks the ability to wear the Improved Combined Tactical Vest.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "tank",
+        "tree": "enforcer"
+    },
+    "scavenger": {
+        "name": "Scavenger",
+        "description": "BASIC: 1 point\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    },
+    "bulletstorm": {
+        "name": "Bulletstorm",
+        "description": "BASIC: 2 points\tAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to 5 seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\nACE: 4 points\tIncreases the base duration of the effect by up to 15 seconds.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    },
+    "portable_saw": {
+        "name": "Portable Saw",
+        "description": "BASIC: 2 points\tUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\nACE: 4 points\tYou gain 1 extra saw blade for the OVE9000 portable saw. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    },
+    "extra_lead": {
+        "name": "Extra Lead",
+        "description": "BASIC: 3 points\tYou can now place 2 ammo bags instead of just one.\nACE: 6 points\tEach ammo bag now contains 50% more ammunition.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    },
+    "saw_massacre": {
+        "name": "Saw Massacre",
+        "description": "BASIC: 3 points\tReducing the wear down of the blades on enemies by 50%.\nACE: 6 points\tYou can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    },
+    "fully_loaded": {
+        "name": "fully_loaded",
+        "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\".",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "ammo_specialist",
+        "tree": "enforcer"
+    }
+}

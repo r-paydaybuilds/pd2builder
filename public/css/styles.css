@@ -62,7 +62,9 @@ body {
   background: url("/img/skills/ace.png") no-repeat center center; 
 }
 
-
+.color_number {
+  color: #33beff;
+}
 
 /**********************************/
 /* SKILL ICON SPRITESHEET OFFSETS */
