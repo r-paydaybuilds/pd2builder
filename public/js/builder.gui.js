@@ -39,15 +39,45 @@ class GUI {
         let progress = 0;
         let points = pointsInTree;
 
-        for(const pointsNeeded of tiers) {
+        for(const [index, pointsNeeded] of tiers.entries()) {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;
+                this.Tier_Unlocker(subtreeId, index+1);
             } else {
                 progress += (points/pointsNeeded)*25;
+                this.Tier_Locker(subtreeId, index+1);
             }
         }
         element.css("background-size", `99% ${Math.round(progress)}%`);
+    }
+
+    /**
+     * Locks the tier
+     * @param {string} subtreeId Id of the subtree
+     * @param {number} tier The tier to take care of
+     */
+    Tier_Locker(subtreeId, tier) {
+        const element = $(`#sk_${subtreeId}_subtree`)
+            .children(`.sk_tier[data-tier='${tier}']`)
+            .find(".sk_icon");
+        if(!element.hasClass("sk_locked")) {
+            element.addClass("sk_locked");
+        }
+    }
+
+    /**
+     * Unlocks the tier
+     * @param {string} subtreeId Id of the subtree
+     * @param {number} tier The tier to take care of
+     */
+    Tier_Unlocker(subtreeId, tier) {
+        const element = $(`#sk_${subtreeId}_subtree`)
+            .children(`.sk_tier[data-tier='${tier}']`)
+            .find(".sk_icon");
+        if(element.hasClass("sk_locked")) {
+            element.removeClass("sk_locked");
+        }
     }
 
     /**
