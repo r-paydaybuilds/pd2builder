@@ -5,19 +5,19 @@ $(document).ready(function () {
   
     // Skill tab navigation //
     $("#sk_mastermind_tab").click(function () {
-        gui.Tab_ChangeTo("sk_mastermind_container"); 
+        gui.Tree_ChangeTo("sk_mastermind_container"); 
     });
     $("#sk_enforcer_tab").click(function () {
-        gui.Tab_ChangeTo("sk_enforcer_container"); 
+        gui.Tree_ChangeTo("sk_enforcer_container"); 
     });
     $("#sk_technician_tab").click(function () {
-        gui.Tab_ChangeTo("sk_technician_container"); 
+        gui.Tree_ChangeTo("sk_technician_container"); 
     });
     $("#sk_ghost_tab").click(function () {
-        gui.Tab_ChangeTo("sk_ghost_container"); 
+        gui.Tree_ChangeTo("sk_ghost_container"); 
     });
     $("#sk_fugitive_tab").click(function () {
-        gui.Tab_ChangeTo("sk_fugitive_container"); 
+        gui.Tree_ChangeTo("sk_fugitive_container"); 
     });
 
     // Skill Icon buttons //
@@ -59,5 +59,5 @@ $(document).ready(function () {
     });
 
     //$(".sk_points_remaining span").text(skills.pointsRemaining); 
-    gui.Tab_ChangeTo("sk_mastermind_container"); 
+    gui.Tree_ChangeTo("sk_mastermind_container"); 
 });

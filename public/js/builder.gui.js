@@ -18,11 +18,11 @@ class GUI {
     }
 
     /**
-     * Change selected Skill Tab to another.
-     * @param {string} containerId Id of the Tab to switch to 
+     * Change selected Skill Tree to another.
+     * @param {string} containerId Id of the Tree to switch to 
      */
-    Tab_ChangeTo(containerId) {
-        $("#sk_container").children(".sk_container").each(function () {
+    Tree_ChangeTo(containerId) {
+        $("#sk_container").children(".sk_tree").each(function () {
             $(this).hide(); 
         });
         $("#" + containerId).show(); 
@@ -31,18 +31,18 @@ class GUI {
     /**
      * Raise or lower the subtree background according to points set in it.
      * Does not yet support accurate moving (only at set thresholds)
-     * @param {string} sk_subtreeName Id of the subtree to move
+     * @param {string} subtreeId Id of the subtree to move
      * @param {number} pointsInTree Number of points to "move to"
      */
-    Subtree_MoveBackground(sk_subtreeName, pointsInTree) {
+    Subtree_MoveBackground(subtreeId, pointsInTree) {
         if (pointsInTree >= 16)
-            $("#" + sk_subtreeName).css("background-size", "99% 100%"); 
+            $("#" + subtreeId).css("background-size", "99% 100%"); 
         else if (pointsInTree >= 3)
-            $("#" + sk_subtreeName).css("background-size", "99% 75%"); 
+            $("#" + subtreeId).css("background-size", "99% 75%"); 
         else if (pointsInTree >= 1)
-            $("#" + sk_subtreeName).css("background-size", "99% 50%");     
+            $("#" + subtreeId).css("background-size", "99% 50%");     
         else if (pointsInTree == 0)
-            $("#" + sk_subtreeName).css("background-size", "99% 25%"); 
+            $("#" + subtreeId).css("background-size", "99% 25%"); 
     }
 
     /**
