@@ -76,8 +76,6 @@ class GUI {
         } else if (skillObj.hasClass("sk_selected_basic")) {
             skillObj.removeClass("sk_selected_basic"); 
         }
-    
-        //MoveBackground(sT, skills.pointsSpent[sT.split("_")[1]]); 
     }
 }
 
