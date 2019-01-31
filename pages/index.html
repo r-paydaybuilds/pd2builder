@@ -781,6 +781,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script>
+      const exp = {
+        skills: new Map(),
+        subtrees: {
+          medic: {tier:1,points:0},
+          controller: {tier:1,points:0},
+          sharpshooter: {tier:1,points:0},
+          shotgunner: {tier:1,points:0},
+          tank: {tier:1,points:0},
+          ammo_specialist: {tier:1,points:0},
+          engineer: {tier:1,points:0},
+          breacher: {tier:1,points:0},
+          oppressor: {tier:1,points:0},
+          shinobi: {tier:1,points:0},
+          artful_dodger: {tier:1,points:0},
+          silent_killer: {tier:1,points:0},
+          gunslinger: {tier:1,points:0},
+          revenant: {tier:1,points:0},
+          brawler: {tier:1,points:0}
+        }
+      };
       let skills;
       fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
     </script>

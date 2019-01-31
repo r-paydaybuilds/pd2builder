@@ -24,15 +24,48 @@ $(document).ready(function () {
     $(".sk_icon").each(function () {
     // Bind on left click
         $(this).click(function () {
-            gui.Skill_Add($(this)); 
+            const element = $(this);
+            if(element.hasClass("sk_locked") || element.hasClass("sk_selected_aced")) return;
+            gui.Skill_Add(element); 
             // Skill backend here
+            const skill = exp.skills.get(this.firstElementChild.id);
+            const skillStore = skills.get(this.firstElementChild.id);
+            if(skill) {
+                const subtree = exp.subtrees[skillStore.subtree];
+                subtree.points += skillStore.ace;
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                skill.state = "aced";
+            } else {
+                const subtree = exp.subtrees[skillStore.subtree];
+                subtree.points += skillStore.basic;
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                exp.skills.set(this.firstElementChild.id, {
+                    state: "basic"
+                });
+            }
+            gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);
         });
 
         // Bind on right click
         $(this).contextmenu(function (event) {
             event.preventDefault(); 
 
-            gui.Skill_Remove($(this)); 
+            const element = $(this);
+            gui.Skill_Remove(element); 
+            const skill = exp.skills.get(this.firstElementChild.id);
+            const skillStore = skills.get(this.firstElementChild.id);
+            if(skill.state === "aced") {
+                const subtree = exp.subtrees[skillStore.subtree];
+                subtree.points -= skillStore.ace;
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                skill.state = "basic";
+            } else if(skill.state === "basic") {
+                const subtree = exp.subtrees[skillStore.subtree];
+                subtree.points -= skillStore.basic;
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                exp.skills.delete(this.firstElementChild.id);
+            }
+            gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);
             // Skill backend here
         });
 
@@ -44,7 +77,7 @@ $(document).ready(function () {
                 let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
                     .replace(/\n/g, "</p><p>")
                     .replace(/\t/g, "<br>")
-                    .replace(/[0-9]+([,.][0-9]+)?( points|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+                    .replace(/[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
                 element.html(html);
                 element.data("skill", this.firstElementChild.id);
             }

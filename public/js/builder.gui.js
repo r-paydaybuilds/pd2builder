@@ -36,13 +36,13 @@ class GUI {
      */
     Subtree_MoveBackground(subtreeId, pointsInTree) {
         if (pointsInTree >= 16)
-            $("#" + subtreeId).css("background-size", "99% 100%"); 
+            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 100%"); 
         else if (pointsInTree >= 3)
-            $("#" + subtreeId).css("background-size", "99% 75%"); 
+            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 75%"); 
         else if (pointsInTree >= 1)
-            $("#" + subtreeId).css("background-size", "99% 50%");     
+            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 50%");     
         else if (pointsInTree == 0)
-            $("#" + subtreeId).css("background-size", "99% 25%"); 
+            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 25%"); 
     }
 
     /**
@@ -51,16 +51,12 @@ class GUI {
      * @param {Object} skillObj A jQuery object representing the clicked skill icon  
      */
     Skill_Add(skillObj) {
-        if (!skillObj.hasClass("sk_locked")) {
-            if (skillObj.hasClass("sk_selected_basic") || skillObj.hasClass("sk_selected_aced")) {
-                skillObj.removeClass("sk_selected_basic"); 
-                skillObj.addClass("sk_selected_aced"); 
-            } else {
-                skillObj.addClass("sk_selected_basic"); 
-            }
-        
-        //Subtree_MoveBackground()
-        } 
+        if (skillObj.hasClass("sk_selected_basic")) {
+            skillObj.removeClass("sk_selected_basic"); 
+            skillObj.addClass("sk_selected_aced"); 
+        } else {
+            skillObj.addClass("sk_selected_basic"); 
+        }
     }
 
     /**
