@@ -35,14 +35,19 @@ class GUI {
      * @param {number} pointsInTree Number of points to "move to"
      */
     Subtree_MoveBackground(subtreeId, pointsInTree) {
-        if (pointsInTree >= 16)
-            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 100%"); 
-        else if (pointsInTree >= 3)
-            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 75%"); 
-        else if (pointsInTree >= 1)
-            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 50%");     
-        else if (pointsInTree == 0)
-            $(`#sk_${subtreeId}_subtree`).css("background-size", "99% 25%"); 
+        const element = $(`#sk_${subtreeId}_subtree`);
+        let progress = 0;
+        let points = pointsInTree;
+
+        for(const pointsNeeded of tiers) {
+            if(pointsNeeded <= points) {
+                points -= pointsNeeded;
+                progress += 25;
+            } else {
+                progress += (points/pointsNeeded)*25;
+            }
+        }
+        element.css("background-size", `99% ${Math.round(progress)}%`);
     }
 
     /**

@@ -800,7 +800,8 @@
           revenant: {tier:1,points:0},
           brawler: {tier:1,points:0}
         }
-      };
+      },
+      tiers = [0,1,3,16];
       let skills;
       fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
     </script>
