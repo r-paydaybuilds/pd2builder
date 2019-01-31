@@ -466,7 +466,7 @@
                 <div class="sk_icon sk_locked">
                   <div id="lock_n_load"></div>
                 </div>
-                <span class="sk_name">LOCK 'N' LOAD</span>
+                <span class="sk_name">LOCK N' LOAD</span>
               </div>
               <div class="col text-center">
                 <div class="sk_icon sk_locked">
@@ -810,7 +810,10 @@
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+    <script>
+    let skills;
+    fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
+    </script>
     <script src="js/builder.gui.js"></script>
     <script src="js/builder.main.js"></script>
   </body>

@@ -289,5 +289,442 @@
         "ace": 8,
         "subtree": "ammo_specialist",
         "tree": "enforcer"
+    },
+    "third_law": {
+        "name": "Third Law",
+        "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "sentry_targeting_package": {
+        "name": "Sentry Targeting Package",
+        "description": "BASIC: 2 points\tYour sentry guns gain a 100% increase in accuracy.\nACE: 4 points\tYour sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "eco_sentry": {
+        "name": "Eco Sentry",
+        "description": "BASIC: 2 points\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 4 points\tYour sentry guns gain 150% increased health.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "engineering": {
+        "name": "Engineering",
+        "description": "BASIC: 3 points\tYou can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.\nACE: 6 points\tYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75%, but increasing damage by 250% and allowing it to pierce through enemies and shields.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "jack_of_all_trades": {
+        "name": "Jack of All Trades",
+        "description": "BASIC: 3 points\tYou deploy and interact with all deployable 100% faster.\nACE: 6 points\tYou can now equip a secondary deployable to bring with you. If your deployable is equipped as a secondary deployable, you can only bring half of what you should bring if it was equipped as a primary deployable.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "tower_defense": {
+        "name": "Tower Defense",
+        "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "engineer",
+        "tree": "technician"
+    },
+    "hardware_expert": {
+        "name": "Hardware Expert",
+        "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "combat_engineering": {
+        "name": "Combat Engineering",
+        "description": "BASIC: 2 points\tThe radius of your trip mine explosion is increased by 30%.\nACE: 4 points\tYour trip mine damage is increased by 50%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "drill_sawgeant": {
+        "name": "Drill Sawgeant",
+        "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "more_firepower": {
+        "name": "More Firepower",
+        "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain more shaped charges and 7 more trip mines.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "kickstarter": {
+        "name": "Kickstarter",
+        "description": "BASIC: 3 points\tYour drills and saws gain an additional 20% chance to automatically restart after breaking.\nACE: 6 points\tEnables the ability to reset a broken drill or saw with a melee attack. The ability has a 50% chance to fix the drill or saw. The ability can only be used once per time the drill or saw is broken.\nNote: Skill does not affect the OVE9000 saw.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "fire_trap": {
+        "name": "Fire Trap",
+        "description": "BASIC: 4 points\tYour trip mines now spread fire around the area of detonation for 10 seconds in a 4 meter diameter.\nACE: 8 points\tIncreases the fire effect duration by 10 seconds and increases the fire effect radius by 50%.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "breacher",
+        "tree": "technician"
+    },
+    "steady_grip": {
+        "name": "Steady Grip",
+        "description": "BASIC: 1 point\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "heavy_impact": {
+        "name": "Heavy Impact",
+        "description": "BASIC: 2 points\tYour shots have a 5% chance to stagger all enemies except Bulldozers and Captain Winters.\nACE: 4 points\tIncreases your stagger chance to 20%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "fire_control": {
+        "name": "Fire Control",
+        "description": "BASIC: 2 points\tYou gain 12 weapon accuracy while firing from the hip.\nACE: 4 points\tYour accuracy penalty is decreased by 20% when shooting while moving.",
+        "vr_description": "Addition in VR:\tACE: The decreased accuracy penalty lasts from 1 up to a maximum of 5 seconds after dashing.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "lock_n_load": {
+        "name": "Lock N' Load",
+        "description": "BASIC: 3 points\tYou can how hip-fire with your weapons while sprinting.\nACE: 6 points\tKilling 2 enemies with SMGs, LMGs, Assault Rifles or Special Weapons set on automatic fire mode will increase your next reload speed by up to 100%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a maximum of 40% reload speed increase.",
+        "vr_description": "Addition in VR:\tBASIC: Every 40 points of stamina consumed by dashin will refill 5% of their ammo pool to automatic weapons.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "surefire": {
+        "name": "Surefire",
+        "description": "BASIC: 3 points\t Your SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "body_expertise": {
+        "name": "Body Expertise",
+        "description": "BASIC: 4 points\t30% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode.\nACE: 8 points\t90% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "oppressor",
+        "tree": "technician"
+    },
+    "chameleon": {
+        "name": "Chamaleon",
+        "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "cleaner": {
+        "name": "Cleaner",
+        "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "sixth_sense": {
+        "name": "Sixth Sense",
+        "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "nimble": {
+        "name": "Nimble",
+        "description": "BASIC: 3 points\tYou gain the ability to disable 1 camera from detecting you and your crew. Effect lasts for 25 seconds.\nACE: 6 points\tYou lockpick 100% faster. You also gain the ability to lockpick safes.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "ecm_overdrive": {
+        "name": "ECM Overdrive",
+        "description": "BASIC: 3 points\tYour ECM jammer and feedback duration is increased by 25%.\nACE: 6 points\tYour ECM jammer can now also be used to open certain electronic doors.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "ecm_specialist": {
+        "name": "ECM Specialist",
+        "description": "BASIC: 4 points\tYou can now place 2 ECM jammers instead of just one.\nACE: 8 points\tThe ECM jammer duration is increased by an additional 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammers.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "shinobi",
+        "tree": "ghost"
+    },
+    "duck_and_cover": {
+        "name": "Duck and Cover",
+        "description": "BASIC: 1 point\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
+        "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "parkour": {
+        "name": "Parkour",
+        "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting",
+        "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "inner_pockets": {
+        "name": "Inner Pockets",
+        "description": "BASIC: 2 points\tIncreases the concealment of melee weapons by 2.\nACE: 4 points\tIncreases the concealment of all ballistic vests by 4.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "dire_need": {
+        "name": "Dire Need",
+        "description": "BASIC: 3 points\tWhen your armor breaks, the first shot on every enemy will cause that enemy to stagger. This effect ends when your armor recovers.\nACE: 6 points\tThe effect persists for 6 after your armor has recovered.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "shockproof": {
+        "name": "Shockproof",
+        "description": "BASIC: 3 points\tWhen tased, the shock effect has a 30% chance to backfire on the Taser, knocking them back.\nACE: 6 points\tWhen tased, you are able to free yourself from the taser by interacting with it within 2 seconds of getting tased.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "sneaky_bastard": {
+        "name": "Sneaky Bastard",
+        "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "artful_dodger",
+        "tree": "ghost"
+    },
+    "second_wind": {
+        "name": "Second Wind",
+        "description": "BASIC: 1 point\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "optical_illusions": {
+        "name": "Optical Illusions",
+        "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "the_professional": {
+        "name": "The Professional",
+        "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
+        "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "low_blow": {
+        "name": "Low Blow",
+        "description": "BASIC: 3 points\tYou gain a 3% critical hit for every 3 points of detection rate under 35 up to 30%.\nACE: 6 points\tYou gain 3% critical hit chance for every 1 point of detection rate under 35 up to 30%.\nNote: Does not apply to grenade launchers.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "high_value_target": {
+        "name": "High Value Target",
+        "description": "BASIC: 3 points\tEnemies you mark take 15% more damage.\nACE: 6 points\tEnemies you mark take an additional 50% damage when further away than 10 meters. Increase the duration of marked enemies by 100% and you can now mark specials by aiming down at them with any weapon.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "unseen_strike": {
+        "name": "Unseen Strike",
+        "description": "BASIC: 4 points\tIf you do not lose any armor or health for 4 seconds, you gain 35% critical hit chance for 6 seconds.\nACE: 8 points\tThe critical hit chance duration is increased to 18 seconds.\nTaking any damage will cancel the effect.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "silent_killer",
+        "tree": "ghost"
+    },
+    "equilibrium": {
+        "name": "Equilibrium",
+        "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "gun_nut": {
+        "name": "Gun Nut",
+        "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "akimbo": {
+        "name": "Akimbo",
+        "description": "BASIC: 2 points\tYour Akimbo weapons' stability penalty is reduced by 8.\nACE: 4 points\tYour Akimbo weapons' stability penalty is reduced by an additional 8 and they also have 50% increased ammo capacity.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "one_handed_talent": {
+        "name": "One Handed Talent",
+        "description": "BASIC: 3 points\tThe base damage of all pistols is increased by 5.\nACE: 6 points\tThe base damage of all pistols is increased by an additional 10 damage.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "desperado": {
+        "name": "Desperado",
+        "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10% and you can stack it 4 times.\nACE: 6 points\tYou reload 50% faster.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "trigger_happy": {
+        "name": "Trigger Happy",
+        "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "gunslinger",
+        "tree": "fugitive"
+    },
+    "nine_lives": {
+        "name": "Nine Lives",
+        "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "running_from_death": {
+        "name": "Running from Death",
+        "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10% seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "up_you_go": {
+        "name": "Up You Go",
+        "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "swan_song": {
+        "name": "Swan Song",
+        "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "feign_death": {
+        "name": "Feign Death",
+        "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "messiah": {
+        "name": "Messiah",
+        "description": "BASIC: 4 points\tWhile in bleedout, you can revive yourself if you kill an enemy. You only have 1 charge.\nACE: 8 points\tYour messiah charge is replenished whenever you use a doctor bag.",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "revenant",
+        "tree": "fugitive"
+    },
+    "martial_arts": {
+        "name": "Martial Arts",
+        "description": "BASIC: 1 point\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike.",
+        "basic": 1,
+        "ace": 3,
+        "subtree": "brawler",
+        "tree": "fugitive"
+    },
+    "bloodthirst": {
+        "name": "Bloodthirst",
+        "description": "BASIC: 2 points\tEvery kill you get will increase your next melee attack damage by 100%, up to a maximum of 1600%. This effect gets reset when you kill an enemy with a melee attack.\nACE: 4 points\tWhenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds.",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "brawler",
+        "tree": "fugitive"
+    },
+    "pumping_iron": {
+        "name": "Pumping Iron",
+        "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage",
+        "basic": 2,
+        "ace": 4,
+        "subtree": "brawler",
+        "tree": "fugitive"
+    },
+    "counterstrike": {
+        "name": "Counterstrike",
+        "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "brawler",
+        "tree": "fugitive"
+    },
+    "berserker": {
+        "name": "Berserker",
+        "description": "BASIC: 3 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.\nACE 6 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well.\nNote: Does not apply to throwables, grenade launchers or rocket launchers.\nEntering berserker state negates third-party regeneration effects.",
+        "basic": 3,
+        "ace": 6,
+        "subtree": "brawler",
+        "tree": "fugitive"
+    },
+    "frenzy": {
+        "name": "Frenzy",
+        "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%",
+        "basic": 4,
+        "ace": 8,
+        "subtree": "brawler",
+        "tree": "fugitive"
     }
 }

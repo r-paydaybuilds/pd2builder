@@ -38,7 +38,17 @@ $(document).ready(function () {
 
         // Bind on hovering mouse, to show skill description
         $(this).mouseover(function () {
-            $(".sk_description").css("visibility", "visible"); 
+            const element = $(".sk_description");
+            if(element.data("skill") !== this.firstElementChild.id) {
+                const skill = skills.get(this.firstElementChild.id);
+                let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+                    .replace(/\n/g, "</p><p>")
+                    .replace(/\t/g, "<br>")
+                    .replace(/[0-9]+([,.][0-9]+)?( points|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+                element.html(html);
+                element.data("skill", this.firstElementChild.id);
+            }
+            element.css("visibility", "visible"); 
         });
     
         // Bind on mouse leave, to hide skill description
