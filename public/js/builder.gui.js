@@ -49,7 +49,7 @@ class GUI {
                 this.Tier_Locker(subtreeId, index+1);
             }
         }
-        element.css("background-size", `99% ${Math.round(progress)}%`);
+        element.css("background-size", `100% ${Math.round(progress)}%`);
     }
 
     /**
