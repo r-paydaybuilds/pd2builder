@@ -3,8 +3,26 @@ body {
   color: rgb(240, 240, 240); 
 }
 
-.sk_container {
 
+
+#sk_page {
+  padding: 50px 15px 10px 15px; 
+}
+
+#sk_description_container {
+  padding: 10px 25px 10px 25px; 
+}
+
+#sk_description_container > div {
+  margin-top: 10px; 
+  height: 85%; 
+  border: 16px solid transparent;
+  border-image: url("/img/border.png") 18 stretch;
+}
+
+#sk_description_container > div.sk_points_remaining {
+  margin-top: 0px; 
+  height: 15%; 
 }
 
 .sk_description {
@@ -17,7 +35,7 @@ body {
 
 .sk_subtree {
   background:         bottom center url("/img/skills/background.png") no-repeat;
-  background-size:    99% 25%;
+  background-size:    97% 25%;
   -webkit-transition: background-size 0.4s ease;
   -moz-transition:    background-size 0.4s ease;
   -o-transition:      background-size 0.4s ease;
@@ -30,6 +48,7 @@ body {
 
 .sk_icon {
   cursor: pointer; 
+  padding-top: 15px; 
 }
 
 .sk_icon > div {
@@ -43,7 +62,7 @@ body {
   -webkit-transition: opacity 0.2s ease, background 0.2s ease;
   -moz-transition:    opacity 0.2s ease, background 0.2s ease;
   -o-transition:      opacity 0.2s ease, background 0.2s ease;
-  transition:         opacity 0.2s ease, background 0.2s ease; /* Doesn't work? no idea */ 
+  transition:         opacity 0.2s ease, background 0.2s ease; 
 }
 
 .sk_icon.sk_locked {
@@ -60,6 +79,12 @@ body {
 
 .sk_icon.sk_selected_aced {
   background: url("/img/skills/ace.png") no-repeat center center; 
+}
+
+.sk_name {
+  display: block; 
+  font-size: 14px; 
+  line-height: 1.2em; 
 }
 
 .color_number {
