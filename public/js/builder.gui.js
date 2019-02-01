@@ -81,6 +81,19 @@ class GUI {
     }
 
     /**
+     * Updates the label with remaining points with the provided number. 
+     * @param {number} pointsRemaining Number to set the label to
+     */
+    Skill_UpdatePointsRemaining(pointsRemaining) {
+        if (pointsRemaining) {
+            $(".sk_points_remaining p span").text(pointsRemaining); 
+        }
+        else {
+            $(".sk_points_remaining p span").text("?"); 
+        }
+    }
+
+    /**
      * Supposed to be triggered by clicking on an icon of a skill. 
      * This checks the state of the clicked skill and adds it basic or aced, accordingly to the state it is in. 
      * @param {Object} skillObj A jQuery object representing the clicked skill icon  
