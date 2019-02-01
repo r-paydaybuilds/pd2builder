@@ -50,10 +50,19 @@ $(document).ready(function () {
         $(this).contextmenu(function (event) {
             event.preventDefault(); 
 
-            const element = $(this);
-            gui.Skill_Remove(element); 
             const skill = exp.skills.get(this.firstElementChild.id);
+            if(!skill) return;
+            const skillsExpArray = Array.from(exp.skills);
             const skillStore = skills.get(this.firstElementChild.id);
+            const element = $(this);
+
+            for(let i=skillStore.tier+1; i < 5; i++) {
+                if(exp.skills.getTierPoints(i, skillStore.subtree, skills) === 0) continue;
+                const tierPoints = exp.skills.getTiersToFloorPoints(skillStore.tier, skillStore.subtree, skills);
+                if(tierPoints - (skill.state === "aced" ? skillStore.ace : skillStore.basic) < tiers2[i-1]) return;
+            }
+
+            gui.Skill_Remove(element); 
             if(skill.state === "aced") {
                 const subtree = exp.subtrees[skillStore.subtree];
                 subtree.points -= skillStore.ace;
@@ -94,3 +103,4 @@ $(document).ready(function () {
     //$(".sk_points_remaining span").text(skills.pointsRemaining); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 
 });
+
