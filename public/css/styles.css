@@ -50,6 +50,10 @@ body {
   height: 140px; 
 }
 
+.row.sk_tier:not(:first-child) {
+  border-top: 1px solid rgb(40, 100, 140); 
+}
+
 .row.sk_tier:not(:first-child):before {
   content: ""; 
   position: absolute; 
@@ -57,10 +61,6 @@ body {
   height: 2px; 
   width: 3%; 
   border-bottom: 2px solid white; 
-}
-
-.row.sk_tier:not(:first-child) {
-  border-top: 1px solid rgb(40, 100, 140); 
 }
 
 .row.sk_tier:not(:first-child):after {
@@ -74,7 +74,7 @@ body {
 
 .sk_icon {
   cursor: pointer; 
-  padding-top: 15px; 
+  padding-top: 20px; 
 }
 
 .sk_icon > div {
