@@ -65,7 +65,7 @@ $(document).ready(function () {
 
             for(let i=skillStore.tier+1; i < 5; i++) {
                 if(exp.skills.getTierPoints(i, skillStore.subtree, skills) === 0) continue;
-                const tierPoints = exp.skills.getTiersToFloorPoints(skillStore.tier, skillStore.subtree, skills);
+                const tierPoints = exp.skills.getTiersToFloorPoints(i-1, skillStore.subtree, skills);
                 if(tierPoints - (skill.state === "aced" ? skillStore.ace : skillStore.basic) < tiers2[i-1]) return;
             }
 
