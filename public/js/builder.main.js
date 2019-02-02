@@ -52,7 +52,6 @@ $(document).ready(function () {
 
             const skill = exp.skills.get(this.firstElementChild.id);
             if(!skill) return;
-            const skillsExpArray = Array.from(exp.skills);
             const skillStore = skills.get(this.firstElementChild.id);
             const element = $(this);
 
