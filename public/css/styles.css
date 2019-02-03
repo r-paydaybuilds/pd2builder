@@ -84,10 +84,10 @@ body {
   z-index: 1002; 
   background: url("/img/skills/icons.png") no-repeat;
   opacity: 0.2; 
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  -moz-transition:    opacity 0.2s ease, background 0.2s ease;
-  -o-transition:      opacity 0.2s ease, background 0.2s ease;
-  transition:         opacity 0.2s ease, background 0.2s ease; 
+  -webkit-transition: opacity .2s ease, transform .3s ease;
+  -moz-transition:    opacity .2s ease, transform .3s ease;
+  -o-transition:      opacity .2s ease, transform .3s ease;
+  transition:         opacity .2s ease, transform .3s ease;
 }
 
 .sk_icon.sk_locked {
@@ -110,6 +110,7 @@ body {
   display: block; 
   font-size: 14px; 
   line-height: 1.2em; 
+  visibility: hidden; 
 }
 
 .color_number {

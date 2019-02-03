@@ -10,8 +10,10 @@ $(document).ready(function () {
         const element = $(".sk_description");
         element.data("skill", "none");
         element.text("");
+        if(previous) previous.css("visibility", "hidden"); 
+        previous = null;
     }
-    
+
     for(const value of trees) {
         $(`#sk_${value}_tab`).click(changeTab);
     }
@@ -85,9 +87,13 @@ $(document).ready(function () {
         });
 
         // Bind on hovering mouse, to show skill description
-        $(this).mouseover(function () {
+        $(this).mouseover(function (event) {
             const element = $(".sk_description");
             if(element.data("skill") !== this.firstElementChild.id) {
+                gui.Skill_TextDisappear();
+                gui.Skill_ZoomOut();
+                gui.Skill_TextAppear($(this));
+                gui.Skill_ZoomIn($(this));
                 const skill = skills.get(this.firstElementChild.id);
                 let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
                     .replace(/\n/g, "</p><p>")

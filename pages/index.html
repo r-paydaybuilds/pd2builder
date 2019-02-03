@@ -826,7 +826,7 @@
       tiers = [0,1,2,13],
       tiers2 = [0,1,3,16],
       trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
-      let skills;
+      let skills, previous;
       fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
     </script>
     <script src="js/builder.gui.js"></script>

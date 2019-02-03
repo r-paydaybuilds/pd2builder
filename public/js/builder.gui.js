@@ -3,7 +3,12 @@
  */
 class GUI {
     constructor() {
-
+        /** 
+         * The previous skill that had it's text appeared.
+         * @type {Object}
+         * @private
+        */
+        this.previousSkill
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.
@@ -119,6 +124,48 @@ class GUI {
         } else if (skillObj.hasClass("sk_selected_basic")) {
             skillObj.removeClass("sk_selected_basic"); 
         }
+    }
+
+    /**
+     * Make the text name of a skill appear
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_TextAppear(skillObj) {
+        const sibling = skillObj.siblings(".sk_name");
+        this.previousSkill = skillObj;
+        sibling.css("visibility", "visible"); 
+    }
+    /**
+     * Make the text name of a skill disappear
+     * @default this.previousSkill
+     * @param {Object} skillObj 
+     */
+    Skill_TextDisappear(skillObj = this.previousSkill) {
+        if(!skillObj) return;
+        this.previousSkill.siblings(".sk_name")
+            .css("visibility", "hidden"); 
+    }
+
+    /**
+     * Make the image of the skill zoom in
+     * @param {Object} skillObj 
+     */
+    Skill_ZoomIn(skillObj) {
+        const children = skillObj.children();
+        this.previousSkill = skillObj;
+        children.css("transform", "scale(1.1)")
+            .css("opacity", (index, value) => { if(value !== 1) return 0.3; }); 
+    }
+
+    /**
+     * Make the image of the skill zoom in
+     * @param {Object} skillObj 
+     */
+    Skill_ZoomOut(skillObj= this.previousSkill) {
+        if(!skillObj) return;
+        skillObj.children()
+            .css("transform", "scale(1)")
+            .css("opacity", (index, value) => { if(value !== 1) return 0.2; }); 
     }
 }
 
