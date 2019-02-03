@@ -158,7 +158,7 @@ class GUI {
     }
 
     /**
-     * Make the image of the skill zoom in
+     * Make the image of the skill zoom out
      * @param {Object} skillObj 
      */
     Skill_ZoomOut(skillObj= this.previousSkill) {
@@ -166,6 +166,16 @@ class GUI {
         skillObj.children()
             .css("transform", "scale(1)")
             .css("opacity", (index, value) => { if(value !== 1) return 0.2; }); 
+    }
+
+    /**
+     * Make the opacity of the image normalize
+     * @param {Object} skillObj 
+     */
+    Skill_OpacityNormalize(skillObj) {
+        this.previousSkill = null;
+        skillObj.children()
+            .css("opacity", 1); 
     }
 }
 

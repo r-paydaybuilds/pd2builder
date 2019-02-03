@@ -45,10 +45,11 @@ $(document).ready(function () {
                 exp.skills.set(this.firstElementChild.id, {
                     state: "basic"
                 });
+                gui.Skill_OpacityNormalize(element);
             }
 
             gui.Skill_Add(element); 
-            $(".sk_points_remaining span").text(exp.skills.points); 
+            gui.Skill_UpdatePointsRemaining(exp.skills.points);
             gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);
         });
 
@@ -67,7 +68,6 @@ $(document).ready(function () {
                 if(tierPoints - (skill.state === "aced" ? skillStore.ace : skillStore.basic) < tiers2[i-1]) return;
             }
 
-            gui.Skill_Remove(element); 
             if(skill.state === "aced") {
                 const subtree = exp.subtrees[skillStore.subtree];
                 subtree.points -= skillStore.ace;
@@ -80,8 +80,11 @@ $(document).ready(function () {
                 subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
                 exp.skills.points += skillStore.basic;
                 exp.skills.delete(this.firstElementChild.id);
+                gui.Skill_ZoomIn(element);
             }
-            $(".sk_points_remaining span").text(exp.skills.points); 
+            
+            gui.Skill_Remove(element); 
+            gui.Skill_UpdatePointsRemaining(exp.skills.points);
             gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);
             // Skill backend here
         });
@@ -106,7 +109,7 @@ $(document).ready(function () {
 
     });
 
-    $(".sk_points_remaining span").text(exp.skills.points); 
+    gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 
 });
 
