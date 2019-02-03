@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(11, 11, 21); 
+  background: rgb(11, 11, 21) url("/img/bg.png"); 
   color: rgb(240, 240, 240); 
 }
 
@@ -138,8 +138,11 @@ body {
 }
 
 .sk_icon:not(.sk_locked):hover > div {
-  opacity: 0.3; 
   transform: scale(1.05); 
+}
+
+.sk_icon:not(.sk_locked):not(.sk_selected_basic):not(.sk_selected_aced):hover > div {
+  opacity: 0.3; 
 }
 
 .sk_icon.sk_locked {
