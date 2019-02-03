@@ -22,7 +22,7 @@ class GUI {
      * @param {string} containerId Id of the Tree to switch to 
      */
     Tree_ChangeTo(containerId) {
-        $("#sk_container").children(".sk_tree").each(function () {
+        $("#sk_container_r").children(".sk_tree").each(function () {
             $(this).hide(); 
         });
         $("#" + containerId).show(); 

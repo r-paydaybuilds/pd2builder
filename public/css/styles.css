@@ -9,6 +9,52 @@ body {
   padding: 50px 15px 10px 15px; 
 }
 
+#sk_container_l {
+  border-image: url("/img/borders/skill_border.png") 3 15 repeat;
+  border-top: 3px solid transparent; 
+  border-bottom: 3px solid transparent; 
+}
+
+#sk_container_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-topleft.png") no-repeat; 
+}
+
+#sk_container_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-bottomleft.png") no-repeat; 
+}
+
+#sk_container_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-topright.png") no-repeat; 
+}
+
+#sk_container_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-bottomright.png") no-repeat; 
+}
+
 #sk_description_container {
   padding: 0px 25px 10px 25px; 
 }
@@ -17,7 +63,7 @@ body {
   margin-top: 10px; 
   height: 85%; 
   border: 16px solid transparent;
-  border-image: url("/img/border.png") 18 stretch;
+  border-image: url("/img/borders/border.png") 18 stretch;
 }
 
 #sk_description_container > div.sk_points_remaining {
@@ -54,7 +100,7 @@ body {
   border-top: 1px solid rgb(40, 100, 140); 
 }
 
-.row.sk_tier:not(:first-child):before {
+.row.sk_tier:not(:first-child)::before {
   content: ""; 
   position: absolute; 
   left: 0; 
@@ -63,7 +109,7 @@ body {
   border-bottom: 2px solid white; 
 }
 
-.row.sk_tier:not(:first-child):after {
+.row.sk_tier:not(:first-child)::after {
   content: ""; 
   position: absolute; 
   right: 0; 
