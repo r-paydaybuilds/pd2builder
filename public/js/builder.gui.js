@@ -90,12 +90,16 @@ class GUI {
      * @param {number} pointsRemaining Number to set the label to
      */
     Skill_UpdatePointsRemaining(pointsRemaining) {
-        if (pointsRemaining) {
-            $(".sk_points_remaining p span").text(pointsRemaining); 
-        }
-        else {
-            $(".sk_points_remaining p span").text("?"); 
-        }
+        $(".sk_points_remaining p span").text(pointsRemaining); 
+    }
+
+    /**
+     * Makes the Points remaining text the color mentioned
+     * @default #f0f0f0
+     * @param {String} color A css compatible color
+     */
+    Skill_ColorizePointsRemaining(color = "#f0f0f0") {
+        $(".sk_points_remaining").css("color", color);
     }
 
     /**
@@ -138,7 +142,7 @@ class GUI {
     /**
      * Make the text name of a skill disappear
      * @default this.previousSkill
-     * @param {Object} skillObj 
+     * @param {Object} skillObj A jQuery object representing the skill icon  
      */
     Skill_TextDisappear(skillObj = this.previousSkill) {
         if(!skillObj) return;
@@ -148,35 +152,34 @@ class GUI {
 
     /**
      * Make the image of the skill zoom in
-     * @param {Object} skillObj 
+     * @param {Object} skillObj A jQuery object representing the skill icon  
      */
     Skill_ZoomIn(skillObj) {
-        const children = skillObj.children();
-        this.previousSkill = skillObj;
-        children.css("transform", "scale(1.1)")
-            .css("opacity", (index, value) => { if(value !== 1) return 0.3; }); 
+        if(!skillObj.hasClass("sk_selected"))
+            skillObj.addClass("sk_selected");
     }
 
     /**
      * Make the image of the skill zoom out
-     * @param {Object} skillObj 
+     * @default this.previousSkill
+     * @param {Object} skillObj A jQuery object representing the skill icon  
      */
     Skill_ZoomOut(skillObj= this.previousSkill) {
-        if(!skillObj) return;
-        skillObj.children()
-            .css("transform", "scale(1)")
-            .css("opacity", (index, value) => { if(value !== 1) return 0.2; }); 
+        if(skillObj && skillObj.hasClass("sk_selected")) 
+            skillObj.removeClass("sk_selected");
     }
-
+    
     /**
-     * Make the opacity of the image normalize
-     * @param {Object} skillObj 
+     * Gives the invalid class to the skill for a temporal time
+     * @param {Object} skillObj A jQuery object representing the skill icon  
      */
-    Skill_OpacityNormalize(skillObj) {
-        this.previousSkill = null;
-        skillObj.children()
-            .css("opacity", 1); 
+    Skill_TemporalInvalid(skillObj) {
+        if(skillObj.hasClass("sk_invalid")) return;
+        skillObj.addClass("sk_invalid");
+        setTimeout(function(skillObj) {
+            skillObj.removeClass("sk_invalid");
+        }, 400, skillObj);
     }
 }
 
-const gui = new GUI();  
+const gui = new GUI();

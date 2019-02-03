@@ -84,14 +84,28 @@ body {
   z-index: 1002; 
   background: url("/img/skills/icons.png") no-repeat;
   opacity: 0.2; 
-  -webkit-transition: opacity .2s ease, transform .3s ease;
-  -moz-transition:    opacity .2s ease, transform .3s ease;
-  -o-transition:      opacity .2s ease, transform .3s ease;
-  transition:         opacity .2s ease, transform .3s ease;
+  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
 }
 
 .sk_icon.sk_locked {
   background: url("/img/skills/padlock.png") no-repeat center center;
+}
+
+.sk_icon.sk_invalid > div {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.sk_icon.sk_invalid + .sk_name {
+  color: #FF4751;
+}
+
+.sk_icon.sk_selected > div {
+  opacity: 0.3; 
+  transform: scale(1.05);
 }
 
 .sk_icon.sk_selected_basic > div {
@@ -111,6 +125,10 @@ body {
   font-size: 14px; 
   line-height: 1.2em; 
   visibility: hidden; 
+  -webkit-transition: color .3 ease;
+  -moz-transition: color .3 ease;
+  -o-transition: color .3 ease;
+  transition: color .3 ease;
 }
 
 .color_number {
