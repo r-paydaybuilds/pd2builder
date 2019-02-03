@@ -137,7 +137,7 @@ body {
   visibility: visible; 
 }
 
-.sk_icon:hover > div {
+.sk_icon:not(.sk_locked):hover > div {
   opacity: 0.3; 
   transform: scale(1.05); 
 }
