@@ -101,10 +101,6 @@ $(document).ready(function () {
         // Bind on hovering mouse, to show skill description
         $(this).mouseover(function (event) {
             const element = $(".sk_description");
-            gui.Skill_TextDisappear();
-            gui.Skill_ZoomOut();
-            gui.Skill_TextAppear($(this));
-            gui.Skill_ZoomIn($(this));
             if(element.data("skill") !== this.firstElementChild.id) {
                 const skill = skills.get(this.firstElementChild.id);
                 let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
