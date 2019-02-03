@@ -3,7 +3,12 @@
  */
 class GUI {
     constructor() {
-
+        /** 
+         * The previous skill that had it's text appeared.
+         * @type {Object}
+         * @private
+        */
+        this.previousSkill
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.
@@ -85,12 +90,16 @@ class GUI {
      * @param {number} pointsRemaining Number to set the label to
      */
     Skill_UpdatePointsRemaining(pointsRemaining) {
-        if (pointsRemaining) {
-            $(".sk_points_remaining p span").text(pointsRemaining); 
-        }
-        else {
-            $(".sk_points_remaining p span").text("?"); 
-        }
+        $(".sk_points_remaining p span").text(pointsRemaining); 
+    }
+
+    /**
+     * Makes the Points remaining text the color mentioned
+     * @default #f0f0f0
+     * @param {String} color A css compatible color
+     */
+    Skill_ColorizePointsRemaining(color = "#f0f0f0") {
+        $(".sk_points_remaining").css("color", color);
     }
 
     /**
@@ -120,6 +129,57 @@ class GUI {
             skillObj.removeClass("sk_selected_basic"); 
         }
     }
+
+    /**
+     * Make the text name of a skill appear
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_TextAppear(skillObj) {
+        const sibling = skillObj.siblings(".sk_name");
+        this.previousSkill = skillObj;
+        sibling.css("visibility", "visible"); 
+    }
+    /**
+     * Make the text name of a skill disappear
+     * @default this.previousSkill
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_TextDisappear(skillObj = this.previousSkill) {
+        if(!skillObj) return;
+        this.previousSkill.siblings(".sk_name")
+            .css("visibility", "hidden"); 
+    }
+
+    /**
+     * Make the image of the skill zoom in
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_ZoomIn(skillObj) {
+        if(!skillObj.hasClass("sk_selected"))
+            skillObj.addClass("sk_selected");
+    }
+
+    /**
+     * Make the image of the skill zoom out
+     * @default this.previousSkill
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_ZoomOut(skillObj= this.previousSkill) {
+        if(skillObj && skillObj.hasClass("sk_selected")) 
+            skillObj.removeClass("sk_selected");
+    }
+    
+    /**
+     * Gives the invalid class to the skill for a temporal time
+     * @param {Object} skillObj A jQuery object representing the skill icon  
+     */
+    Skill_TemporalInvalid(skillObj) {
+        if(skillObj.hasClass("sk_invalid")) return;
+        skillObj.addClass("sk_invalid");
+        setTimeout(function(skillObj) {
+            skillObj.removeClass("sk_invalid");
+        }, 400, skillObj);
+    }
 }
 
-const gui = new GUI();  
+const gui = new GUI();

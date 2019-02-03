@@ -72,7 +72,6 @@ body {
 }
 
 .sk_description {
-  visibility: hidden; 
 }
 
 .sk_points_remaining {
@@ -131,14 +130,28 @@ body {
   z-index: 1002; 
   background: url("/img/skills/icons.png") no-repeat;
   opacity: 0.2; 
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  -moz-transition:    opacity 0.2s ease, background 0.2s ease;
-  -o-transition:      opacity 0.2s ease, background 0.2s ease;
-  transition:         opacity 0.2s ease, background 0.2s ease; 
+  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
 }
 
 .sk_icon.sk_locked {
   background: url("/img/skills/padlock.png") no-repeat center center;
+}
+
+.sk_icon.sk_invalid > div {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.sk_icon.sk_invalid + .sk_name {
+  color: #FF4751;
+}
+
+.sk_icon.sk_selected > div {
+  opacity: 0.3; 
+  transform: scale(1.05);
 }
 
 .sk_icon.sk_selected_basic > div {
@@ -157,6 +170,11 @@ body {
   display: block; 
   font-size: 14px; 
   line-height: 1.2em; 
+  visibility: hidden; 
+  -webkit-transition: color .3 ease;
+  -moz-transition: color .3 ease;
+  -o-transition: color .3 ease;
+  transition: color .3 ease;
 }
 
 .color_number {
@@ -277,7 +295,7 @@ body {
   background-position: -640px -880px; 
 }
 #bulletstorm {
-  background-position: -360px -400px; 
+  background-position: -320px -400px; 
 }
 #portable_saw {
   background-position: 0px -80px; 
@@ -363,7 +381,7 @@ body {
   background-position: -400px -240px; 
 }
 #cleaner {
-  background-position: -540px -160px; 
+  background-position: -560px -160px; 
 }
 #sixth_sense {
   background-position: -480px -800px; 
@@ -449,7 +467,7 @@ body {
   background-position: -880px -240px; 
 }
 #up_you_go {
-  background-position: -880px -360px; 
+  background-position: -880px -320px; 
 }
 #swan_song {
   background-position: -400px -960px; 

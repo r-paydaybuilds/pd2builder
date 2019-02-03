@@ -770,7 +770,7 @@
         </div>
         <div id="sk_description_container" class="col-3">
           <div class="row sk_points_remaining">
-            <p>Points remaining: <span></span></p> 
+            <p>Remaining skill points: <span></span></p> 
           </div>
           <div class="row">
             <p class="sk_description"></p>  
@@ -783,8 +783,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script>
+      class extMap extends Map {
+        constructor(...args) {
+          super(...args)
+          this.points = 120;
+        }
+        getTierPoints(tier, subtree, skills) {
+          let points = 0;
+          for(const [key,value] of this) {
+            const skill = skills.get(key);
+            if(skill.subtree !== subtree) continue;
+            if(skill.tier !== tier) continue;
+            points += (value.state === "aced") ? skill.ace + skill.basic : skill.basic;
+          }
+          return points;
+        }
+        getTiersToFloorPoints(tier, subtree, skills) {
+          let points = 0;
+          for(let i = 0; i<=tier; i++)
+            points += this.getTierPoints(i, subtree, skills)
+          return points;
+        }
+      }
       const exp = {
-        skills: new Map(),
+        skills: new extMap(),
         subtrees: {
           medic: {tier:1,points:0},
           controller: {tier:1,points:0},
@@ -803,8 +825,10 @@
           brawler: {tier:1,points:0}
         }
       },
-      tiers = [0,1,2,13];
-      let skills;
+      tiers = [0,1,2,13],
+      tiers2 = [0,1,3,16],
+      trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
+      let skills, previous;
       fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
     </script>
     <script src="js/builder.gui.js"></script>
