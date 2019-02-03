@@ -2,23 +2,19 @@ $(document).ready(function () {
 
     //
     // Bind Events on page 
-  
+
+
     // Skill tab navigation //
-    $("#sk_mastermind_tab").click(function () {
-        gui.Tree_ChangeTo("sk_mastermind_container"); 
-    });
-    $("#sk_enforcer_tab").click(function () {
-        gui.Tree_ChangeTo("sk_enforcer_container"); 
-    });
-    $("#sk_technician_tab").click(function () {
-        gui.Tree_ChangeTo("sk_technician_container"); 
-    });
-    $("#sk_ghost_tab").click(function () {
-        gui.Tree_ChangeTo("sk_ghost_container"); 
-    });
-    $("#sk_fugitive_tab").click(function () {
-        gui.Tree_ChangeTo("sk_fugitive_container"); 
-    });
+    function changeTab(event) {
+        gui.Tree_ChangeTo(event.target.id.replace("tab", "container")); 
+        const element = $(".sk_description");
+        element.data("skill", "none");
+        element.text("");
+    }
+    
+    for(const value of trees) {
+        $(`#sk_${value}_tab`).click(changeTab);
+    }
 
     // Skill Icon buttons //
     $(".sk_icon").each(function () {
@@ -100,13 +96,7 @@ $(document).ready(function () {
                 element.html(html);
                 element.data("skill", this.firstElementChild.id);
             }
-            element.css("visibility", "visible"); 
         });
-    
-        // Bind on mouse leave, to hide skill description
-        $(this).mouseleave(function () {
-            $(".sk_description").css("visibility", "hidden"); 
-        }); 
 
     });
 
