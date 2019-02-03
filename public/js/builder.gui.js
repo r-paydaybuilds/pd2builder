@@ -129,45 +129,6 @@ class GUI {
             skillObj.removeClass("sk_selected_basic"); 
         }
     }
-
-    /**
-     * Make the text name of a skill appear
-     * @param {Object} skillObj A jQuery object representing the skill icon  
-     */
-    Skill_TextAppear(skillObj) {
-        const sibling = skillObj.siblings(".sk_name");
-        this.previousSkill = skillObj;
-        sibling.css("visibility", "visible"); 
-    }
-    /**
-     * Make the text name of a skill disappear
-     * @default this.previousSkill
-     * @param {Object} skillObj A jQuery object representing the skill icon  
-     */
-    Skill_TextDisappear(skillObj = this.previousSkill) {
-        if(!skillObj) return;
-        this.previousSkill.siblings(".sk_name")
-            .css("visibility", "hidden"); 
-    }
-
-    /**
-     * Make the image of the skill zoom in
-     * @param {Object} skillObj A jQuery object representing the skill icon  
-     */
-    Skill_ZoomIn(skillObj) {
-        if(!skillObj.hasClass("sk_selected"))
-            skillObj.addClass("sk_selected");
-    }
-
-    /**
-     * Make the image of the skill zoom out
-     * @default this.previousSkill
-     * @param {Object} skillObj A jQuery object representing the skill icon  
-     */
-    Skill_ZoomOut(skillObj= this.previousSkill) {
-        if(skillObj && skillObj.hasClass("sk_selected")) 
-            skillObj.removeClass("sk_selected");
-    }
     
     /**
      * Gives the invalid class to the skill for a temporal time

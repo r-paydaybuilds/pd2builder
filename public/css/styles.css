@@ -71,9 +71,6 @@ body {
   height: 15%; 
 }
 
-.sk_description {
-}
-
 .sk_points_remaining {
   font-size: 18pt; 
 }
@@ -136,6 +133,15 @@ body {
   transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
 }
 
+.sk_icon:hover + .sk_name {
+  visibility: visible; 
+}
+
+.sk_icon:hover > div {
+  opacity: 0.3; 
+  transform: scale(1.05); 
+}
+
 .sk_icon.sk_locked {
   background: url("/img/skills/padlock.png") no-repeat center center;
 }
@@ -147,11 +153,6 @@ body {
 
 .sk_icon.sk_invalid + .sk_name {
   color: #FF4751;
-}
-
-.sk_icon.sk_selected > div {
-  opacity: 0.3; 
-  transform: scale(1.05);
 }
 
 .sk_icon.sk_selected_basic > div {
