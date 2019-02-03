@@ -106,7 +106,7 @@ $(document).ready(function () {
                 let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
                     .replace(/\n/g, "</p><p>")
                     .replace(/\t/g, "<br>")
-                    .replace(/[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+                    .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
                 element.html(html);
                 element.data("skill", this.firstElementChild.id);
             }
