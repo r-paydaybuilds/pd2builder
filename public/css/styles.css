@@ -103,7 +103,7 @@ body > div {
   border-left: 10px solid transparent; /* used as margin-left but without wrapping */
 }
 
-#sk_description_container > div {
+#sk_description_t {
   margin-top: 10px; 
 }
 
@@ -195,12 +195,11 @@ body > div {
   font-size: 16pt; 
 }
 
-.sk_points_remaining {
+.sk_points_remaining { 
   height: 15%; 
   margin-top: 0px; 
   font-size: 20pt; 
-  text-align: center; 
-  vertical-align: middle; 
+  align-items: center;
 }
 
 .sk_subtree {
