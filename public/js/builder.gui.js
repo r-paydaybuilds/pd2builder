@@ -24,16 +24,27 @@ class GUI {
 
     /**
      * Change selected Skill Tree to another.
-     * @param {string} containerId Id of the Tree to switch to 
+     * @param {string} treeId Id of the Tree to switch to 
      */
-    Tree_ChangeTo(containerId) {
+    Tree_ChangeTo(treeId) {
+        // Manage the buttons
         $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
-        $("#sk_" + containerId.split("_")[1] + "_button").addClass("sk_tree_button_active"); 
+        $("#sk_" + treeId.split("_")[1] + "_button").addClass("sk_tree_button_active"); 
 
+        // Switch tree content 
         $("#sk_container_r").children(".sk_tree").each(function () {
             $(this).hide(); 
         });
-        $("#" + containerId).show(); 
+        $("#" + treeId).show(); 
+
+        // Change displayed subtree names 
+        let subtrees = $("#" + treeId).children(".sk_subtree");
+        for (let i = 0; i < subtrees.length; i++) {
+            subtrees[i] = String($(subtrees[i]).data("name")).toUpperCase(); 
+        }
+        $("#sk_subtree_name_left p").text(subtrees[0]);
+        $("#sk_subtree_name_center p").text(subtrees[1]);
+        $("#sk_subtree_name_right p").text(subtrees[2]);
     }
 
     /**
@@ -59,7 +70,7 @@ class GUI {
         }
         element.css("background-size", `100% ${Math.round(progress)}%`);
     }
-
+    
     /**
      * Locks the tier
      * @param {string} subtreeId Id of the subtree
