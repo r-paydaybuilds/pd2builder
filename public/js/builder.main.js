@@ -103,7 +103,7 @@ $(document).ready(function () {
             const element = $(".sk_description");
             if(element.data("skill") !== this.firstElementChild.id) {
                 const skill = skills.get(this.firstElementChild.id);
-                let html = `<p>${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+                let html = `<p class="sk_description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
                     .replace(/\n/g, "</p><p>")
                     .replace(/\t/g, "<br>")
                     .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);

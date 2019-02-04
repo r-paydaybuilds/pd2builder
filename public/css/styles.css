@@ -99,26 +99,108 @@ body > div {
 
 #sk_description_container {
   padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
 }
 
 #sk_description_container > div {
   margin-top: 10px; 
-  height: 85%; 
-  border: 16px solid transparent;
-  border-image: url("/img/borders/border.png") 18 stretch;
 }
 
-#sk_description_container > div.sk_points_remaining {
-  margin-top: 0px; 
-  height: 15%; 
+#sk_description_t::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 15%; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_t::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 15%; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_b::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_b::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 15%; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 15%; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
 }
 
 .sk_description {
   font-size: 13pt; 
 }
 
+.sk_description_title {
+  font-size: 16pt; 
+}
+
 .sk_points_remaining {
+  height: 15%; 
+  margin-top: 0px; 
   font-size: 20pt; 
+  text-align: center; 
+  vertical-align: middle; 
 }
 
 .sk_subtree {
