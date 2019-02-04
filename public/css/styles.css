@@ -11,11 +11,44 @@ body {
   color: rgb(240, 240, 240); 
 }
 
+body > div {
+  font-family: "DINEngschrift"; 
+}
 
+
+
+#sk_tree_buttons {
+  padding-top: 50px; 
+}
+
+#sk_tree_buttons button {
+  border: 0px; 
+  padding-left: 10px; 
+  padding-right: 10px; 
+  text-align: center;
+
+  border-radius: 10px 10px 0px 0px; 
+  
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 16pt; 
+}
+
+#sk_tree_buttons button.sk_tree_button_active {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#sk_tree_buttons button:focus,
+#sk_tree_buttons button:active,
+#sk_tree_buttons button:active:focus {
+  outline: none; 
+  box-shadow: none; 
+}
 
 #sk_page {
-  padding: 50px 15px 10px 15px; 
-  font-family: "DINEngschrift"; 
+  padding: 0px 15px 10px 15px; 
 }
 
 #sk_container_l {
@@ -205,7 +238,7 @@ body {
 }
 
 .color_number {
-  color: #33beff;
+  color: rgb(50, 190, 255); 
 }
 
 /**********************************/
