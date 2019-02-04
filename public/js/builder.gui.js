@@ -27,6 +27,9 @@ class GUI {
      * @param {string} containerId Id of the Tree to switch to 
      */
     Tree_ChangeTo(containerId) {
+        $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
+        $("#sk_" + containerId.split("_")[1] + "_button").addClass("sk_tree_button_active"); 
+
         $("#sk_container_r").children(".sk_tree").each(function () {
             $(this).hide(); 
         });

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     // Skill tab navigation //
     function changeTab(event) {
-        gui.Tree_ChangeTo(event.target.id.replace("tab", "container")); 
+        gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
         const element = $(".sk_description");
         element.data("skill", "none");
         element.text("");
@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
 
     for(const value of trees) {
-        $(`#sk_${value}_tab`).click(changeTab);
+        $(`#sk_${value}_button`).click(changeTab);
     }
 
     // Skill Icon buttons //
