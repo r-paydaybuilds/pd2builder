@@ -2,18 +2,43 @@
 /*            ARMORS CSS          */
 /**********************************/
 
+#arm_page {
+  padding: 0 15px; 
+}
+
+#arm_container_t {
+  padding: 20px; 
+}
+
+#arm_description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
 .arm_icon {
   display: inline-block; 
+  position: relative; 
   min-width: 256px;
   min-height: 256px; 
 }
 
 .arm_icon:hover {
-  border: 2px solid rgb(210, 210, 210); 
+  border: 2px solid rgb(190, 190, 190); 
 }
 
 .arm_icon.arm_selected {
-  border: 2px solid rgb(240, 240, 240); 
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.arm_icon.arm_selected::before {
+  content: 'EQUIP.'; 
+  font-size: 16pt; 
+
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+
 }
 
 

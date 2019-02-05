@@ -106,6 +106,13 @@ $(document).ready(function () {
 
     });
 
+    $(".arm_icon").each(function (){
+
+        $(this).click(function (){
+            gui.Armor_Select($(this)); 
+        });
+    });
+
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 

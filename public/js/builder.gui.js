@@ -185,6 +185,7 @@ class GUI {
      */
     Skill_AnimateInvalid(skillObj) {
         if(skillObj.hasClass("sk_invalid")) return;
+
         skillObj.addClass("sk_invalid");
         setTimeout(function(skillObj) {
             skillObj.removeClass("sk_invalid");
@@ -196,10 +197,10 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */
     Armor_Select(armorObj) {
-        if (!armorObj.hasClass("arm_selected")) {
-            $(".arm_icon.arm_selected").removeClass("arm_selected"); 
-            $(this).addClass("arm_selected"); 
-        }
+        if (armorObj.hasClass("arm_selected")) return; 
+
+        $(".arm_icon.arm_selected").removeClass("arm_selected"); 
+        armorObj.addClass("arm_selected"); 
     }
 }
 
