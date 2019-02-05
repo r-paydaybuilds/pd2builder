@@ -3,19 +3,11 @@ $(document).ready(function () {
     //
     // Bind Events on page 
 
-
     // Skill tab navigation //
-    function changeTab(event) {
-        gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
-        const element = $(".sk_description");
-        element.data("skill", "none");
-        element.text("");
-        if(previous) previous.css("visibility", "hidden"); 
-        previous = null;
-    }
-
-    for(const value of trees) {
-        $(`#sk_${value}_button`).click(changeTab);
+    for (const value of trees) {
+        $(`#sk_${value}_button`).click(function (event) {
+            gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
+        }); 
     }
 
     // Skill Icon buttons //
@@ -27,9 +19,7 @@ $(document).ready(function () {
             const skill = exp.skills.get(this.firstElementChild.id);
             const skillStore = skills.get(this.firstElementChild.id);
 
-            if(element.hasClass("sk_locked")) return;
-
-            if(element.hasClass("sk_selected_aced")) {
+            if (element.hasClass("sk_locked") || element.hasClass("sk_selected_aced")) {
                 gui.Skill_AnimateInvalid(element);
                 return;
             }
@@ -55,7 +45,7 @@ $(document).ready(function () {
                 });
             }
 
-            if(exp.skills.points === 0) gui.Skill_ColorizePointsRemaining("#FF4751");
+            if (exp.skills.points === 0) gui.Skill_ColorizePointsRemaining("#FF4751");
             gui.Skill_Add(element); 
             gui.Skill_UpdatePointsRemaining(exp.skills.points);
             gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);

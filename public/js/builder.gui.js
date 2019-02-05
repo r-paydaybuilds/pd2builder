@@ -27,6 +27,13 @@ class GUI {
      * @param {string} treeId Id of the Tree to switch to 
      */
     Tree_ChangeTo(treeId) {
+        // Clean the skill description text 
+        const desc = $(".sk_description");
+        desc.data("skill", "none");
+        desc.text("");
+        if (previous) previous.css("visibility", "hidden"); 
+        previous = null;
+
         // Manage the buttons
         $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
         $("#sk_" + treeId.split("_")[1] + "_button").addClass("sk_tree_button_active"); 
