@@ -190,6 +190,17 @@ class GUI {
             skillObj.removeClass("sk_invalid");
         }, 400, skillObj);
     }
+
+    /**
+     * Select a specified armor.
+     * @param {Object} armorObj A jQuery object representing the clicked armor icon
+     */
+    Armor_Select(armorObj) {
+        if (!armorObj.hasClass("arm_selected")) {
+            $(".arm_icon.arm_selected").removeClass("arm_selected"); 
+            $(this).addClass("arm_selected"); 
+        }
+    }
 }
 
 const gui = new GUI();
