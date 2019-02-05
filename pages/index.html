@@ -48,7 +48,7 @@
       </div>
     </nav>
 
-    <!-- Page Content -->
+    <!-- Top section Content -->
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="col">
@@ -56,12 +56,26 @@
         </div>
       </div>
       <div class="row-fluid">
-        <div id="sk_tree_buttons" class="btn-group" role="group" aria-label="Tab navigator">
-          <button id="sk_mastermind_button" type="button" class="btn btn-secondary sk_tree_button_active">MASTERMIND</button>
-          <button id="sk_enforcer_button" type="button" class="btn btn-secondary">ENFORCER</button>
-          <button id="sk_technician_button" type="button" class="btn btn-secondary">TECHNICIAN</button>
-          <button id="sk_ghost_button" type="button" class="btn btn-secondary">GHOST</button>
-          <button id="sk_fugitive_button" type="button" class="btn btn-secondary">FUGITIVE</button>
+        <div class="col">
+          <div id="tab_page_buttons" class="btn-group" role="group">
+            <button id="tab_skills_button" type="button" class="btn btn-secondary">Skills</button>
+            <button id="tab_armors_button" type="button" class="btn btn-secondary">Armors</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Tab Content -->
+    <div id="tab_skills_page" class="container-fluid tab_page_content">
+      <div class="row-fluid">
+        <div class="col"> 
+          <div id="sk_tree_buttons" class="btn-group" role="group">
+            <button id="sk_mastermind_button" type="button" class="btn btn-secondary sk_tree_button_active">MASTERMIND</button>
+            <button id="sk_enforcer_button" type="button" class="btn btn-secondary">ENFORCER</button>
+            <button id="sk_technician_button" type="button" class="btn btn-secondary">TECHNICIAN</button>
+            <button id="sk_ghost_button" type="button" class="btn btn-secondary">GHOST</button>
+            <button id="sk_fugitive_button" type="button" class="btn btn-secondary">FUGITIVE</button>
+          </div>
         </div>
       </div>
       <div id="sk_page" class="row">
@@ -798,9 +812,33 @@
       </div>
     </div>
 
+    <!-- Armor Tab Content -->
+    <div id="tab_armors_page" class="container-fluid tab_page_content">
+      <div class="row">
+        <div id="arm_container_t" class="col-9">
+          <div id="arm_container_b">
+            <div id="arm_container_l">
+              <div id="arm_container_r">
+                <div id="suit" class="arm_icon"></div>
+                <div id="light_ballistic" class="arm_icon"></div>
+                <div id="ballistic" class="arm_icon"></div>
+                <div id="heavy_ballistic" class="arm_icon"></div>
+                <div id="flak" class="arm_icon"></div>                
+                <div id="ictv" class="arm_icon"></div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="arm_description_container" class="col-3">
+          <p>Armor description</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
     <script src="js/builder.globals.js"></script>
     <script src="js/builder.gui.js"></script>
     <script src="js/builder.main.js"></script>

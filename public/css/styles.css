@@ -17,8 +17,8 @@ body > div {
 
 
 
-#sk_tree_buttons {
-  padding-top: 50px; 
+#tab_page_buttons {
+  padding-bottom: 50px; 
 }
 
 #sk_tree_buttons button {
@@ -320,4 +320,40 @@ body > div {
 
 .color_number {
   color: rgb(50, 190, 255); 
+}
+
+
+
+.arm_icon {
+  display: inline-block; 
+  min-width: 256px;
+  min-height: 256px; 
+}
+
+#suit {
+  background: url("/img/armors/suit.png") no-repeat center; 
+}
+
+#light_ballistic {
+  background: url("/img/armors/light_ballistic.png") no-repeat center; 
+}
+
+#ballistic {
+  background: url("/img/armors/ballistic.png") no-repeat center; 
+}
+
+#heavy_ballistic {
+  background: url("/img/armors/heavy_ballistic.png") no-repeat center; 
+}
+
+#flak {
+  background: url("/img/armors/flak.png") no-repeat center; 
+}
+
+#ctv {
+  background: url("/img/armors/ctv.png") no-repeat center; 
+}
+
+#ictv {
+  background: url("/img/armors/ictv.png") no-repeat center; 
 }

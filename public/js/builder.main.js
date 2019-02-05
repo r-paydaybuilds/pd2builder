@@ -3,6 +3,14 @@ $(document).ready(function () {
     //
     // Bind Events on page 
 
+    // Tab page navigation //
+    $("#tab_skills_button").click(function () {
+        gui.Tab_ChangeTo("tab_skills_page"); 
+    });
+    $("#tab_armors_button").click(function () {
+        gui.Tab_ChangeTo("tab_armors_page"); 
+    });
+
     // Skill tab navigation //
     for (const value of trees) {
         $(`#sk_${value}_button`).click(function (event) {
@@ -98,6 +106,7 @@ $(document).ready(function () {
 
     });
 
+    gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 
 });

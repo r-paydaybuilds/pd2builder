@@ -22,6 +22,17 @@ class GUI {
         }
     }
 
+    /** 
+     * Change selected Tab to another. 
+     * @param {string} tabId Id of the Tab to switch to 
+     */
+    Tab_ChangeTo(tabId) {
+        $(".tab_page_content").each(function () {
+            $(this).hide(); 
+        });
+        $("#" + tabId).show(); 
+    }
+
     /**
      * Change selected Skill Tree to another.
      * @param {string} treeId Id of the Tree to switch to 
@@ -135,7 +146,7 @@ class GUI {
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
-            
+
         desc.html(html);
         desc.data("skill", skillId);
     }
