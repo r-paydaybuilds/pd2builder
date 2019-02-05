@@ -1,0 +1,304 @@
+/**********************************/
+/*            SKILLS CSS          */
+/**********************************/
+
+#sk_page {
+  padding: 0px 15px 10px 15px; 
+}
+
+#sk_tree_buttons button {
+  border: 0px; 
+  padding-left: 10px; 
+  padding-right: 10px; 
+  text-align: center;
+
+  border-radius: 10px 10px 0px 0px; 
+  
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 16pt; 
+}
+
+#sk_tree_buttons button.sk_tree_button_active {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#sk_tree_buttons button:focus,
+#sk_tree_buttons button:active,
+#sk_tree_buttons button:active:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+#sk_container_l {
+  border-image: url("/img/borders/skill_border.png") 3 15 repeat;
+  border-top: 3px solid transparent; 
+  border-bottom: 3px solid transparent; 
+}
+
+#sk_container_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-topleft.png") no-repeat; 
+}
+
+#sk_container_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-bottomleft.png") no-repeat; 
+}
+
+#sk_container_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-topright.png") no-repeat; 
+}
+
+#sk_container_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: url("/img/borders/corner-bottomright.png") no-repeat; 
+}
+
+#sk_description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
+#sk_description_t {
+  margin-top: 10px; 
+}
+
+#sk_description_t::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 15%; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_t::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 15%; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_b::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_b::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 15%; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 15%; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#sk_description_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+.sk_description {
+  font-size: 13pt; 
+}
+
+.sk_description_title {
+  font-size: 16pt; 
+}
+
+.sk_points_remaining { 
+  height: 15%; 
+  margin-top: 0px; 
+  font-size: 20pt; 
+  align-items: center;
+}
+
+.sk_subtree {
+  background:         bottom center url("/img/skills/background.png") no-repeat;
+  background-size:    100% 25%;
+
+  margin-left: 5px; 
+  margin-right: 5px; 
+
+  -webkit-transition: background-size 0.4s ease;
+  -moz-transition:    background-size 0.4s ease;
+  -o-transition:      background-size 0.4s ease;
+  transition:         background-size 0.4s ease;
+}
+
+.sk_tier {
+  height: 140px; 
+}
+
+.sk_tier:not(:first-child) {
+  border-top: 1px solid rgb(40, 100, 140); 
+}
+
+.sk_tier:not(:first-child)::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  height: 2px; 
+  width: 3%; 
+  border-bottom: 2px solid white; 
+}
+
+.sk_tier:not(:first-child)::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  height: 2px; 
+  width: 3%; 
+  border-bottom: 2px solid white; 
+}
+
+.sk_icon {
+  cursor: pointer; 
+  padding-top: 20px; 
+}
+
+.sk_icon > div {
+  width: 80px;
+  min-height: 80px;
+  margin: 0 auto; 
+  position: relative; 
+  z-index: 1002; 
+  background: url("/img/skills/icons.png") no-repeat;
+  opacity: 0.2; 
+  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+}
+
+.sk_icon:hover + .sk_name {
+  visibility: visible; 
+}
+
+.sk_icon:not(.sk_locked):hover > div {
+  transform: scale(1.05); 
+}
+
+.sk_icon:not(.sk_locked):not(.sk_selected_basic):not(.sk_selected_aced):hover > div {
+  opacity: 0.3; 
+}
+
+.sk_icon.sk_locked {
+  background: url("/img/skills/padlock.png") no-repeat center center;
+}
+
+.sk_icon.sk_invalid > div {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.sk_icon.sk_invalid + .sk_name {
+  color: #FF4751;
+}
+
+.sk_icon.sk_selected_basic > div {
+  opacity: 1; 
+}
+
+.sk_icon.sk_selected_aced > div {
+  opacity: 1; 
+}
+
+.sk_icon.sk_selected_aced {
+  background: url("/img/skills/ace.png") no-repeat center center; 
+}
+
+.sk_name {
+  display: block; 
+  font-size: 14pt; 
+  line-height: 1.1em; 
+  visibility: hidden; 
+  -webkit-transition: color .2s ease;
+  -moz-transition:    color .2s ease;
+  -o-transition:      color .2s ease;
+  transition:         color .2s ease;
+}
+
+.sk_subtree_name {
+  font-family: "DINEngschrift";
+  text-align: center; 
+}
+
+.sk_subtree_name > p {
+  font-size: 28pt; 
+  color: rgb(40, 90, 130);   
+}
+
+.color_number {
+  color: rgb(50, 190, 255); 
+}
