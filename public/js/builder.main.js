@@ -30,7 +30,7 @@ $(document).ready(function () {
             if(element.hasClass("sk_locked")) return;
 
             if(element.hasClass("sk_selected_aced")) {
-                gui.Skill_TemporalInvalid(element);
+                gui.Skill_AnimateInvalid(element);
                 return;
             }
 

@@ -62,23 +62,23 @@ class GUI {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;
-                this.Tier_Unlocker(subtreeId, index+1);
+                this.Tier_Unlock(subtreeId, index+1);
             } else {
                 progress += (points/pointsNeeded)*25;
-                this.Tier_Locker(subtreeId, index+1);
+                this.Tier_Lock(subtreeId, index+1);
             }
         }
         element.css("background-size", `100% ${Math.round(progress)}%`);
     }
     
     /**
-     * Locks the tier
+     * Lock skills in a tier of a subtree.
      * @param {string} subtreeId Id of the subtree
-     * @param {number} tier The tier to take care of
+     * @param {number} tierId Id of the tier 
      */
-    Tier_Locker(subtreeId, tier) {
+    Tier_Lock(subtreeId, tierId) {
         const element = $(`#sk_${subtreeId}_subtree`)
-            .children(`.sk_tier[data-tier='${tier}']`)
+            .children(`.sk_tier[data-tier='${tierId}']`)
             .find(".sk_icon");
         if(!element.hasClass("sk_locked")) {
             element.addClass("sk_locked");
@@ -86,13 +86,13 @@ class GUI {
     }
 
     /**
-     * Unlocks the tier
+     * Unlock skills in a tier of a subtree. 
      * @param {string} subtreeId Id of the subtree
-     * @param {number} tier The tier to take care of
+     * @param {number} tierId Id of the tier 
      */
-    Tier_Unlocker(subtreeId, tier) {
+    Tier_Unlock(subtreeId, tierId) {
         const element = $(`#sk_${subtreeId}_subtree`)
-            .children(`.sk_tier[data-tier='${tier}']`)
+            .children(`.sk_tier[data-tier='${tierId}']`)
             .find(".sk_icon");
         if(element.hasClass("sk_locked")) {
             element.removeClass("sk_locked");
@@ -108,9 +108,9 @@ class GUI {
     }
 
     /**
-     * Makes the Points remaining text the color mentioned
+     * Colorize the Points Remaining text with the specified color. If color is omitted, it defaults to white
      * @default #f0f0f0
-     * @param {String} color A css compatible color
+     * @param {String} color A css compatible color (format: #rrggbb)
      */
     Skill_ColorizePointsRemaining(color = "#f0f0f0") {
         $(".sk_points_remaining").css("color", color);
@@ -145,10 +145,10 @@ class GUI {
     }
     
     /**
-     * Gives the invalid class to the skill for a temporal time
+     * Animate a skill icon by adding the invalid class to it, temporarily. 
      * @param {Object} skillObj A jQuery object representing the skill icon  
      */
-    Skill_TemporalInvalid(skillObj) {
+    Skill_AnimateInvalid(skillObj) {
         if(skillObj.hasClass("sk_invalid")) return;
         skillObj.addClass("sk_invalid");
         setTimeout(function(skillObj) {
