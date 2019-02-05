@@ -24,7 +24,7 @@ $(document).ready(function () {
                 return;
             }
 
-            // Skill backend here
+
             if(skill) {
                 if(exp.skills.points-skillStore.ace < 0) {
                     return;
@@ -85,20 +85,14 @@ $(document).ready(function () {
             gui.Skill_Remove(element); 
             gui.Skill_UpdatePointsRemaining(exp.skills.points);
             gui.Subtree_MoveBackground(skillStore.subtree, exp.subtrees[skillStore.subtree].points);
-            // Skill backend here
         });
 
         // Bind on hovering mouse, to show skill description
         $(this).mouseover(function (event) {
-            const element = $(".sk_description");
-            if(element.data("skill") !== this.firstElementChild.id) {
-                const skill = skills.get(this.firstElementChild.id);
-                let html = `<p class="sk_description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
-                    .replace(/\n/g, "</p><p>")
-                    .replace(/\t/g, "<br>")
-                    .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
-                element.html(html);
-                element.data("skill", this.firstElementChild.id);
+            const id = this.firstElementChild.id; 
+            
+            if ($(".sk_description").data("skill") !== id) {
+                gui.Skill_DisplayDescription(id); 
             }
         });
 

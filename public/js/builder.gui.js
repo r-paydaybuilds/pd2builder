@@ -117,10 +117,27 @@ class GUI {
     /**
      * Colorize the Points Remaining text with the specified color. If color is omitted, it defaults to white
      * @default #f0f0f0
-     * @param {String} color A css compatible color (format: #rrggbb)
+     * @param {string} color A css compatible color (format: #rrggbb)
      */
     Skill_ColorizePointsRemaining(color = "#f0f0f0") {
         $(".sk_points_remaining").css("color", color);
+    }
+
+    /**
+     * Display a skill's description inside the description container. 
+     * @param {string} skillId Id of the skill of which to display the description
+     */
+    Skill_DisplayDescription(skillId) {
+        const desc = $(".sk_description"); 
+        const skill = skills.get(skillId);
+
+        let html = `<p class="sk_description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+            
+        desc.html(html);
+        desc.data("skill", skillId);
     }
 
     /**
