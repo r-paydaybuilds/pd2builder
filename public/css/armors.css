@@ -18,20 +18,39 @@
 
 .arm_icon {
   display: inline-block; 
-  position: relative; 
+}
+
+.arm_icon > div {
+  position: relative;
+  z-index: -1;
   min-width: 256px;
-  min-height: 256px; 
+  min-height: 256px;
+  -webkit-transition: transform .3s ease;
+  -moz-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transform: scale(0.65);
 }
 
-.arm_icon:hover {
-  border: 2px solid rgb(190, 190, 190); 
+.arm_icon:hover > div {
+  transform: scale(0.85);
 }
 
-.arm_icon.arm_selected {
+.arm_icon.arm_locked {
+  background: url("/img/lock_skill.png") no-repeat center center;
+}
+
+.arm_icon.arm_locked > div {
+  -webkit-filter: brightness(0.1);
+  filter: brightness(0.1);
+}
+
+.arm_icon.arm_selected > div {
+  transform: scale(0.85);
   border: 3px solid rgb(240, 240, 240); 
 }
 
-.arm_icon.arm_selected::before {
+.arm_icon.arm_selected::before > div{
   content: 'EQUIP.'; 
   font-size: 16pt; 
 
@@ -204,7 +223,9 @@
   background: rgb(215, 220, 225); 
 }
 
-
+/**********************************/
+/*          ARMOR IMAGES          */
+/**********************************/
 
 #suit {
   background: url("/img/armors/suit.png") no-repeat center; 
