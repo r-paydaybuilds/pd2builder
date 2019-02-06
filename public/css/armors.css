@@ -32,7 +32,7 @@
   transform: scale(0.65);
 }
 
-.arm_icon:hover > div {
+.arm_icon:not(.arm_locked):hover > div {
   transform: scale(0.85);
 }
 
@@ -41,8 +41,8 @@
 }
 
 .arm_icon.arm_locked > div {
-  -webkit-filter: brightness(0.1);
-  filter: brightness(0.1);
+  -webkit-filter: brightness(0.2);
+  filter: brightness(0.2);
 }
 
 .arm_icon.arm_selected > div {
@@ -50,14 +50,13 @@
   border: 3px solid rgb(240, 240, 240); 
 }
 
-.arm_icon.arm_selected::before > div{
+.arm_icon.arm_selected > div::before {
   content: 'EQUIP.'; 
   font-size: 16pt; 
 
   position: absolute; 
   top: 10px;
   left: 10px;
-
 }
 
 

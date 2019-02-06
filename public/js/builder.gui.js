@@ -34,8 +34,8 @@ class GUI {
     }
 
     /** 
-     * Tells you if the tab is on. 
-     * @param {string} tabId Id of the Tab to switch to 
+     * Returns true if the currently selected tab is that passed to the function. 
+     * @param {string} tabId Id of the Tab to check 
      * @returns {boolean}
      */
     Tab_IsOn(tabId) {
