@@ -33,6 +33,15 @@ class GUI {
         $("#" + tabId).show(); 
     }
 
+    /** 
+     * Tells you if the tab is on. 
+     * @param {string} tabId Id of the Tab to switch to 
+     * @returns {boolean}
+     */
+    Tab_IsOn(tabId) {
+        return $("#" + tabId).is(":visible"); 
+    }
+
     /**
      * Change selected Skill Tree to another.
      * @param {string} treeId Id of the Tree to switch to 
@@ -201,6 +210,26 @@ class GUI {
 
         $(".arm_icon.arm_selected").removeClass("arm_selected"); 
         armorObj.addClass("arm_selected"); 
+    }
+
+    /**
+     * Unlocks the told armor
+     * @param {Object} armorObj A jQuery object representing the armor icon
+     */
+    Armor_Unlock(armorObj) {
+        if(!armorObj.hasClass("arm_locked")) return;
+
+        armorObj.removeClass("arm_locked");
+    }
+
+    /**
+     * Locks the told armor
+     * @param {Object} armorObj A jQuery object representing the armor icon
+     */
+    Armor_Lock(armorObj) {
+        if(armorObj.hasClass("arm_locked")) return;
+
+        armorObj.addClass("arm_locked");
     }
 }
 

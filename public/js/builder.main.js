@@ -8,6 +8,12 @@ $(document).ready(function () {
         gui.Tab_ChangeTo("tab_skills_page"); 
     });
     $("#tab_armors_button").click(function () {
+        if(gui.Tab_IsOn("tab_armors_page")) return;
+
+        const ironManSkill = exp.skills.get("iron_man");
+        if(ironManSkill && ironManSkill.state == "aced") gui.Armor_Unlock($("#ictv").parent());
+        else gui.Armor_Lock($("#ictv").parent());
+
         gui.Tab_ChangeTo("tab_armors_page"); 
     });
 
