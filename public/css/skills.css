@@ -19,6 +19,10 @@
   font-size: 16pt; 
 }
 
+#sk_tree_buttons button:hover {
+  color: rgb(215, 220, 225);
+}
+
 #sk_tree_buttons button.sk_tree_button_active {
   background: rgb(215, 220, 225); 
   background-size: 100% 100%; 
