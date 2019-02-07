@@ -115,6 +115,13 @@ $(document).ready(function () {
 
     });
 
+    $(".pk_deck").each(function () {
+
+        $(this).click(function () {
+            gui.PerkDeck_Select($(this)); 
+        });
+    }); 
+
     $(".arm_icon").each(function (){
 
         $(this).click(function (){

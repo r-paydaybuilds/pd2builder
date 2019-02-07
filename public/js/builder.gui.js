@@ -202,6 +202,22 @@ class GUI {
     }
 
     /**
+     * Select a specified perk deck. 
+     * @param {Object} perkdeckObj A jQuery object representing the clicked perk deck
+     */
+    PerkDeck_Select(perkdeckObj) {
+        if (perkdeckObj.hasClass("pk_selected")) return; 
+
+        const oldTitle = $(".pk_deck.pk_selected p").text();
+        $(".pk_deck.pk_selected p").text(oldTitle.replace("EQUIPPED: ", "")); 
+        $(".pk_deck.pk_selected").removeClass("pk_selected"); 
+
+        perkdeckObj.addClass("pk_selected"); 
+        const newTitle = perkdeckObj.children("p"); 
+        newTitle.text("EQUIPPED: " + newTitle.text()); 
+    }
+
+    /**
      * Select a specified armor.
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */

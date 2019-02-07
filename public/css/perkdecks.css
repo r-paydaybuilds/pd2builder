@@ -43,11 +43,11 @@
   position: relative; 
   border: 2px solid transparent; 
   margin: 12px 18px; 
-  padding: 30px 5px 10px; 
+  padding: 35px 5px 15px; 
 }
 
 .pk_deck:hover {
-  border: 2px solid rgb(210, 210, 210); 
+  border: 2px solid rgb(190, 190, 190); 
 }
 
 .pk_deck > p {
@@ -63,6 +63,11 @@
   top: 30px; 
   margin: 0 auto; 
   background: url("/img/perks/card.png") no-repeat center center; 
+}
+
+.pk_deck.pk_selected {
+  background-color: rgba(0, 0, 0, 0.2); 
+  border: 2px solid rgb(240, 240, 240); 
 }
 
 
