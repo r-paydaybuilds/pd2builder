@@ -1,0 +1,228 @@
+/**********************************/
+/*          PERK DECKS CSS        */
+/**********************************/
+
+#pk_page {
+  padding: 0 15px; 
+}
+
+#pk_container_t {
+  padding: 20px; 
+}
+
+#pk_container_r {
+  height: 60vh; 
+  padding: 0 10px; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+#pk_container_r::-webkit-scrollbar {
+  width: 4px; 
+}
+
+#pk_container_r::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.3);   
+  
+}
+
+#pk_container_r::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 240); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+#pk_description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
+.pk_deck {
+  position: relative; 
+  border: 2px solid transparent; 
+  margin: 12px 18px; 
+  padding: 30px 5px 10px; 
+}
+
+.pk_deck:hover {
+  border: 2px solid rgb(210, 210, 210); 
+}
+
+.pk_deck > p {
+  font-size: 18pt; 
+  position: absolute; 
+  top: 0; 
+  left: 10px; 
+}
+
+.pk_deck > div {
+  width: 64px; 
+  height: 92px; 
+  top: 30px; 
+  margin: 0 auto; 
+  background: url("/img/perks/card.png") no-repeat center center; 
+}
+
+
+#pk_container_t::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_t::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_b::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_b::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_container_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+
+#pk_description_t::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_t::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0;  
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_b::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_b::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 3px; 
+  width: 15px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_l::before {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_l::after {
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_r::before {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
+
+#pk_description_r::after {
+  content: ""; 
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  height: 15px; 
+  width: 3px;  
+  background: rgb(215, 220, 225); 
+}
