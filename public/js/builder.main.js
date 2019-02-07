@@ -4,18 +4,21 @@ $(document).ready(function () {
     // Bind Events on page 
 
     // Tab page navigation //
-    $("#tab_skills_button").click(function () {
-        gui.Tab_ChangeTo("tab_skills_page"); 
-    });
-    $("#tab_armors_button").click(function () {
-        if(gui.Tab_IsOn("tab_armors_page")) return;
+    $("#tab_page_buttons button").each(function (){
+        $(this).click(function () {
+            const targetTab = $(this).attr("id").replace("_button", "_page");
+            if (gui.Tab_IsOn(targetTab)) return;
 
-        const ironManSkill = exp.skills.get("iron_man");
-        if(ironManSkill && ironManSkill.state == "aced") gui.Armor_Unlock($("#ictv").parent());
-        else gui.Armor_Lock($("#ictv").parent());
+            // Check for iron man 
+            const ironManSkill = exp.skills.get("iron_man");
+            if (ironManSkill && ironManSkill.state == "aced")
+                gui.Armor_Unlock($("#ictv").parent());
+            else 
+                gui.Armor_Lock($("#ictv").parent());
 
-        gui.Tab_ChangeTo("tab_armors_page"); 
-    });
+            gui.Tab_ChangeTo(targetTab); 
+        });
+    }); 
 
     // Skill tab navigation //
     for (const value of trees) {
