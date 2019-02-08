@@ -200,6 +200,10 @@
   transition:         background-size 0.4s ease;
 }
 
+.sk_subtree_highlight {
+  filter: brightness(1.1); 
+}
+
 .sk_tier {
   height: 140px; 
 }
@@ -295,12 +299,13 @@
 
 .sk_subtree_name {
   font-family: "DINEngschrift";
+  font-size: 28pt; 
   text-align: center; 
+  color: rgb(40, 90, 130);   
 }
 
-.sk_subtree_name > p {
-  font-size: 28pt; 
-  color: rgb(40, 90, 130);   
+.sk_subtree_name.sk_subtree_name_highlight {
+  color: rgb(240, 240, 240); 
 }
 
 .color_number {

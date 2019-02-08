@@ -97,6 +97,32 @@ class GUI {
         }
         element.css("background-size", `100% ${Math.round(progress)}%`);
     }
+
+    /**
+     * Called when hovering over a specific subtree, to highlight it and its name below the column. 
+     * @param {Object} subtreeObj A jQuery object representing the subtree that's being hovered over. 
+     */
+    Subtree_HoveringHighlightOn(subtreeObj) {
+        if (!subtreeObj) return; 
+
+        const subtreeId = subtreeObj.attr("id"); 
+        const subtreeName = subtreeId.split("_")[1].toUpperCase(); 
+
+        subtreeObj.addClass("sk_subtree_highlight"); 
+        $(".sk_subtree_name").each(function () {
+            if ($(this).children("p").text() === subtreeName) {
+                $(this).addClass("sk_subtree_name_highlight"); 
+            }
+        }); 
+    }
+
+    /**
+     * Called when moving the mouse out of a subtree, to stop highlighting it and its name below the column.  
+     */
+    Subtree_HoveringHighlightOff() {
+        $(".sk_subtree").removeClass("sk_subtree_highlight"); 
+        $(".sk_subtree_name").removeClass("sk_subtree_name_highlight"); 
+    }
     
     /**
      * Lock skills in a tier of a subtree.

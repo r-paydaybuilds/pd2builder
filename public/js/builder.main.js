@@ -27,6 +27,18 @@ $(document).ready(function () {
         }); 
     }
 
+    // Subtree //
+    $(".sk_subtree").each(function () {
+
+        $(this).mouseenter(function () {
+            gui.Subtree_HoveringHighlightOn($(this)); 
+        });
+
+        $(this).mouseleave(function () {
+            gui.Subtree_HoveringHighlightOff(); 
+        });
+    });
+
     // Skill Icon buttons //
     $(".sk_icon").each(function () {
 
