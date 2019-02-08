@@ -40,6 +40,7 @@
 }
 
 .pk_deck {
+  cursor: pointer; 
   position: relative; 
   border: 2px solid transparent; 
   margin: 12px 18px; 
@@ -62,7 +63,18 @@
   height: 92px; 
   top: 30px; 
   margin: 0 auto; 
-  background: url("/img/perks/card.png") no-repeat center center; 
+  background: url("/img/perks/card.png") no-repeat; 
+}
+
+.pk_deck > div::after {
+  width: 48px; 
+  height: 48px; 
+
+  display: block;
+  margin: 22px auto 0; /* Center vertically inside card */
+  
+  content: ""; 
+  background: url("/img/perks/icons.png") no-repeat; 
 }
 
 .pk_deck.pk_selected {

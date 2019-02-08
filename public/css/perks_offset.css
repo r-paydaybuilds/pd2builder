@@ -1,0 +1,43 @@
+/**********************************/
+/* PERKS ICON SPRITESHEET OFFSETS */
+/**********************************/
+
+/* SHARED */
+
+.pk_deck > div:nth-of-type(2)::after {
+  background-position: -48px 0; 
+}
+
+.pk_deck > div:nth-of-type(4)::after {
+  background-position: -96px 0; 
+}
+
+.pk_deck > div:nth-of-type(6)::after {
+  background-position: -144px 0; 
+}
+
+.pk_deck > div:nth-of-type(8)::after {
+  background-position: -192px 0; 
+}
+
+
+/* CREW CHIEF */ 
+
+#crew_chief > div:nth-of-type(1)::after {
+  background-position: 0 -48px; 
+}
+
+#crew_chief > div:nth-of-type(3)::after {
+  background-position: -48px -48px ; 
+}
+#crew_chief > div:nth-of-type(5)::after {
+  background-position: -96px -48px ; 
+}
+#crew_chief > div:nth-of-type(7)::after {
+  background-position: -144px -48px ; 
+}
+#crew_chief > div:nth-of-type(9)::after {
+  background-position: -192px -48px ; 
+}
+
+
