@@ -1,407 +1,409 @@
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Predator", 
-    "mag_size": 6, 
-    "max_ammo": 66,
-    "rof": 300,
-    "damage": 55,
-    "accuracy": 28,
-    "stability": 44,
-    "concealment": 14,
-    "threat": 28,
-    "reload_speed": 4.8,
-	"reload_shell": 0.8,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Jocelyne", 
-    "mag_size": 2, 
-    "max_ammo": 28,
-    "rof": 500,
-    "damage": 155,
-    "accuracy": 60,
-    "stability": 28,
-    "concealment": 5,
-    "threat": 28,
-    "reload_speed": 5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Reinfield", 
-    "mag_size": 6, 
-    "max_ammo": 42,
-    "rof": 104,
-    "damage": 90,
-    "accuracy": 40,
-    "stability": 32,
-    "concealment": 11,
-    "threat": 28,
-    "reload_speed": 4.8,
-	"reload_shell": 0.8,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "IZHMA", 
-    "mag_size": 7, 
-    "max_ammo": 70,
-    "rof": 333,
-    "damage": 42,
-    "accuracy": 28,
-    "stability": 44,
-    "concealment": 13,
-    "threat": 28,
-    "reload_speed": 4,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Mosconi", 
-    "mag_size": 2, 
-    "max_ammo": 32,
-    "rof": 500,
-    "damage": 155,
-    "accuracy": 60,
-    "stability": 36,
-    "concealment": 17,
-    "threat": 37,
-    "reload_speed": 2.5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "M1014", 
-    "mag_size": 8, 
-    "max_ammo": 64,
-    "rof": 429,
-    "damage": 55,
-    "accuracy": 28,
-    "stability": 44,
-    "concealment": 12,
-    "threat": 26,
-    "reload_speed": 5.9,
-	"reload_shell": 0.75,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Raven", 
-    "mag_size": 14, 
-    "max_ammo": 42,
-    "rof": 104,
-    "damage": 90,
-    "accuracy": 44,
-    "stability": 44,
-    "concealment": 22,
-    "threat": 28,
-    "reload_speed": 9.6,
-	"reload_shell": 0.7,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Stakeout", 
-    "mag_size": 8, 
-    "max_ammo": 72,
-    "rof": 300,
-    "damage": 42,
-    "accuracy": 28,
-    "stability": 44,
-    "concealment": 9,
-    "threat": 28,
-    "reload_speed": 4.1,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "shotgun", 
-    "name": "Breaker", 
-    "mag_size": 7, 
-    "max_ammo": 21,
-    "rof": 80,
-    "damage": 155,
-    "accuracy": 48,
-    "stability": 28,
-    "concealment": 20,
-    "threat": 28,
-    "reload_speed": 4.1,
-	"reload_shell": 0.6,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
+[
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Predator",
+        "mag_size": 6,
+        "max_ammo": 66,
+        "rof": 300,
+        "damage": 55,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 14,
+        "threat": 28,
+        "reload_speed": 4.8,
+        "reload_shell": 0.8,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Jocelyne",
+        "mag_size": 2,
+        "max_ammo": 28,
+        "rof": 500,
+        "damage": 155,
+        "accuracy": 60,
+        "stability": 28,
+        "concealment": 5,
+        "threat": 28,
+        "reload_speed": 5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Reinfield",
+        "mag_size": 6,
+        "max_ammo": 42,
+        "rof": 104,
+        "damage": 90,
+        "accuracy": 40,
+        "stability": 32,
+        "concealment": 11,
+        "threat": 28,
+        "reload_speed": 4.8,
+        "reload_shell": 0.8,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "IZHMA",
+        "mag_size": 7,
+        "max_ammo": 70,
+        "rof": 333,
+        "damage": 42,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 13,
+        "threat": 28,
+        "reload_speed": 4,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Mosconi",
+        "mag_size": 2,
+        "max_ammo": 32,
+        "rof": 500,
+        "damage": 155,
+        "accuracy": 60,
+        "stability": 36,
+        "concealment": 17,
+        "threat": 37,
+        "reload_speed": 2.5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "M1014",
+        "mag_size": 8,
+        "max_ammo": 64,
+        "rof": 429,
+        "damage": 55,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 12,
+        "threat": 26,
+        "reload_speed": 5.9,
+        "reload_shell": 0.75,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Raven",
+        "mag_size": 14,
+        "max_ammo": 42,
+        "rof": 104,
+        "damage": 90,
+        "accuracy": 44,
+        "stability": 44,
+        "concealment": 22,
+        "threat": 28,
+        "reload_speed": 9.6,
+        "reload_shell": 0.7,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Stakeout",
+        "mag_size": 8,
+        "max_ammo": 72,
+        "rof": 300,
+        "damage": 42,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 9,
+        "threat": 28,
+        "reload_speed": 4.1,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "shotgun",
+        "name": "Breaker",
+        "mag_size": 7,
+        "max_ammo": 21,
+        "rof": 80,
+        "damage": 155,
+        "accuracy": 48,
+        "stability": 28,
+        "concealment": 20,
+        "threat": 28,
+        "reload_speed": 4.1,
+        "reload_shell": 0.6,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
 
 
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "XL 5.56 Microgun", 
-    "mag_size": 750, 
-    "max_ammo": 750,
-    "rof": 200,
-    "damage": 35,
-    "accuracy": 32,
-    "stability": 24,
-    "concealment": 5,
-    "threat": 31,
-    "reload_speed": 7.8,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "DECA Technologies Compound Bow", 
-    "mag_size": 1, 
-    "max_ammo": 30,
-    "rof": 300,
-    "damage": 2000,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 27,
-    "threat": 37,
-    "reload_speed": 1.3,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "OVE9000 Saw", 
-    "mag_size": 150, 
-    "max_ammo": 300,
-    "rof": 400,
-    "damage": 23,
-    "accuracy": 8,
-    "stability": 24,
-    "concealment": 16,
-    "threat": 24,
-    "reload_speed": 3.8,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "GL40", 
-    "mag_size": 1, 
-    "max_ammo": 6,
-    "rof": 300,
-    "damage": 1300,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 18,
-    "threat": 37,
-    "reload_speed": 3.1,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Vulcan Minigun", 
-    "mag_size": 750, 
-    "max_ammo": 750,
-    "rof": 3000,
-    "damage": 25,
-    "accuracy": 32,
-    "stability": 24,
-    "concealment": 5,
-    "threat": 31,
-    "reload_speed": 7.8,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Piglet", 
-    "mag_size": 6, 
-    "max_ammo": 12,
-    "rof": 60,
-    "damage": 1300,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 10,
-    "threat": 37,
-    "reload_speed": 15.3,
-	"reload_shell": 2.55,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Flamethrower", 
-    "mag_size": 900, 
-    "max_ammo": 1800,
-    "rof": 2000,
-    "damage": 7,
-    "accuracy": 0,
-    "stability": 0,
-    "concealment": 7,
-    "threat": 37,
-    "reload_speed": 8.5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Plainsrider", 
-    "mag_size": 1, 
-    "max_ammo": 50,
-    "rof": 300,
-    "damage": 1000,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 30,
-    "threat": 37,
-    "reload_speed": 1,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Light Crossbow", 
-    "mag_size": 1, 
-    "max_ammo": 50,
-    "rof": 40,
-    "damage": 750,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 29,
-    "threat": 10,
-    "reload_speed": 1.5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "English Longbow", 
-    "mag_size": 1, 
-    "max_ammo": 35,
-    "rof": 300,
-    "damage": 2000,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 29,
-    "threat": 27,
-    "reload_speed": 1.5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Heavy Crossbow", 
-    "mag_size": 1, 
-    "max_ammo": 35,
-    "rof": 21,
-    "damage": 2000,
-    "accuracy": 96,
-    "stability": 96,
-    "concealment": 28,
-    "threat": 10,
-    "reload_speed": 2.5,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
-{
-    "category": "primary", 
-    "type": "special", 
-    "name": "Airbow", 
-    "mag_size": 6, 
-    "max_ammo": 30,
-    "rof": 120,
-    "damage": 700,
-    "accuracy": 84,
-    "stability": 84,
-    "concealment": 5,
-    "threat": 10,
-    "reload_speed": 3,
-    "mod_slots": [ 
-        "barrel_ext",
-        "bonus",
-        "stock"
-    ]
-}
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "XL 5.56 Microgun",
+        "mag_size": 750,
+        "max_ammo": 750,
+        "rof": 200,
+        "damage": 35,
+        "accuracy": 32,
+        "stability": 24,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 7.8,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "DECA Technologies Compound Bow",
+        "mag_size": 1,
+        "max_ammo": 30,
+        "rof": 300,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 27,
+        "threat": 37,
+        "reload_speed": 1.3,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "OVE9000 Saw",
+        "mag_size": 150,
+        "max_ammo": 300,
+        "rof": 400,
+        "damage": 23,
+        "accuracy": 8,
+        "stability": 24,
+        "concealment": 16,
+        "threat": 24,
+        "reload_speed": 3.8,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "GL40",
+        "mag_size": 1,
+        "max_ammo": 6,
+        "rof": 300,
+        "damage": 1300,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 18,
+        "threat": 37,
+        "reload_speed": 3.1,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Vulcan Minigun",
+        "mag_size": 750,
+        "max_ammo": 750,
+        "rof": 3000,
+        "damage": 25,
+        "accuracy": 32,
+        "stability": 24,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 7.8,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Piglet",
+        "mag_size": 6,
+        "max_ammo": 12,
+        "rof": 60,
+        "damage": 1300,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 10,
+        "threat": 37,
+        "reload_speed": 15.3,
+        "reload_shell": 2.55,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Flamethrower",
+        "mag_size": 900,
+        "max_ammo": 1800,
+        "rof": 2000,
+        "damage": 7,
+        "accuracy": 0,
+        "stability": 0,
+        "concealment": 7,
+        "threat": 37,
+        "reload_speed": 8.5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Plainsrider",
+        "mag_size": 1,
+        "max_ammo": 50,
+        "rof": 300,
+        "damage": 1000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 30,
+        "threat": 37,
+        "reload_speed": 1,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Light Crossbow",
+        "mag_size": 1,
+        "max_ammo": 50,
+        "rof": 40,
+        "damage": 750,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 1.5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "English Longbow",
+        "mag_size": 1,
+        "max_ammo": 35,
+        "rof": 300,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 29,
+        "threat": 27,
+        "reload_speed": 1.5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Heavy Crossbow",
+        "mag_size": 1,
+        "max_ammo": 35,
+        "rof": 21,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 2.5,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    },
+    {
+        "category": "primary",
+        "type": "special",
+        "name": "Airbow",
+        "mag_size": 6,
+        "max_ammo": 30,
+        "rof": 120,
+        "damage": 700,
+        "accuracy": 84,
+        "stability": 84,
+        "concealment": 5,
+        "threat": 10,
+        "reload_speed": 3,
+        "mod_slots": [
+            "barrel_ext",
+            "bonus",
+            "stock"
+        ]
+    }
+]
