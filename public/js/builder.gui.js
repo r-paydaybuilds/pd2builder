@@ -241,6 +241,13 @@ class GUI {
         perkdeckObj.addClass("pk_selected"); 
         const newTitle = perkdeckObj.children("p"); 
         newTitle.text("EQUIPPED: " + newTitle.text()); 
+
+        $(".pk_deck").each(function () {
+            if ($(this) !== perkdeckObj) {
+                $(this).addClass("pk_dim"); 
+            }
+        });
+        perkdeckObj.removeClass("pk_dim"); 
     }
 
     /**
