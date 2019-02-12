@@ -262,7 +262,7 @@ class GUI {
     }
 
     /**
-     * Unlocks the told armor
+     * Unlocks the specified armor
      * @param {Object} armorObj A jQuery object representing the armor icon
      */
     Armor_Unlock(armorObj) {
@@ -272,13 +272,44 @@ class GUI {
     }
 
     /**
-     * Locks the told armor
+     * Locks the specified armor
      * @param {Object} armorObj A jQuery object representing the armor icon
      */
     Armor_Lock(armorObj) {
         if(armorObj.hasClass("arm_locked")) return;
 
         armorObj.addClass("arm_locked");
+    }
+
+    /**
+     * Select a specified throwable.
+     * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
+     */
+    Throwable_Select(throwableObj) {
+        if (throwableObj.hasClass("th_selected") || throwableObj.hasClass("th_locked")) return; 
+
+        $(".th_icon.th_selected").removeClass("th_selected"); 
+        throwableObj.addClass("th_selected"); 
+    }
+
+    /**
+     * Unlocks the specified throwable
+     * @param {Object} throwableObj A jQuery object representing the throwable icon
+     */
+    Throwable_Unlock(throwableObj) {
+        if(!throwableObj.hasClass("th_locked")) return;
+
+        throwableObj.removeClass("th_locked");
+    }
+
+    /**
+     * Locks the specified throwable 
+     * @param {Object} throwableObj A jQuery object representing the throwable icon
+     */
+    Throwable_Lock(throwableObj) {
+        if(throwableObj.hasClass("th_locked")) return;
+
+        throwableObj.addClass("th_locked");
     }
 }
 
