@@ -1,0 +1,65 @@
+/**********************************/
+/*          THROWABLES CSS        */
+/**********************************/
+
+#th_page {
+  padding: 0 15px; 
+}
+
+#th_container_t {
+  padding: 20px; 
+}
+
+#th_description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
+.th_icon {
+  display: inline-block; 
+}
+
+.th_icon > div {
+  position: relative;
+  z-index: -1;
+  min-width: 256px;
+  min-height: 256px;
+  -webkit-transition: transform .3s ease;
+  -moz-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transform: scale(0.65);
+  background: url("/img/throwable/concussion.png") no-repeat center center; 
+}
+
+.th_icon:not(.th_locked):hover > div {
+  transform: scale(0.85);
+}
+
+.th_icon.th_locked {
+  background: url("/img/lock_skill.png") no-repeat center center;
+}
+
+.th_icon.th_locked > div {
+  -webkit-filter: brightness(0.2);
+  filter: brightness(0.2);
+}
+
+.th_icon.th_selected > div {
+  transform: scale(0.85);
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.th_icon.th_selected > div::before {
+  content: 'EQUIP.'; 
+  font-size: 16pt; 
+
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+}
+
+#pocket_ecm {
+  background: url("/img/throwable/pocket_ecm_jammer.png") no-repeat center center; 
+}
