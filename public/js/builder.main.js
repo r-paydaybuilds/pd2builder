@@ -128,18 +128,22 @@ $(document).ready(function () {
     });
 
     $(".pk_deck").each(function () {
-
         $(this).click(function () {
             gui.PerkDeck_Select($(this)); 
         });
     }); 
 
-    $(".arm_icon").each(function (){
-
-        $(this).click(function (){
+    $(".arm_icon").each(function () {
+        $(this).click(function () {
             gui.Armor_Select($(this)); 
         });
     });
+
+    $(".th_icon").each(function () {
+        $(this).click(function () {
+            gui.Throwable_Select($(this));
+        });
+    })
 
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
