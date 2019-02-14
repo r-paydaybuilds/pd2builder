@@ -55,9 +55,7 @@ $(document).ready(function () {
 
 
             if(skill) {
-                if(exp.skills.points-skillStore.ace < 0) {
-                    return;
-                }
+                if(exp.skills.points-skillStore.ace < 0) return;
                 const subtree = exp.subtrees[skillStore.subtree];
                 subtree.points += skillStore.ace;
                 subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
@@ -135,7 +133,14 @@ $(document).ready(function () {
 
     $(".arm_icon").each(function () {
         $(this).click(function () {
-            gui.Armor_Select($(this)); 
+            const armorObj = $(this);
+
+            if(exp.armor === this.firstElementChild.id) return;
+            if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
+
+            exp.armor = this.firstElementChild.id;
+
+            gui.Armor_Select(armorObj); 
         });
     });
 

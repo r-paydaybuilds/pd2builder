@@ -255,8 +255,6 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */
     Armor_Select(armorObj) {
-        if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
-
         $(".arm_icon.arm_selected").removeClass("arm_selected"); 
         armorObj.addClass("arm_selected"); 
     }

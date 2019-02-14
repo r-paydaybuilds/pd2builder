@@ -1,25 +1,25 @@
 class extMap extends Map {
     constructor(...args) {
-      super(...args)
-      this.points = 120;
+        super(...args);
+        this.points = 120;
     }
 
     getTierPoints(tier, subtree, skills) {
-      let points = 0;
-      for(const [key,value] of this) {
-        const skill = skills.get(key);
-        if(skill.subtree !== subtree) continue;
-        if(skill.tier !== tier) continue;
-        points += (value.state === "aced") ? skill.ace + skill.basic : skill.basic;
-      }
-      return points;
+        let points = 0;
+        for(const [key,value] of this) {
+            const skill = skills.get(key);
+            if(skill.subtree !== subtree) continue;
+            if(skill.tier !== tier) continue;
+            points += (value.state === "aced") ? skill.ace + skill.basic : skill.basic;
+        }
+        return points;
     }
 
     getTiersToFloorPoints(tier, subtree, skills) {
-      let points = 0;
-      for(let i = 0; i<=tier; i++)
-        points += this.getTierPoints(i, subtree, skills)
-      return points;
+        let points = 0;
+        for(let i = 0; i<=tier; i++)
+            points += this.getTierPoints(i, subtree, skills);
+        return points;
     }
 }
 
@@ -41,8 +41,9 @@ const exp = {
         gunslinger: { tier: 1, points: 0 },
         revenant: { tier: 1, points: 0 },
         brawler: { tier: 1, points: 0 }
-    }
-}
+    },
+    armor: null
+};
 
 const tiers = [0,1,2,13];
 const tiers2 = [0,1,3,16];
