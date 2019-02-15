@@ -47,6 +47,10 @@
   padding: 35px 5px 15px; 
 }
 
+.pk_deck:hover {
+  border: 2px solid rgb(190, 190, 190); 
+}
+
 .pk_deck > p {
   font-size: 18pt; 
   position: absolute; 
