@@ -24,13 +24,14 @@
   position: relative;
   z-index: -1;
   min-width: 256px;
-  min-height: 256px;
+  min-height: 128px;
   -webkit-transition: transform .3s ease;
   -moz-transition: transform .3s ease;
   -o-transition: transform .3s ease;
   transition: transform .3s ease;
   transform: scale(0.65);
-  background: url("/img/throwable/concussion.png") no-repeat center center; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
 }
 
 .th_icon:not(.th_locked):hover > div {
@@ -38,7 +39,7 @@
 }
 
 .th_icon.th_locked {
-  background: url("/img/lock_skill.png") no-repeat center center;
+  background: url("/img/lock_skill.png");
 }
 
 .th_icon.th_locked > div {
@@ -60,6 +61,11 @@
   left: 10px;
 }
 
+
+#concussion_grenade {
+  background: url("/img/throwable/concussion.png"); 
+}
+
 #pocket_ecm {
-  background: url("/img/throwable/pocket_ecm_jammer.png") no-repeat center center; 
+  background: url("/img/throwable/pocket_ecm_jammer.png"); 
 }
