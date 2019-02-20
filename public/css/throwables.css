@@ -39,7 +39,7 @@
 }
 
 .th_icon.th_locked {
-  background: url("/img/lock_skill.png");
+  background: url("/img/lock_skill.png") no-repeat center center;
 }
 
 .th_icon.th_locked > div {
@@ -63,9 +63,9 @@
 
 
 #concussion_grenade {
-  background: url("/img/throwable/concussion.png"); 
+  background-image: url("/img/throwable/concussion.png"); 
 }
 
 #pocket_ecm {
-  background: url("/img/throwable/pocket_ecm_jammer.png"); 
+  background-image: url("/img/throwable/pocket_ecm_jammer.png"); 
 }
