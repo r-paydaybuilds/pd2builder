@@ -318,7 +318,7 @@
         "tree": "enforcer"
     },
     "fully_loaded": {
-        "name": "fully_loaded",
+        "name": "Fully Loaded",
         "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\".",
         "basic": 4,
         "ace": 8,
