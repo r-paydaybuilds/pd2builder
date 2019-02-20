@@ -24,16 +24,16 @@
   background-position: 0 -48px; 
 }
 #crew_chief > div:nth-of-type(3)::after {
-  background-position: -48px -48px ; 
+  background-position: -48px -48px;
 }
 #crew_chief > div:nth-of-type(5)::after {
-  background-position: -96px -48px ; 
+  background-position: -96px -48px;
 }
 #crew_chief > div:nth-of-type(7)::after {
-  background-position: -144px -48px ; 
+  background-position: -144px -48px;
 }
 #crew_chief > div:nth-of-type(9)::after {
-  background-position: -192px -48px ; 
+  background-position: -192px -48px;
 }
 
 
@@ -43,16 +43,16 @@
   background-position: 0 -96px; 
 }
 #muscle > div:nth-of-type(3)::after {
-  background-position: -48px -96px ; 
+  background-position: -48px -96px;
 }
 #muscle > div:nth-of-type(5)::after {
-  background-position: -96px -96px ; 
+  background-position: -96px -96px;
 }
 #muscle > div:nth-of-type(7)::after {
-  background-position: -144px -96px ; 
+  background-position: -144px -96px;
 }
 #muscle > div:nth-of-type(9)::after {
-  background-position: -192px -96px ; 
+  background-position: -192px -96px;
 }
 
 
@@ -62,16 +62,16 @@
   background-position: 0 -144px; 
 }
 #armorer > div:nth-of-type(3)::after {
-  background-position: -48px -144px ; 
+  background-position: -48px -144px;
 }
 #armorer > div:nth-of-type(5)::after {
-  background-position: -96px -144px ; 
+  background-position: -96px -144px;
 }
 #armorer > div:nth-of-type(7)::after {
-  background-position: -144px -144px ; 
+  background-position: -144px -144px;
 }
 #armorer > div:nth-of-type(9)::after {
-  background-position: -192px -144px ; 
+  background-position: -192px -144px;
 }
 
 
@@ -81,16 +81,16 @@
   background-position: 0 -192px; 
 }
 #rogue > div:nth-of-type(3)::after {
-  background-position: -48px -192px ; 
+  background-position: -48px -192px;
 }
 #rogue > div:nth-of-type(5)::after {
-  background-position: -96px -192px ; 
+  background-position: -96px -192px;
 }
 #rogue > div:nth-of-type(7)::after {
-  background-position: -144px -192px ; 
+  background-position: -144px -192px;
 }
 #rogue > div:nth-of-type(9)::after {
-  background-position: -192px -192px ; 
+  background-position: -192px -192px;
 }
 
 
@@ -100,16 +100,16 @@
   background-position: 0 -240px; 
 }
 #hitman > div:nth-of-type(3)::after {
-  background-position: -48px -240px ; 
+  background-position: -48px -240px;
 }
 #hitman > div:nth-of-type(5)::after {
-  background-position: -96px -240px ; 
+  background-position: -96px -240px;
 }
 #hitman > div:nth-of-type(7)::after {
-  background-position: -144px -240px ; 
+  background-position: -144px -240px;
 }
 #hitman > div:nth-of-type(9)::after {
-  background-position: -192px -240px ; 
+  background-position: -192px -240px;
 }
 
 /* CROOK */ 
@@ -118,16 +118,16 @@
   background-position: 0 -288px; 
 }
 #crook > div:nth-of-type(3)::after {
-  background-position: -48px -288px ; 
+  background-position: -48px -288px;
 }
 #crook > div:nth-of-type(5)::after {
-  background-position: -96px -288px ; 
+  background-position: -96px -288px;
 }
 #crook > div:nth-of-type(7)::after {
-  background-position: -144px -288px ; 
+  background-position: -144px -288px;
 }
 #crook > div:nth-of-type(9)::after {
-  background-position: -192px -288px ; 
+  background-position: -192px -288px;
 }
 
 
@@ -137,16 +137,16 @@
   background-position: 0 -336px; 
 }
 #burglar > div:nth-of-type(3)::after {
-  background-position: -48px -336px ; 
+  background-position: -48px -336px;
 }
 #burglar > div:nth-of-type(5)::after {
-  background-position: -96px -336px ; 
+  background-position: -96px -336px;
 }
 #burglar > div:nth-of-type(7)::after {
-  background-position: -144px -336px ; 
+  background-position: -144px -336px;
 }
 #burglar > div:nth-of-type(9)::after {
-  background-position: -192px -336px ; 
+  background-position: -192px -336px;
 }
 
 
@@ -156,16 +156,16 @@
   background-position: 0 -384px; 
 }
 #infiltrator > div:nth-of-type(3)::after {
-  background-position: -48px -384px ; 
+  background-position: -48px -384px;
 }
 #infiltrator > div:nth-of-type(5)::after {
-  background-position: -96px -384px ; 
+  background-position: -96px -384px;
 }
 #infiltrator > div:nth-of-type(7)::after {
-  background-position: -144px -384px ; 
+  background-position: -144px -384px;
 }
 #infiltrator > div:nth-of-type(9)::after {
-  background-position: -192px -384px ; 
+  background-position: -192px -384px;
 }
 
 
@@ -175,16 +175,16 @@
   background-position: 0 -432px; 
 }
 #sociopath > div:nth-of-type(3)::after {
-  background-position: -48px -432px ; 
+  background-position: -48px -432px;
 }
 #sociopath > div:nth-of-type(5)::after {
-  background-position: -96px -432px ; 
+  background-position: -96px -432px;
 }
 #sociopath > div:nth-of-type(7)::after {
-  background-position: -144px -432px ; 
+  background-position: -144px -432px;
 }
 #sociopath > div:nth-of-type(9)::after {
-  background-position: -192px -432px ; 
+  background-position: -192px -432px;
 }
 
 
@@ -194,16 +194,16 @@
   background-position: 0 -480px; 
 }
 #gambler > div:nth-of-type(3)::after {
-  background-position: -48px -480px ; 
+  background-position: -48px -480px;
 }
 #gambler > div:nth-of-type(5)::after {
-  background-position: -96px -480px ; 
+  background-position: -96px -480px;
 }
 #gambler > div:nth-of-type(7)::after {
-  background-position: -144px -480px ; 
+  background-position: -144px -480px;
 }
 #gambler > div:nth-of-type(9)::after {
-  background-position: -192px -480px ; 
+  background-position: -192px -480px;
 }
 
 
@@ -213,16 +213,16 @@
   background-position: 0 -528px; 
 }
 #grinder > div:nth-of-type(3)::after {
-  background-position: -48px -528px ; 
+  background-position: -48px -528px;
 }
 #grinder > div:nth-of-type(5)::after {
-  background-position: -96px -528px ; 
+  background-position: -96px -528px;
 }
 #grinder > div:nth-of-type(7)::after {
-  background-position: -144px -528px ; 
+  background-position: -144px -528px;
 }
 #grinder > div:nth-of-type(9)::after {
-  background-position: -192px -528px ; 
+  background-position: -192px -528px;
 }
 
 
@@ -232,16 +232,16 @@
   background-position: 0 -576px; 
 }
 #yakuza > div:nth-of-type(3)::after {
-  background-position: -48px -576px ; 
+  background-position: -48px -576px;
 }
 #yakuza > div:nth-of-type(5)::after {
-  background-position: -96px -576px ; 
+  background-position: -96px -576px;
 }
 #yakuza > div:nth-of-type(7)::after {
-  background-position: -144px -576px ; 
+  background-position: -144px -576px;
 }
 #yakuza > div:nth-of-type(9)::after {
-  background-position: -192px -576px ; 
+  background-position: -192px -576px;
 }
 
 
@@ -251,16 +251,16 @@
   background-position: 0 -624px; 
 }
 #ex-president > div:nth-of-type(3)::after {
-  background-position: -48px -624px ; 
+  background-position: -48px -624px;
 }
 #ex-president > div:nth-of-type(5)::after {
-  background-position: -96px -624px ; 
+  background-position: -96px -624px;
 }
 #ex-president > div:nth-of-type(7)::after {
-  background-position: -144px -624px ; 
+  background-position: -144px -624px;
 }
 #ex-president > div:nth-of-type(9)::after {
-  background-position: -192px -624px ; 
+  background-position: -192px -624px;
 }
 
 
@@ -270,16 +270,16 @@
   background-position: 0 -672px; 
 }
 #maniac > div:nth-of-type(3)::after {
-  background-position: -48px -672px ; 
+  background-position: -48px -672px;
 }
 #maniac > div:nth-of-type(5)::after {
-  background-position: -96px -672px ; 
+  background-position: -96px -672px;
 }
 #maniac > div:nth-of-type(7)::after {
-  background-position: -144px -672px ; 
+  background-position: -144px -672px;
 }
 #maniac > div:nth-of-type(9)::after {
-  background-position: -192px -672px ; 
+  background-position: -192px -672px;
 }
 
 
@@ -289,16 +289,16 @@
   background-position: 0 -720px; 
 }
 #anarchist > div:nth-of-type(3)::after {
-  background-position: -48px -720px ; 
+  background-position: -48px -720px;
 }
 #anarchist > div:nth-of-type(5)::after {
-  background-position: -96px -720px ; 
+  background-position: -96px -720px;
 }
 #anarchist > div:nth-of-type(7)::after {
-  background-position: -144px -720px ; 
+  background-position: -144px -720px;
 }
 #anarchist > div:nth-of-type(9)::after {
-  background-position: -192px -720px ; 
+  background-position: -192px -720px;
 }
 
 
@@ -308,16 +308,16 @@
   background-position: 0 -768px; 
 }
 #biker > div:nth-of-type(3)::after {
-  background-position: -48px -768px ; 
+  background-position: -48px -768px;
 }
 #biker > div:nth-of-type(5)::after {
-  background-position: -96px -768px ; 
+  background-position: -96px -768px;
 }
 #biker > div:nth-of-type(7)::after {
-  background-position: -144px -768px ; 
+  background-position: -144px -768px;
 }
 #biker > div:nth-of-type(9)::after {
-  background-position: -192px -768px ; 
+  background-position: -192px -768px;
 }
 
 
@@ -327,16 +327,16 @@
   background-position: 0 -816px; 
 }
 #kingpin > div:nth-of-type(3)::after {
-  background-position: -48px -816px ; 
+  background-position: -48px -816px;
 }
 #kingpin > div:nth-of-type(5)::after {
-  background-position: -96px -816px ; 
+  background-position: -96px -816px;
 }
 #kingpin > div:nth-of-type(7)::after {
-  background-position: -144px -816px ; 
+  background-position: -144px -816px;
 }
 #kingpin > div:nth-of-type(9)::after {
-  background-position: -192px -816px ; 
+  background-position: -192px -816px;
 }
 
 
@@ -346,16 +346,16 @@
   background-position: 0 -864px; 
 }
 #sicario > div:nth-of-type(3)::after {
-  background-position: -48px -864px ; 
+  background-position: -48px -864px;
 }
 #sicario > div:nth-of-type(5)::after {
-  background-position: -96px -864px ; 
+  background-position: -96px -864px;
 }
 #sicario > div:nth-of-type(7)::after {
-  background-position: -144px -864px ; 
+  background-position: -144px -864px;
 }
 #sicario > div:nth-of-type(9)::after {
-  background-position: -192px -864px ; 
+  background-position: -192px -864px;
 }
 
 
@@ -365,16 +365,16 @@
   background-position: 0 -912px; 
 }
 #stoic > div:nth-of-type(3)::after {
-  background-position: -48px -912px ; 
+  background-position: -48px -912px;
 }
 #stoic > div:nth-of-type(5)::after {
-  background-position: -96px -912px ; 
+  background-position: -96px -912px;
 }
 #stoic > div:nth-of-type(7)::after {
-  background-position: -144px -912px ; 
+  background-position: -144px -912px;
 }
 #stoic > div:nth-of-type(9)::after {
-  background-position: -192px -912px ; 
+  background-position: -192px -912px;
 }
 
 
@@ -384,16 +384,16 @@
   background-position: 0 -960px; 
 }
 #tag_team > div:nth-of-type(3)::after {
-  background-position: -48px -960px ; 
+  background-position: -48px -960px;
 }
 #tag_team > div:nth-of-type(5)::after {
-  background-position: -96px -960px ; 
+  background-position: -96px -960px;
 }
 #tag_team > div:nth-of-type(7)::after {
-  background-position: -144px -960px ; 
+  background-position: -144px -960px;
 }
 #tag_team > div:nth-of-type(9)::after {
-  background-position: -192px -960px ; 
+  background-position: -192px -960px;
 }
 
 
@@ -403,14 +403,14 @@
   background-position: 0 -1008px; 
 }
 #hacker > div:nth-of-type(3)::after {
-  background-position: -48px -1008px ; 
+  background-position: -48px -1008px;
 }
 #hacker > div:nth-of-type(5)::after {
-  background-position: -96px -1008px ; 
+  background-position: -96px -1008px;
 }
 #hacker > div:nth-of-type(7)::after {
-  background-position: -144px -1008px ; 
+  background-position: -144px -1008px;
 }
 #hacker > div:nth-of-type(9)::after {
-  background-position: -192px -1008px ; 
+  background-position: -192px -1008px;
 }
