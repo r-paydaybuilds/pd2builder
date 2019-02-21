@@ -13,7 +13,7 @@ class IO {
 
     /**
      * Encode the byte and return the respective character in the character array for coding. 
-     * @param {Object} byte The byte to be encoded 
+     * @param {byte} byte The byte to be encoded 
      * @returns {string}
      */
     EncodeByte(byte) {
@@ -21,15 +21,16 @@ class IO {
     }
 
     /**
-     * Docs later
+     * Decodes a byte using the custom character set and returns the original bit-flags
      * @param {string} char 
+     * @returns {byte} 
      */
     DecodeByte(char) {
         return this.charString.indexOf(char); 
     }
 
     /**
-     * Temp
+     * Encode the currently set build into a URI string parameter.
      * @returns {string}
      */
     GetEncodedBuild() {
@@ -65,8 +66,8 @@ class IO {
     }
 
     /**
-     * Will write doc later
-     * @param {string} encodedString 
+     * Decodes the passed parameter, a build URI string, and sets the current build to match it. 
+     * @param {string} encodedString Build to be decoded 
      */
     LoadBuildFromEncoded(encodedString) {
         var self = this; 
