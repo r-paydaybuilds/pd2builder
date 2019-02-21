@@ -110,22 +110,22 @@
   background-image: url("/img/throwables/throwing_axe.png"); 
 }
 
-#stoic_flask {
-  background-image: url("/img/throwables/stoic_flask.png"); 
+#stoic_hip_flask {
+  background-image: url("/img/throwables/stoic_hip_flask.png"); 
 }
 
-#pocket_ecm_jammer {
-  background-image: url("/img/throwables/pocket_ecm_jammer.png"); 
+#pocket_ecm {
+  background-image: url("/img/throwables/pocket_ecm.png"); 
 }
 
-#smoke_grenade {
-  background-image: url("/img/throwables/smoke_grenade.png"); 
+#smoke_bomb {
+  background-image: url("/img/throwables/smoke_bomb.png"); 
 }
 
-#vape {
-  background-image: url("/img/throwables/vape.png"); 
+#gas_dispenser {
+  background-image: url("/img/throwables/gas_dispenser.png"); 
 }
 
-#adrenaline_injector {
-  background-image: url("/img/throwables/adrenaline_injector.png"); 
+#injector {
+  background-image: url("/img/throwables/injector.png"); 
 }
