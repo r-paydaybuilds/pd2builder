@@ -62,10 +62,70 @@
 }
 
 
-#concussion_grenade {
-  background-image: url("/img/throwable/concussion.png"); 
+#matryushka_grenade {
+  background-image: url("/img/throwables/matryushka_grenade.png"); 
 }
 
-#pocket_ecm {
-  background-image: url("/img/throwable/pocket_ecm_jammer.png"); 
+#incendiary_grenade {
+  background-image: url("/img/throwables/incendiary_grenade.png"); 
+}
+
+#hef_frag_grenade {
+  background-image: url("/img/throwables/hef_frag_grenade.png"); 
+}
+
+#ace_of_spades {
+  background-image: url("/img/throwables/ace_of_spades.png"); 
+}
+
+#concussion_grenade {
+  background-image: url("/img/throwables/concussion_grenade.png"); 
+}
+
+#frag_grenade {
+  background-image: url("/img/throwables/frag_grenade.png"); 
+}
+
+#molotov {
+  background-image: url("/img/throwables/molotov.png"); 
+}
+
+#dynamite {
+  background-image: url("/img/throwables/dynamite.png"); 
+}
+
+#dynamite {
+  background-image: url("/img/throwables/shuriken.png"); 
+}
+
+#javelin {
+  background-image: url("/img/throwables/javelin.png"); 
+}
+
+#throwing_knife {
+  background-image: url("/img/throwables/throwing_knife.png"); 
+}
+
+#throwing_axe {
+  background-image: url("/img/throwables/throwing_axe.png"); 
+}
+
+#stoic_flask {
+  background-image: url("/img/throwables/stoic_flask.png"); 
+}
+
+#pocket_ecm_jammer {
+  background-image: url("/img/throwables/pocket_ecm_jammer.png"); 
+}
+
+#smoke_grenade {
+  background-image: url("/img/throwables/smoke_grenade.png"); 
+}
+
+#vape {
+  background-image: url("/img/throwables/vape.png"); 
+}
+
+#adrenaline_injector {
+  background-image: url("/img/throwables/adrenaline_injector.png"); 
 }
