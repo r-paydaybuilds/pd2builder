@@ -66,7 +66,7 @@
   background-image: url("/img/deployables/ammo_bag.png"); 
 }
 
-#armor_case {
+#armor_kit {
   background-image: url("/img/deployables/armor_kit.png"); 
 }
 
@@ -74,26 +74,26 @@
   background-image: url("/img/deployables/bodybags_bag.png"); 
 }
 
-#medic_bag {
+#doctor_bag {
   background-image: url("/img/deployables/doctor_bag.png"); 
 }
 
 #ecm_jammer {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+  background-image: url("/img/deployables/ecm_jammer.png"); 
 }
 
 #first_aid_kit {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+  background-image: url("/img/deployables/first_aid_kit.png"); 
 }
 
-#turret {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+#sentry_gun {
+  background-image: url("/img/deployables/sentry_gun.png"); 
 }
 
-#silenced_turret {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+#sentry_gun_silent {
+  background-image: url("/img/deployables/sentry_gun_silent.png"); 
 }
 
-#mines {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+#trip_mine {
+  background-image: url("/img/deployables/trip_mine.png"); 
 }
