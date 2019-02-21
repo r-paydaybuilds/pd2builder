@@ -61,6 +61,34 @@
   left: 10px;
 }
 
+.dp_icon.dp_primary > div {
+  transform: scale(1);
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.dp_icon.dp_primary > div::before {
+  content: 'PRIMARY'; 
+  font-size: 16pt; 
+
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+}
+
+.dp_icon.dp_secondary > div {
+  transform: scale(1);
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.dp_icon.dp_secondary > div::before {
+  content: 'SECONDARY'; 
+  font-size: 16pt; 
+
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+}
+
 
 #ammo_bag {
   background-image: url("/img/deployables/ammo_bag.png"); 

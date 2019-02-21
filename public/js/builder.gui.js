@@ -219,7 +219,7 @@ class GUI {
      * @param {Object} skillObj A jQuery object representing the skill icon  
      */
     Skill_AnimateInvalid(skillObj) {
-        if(skillObj.hasClass("sk_invalid")) return;
+        if (skillObj.hasClass("sk_invalid")) return;
 
         skillObj.addClass("sk_invalid");
         setTimeout(function(skillObj) {
@@ -264,7 +264,7 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the armor icon
      */
     Armor_Unlock(armorObj) {
-        if(!armorObj.hasClass("arm_locked")) return;
+        if (!armorObj.hasClass("arm_locked")) return;
 
         armorObj.removeClass("arm_locked");
     }
@@ -274,13 +274,13 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the armor icon
      */
     Armor_Lock(armorObj) {
-        if(armorObj.hasClass("arm_locked")) return;
+        if (armorObj.hasClass("arm_locked")) return;
 
         armorObj.addClass("arm_locked");
     }
 
     /**
-     * Select a specified throwable.
+     * Select a specified throwable
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
     Throwable_Select(throwableObj) {
@@ -295,7 +295,7 @@ class GUI {
      * @param {Object} throwableObj A jQuery object representing the throwable icon
      */
     Throwable_Unlock(throwableObj) {
-        if(!throwableObj.hasClass("th_locked")) return;
+        if (!throwableObj.hasClass("th_locked")) return;
 
         throwableObj.removeClass("th_locked");
     }
@@ -305,10 +305,67 @@ class GUI {
      * @param {Object} throwableObj A jQuery object representing the throwable icon
      */
     Throwable_Lock(throwableObj) {
-        if(throwableObj.hasClass("th_locked")) return;
+        if (throwableObj.hasClass("th_locked")) return;
 
         throwableObj.addClass("th_locked");
     }
+
+    /**
+     * Select a specified deployable
+     * @param {Object} deployableObj A jQuery object representing the clicked deployable icon
+     */
+    Deployable_Select(deployableObj) {
+        if (deployableObj.hasClass("dp_selected") || deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_locked")) return; 
+
+        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+            $(".dp_icon.dp_primary").removeClass("dp_primary"); 
+            deployableObj.addClass("dp_primary"); 
+        }
+        else {
+            $(".dp_icon.dp_selected").removeClass("dp_selected"); 
+            deployableObj.addClass("dp_selected"); 
+        }
+    }
+
+    /**
+     * Select a specified deployable as secondary
+     * @param {Object} deployableObj A jQuery object representing the clicked deployable icon
+     */
+    Deployable_SelectSecondary(deployableObj) {
+        if (deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_secondary") || deployableObj.hasClass("dp_locked")) return; 
+
+        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+            this.Deployable_Select(deployableObj); 
+        }
+
+        if (!$(".dp_icon").hasClass("dp_primary")) { // Same as above. Means: if no primary is selected, treat right click as primary. 
+            this.Deployable_Select(deployableObj); 
+        }
+        else {
+            $(".dp_icon.dp_secondary").removeClass("dp_secondary"); 
+            deployableObj.addClass("dp_secondary"); 
+        }       
+    }
+
+    /**
+     * Unlocks the specified deployable
+     * @param {Object} throwableObj A jQuery object representing the deployable icon
+     */
+    Deployable_Unlock(deployableObj) {
+        if (!deployableObj.hasClass("dp_locked")) return;
+
+        deployableObj.removeClass("dp_locked");
+    }
+
+    /**
+     * Locks the specified deployable 
+     * @param {Object} deployableObj A jQuery object representing the deployable icon
+     */
+    Deployable_Lock(deployableObj) {
+        if (deployableObj.hasClass("dp_locked")) return;
+
+        deployableObj.addClass("dp_locked");
+    }    
 }
 
 const gui = new GUI();

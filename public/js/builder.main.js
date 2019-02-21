@@ -16,6 +16,26 @@ $(document).ready(function () {
             else 
                 gui.Armor_Lock($("#ictv").parent());
 
+            // Check for jack of all trades
+            const jackOfAllTradesSkill = exp.skills.get("jack_of_all_trades"); 
+            if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == "aced") {
+                $(".dp_icon").each(function () {
+                    if ($(this).hasClass("dp_selected")) {
+                        $(this).removeClass("dp_selected"); 
+                        $(this).addClass("dp_primary"); 
+                    }
+                });
+            }
+            else {
+                $(".dp_secondary").removeClass("dp_secondary"); 
+                $(".dp_icon").each(function () {
+                    if ($(this).hasClass("dp_primary")) {
+                        $(this).removeClass("dp_primary"); 
+                        $(this).addClass("dp_selected"); 
+                    }
+                });
+            }
+
             gui.Tab_ChangeTo(targetTab); 
         });
     }); 
@@ -147,6 +167,17 @@ $(document).ready(function () {
     $(".th_icon").each(function () {
         $(this).click(function () {
             gui.Throwable_Select($(this));
+        });
+    });
+
+    $(".dp_icon").each(function () {
+        $(this).click(function () {
+            gui.Deployable_Select($(this));
+        });
+
+        $(this).contextmenu(function (event) {
+            event.preventDefault(); 
+            gui.Deployable_SelectSecondary($(this)); 
         });
     })
 
