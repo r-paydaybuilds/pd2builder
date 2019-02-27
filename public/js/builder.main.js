@@ -181,6 +181,16 @@ $(document).ready(function () {
         });
     })
 
+    $("#io_copy_btn").click(function () {
+        let el = $("#io_share_link"); 
+        
+        el.val(el.val()).select();
+        document.execCommand("copy");
+        el.blur(); 
+
+        gui.CopyLinkFlash(); 
+    });
+
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 

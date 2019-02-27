@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/armors.css">
     <link rel="stylesheet" href="css/throwables.css">
     <link rel="stylesheet" href="css/deployables.css">
+    <link rel="stylesheet" href="css/io.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -1112,7 +1113,20 @@
           <div id="io_save_b" class="corners_b">
             <div id="io_save_l" class="corners_l">
               <div id="io_save_r" class="corners_r">
-                <p>Save area</p>
+                <div class="row">
+                  <p class="io_text_title">Share your Build with anyone!</p>
+                </div>
+                <div class="row">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">URL</span>
+                    </div>                  
+                    <input id="io_share_link" type="text" class="form-control">
+                    <div class="input-group-append">
+                      <button id="io_copy_btn" type="button" class="btn btn-secondary">Copy Link</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1121,7 +1135,7 @@
           <div id="io_load_b" class="corners_b">
             <div id="io_load_l" class="corners_l">
               <div id="io_load_r" class="corners_r">
-                <p>Load area </p>
+                <p class="io_text">This site was made possible by the effort of r/paydaybuilds community bla bla something</p>
               </div>
             </div>
           </div>

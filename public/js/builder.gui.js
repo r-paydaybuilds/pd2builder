@@ -366,6 +366,23 @@ class GUI {
 
         deployableObj.addClass("dp_locked");
     }    
+
+    CopyLinkFlash() {
+        let el = $("#io_share_link"); 
+        if (el.hasClass("io_link_flash")) return; 
+        
+        el.addClass("io_link_flash");    
+
+        let btn = $("#io_copy_btn"); 
+        let text = btn.text(); 
+        btn.text("Link copied!"); 
+
+        setTimeout(function () {
+            el.removeClass("io_link_flash"); 
+
+            btn.text(text); 
+        }, 500); 
+    }
 }
 
 const gui = new GUI();
