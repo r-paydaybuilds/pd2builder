@@ -36,7 +36,8 @@ class IO {
     GetEncodedBuild() {
         // Drafting it with gui objects because I don't know the system behind the internal management of stuff 
         var self = this; // Prevent jQuery from screwing up this's scope
-        let buildString = window.location.href; 
+
+        let buildString = window.location.href.replace(window.location.search, ""); // Get pure address without params 
         let skillsString = ""; 
         
         // Manage Skills
@@ -65,36 +66,36 @@ class IO {
         buildString += "&k=" + exp.skills.points; 
 
         // Manage Perk Decks
-        var pkCount = 0; 
+        let pkCount = 0; 
         $(".pk_deck").each(function () {
-            if ($(this).hasClass("pk_deck_selected")) return; 
+            if ($(this).hasClass("pk_selected")) return false; 
             
             pkCount++; 
         });
         buildString += "&p=" + pkCount; 
 
         // Manage Armors
-        var armCount = 0; 
+        let armCount = 0; 
         $(".arm_icon").each(function () {
-            if ($(this).hasClass("arm_selected")) return; 
+            if ($(this).hasClass("arm_selected")) return false; 
 
             armCount++; 
         });
         buildString += "&a=" + armCount; 
 
         // Manage Throwables
-        var thCount = 0; 
+        let thCount = 0; 
         $(".th_icon").each(function () {
-            if ($(this).hasClass("th_selected")) return; 
+            if ($(this).hasClass("th_selected")) return false; 
 
             thCount++; 
         });
         buildString += "&t=" + thCount; 
 
         // Manage Deployables
-        var dpCount = 0; 
+        let dpCount = 0; 
         $(".dp_icon").each(function () {
-            if ($(this).hasClass("dp_selected")) return; 
+            if ($(this).hasClass("dp_selected")) return false; 
 
             dpCount++; 
         });
@@ -104,15 +105,16 @@ class IO {
     }
 
     /**
-     * Decodes the passed parameter, a build URI string, and sets the current build to match it. 
-     * @param {string} encodedString Build to be decoded 
+     * Decodes the parameters in the URI, and sets the current build to match it the build encoded in it. 
      */
-    LoadBuildFromEncoded(encodedString) {
-        var self = this; 
-        let buildString = decodeURIComponent(encodedString); 
-        let skillsString = buildString;  // Should be uri.paramter.skills in some way
+    LoadBuildFromURL() {
+        var self = this; // Prevent jQuery from screwing up this's scope
 
+        const urlParams = new URLSearchParams(window.location.search);
 
+        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) return; 
+              
+        let skillsString = decodeURIComponent(urlParams.get("s"));
         $(".sk_subtree").each(function () {
             let subtreeBasicChar = self.DecodeByte(skillsString.substr(0, 1)); 
             let subtreeAcedChar = self.DecodeByte(skillsString.substr(1, 1));  
@@ -124,16 +126,60 @@ class IO {
                     let skillAcedBit = subtreeAcedChar & mask; 
         
                     if (skillBasicBit !== 0) {
-                        $(this).addClass("sk_selected_basic"); // This is not how this should work, needs underlying system to be proper
+                        $(this).click(); // This is not how this should work, needs underlying system to be proper. Just a proof of concept
                     }
                     else if (skillAcedBit !== 0) {
-                        $(this).addClass("sk_selected_aced"); // Just a proof of concept
+                        $(this).click(); 
+                        $(this).click();
                     }
 
                     mask = mask << 1; 
                 });
             });
             skillsString = skillsString.substr(2); 
+        }); 
+        let k = urlParams.get("k");
+        gui.Skill_UpdatePointsRemaining(k); 
+        exp.skills.points = k; 
+
+        let p = parseInt(urlParams.get("p")); 
+        let pkCount = 0; 
+        $(".pk_deck").each(function () {
+            if (pkCount === p) {
+                $(this).click();
+            }
+
+            pkCount++; 
+        }); 
+
+        let a = parseInt(urlParams.get("a")); 
+        let armCount = 0; 
+        $(".arm_icon").each(function () {
+            if (armCount === a) {
+                $(this).click();
+            }
+
+            armCount++; 
+        }); 
+
+        let t = parseInt(urlParams.get("t")); 
+        let thCount = 0; 
+        $(".th_icon").each(function () {
+            if (thCount === t) {
+                $(this).click();
+            }
+
+            thCount++; 
+        }); 
+
+        let d = parseInt(urlParams.get("d")); 
+        let dpCount = 0; 
+        $(".dp_icon").each(function () {
+            if (dpCount === d) {
+                $(this).click();
+            }
+
+            dpCount++; 
         }); 
     }
 }
