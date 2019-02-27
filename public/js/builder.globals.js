@@ -54,4 +54,4 @@ let previous;
 
 jQuery.fn.reverse = [].reverse;
 
-fetch("/js/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
+fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
