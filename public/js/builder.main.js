@@ -36,6 +36,11 @@ $(document).ready(function () {
                 });
             }
 
+            // Display build string when changing to save/load tab 
+            if (targetTab === "tab_io_page") {
+                $("#io_share_link").val(io.GetEncodedBuild()); 
+            }
+
             gui.Tab_ChangeTo(targetTab); 
         });
     }); 

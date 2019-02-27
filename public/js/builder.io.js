@@ -36,10 +36,10 @@ class IO {
     GetEncodedBuild() {
         // Drafting it with gui objects because I don't know the system behind the internal management of stuff 
         var self = this; // Prevent jQuery from screwing up this's scope
-        let buildString = ""; 
+        let buildString = window.location.href; 
         let skillsString = ""; 
         
-
+        // Manage Skills
         $(".sk_subtree").each(function () {
             let subtreeBasicChar = 0; 
             let subtreeAcedChar = 0; 
@@ -61,8 +61,46 @@ class IO {
             }); 
             skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
         }); 
+        buildString += "?s=" + encodeURIComponent(skillsString); 
+        buildString += "&k=" + exp.skills.points; 
 
-        return encodeURIComponent(skillsString); 
+        // Manage Perk Decks
+        var pkCount = 0; 
+        $(".pk_deck").each(function () {
+            if ($(this).hasClass("pk_deck_selected")) return; 
+            
+            pkCount++; 
+        });
+        buildString += "&p=" + pkCount; 
+
+        // Manage Armors
+        var armCount = 0; 
+        $(".arm_icon").each(function () {
+            if ($(this).hasClass("arm_selected")) return; 
+
+            armCount++; 
+        });
+        buildString += "&a=" + armCount; 
+
+        // Manage Throwables
+        var thCount = 0; 
+        $(".th_icon").each(function () {
+            if ($(this).hasClass("th_selected")) return; 
+
+            thCount++; 
+        });
+        buildString += "&t=" + thCount; 
+
+        // Manage Deployables
+        var dpCount = 0; 
+        $(".dp_icon").each(function () {
+            if ($(this).hasClass("dp_selected")) return; 
+
+            dpCount++; 
+        });
+        buildString += "&d=" + dpCount;         
+
+        return buildString; 
     }
 
     /**
