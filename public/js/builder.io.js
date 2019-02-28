@@ -138,7 +138,7 @@ class IO {
             });
             skillsString = skillsString.substr(2); 
         }); 
-        let k = urlParams.get("k");
+        let k = parseInt(urlParams.get("k"));
         gui.Skill_UpdatePointsRemaining(k); 
         exp.skills.points = k; 
 
