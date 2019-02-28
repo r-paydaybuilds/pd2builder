@@ -14,11 +14,19 @@
 }
   
 .io_text {
-  font-size: 14pt; 
+  font-size: 16pt; 
 }
 
 .io_text_title {
-  font-size: 17pt; 
+  font-size: 20pt; 
+}
+
+.io_text_small {
+  font-size: 14pt; 
+}
+
+.io_text_block {
+  line-height: 1em; 
 }
 
 #io_share_link {
