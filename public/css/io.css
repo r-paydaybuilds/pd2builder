@@ -3,7 +3,7 @@
   padding: 0 15px; 
 }
 
-#io_load_t {
+#io_other_t {
   padding: 50px 25px; 
   background-clip: padding-box; 
   border-left: 10px solid transparent; /* used as margin-left but without wrapping */
