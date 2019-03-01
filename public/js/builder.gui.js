@@ -484,7 +484,7 @@ class GUI {
             this.Throwable_Unlock($("#stoic_hip_flask").parent()); 
         }
         else if (exp.perkDeck === "hacker") {
-            this.Throwable_Unlock($("#portable_ecm").parent()); 
+            this.Throwable_Unlock($("#pocket_ecm").parent()); 
         }
         else if (exp.perkDeck === "sicario") {
             this.Throwable_Unlock($("#smoke_bomb").parent()); 
