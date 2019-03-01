@@ -192,7 +192,7 @@ $(document).ready(function () {
         document.execCommand("copy");
         el.blur(); 
 
-        gui.CopyLinkFlash(); 
+        gui.IO_CopyLinkFlash(); 
     });
 
     gui.Tab_ChangeTo("tab_skills_page"); 
