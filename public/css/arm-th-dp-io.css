@@ -6,6 +6,7 @@
 .th_icon, 
 .dp_icon {
   display: inline-block; 
+  cursor: pointer; 
 }
 
 .arm_icon > div,
@@ -102,6 +103,32 @@
 
 .dp_icon.dp_secondary > div::before {
   content: 'SECONDARY'; 
+}
+
+
+#io_other_t,
+#io_save_r {
+  padding: 50px 25px; 
+}
+
+.io_text_block {
+  line-height: 1.1em; 
+}
+
+#io_share_link {
+  -webkit-transition: background-color .5s ease;
+  -moz-transition:    background-color .5s ease;
+  -o-transition:      background-color .5s ease;
+  transition:         background-color .5s ease;
+}
+
+#io_share_link.io_link_flash {
+  background-color: rgb(130, 255, 130); 
+
+  -webkit-transition: background-color .01s ease;
+  -moz-transition:    background-color .01s ease;
+  -o-transition:      background-color .01s ease;
+  transition:         background-color .01s ease;
 }
 
 

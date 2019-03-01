@@ -49,82 +49,72 @@ body > div {
   padding: 20px; 
 }
 
-.corners_t::before {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
 
-.corners_t::after {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  top: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_b::before {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  bottom: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_b::after {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  bottom: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_l::before {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_l::after {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  bottom: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_r::before {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  top: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
-}
-
+.corners_t::before,
+.corners_t::after,
+.corners_b::before,
+.corners_b::after,
+.corners_l::before,
+.corners_l::after,
+.corners_r::before,
 .corners_r::after {
   content: ""; 
   position: absolute; 
-  right: 0; 
-  bottom: 0; 
+  background: rgb(215, 220, 225); 
+}
+
+.corners_t::before,
+.corners_t::after,
+.corners_b::before,
+.corners_b::after {
+  height: 3px; 
+  width: 15px;  
+}
+
+.corners_l::before,
+.corners_l::after,
+.corners_r::before,
+.corners_r::after {
   height: 15px; 
   width: 3px;  
-  background: rgb(215, 220, 225); 
+}
+
+.corners_t::before {
+  top: 0; 
+  left: 0;
+}
+
+.corners_t::after {
+  top: 0; 
+  right: 0; 
+}
+
+.corners_b::before {
+  bottom: 0; 
+  left: 0; 
+}
+
+.corners_b::after {
+  bottom: 0; 
+  right: 0; 
+}
+
+.corners_l::before {
+  top: 0; 
+  left: 0; 
+}
+
+.corners_l::after {
+  bottom: 0; 
+  left: 0; 
+}
+
+.corners_r::before {
+  top: 0; 
+  right: 0; 
+}
+
+.corners_r::after {
+  bottom: 0; 
+  right: 0; 
 }
