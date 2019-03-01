@@ -13,10 +13,41 @@ body > div {
 }
 
 
+.font-size-13 {
+  font-size: 13pt; 
+}
+
+.font-size-14 {
+  font-size: 14pt; 
+}
+
+.font-size-16 {
+  font-size: 16pt; 
+}
+
+.font-size-20 {
+  font-size: 20pt; 
+}
+
+
 #tab_page_buttons {
   padding-bottom: 50px; 
 }
 
+
+.page_gutter {
+  padding: 0 15px; 
+}
+
+.description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
+.corners_t {
+  padding: 20px; 
+}
 
 .corners_t::before {
   content: ""; 

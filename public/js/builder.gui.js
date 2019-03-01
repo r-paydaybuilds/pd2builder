@@ -177,7 +177,7 @@ class GUI {
         const desc = $(".sk_description"); 
         const skill = skills.get(skillId);
 
-        let html = `<p class="sk_description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+        let html = `<p class="font-size-16">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);

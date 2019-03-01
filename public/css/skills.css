@@ -2,10 +2,6 @@
 /*            SKILLS CSS          */
 /**********************************/
 
-#sk_page {
-  padding: 0 15px; 
-}
-
 #sk_tree_buttons button {
   border: 0; 
   padding-left: 10px; 
@@ -82,12 +78,6 @@
   background: url("/img/borders/corner-bottomright.png") no-repeat; 
 }
 
-#sk_description_container {
-  padding: 0px 25px 10px 25px; 
-  background-clip: padding-box; 
-  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
-}
-
 #sk_description_t {
   margin-top: 10px; 
 }
@@ -106,14 +96,6 @@
 
 #sk_description_r::before {
   top: 15%; 
-}
-
-.sk_description {
-  font-size: 13pt; 
-}
-
-.sk_description_title {
-  font-size: 16pt; 
 }
 
 .sk_points_remaining { 

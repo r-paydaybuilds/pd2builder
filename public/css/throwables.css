@@ -2,20 +2,6 @@
 /*          THROWABLES CSS        */
 /**********************************/
 
-#th_page {
-  padding: 0 15px; 
-}
-
-#th_container_t {
-  padding: 20px; 
-}
-
-#th_description_container {
-  padding: 0px 25px 10px 25px; 
-  background-clip: padding-box; 
-  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
-}
-
 .th_icon {
   display: inline-block; 
   border: 3px solid transparent; 
