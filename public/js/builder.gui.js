@@ -280,14 +280,16 @@ class GUI {
     }
 
     /**
-     * Select a specified throwable
+     * Select a specified throwable. Pass "" (empty string) to this function to only delesect without reselecting another. 
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
     Throwable_Select(throwableObj) {
         if (throwableObj.hasClass("th_selected") || throwableObj.hasClass("th_locked")) return; 
 
         $(".th_icon.th_selected").removeClass("th_selected"); 
-        throwableObj.addClass("th_selected"); 
+        if (throwableObj !== "") {
+            throwableObj.addClass("th_selected"); 
+        }
     }
 
     /**
@@ -367,7 +369,10 @@ class GUI {
         deployableObj.addClass("dp_locked");
     }    
 
-    CopyLinkFlash() {
+    /**
+     * Make the share build link textbox flash green and change the button text, to give feedback that the link has been copied in the clipboard. 
+     */
+    IO_CopyLinkFlash() {
         let el = $("#io_share_link"); 
         if (el.hasClass("io_link_flash")) return; 
         
@@ -382,6 +387,97 @@ class GUI {
 
             btn.text(text); 
         }, 500); 
+    }
+
+    /**
+     * Lock or Unlock ICTV armor according to the iron man skill state. 
+     * @param {Object} ironManSkill 
+     */
+    HandleIronMan(ironManSkill) {
+        if (ironManSkill && ironManSkill.state == "aced") {
+            gui.Armor_Unlock($("#ictv").parent());
+        }                    
+        else {
+            gui.Armor_Lock($("#ictv").parent());
+        }                     
+    }
+
+    /**
+     * Allow or disallow double deployable options according to the jack of all trades skill state. 
+     * @param {Object} jackOfAllTradesSkill 
+     */
+    HandleJackOfAllTrades(jackOfAllTradesSkill) {
+        if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == "aced") {
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_selected")) {
+                    $(this).removeClass("dp_selected"); 
+                    $(this).addClass("dp_primary"); 
+                }
+            });
+        }
+        else {
+            $(".dp_secondary").removeClass("dp_secondary"); 
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_primary")) {
+                    $(this).removeClass("dp_primary"); 
+                    $(this).addClass("dp_selected"); 
+                }
+            });
+        }
+    }
+
+    /**
+     * Called when switching to throwables page, to check if any of the special throwables need to be locked or unlocked. 
+     */
+    HandleSpecialThrowables() {
+        // Lock the old special throwable if the previously selected perk deck unlocked one and if it was selected, deselect it
+        if (exp.perkDeckPrevious === "stoic") {
+            this.Throwable_Lock($("#stoic_hip_flask").parent()); 
+            if (exp.throwable === "stoic_hip_flask") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "hacker") {
+            this.Throwable_Lock($("#pocket_ecm").parent()); 
+            if (exp.throwable === "pocket_ecm") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "sicario") {
+            this.Throwable_Lock($("#smoke_bomb").parent()); 
+            if (exp.throwable === "smoke_bomb") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "tag_team") {
+            this.Throwable_Lock($("#gas_dispenser").parent()); 
+            if (exp.throwable === "gas_dispenser") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "kingpin") {
+            this.Throwable_Lock($("#injector").parent()); 
+            if (exp.throwable === "injector") {
+                this.Throwable_Select(""); 
+            }
+        }
+
+        // Then unlock the currently selected special if any
+        if (exp.perkDeck === "stoic") {
+            this.Throwable_Unlock($("#stoic_hip_flask").parent()); 
+        }
+        else if (exp.perkDeck === "hacker") {
+            this.Throwable_Unlock($("#portable_ecm").parent()); 
+        }
+        else if (exp.perkDeck === "sicario") {
+            this.Throwable_Unlock($("#smoke_bomb").parent()); 
+        }
+        else if (exp.perkDeck === "tag_team") {
+            this.Throwable_Unlock($("#gas_dispenser").parent()); 
+        }
+        else if (exp.perkDeck === "kingpin") {
+            this.Throwable_Unlock($("#injector").parent()); 
+        }
     }
 }
 

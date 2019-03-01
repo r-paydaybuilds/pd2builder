@@ -42,11 +42,14 @@ const exp = {
         revenant: { tier: 1, points: 0 },
         brawler: { tier: 1, points: 0 }
     },
-    armor: null
+    armor: null,
+    perkDeck: null,
+    perkDeckPrevious: null,
+    throwable: null
 };
 
-const tiers = [0,1,2,13];
-const tiers2 = [0,1,3,16];
+const tiers = [0, 1, 2, 13];
+const tiers2 = [0, 1, 3, 16];
 const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
 
 let skills;

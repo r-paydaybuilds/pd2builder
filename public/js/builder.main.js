@@ -9,35 +9,18 @@ $(document).ready(function () {
             const targetTab = $(this).attr("id").replace("_button", "_page");
             if (gui.Tab_IsOn(targetTab)) return;
 
-            // Check for iron man 
-            const ironManSkill = exp.skills.get("iron_man");
-            if (ironManSkill && ironManSkill.state == "aced")
-                gui.Armor_Unlock($("#ictv").parent());
-            else 
-                gui.Armor_Lock($("#ictv").parent());
-
-            // Check for jack of all trades
-            const jackOfAllTradesSkill = exp.skills.get("jack_of_all_trades"); 
-            if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == "aced") {
-                $(".dp_icon").each(function () {
-                    if ($(this).hasClass("dp_selected")) {
-                        $(this).removeClass("dp_selected"); 
-                        $(this).addClass("dp_primary"); 
-                    }
-                });
+            if (targetTab === "tab_armors_page") { 
+                const ironManSkill = exp.skills.get("iron_man");
+                gui.HandleIronMan(ironManSkill); 
             }
-            else {
-                $(".dp_secondary").removeClass("dp_secondary"); 
-                $(".dp_icon").each(function () {
-                    if ($(this).hasClass("dp_primary")) {
-                        $(this).removeClass("dp_primary"); 
-                        $(this).addClass("dp_selected"); 
-                    }
-                });
+            else if (targetTab === "tab_deployables_page") { 
+                const jackOfAllTradesSkill = exp.skills.get("jack_of_all_trades"); 
+                gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
             }
-
-            // Display build string when changing to save/load tab 
-            if (targetTab === "tab_io_page") {
+            else if (targetTab === "tab_throwables_page") { 
+                gui.HandleSpecialThrowables(exp.perkDeck); 
+            }
+            else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
                 $("#io_share_link").val(io.GetEncodedBuild()); 
             }
 
@@ -54,11 +37,10 @@ $(document).ready(function () {
 
     // Subtree //
     $(".sk_subtree").each(function () {
-
         $(this).mouseenter(function () {
             gui.Subtree_HoveringHighlightOn($(this)); 
         });
-
+        
         $(this).mouseleave(function () {
             gui.Subtree_HoveringHighlightOff(); 
         });
@@ -70,8 +52,9 @@ $(document).ready(function () {
         // Bind on left click
         $(this).click(function () {
             const element = $(this);
-            const skill = exp.skills.get(this.firstElementChild.id);
-            const skillStore = skills.get(this.firstElementChild.id);
+            const id = this.firstElementChild.id; 
+            const skill = exp.skills.get(id);
+            const skillStore = skills.get(id);
 
             if (element.hasClass("sk_locked") || element.hasClass("sk_selected_aced")) {
                 gui.Skill_AnimateInvalid(element);
@@ -107,8 +90,10 @@ $(document).ready(function () {
         $(this).contextmenu(function (event) {
             event.preventDefault(); 
 
+
             const skill = exp.skills.get(this.firstElementChild.id);
-            if(!skill) return;
+            if (!skill) return;
+
             const skillStore = skills.get(this.firstElementChild.id);
             const element = $(this);
 
@@ -152,19 +137,25 @@ $(document).ready(function () {
 
     $(".pk_deck").each(function () {
         $(this).click(function () {
-            gui.PerkDeck_Select($(this)); 
+            const perkdeckObj = $(this); 
+            const id = this.id; 
+
+            if (exp.perkDeck === id) return; 
+
+            exp.perkDeckPrevious = exp.perkDeck; 
+            exp.perkDeck = id; 
+            gui.PerkDeck_Select(perkdeckObj); 
         });
     }); 
 
     $(".arm_icon").each(function () {
         $(this).click(function () {
             const armorObj = $(this);
+            const id = this.firstElementChild.id;
 
-            if(exp.armor === this.firstElementChild.id) return;
-            if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
+            if (exp.armor === id) return;
 
-            exp.armor = this.firstElementChild.id;
-
+            exp.armor = id;
             gui.Armor_Select(armorObj); 
         });
     });
