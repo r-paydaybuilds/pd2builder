@@ -177,7 +177,7 @@ class GUI {
         const desc = $(".sk_description"); 
         const skill = skills.get(skillId);
 
-        let html = `<p class="font-size-16">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+        let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
@@ -248,6 +248,23 @@ class GUI {
             }
         });
         perkdeckObj.removeClass("pk_dim"); 
+    }
+
+    /**
+     * Display a perk deck's description inside the description container. 
+     * @param {string} perkdeckId Id of the perkdeck of which to display the description
+     */
+    PerkDeck_DisplayDescription(perkdeckId) {
+        const desc = $(".pk_description"); 
+        const pk = perkDecks.get(perkdeckId);
+
+        let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+
+        desc.html(html);
+        desc.data("perkDeck", perkdeckId);
     }
 
     /**

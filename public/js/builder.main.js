@@ -40,7 +40,7 @@ $(document).ready(function () {
         $(this).mouseenter(function () {
             gui.Subtree_HoveringHighlightOn($(this)); 
         });
-        
+
         $(this).mouseleave(function () {
             gui.Subtree_HoveringHighlightOff(); 
         });
@@ -125,7 +125,7 @@ $(document).ready(function () {
         });
 
         // Bind on hovering mouse, to show skill description
-        $(this).mouseover(function (event) {
+        $(this).mouseover(function () {
             const id = this.firstElementChild.id; 
             
             if ($(".sk_description").data("skill") !== id) {
@@ -145,6 +145,14 @@ $(document).ready(function () {
             exp.perkDeckPrevious = exp.perkDeck; 
             exp.perkDeck = id; 
             gui.PerkDeck_Select(perkdeckObj); 
+        });
+
+        $(this).mouseover(function () {
+            const id = this.id; 
+            
+            if ($(".pk_description").data("perkdeck") !== id) {
+                gui.PerkDeck_DisplayDescription(id); 
+            }
         });
     }); 
 

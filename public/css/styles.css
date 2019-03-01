@@ -21,7 +21,8 @@ body > div {
   font-size: 14pt; 
 }
 
-.font-size-16 {
+.font-size-16,
+.description_title {
   font-size: 16pt; 
 }
 
