@@ -3,19 +3,16 @@ node_js:
 - node
 jobs:
   include:
-  - stage: Linting
+  - stage: "Linting"
     script: npm run lint
-  - stage: Make the static build
+  - stage: "Deploy to Github Pages"
     if: branch = master
     script: mv ./pages/* ./public/
-  - stage: Deploy to GitHub Pages
     deploy:
       provider: pages
       skip-cleanup: true
       github-token: "$GITHUB_TOKEN"
       local-dir: "./public/"
-      on:
-        branch: master
 cache:
   directories:
   - node_modules
