@@ -1,0 +1,122 @@
+{
+    "helmet_popping": {
+        "name": "Helmet Popping",
+        "description": "Increases your headshot damage by 25%."
+    },
+    "blending_in": {
+        "name": "Blending In",
+        "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs."
+    },
+    "walk-in_closet": {
+        "name": "Walk-in Closet",
+        "description": "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\nIncreases your ammo pickup to 135% of the normal rate."
+    },
+    "fast_and_furious": {
+        "name": "Fast and Furious",
+        "description": "You do 5% more damage. Does not apply to melee damage, throwables, grenade launchers or rocket launchers.\nIncreases your doctor bag interaction speed by 20%."
+    },
+    "brute_strength-1": {
+        "name": "Brute Strength",
+        "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "marathon_man": {
+        "name": "Marathon Man",
+        "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "wolf_pack": {
+        "name": "Wolf Pack",
+        "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "testudo": {
+        "name": "Testudo",
+        "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "hostage_situation": {
+        "name": "Hostage Situation",
+        "description": "You and your crew will gain 6% max health and 12% stamina for each hostage up to 4 times.\nYou and your crew will gain 8% damage reduction for having one or more hostages.\nNote: Crew perks do not stack.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "brute_strength-2": {
+        "name": "Brute Strength",
+        "description": "You gain 10% more health",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "meat_shield": {
+        "name": "Meath Shield",
+        "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "giant_strength": {
+        "name": "Giant Strength",
+        "description": "You gain an additional 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "disturbing_the_peace": {
+        "name": "Disturbing the Peace",
+        "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "800-pound_gorilla": {
+        "name": "800-pound Gorilla",
+        "description": "You gain an additional 40% more health.\nYou regenerate 3% of your life every 5 seconds.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "type_1_armor": {
+        "name": "Type I Armor",
+        "description": "You gain 10% more armor",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+    },
+    "type_2_armor": {
+        "name": "Type II Armor",
+        "description": "You gain an additional 10% more armor.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "type_3_armor": {
+        "name": "Type III Armor",
+        "description": "You gain an additional 10% more armor.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "reinforced_armor": {
+        "name": "Reinforced Armor",
+        "description": "Your armor recovery rate is increased by 10%.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+    },
+    "liquid_armor": {
+        "name": "Liquid Armor",
+        "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "subtle": {
+        "name": "Subtle",
+        "description": "Your chance to dodge is increased by 15%.",
+        "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+    },
+    "elusive": {
+        "name": "Elusive",
+        "description": "You are 15% less likely to be targeted when you are close to your crew members.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+    },
+    "evasive": {
+        "name": "Evasive",
+        "description": "Your chance to dodge is increased by an additional 15%.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+    },
+    "shadow_warrior": {
+        "name": "Shadow Warrior",
+        "description": "Your chance to dodge is increased by an additional 15%.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+    },
+    "killer_instinct": {
+        "name": "Killer Instinct",
+        "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 10%.",
+        "deck_completion_bonus": true
+    }
+}

@@ -8,7 +8,7 @@ class IO {
          * @type {string}
          * @private
         */
-       this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@"; 
+        this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@"; 
     }
 
     /**
@@ -34,7 +34,6 @@ class IO {
      * @returns {string}
      */
     GetEncodedBuild() {
-        // Drafting it with gui objects because I don't know the system behind the internal management of stuff 
         var self = this; // Prevent jQuery from screwing up this's scope
 
         let buildString = window.location.href.replace(window.location.search, ""); // Get pure address without params 
@@ -72,7 +71,7 @@ class IO {
             
             pkCount++; 
         });
-        buildString += "&p=" + pkCount; 
+        buildString += "&p=" + self.EncodeByte(pkCount); 
 
         // Manage Armors
         let armCount = 0; 
@@ -90,7 +89,7 @@ class IO {
 
             thCount++; 
         });
-        buildString += "&t=" + thCount; 
+        buildString += "&t=" + self.EncodeByte(thCount);  
 
         // Manage Deployables
         let dpCount = 0; 
@@ -126,7 +125,7 @@ class IO {
                     let skillAcedBit = subtreeAcedChar & mask; 
         
                     if (skillBasicBit !== 0) {
-                        $(this).click(); // This is not how this should work, needs underlying system to be proper. Just a proof of concept
+                        $(this).click(); 
                     }
                     else if (skillAcedBit !== 0) {
                         $(this).click(); 
@@ -138,11 +137,11 @@ class IO {
             });
             skillsString = skillsString.substr(2); 
         }); 
-        let k = urlParams.get("k");
+        let k = parseInt(urlParams.get("k"));
         gui.Skill_UpdatePointsRemaining(k); 
         exp.skills.points = k; 
 
-        let p = parseInt(urlParams.get("p")); 
+        let p = parseInt(self.DecodeByte(urlParams.get("p"))); 
         let pkCount = 0; 
         $(".pk_deck").each(function () {
             if (pkCount === p) {
@@ -162,7 +161,7 @@ class IO {
             armCount++; 
         }); 
 
-        let t = parseInt(urlParams.get("t")); 
+        let t = parseInt(self.DecodeByte(urlParams.get("t"))); 
         let thCount = 0; 
         $(".th_icon").each(function () {
             if (thCount === t) {
@@ -184,4 +183,4 @@ class IO {
     }
 }
 
-const io = new IO();
+const io = new IO(); // eslint-disable-line no-unused-vars

@@ -20,10 +20,8 @@
     <link rel="stylesheet" href="css/skills_offset.css">
     <link rel="stylesheet" href="css/perkdecks.css">
     <link rel="stylesheet" href="css/perks_offset.css">
-    <link rel="stylesheet" href="css/armors.css">
-    <link rel="stylesheet" href="css/throwables.css">
-    <link rel="stylesheet" href="css/deployables.css">
-    <link rel="stylesheet" href="css/io.css">
+    <link rel="stylesheet" href="css/arm-th-dp-io.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -58,19 +56,19 @@
     <!-- Top section Content -->
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="col">
-          <h1 class="mt-5">New r/paydaybuilds skill builder</h1>
+        <div id="title" class="col">
+          <p class="font-size-40">New r/paydaybuilds skill builder</h1>
         </div>
       </div>
       <div class="row-fluid">
         <div class="col">
-          <div id="tab_page_buttons" class="btn-group" role="group">
+          <div id="tab_page_buttons" class="btn-group nav_buttons" role="group">
             <button id="tab_skills_button" type="button" class="btn btn-secondary">Skills</button>
             <button id="tab_perkdecks_button" type="button" class="btn btn-secondary">Perk Decks</button>
             <button id="tab_armors_button" type="button" class="btn btn-secondary">Armors</button>
             <button id="tab_throwables_button" type="button" class="btn btn-secondary">Throwables</button>
             <button id="tab_deployables_button" type="button" class="btn btn-secondary">Deployables</button>
-            <button id="tab_io_button" type="button" class="btn btn-secondary">Save/Load</button>
+            <button id="tab_io_button" type="button" class="btn btn-secondary">Share Build</button>
           </div>
         </div>
       </div>
@@ -89,7 +87,7 @@
           </div>
         </div>
       </div>
-      <div id="sk_page" class="row">
+      <div id="sk_page" class="row page_gutter">
         <div id="sk_container_l" class="col-9">
           <div id="sk_container_r"> 
             <div id="sk_mastermind_container" class="row sk_tree">
@@ -795,7 +793,7 @@
             </div>
           </div>
         </div>
-        <div id="sk_description_container" class="col-3">
+        <div id="sk_description_container" class="col-3 description_container">
           <div class="row sk_points_remaining">
             <p>Remaining skill points: <span></span></p> 
           </div>
@@ -803,7 +801,7 @@
             <div id="sk_description_b" class="corners_b">
               <div id="sk_description_l" class="corners_l">
                 <div id="sk_description_r" class="corners_r">
-                  <p class="sk_description"></p>  
+                  <p class="sk_description font-size-13"></p>  
                 </div>
               </div>
             </div>
@@ -825,7 +823,7 @@
 
     <!-- Armor Tab Content -->
     <div id="tab_armors_page" class="container-fluid tab_page_content">
-      <div id="arm_page" class="row">
+      <div id="arm_page" class="row page_gutter">
         <div id="arm_container_t" class="col-9 corners_t">
           <div id="arm_container_b" class="corners_b">
             <div id="arm_container_l" class="corners_l">
@@ -855,7 +853,7 @@
             </div>
           </div>
         </div>
-        <div id="arm_description_container" class="col-3">
+        <div id="arm_description_container" class="col-3 description_container">
           <div id="arm_description_t" class="row corners_t">
             <div id="arm_description_b" class="corners_b">
               <div id="arm_description_l" class="corners_l">
@@ -871,7 +869,7 @@
 
     <!-- Perk Deck Tab Content -->
     <div id="tab_perkdecks_page" class="container-fluid tab_page_content">
-      <div id="pk_page" class="row">
+      <div id="pk_page" class="row page_gutter">
         <div id="pk_container_t" class="col-9 corners_t">
           <div id="pk_container_b" class="corners_b">
             <div id="pk_container_l" class="corners_l">
@@ -964,12 +962,12 @@
             </div>
           </div>
         </div>
-        <div id="pk_description_container" class="col-3">
+        <div id="pk_description_container" class="col-3 description_container">
           <div id="pk_description_t" class="row corners_t">
             <div id="pk_description_b" class=corners_b>
               <div id="pk_description_l" class="corners_l">
                 <div id="pk_description_r" class="corners_r">
-                  <p>Perk Deck description</p>
+                  <p class="pk_description font-size-13"></p>
                 </div>
               </div>
             </div>
@@ -980,7 +978,7 @@
 
     <!-- Throwables Tab Content -->
     <div id="tab_throwables_page" class="container-fluid tab_page_content">
-      <div id="th_page" class="row">
+      <div id="th_page" class="row page_gutter">
         <div id="th_container_t" class="col-9 corners_t">
           <div id="th_container_b" class="corners_b">
             <div id="th_container_l" class="corners_l">
@@ -1040,7 +1038,7 @@
             </div>
           </div>
         </div>
-        <div id="th_description_container" class="col-3">
+        <div id="th_description_container" class="col-3 description_container">
           <div id="th_description_t" class="row corners_t">
             <div id="th_description_b" class="corners_b">
               <div id="th_description_l" class="corners_l">
@@ -1056,7 +1054,7 @@
 
     <!-- Deployables Tab Content -->
     <div id="tab_deployables_page" class="container-fluid tab_page_content">
-      <div id="dp_page" class="row">
+      <div id="dp_page" class="row page_gutter">
         <div id="dp_container_t" class="col-9 corners_t">
           <div id="dp_container_b" class="corners_b">
             <div id="dp_container_l" class="corners_l">
@@ -1092,7 +1090,7 @@
             </div>
           </div>
         </div>
-        <div id="dp_description_container" class="col-3">
+        <div id="dp_description_container" class="col-3 description_container">
           <div id="dp_description_t" class="row corners_t">
             <div id="dp_description_b" class="corners_b">
               <div id="dp_description_l" class="corners_l">
@@ -1108,13 +1106,13 @@
 
     <!-- Save/Load Tab Content -->
     <div id="tab_io_page" class="container-fluid tab_page_content">
-      <div id="io_page" class="row">
+      <div id="io_page" class="row page_gutter">
         <div id="io_save_t" class="col corners_t">
           <div id="io_save_b" class="corners_b">
             <div id="io_save_l" class="corners_l">
               <div id="io_save_r" class="corners_r">
                 <div class="row">
-                  <p class="io_text_title">Share your Build with anyone!</p>
+                  <p class="font-size-20">Share your Build with anyone!</p>
                 </div>
                 <div class="row">
                   <div class="input-group">
@@ -1131,11 +1129,33 @@
             </div>
           </div>
         </div>
-        <div id="io_load_t" class="col corners_t">
-          <div id="io_load_b" class="corners_b">
-            <div id="io_load_l" class="corners_l">
-              <div id="io_load_r" class="corners_r">
-                <p class="io_text">This site was made possible by the effort of r/paydaybuilds community bla bla something</p>
+        <div id="io_other_t" class="col corners_t description_container">
+          <div id="io_other_b" class="corners_b">
+            <div id="io_other_l" class="corners_l">
+              <div id="io_other_r" class="corners_r">
+                <p class="font-size-20">Credits</p>
+                <div class="font-size-16">
+                  <p>This site was made possible by the combined effort of r/paydaybuilds community.</p>
+                  <p>Special thanks to: </p>
+                  <ul class="io_text_block">
+                    <li>DocCobra - Design, UI/UX, Programming</li>
+                    <li>Uriel - Programming, Tech, Architecture</li>
+                    <li>Memeyuzaki - Hosting, PR, Transcription</li>
+                    <li>VintageKeith - Copywriting, Transcription</li>
+                    <li>Hondrus - Additional graphics and resources</li>
+                    <li>Sky - Transcription, Additional support</li>
+                    <li>polarathene - Additional support</li>
+                  </ul>
+                </div>
+                <div class="font-size-14">
+                  <p>This software is provided under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. Do what you want with it, but respect its open-source nature.</p>
+                </div>
+                <div class="io_widgets">
+                  <p class="font-size-14">Reach us at: </p>
+                  <a href="https://discord.gg/3ndGBWC"><img src="https://i.imgur.com/HDxnU5A.png" width="96px" height="30px"></img></a>
+                  <iframe src="http://dumbmatter.github.io/subreddit-buttons/subreddit-btn.html?name=paydaybuilds&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="160" height="30"></iframe>
+                  <iframe src="https://ghbtns.com/github-btn.html?user=ImUrX&repo=newpd2tools&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                </div>
               </div>
             </div>
           </div>

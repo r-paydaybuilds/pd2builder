@@ -8,7 +8,7 @@ class GUI {
          * @type {Object}
          * @private
         */
-        this.previousSkill
+        this.previousSkill;
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.
@@ -27,6 +27,12 @@ class GUI {
      * @param {string} tabId Id of the Tab to switch to 
      */
     Tab_ChangeTo(tabId) {
+        const btnId = tabId.replace("_page", "_button");
+        $("#tab_page_buttons button").each(function () {
+            $(this).removeClass("tab_selected"); 
+        }); 
+        $("#" + btnId).addClass("tab_selected"); 
+
         $(".tab_page_content").each(function () {
             $(this).hide(); 
         });
@@ -158,6 +164,13 @@ class GUI {
      */
     Skill_UpdatePointsRemaining(pointsRemaining) {
         $(".sk_points_remaining p span").text(pointsRemaining); 
+
+        if (pointsRemaining === 0) {
+            this.Skill_ColorizePointsRemaining("#FF4751");
+        }
+        else {
+            this.Skill_ColorizePointsRemaining();
+        }
     }
 
     /**
@@ -177,7 +190,7 @@ class GUI {
         const desc = $(".sk_description"); 
         const skill = skills.get(skillId);
 
-        let html = `<p class="sk_description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
+        let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
@@ -251,6 +264,23 @@ class GUI {
     }
 
     /**
+     * Display a perk deck's description inside the description container. 
+     * @param {string} perkdeckId Id of the perkdeck of which to display the description
+     */
+    PerkDeck_DisplayDescription(perkdeckId) {
+        const desc = $(".pk_description"); 
+        const pk = perkDecks.get(perkdeckId);
+
+        let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+
+        desc.html(html);
+        desc.data("perkDeck", perkdeckId);
+    }
+
+    /**
      * Select a specified armor.
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */
@@ -280,14 +310,16 @@ class GUI {
     }
 
     /**
-     * Select a specified throwable
+     * Select a specified throwable. Pass "" (empty string) to this function to only delesect without reselecting another. 
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
     Throwable_Select(throwableObj) {
         if (throwableObj.hasClass("th_selected") || throwableObj.hasClass("th_locked")) return; 
 
         $(".th_icon.th_selected").removeClass("th_selected"); 
-        throwableObj.addClass("th_selected"); 
+        if (throwableObj !== "") {
+            throwableObj.addClass("th_selected"); 
+        }
     }
 
     /**
@@ -317,7 +349,7 @@ class GUI {
     Deployable_Select(deployableObj) {
         if (deployableObj.hasClass("dp_selected") || deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_locked")) return; 
 
-        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
             $(".dp_icon.dp_primary").removeClass("dp_primary"); 
             deployableObj.addClass("dp_primary"); 
         }
@@ -334,11 +366,11 @@ class GUI {
     Deployable_SelectSecondary(deployableObj) {
         if (deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_secondary") || deployableObj.hasClass("dp_locked")) return; 
 
-        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
             this.Deployable_Select(deployableObj); 
         }
 
-        if (!$(".dp_icon").hasClass("dp_primary")) { // Same as above. Means: if no primary is selected, treat right click as primary. 
+        if (!$(".dp_icon").hasClass("dp_primary")) { // Means: if no primary is selected, treat right click as primary. 
             this.Deployable_Select(deployableObj); 
         }
         else {
@@ -367,7 +399,10 @@ class GUI {
         deployableObj.addClass("dp_locked");
     }    
 
-    CopyLinkFlash() {
+    /**
+     * Make the share build link textbox flash green and change the button text, to give feedback that the link has been copied in the clipboard. 
+     */
+    IO_CopyLinkFlash() {
         let el = $("#io_share_link"); 
         if (el.hasClass("io_link_flash")) return; 
         
@@ -383,6 +418,97 @@ class GUI {
             btn.text(text); 
         }, 500); 
     }
+
+    /**
+     * Lock or Unlock ICTV armor according to the iron man skill state. 
+     * @param {Object} ironManSkill 
+     */
+    HandleIronMan(ironManSkill) {
+        if (ironManSkill && ironManSkill.state == "aced") {
+            gui.Armor_Unlock($("#ictv").parent());
+        }                    
+        else {
+            gui.Armor_Lock($("#ictv").parent());
+        }                     
+    }
+
+    /**
+     * Allow or disallow double deployable options according to the jack of all trades skill state. 
+     * @param {Object} jackOfAllTradesSkill 
+     */
+    HandleJackOfAllTrades(jackOfAllTradesSkill) {
+        if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == "aced") {
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_selected")) {
+                    $(this).removeClass("dp_selected"); 
+                    $(this).addClass("dp_primary"); 
+                }
+            });
+        }
+        else {
+            $(".dp_secondary").removeClass("dp_secondary"); 
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_primary")) {
+                    $(this).removeClass("dp_primary"); 
+                    $(this).addClass("dp_selected"); 
+                }
+            });
+        }
+    }
+
+    /**
+     * Called when switching to throwables page, to check if any of the special throwables need to be locked or unlocked. 
+     */
+    HandleSpecialThrowables() {
+        // Lock the old special throwable if the previously selected perk deck unlocked one and if it was selected, deselect it
+        if (exp.perkDeckPrevious === "stoic") {
+            this.Throwable_Lock($("#stoic_hip_flask").parent()); 
+            if (exp.throwable === "stoic_hip_flask") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "hacker") {
+            this.Throwable_Lock($("#pocket_ecm").parent()); 
+            if (exp.throwable === "pocket_ecm") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "sicario") {
+            this.Throwable_Lock($("#smoke_bomb").parent()); 
+            if (exp.throwable === "smoke_bomb") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "tag_team") {
+            this.Throwable_Lock($("#gas_dispenser").parent()); 
+            if (exp.throwable === "gas_dispenser") {
+                this.Throwable_Select(""); 
+            }
+        }
+        else if (exp.perkDeckPrevious === "kingpin") {
+            this.Throwable_Lock($("#injector").parent()); 
+            if (exp.throwable === "injector") {
+                this.Throwable_Select(""); 
+            }
+        }
+
+        // Then unlock the currently selected special if any
+        if (exp.perkDeck === "stoic") {
+            this.Throwable_Unlock($("#stoic_hip_flask").parent()); 
+        }
+        else if (exp.perkDeck === "hacker") {
+            this.Throwable_Unlock($("#pocket_ecm").parent()); 
+        }
+        else if (exp.perkDeck === "sicario") {
+            this.Throwable_Unlock($("#smoke_bomb").parent()); 
+        }
+        else if (exp.perkDeck === "tag_team") {
+            this.Throwable_Unlock($("#gas_dispenser").parent()); 
+        }
+        else if (exp.perkDeck === "kingpin") {
+            this.Throwable_Unlock($("#injector").parent()); 
+        }
+    }
 }
 
-const gui = new GUI();
+const gui = new GUI(); // eslint-disable-line no-unused-vars

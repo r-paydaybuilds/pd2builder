@@ -2,10 +2,6 @@
 /*            SKILLS CSS          */
 /**********************************/
 
-#sk_page {
-  padding: 0 15px; 
-}
-
 #sk_tree_buttons button {
   border: 0; 
   padding-left: 10px; 
@@ -42,78 +38,49 @@
   border-bottom: 3px solid transparent; 
 }
 
-#sk_container_l::before {
+#sk_container_l::before,
+#sk_container_l::after,
+#sk_container_r::before,
+#sk_container_r::after {
   content: ""; 
   position: absolute; 
-  left: 0; 
-  top: 0; 
   height: 15px; 
   width: 3px;  
-  background: url("/img/borders/corner-topleft.png") no-repeat; 
 }
 
-#sk_container_l::after {
-  content: ""; 
-  position: absolute; 
+#sk_container_l::before {
+  top: 0; 
   left: 0; 
+  background: url("/img/borders/corner-topleft.png") no-repeat; 
+}
+ 
+#sk_container_l::after {
   bottom: 0; 
-  height: 15px; 
-  width: 3px;  
+  left: 0; 
   background: url("/img/borders/corner-bottomleft.png") no-repeat; 
 }
 
 #sk_container_r::before {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
   top: 0; 
-  height: 15px; 
-  width: 3px;  
+  right: 0; 
   background: url("/img/borders/corner-topright.png") no-repeat; 
 }
 
 #sk_container_r::after {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
   bottom: 0; 
-  height: 15px; 
-  width: 3px;  
+  right: 0; 
   background: url("/img/borders/corner-bottomright.png") no-repeat; 
-}
-
-#sk_description_container {
-  padding: 0px 25px 10px 25px; 
-  background-clip: padding-box; 
-  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
 }
 
 #sk_description_t {
   margin-top: 10px; 
 }
 
-#sk_description_t::before {
-  top: 15%; 
-}
-
-#sk_description_t::after {
-  top: 15%; 
-}
-
-#sk_description_l::before {
-  top: 15%; 
-}
-
+#sk_description_t::before,
+#sk_description_t::after, 
+#sk_description_l::before,
 #sk_description_r::before {
   top: 15%; 
-}
-
-.sk_description {
-  font-size: 13pt; 
-}
-
-.sk_description_title {
-  font-size: 16pt; 
 }
 
 .sk_points_remaining { 
@@ -148,27 +115,28 @@
   border-top: 1px solid rgb(40, 100, 140); 
 }
 
-.sk_tier:not(:first-child)::before {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  height: 2px; 
-  width: 3%; 
-  border-bottom: 2px solid white; 
-}
-
+.sk_tier:not(:first-child)::before,
 .sk_tier:not(:first-child)::after {
   content: ""; 
   position: absolute; 
-  right: 0; 
+  border-bottom: 2px solid white; 
   height: 2px; 
   width: 3%; 
-  border-bottom: 2px solid white; 
+}
+
+.sk_tier:not(:first-child)::before {
+  left: 0; 
+}
+
+.sk_tier:not(:first-child)::after {
+  right: 0;
 }
 
 .sk_icon {
   cursor: pointer; 
   padding-top: 20px; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
 }
 
 .sk_icon > div {
@@ -198,7 +166,11 @@
 }
 
 .sk_icon.sk_locked {
-  background: url("/img/skills/padlock.png") no-repeat center center;
+  background-image: url("/img/skills/padlock.png");
+}
+
+.sk_icon.sk_selected_aced {
+  background-image: url("/img/skills/ace.png"); 
 }
 
 .sk_icon.sk_invalid > div {
@@ -210,16 +182,9 @@
   color: #FF4751;
 }
 
-.sk_icon.sk_selected_basic > div {
-  opacity: 1; 
-}
-
+.sk_icon.sk_selected_basic > div,
 .sk_icon.sk_selected_aced > div {
   opacity: 1; 
-}
-
-.sk_icon.sk_selected_aced {
-  background: url("/img/skills/ace.png") no-repeat center center; 
 }
 
 .sk_name {

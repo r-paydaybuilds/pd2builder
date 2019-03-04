@@ -2,13 +2,6 @@
 /*           GENERAL CSS          */
 /**********************************/
 
-@font-face {
-  font-family: "DINEngschrift";
-  src: local("/css/fonts/DINEngschrift.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   background: rgb(11, 11, 21) url("/img/bg.png"); 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
@@ -20,87 +13,173 @@ body > div {
 }
 
 
+#tab_page_buttons, 
+#title {
+  display: flex;
+  justify-content: space-evenly; 
+}
+
+
+.font-size-13 {
+  font-size: 13pt; 
+}
+
+.font-size-14 {
+  font-size: 14pt; 
+}
+
+.font-size-16,
+.description_title {
+  font-size: 16pt; 
+}
+
+.font-size-20 {
+  font-size: 20pt; 
+}
+
+.font-size-40 {
+  font-size: 40pt; 
+}
+
+
 #tab_page_buttons {
   padding-bottom: 50px; 
 }
 
+#tab_page_buttons button {
+  padding-left: 10px; 
+  padding-right: 10px; 
+  text-align: center;
 
-.corners_t::before {
-  content: ""; 
+  border: 1px solid rgb(240, 240, 240); 
+  
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 16pt; 
+}
+
+#tab_page_buttons button::after {
+  content: "";
   position: absolute; 
-  left: 0; 
+  visibility: hidden;
+  opacity: 0;
+
+  height: 100%; 
+  width: 100%; 
   top: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_t::after {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  top: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
-}
-
-.corners_b::before {
-  content: ""; 
-  position: absolute; 
   left: 0; 
-  bottom: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
+  border: 3px solid rgb(240, 240, 240); 
+
+
+  -webkit-transition: visibility 0s .15s, opacity .15s linear;
+  -moz-transition:    visibility 0s .15s, opacity .15s linear;
+  -o-transition:      visibility 0s .15s, opacity .15s linear;
+  transition:         visibility 0s .15s, opacity .15s linear;
 }
 
-.corners_b::after {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  bottom: 0; 
-  height: 3px; 
-  width: 15px;  
-  background: rgb(215, 220, 225); 
+#tab_page_buttons button:hover {
+  color: rgb(215, 220, 225);
 }
 
-.corners_l::before {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
+#tab_page_buttons button:hover::after,
+#tab_page_buttons button.tab_selected::after {
+  visibility: visible;
+  opacity: 1;  
+  
+  -webkit-transition: opacity .15s linear;
+  -moz-transition:    opacity .15s linear;
+  -o-transition:      opacity .15s linear;
+  transition:         opacity .15s linear;
 }
 
-.corners_l::after {
-  content: ""; 
-  position: absolute; 
-  left: 0; 
-  bottom: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
+#tab_page_buttons button:focus,
+#tab_page_buttons button:active,
+#tab_page_buttons button:active:focus {
+  outline: none; 
+  box-shadow: none; 
 }
 
-.corners_r::before {
-  content: ""; 
-  position: absolute; 
-  right: 0; 
-  top: 0; 
-  height: 15px; 
-  width: 3px;  
-  background: rgb(215, 220, 225); 
+
+.page_gutter {
+  padding: 0 15px; 
 }
 
+.description_container {
+  padding: 0px 25px 10px 25px; 
+  background-clip: padding-box; 
+  border-left: 10px solid transparent; /* used as margin-left but without wrapping */
+}
+
+.corners_t {
+  padding: 20px; 
+}
+
+
+.corners_t::before,
+.corners_t::after,
+.corners_b::before,
+.corners_b::after,
+.corners_l::before,
+.corners_l::after,
+.corners_r::before,
 .corners_r::after {
   content: ""; 
   position: absolute; 
-  right: 0; 
-  bottom: 0; 
+  background: rgb(215, 220, 225); 
+}
+
+.corners_t::before,
+.corners_t::after,
+.corners_b::before,
+.corners_b::after {
+  height: 3px; 
+  width: 15px;  
+}
+
+.corners_l::before,
+.corners_l::after,
+.corners_r::before,
+.corners_r::after {
   height: 15px; 
   width: 3px;  
-  background: rgb(215, 220, 225); 
+}
+
+.corners_t::before {
+  top: 0; 
+  left: 0;
+}
+
+.corners_t::after {
+  top: 0; 
+  right: 0; 
+}
+
+.corners_b::before {
+  bottom: 0; 
+  left: 0; 
+}
+
+.corners_b::after {
+  bottom: 0; 
+  right: 0; 
+}
+
+.corners_l::before {
+  top: 0; 
+  left: 0; 
+}
+
+.corners_l::after {
+  bottom: 0; 
+  left: 0; 
+}
+
+.corners_r::before {
+  top: 0; 
+  right: 0; 
+}
+
+.corners_r::after {
+  bottom: 0; 
+  right: 0; 
 }
