@@ -1,10 +1,11 @@
 {
-  "name": "newpd2tools",
+  "name": "pd2builder",
   "version": "1.0.0",
   "description": "repost of pd2tools",
   "main": "pd2tools.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx eslint . || npx eslint --fix ."
   },
   "repository": {
     "type": "git",
