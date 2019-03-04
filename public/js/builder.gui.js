@@ -158,6 +158,13 @@ class GUI {
      */
     Skill_UpdatePointsRemaining(pointsRemaining) {
         $(".sk_points_remaining p span").text(pointsRemaining); 
+
+        if (pointsRemaining === 0) {
+            this.Skill_ColorizePointsRemaining("#FF4751");
+        }
+        else {
+            this.Skill_ColorizePointsRemaining();
+        }
     }
 
     /**
@@ -336,7 +343,7 @@ class GUI {
     Deployable_Select(deployableObj) {
         if (deployableObj.hasClass("dp_selected") || deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_locked")) return; 
 
-        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
             $(".dp_icon.dp_primary").removeClass("dp_primary"); 
             deployableObj.addClass("dp_primary"); 
         }
@@ -353,11 +360,11 @@ class GUI {
     Deployable_SelectSecondary(deployableObj) {
         if (deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_secondary") || deployableObj.hasClass("dp_locked")) return; 
 
-        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { // Please handle this condition internally, not with gui objects!
+        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
             this.Deployable_Select(deployableObj); 
         }
 
-        if (!$(".dp_icon").hasClass("dp_primary")) { // Same as above. Means: if no primary is selected, treat right click as primary. 
+        if (!$(".dp_icon").hasClass("dp_primary")) { // Means: if no primary is selected, treat right click as primary. 
             this.Deployable_Select(deployableObj); 
         }
         else {

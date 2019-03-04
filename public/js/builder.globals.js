@@ -23,6 +23,71 @@ class extMap extends Map {
     }
 }
 
+/**
+ * Class object for management of the system functions (underlying system of keeping track of the build).   
+ */
+class System {
+    constructor() {
+
+    }
+
+    Skill_Add(skillId) {
+        const skill = exp.skills.get(skillId);
+        const skillStore = skills.get(skillId);
+
+        if (skill) {
+            if (exp.skills.points-skillStore.ace >= 0) {
+                const subtree = exp.subtrees[skillStore.subtree];
+
+                subtree.points += skillStore.ace;
+                exp.skills.points -= skillStore.ace;
+                skill.state = "aced";
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+            }
+        } else {
+            if (exp.skills.points-skillStore.basic >= 0) {
+                const subtree = exp.subtrees[skillStore.subtree];
+
+                subtree.points += skillStore.basic;
+                exp.skills.points -= skillStore.basic;
+                exp.skills.set(skillId, { state: "basic" });
+                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+            }
+        }
+    }
+
+    Skill_Remove(skillId) {
+        const skill = exp.skills.get(skillId);
+        const skillStore = skills.get(skillId);
+        if (!skill) return;        
+
+        for (let i = skillStore.tier+1; i < 5; i++) {
+            if (exp.skills.getTierPoints(i, skillStore.subtree, skills) === 0) {
+                const tierPoints = exp.skills.getTiersToFloorPoints(i-1, skillStore.subtree, skills);
+                
+                if (tierPoints - (skill.state === "aced" ? skillStore.ace : skillStore.basic) < tiers2[i-1]) return;
+            }
+        }
+        
+        if (skill.state === "aced") {
+            const subtree = exp.subtrees[skillStore.subtree];
+
+            subtree.points -= skillStore.ace;
+            exp.skills.points += skillStore.ace;
+            skill.state = "basic";
+            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+        } 
+        else if (skill.state === "basic") {
+            const subtree = exp.subtrees[skillStore.subtree];
+
+            subtree.points -= skillStore.basic;
+            exp.skills.points += skillStore.basic;
+            exp.skills.delete(skillId);
+            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+        }
+    }
+}
+
 const exp = {
     skills: new extMap(),
     subtrees: {
@@ -45,12 +110,16 @@ const exp = {
     armor: null,
     perkDeck: null,
     perkDeckPrevious: null,
-    throwable: null
+    throwable: null,
+    deployable: null, 
+    deployableSecondary: null
 };
 
 const tiers = [0, 1, 2, 13];
 const tiers2 = [0, 1, 3, 16];
 const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
+
+const sys = new System(); 
 
 let skills;
 let perkDecks; 
