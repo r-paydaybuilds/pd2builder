@@ -141,7 +141,7 @@ $(document).ready(function () {
             event.preventDefault(); 
             gui.Deployable_SelectSecondary($(this)); 
         });
-    })
+    });
 
     // Share build section //
     $("#io_copy_btn").click(function () {

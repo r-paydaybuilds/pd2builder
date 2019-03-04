@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: "off" */
+
 class extMap extends Map {
     constructor(...args) {
         super(...args);

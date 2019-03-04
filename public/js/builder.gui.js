@@ -511,4 +511,4 @@ class GUI {
     }
 }
 
-const gui = new GUI();
+const gui = new GUI(); // eslint-disable-line no-unused-vars

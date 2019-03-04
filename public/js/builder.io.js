@@ -183,4 +183,4 @@ class IO {
     }
 }
 
-const io = new IO();
+const io = new IO(); // eslint-disable-line no-unused-vars
