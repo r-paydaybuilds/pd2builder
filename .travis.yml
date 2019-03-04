@@ -1,12 +1,24 @@
 language: node_js
 node_js:
-- 'node'
-after_success:
-- test $TRAVIS_BRANCH = "master" -a $TRAVIS_EVENT_TYPE = "push" -a $TRAVIS_REPO_SLUG = "r-paydaybuilds/pd2builder"
+- node
 jobs:
   include:
-  - stage: test
-    script: npm test
+  - stage: Linting
+    script: npm run lint
+  - stage: Make the static build
+    if: branch = master
+    script: mv ./pages/* ./public/
+  - stage: Deploy to GitHub Pages
+    deploy:
+      provider: pages
+      skip-cleanup: true
+      github-token: "$GITHUB_TOKEN"
+      local-dir: "./public/"
+      on:
+        branch: master
 cache:
   directories:
   - node_modules
+env:
+  global:
+    secure: m7Gxd7yyA0VacklJ4ca4OH9XmEYYU/utBIV8Ks1Xt1oaSXionBdmXBDWPMBiJyNSV2RTG9sUniFh5s1L+NrhdpLiC4zhiX+c1RDf1t0RmYK9tyy1H8m2PPhHryTMexDZTZwVsXTm56ZOEinP7LXDhJ9ZOsYhF1scBsUrANtgIJixUUHfFNP15UAUKF8SP7jW4v42z2FSdemV3b0un/eemz6ZG/hV2a8gXgVtVKY+N/2d2+ScN5IN0U0VrdFMQNGmzFF42+EIjyG1+suR56X2OjRsxBqiCjMoI/in3p97zCQtAYMlp+Jk7R5hMFS0FKpx64k+jR3P/V1DTVObWppNceYwvxM9yAkz2XIwSqtNxDDTkHZsj/ViWzDdmP50PiX/ZrrFI+50lK6IgW/weImfIVMfFUKkInWzi4S+mncXLGGDvvodRhhiIDj/oNM58KPvt51I1cesmYfyMGPDbS06NMLwvtDwk2CA3X/gWDuRlm6N/OqYbbCOWaUMwLuKZZN4IocgH1g+mTvfEUWc2Sl2B1FVXbs2dq+H2qlXxJ44gTGnUC+iEX5Y10vsSMKgREAGCIyRUzzG5+fr+bZdtjC6cUgOiM7Ah/kdLZzeKE4QAi/lcjBXP2vM5yZNfBQq1O19b92pc7ddCH7fw4Iq0MLFVj+5SOu7K5JUYAVzV7eSaQ4=
