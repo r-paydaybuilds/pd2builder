@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 'node'
+after_success:
+- test $TRAVIS_BRANCH = "master" -a $TRAVIS_EVENT_TYPE = "push" -a $TRAVIS_REPO_SLUG = "r-paydaybuilds/pd2builder"
+jobs:
+  include:
+  - stage: test
+    script: npm test
+cache:
+  directories:
+  - node_modules
