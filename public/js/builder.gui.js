@@ -8,7 +8,7 @@ class GUI {
          * @type {Object}
          * @private
         */
-        this.previousSkill
+        this.previousSkill;
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.

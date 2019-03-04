@@ -8,7 +8,7 @@ class IO {
          * @type {string}
          * @private
         */
-       this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@"; 
+        this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@"; 
     }
 
     /**
