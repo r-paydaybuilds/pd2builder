@@ -131,6 +131,14 @@
   transition:         background-color .01s ease;
 }
 
+.io_widgets {
+  display: flex; 
+}
+
+.io_widgets > iframe,
+.io_widgets > a {
+  margin: 0 10px;
+}
 
 
 /**********************************/
