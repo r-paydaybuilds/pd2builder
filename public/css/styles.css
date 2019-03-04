@@ -13,6 +13,13 @@ body > div {
 }
 
 
+#tab_page_buttons, 
+#title {
+  display: flex;
+  justify-content: space-evenly; 
+}
+
+
 .font-size-13 {
   font-size: 13pt; 
 }
@@ -30,9 +37,66 @@ body > div {
   font-size: 20pt; 
 }
 
+.font-size-40 {
+  font-size: 40pt; 
+}
+
 
 #tab_page_buttons {
   padding-bottom: 50px; 
+}
+
+#tab_page_buttons button {
+  padding-left: 10px; 
+  padding-right: 10px; 
+  text-align: center;
+
+  border: 1px solid rgb(240, 240, 240); 
+  
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 16pt; 
+}
+
+#tab_page_buttons button::after {
+  content: "";
+  position: absolute; 
+  visibility: hidden;
+  opacity: 0;
+
+  height: 100%; 
+  width: 100%; 
+  top: 0; 
+  left: 0; 
+  border: 3px solid rgb(240, 240, 240); 
+
+
+  -webkit-transition: visibility 0s .15s, opacity .15s linear;
+  -moz-transition:    visibility 0s .15s, opacity .15s linear;
+  -o-transition:      visibility 0s .15s, opacity .15s linear;
+  transition:         visibility 0s .15s, opacity .15s linear;
+}
+
+#tab_page_buttons button:hover {
+  color: rgb(215, 220, 225);
+}
+
+#tab_page_buttons button:hover::after,
+#tab_page_buttons button.tab_selected::after {
+  visibility: visible;
+  opacity: 1;  
+  
+  -webkit-transition: opacity .15s linear;
+  -moz-transition:    opacity .15s linear;
+  -o-transition:      opacity .15s linear;
+  transition:         opacity .15s linear;
+}
+
+#tab_page_buttons button:focus,
+#tab_page_buttons button:active,
+#tab_page_buttons button:active:focus {
+  outline: none; 
+  box-shadow: none; 
 }
 
 

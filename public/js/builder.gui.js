@@ -27,6 +27,12 @@ class GUI {
      * @param {string} tabId Id of the Tab to switch to 
      */
     Tab_ChangeTo(tabId) {
+        const btnId = tabId.replace("_page", "_button");
+        $("#tab_page_buttons button").each(function () {
+            $(this).removeClass("tab_selected"); 
+        }); 
+        $("#" + btnId).addClass("tab_selected"); 
+
         $(".tab_page_content").each(function () {
             $(this).hide(); 
         });
