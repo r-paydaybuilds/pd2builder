@@ -263,12 +263,19 @@ class GUI {
         perkdeckObj.removeClass("pk_deck_dim"); 
     }
 
+    /**
+     * When hovering over a specific perk deck card, dim its siblings to highlight it. 
+     * @param {Object} cardObj A jQuery Object representing the hovered over perk deck card
+     */
     PerkDeck_HoveringHighlightOn(cardObj) {
         if (!cardObj) return; 
 
         cardObj.siblings().addClass("pk_card_dim"); 
     }
 
+    /**
+     * Inverse of the above, when hovering off a specific perk deck card, restore the opacity. 
+     */
     PerkDeck_HoveringHighlightOff() {
         $(".pk_card_dim").removeClass("pk_card_dim"); 
     }
