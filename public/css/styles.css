@@ -105,7 +105,7 @@ body > div {
 }
 
 .description_container {
-  padding: 0px 25px 10px 25px; 
+  padding: 10px; 
   background-clip: padding-box; 
   border-left: 10px solid transparent; /* used as margin-left but without wrapping */
 }

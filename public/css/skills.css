@@ -73,7 +73,8 @@
 }
 
 #sk_description_t {
-  margin-top: 10px; 
+  margin: 5px; 
+  padding: 0 5px; 
 }
 
 #sk_description_t::before,
@@ -85,9 +86,13 @@
 
 .sk_points_remaining { 
   height: 15%; 
-  margin-top: 0px; 
+  margin-bottom: 5px; 
   font-size: 20pt; 
   align-items: center;
+}
+
+.sk_points_remaining > p {
+  margin: 0 auto; 
 }
 
 .sk_subtree {
