@@ -264,23 +264,6 @@ class GUI {
     }
 
     /**
-     * When hovering over a specific perk deck card, dim its siblings to highlight it. 
-     * @param {Object} cardObj A jQuery Object representing the hovered over perk deck card
-     */
-    PerkDeck_HoveringHighlightOn(cardObj) {
-        if (!cardObj) return; 
-
-        cardObj.siblings().addClass("pk_card_dim"); 
-    }
-
-    /**
-     * Inverse of the above, when hovering off a specific perk deck card, restore the opacity. 
-     */
-    PerkDeck_HoveringHighlightOff() {
-        $(".pk_card_dim").removeClass("pk_card_dim"); 
-    }
-
-    /**
      * Display a perk deck's description inside the description container. 
      * @param {string} perkdeckId Id of the perkdeck of which to display the description
      */
@@ -295,6 +278,36 @@ class GUI {
 
         desc.html(html);
         desc.data("perkDeck", perkdeckId);
+    }
+
+    /**
+     * Display a perk deck card's description inside the bottom description container. 
+     * @param {Object} cardObj A jQuery object representing the hovered over perk deck card 
+     */
+    PerkDeck_DisplayDescriptionCard(cardObj) {
+        if (!cardObj) return; 
+
+        const desc = $(".pk_description_card"); 
+        
+        // Todo
+
+    }
+
+    /**
+     * When hovering over a specific perk deck card, dim its siblings to highlight it. 
+     * @param {Object} cardObj A jQuery Object representing the hovered over perk deck card
+     */
+    PerkDeck_HoveringHighlightOn(cardObj) {
+        if (!cardObj) return; 
+
+        cardObj.siblings().addClass("pk_card_dim"); 
+    }
+
+    /**
+     * Inverse of the above, when hovering off a specific perk deck card, restore the opacity. 
+     */
+    PerkDeck_HoveringHighlightOff() {
+        $(".pk_card_dim").removeClass("pk_card_dim"); 
     }
 
     /**

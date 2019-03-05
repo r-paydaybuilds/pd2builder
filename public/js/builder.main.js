@@ -121,6 +121,7 @@ $(document).ready(function () {
     $(".pk_deck > div").each(function () {
         $(this).mouseenter(function () {
             gui.PerkDeck_HoveringHighlightOn($(this)); 
+            gui.PerkDeck_DisplayDescriptionCard($(this)); 
         });
 
         $(this).mouseleave(function () {
