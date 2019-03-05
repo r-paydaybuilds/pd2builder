@@ -1,15 +1,15 @@
 {
   "name": "pd2builder",
   "version": "1.0.0",
-  "description": "repost of pd2tools",
-  "main": "pd2tools.js",
+  "description": "Up-to-date web app for sharing Payday 2 builds and skill sets. ",
+  "main": "pd2builder.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint . || npx eslint --fix ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ImUrX/newpd2tools.git"
+    "url": "git+https://github.com/r-paydaybuilds/pd2builder.git"
   },
   "keywords": [
     "pd2",
@@ -18,12 +18,12 @@
     "express",
     "website"
   ],
-  "author": "ImUrX",
+  "author": "r-paydaybuilds",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ImUrX/newpd2tools/issues"
+    "url": "https://github.com/r-paydaybuilds/pd2builder/issues"
   },
-  "homepage": "https://github.com/ImUrX/newpd2tools#readme",
+  "homepage": "https://github.com/r-paydaybuilds/pd2builder#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
