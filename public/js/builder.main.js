@@ -57,12 +57,16 @@ $(document).ready(function () {
                 return;
             }
 
-            sys.Skill_Add(id); 
-            gui.Skill_Add(element); 
+            if (sys.Skill_Add(id)) {
+                gui.Skill_Add(element); 
 
-            const s = skills.get(id);
-            gui.Skill_UpdatePointsRemaining(exp.skills.points);
-            gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+                const s = skills.get(id);
+                gui.Skill_UpdatePointsRemaining(exp.skills.points);
+                gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+            }
+            else {
+                gui.Skill_AnimateInvalid(element);
+            }
         });
 
         $(this).contextmenu(function (event) {
@@ -71,12 +75,16 @@ $(document).ready(function () {
             const element = $(this);
             const id = this.firstElementChild.id; 
 
-            sys.Skill_Remove(id); 
-            gui.Skill_Remove(element); 
-            
-            const s = skills.get(id);
-            gui.Skill_UpdatePointsRemaining(exp.skills.points);
-            gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+            if (sys.Skill_Remove(id)) { 
+                gui.Skill_Remove(element); 
+                
+                const s = skills.get(id);
+                gui.Skill_UpdatePointsRemaining(exp.skills.points);
+                gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+            }
+            else {
+                gui.Skill_AnimateInvalid(element);
+            }
         });
 
         $(this).mouseover(function () {
