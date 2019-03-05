@@ -257,10 +257,20 @@ class GUI {
 
         $(".pk_deck").each(function () {
             if ($(this) !== perkdeckObj) {
-                $(this).addClass("pk_dim"); 
+                $(this).addClass("pk_deck_dim"); 
             }
         });
-        perkdeckObj.removeClass("pk_dim"); 
+        perkdeckObj.removeClass("pk_deck_dim"); 
+    }
+
+    PerkDeck_HoveringHighlightOn(cardObj) {
+        if (!cardObj) return; 
+
+        cardObj.siblings().addClass("pk_card_dim"); 
+    }
+
+    PerkDeck_HoveringHighlightOff() {
+        $(".pk_card_dim").removeClass("pk_card_dim"); 
     }
 
     /**

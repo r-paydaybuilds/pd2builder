@@ -109,6 +109,17 @@ $(document).ready(function () {
         });
     }); 
 
+    // Perk deck cards highlight // 
+    $(".pk_deck > div").each(function () {
+        $(this).mouseenter(function () {
+            gui.PerkDeck_HoveringHighlightOn($(this)); 
+        });
+
+        $(this).mouseleave(function () {
+            gui.PerkDeck_HoveringHighlightOff(); 
+        });
+    });
+
     // Armor icon buttons //
     $(".arm_icon").each(function () {
         $(this).click(function () {

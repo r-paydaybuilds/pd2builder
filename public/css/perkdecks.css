@@ -50,10 +50,15 @@
   top: 30px; 
   margin: 0 auto; 
   background: url("/img/perks/card.png") no-repeat; 
+
+  -webkit-transition: opacity .15s ease;
+  -moz-transition:    opacity .15s ease;
+  -o-transition:      opacity .15s ease;
+  transition:         opacity .15s ease;
 }
 
-.pk_deck > div:hover {
-  outline: 2px solid rgb(190, 190, 190); 
+.pk_deck > div.pk_card_dim {
+  opacity: 0.8; 
 }
 
 .pk_deck > div::after {
@@ -72,7 +77,7 @@
   border: 2px solid rgb(240, 240, 240); 
 }
 
-.pk_deck.pk_dim {
+.pk_deck.pk_deck_dim {
   opacity: 0.6; 
 }
 
