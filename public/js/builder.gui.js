@@ -301,7 +301,7 @@ class GUI {
     PerkDeck_DisplayDescriptionCard(cardObj) {
         if (!cardObj) return; 
 
-        const desc = $(".pk_description_card"); 
+        const desc = $(".pk_description_card"); // eslint-disable-line no-unused-vars
         
         // Todo
 
