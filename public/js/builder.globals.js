@@ -165,7 +165,8 @@ let perkCards;
 let previous;
 
 jQuery.fn.reverse = [].reverse;
-
-fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
-fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));});
-fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));});
+const promises = Promise.all([
+    fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));}),
+    fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));}),
+    fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));})
+]);

@@ -177,14 +177,12 @@ $(document).ready(function () {
     // Prepare document when first opening // 
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
-    gui.Tree_ChangeTo("sk_mastermind_container"); 
-
-    if (io.HasToLoadBuild()) {
-        gui.LoadingSpinner_Display(true); 
-        setTimeout(function () { 
-            io.LoadBuildFromURL(); 
-            gui.LoadingSpinner_Display(false); 
-        }, 1500); // Would like to get this on a callback or promise instead of this ugly timeout
-    }
+    gui.Tree_ChangeTo("sk_mastermind_container");
+    promises.then(() => {
+        if (io.HasToLoadBuild()) {
+            gui.LoadingSpinner_Display(true); 
+            io.LoadBuildFromURL().then(gui.LoadingSpinner_Display(false));
+        }
+    });
 });
 

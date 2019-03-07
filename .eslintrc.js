@@ -15,7 +15,8 @@ module.exports = {
         "perkDecks": "readonly",
         "previous": "writable",
         "gui": "readonly",
-        "io": "readonly"
+        "io": "readonly",
+        "promises": "readonly"
     },
     "extends": "eslint:recommended",
     "parserOptions": {

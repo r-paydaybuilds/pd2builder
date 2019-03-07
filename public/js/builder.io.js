@@ -105,81 +105,85 @@ class IO {
 
     /**
      * Decodes the parameters in the URI, and sets the current build to match it the build encoded in it. 
+     * @returns {Promise<Boolean>}
      */
     LoadBuildFromURL() {
-        var self = this; // Prevent jQuery from screwing up this's scope
+        return new Promise((resolve, reject) =>{
+            var self = this; // Prevent jQuery from screwing up this's scope
 
-        const urlParams = new URLSearchParams(window.location.search);
+            const urlParams = new URLSearchParams(window.location.search);
 
-        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) return; 
-              
-        let skillsString = decodeURIComponent(urlParams.get("s"));
-        $(".sk_subtree").each(function () {
-            let subtreeBasicChar = self.DecodeByte(skillsString.substr(0, 1)); 
-            let subtreeAcedChar = self.DecodeByte(skillsString.substr(1, 1));  
-            let mask = 1; 
+            if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) reject(false); 
+                
+            let skillsString = decodeURIComponent(urlParams.get("s"));
+            $(".sk_subtree").each(function () {
+                let subtreeBasicChar = self.DecodeByte(skillsString.substr(0, 1)); 
+                let subtreeAcedChar = self.DecodeByte(skillsString.substr(1, 1));  
+                let mask = 1; 
 
-            $(this).children(".sk_tier").reverse().each(function () {
-                $(this).find(".sk_icon").reverse().each(function () {
-                    let skillBasicBit = subtreeBasicChar & mask;
-                    let skillAcedBit = subtreeAcedChar & mask; 
-        
-                    if (skillBasicBit !== 0) {
-                        $(this).click(); 
-                    }
-                    else if (skillAcedBit !== 0) {
-                        $(this).click(); 
-                        $(this).click();
-                    }
+                $(this).children(".sk_tier").reverse().each(function () {
+                    $(this).find(".sk_icon").reverse().each(function () {
+                        let skillBasicBit = subtreeBasicChar & mask;
+                        let skillAcedBit = subtreeAcedChar & mask; 
+            
+                        if (skillBasicBit !== 0) {
+                            $(this).click(); 
+                        }
+                        else if (skillAcedBit !== 0) {
+                            $(this).click(); 
+                            $(this).click();
+                        }
 
-                    mask = mask << 1; 
+                        mask = mask << 1; 
+                    });
                 });
-            });
-            skillsString = skillsString.substr(2); 
-        }); 
-        let k = parseInt(urlParams.get("k"));
-        gui.Skill_UpdatePointsRemaining(k); 
-        exp.skills.points = k; 
+                skillsString = skillsString.substr(2); 
+            }); 
+            let k = parseInt(urlParams.get("k"));
+            gui.Skill_UpdatePointsRemaining(k); 
+            exp.skills.points = k; 
 
-        let p = parseInt(self.DecodeByte(urlParams.get("p"))); 
-        let pkCount = 0; 
-        $(".pk_deck").each(function () {
-            if (pkCount === p) {
-                $(this).click();
-            }
+            let p = parseInt(self.DecodeByte(urlParams.get("p"))); 
+            let pkCount = 0; 
+            $(".pk_deck").each(function () {
+                if (pkCount === p) {
+                    $(this).click();
+                }
 
-            pkCount++; 
-        }); 
+                pkCount++; 
+            }); 
 
-        let a = parseInt(urlParams.get("a")); 
-        let armCount = 0; 
-        $(".arm_icon").each(function () {
-            if (armCount === a) {
-                $(this).click();
-            }
+            let a = parseInt(urlParams.get("a")); 
+            let armCount = 0; 
+            $(".arm_icon").each(function () {
+                if (armCount === a) {
+                    $(this).click();
+                }
 
-            armCount++; 
-        }); 
+                armCount++; 
+            }); 
 
-        let t = parseInt(self.DecodeByte(urlParams.get("t"))); 
-        let thCount = 0; 
-        $(".th_icon").each(function () {
-            if (thCount === t) {
-                $(this).click();
-            }
+            let t = parseInt(self.DecodeByte(urlParams.get("t"))); 
+            let thCount = 0; 
+            $(".th_icon").each(function () {
+                if (thCount === t) {
+                    $(this).click();
+                }
 
-            thCount++; 
-        }); 
+                thCount++; 
+            }); 
 
-        let d = parseInt(urlParams.get("d")); 
-        let dpCount = 0; 
-        $(".dp_icon").each(function () {
-            if (dpCount === d) {
-                $(this).click();
-            }
+            let d = parseInt(urlParams.get("d")); 
+            let dpCount = 0; 
+            $(".dp_icon").each(function () {
+                if (dpCount === d) {
+                    $(this).click();
+                }
 
-            dpCount++; 
-        }); 
+                dpCount++; 
+            }); 
+            resolve(true);
+        });
     }
 
     /**
