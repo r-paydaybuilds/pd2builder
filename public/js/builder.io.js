@@ -181,6 +181,16 @@ class IO {
             dpCount++; 
         }); 
     }
+
+    /**
+     * Check if an encoded build is present in the url querystring. Returns true if there is one, false if it's fresh
+     * @returns {boolean}
+     */
+    HasToLoadBuild() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) return false; 
+        else return true; 
+    }
 }
 
 const io = new IO(); // eslint-disable-line no-unused-vars

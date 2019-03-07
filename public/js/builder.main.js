@@ -179,6 +179,12 @@ $(document).ready(function () {
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container"); 
 
-    setTimeout(function () { io.LoadBuildFromURL(); }, 1500); // Would like to get this on a callback or promise instead of this ugly timeout
+    if (io.HasToLoadBuild()) {
+        gui.LoadingSpinner_Display(true); 
+        setTimeout(function () { 
+            io.LoadBuildFromURL(); 
+            gui.LoadingSpinner_Display(false); 
+        }, 1500); // Would like to get this on a callback or promise instead of this ugly timeout
+    }
 });
 

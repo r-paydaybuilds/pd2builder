@@ -22,6 +22,20 @@ class GUI {
         }
     }
 
+    /**
+     * Show or hide the spinner to show that the passed build in the querystring is loading. 
+     * @param {boolean} display Boolean true or false (show or hide)
+     * @param {number} fadeTime (optional) Fade animation length in milliseconds, defaults to 200
+     */
+    LoadingSpinner_Display(display, fadeTime = 200) {
+        if (display) {
+            $("#loading_spinner").fadeIn(fadeTime); 
+        }
+        else {
+            $("#loading_spinner").fadeOut(fadeTime); 
+        }
+    }
+
     /** 
      * Change selected Tab to another. 
      * @param {string} tabId Id of the Tab to switch to 
