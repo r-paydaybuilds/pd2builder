@@ -207,7 +207,7 @@ class GUI {
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
-            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm|\+)?/g, match => `<span class="color_number">${match}</span>`);
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
         desc.data("skill", skillId);
@@ -288,7 +288,7 @@ class GUI {
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
-            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm|\+)?/g, match => `<span class="color_number">${match}</span>`);
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
         desc.data("perkDeck", perkdeckId);
@@ -554,5 +554,6 @@ class GUI {
         }
     }
 }
+GUI.COLOR_PATTERN = /\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm|\+)?/g;
 
 const gui = new GUI(); // eslint-disable-line no-unused-vars
