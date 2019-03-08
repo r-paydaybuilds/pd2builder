@@ -104,7 +104,7 @@ class GUI {
         let progress = 0;
         let points = pointsInTree;
 
-        for(const [index, pointsNeeded] of [0, 1, 2, 13]) {
+        for(const [index, pointsNeeded] of [0, 1, 2, 13].entries()) {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;
