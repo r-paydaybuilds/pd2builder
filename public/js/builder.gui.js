@@ -95,6 +95,36 @@ class GUI {
     }
 
     /**
+     * Change tree with the mouse wheel like in the game. Skip one ahead or behind of the currently selected tree. 
+     * Pass true to the parameter to move forward, false to move backwards
+     * @param {boolean} forward Change forward? True, change backwards? false. 
+     */
+    Tree_ChangeByScrolling(forward) {
+        const treeList = $(".sk_tree"); 
+        const activeTree = $(".sk_tree_button_active").attr("id").replace("button", "container"); 
+
+        for (let t of treeList) {
+            if ($(t).attr("id") === activeTree) {
+                const indexOf = $.inArray(t, treeList);
+                let treeId = ""; 
+
+                if (forward) {
+                    if (indexOf === treeList.length-1) return; // Prevent out of range 
+
+                    treeId = $(treeList[indexOf+1]).attr("id"); 
+                }
+                else {
+                    if (indexOf === 0) return; 
+
+                    treeId = $(treeList[indexOf-1]).attr("id"); 
+                }                
+                
+                this.Tree_ChangeTo(treeId); 
+            }
+        }
+    }
+
+    /**
      * Raise or lower the subtree background according to points set in it.
      * @param {string} subtreeId Id of the subtree to move
      * @param {number} pointsInTree Number of points to "move to"

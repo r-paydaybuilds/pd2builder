@@ -36,6 +36,16 @@ $(document).ready(async function () {
         }); 
     }
 
+    // Want websites to behave like games? Call me // 
+    $("#sk_page").on("wheel", function(event) {
+        if (event.originalEvent.deltaY < 0) {
+            gui.Tree_ChangeByScrolling(false); 
+        } 
+        else {
+            gui.Tree_ChangeByScrolling(true); 
+        }
+    });
+
     // Subtree //
     $(".sk_subtree").each(function () {
         $(this).mouseenter(function () {
