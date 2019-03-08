@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(async function () {
+    gui.LoadingSpinner_Display(true); 
 
     //
     // Bind Events on page 
@@ -34,6 +35,16 @@ $(document).ready(function () {
             gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
         }); 
     }
+
+    // Want websites to behave like games? Call me // 
+    $("#sk_page").on("wheel", function(event) {
+        if (event.originalEvent.deltaY < 0) {
+            gui.Tree_ChangeByScrolling(false); 
+        } 
+        else {
+            gui.Tree_ChangeByScrolling(true); 
+        }
+    });
 
     // Subtree //
     $(".sk_subtree").each(function () {
@@ -177,14 +188,15 @@ $(document).ready(function () {
     // Prepare document when first opening // 
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
-    gui.Tree_ChangeTo("sk_mastermind_container"); 
-
+    gui.Tree_ChangeTo("sk_mastermind_container");
+    await fetchPromises;
     if (io.HasToLoadBuild()) {
-        gui.LoadingSpinner_Display(true); 
-        setTimeout(function () { 
-            io.LoadBuildFromURL(); 
-            gui.LoadingSpinner_Display(false); 
-        }, 1500); // Would like to get this on a callback or promise instead of this ugly timeout
+        io.LoadBuildFromURL();
+    }
+    gui.LoadingSpinner_Display(false);
+
+    if ($(window).width() < 1003) { // #UNSUPPORTED 
+        $("#modal_notification").modal("show"); 
     }
 });
 

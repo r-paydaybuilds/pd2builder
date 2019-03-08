@@ -7,15 +7,14 @@ module.exports = {
     },
     "globals": {
         "exp": "readonly",
-        "tiers": "readonly",
-        "tiers2": "readonly",
         "trees": "readonly",
         "sys": "readonly",
         "skills": "readonly",
         "perkDecks": "readonly",
         "previous": "writable",
         "gui": "readonly",
-        "io": "readonly"
+        "io": "readonly",
+        "fetchPromises": "readonly"
     },
     "extends": "eslint:recommended",
     "parserOptions": {

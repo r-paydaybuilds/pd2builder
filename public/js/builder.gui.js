@@ -95,8 +95,37 @@ class GUI {
     }
 
     /**
+     * Change tree with the mouse wheel like in the game. Skip one ahead or behind of the currently selected tree. 
+     * Pass true to the parameter to move forward, false to move backwards
+     * @param {boolean} forward Change forward? True, change backwards? false. 
+     */
+    Tree_ChangeByScrolling(forward) {
+        const treeList = $(".sk_tree"); 
+        const activeTree = $(".sk_tree_button_active").attr("id").replace("button", "container"); 
+
+        for (let t of treeList) {
+            if ($(t).attr("id") === activeTree) {
+                const indexOf = $.inArray(t, treeList);
+                let treeId = ""; 
+
+                if (forward) {
+                    if (indexOf === treeList.length-1) return; // Prevent out of range 
+
+                    treeId = $(treeList[indexOf+1]).attr("id"); 
+                }
+                else {
+                    if (indexOf === 0) return; 
+
+                    treeId = $(treeList[indexOf-1]).attr("id"); 
+                }                
+                
+                this.Tree_ChangeTo(treeId); 
+            }
+        }
+    }
+
+    /**
      * Raise or lower the subtree background according to points set in it.
-     * Does not yet support accurate moving (only at set thresholds)
      * @param {string} subtreeId Id of the subtree to move
      * @param {number} pointsInTree Number of points to "move to"
      */
@@ -105,7 +134,7 @@ class GUI {
         let progress = 0;
         let points = pointsInTree;
 
-        for(const [index, pointsNeeded] of tiers.entries()) {
+        for(const [index, pointsNeeded] of [0, 1, 2, 13].entries()) {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;
@@ -207,7 +236,7 @@ class GUI {
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
-            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
         desc.data("skill", skillId);
@@ -288,7 +317,7 @@ class GUI {
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
-            .replace(/\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g, match => `<span class="color_number">${match}</span>`);
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
         desc.data("perkDeck", perkdeckId);
@@ -554,5 +583,6 @@ class GUI {
         }
     }
 }
+GUI.COLOR_PATTERN = /\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm|\+)?/g;
 
 const gui = new GUI(); // eslint-disable-line no-unused-vars

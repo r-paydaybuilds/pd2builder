@@ -18,16 +18,13 @@ class extMap extends Map {
         for (const [key, value] of this) {
             const skill = skills.get(key);
 
-            if (skill.subtree === subtree) {
-                if (skill.tier === tier) {
-                    if (value.state === "aced") {
-                        points += skill.ace + skill.basic;
-                    }
-                    else {
-                        points += skill.basic;
-                    } 
-                }
-            }
+            if(skill.subtree !== subtree) continue;
+            if(skill.tier !== tier) continue;
+            if (value.state === "aced") {
+                points += skill.ace + skill.basic;
+            } else {
+                points += skill.basic;
+            } 
         }
 
         return points;
@@ -96,12 +93,12 @@ class System {
                 const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
                 
                 if (skill.state === "aced") { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
-                    if (tierPoints-skillStore.ace < tiers2[i]) { 
+                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL) { 
                         return false; 
                     }
                 }
                 else {
-                    if (tierPoints-skillStore.basic < tiers2[i]) {
+                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL) {
                         return false; 
                     }
                 }
@@ -125,6 +122,8 @@ class System {
         return true; 
     }
 }
+
+System.TIER_UTIL = [0, 1, 3, 16];
 
 const exp = {
     skills: new extMap(),
@@ -154,7 +153,6 @@ const exp = {
 };
 
 const tiers = [0, 1, 2, 13];
-const tiers2 = [0, 1, 3, 16];
 const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
 
 const sys = new System(); 
@@ -165,7 +163,8 @@ let perkCards;
 let previous;
 
 jQuery.fn.reverse = [].reverse;
-
-fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));});
-fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));});
-fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));});
+const fetchPromises = Promise.all([
+    fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));}),
+    fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));}),
+    fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));})
+]);

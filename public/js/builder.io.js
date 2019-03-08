@@ -105,14 +105,15 @@ class IO {
 
     /**
      * Decodes the parameters in the URI, and sets the current build to match it the build encoded in it. 
+     * @returns {Promise<Boolean>}
      */
     LoadBuildFromURL() {
         var self = this; // Prevent jQuery from screwing up this's scope
 
         const urlParams = new URLSearchParams(window.location.search);
 
-        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) return; 
-              
+        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")); 
+                
         let skillsString = decodeURIComponent(urlParams.get("s"));
         $(".sk_subtree").each(function () {
             let subtreeBasicChar = self.DecodeByte(skillsString.substr(0, 1)); 
@@ -123,7 +124,7 @@ class IO {
                 $(this).find(".sk_icon").reverse().each(function () {
                     let skillBasicBit = subtreeBasicChar & mask;
                     let skillAcedBit = subtreeAcedChar & mask; 
-        
+            
                     if (skillBasicBit !== 0) {
                         $(this).click(); 
                     }
