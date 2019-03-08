@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(async function () {
+    gui.LoadingSpinner_Display(true); 
 
     //
     // Bind Events on page 
@@ -178,11 +179,10 @@ $(document).ready(function () {
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container");
-    promises.then(() => {
-        if (io.HasToLoadBuild()) {
-            gui.LoadingSpinner_Display(true); 
-            io.LoadBuildFromURL().then(gui.LoadingSpinner_Display(false));
-        }
-    });
+    await fetchPromises;
+    if (io.HasToLoadBuild()) {
+        io.LoadBuildFromURL();
+    }
+    gui.LoadingSpinner_Display(false);
 });
 

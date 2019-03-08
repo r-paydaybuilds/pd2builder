@@ -16,7 +16,7 @@ module.exports = {
         "previous": "writable",
         "gui": "readonly",
         "io": "readonly",
-        "promises": "readonly"
+        "fetchPromises": "readonly"
     },
     "extends": "eslint:recommended",
     "parserOptions": {
