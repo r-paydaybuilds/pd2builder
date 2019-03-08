@@ -12,6 +12,18 @@ body > div {
   font-family: "DINEngschrift"; 
 }
 
+.modal {
+  color: rgb(40, 40, 40);  
+}
+
+.modal-body {
+  font-size: 14pt; 
+}
+
+.strong {
+  font-weight: bold; 
+}
+
 
 #tab_page_buttons, 
 #title {

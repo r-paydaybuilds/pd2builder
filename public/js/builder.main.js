@@ -194,5 +194,9 @@ $(document).ready(async function () {
         io.LoadBuildFromURL();
     }
     gui.LoadingSpinner_Display(false);
+
+    if ($(window).width() < 1003) { // #UNSUPPORTED 
+        $("#modal_notification").modal("show"); 
+    }
 });
 
