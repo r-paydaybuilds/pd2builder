@@ -96,7 +96,6 @@ class GUI {
 
     /**
      * Raise or lower the subtree background according to points set in it.
-     * Does not yet support accurate moving (only at set thresholds)
      * @param {string} subtreeId Id of the subtree to move
      * @param {number} pointsInTree Number of points to "move to"
      */
@@ -105,7 +104,7 @@ class GUI {
         let progress = 0;
         let points = pointsInTree;
 
-        for(const [index, pointsNeeded] of tiers.entries()) {
+        for(const [index, pointsNeeded] of [0, 1, 2, 13]) {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;

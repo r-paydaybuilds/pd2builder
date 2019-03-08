@@ -96,12 +96,12 @@ class System {
                 const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
                 
                 if (skill.state === "aced") { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
-                    if (tierPoints-skillStore.ace < tiers2[i]) { 
+                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL) { 
                         return false; 
                     }
                 }
                 else {
-                    if (tierPoints-skillStore.basic < tiers2[i]) {
+                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL) {
                         return false; 
                     }
                 }
@@ -125,6 +125,8 @@ class System {
         return true; 
     }
 }
+
+System.TIER_UTIL = [0, 1, 3, 16];
 
 const exp = {
     skills: new extMap(),
@@ -154,7 +156,6 @@ const exp = {
 };
 
 const tiers = [0, 1, 2, 13];
-const tiers2 = [0, 1, 3, 16];
 const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
 
 const sys = new System(); 
