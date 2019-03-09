@@ -64,7 +64,7 @@ class System {
                 subtree.points += skillStore.ace;
                 exp.skills.points -= skillStore.ace;
                 skill.state = "aced";
-                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
             }
@@ -73,7 +73,7 @@ class System {
                 subtree.points += skillStore.basic;
                 exp.skills.points -= skillStore.basic;
                 exp.skills.set(skillId, { state: "basic" });
-                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
             }
@@ -95,8 +95,7 @@ class System {
                     if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL) { 
                         return false; 
                     }
-                }
-                else {
+                } else {
                     if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL) {
                         return false; 
                     }
@@ -109,19 +108,30 @@ class System {
             subtree.points -= skillStore.ace;
             exp.skills.points += skillStore.ace;
             skill.state = "basic";
-            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
-        } 
-        else if (skill.state === "basic") {
+        } else if (skill.state === "basic") {
             subtree.points -= skillStore.basic;
             exp.skills.points += skillStore.basic;
             exp.skills.delete(skillId);
-            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
         }
+
+        subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
         return true; 
     }
+    
+    static getSubtreeTierLevel(subtreePoints) {
+        // Will never return `0`, only 1-3 or -1 for tier 4
+        let subtreeTierLevel = this.TIER_UTIL.findIndex(tierPoints => subtreePoints <= tierPoints);
+        if (subtreeTierLevel === -1) { subtreeTierLevel = this.TIER_UTIL.length; }
+
+        return subtreeTierLevel;
+    }
 }
 
+/**
+ * Array which keeps the necessary points for each tier
+ * @type {Array}
+ */
 System.TIER_UTIL = [0, 1, 3, 16];
 
 const exp = {
