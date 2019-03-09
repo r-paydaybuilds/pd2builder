@@ -1,4 +1,5 @@
 $(document).ready(async function () {
+    //Add a big ass loading spinner to make people not touch things //
     gui.LoadingSpinner_Display(true); 
 
     //
@@ -189,10 +190,14 @@ $(document).ready(async function () {
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container");
+
+    // Wait for all DBs to load before loading build from URL //
     await fetchPromises;
     if (io.HasToLoadBuild()) {
         io.LoadBuildFromURL();
     }
+
+    // Disable the loading spinner so people know that they should touch things now //
     gui.LoadingSpinner_Display(false);
 
     if ($(window).width() < 1003) { // #UNSUPPORTED 
