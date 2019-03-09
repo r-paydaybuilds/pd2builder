@@ -18,8 +18,7 @@ class extMap extends Map {
         for (const [key, value] of this) {
             const skill = skills.get(key);
 
-            if(skill.subtree !== subtree) continue;
-            if(skill.tier !== tier) continue;
+            if(skill.subtree !== subtree || skill.tier !== tier) continue;
             if (value.state === "aced") {
                 points += skill.ace + skill.basic;
             } else {
