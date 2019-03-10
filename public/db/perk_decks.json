@@ -48,7 +48,7 @@
         "name": "Rogue", 
         "description": "The Rogue is a stealthy criminal, capable of sneaky tricks and deadly force. Versatile and deceptive, the Rogue is hired to do anything from pickpocketing, to burglaries and con jobs.\nThe trademark of a Rogue is his versatility - what he lacks in strength he makes up for in skill.",
         "perks": [
-            "subtle",
+            "subtle-1",
             "helmet_popping",
             "elusive",
             "blending_in",
@@ -78,7 +78,7 @@
         "name": "Crook", 
         "description": "The Crook is a versatile criminal. The term is as old as crime itself.\nTruly, the crook is a jack of all trades and a master of none. He steals, lies, cheats and does any and every dishonest or illegal work necessary to get by.",
         "perks": [
-            "subtle",
+            "subtle-2",
             "helmet_popping",
             "basic_composure",
             "blending_in",

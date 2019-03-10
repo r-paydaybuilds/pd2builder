@@ -93,7 +93,7 @@
         "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
         "deck_completion_bonus": true
     },
-    "subtle": {
+    "subtle-1": {
         "name": "Subtle",
         "description": "Your chance to dodge is increased by 15%.",
         "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
@@ -118,5 +118,145 @@
         "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
         "vr_description": "The dash effect is now from 1% up to a maximum of 10%.",
         "deck_completion_bonus": true
+    },
+    "basic_recovery": {
+        "name": "Basic Recovery",
+        "description": "Your armor recovery rate is increased by 5%.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+    },
+    "ambidexterity": {
+        "name": "Ambidexterity",
+        "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "advanced_recovery": {
+        "name": "Advanced Recovery",
+        "description": "Your armor recovery rate is increased by an additional 10%.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "expert_recovery": {
+        "name": "Expert Recovery",
+        "description": "Your armor recovery rate is increased by an additional 10%.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+    },
+    "tooth_and_claw": {
+        "name": "Tooth and Claw",
+        "description": "Your armor recovery rate is increased by an additional 10%.\nYour armor will recover 1.5 seconds after being broken no matter what the situation.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "subtle-2": {
+        "name": "Subtle",
+        "description": "Your chance to dodge is increased by 15%.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+    },
+    "basic_composure": {
+        "name": "Basic Composure",
+        "description": "Your chance to dodge is increased by 5% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "advanced_composure": {
+        "name": "Advanced Composure",
+        "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "expert_composure": {
+        "name": "Expert Composure",
+        "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 25% for ballistic vests.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+    },
+    "master_recovery": {
+        "name": "Master Recovery",
+        "description": "Your armor recovery rate is increased by 10%",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "sneaky": {
+        "name": "Sneaky",
+        "description": "Your chance to dodge is increased by 20%.",
+        "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+    },
+    "bag_of_tricks": {
+        "name": "Bag of Tricks",
+        "description": "Standing still and crouching decreases your chances to be targeted by 10%.\nYou bag corpses 20% faster.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+    },
+    "luck_of_the_irish": {
+        "name": "Luck of the Irish",
+        "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
+    },
+    "dutch_courage": {
+        "name": "Dutch Courage",
+        "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
+    },
+    "breath_of_fresh_air": {
+        "name": "Breath of Fresh Air",
+        "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 10%.",
+        "deck_completion_bonus": true
+    },
+    "overdog": {
+        "name": "OVERDOG",
+        "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+    },
+    "basic_close_combat": {
+        "name": "Basic Close Combat",
+        "description": "When you are within medium range of an enemy, you receive 8% less damage from enemies.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "advanced_close_combat": {
+        "name": "Advanced Close Combat",
+        "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "expert_close_combat": {
+        "name": "Expert Close Combat",
+        "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
+        "vr_description": "The dash effect is new from 8 up to a maximum of 18."
+    },
+    "life_drain": {
+        "name": "Life Drain",
+        "description": "Striking an enemy with your melee weapon regenerates 20% of your health. This cannot occur more than once every 10 seconds.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "tension": {
+        "name": "Tension",
+        "description": "Killing an enemy regenerates 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "clean_hit": {
+        "name": "Clean Hit",
+        "description": "Killing an enemy with a melee weapon regenerates 10% health.\nThis cannot occur more than once every 1 second.\nWhen you are within medium range of an enemy you receive 8% less damage.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "overdose": {
+        "name": "Overdose",
+        "description": "Killing an enemy at medium range recovers 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+    },
+    "showdown": {
+        "name": "Showdown",
+        "description": "Killing an enemy at medium range has a 75% chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every 1 second.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "medical_supplies": {
+        "name": "Medical Supplies",
+        "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "ammo_give_out": {
+        "name": "Ammo Give Out",
+        "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "sharing_is_caring": {
+        "name": "",
+        "description": "",
+        "vr_description": ""
     }
 }
