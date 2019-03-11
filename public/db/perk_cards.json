@@ -255,8 +255,102 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6."
     },
     "sharing_is_caring": {
-        "name": "",
-        "description": "",
-        "vr_description": ""
+        "name": "Sharing Is Caring",
+        "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "more_healing_1": {
+        "name": "More Healing 1",
+        "description": "Increase health gained from ammo packs by additional 8.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "more_healing_2": {
+        "name": "More Healing 1",
+        "description": "Increase health gained from ammo packs by additional 8.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "histamine": {
+        "name": "Histamine",
+        "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "adrenaline": {
+        "name": "Adrenaline",
+        "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "endorphins": {
+        "name": "Endorphins",
+        "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "dopamine": {
+        "name": "Dopamine",
+        "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "euphoria": {
+        "name": "Euphoria",
+        "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "koi_irezumi": {
+        "name": "Koi Irezumi",
+        "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to 20% armor recovery rate.\nNOTE: Entering this state negates third party regeneration effects.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+    },
+    "hebi_irezumi": {
+        "name": "Hebi Irezumi",
+        "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "tora_irezumi": {
+        "name": "Tora Irezumi",
+        "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "ryu_irezumi": {
+        "name": "Ryu Irezumi",
+        "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+        "vr_description": "The dash effect is new from 8 up to a maximum of 18."
+    },
+    "oni_irezumi": {
+        "name": "Oni Irezumi",
+        "description": "All berserker state effects in this perk deck will start at 50% health instead of 25%.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "point_break": {
+        "name": "Point Break",
+        "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "the_emerging_force": {
+        "name": "The Emerging Force",
+        "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "life_of_ice": {
+        "name": "Life of Ice",
+        "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "awakening_earth": {
+        "name": "Awakening Earth",
+        "description": "Increases the amount of health stored from kills by 4.\nYou gain 20% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "the_perfect_line": {
+        "name": "The Perfect Line",
+        "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\t;Armor recovery speed is reset whenever your armor recovers.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "excitement": {
+        "name": "Excitement",
+        "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks\t;You gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
     }
 }
