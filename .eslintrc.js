@@ -11,6 +11,7 @@ module.exports = {
         "sys": "readonly",
         "skills": "readonly",
         "perkDecks": "readonly",
+        "perkCards": "readonly",
         "previous": "writable",
         "gui": "readonly",
         "io": "readonly",

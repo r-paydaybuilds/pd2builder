@@ -215,7 +215,7 @@
     "expert_close_combat": {
         "name": "Expert Close Combat",
         "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-        "vr_description": "The dash effect is new from 8 up to a maximum of 18."
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
     },
     "life_drain": {
         "name": "Life Drain",
@@ -314,7 +314,7 @@
     "ryu_irezumi": {
         "name": "Ryu Irezumi",
         "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
-        "vr_description": "The dash effect is new from 8 up to a maximum of 18."
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
     },
     "oni_irezumi": {
         "name": "Oni Irezumi",
@@ -352,5 +352,203 @@
         "name": "Excitement",
         "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks\t;You gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
         "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+    },
+    "outburst": {
+        "name": "Outburst",
+        "description": "Members of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "fervor": {
+        "name": "Fervor",
+        "description": "Change the decay of your Hysteria Stacks to 60% + 40 every 8 seconds.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "recklessness": {
+        "name": "Recklessness",
+        "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."  
+    },
+    "insanity": {
+        "name": "Insanity",
+        "description": "Damage absorption from Hysteria Stacks on you is increased by 100%.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true   
+    },
+    "blitzkrieg_bop": {
+        "name": "Blitzkrieg Bop",
+        "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
+        "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+    },
+    "straight_edge": {
+        "name": "Straight Edge",
+        "description": "50% of your health is converted into 100% armor.",
+        "vr_description": "The dash effect is now from 2 up to a maximum of 5."   
+    },
+    "death_or_glory": {
+        "name": "Death or Glory",
+        "description": "50% of your health is converted into 110% armor.",
+        "vr_description": "The dash effect is now from 3 up to a maximum of 7."  
+    },
+    "rise_above": {
+        "name": "Rise Above",
+        "description": "50% of your health is converted into 120% armor.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 9."
+    },
+    "lust_for_life": {
+        "name": "Lust for Life",
+        "description": "Dealing damage will grant you 10 armor - this can only occur once every 1.5 seconds.",
+        "vr_description": "The dash effect is now from 5 up to a maximum of 11.",
+        "deck_completion_bonus": true
+    },
+    "prospect": {
+        "name": "Prospect",
+        "description": "Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 4 times every 4 seconds.",
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+    },
+    "tail_gunner": {
+        "name": "Tail Gunner",
+        "description": "Every 10% health missing will increase the amount of armor gained from kills by 1.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+    },
+    "road_captain": {
+        "name": "Road Captain",
+        "description": "Every 10% health missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
+        "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+    },
+    "sgt-at-arms": {
+        "name": "Sgt-at-Arms",
+        "description": "Every 10% armor missing will increase the amount of health gained from kills by 1.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+    },
+    "prez": {
+        "name": "Prez",
+        "description": "Every 10% armor missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
+        "vr_description": "The dash effect is now from 10 up to a maximum of 22.",
+        "deck_completion_bonus": true
+    },
+    "bad_guy_coming_through": {
+        "name": "Bad Guy Coming Through",
+        "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "play_rough": {
+        "name": "Play Rough",
+        "description": "You gain 10% more health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "public_enemy_no_1": {
+        "name": "Public Enemy No. 1",
+        "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "balls_vs_bullets": {
+        "name": "Balls vs Bullets",
+        "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "right_to_the_top": {
+        "name": "Right to the Top",
+        "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "smoker": {
+        "name": "Smoker",
+        "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
+        "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+    },
+    "twitch": {
+        "name": "Twitch",
+        "description": "Every time the player gets shot, 20% dodge chance is gained. This effect is reset once the player dodges and will not occur for the next 4 second.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+    },
+    "subtle-3": {
+        "name": "Subtle",
+        "description": "Your chance to dodge is increased by 15%.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+    },
+    "agility_shield": {
+        "name": "Agility Shield",
+        "description": "Dodging will replenish your armor.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+    },
+    "unseen_shadow": {
+        "name": "Unseen Shadow",
+        "description": "All of your perk deck effects are increased by 100% while you are standing in the smoke screen. While any of your allies are standing in the smoke screen, they gain 10% dodge chance.",
+        "vr_description": "The dash effect is now from 1% up to a maximum of 10%.",
+        "deck_completion_bonus": true
+    },
+    "virtue": {
+        "name": "Virtue",
+        "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "un-moved": {
+        "name": "Un-moved",
+        "description": "All of your armor is converted and applied to your health.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "calm": {
+        "name": "Calm",
+        "description": "After not taking damage for  seconds any damage-over-time you are still waiting to receive will be negated.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "imperturbable": {
+        "name": "Imperturbable",
+        "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "enduring": {
+        "name": "Enduring",
+        "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "soul_mates": {
+        "name": "Soul Mates",
+        "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+    },
+    "scent": {
+        "name": "Scent",
+        "description": "Your maximum health is increased by 20%.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+    },
+    "synergy": {
+        "name": "Synergy",
+        "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+    },
+    "inhale": {
+        "name": "Inhale",
+        "description": "Your maximum health is increased by 20%.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+    },
+    "harmony": {
+        "name": "Harmony",
+        "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+        "deck_completion_bonus": true
+    },
+    "code_glitch": {
+        "name": "Code Glitch",
+        "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+    },
+    "opsec": {
+        "name": "OpSec",
+        "description": "You gain 20% more health."
+    },
+    "bit_decay": {
+        "name": "Bit Decay",
+        "description": "Killing an enemy while the feedback effect is active will regenerate 20 health."
+    },
+    "kluge": {
+        "name": "Kluge",
+        "description": "Killing at least 1 enemy while the feedback or jamming effect is active will grant 20 dodge for 30 seconds."
+    },
+    "botnet": {
+        "name": "Botnet",
+        "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health.",
+        "deck_completion_bonus": true
     }
 }

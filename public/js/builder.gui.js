@@ -330,10 +330,16 @@ class GUI {
     PerkDeck_DisplayDescriptionCard(cardObj) {
         if (!cardObj) return; 
 
-        const desc = $(".pk_description_card"); // eslint-disable-line no-unused-vars
-        
-        // Todo
+        const desc = $(".pk_description_card");
+        const pk = perkDecks.get(cardObj.parent()[0].id);
+        const perkCard = perkCards.get(pk.perks[cardObj.index() - 1]);
 
+        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${perkCard.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+
+        desc.html(html);
     }
 
     /**
