@@ -92,11 +92,11 @@ class System {
                 const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
                 
                 if (skill.state === "aced") { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
-                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL) { 
+                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL[i]) { 
                         return false; 
                     }
                 } else {
-                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL) {
+                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL[i]) {
                         return false; 
                     }
                 }
