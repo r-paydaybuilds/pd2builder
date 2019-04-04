@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: "off" */
 
-class extMap extends Map {
+class skillMap extends Map {
     constructor(...args) {
         super(...args);
         this.points = 120;
@@ -46,6 +46,21 @@ class extMap extends Map {
     }
 }
 
+class dbMap extends Map {
+    fetchAll() {
+        const array = [];
+        const self = this;
+        for(const [key] of this) {
+            array.push(
+                fetch(`/db/${key}.json`)
+                    .then( res => res.json() )
+                    .then( json => self.set(key, new Map(Object.entries(json))) )
+            );
+        }
+        return Promise.all(array);
+    }
+}
+
 /**
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
@@ -56,7 +71,7 @@ class System {
 
     Skill_Add(skillId) {
         const skill = exp.skills.get(skillId);
-        const skillStore = skills.get(skillId);
+        const skillStore = dbs.get("skills").get(skillId);
         const subtree = exp.subtrees[skillStore.subtree];
 
         if (skill) { // If given skill is present in exp.skills, (is already basic) 
@@ -84,6 +99,7 @@ class System {
 
     Skill_Remove(skillId) {
         const skill = exp.skills.get(skillId);
+        const skills = dbs.get("skills");
         const skillStore = skills.get(skillId);
         if (!skill) return false; // If the skill is not owned    
 
@@ -135,7 +151,7 @@ class System {
 System.TIER_UTIL = [0, 1, 3, 16];
 
 const exp = {
-    skills: new extMap(),
+    skills: new skillMap(),
     subtrees: {
         medic: { tier: 1, points: 0 },
         controller: { tier: 1, points: 0 },
@@ -166,14 +182,14 @@ const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
 
 const sys = new System(); 
 
-let skills;
-let perkDecks; 
-let perkCards; 
+const dbs = new dbMap([
+    ["skills", null],
+    ["perk_decks", null],
+    ["perk_cards", null],
+    ["deployables", null]
+]);
+
 let previous;
 
 jQuery.fn.reverse = [].reverse;
-const fetchPromises = Promise.all([
-    fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));}),
-    fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));}),
-    fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));})
-]);
+const fetchPromises = dbs.fetchAll();

@@ -255,11 +255,11 @@
   background-image: url("/img/deployables/ammo_bag.png"); 
 }
 
-#armor_kit {
+#armor_bag {
   background-image: url("/img/deployables/armor_kit.png"); 
 }
 
-#bodybag_case {
+#body_bag_case {
   background-image: url("/img/deployables/bodybags_bag.png"); 
 }
 
@@ -279,10 +279,10 @@
   background-image: url("/img/deployables/sentry_gun.png"); 
 }
 
-#sentry_gun_silent {
+#suppressed_sentry_gun {
   background-image: url("/img/deployables/sentry_gun_silent.png"); 
 }
 
-#trip_mine {
+#trip_mine_and_shaped_charges {
   background-image: url("/img/deployables/trip_mine.png"); 
 }
