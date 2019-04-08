@@ -212,3 +212,33 @@ body > div {
   bottom: 0; 
   right: 0; 
 }
+
+/**********************************/
+/*       PAYDAY-STYLE TABLE       */
+/**********************************/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr, th, td {
+  color: #fefefe;
+  text-align: center;
+}
+
+th:first-child {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+#table_head {
+  background-color: rgba(0, 0, 0, 0.7);
+}
