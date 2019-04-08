@@ -11,5 +11,6 @@ tools.use(bodyParser.json());
 
 tools.use("/", express.static("./public"));
 tools.get("/", (req, res) => res.sendFile("index.html", { root: "./pages/"}));
+tools.get("/test",  (req, res) => res.sendFile("test.html", { root: "./pages/"}));
 
 tools.listen(9999, () => console.log("pd2tools started on port 9999")); // eslint-disable-line no-console
