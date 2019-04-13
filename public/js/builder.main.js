@@ -1,4 +1,5 @@
 $(document).ready(async function () {
+    //Add a big ass loading spinner to make people not touch things //
     gui.LoadingSpinner_Display(true); 
 
     //
@@ -71,7 +72,7 @@ $(document).ready(async function () {
             if (sys.Skill_Add(id)) {
                 gui.Skill_Add(element); 
 
-                const s = skills.get(id);
+                const s = dbs.get("skills").get(id);
                 gui.Skill_UpdatePointsRemaining(exp.skills.points);
                 gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
             }
@@ -89,7 +90,7 @@ $(document).ready(async function () {
             if (sys.Skill_Remove(id)) { 
                 gui.Skill_Remove(element); 
                 
-                const s = skills.get(id);
+                const s = dbs.get("skills").get(id);
                 gui.Skill_UpdatePointsRemaining(exp.skills.points);
                 gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
             }
@@ -172,6 +173,12 @@ $(document).ready(async function () {
             event.preventDefault(); 
             gui.Deployable_SelectSecondary($(this)); 
         });
+        $(this).mouseenter(function() {
+            const id = this.firstElementChild.id; 
+            if ($(".dp_description").data("deployable") !== id) {
+                gui.Deployable_DisplayDescriptionCard(id); 
+            }
+        });
     });
 
     // Share build section //
@@ -189,10 +196,14 @@ $(document).ready(async function () {
     gui.Tab_ChangeTo("tab_skills_page"); 
     gui.Skill_UpdatePointsRemaining(exp.skills.points); 
     gui.Tree_ChangeTo("sk_mastermind_container");
+
+    // Wait for all DBs to load before loading build from URL //
     await fetchPromises;
     if (io.HasToLoadBuild()) {
         io.LoadBuildFromURL();
     }
+
+    // Disable the loading spinner so people know that they should touch things now //
     gui.LoadingSpinner_Display(false);
 
     if ($(window).width() < 1003) { // #UNSUPPORTED 

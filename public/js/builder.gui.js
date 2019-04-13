@@ -231,7 +231,7 @@ class GUI {
      */
     Skill_DisplayDescription(skillId) {
         const desc = $(".sk_description"); 
-        const skill = skills.get(skillId);
+        const skill = dbs.get("skills").get(skillId);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
             .replace(/\n/g, "</p><p>")
@@ -312,7 +312,7 @@ class GUI {
      */
     PerkDeck_DisplayDescription(perkdeckId) {
         const desc = $(".pk_description"); 
-        const pk = perkDecks.get(perkdeckId);
+        const pk = dbs.get("perk_decks").get(perkdeckId);
 
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
             .replace(/\n/g, "</p><p>")
@@ -330,10 +330,16 @@ class GUI {
     PerkDeck_DisplayDescriptionCard(cardObj) {
         if (!cardObj) return; 
 
-        const desc = $(".pk_description_card"); // eslint-disable-line no-unused-vars
-        
-        // Todo
+        const desc = $(".pk_description_card");
+        const pk = dbs.get("perk_decks").get(cardObj.parent()[0].id);
+        const perkCard = dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
+        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${perkCard.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+
+        desc.html(html);
     }
 
     /**
@@ -473,6 +479,23 @@ class GUI {
     }    
 
     /**
+     * Display a deployable's description inside the bottom description container. 
+     * @param {Object} deployableId Id of the skill of which to display the description
+     */
+    Deployable_DisplayDescriptionCard(deployableId) {
+        const desc = $(".dp_description");
+        const dp = dbs.get("deployables").get(deployableId);
+
+        let html = `<p class="description_title">${dp.name.toUpperCase()}</p><p>${dp.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+
+        desc.html(html);
+        desc.data("deployable", deployableId);
+    }
+
+    /**
      * Make the share build link textbox flash green and change the button text, to give feedback that the link has been copied in the clipboard. 
      */
     IO_CopyLinkFlash() {
@@ -583,6 +606,11 @@ class GUI {
         }
     }
 }
-GUI.COLOR_PATTERN = /\b(?!OVE9000)[0-9]+([,.][0-9]+)?( point(s)?|%|cm|\+)?/g;
+
+/**
+ * Regular expression that globally matches the data of the JSONs that should have color
+ * @type {RegExp}
+ */
+GUI.COLOR_PATTERN = /(\+ ?|- ?|\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g;
 
 const gui = new GUI(); // eslint-disable-line no-unused-vars

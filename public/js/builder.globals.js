@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: "off" */
 
-class extMap extends Map {
+class skillMap extends Map {
     constructor(...args) {
         super(...args);
         this.points = 120;
@@ -18,8 +18,7 @@ class extMap extends Map {
         for (const [key, value] of this) {
             const skill = skills.get(key);
 
-            if(skill.subtree !== subtree) continue;
-            if(skill.tier !== tier) continue;
+            if(skill.subtree !== subtree || skill.tier !== tier) continue;
             if (value.state === "aced") {
                 points += skill.ace + skill.basic;
             } else {
@@ -47,6 +46,21 @@ class extMap extends Map {
     }
 }
 
+class dbMap extends Map {
+    fetchAll() {
+        const array = [];
+        const self = this;
+        for(const [key] of this) {
+            array.push(
+                fetch(`/db/${key}.json`)
+                    .then( res => res.json() )
+                    .then( json => self.set(key, new Map(Object.entries(json))) )
+            );
+        }
+        return Promise.all(array);
+    }
+}
+
 /**
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
@@ -57,7 +71,7 @@ class System {
 
     Skill_Add(skillId) {
         const skill = exp.skills.get(skillId);
-        const skillStore = skills.get(skillId);
+        const skillStore = dbs.get("skills").get(skillId);
         const subtree = exp.subtrees[skillStore.subtree];
 
         if (skill) { // If given skill is present in exp.skills, (is already basic) 
@@ -65,7 +79,7 @@ class System {
                 subtree.points += skillStore.ace;
                 exp.skills.points -= skillStore.ace;
                 skill.state = "aced";
-                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
             }
@@ -74,7 +88,7 @@ class System {
                 subtree.points += skillStore.basic;
                 exp.skills.points -= skillStore.basic;
                 exp.skills.set(skillId, { state: "basic" });
-                subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
+                subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
             }
@@ -85,6 +99,7 @@ class System {
 
     Skill_Remove(skillId) {
         const skill = exp.skills.get(skillId);
+        const skills = dbs.get("skills");
         const skillStore = skills.get(skillId);
         if (!skill) return false; // If the skill is not owned    
 
@@ -93,12 +108,11 @@ class System {
                 const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
                 
                 if (skill.state === "aced") { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
-                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL) { 
+                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL[i]) { 
                         return false; 
                     }
-                }
-                else {
-                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL) {
+                } else {
+                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL[i]) {
                         return false; 
                     }
                 }
@@ -110,23 +124,34 @@ class System {
             subtree.points -= skillStore.ace;
             exp.skills.points += skillStore.ace;
             skill.state = "basic";
-            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
-        } 
-        else if (skill.state === "basic") {
+        } else if (skill.state === "basic") {
             subtree.points -= skillStore.basic;
             exp.skills.points += skillStore.basic;
             exp.skills.delete(skillId);
-            subtree.tier = subtree.points > 0 ? (subtree.points > 2 ? (subtree.points > 16 ? 4 : 3) : 2 ) : 1;
         }
+
+        subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
         return true; 
     }
+    
+    static getSubtreeTierLevel(subtreePoints) {
+        // Will never return `0`, only 1-3 or -1 for tier 4
+        let subtreeTierLevel = this.TIER_UTIL.findIndex(tierPoints => subtreePoints <= tierPoints);
+        if (subtreeTierLevel === -1) { subtreeTierLevel = this.TIER_UTIL.length; }
+
+        return subtreeTierLevel;
+    }
 }
 
+/**
+ * Array which keeps the necessary points for each tier
+ * @type {Array}
+ */
 System.TIER_UTIL = [0, 1, 3, 16];
 
 const exp = {
-    skills: new extMap(),
+    skills: new skillMap(),
     subtrees: {
         medic: { tier: 1, points: 0 },
         controller: { tier: 1, points: 0 },
@@ -157,14 +182,14 @@ const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
 
 const sys = new System(); 
 
-let skills;
-let perkDecks; 
-let perkCards; 
+const dbs = new dbMap([
+    ["skills", null],
+    ["perk_decks", null],
+    ["perk_cards", null],
+    ["deployables", null]
+]);
+
 let previous;
 
 jQuery.fn.reverse = [].reverse;
-const fetchPromises = Promise.all([
-    fetch("/db/skills.json").then(res => res.json()).then(json => { skills = new Map(Object.entries(json));}),
-    fetch("/db/perk_decks.json").then(res => res.json()).then(json => { perkDecks = new Map(Object.entries(json));}),
-    fetch("/db/perk_cards.json").then(res => res.json()).then(json => { perkCards = new Map(Object.entries(json));})
-]);
+const fetchPromises = dbs.fetchAll();
