@@ -161,6 +161,9 @@ $(document).ready(async function () {
             exp.throwable = id;
             gui.Throwable_Select($(this));
         });
+        $(this).mouseenter(function() {
+            gui.Throwable_DisplayDescriptionCard(this.firstElementChild.id); 
+        });
     });
 
     // Deployables icon buttons //
@@ -174,10 +177,7 @@ $(document).ready(async function () {
             gui.Deployable_SelectSecondary($(this)); 
         });
         $(this).mouseenter(function() {
-            const id = this.firstElementChild.id; 
-            if ($(".dp_description").data("deployable") !== id) {
-                gui.Deployable_DisplayDescriptionCard(id); 
-            }
+            gui.Deployable_DisplayDescriptionCard(this.firstElementChild.id); 
         });
     });
 

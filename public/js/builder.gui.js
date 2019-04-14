@@ -429,6 +429,21 @@ class GUI {
     }
 
     /**
+     * Display a throwable's description inside the bottom description container. 
+     * @param {Object} throwableId ID of the throwable of which to display the description
+     */
+    Throwable_DisplayDescriptionCard(throwableId) {
+        const desc = $(".th_description");
+        const th = dbs.get("throwables").get(throwableId);
+
+        let html = `<p class="description_title">${th.name.toUpperCase()}</p><p>${th.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>");
+
+        desc.html(html);
+    }
+
+    /**
      * Select a specified deployable
      * @param {Object} deployableObj A jQuery object representing the clicked deployable icon
      */
@@ -487,7 +502,7 @@ class GUI {
 
     /**
      * Display a deployable's description inside the bottom description container. 
-     * @param {Object} deployableId Id of the skill of which to display the description
+     * @param {Object} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {
         const desc = $(".dp_description");

@@ -186,7 +186,8 @@ const dbs = new dbMap([
     ["skills", null],
     ["perk_decks", null],
     ["perk_cards", null],
-    ["deployables", null]
+    ["deployables", null],
+    ["throwables", null]
 ]);
 
 let previous;

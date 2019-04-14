@@ -31,7 +31,7 @@
         "name": "Suppressed Sentry Gun",
         "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.",
         "requires": [
-            {"type": "skill", "name": "engineering"}
+            { "type": "skill", "name": "engineering" }
         ]
     },
     "trip_mines_and_shaped_charges": {
