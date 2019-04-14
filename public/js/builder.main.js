@@ -120,7 +120,7 @@ $(document).ready(async function () {
             gui.PerkDeck_Select($(this)); 
         });
 
-        $(this).mouseover(function () {
+        $(this).mouseenter(function () {
             const id = this.id; 
             
             if ($(".pk_description").data("perkdeck") !== id) {
@@ -131,15 +131,6 @@ $(document).ready(async function () {
 
     // Perk deck cards highlight // 
     $(".pk_deck > div").each(function () {
-        $(this).contextmenu(function (event) {
-            if($("#pk_card_t").hasClass("bigger")) {
-                gui.PerkDeck_NormalizeDescriptionCard();
-            } else {
-                gui.PerkDeck_EnlargeDescriptionCard();
-            }
-            event.preventDefault();
-        });
-
         $(this).mouseenter(function () {
             gui.PerkDeck_HoveringHighlightOn($(this)); 
             gui.PerkDeck_DisplayDescriptionCard($(this)); 

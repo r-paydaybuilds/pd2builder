@@ -330,7 +330,7 @@ class GUI {
     PerkDeck_DisplayDescriptionCard(cardObj) {
         if (!cardObj) return; 
 
-        const desc = $(".pk_description_card");
+        const desc = $(".pk_description");
         const pk = dbs.get("perk_decks").get(cardObj.parent()[0].id);
         const perkCard = dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
@@ -340,32 +340,6 @@ class GUI {
             .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
-    }
-    
-    /**
-     * Enlarges the descrition of the card and makes the deck one smaller
-     */
-    PerkDeck_EnlargeDescriptionCard() {
-        const cardDiv = $("#pk_card_t");
-        const deckDiv = $("#pk_description_t");
-        
-        cardDiv.addClass("bigger");
-        cardDiv.children().addClass("bigger");
-        deckDiv.addClass("smaller");
-        deckDiv.children().addClass("smaller");
-    }
-
-    /**
-     * Normalizes the descriptions
-     */
-    PerkDeck_NormalizeDescriptionCard() {
-        const cardDiv = $("#pk_card_t");
-        const deckDiv = $("#pk_description_t");
-        
-        cardDiv.removeClass("bigger");
-        cardDiv.children().removeClass("bigger");
-        deckDiv.removeClass("smaller");
-        deckDiv.children().removeClass("smaller");
     }
 
     /**
