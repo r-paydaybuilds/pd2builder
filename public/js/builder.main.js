@@ -41,10 +41,10 @@ $(document).ready(async function () {
     $("#sk_page").on("wheel", function(event) {
         if (event.originalEvent.deltaY < 0) {
             gui.Tree_ChangeByScrolling(false); 
-        } 
-        else {
+        } else {
             gui.Tree_ChangeByScrolling(true); 
         }
+        event.preventDefault();
     });
 
     // Subtree //
@@ -131,6 +131,15 @@ $(document).ready(async function () {
 
     // Perk deck cards highlight // 
     $(".pk_deck > div").each(function () {
+        $(this).contextmenu(function (event) {
+            if($("#pk_card_t").hasClass("bigger")) {
+                gui.PerkDeck_NormalizeDescriptionCard();
+            } else {
+                gui.PerkDeck_EnlargeDescriptionCard();
+            }
+            event.preventDefault();
+        });
+
         $(this).mouseenter(function () {
             gui.PerkDeck_HoveringHighlightOn($(this)); 
             gui.PerkDeck_DisplayDescriptionCard($(this)); 

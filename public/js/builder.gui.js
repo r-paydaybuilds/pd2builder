@@ -341,6 +341,32 @@ class GUI {
 
         desc.html(html);
     }
+    
+    /**
+     * Enlarges the descrition of the card and makes the deck one smaller
+     */
+    PerkDeck_EnlargeDescriptionCard() {
+        const cardDiv = $("#pk_card_t");
+        const deckDiv = $("#pk_description_t");
+        
+        cardDiv.addClass("bigger");
+        cardDiv.children().addClass("bigger");
+        deckDiv.addClass("smaller");
+        deckDiv.children().addClass("smaller");
+    }
+
+    /**
+     * Normalizes the descriptions
+     */
+    PerkDeck_NormalizeDescriptionCard() {
+        const cardDiv = $("#pk_card_t");
+        const deckDiv = $("#pk_description_t");
+        
+        cardDiv.removeClass("bigger");
+        cardDiv.children().removeClass("bigger");
+        deckDiv.removeClass("smaller");
+        deckDiv.children().removeClass("smaller");
+    }
 
     /**
      * When hovering over a specific perk deck card, dim its siblings to highlight it. 
@@ -364,6 +390,7 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */
     Armor_Select(armorObj) {
+        if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
         $(".arm_icon.arm_selected").removeClass("arm_selected"); 
         armorObj.addClass("arm_selected"); 
     }
