@@ -233,10 +233,12 @@ class GUI {
         const desc = $(".sk_description"); 
         const skill = dbs.get("skills").get(skillId);
 
-        let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${skill.description}</p>`
-            .replace(/\n/g, "</p><p>")
-            .replace(/\t/g, "<br>")
-            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+        let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
+            skill.description
+                .replace(/\n/g, "</p><p>")
+                .replace(/\t/g, "<br>")
+                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
+        }</p>`;
 
         desc.html(html);
         desc.data("skill", skillId);
@@ -314,10 +316,12 @@ class GUI {
         const desc = $(".pk_description"); 
         const pk = dbs.get("perk_decks").get(perkdeckId);
 
-        let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${pk.description}</p>`
-            .replace(/\n/g, "</p><p>")
-            .replace(/\t/g, "<br>")
-            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+        let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
+            pk.description
+                .replace(/\n/g, "</p><p>")
+                .replace(/\t/g, "<br>")
+                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
+        }</p>`;
 
         desc.html(html);
         desc.data("perkDeck", perkdeckId);
@@ -334,10 +338,12 @@ class GUI {
         const pk = dbs.get("perk_decks").get(cardObj.parent()[0].id);
         const perkCard = dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
-        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${perkCard.description}</p>`
-            .replace(/\n/g, "</p><p>")
-            .replace(/\t/g, "<br>")
-            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${
+            perkCard.description
+                .replace(/\n/g, "</p><p>")
+                .replace(/\t/g, "<br>")
+                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
+        }</p>`;
 
         desc.html(html);
     }
@@ -489,8 +495,7 @@ class GUI {
 
         let html = `<p class="description_title">${dp.name.toUpperCase()}</p><p>${dp.description}</p>`
             .replace(/\n/g, "</p><p>")
-            .replace(/\t/g, "<br>")
-            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+            .replace(/\t/g, "<br>");
 
         desc.html(html);
         desc.data("deployable", deployableId);
