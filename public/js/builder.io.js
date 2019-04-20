@@ -105,19 +105,45 @@ class IO {
 
     /**
      * Decodes the parameters in the URI, and sets the current build to match it the build encoded in it. 
-     * @returns {Promise<Boolean>}
+     * @returns {void}
      */
     LoadBuildFromURL() {
-        var self = this; // Prevent jQuery from screwing up this's scope
-
         const urlParams = new URLSearchParams(window.location.search);
 
-        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")); 
-                
-        let skillsString = decodeURIComponent(urlParams.get("s"));
+        for(const [key, value] of urlParams) {
+            switch(key) {
+            case "s":
+                this.loadSkills(decodeURIComponent(value));
+                break;
+            case "k":
+                this.loadSkillPoints(parseInt(value));
+                break;
+            case "p":
+                this.loadPerkDeck(parseInt(this.DecodeByte(value)));
+                break;
+            case "a":
+                this.loadArmor(parseInt(value));
+                break;
+            case "t":
+                this.loadThrowable(parseInt(this.DecodeByte(value)));
+                break;
+            case "d":
+                this.loadDeployable(parseInt(value));
+                break;
+            }
+        }
+    }
+
+    /**
+     * Loads s parameter to the UI
+     * @param {String} skills An encoded string which contains all skills that the build has
+     * @returns {void}
+     */
+    loadSkills(skills) {
+        let self = this;
         $(".sk_subtree").each(function () {
-            let subtreeBasicChar = self.DecodeByte(skillsString.substr(0, 1)); 
-            let subtreeAcedChar = self.DecodeByte(skillsString.substr(1, 1));  
+            let subtreeBasicChar = self.DecodeByte(skills.substr(0, 1)); 
+            let subtreeAcedChar = self.DecodeByte(skills.substr(1, 1));  
             let mask = 1; 
 
             $(this).children(".sk_tier").reverse().each(function () {
@@ -136,50 +162,69 @@ class IO {
                     mask = mask << 1; 
                 });
             });
-            skillsString = skillsString.substr(2); 
+            skills = skills.substr(2); 
         }); 
-        let k = parseInt(urlParams.get("k"));
-        gui.Skill_UpdatePointsRemaining(k); 
-        exp.skills.points = k; 
+    }
 
-        let p = parseInt(self.DecodeByte(urlParams.get("p"))); 
-        let pkCount = 0; 
-        $(".pk_deck").each(function () {
-            if (pkCount === p) {
+    /**
+     * Loads k parameter to the UI
+     * @param {Number} points Integer that contains amount of points remaining
+     * @returns {void}
+     */
+    loadSkillPoints(points) {
+        gui.Skill_UpdatePointsRemaining(points); 
+        exp.skills.points = points; 
+    }
+
+    /**
+     * Loads p parameter to the UI
+     * @param {Number} perk Index of the perk deck that is being used
+     * @returns {void}
+     */
+    loadPerkDeck(perk) {
+        $(".pk_deck").each(function (index) {
+            if (index === perk) {
                 $(this).click();
             }
-
-            pkCount++; 
         }); 
+    } 
 
-        let a = parseInt(urlParams.get("a")); 
-        let armCount = 0; 
-        $(".arm_icon").each(function () {
-            if (armCount === a) {
+    /**
+     * Loads a parameter to the UI
+     * @param {Number} armor Index of the armor that is being used
+     * @returns {void}
+     */
+    loadArmor(armor) {
+        $(".arm_icon").each(function (index) {
+            if (index === armor) {
                 $(this).click();
             }
-
-            armCount++; 
         }); 
+    }
 
-        let t = parseInt(self.DecodeByte(urlParams.get("t"))); 
-        let thCount = 0; 
-        $(".th_icon").each(function () {
-            if (thCount === t) {
+    /**
+     * Loads t parameter to the UI
+     * @param {Number} throwable Index of the throwable that is being used
+     * @returns {void}
+     */
+    loadThrowable(throwable) {
+        $(".th_icon").each(function (index) {
+            if (index === throwable) {
                 $(this).click();
             }
-
-            thCount++; 
         }); 
+    }
 
-        let d = parseInt(urlParams.get("d")); 
-        let dpCount = 0; 
-        $(".dp_icon").each(function () {
-            if (dpCount === d) {
+    /**
+     * Loads d parameter to the UI
+     * @param {Number} deployable Index of the deployable that is being used
+     * @returns {void}
+     */
+    loadDeployable(deployable) {
+        $(".dp_icon").each(function (index) {
+            if (index === deployable) {
                 $(this).click();
             }
-
-            dpCount++; 
         }); 
     }
 
@@ -189,8 +234,7 @@ class IO {
      */
     HasToLoadBuild() {
         const urlParams = new URLSearchParams(window.location.search);
-        if (!urlParams.has("s") || !urlParams.has("k") || !urlParams.has("p") || !urlParams.has("a") || !urlParams.has("t") || !urlParams.has("d")) return false; 
-        else return true; 
+        return urlParams.has("s") || urlParams.has("k") || urlParams.has("p") || urlParams.has("a") || urlParams.has("t") || urlParams.has("d");
     }
 }
 
