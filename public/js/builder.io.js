@@ -94,11 +94,22 @@ class IO {
         // Manage Deployables
         let dpCount = 0; 
         $(".dp_icon").each(function () {
-            if ($(this).hasClass("dp_selected")) return false; 
+            if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
 
             dpCount++; 
         });
-        buildString += "&d=" + dpCount;         
+        buildString += "&d=" + dpCount;
+        
+        // Account for secondary deployables 
+        let dpCount2 = 0; 
+        if ($(".dp_icon").hasClass("dp_secondary")) {
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_secondary")) return false; 
+    
+                dpCount2++; 
+            });
+            buildString += dpCount2.toString();
+        }
 
         return buildString; 
     }
@@ -128,7 +139,7 @@ class IO {
                 this.loadThrowable(parseInt(this.DecodeByte(value)));
                 break;
             case "d":
-                this.loadDeployable(parseInt(value));
+                this.loadDeployable(value); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
                 break;
             }
         }
@@ -221,9 +232,16 @@ class IO {
      * @returns {void}
      */
     loadDeployable(deployable) {
+        let dpParam = String(deployable); 
+        let dp1 = dpParam.substr(0, 1); // === deployable if deployable.length === 1
+        let dp2 = dpParam.length > 1 ? dpParam.substr(1, 1) : -1; 
+
         $(".dp_icon").each(function (index) {
-            if (index === deployable) {
-                $(this).click();
+            if (index === dp1) {
+                gui.Deployable_Select($(this));
+            }
+            else if (index === dp2) {
+                gui.Deployable_SelectSecondary($(this));
             }
         }); 
     }
