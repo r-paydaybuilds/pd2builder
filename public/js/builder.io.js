@@ -237,10 +237,10 @@ class IO {
         let dp2 = dpParam.length > 1 ? dpParam.substr(1, 1) : -1; 
 
         $(".dp_icon").each(function (index) {
-            if (index === dp1) {
+            if (index === parseInt(dp1)) {
                 gui.Deployable_Select($(this));
             }
-            else if (index === dp2) {
+            else if (index === parseInt(dp2)) {
                 gui.Deployable_SelectSecondary($(this));
             }
         }); 
