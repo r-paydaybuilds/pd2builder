@@ -3,7 +3,7 @@
 [![Travis CI](https://api.travis-ci.org/r-paydaybuilds/pd2builder.svg)](https://travis-ci.org/r-paydaybuilds/pd2builder)
 # pd2builder, a loadout simulator of Payday 2 that works
 
-#### You can currently find a demo in [here](https://gallant-agnesi-dd5c4c.netlify.com/)
+#### You can currently find a demo in [here](pd2builder.netlify.com/)
 #### Kind of a to-do list can be found in the [wiki](https://github.com/r-paydaybuilds/pd2builder/wiki/To-Do-list)
 
 ## Running locally
