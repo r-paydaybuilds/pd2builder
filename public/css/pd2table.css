@@ -1,0 +1,88 @@
+/**********************************/
+/*       PAYDAY-STYLE TABLE       */
+/**********************************/
+
+table {
+  display: table; 
+  width: 100%;
+  padding: 0 10px; 
+  
+  border-collapse: collapse;
+  border-spacing: 0px; 
+
+  font-size: 16pt; 
+  color: rgb(240, 240, 240);
+}
+
+tr, td {
+  text-align: right;
+}
+
+thead tr td {
+  text-align: center; 
+}
+
+tr:first-child {
+  text-align: left; 
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+table.armor_compare tbody tr td:not(:first-of-type) {
+  padding-right: 10%; 
+}
+
+table.armor_details tbody tr td:not(:first-of-type) {
+  padding-right: 6%; 
+}
+
+td.more {
+  color: rgb(155, 175, 105);
+}
+
+td.less {
+  color: rgb(255, 95, 100);
+}
+
+/* Armor Compare */
+table.armor_compare tr td:nth-of-type(2) {
+  color: rgb(160, 160, 160);
+}
+
+
+/* Armor Details */ 
+table.armor_details tr td:nth-of-type(3) {
+  color: rgb(160, 160, 160);
+}
+
+table.armor_details tr td:nth-of-type(4) {
+  color: rgb(60, 130, 170);
+}
+
+
+/* Weapon Details */ 
+table.weapon_details tr td:nth-of-type(3) {
+  color: rgb(160, 160, 160);
+}
+
+table.weapon_details tr td:nth-of-type(4) {
+  color: rgb(135, 135, 50);
+}
+
+table.weapon_details tr td:nth-of-type(5) {
+  color: rgb(60, 130, 170);
+}
+
+
+/* Weapon Compare */
+/* ? */ 
