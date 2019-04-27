@@ -1,5 +1,3 @@
-/* eslint no-unused-vars: "off" */
-
 class skillMap extends Map {
     constructor(...args) {
         super(...args);
@@ -65,13 +63,18 @@ class dbMap extends Map {
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
 class System {
-    constructor() {
-
+    constructor(builder) {
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
     }
 
     Skill_Add(skillId) {
+        const exp = this.builder.exp;
         const skill = exp.skills.get(skillId);
-        const skillStore = dbs.get("skills").get(skillId);
+        const skillStore = this.builder.dbs.get("skills").get(skillId);
         const subtree = exp.subtrees[skillStore.subtree];
 
         if (skill) { // If given skill is present in exp.skills, (is already basic) 
@@ -98,8 +101,9 @@ class System {
     }
 
     Skill_Remove(skillId) {
+        const exp = this.builder.exp;
         const skill = exp.skills.get(skillId);
-        const skills = dbs.get("skills");
+        const skills = this.builder.dbs.get("skills");
         const skillStore = skills.get(skillId);
         if (!skill) return false; // If the skill is not owned    
 
@@ -150,47 +154,4 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-const exp = {
-    skills: new skillMap(),
-    subtrees: {
-        medic: { tier: 1, points: 0 },
-        controller: { tier: 1, points: 0 },
-        sharpshooter: { tier: 1, points: 0 },
-        shotgunner: { tier: 1, points: 0 },
-        tank: { tier: 1, points: 0 },
-        ammo_specialist: { tier: 1, points: 0 },
-        engineer: { tier: 1, points: 0 },
-        breacher: { tier: 1, points: 0 },
-        oppressor: { tier: 1, points: 0 },
-        shinobi: { tier: 1, points: 0 },
-        artful_dodger: { tier: 1, points: 0 },
-        silent_killer: { tier: 1, points: 0 },
-        gunslinger: { tier: 1, points: 0 },
-        revenant: { tier: 1, points: 0 },
-        brawler: { tier: 1, points: 0 }
-    },
-    armor: null,
-    perkDeck: null,
-    perkDeckPrevious: null,
-    throwable: null,
-    deployable: null, 
-    deployableSecondary: null
-};
-
-const tiers = [0, 1, 2, 13];
-const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
-
-const sys = new System(); 
-
-const dbs = new dbMap([
-    ["skills", null],
-    ["perk_decks", null],
-    ["perk_cards", null],
-    ["deployables", null],
-    ["throwables", null]
-]);
-
-let previous;
-
-jQuery.fn.reverse = [].reverse;
-const fetchPromises = dbs.fetchAll();
+export { System, dbMap, skillMap };

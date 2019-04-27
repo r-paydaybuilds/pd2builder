@@ -2,13 +2,19 @@
  * Class object for management of the GUI functions. 
  */
 class GUI {
-    constructor() {
+    constructor(builder) {
         /** 
          * The previous skill that had it's text appeared.
          * @type {Object}
          * @private
         */
         this.previousSkill;
+
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.
@@ -71,8 +77,6 @@ class GUI {
         const desc = $(".sk_description");
         desc.data("skill", "none");
         desc.text("");
-        if (previous) previous.css("visibility", "hidden"); 
-        previous = null;
 
         // Manage the buttons
         $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
@@ -231,7 +235,7 @@ class GUI {
      */
     Skill_DisplayDescription(skillId) {
         const desc = $(".sk_description"); 
-        const skill = dbs.get("skills").get(skillId);
+        const skill = this.builder.dbs.get("skills").get(skillId);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
             skill.description
@@ -314,7 +318,7 @@ class GUI {
      */
     PerkDeck_DisplayDescription(perkdeckId) {
         const desc = $(".pk_description"); 
-        const pk = dbs.get("perk_decks").get(perkdeckId);
+        const pk = this.builder.dbs.get("perk_decks").get(perkdeckId);
 
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
             pk.description
@@ -335,8 +339,8 @@ class GUI {
         if (!cardObj) return; 
 
         const desc = $(".pk_description");
-        const pk = dbs.get("perk_decks").get(cardObj.parent()[0].id);
-        const perkCard = dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
+        const pk = this.builder.dbs.get("perk_decks").get(cardObj.parent()[0].id);
+        const perkCard = this.builder.dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
         let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${
             perkCard.description
@@ -434,7 +438,7 @@ class GUI {
      */
     Throwable_DisplayDescriptionCard(throwableId) {
         const desc = $(".th_description");
-        const th = dbs.get("throwables").get(throwableId);
+        const th = this.builder.dbs.get("throwables").get(throwableId);
 
         let html = `<p class="description_title">${th.name.toUpperCase()}</p><p>${th.description}</p>`
             .replace(/\n/g, "</p><p>")
@@ -506,7 +510,7 @@ class GUI {
      */
     Deployable_DisplayDescriptionCard(deployableId) {
         const desc = $(".dp_description");
-        const dp = dbs.get("deployables").get(deployableId);
+        const dp = this.builder.dbs.get("deployables").get(deployableId);
 
         let html = `<p class="description_title">${dp.name.toUpperCase()}</p><p>${dp.description}</p>`
             .replace(/\n/g, "</p><p>")
@@ -542,10 +546,10 @@ class GUI {
      */
     HandleIronMan(ironManSkill) {
         if (ironManSkill && ironManSkill.state == "aced") {
-            gui.Armor_Unlock($("#ictv").parent());
+            this.builder.gui.Armor_Unlock($("#ictv").parent());
         }                    
         else {
-            gui.Armor_Lock($("#ictv").parent());
+            this.builder.gui.Armor_Lock($("#ictv").parent());
         }                     
     }
 
@@ -577,6 +581,7 @@ class GUI {
      * Called when switching to throwables page, to check if any of the special throwables need to be locked or unlocked. 
      */
     HandleSpecialThrowables() {
+        const exp = this.builder.exp;
         // Lock the old special throwable if the previously selected perk deck unlocked one and if it was selected, deselect it
         if (exp.perkDeckPrevious === "stoic") {
             this.Throwable_Lock($("#stoic_hip_flask").parent()); 
@@ -634,4 +639,4 @@ class GUI {
  */
 GUI.COLOR_PATTERN = /(\+ ?|- ?|\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g;
 
-const gui = new GUI(); // eslint-disable-line no-unused-vars
+export default GUI;

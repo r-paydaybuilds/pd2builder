@@ -1,6 +1,13 @@
+import Builder from "./Builder.js";
+import PaydayTable from "./PaydayTable.js";
+
+jQuery.fn.reverse = [].reverse;
+
+const builder = new Builder();
+
 $(document).ready(async function () {
     //Add a big ass loading spinner to make people not touch things //
-    gui.LoadingSpinner_Display(true); 
+    builder.gui.LoadingSpinner_Display(true); 
 
     //
     // Bind Events on page 
@@ -9,40 +16,40 @@ $(document).ready(async function () {
     $("#tab_page_buttons button").each(function (){
         $(this).click(function () {
             const targetTab = $(this).attr("id").replace("_button", "_page");
-            if (gui.Tab_IsOn(targetTab)) return;
+            if (builder.gui.Tab_IsOn(targetTab)) return;
 
             if (targetTab === "tab_armors_page") { 
-                const ironManSkill = exp.skills.get("iron_man");
-                gui.HandleIronMan(ironManSkill); 
+                const ironManSkill = builder.exp.skills.get("iron_man");
+                builder.gui.HandleIronMan(ironManSkill); 
             }
             else if (targetTab === "tab_deployables_page") { 
-                const jackOfAllTradesSkill = exp.skills.get("jack_of_all_trades"); 
-                gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
+                const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
+                builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
             }
             else if (targetTab === "tab_throwables_page") { 
-                gui.HandleSpecialThrowables(exp.perkDeck); 
+                builder.gui.HandleSpecialThrowables(builder.exp.perkDeck); 
             }
             else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
-                $("#io_share_link").val(io.GetEncodedBuild()); 
+                $("#io_share_link").val(builder.io.GetEncodedBuild()); 
             }
 
-            gui.Tab_ChangeTo(targetTab); 
+            builder.gui.Tab_ChangeTo(targetTab); 
         });
     }); 
 
     // Skill tab navigation //
-    for (const value of trees) {
+    for (const value of Builder.TREES) {
         $(`#sk_${value}_button`).click(function (event) {
-            gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
+            builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
         }); 
     }
 
     // Want websites to behave like games? Call me // 
     $("#sk_page").on("wheel", function(event) {
         if (event.originalEvent.deltaY < 0) {
-            gui.Tree_ChangeByScrolling(false); 
+            builder.gui.Tree_ChangeByScrolling(false); 
         } else {
-            gui.Tree_ChangeByScrolling(true); 
+            builder.gui.Tree_ChangeByScrolling(true); 
         }
         event.preventDefault();
     });
@@ -50,11 +57,11 @@ $(document).ready(async function () {
     // Subtree //
     $(".sk_subtree").each(function () {
         $(this).mouseenter(function () {
-            gui.Subtree_HoveringHighlightOn($(this)); 
+            builder.gui.Subtree_HoveringHighlightOn($(this)); 
         });
 
         $(this).mouseleave(function () {
-            gui.Subtree_HoveringHighlightOff(); 
+            builder.gui.Subtree_HoveringHighlightOff(); 
         });
     });
 
@@ -65,19 +72,19 @@ $(document).ready(async function () {
             const id = this.firstElementChild.id; 
 
             if (element.hasClass("sk_locked") || element.hasClass("sk_selected_aced")) {
-                gui.Skill_AnimateInvalid(element);
+                builder.gui.Skill_AnimateInvalid(element);
                 return;
             }
 
-            if (sys.Skill_Add(id)) {
-                gui.Skill_Add(element); 
+            if (builder.sys.Skill_Add(id)) {
+                builder.gui.Skill_Add(element); 
 
-                const s = dbs.get("skills").get(id);
-                gui.Skill_UpdatePointsRemaining(exp.skills.points);
-                gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+                const s = builder.dbs.get("skills").get(id);
+                builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
+                builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
             }
             else {
-                gui.Skill_AnimateInvalid(element);
+                builder.gui.Skill_AnimateInvalid(element);
             }
         });
 
@@ -87,15 +94,15 @@ $(document).ready(async function () {
             const element = $(this);
             const id = this.firstElementChild.id; 
 
-            if (sys.Skill_Remove(id)) { 
-                gui.Skill_Remove(element); 
+            if (builder.sys.Skill_Remove(id)) { 
+                builder.gui.Skill_Remove(element); 
                 
-                const s = dbs.get("skills").get(id);
-                gui.Skill_UpdatePointsRemaining(exp.skills.points);
-                gui.Subtree_MoveBackground(s.subtree, exp.subtrees[s.subtree].points);
+                const s = builder.dbs.get("skills").get(id);
+                builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
+                builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
             }
             else {
-                gui.Skill_AnimateInvalid(element);
+                builder.gui.Skill_AnimateInvalid(element);
             }
         });
 
@@ -103,7 +110,7 @@ $(document).ready(async function () {
             const id = this.firstElementChild.id; 
             
             if ($(".sk_description").data("skill") !== id) {
-                gui.Skill_DisplayDescription(id); 
+                builder.gui.Skill_DisplayDescription(id); 
             }
         });
 
@@ -113,18 +120,18 @@ $(document).ready(async function () {
     $(".pk_deck").each(function () {
         $(this).click(function () {
             const id = this.id; 
-            if (exp.perkDeck === id) return; 
+            if (builder.exp.perkDeck === id) return; 
 
-            exp.perkDeckPrevious = exp.perkDeck; 
-            exp.perkDeck = id; 
-            gui.PerkDeck_Select($(this)); 
+            builder.exp.perkDeckPrevious = builder.exp.perkDeck; 
+            builder.exp.perkDeck = id; 
+            builder.gui.PerkDeck_Select($(this)); 
         });
 
         $(this).mouseenter(function () {
             const id = this.id; 
             
             if ($(".pk_description").data("perkdeck") !== id) {
-                gui.PerkDeck_DisplayDescription(id); 
+                builder.gui.PerkDeck_DisplayDescription(id); 
             }
         });
     }); 
@@ -132,12 +139,12 @@ $(document).ready(async function () {
     // Perk deck cards highlight // 
     $(".pk_deck > div").each(function () {
         $(this).mouseenter(function () {
-            gui.PerkDeck_HoveringHighlightOn($(this)); 
-            gui.PerkDeck_DisplayDescriptionCard($(this)); 
+            builder.gui.PerkDeck_HoveringHighlightOn($(this)); 
+            builder.gui.PerkDeck_DisplayDescriptionCard($(this)); 
         });
 
         $(this).mouseleave(function () {
-            gui.PerkDeck_HoveringHighlightOff(); 
+            builder.gui.PerkDeck_HoveringHighlightOff(); 
         });
     });
 
@@ -145,10 +152,10 @@ $(document).ready(async function () {
     $(".arm_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (exp.armor === id) return;
+            if (builder.exp.armor === id) return;
 
-            exp.armor = id;
-            gui.Armor_Select($(this)); 
+            builder.exp.armor = id;
+            builder.gui.Armor_Select($(this)); 
         });
     });
 
@@ -156,28 +163,28 @@ $(document).ready(async function () {
     $(".th_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (exp.throwable === id) return;
+            if (builder.exp.throwable === id) return;
 
-            exp.throwable = id;
-            gui.Throwable_Select($(this));
+            builder.exp.throwable = id;
+            builder.gui.Throwable_Select($(this));
         });
         $(this).mouseenter(function() {
-            gui.Throwable_DisplayDescriptionCard(this.firstElementChild.id); 
+            builder.gui.Throwable_DisplayDescriptionCard(this.firstElementChild.id); 
         });
     });
 
     // Deployables icon buttons //
     $(".dp_icon").each(function () {
         $(this).click(function () {
-            gui.Deployable_Select($(this));
+            builder.gui.Deployable_Select($(this));
         });
 
         $(this).contextmenu(function (event) {
             event.preventDefault(); 
-            gui.Deployable_SelectSecondary($(this)); 
+            builder.gui.Deployable_SelectSecondary($(this)); 
         });
         $(this).mouseenter(function() {
-            gui.Deployable_DisplayDescriptionCard(this.firstElementChild.id); 
+            builder.gui.Deployable_DisplayDescriptionCard(this.firstElementChild.id); 
         });
     });
 
@@ -189,25 +196,27 @@ $(document).ready(async function () {
         document.execCommand("copy");
         el.blur(); 
 
-        gui.IO_CopyLinkFlash(); 
+        builder.gui.IO_CopyLinkFlash(); 
     });
 
     // Prepare document when first opening // 
-    gui.Tab_ChangeTo("tab_skills_page"); 
-    gui.Skill_UpdatePointsRemaining(exp.skills.points); 
-    gui.Tree_ChangeTo("sk_mastermind_container");
+    builder.gui.Tab_ChangeTo("tab_skills_page"); 
+    builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
+    builder.gui.Tree_ChangeTo("sk_mastermind_container");
 
     // Wait for all DBs to load before loading build from URL //
-    await fetchPromises;
-    if (io.HasToLoadBuild()) {
-        io.LoadBuildFromURL();
+    await builder.fetchPromises;
+    if (builder.io.HasToLoadBuild()) {
+        builder.io.LoadBuildFromURL();
     }
 
     // Disable the loading spinner so people know that they should touch things now //
-    gui.LoadingSpinner_Display(false);
+    builder.gui.LoadingSpinner_Display(false);
 
     if ($(window).width() < 1003) { // #UNSUPPORTED 
         $("#modal_notification").modal("show"); 
     }
 });
 
+window.builder = builder; //make the builder instance visible so people can hack it and we can debug it
+window.PaydayTable = PaydayTable;
