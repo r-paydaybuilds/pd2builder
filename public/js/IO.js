@@ -202,6 +202,9 @@ export default class IO {
         $(".pk_deck").each(function (index) {
             if (index === perk) {
                 $(this).click();
+                $("#tab_perkdecks_button").one("click", 
+                    () => this.scrollIntoView({ block: "center" })
+                );
             }
         }); 
     } 
