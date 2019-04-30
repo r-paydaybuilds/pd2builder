@@ -1,0 +1,58 @@
+/**********************************/
+/*         CALCULATOR CSS         */
+/**********************************/
+
+body {
+  background: rgb(11, 11, 21) url("/img/bg.png"); 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
+  color: rgb(140, 140, 140); 
+}
+
+body > div {
+  font-family: "DINEngschrift"; 
+  font-size: 3.5vw; 
+}
+
+
+.selector {
+  position: absolute; 
+  text-align: center; 
+
+  width: 90vw; 
+  height: 80vh; 
+
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.hydrogen,
+.element, 
+.pressure {
+  margin: 3%; 
+  border: 5px solid rgb(180, 180, 180); 
+}
+
+.hydrogen > div,
+.element > div, 
+.pressure > div {
+  width: 100%; 
+  margin: 3px; 
+  border: 3px solid rgb(140, 140, 140);  
+}
+
+.hydrogen > div:hover,
+.element > div:hover,
+.pressure > div:hover {
+  border-color: rgb(240, 240, 240); 
+  color: rgb(240, 240, 240); 
+}
+
+
+.result {
+  margin: 10% 0; 
+}
+
+.engine.active {
+  color: rgb(240, 240, 240); 
+}
