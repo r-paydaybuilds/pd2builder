@@ -38,8 +38,16 @@ tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
+table tbody tr td:first-of-type {
+  text-align: left;
+}
+
 table.armor_compare tbody tr td:not(:first-of-type) {
   padding-right: 10%; 
+}
+
+table.armor_not_chosen tbody tr td:not(:first-of-type) {
+  text-align: center;
 }
 
 table.armor_details tbody tr td:not(:first-of-type) {

@@ -1,4 +1,5 @@
 import util from "./Util.js";
+import PaydayTable from "./PaydayTable.js";
 
 /**
  * Class object for management of the GUI functions. 
@@ -402,6 +403,47 @@ class GUI {
     }
 
     /**
+     * Display an armor's description inside the description container. 
+     * @param {String} armorId ID of the armor of which to display the description
+     */
+    Armor_DisplayDescriptionCard(armorId) {
+        const desc = $(".arm_description");
+        const arm = this.builder.dbs.get("armors").get(armorId);
+        const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
+
+        let html = `<p class="description_title">${arm.name.toUpperCase()}`;
+
+
+        if(!oldArm) {
+            html +=  "</p>" + new PaydayTable(["selected"], Object.keys(arm.stats), { tableClass: "armor_not_chosen" })
+                .addRows("selected", Object.entries(arm.stats))
+                .toHTML();
+        } else if(armorId === this.builder.exp.armor) {
+            html += "<br><span class=\"font-size-13\">EQUIPPED</span></p>" 
+            + new PaydayTable(["total", "base", "skill"], Object.keys(arm.stats), { tableClass: "armor_details" })
+                .addRows("base", Object.entries(arm.stats))
+                .toHTML();
+        } else {
+            html += "</p>" +new PaydayTable(["equipped", "selected"], Object.keys(arm.stats), { tableClass: "armor_compare" })
+                .addRows("equipped", Object.entries(oldArm.stats))
+                .addRows("selected", Object.entries(arm.stats))
+                .compare("equipped", "selected")
+                .toHTML();
+        }
+
+        if($("#" + armorId).parent().hasClass("arm_locked")) {
+            for(const requirement of arm.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+
+        desc.html(html);
+    }
+
+    /**
      * Select a specified throwable. Pass "" (empty string) to this function to only delesect without reselecting another. 
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
@@ -435,7 +477,7 @@ class GUI {
     }
 
     /**
-     * Display a throwable's description inside the bottom description container. 
+     * Display a throwable's description inside the description container. 
      * @param {String} throwableId ID of the throwable of which to display the description
      */
     Throwable_DisplayDescriptionCard(throwableId) {
@@ -518,7 +560,7 @@ class GUI {
     }    
 
     /**
-     * Display a deployable's description inside the bottom description container. 
+     * Display a deployable's description inside the description container. 
      * @param {String} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {

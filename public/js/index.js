@@ -157,6 +157,10 @@ $(document).ready(async function () {
             builder.exp.armor = id;
             builder.gui.Armor_Select($(this)); 
         });
+
+        $(this).mouseenter(function () {
+            builder.gui.Armor_DisplayDescriptionCard(this.firstElementChild.id);
+        });
     });
 
     // Throwables icon buttons // 

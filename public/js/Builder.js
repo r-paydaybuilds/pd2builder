@@ -65,7 +65,8 @@ export default class Builder {
             ["perk_decks", null],
             ["perk_cards", null],
             ["deployables", null],
-            ["throwables", null]
+            ["throwables", null],
+            ["armors", null]
         ]);
         
         /**

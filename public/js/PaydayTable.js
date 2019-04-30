@@ -61,7 +61,10 @@ export default class PaydayTable extends Map {
         const col = this.get(columnName);
 
         for(const [row, value] of rows) {
-            col.set(row, { value: value });
+            col.set(row, { 
+                value: value < 0 ? 
+                    0 : value
+            });
         }
         return this;
     }
@@ -74,7 +77,10 @@ export default class PaydayTable extends Map {
      */
     addColumns(rowName, [...columns]) {
         for(const [column, value] of columns) {
-            this.get(column).set(rowName, { value: value });
+            this.get(column).set(rowName, { 
+                value: value < 0 ? 
+                    0 : value
+            });
         }
         return this;
     }
@@ -84,7 +90,7 @@ export default class PaydayTable extends Map {
      * @returns {String}
      */
     toHTML() {
-        let html = `<table class="${this.tableClass}">
+        let html = `<table${this.tableClass ? ` class="${this.tableClass}"`: ""}>
     <thead>
         <tr>`;
         for(const [key] of this) {
