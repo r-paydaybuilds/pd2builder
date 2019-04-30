@@ -49,7 +49,8 @@ body > div {
   height: 8rem; 
 }
 
-.font-size-13 {
+.font-size-13,
+.requires {
   font-size: 13pt; 
 }
 
@@ -68,6 +69,10 @@ body > div {
 
 .font-size-40 {
   font-size: 40pt; 
+}
+
+.requires {
+  color: #ED6A71;
 }
 
 

@@ -1,3 +1,5 @@
+import util from "./Util.js";
+
 /**
  * Class object for management of the GUI functions. 
  */
@@ -342,12 +344,12 @@ class GUI {
         const pk = this.builder.dbs.get("perk_decks").get(cardObj.parent()[0].id);
         const perkCard = this.builder.dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
-        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${
-            perkCard.description
-                .replace(/\n/g, "</p><p>")
-                .replace(/\t/g, "<br>")
-                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
-        }</p>`;
+        let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
+        
+        html += `</p><p>${perkCard.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
     }
@@ -434,13 +436,24 @@ class GUI {
 
     /**
      * Display a throwable's description inside the bottom description container. 
-     * @param {Object} throwableId ID of the throwable of which to display the description
+     * @param {String} throwableId ID of the throwable of which to display the description
      */
     Throwable_DisplayDescriptionCard(throwableId) {
         const desc = $(".th_description");
         const th = this.builder.dbs.get("throwables").get(throwableId);
 
-        let html = `<p class="description_title">${th.name.toUpperCase()}</p><p>${th.description}</p>`
+        let html = `<p class="description_title">${th.name.toUpperCase()}`;
+
+        if($("#" + throwableId).parent().hasClass("th_locked")) {
+            for(const requirement of th.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+
+        html += `</p><p>${th.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 
@@ -506,13 +519,24 @@ class GUI {
 
     /**
      * Display a deployable's description inside the bottom description container. 
-     * @param {Object} deployableId ID of the deployable of which to display the description
+     * @param {String} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {
         const desc = $(".dp_description");
         const dp = this.builder.dbs.get("deployables").get(deployableId);
 
-        let html = `<p class="description_title">${dp.name.toUpperCase()}</p><p>${dp.description}</p>`
+        let html = `<p class="description_title">${dp.name.toUpperCase()}`;
+
+        if($("#" + deployableId).parent().hasClass("th_locked")) {
+            for(const requirement of dp.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+        
+        html += `</p><p>${dp.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 
