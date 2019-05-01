@@ -156,6 +156,7 @@ $(document).ready(async function () {
 
             builder.exp.armor = id;
             builder.gui.Armor_Select($(this)); 
+            builder.gui.Armor_DisplayDescriptionCard(id);
         });
 
         $(this).mouseenter(function () {
