@@ -1,3 +1,26 @@
+//prototype methods
+
+/**
+ * Array intersection, to find the elements present in each of the passed arguments. Accepts an array of arrays as parameter
+ * @param {...Array<Object>} param An array containg what to intersect
+ */
+Array.prototype.intersect = function(...args) {
+    for(const array of args) {
+        if(!Array.isArray(array)) throw "This function only accepts Array objects!";
+    } 
+
+    return this.filter(x => {
+        let bool = true;
+        for(let i = 0; i < args.length && bool; i++) {
+            bool = args[i].includes(x);
+        }
+        return bool;
+    }); 
+};
+
+
+//a lot of classes are in here
+
 class skillMap extends Map {
     constructor(...args) {
         super(...args);

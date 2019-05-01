@@ -43,7 +43,8 @@ body > div {
 
 .hydrogen > div:hover,
 .element > div:hover,
-.pressure > div:hover {
+.pressure > div:hover,
+.selected.col {
   border-color: rgb(240, 240, 240); 
   color: rgb(240, 240, 240); 
 }
@@ -51,6 +52,10 @@ body > div {
 
 .result {
   margin: 10% 0; 
+}
+
+.engine {
+  color: #333;
 }
 
 .engine.active {
