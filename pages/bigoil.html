@@ -41,24 +41,28 @@
     </nav>
 
     <!-- Big Oil Engine Calculator -->
-    <div class="container-fluid flex-nowrap selector">
-      <div class="row hydrogen">
-        <div class="col selected" id="nohydrogen">???</div>
-        <div class="col" id="h_1">1 x H</div>
-        <div class="col" id="h_2">2 x H</div>
-        <div class="col" id="h_3">3 x H</div>
+    <div class="container-fluid" id="selector">
+      <div class="row">
+        <div class="col-11 col-md-8 element">
+          <div class="row-fluid selected" id="noelement">???</div>
+          <div class="row-fluid" id="nitrogen">Nitrogen</div>
+          <div class="row-fluid" id="deuterium">Deuterium</div>
+          <div class="row-fluid" id="helium">Helium</div>
+        </div>
+        <div class="col-11 col-md-3 hydrogen">
+          <div class="col-md selected" id="nohydrogen">???</div>
+          <div class="col" id="h_1"><span class="special_char">&infin;</span> x H</div>
+          <div class="col" id="h_2">2 x H</div>
+          <div class="col" id="h_3">3 x H</div>
+        </div>
       </div>
-      <div class="row element">
-        <div class="col selected" id="noelement">???</div>
-        <div class="col" id="nitrogen">Nitrogen</div>
-        <div class="col" id="deuterium">Deuterium</div>
-        <div class="col" id="helium">Helium</div>
-      </div>
-      <div class="row pressure">
-        <div class="col selected" id="nopressure">???</div>
-        <div class="col" id="higher">&ge; 5713</div>
-        <div class="col" id="lower">&le; 5812</div>
-      </div>
+      <div class="row">
+        <div class="col-11 pressure">
+          <div class="row-fluid selected" id="nopressure">???</div>
+          <div class="row-fluid" id="higher"><span class="special_char">&ge;</span> 5713</div>
+          <div class="row-fluid" id="lower"><span class="special_char">&le;</span> 5812</div>
+        </div>
+      </div> <!--
 
       <div class="row result">
         <div class="col" id="room_left">
@@ -109,7 +113,7 @@
 
     <div class="container-fluid result">
       
-    </div>
+    </div>-->
 
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
