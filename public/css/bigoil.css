@@ -10,7 +10,28 @@ body {
 
 body > div {
   font-family: "DINEngschrift"; 
-  font-size: 3.8em; 
+  font-size: 3.5em; 
+}
+
+@media screen and (max-width: 992px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 3.2em; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 2.6em; 
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 2em; 
+  }
 }
 
 span.special_char {
@@ -19,45 +40,44 @@ span.special_char {
 
 
 #selector {
-  width: 95vw;
-  height: 95vh;
-  
-  margin: 20px auto; 
+  padding: 15px; 
   text-align: center; 
 }
 
-#selector > .row {
-  margin: 10px auto; 
+#element > div { 
+  /* max-width: 750px; */
 }
 
-.hydrogen,
-.element, 
-.pressure {
-  margin: auto; 
-  
-  border: 4px solid rgb(180, 180, 180); 
+#hydrogen > div {
+  /* max-width: 550px; */
 }
 
-.hydrogen > div,
-.element > div, 
-.pressure > div {
-  width: 100%; 
+#pressure > div {
+  display: inline-block; 
+}
+
+#element > div, 
+#hydrogen > div,
+#pressure > div {
   margin: 3px; 
-  border: 3px solid rgb(140, 140, 140);  
+  border: 3px solid rgb(140, 140, 140);
 }
 
-.hydrogen > div:hover,
-.element > div:hover,
-.pressure > div:hover,
-.selected.col {
-  border-color: rgb(240, 240, 240); 
+
+#element > div.selected, 
+#hydrogen > div.selected,
+#pressure > div.selected {
+  /* border: 3px solid rgb(240, 240, 240); */
   color: rgb(240, 240, 240); 
 }
 
-
-.result {
-  margin: 10% 0; 
+.element > div:hover,
+.hydrogen > div:hover,
+.pressure > div:hover {
+  
 }
+
+
 
 .engine {
   color: #333;
@@ -66,3 +86,6 @@ span.special_char {
 .engine.active {
   color: rgb(240, 240, 240); 
 }
+
+
+
