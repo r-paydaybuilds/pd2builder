@@ -18,20 +18,14 @@ $(document).ready(async function () {
             const targetTab = $(this).attr("id").replace("_button", "_page");
             if (builder.gui.Tab_IsOn(targetTab)) return;
 
-            if (targetTab === "tab_armors_page") { 
-                const ironManSkill = builder.exp.skills.get("iron_man");
-                builder.gui.HandleIronMan(ironManSkill); 
-            }
-            else if (targetTab === "tab_deployables_page") { 
+            if (targetTab === "tab_deployables_page") { 
                 const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
                 builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
-            }
-            else if (targetTab === "tab_throwables_page") { 
-                builder.gui.HandleSpecialThrowables(builder.exp.perkDeck); 
-            }
-            else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
+            } else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
                 $("#io_share_link").val(builder.io.GetEncodedBuild()); 
             }
+
+            builder.gui.HandleRequirements($(this).attr("id").replace(/tab_|_button/g, ""));
 
             builder.gui.Tab_ChangeTo(targetTab); 
         });

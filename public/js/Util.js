@@ -18,6 +18,12 @@ Array.prototype.intersect = function(...args) {
     }); 
 };
 
+/**
+ * Returns the string in camelCase if it has snake_case
+ */
+String.prototype.toCamelCase = function() {
+    return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
+};
 
 //a lot of classes are in here
 

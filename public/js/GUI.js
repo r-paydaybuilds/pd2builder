@@ -607,19 +607,6 @@ class GUI {
     }
 
     /**
-     * Lock or Unlock ICTV armor according to the iron man skill state. 
-     * @param {Object} ironManSkill 
-     */
-    HandleIronMan(ironManSkill) {
-        if (ironManSkill && ironManSkill.state == "aced") {
-            this.builder.gui.Armor_Unlock($("#ictv").parent());
-        }                    
-        else {
-            this.builder.gui.Armor_Lock($("#ictv").parent());
-        }                     
-    }
-
-    /**
      * Allow or disallow double deployable options according to the jack of all trades skill state. 
      * @param {Object} jackOfAllTradesSkill 
      */
@@ -644,57 +631,32 @@ class GUI {
     }
 
     /**
-     * Called when switching to throwables page, to check if any of the special throwables need to be locked or unlocked. 
+     * Handles requirements of all items with such type so they can be locked or unlocked
+     * @param {String} type Contains the type of item
      */
-    HandleSpecialThrowables() {
-        const exp = this.builder.exp;
-        // Lock the old special throwable if the previously selected perk deck unlocked one and if it was selected, deselect it
-        if (exp.perkDeckPrevious === "stoic") {
-            this.Throwable_Lock($("#stoic_hip_flask").parent()); 
-            if (exp.throwable === "stoic_hip_flask") {
-                this.Throwable_Select(""); 
+    HandleRequirements(type) {
+        const db = this.builder.dbs.get(type);
+        if(!db) return;
+        for(const [key, value] of db) {
+            if(!value.requires) continue;
+            for(const obj of value.requires) {
+                const exp = this.builder.exp[obj.type.toCamelCase() + "s"] || this.builder.exp[obj.type.toCamelCase()],
+                    methodType = type.charAt(0).toUpperCase() + type.slice(1, type.length - 1); 
+                if(exp instanceof Map) {
+                    const requirement = exp.get(obj.name);
+                    if(requirement && requirement.state === obj.state) {
+                        this[`${methodType}_Unlock`]($("#" + key).parent());
+                    } else {
+                        this[`${methodType}_Lock`]($("#" + key).parent());
+                    }
+                } else {
+                    if(exp === obj.name) {
+                        this[`${methodType}_Unlock`]($("#" + key).parent());
+                    } else {
+                        this[`${methodType}_Lock`]($("#" + key).parent());
+                    }
+                }
             }
-        }
-        else if (exp.perkDeckPrevious === "hacker") {
-            this.Throwable_Lock($("#pocket_ecm").parent()); 
-            if (exp.throwable === "pocket_ecm") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "sicario") {
-            this.Throwable_Lock($("#smoke_bomb").parent()); 
-            if (exp.throwable === "smoke_bomb") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "tag_team") {
-            this.Throwable_Lock($("#gas_dispenser").parent()); 
-            if (exp.throwable === "gas_dispenser") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "kingpin") {
-            this.Throwable_Lock($("#injector").parent()); 
-            if (exp.throwable === "injector") {
-                this.Throwable_Select(""); 
-            }
-        }
-
-        // Then unlock the currently selected special if any
-        if (exp.perkDeck === "stoic") {
-            this.Throwable_Unlock($("#stoic_hip_flask").parent()); 
-        }
-        else if (exp.perkDeck === "hacker") {
-            this.Throwable_Unlock($("#pocket_ecm").parent()); 
-        }
-        else if (exp.perkDeck === "sicario") {
-            this.Throwable_Unlock($("#smoke_bomb").parent()); 
-        }
-        else if (exp.perkDeck === "tag_team") {
-            this.Throwable_Unlock($("#gas_dispenser").parent()); 
-        }
-        else if (exp.perkDeck === "kingpin") {
-            this.Throwable_Unlock($("#injector").parent()); 
         }
     }
 }
