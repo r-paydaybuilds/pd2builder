@@ -3,7 +3,7 @@
 /**********************************/
 
 body {
-  background: rgb(11, 11, 21) url("/img/bg.png"); 
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
   color: rgb(140, 140, 140); 
 }
@@ -63,21 +63,12 @@ span.special_char {
   border: 3px solid rgb(140, 140, 140);
 }
 
-
 #element > div.selected, 
 #hydrogen > div.selected,
 #pressure > div.selected {
   /* border: 3px solid rgb(240, 240, 240); */
   color: rgb(240, 240, 240); 
 }
-
-.element > div:hover,
-.hydrogen > div:hover,
-.pressure > div:hover {
-  
-}
-
-
 
 .engine {
   color: #333;

@@ -79,7 +79,7 @@ class dbMap extends Map {
         const self = this;
         for(const [key] of this) {
             array.push(
-                fetch(`/db/${key}.json`)
+                fetch(`./db/${key}.json`)
                     .then( res => res.json() )
                     .then( json => self.set(key, new Map(Object.entries(json))) )
             );
