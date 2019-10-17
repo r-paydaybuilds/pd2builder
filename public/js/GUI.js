@@ -1,14 +1,23 @@
+import util from "./Util.js";
+import PaydayTable from "./PaydayTable.js";
+
 /**
  * Class object for management of the GUI functions. 
  */
 class GUI {
-    constructor() {
+    constructor(builder) {
         /** 
          * The previous skill that had it's text appeared.
          * @type {Object}
          * @private
         */
         this.previousSkill;
+
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
     }
 
     /** Change site title. Useful for naming builds, you can later find them easier in your history for example.
@@ -71,8 +80,6 @@ class GUI {
         const desc = $(".sk_description");
         desc.data("skill", "none");
         desc.text("");
-        if (previous) previous.css("visibility", "hidden"); 
-        previous = null;
 
         // Manage the buttons
         $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
@@ -231,7 +238,7 @@ class GUI {
      */
     Skill_DisplayDescription(skillId) {
         const desc = $(".sk_description"); 
-        const skill = dbs.get("skills").get(skillId);
+        const skill = this.builder.dbs.get("skills").get(skillId);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
             skill.description
@@ -314,13 +321,12 @@ class GUI {
      */
     PerkDeck_DisplayDescription(perkdeckId) {
         const desc = $(".pk_description"); 
-        const pk = dbs.get("perk_decks").get(perkdeckId);
+        const pk = this.builder.dbs.get("perk_decks").get(perkdeckId);
 
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
             pk.description
                 .replace(/\n/g, "</p><p>")
                 .replace(/\t/g, "<br>")
-                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
         }</p>`;
 
         desc.html(html);
@@ -335,15 +341,15 @@ class GUI {
         if (!cardObj) return; 
 
         const desc = $(".pk_description");
-        const pk = dbs.get("perk_decks").get(cardObj.parent()[0].id);
-        const perkCard = dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
+        const pk = this.builder.dbs.get("perk_decks").get(cardObj.parent()[0].id);
+        const perkCard = this.builder.dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
 
-        let html = `<p class="description_title">${perkCard.name.toUpperCase()}</p><p>${
-            perkCard.description
-                .replace(/\n/g, "</p><p>")
-                .replace(/\t/g, "<br>")
-                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
-        }</p>`;
+        let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
+        
+        html += `</p><p>${perkCard.description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.html(html);
     }
@@ -396,6 +402,47 @@ class GUI {
     }
 
     /**
+     * Display an armor's description inside the description container. 
+     * @param {String} armorId ID of the armor of which to display the description
+     */
+    Armor_DisplayDescriptionCard(armorId) {
+        const desc = $(".arm_description");
+        const arm = this.builder.dbs.get("armors").get(armorId);
+        const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
+
+        let html = `<p class="description_title">${arm.name.toUpperCase()}`;
+
+
+        if(!oldArm) {
+            html +=  "</p>" + new PaydayTable(["selected"], Object.keys(arm.stats), { tableClass: "armor_not_chosen" })
+                .addRows("selected", Object.entries(arm.stats))
+                .toHTML();
+        } else if(armorId === this.builder.exp.armor) {
+            html += "<br><span class=\"font-size-13\">EQUIPPED</span></p>" 
+            + new PaydayTable(["total", "base", "skill"], Object.keys(arm.stats), { tableClass: "armor_details" })
+                .addRows("base", Object.entries(arm.stats))
+                .toHTML();
+        } else {
+            html += "</p>" +new PaydayTable(["equipped", "selected"], Object.keys(arm.stats), { tableClass: "armor_compare" })
+                .addRows("equipped", Object.entries(oldArm.stats))
+                .addRows("selected", Object.entries(arm.stats))
+                .compare("equipped", "selected")
+                .toHTML();
+        }
+
+        if($("#" + armorId).parent().hasClass("arm_locked")) {
+            for(const requirement of arm.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+
+        desc.html(html);
+    }
+
+    /**
      * Select a specified throwable. Pass "" (empty string) to this function to only delesect without reselecting another. 
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
@@ -429,14 +476,25 @@ class GUI {
     }
 
     /**
-     * Display a throwable's description inside the bottom description container. 
-     * @param {Object} throwableId ID of the throwable of which to display the description
+     * Display a throwable's description inside the description container. 
+     * @param {String} throwableId ID of the throwable of which to display the description
      */
     Throwable_DisplayDescriptionCard(throwableId) {
         const desc = $(".th_description");
-        const th = dbs.get("throwables").get(throwableId);
+        const th = this.builder.dbs.get("throwables").get(throwableId);
 
-        let html = `<p class="description_title">${th.name.toUpperCase()}</p><p>${th.description}</p>`
+        let html = `<p class="description_title">${th.name.toUpperCase()}`;
+
+        if($("#" + throwableId).parent().hasClass("th_locked")) {
+            for(const requirement of th.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+
+        html += `</p><p>${th.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 
@@ -501,14 +559,25 @@ class GUI {
     }    
 
     /**
-     * Display a deployable's description inside the bottom description container. 
-     * @param {Object} deployableId ID of the deployable of which to display the description
+     * Display a deployable's description inside the description container. 
+     * @param {String} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {
         const desc = $(".dp_description");
-        const dp = dbs.get("deployables").get(deployableId);
+        const dp = this.builder.dbs.get("deployables").get(deployableId);
 
-        let html = `<p class="description_title">${dp.name.toUpperCase()}</p><p>${dp.description}</p>`
+        let html = `<p class="description_title">${dp.name.toUpperCase()}`;
+
+        if($("#" + deployableId).parent().hasClass("th_locked")) {
+            for(const requirement of dp.requires) {
+                html += "<br><span class=\"requires\">" + util.resolveRequire(
+                    requirement.type,
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
+                ).toUpperCase() + "</span>";
+            }
+        }
+        
+        html += `</p><p>${dp.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 
@@ -537,19 +606,6 @@ class GUI {
     }
 
     /**
-     * Lock or Unlock ICTV armor according to the iron man skill state. 
-     * @param {Object} ironManSkill 
-     */
-    HandleIronMan(ironManSkill) {
-        if (ironManSkill && ironManSkill.state == "aced") {
-            gui.Armor_Unlock($("#ictv").parent());
-        }                    
-        else {
-            gui.Armor_Lock($("#ictv").parent());
-        }                     
-    }
-
-    /**
      * Allow or disallow double deployable options according to the jack of all trades skill state. 
      * @param {Object} jackOfAllTradesSkill 
      */
@@ -574,56 +630,32 @@ class GUI {
     }
 
     /**
-     * Called when switching to throwables page, to check if any of the special throwables need to be locked or unlocked. 
+     * Handles requirements of all items with such type so they can be locked or unlocked
+     * @param {String} type Contains the type of item
      */
-    HandleSpecialThrowables() {
-        // Lock the old special throwable if the previously selected perk deck unlocked one and if it was selected, deselect it
-        if (exp.perkDeckPrevious === "stoic") {
-            this.Throwable_Lock($("#stoic_hip_flask").parent()); 
-            if (exp.throwable === "stoic_hip_flask") {
-                this.Throwable_Select(""); 
+    HandleRequirements(type) {
+        const db = this.builder.dbs.get(type);
+        if(!db) return;
+        for(const [key, value] of db) {
+            if(!value.requires) continue;
+            for(const obj of value.requires) {
+                const exp = this.builder.exp[obj.type.toCamelCase() + "s"] || this.builder.exp[obj.type.toCamelCase()],
+                    methodType = type.charAt(0).toUpperCase() + type.slice(1, type.length - 1); 
+                if(exp instanceof Map) {
+                    const requirement = exp.get(obj.name);
+                    if(requirement && requirement.state === obj.state) {
+                        this[`${methodType}_Unlock`]($("#" + key).parent());
+                    } else {
+                        this[`${methodType}_Lock`]($("#" + key).parent());
+                    }
+                } else {
+                    if(exp === obj.name) {
+                        this[`${methodType}_Unlock`]($("#" + key).parent());
+                    } else {
+                        this[`${methodType}_Lock`]($("#" + key).parent());
+                    }
+                }
             }
-        }
-        else if (exp.perkDeckPrevious === "hacker") {
-            this.Throwable_Lock($("#pocket_ecm").parent()); 
-            if (exp.throwable === "pocket_ecm") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "sicario") {
-            this.Throwable_Lock($("#smoke_bomb").parent()); 
-            if (exp.throwable === "smoke_bomb") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "tag_team") {
-            this.Throwable_Lock($("#gas_dispenser").parent()); 
-            if (exp.throwable === "gas_dispenser") {
-                this.Throwable_Select(""); 
-            }
-        }
-        else if (exp.perkDeckPrevious === "kingpin") {
-            this.Throwable_Lock($("#injector").parent()); 
-            if (exp.throwable === "injector") {
-                this.Throwable_Select(""); 
-            }
-        }
-
-        // Then unlock the currently selected special if any
-        if (exp.perkDeck === "stoic") {
-            this.Throwable_Unlock($("#stoic_hip_flask").parent()); 
-        }
-        else if (exp.perkDeck === "hacker") {
-            this.Throwable_Unlock($("#pocket_ecm").parent()); 
-        }
-        else if (exp.perkDeck === "sicario") {
-            this.Throwable_Unlock($("#smoke_bomb").parent()); 
-        }
-        else if (exp.perkDeck === "tag_team") {
-            this.Throwable_Unlock($("#gas_dispenser").parent()); 
-        }
-        else if (exp.perkDeck === "kingpin") {
-            this.Throwable_Unlock($("#injector").parent()); 
         }
     }
 }
@@ -634,4 +666,4 @@ class GUI {
  */
 GUI.COLOR_PATTERN = /(\+ ?|- ?|\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?/g;
 
-const gui = new GUI(); // eslint-disable-line no-unused-vars
+export default GUI;

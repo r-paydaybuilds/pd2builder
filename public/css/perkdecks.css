@@ -77,7 +77,7 @@
   height: 92px; 
   top: 30px; 
   margin: 0 auto; 
-  background: url("/img/perks/card.png") no-repeat; 
+  background: url("../img/perks/card.png") no-repeat; 
 
   -webkit-transition: opacity .15s ease;
   -moz-transition:    opacity .15s ease;
@@ -97,7 +97,7 @@
   margin: 22px auto 0; /* Center vertically inside card */
   
   content: ""; 
-  background: url("/img/perks/icons.png") no-repeat; 
+  background: url("../img/perks/icons.png") no-repeat; 
 }
 
 .pk_deck.pk_selected {

@@ -1,14 +1,20 @@
 /**
  * Class object for management of the Save/Load (import/export) functions. 
  */
-class IO {
-    constructor() {
+export default class IO {
+    constructor(builder) {
         /** 
          * Array of usable characters for encoding bits
          * @type {string}
          * @private
         */
-        this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@"; 
+        this.charString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,@";
+        
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
     }
 
     /**
@@ -62,7 +68,7 @@ class IO {
             skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
         }); 
         buildString += "?s=" + encodeURIComponent(skillsString); 
-        buildString += "&k=" + exp.skills.points; 
+        buildString += "&k=" + this.builder.exp.skills.points; 
 
         // Manage Perk Decks
         let pkCount = 0; 
@@ -183,8 +189,8 @@ class IO {
      * @returns {void}
      */
     loadSkillPoints(points) {
-        gui.Skill_UpdatePointsRemaining(points); 
-        exp.skills.points = points; 
+        this.builder.gui.Skill_UpdatePointsRemaining(points); 
+        this.builder.exp.skills.points = points; 
     }
 
     /**
@@ -196,6 +202,9 @@ class IO {
         $(".pk_deck").each(function (index) {
             if (index === perk) {
                 $(this).click();
+                $("#tab_perk_decks_button").one("click", 
+                    () => this.scrollIntoView({ block: "center" })
+                );
             }
         }); 
     } 
@@ -238,10 +247,10 @@ class IO {
 
         $(".dp_icon").each(function (index) {
             if (index === parseInt(dp1)) {
-                gui.Deployable_Select($(this));
+                this.builder.gui.Deployable_Select($(this));
             }
             else if (index === parseInt(dp2)) {
-                gui.Deployable_SelectSecondary($(this));
+                this.builder.gui.Deployable_SelectSecondary($(this));
             }
         }); 
     }
@@ -255,5 +264,3 @@ class IO {
         return urlParams.has("s") || urlParams.has("k") || urlParams.has("p") || urlParams.has("a") || urlParams.has("t") || urlParams.has("d");
     }
 }
-
-const io = new IO(); // eslint-disable-line no-unused-vars

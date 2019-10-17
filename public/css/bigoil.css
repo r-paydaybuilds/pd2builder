@@ -1,0 +1,82 @@
+/**********************************/
+/*         CALCULATOR CSS         */
+/**********************************/
+
+body {
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
+  color: rgb(140, 140, 140); 
+}
+
+body > div {
+  font-family: "DINEngschrift"; 
+  font-size: 3.5em; 
+}
+
+@media screen and (max-width: 992px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 3.2em; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 2.6em; 
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body > div {
+    font-family: "DINEngschrift"; 
+    font-size: 2em; 
+  }
+}
+
+span.special_char {
+  font-family: 'Courier New', Courier, monospace; /* suggest a default font for characters or find the full pd2 set */
+}
+
+
+#selector {
+  padding: 15px; 
+  text-align: center; 
+}
+
+#element > div { 
+  /* max-width: 750px; */
+}
+
+#hydrogen > div {
+  /* max-width: 550px; */
+}
+
+#pressure > div {
+  display: inline-block; 
+}
+
+#element > div, 
+#hydrogen > div,
+#pressure > div {
+  margin: 3px; 
+  border: 3px solid rgb(140, 140, 140);
+}
+
+#element > div.selected, 
+#hydrogen > div.selected,
+#pressure > div.selected {
+  /* border: 3px solid rgb(240, 240, 240); */
+  color: rgb(240, 240, 240); 
+}
+
+.engine {
+  color: #333;
+}
+
+.engine.active {
+  color: rgb(240, 240, 240); 
+}
+
+
+

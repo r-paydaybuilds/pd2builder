@@ -1,4 +1,31 @@
-/* eslint no-unused-vars: "off" */
+//prototype methods
+
+/**
+ * Array intersection, to find the elements present in each of the passed arguments. Accepts an array of arrays as parameter
+ * @param {...Array<Object>} param An array containg what to intersect
+ */
+Array.prototype.intersect = function(...args) {
+    for(const array of args) {
+        if(!Array.isArray(array)) throw "This function only accepts Array objects!";
+    } 
+
+    return this.filter(x => {
+        let bool = true;
+        for(let i = 0; i < args.length && bool; i++) {
+            bool = args[i].includes(x);
+        }
+        return bool;
+    }); 
+};
+
+/**
+ * Returns the string in camelCase if it has snake_case
+ */
+String.prototype.toCamelCase = function() {
+    return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
+};
+
+//a lot of classes are in here
 
 class skillMap extends Map {
     constructor(...args) {
@@ -52,7 +79,7 @@ class dbMap extends Map {
         const self = this;
         for(const [key] of this) {
             array.push(
-                fetch(`/db/${key}.json`)
+                fetch(`./db/${key}.json`)
                     .then( res => res.json() )
                     .then( json => self.set(key, new Map(Object.entries(json))) )
             );
@@ -65,13 +92,18 @@ class dbMap extends Map {
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
 class System {
-    constructor() {
-
+    constructor(builder) {
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
     }
 
     Skill_Add(skillId) {
+        const exp = this.builder.exp;
         const skill = exp.skills.get(skillId);
-        const skillStore = dbs.get("skills").get(skillId);
+        const skillStore = this.builder.dbs.get("skills").get(skillId);
         const subtree = exp.subtrees[skillStore.subtree];
 
         if (skill) { // If given skill is present in exp.skills, (is already basic) 
@@ -98,8 +130,9 @@ class System {
     }
 
     Skill_Remove(skillId) {
+        const exp = this.builder.exp;
         const skill = exp.skills.get(skillId);
-        const skills = dbs.get("skills");
+        const skills = this.builder.dbs.get("skills");
         const skillStore = skills.get(skillId);
         if (!skill) return false; // If the skill is not owned    
 
@@ -150,47 +183,62 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-const exp = {
-    skills: new skillMap(),
-    subtrees: {
-        medic: { tier: 1, points: 0 },
-        controller: { tier: 1, points: 0 },
-        sharpshooter: { tier: 1, points: 0 },
-        shotgunner: { tier: 1, points: 0 },
-        tank: { tier: 1, points: 0 },
-        ammo_specialist: { tier: 1, points: 0 },
-        engineer: { tier: 1, points: 0 },
-        breacher: { tier: 1, points: 0 },
-        oppressor: { tier: 1, points: 0 },
-        shinobi: { tier: 1, points: 0 },
-        artful_dodger: { tier: 1, points: 0 },
-        silent_killer: { tier: 1, points: 0 },
-        gunslinger: { tier: 1, points: 0 },
-        revenant: { tier: 1, points: 0 },
-        brawler: { tier: 1, points: 0 }
-    },
-    armor: null,
-    perkDeck: null,
-    perkDeckPrevious: null,
-    throwable: null,
-    deployable: null, 
-    deployableSecondary: null
-};
+export { System, dbMap, skillMap };
 
-const tiers = [0, 1, 2, 13];
-const trees = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
+/**
+ * A class that should be filled with absolutely not useless stuff
+ */
+export default class Util {
+    constructor() {
+        throw new Error("This class isn't supposed to be initialized");
+    }
 
-const sys = new System(); 
+    /**
+     * Gives you a nice Payday 2 requires text
+     * @param {String} type type of thing
+     * @param {String} name name of thing
+     */
+    static resolveRequire(type, name) {
+        return `Requires the ${name} ${this.resolveType(type)}${this.resolveVerb(type)}`;
+    }
 
-const dbs = new dbMap([
-    ["skills", null],
-    ["perk_decks", null],
-    ["perk_cards", null],
-    ["deployables", null],
-    ["throwables", null]
+    /**
+     * Gives you the type name that doesn't look computer-y
+     * @param {String} type type of thing 
+     */
+    static resolveType(type) {
+        return this.typeName.get(type);
+    }
+
+    /**
+     * Gives you the verb that should be used because natural libraries are something that we shouldn't end up using
+     * @param {String} type type of thing 
+     */
+    static resolveVerb(type) {
+        return this.typeVerb.get(type);
+    }
+}
+
+/**
+ * Contains a map which has the name of each type
+ * @type {Map<String, String>}
+ */
+Util.typeName = new Map([
+    ["perk_deck", "Perk Deck"],
+    ["perk_card", "Perk Card"],
+    ["throwable", "Throwable"],
+    ["skill", "Skill"],
+    ["deployable", "Deployable"]
 ]);
 
-let previous;
-
-jQuery.fn.reverse = [].reverse;
-const fetchPromises = dbs.fetchAll();
+/**
+ * Contains a map which has the verb that should be used with each type
+ * @type {Map<String, String>}
+ */
+Util.typeVerb = new Map([
+    ["perk_deck", " equipped"],
+    ["perk_card", " equipped"],
+    ["throwable", " equipped"],
+    ["skill", ""],
+    ["deployable", " equipped"]
+]);

@@ -5,16 +5,6 @@ module.exports = {
         "browser": true,
         "jquery": true
     },
-    "globals": {
-        "exp": "readonly",
-        "trees": "readonly",
-        "sys": "readonly",
-        "dbs": "readonly",
-        "previous": "writable",
-        "gui": "readonly",
-        "io": "readonly",
-        "fetchPromises": "readonly"
-    },
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 8,

@@ -3,7 +3,7 @@
 /**********************************/
 
 body {
-  background: rgb(11, 11, 21) url("/img/bg.png"); 
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
   color: rgb(240, 240, 240); 
 }
@@ -49,7 +49,8 @@ body > div {
   height: 8rem; 
 }
 
-.font-size-13 {
+.font-size-13,
+.requires {
   font-size: 13pt; 
 }
 
@@ -70,14 +71,17 @@ body > div {
   font-size: 40pt; 
 }
 
+.requires {
+  color: #ED6A71;
+}
+
 
 #tab_page_buttons {
   padding-bottom: 50px; 
 }
 
 #tab_page_buttons button {
-  padding-left: 10px; 
-  padding-right: 10px; 
+  padding: 10px;
   text-align: center;
 
   border: 1px solid rgb(240, 240, 240); 
@@ -141,6 +145,13 @@ body > div {
 
 .corners_t {
   padding: 20px; 
+}
+
+.corners_t,
+.corners_b, 
+.corners_l, 
+.corners_r {
+  width: 100%; 
 }
 
 
@@ -228,34 +239,4 @@ body > div {
 
   background-repeat: no-repeat;
   background-size: 15px 15px;
-}
-
-/**********************************/
-/*       PAYDAY-STYLE TABLE       */
-/**********************************/
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-tr, th, td {
-  color: #fefefe;
-  text-align: center;
-}
-
-th:first-child {
-  text-align: left;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.45);
-}
-
-#table_head {
-  background-color: rgba(0, 0, 0, 0.7);
 }

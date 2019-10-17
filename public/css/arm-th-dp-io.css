@@ -50,7 +50,7 @@
 .arm_icon.arm_locked, 
 .th_icon.th_locked, 
 .dp_icon.dp_locked {
-  background: url("/img/lock_skill.png") no-repeat center center;
+  background: url("../img/lock_skill.png") no-repeat center center;
 }
 
 .arm_icon.arm_locked > div,
@@ -146,31 +146,31 @@
 /**********************************/
 
 #suit {
-  background: url("/img/armors/suit.png"); 
+  background: url("../img/armors/suit.png"); 
 }
 
 #light_ballistic {
-  background: url("/img/armors/light_ballistic.png"); 
+  background: url("../img/armors/light_ballistic.png"); 
 }
 
 #ballistic {
-  background: url("/img/armors/ballistic.png"); 
+  background: url("../img/armors/ballistic.png"); 
 }
 
 #heavy_ballistic {
-  background: url("/img/armors/heavy_ballistic.png"); 
+  background: url("../img/armors/heavy_ballistic.png"); 
 }
 
 #flak {
-  background: url("/img/armors/flak.png"); 
+  background: url("../img/armors/flak.png"); 
 }
 
 #ctv {
-  background: url("/img/armors/ctv.png"); 
+  background: url("../img/armors/ctv.png"); 
 }
 
 #ictv {
-  background: url("/img/armors/ictv.png"); 
+  background: url("../img/armors/ictv.png"); 
 }
 
 
@@ -179,71 +179,71 @@
 /**********************************/
 
 #matryoshka_grenade {
-  background-image: url("/img/throwables/matryushka_grenade.png"); 
+  background-image: url("../img/throwables/matryushka_grenade.png"); 
 }
 
 #incendiary_grenade {
-  background-image: url("/img/throwables/incendiary_grenade.png"); 
+  background-image: url("../img/throwables/incendiary_grenade.png"); 
 }
 
-#hef_frag_grenade {
-  background-image: url("/img/throwables/hef_frag_grenade.png"); 
+#hef_grenade {
+  background-image: url("../img/throwables/hef_frag_grenade.png"); 
 }
 
 #ace_of_spades {
-  background-image: url("/img/throwables/ace_of_spades.png"); 
+  background-image: url("../img/throwables/ace_of_spades.png"); 
 }
 
 #concussion_grenade {
-  background-image: url("/img/throwables/concussion_grenade.png"); 
+  background-image: url("../img/throwables/concussion_grenade.png"); 
 }
 
 #frag_grenade {
-  background-image: url("/img/throwables/frag_grenade.png"); 
+  background-image: url("../img/throwables/frag_grenade.png"); 
 }
 
 #molotov_cocktail {
-  background-image: url("/img/throwables/molotov.png"); 
+  background-image: url("../img/throwables/molotov.png"); 
 }
 
 #dynamite {
-  background-image: url("/img/throwables/dynamite.png"); 
+  background-image: url("../img/throwables/dynamite.png"); 
 }
 
 #shuriken {
-  background-image: url("/img/throwables/shuriken.png"); 
+  background-image: url("../img/throwables/shuriken.png"); 
 }
 
 #javelin {
-  background-image: url("/img/throwables/javelin.png"); 
+  background-image: url("../img/throwables/javelin.png"); 
 }
 
 #throwing_knife {
-  background-image: url("/img/throwables/throwing_knife.png"); 
+  background-image: url("../img/throwables/throwing_knife.png"); 
 }
 
 #throwing_axe {
-  background-image: url("/img/throwables/throwing_axe.png"); 
+  background-image: url("../img/throwables/throwing_axe.png"); 
 }
 
 #stoic_hip_flask {
-  background-image: url("/img/throwables/stoic_hip_flask.png"); 
+  background-image: url("../img/throwables/stoic_hip_flask.png"); 
 }
 
-#pocket_ecm {
-  background-image: url("/img/throwables/pocket_ecm.png"); 
+#pocket_ecm_device {
+  background-image: url("../img/throwables/pocket_ecm.png"); 
 }
 
 #smoke_bomb {
-  background-image: url("/img/throwables/smoke_bomb.png"); 
+  background-image: url("../img/throwables/smoke_bomb.png"); 
 }
 
 #gas_dispenser {
-  background-image: url("/img/throwables/gas_dispenser.png"); 
+  background-image: url("../img/throwables/gas_dispenser.png"); 
 }
 
 #injector {
-  background-image: url("/img/throwables/injector.png"); 
+  background-image: url("../img/throwables/injector.png"); 
 }
 
 
@@ -252,37 +252,37 @@
 /**********************************/
 
 #ammo_bag {
-  background-image: url("/img/deployables/ammo_bag.png"); 
+  background-image: url("../img/deployables/ammo_bag.png"); 
 }
 
 #armor_bag {
-  background-image: url("/img/deployables/armor_kit.png"); 
+  background-image: url("../img/deployables/armor_kit.png"); 
 }
 
 #body_bag_case {
-  background-image: url("/img/deployables/bodybags_bag.png"); 
+  background-image: url("../img/deployables/bodybags_bag.png"); 
 }
 
 #doctor_bag {
-  background-image: url("/img/deployables/doctor_bag.png"); 
+  background-image: url("../img/deployables/doctor_bag.png"); 
 }
 
 #ecm_jammer {
-  background-image: url("/img/deployables/ecm_jammer.png"); 
+  background-image: url("../img/deployables/ecm_jammer.png"); 
 }
 
 #first_aid_kit {
-  background-image: url("/img/deployables/first_aid_kit.png"); 
+  background-image: url("../img/deployables/first_aid_kit.png"); 
 }
 
 #sentry_gun {
-  background-image: url("/img/deployables/sentry_gun.png"); 
+  background-image: url("../img/deployables/sentry_gun.png"); 
 }
 
 #suppressed_sentry_gun {
-  background-image: url("/img/deployables/sentry_gun_silent.png"); 
+  background-image: url("../img/deployables/sentry_gun_silent.png"); 
 }
 
-#trip_mine_and_shaped_charges {
-  background-image: url("/img/deployables/trip_mine.png"); 
+#trip_mines_and_shaped_charges {
+  background-image: url("../img/deployables/trip_mine.png"); 
 }
