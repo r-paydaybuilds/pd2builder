@@ -16,9 +16,9 @@ const valid_engines = {
 };
 
 $(document).ready(function() {
-    $(".hydrogen").children().each(function() {
+    $("#hydrogen").children().each(function() {
         $(this).click(function () {
-            $(".hydrogen > .selected").removeClass("selected");
+            $("#hydrogen > .selected").removeClass("selected");
             $(this).addClass("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
@@ -30,9 +30,9 @@ $(document).ready(function() {
             }
         });
     });
-    $(".element").children().each(function() {
+    $("#element").children().each(function() {
         $(this).click(function () {
-            $(".element > .selected").removeClass("selected");
+            $("#element > .selected").removeClass("selected");
             $(this).addClass("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
@@ -44,9 +44,9 @@ $(document).ready(function() {
             }
         });
     });
-    $(".pressure").children().each(function() {
+    $("#pressure").children().each(function() {
         $(this).click(function () {
-            $(".pressure > .selected").removeClass("selected");
+            $("#pressure > .selected").removeClass("selected");
             $(this).addClass("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
