@@ -449,7 +449,7 @@
     "right_to_the_top": {
         "name": "Right to the Top",
         "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
-        "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
+         "vr_description": "The dash effect is now from 0 up to a maximum of 15.",
         "deck_completion_bonus": true
     },
     "smoker": {
