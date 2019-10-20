@@ -32,7 +32,6 @@ export default class Builder {
             },
             armor: null,
             perkDeck: null,
-            perkDeckPrevious: null,
             throwable: null,
             deployable: null, 
             deployableSecondary: null

@@ -5,14 +5,7 @@ import PaydayTable from "./PaydayTable.js";
  * Class object for management of the GUI functions. 
  */
 class GUI {
-    constructor(builder) {
-        /** 
-         * The previous skill that had it's text appeared.
-         * @type {Object}
-         * @private
-        */
-        this.previousSkill;
-
+    constructor(builder) {  
         /**
          * The Builder instance that instantiated this
          * @type {Builder}
@@ -316,6 +309,13 @@ class GUI {
     }
 
     /**
+     * Unselect all selected perk decks
+     */
+    PerkDeck_Unselect() {
+        $(".pk_deck.pk_selected").removeClass("pk_selected"); 
+    }
+
+    /**
      * Display a perk deck's description inside the description container. 
      * @param {string} perkdeckId Id of the perkdeck of which to display the description
      */
@@ -380,6 +380,13 @@ class GUI {
         if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
         $(".arm_icon.arm_selected").removeClass("arm_selected"); 
         armorObj.addClass("arm_selected"); 
+    }
+
+    /**
+     * Unselect all selected armors 
+     */
+    Armor_Unselect() {
+        $(".arm_icon.arm_selected").removeClass("arm_selected"); 
     }
 
     /**
@@ -457,6 +464,13 @@ class GUI {
     }
 
     /**
+     * Unselect all selected throwables
+     */
+    Throwable_Unselect() {
+        $(".th_icon.th_selected").removeClass("th_selected"); 
+    }
+
+    /**
      * Unlocks the specified throwable
      * @param {Object} throwableObj A jQuery object representing the throwable icon
      */
@@ -516,6 +530,19 @@ class GUI {
         else {
             $(".dp_icon.dp_selected").removeClass("dp_selected"); 
             deployableObj.addClass("dp_selected"); 
+        }
+    }
+
+    /**
+     * Unselect a specified deployable
+     * @param {Object} deployableObj A jQuery object representing the deployable icon
+     */
+    Deployable_Unselect() {
+        if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
+            $(".dp_icon.dp_primary").removeClass("dp_primary"); 
+            $(".dp_icon.dp_secondary").removeClass("dp_secondary");
+        } else {
+            $(".dp_icon.dp_selected").removeClass("dp_selected"); 
         }
     }
 

@@ -1,5 +1,4 @@
 import Builder from "./Builder.js";
-import PaydayTable from "./PaydayTable.js";
 
 jQuery.fn.reverse = [].reverse;
 
@@ -116,7 +115,6 @@ $(document).ready(async function () {
             const id = this.id; 
             if (builder.exp.perkDeck === id) return; 
 
-            builder.exp.perkDeckPrevious = builder.exp.perkDeck; 
             builder.exp.perkDeck = id; 
             builder.gui.PerkDeck_Select($(this)); 
         });
@@ -218,4 +216,3 @@ $(document).ready(async function () {
 });
 
 window.builder = builder; //make the builder instance visible so people can hack it and we can debug it
-window.PaydayTable = PaydayTable;
