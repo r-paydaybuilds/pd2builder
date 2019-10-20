@@ -242,15 +242,16 @@ export default class IO {
      */
     loadDeployable(deployable) {
         let dpParam = String(deployable); 
+        const self = this;
         let dp1 = dpParam.substr(0, 1); // === deployable if deployable.length === 1
         let dp2 = dpParam.length > 1 ? dpParam.substr(1, 1) : -1; 
 
         $(".dp_icon").each(function (index) {
             if (index === parseInt(dp1)) {
-                this.builder.gui.Deployable_Select($(this));
+                self.builder.gui.Deployable_Select($(this));
             }
             else if (index === parseInt(dp2)) {
-                this.builder.gui.Deployable_SelectSecondary($(this));
+                self.builder.gui.Deployable_SelectSecondary($(this));
             }
         }); 
     }

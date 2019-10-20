@@ -46,7 +46,7 @@ class skillMap extends Map {
             const skill = skills.get(key);
 
             if(skill.subtree !== subtree || skill.tier !== tier) continue;
-            if (value.state === "aced") {
+            if (value.state === 2) {
                 points += skill.ace + skill.basic;
             } else {
                 points += skill.basic;
@@ -110,7 +110,7 @@ class System {
             if (exp.skills.points-skillStore.ace >= 0) {
                 subtree.points += skillStore.ace;
                 exp.skills.points -= skillStore.ace;
-                skill.state = "aced";
+                skill.state = 2;
                 subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
@@ -119,7 +119,7 @@ class System {
             if (exp.skills.points-skillStore.basic >= 0) {
                 subtree.points += skillStore.basic;
                 exp.skills.points -= skillStore.basic;
-                exp.skills.set(skillId, { state: "basic" });
+                exp.skills.set(skillId, { state: 1 });
                 subtree.tier = System.getSubtreeTierLevel(subtree.points);
 
                 return true; 
@@ -140,7 +140,7 @@ class System {
             if (exp.skills.getTierPoints(i+1, skillStore.subtree, skills) !== 0) { // Check if the tier above the given skill's tier is empty, else keep looking till top
                 const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
                 
-                if (skill.state === "aced") { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
+                if (skill.state === 2) { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
                     if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL[i]) { 
                         return false; 
                     }
@@ -153,11 +153,11 @@ class System {
         }
         
         const subtree = exp.subtrees[skillStore.subtree];
-        if (skill.state === "aced") {
+        if (skill.state === 2) {
             subtree.points -= skillStore.ace;
             exp.skills.points += skillStore.ace;
-            skill.state = "basic";
-        } else if (skill.state === "basic") {
+            skill.state = 1;
+        } else if (skill.state === 1) {
             subtree.points -= skillStore.basic;
             exp.skills.points += skillStore.basic;
             exp.skills.delete(skillId);

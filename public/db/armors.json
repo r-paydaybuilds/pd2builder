@@ -76,7 +76,7 @@
             "stamina": 35
         },
         "requires": [
-            { "type": "skill", "name": "iron_man", "state": "aced" }
+            { "type": "skill", "name": "iron_man", "state": 2 }
         ]
     }
 }

@@ -637,7 +637,7 @@ class GUI {
      * @param {Object} jackOfAllTradesSkill 
      */
     HandleJackOfAllTrades(jackOfAllTradesSkill) {
-        if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == "aced") {
+        if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2) {
             $(".dp_icon").each(function () {
                 if ($(this).hasClass("dp_selected")) {
                     $(this).removeClass("dp_selected"); 
@@ -670,7 +670,7 @@ class GUI {
                     methodType = type.charAt(0).toUpperCase() + type.slice(1, type.length - 1); 
                 if(exp instanceof Map) {
                     const requirement = exp.get(obj.name);
-                    if(requirement && requirement.state === obj.state) {
+                    if(requirement && requirement.state >= obj.state) {
                         this[`${methodType}_Unlock`]($("#" + key).parent());
                     } else {
                         this[`${methodType}_Lock`]($("#" + key).parent());
