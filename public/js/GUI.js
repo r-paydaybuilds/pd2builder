@@ -327,7 +327,6 @@ class GUI {
             pk.description
                 .replace(/\n/g, "</p><p>")
                 .replace(/\t/g, "<br>")
-                .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`)
         }</p>`;
 
         desc.html(html);

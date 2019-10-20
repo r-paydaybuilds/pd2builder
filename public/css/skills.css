@@ -33,7 +33,7 @@
 }
 
 #sk_container_l {
-  border-image: url("/img/borders/skill_border.png") 3 15 repeat;
+  border-image: url("../img/borders/skill_border.png") 3 15 repeat;
   border-top: 3px solid transparent; 
   border-bottom: 3px solid transparent; 
 }
@@ -51,25 +51,25 @@
 #sk_container_l::before {
   top: 0; 
   left: 0; 
-  background: url("/img/borders/corner-topleft.png") no-repeat; 
+  background: url("../img/borders/corner-topleft.png") no-repeat; 
 }
  
 #sk_container_l::after {
   bottom: 0; 
   left: 0; 
-  background: url("/img/borders/corner-bottomleft.png") no-repeat; 
+  background: url("../img/borders/corner-bottomleft.png") no-repeat; 
 }
 
 #sk_container_r::before {
   top: 0; 
   right: 0; 
-  background: url("/img/borders/corner-topright.png") no-repeat; 
+  background: url("../img/borders/corner-topright.png") no-repeat; 
 }
 
 #sk_container_r::after {
   bottom: 0; 
   right: 0; 
-  background: url("/img/borders/corner-bottomright.png") no-repeat; 
+  background: url("../img/borders/corner-bottomright.png") no-repeat; 
 }
 
 #sk_description_t {
@@ -96,7 +96,7 @@
 }
 
 .sk_subtree {
-  background:         bottom center url("/img/skills/background.png") no-repeat;
+  background:         bottom center url("../img/skills/background.png") no-repeat;
   background-size:    100% 25%;
 
   margin-left: 5px; 
@@ -150,7 +150,7 @@
   margin: 0 auto; 
   position: relative; 
   z-index: 1002; 
-  background: url("/img/skills/icons.png") no-repeat;
+  background: url("../img/skills/icons.png") no-repeat;
   opacity: 0.2; 
   -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
   -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
@@ -171,11 +171,11 @@
 }
 
 .sk_icon.sk_locked {
-  background-image: url("/img/skills/padlock.png");
+  background-image: url("../img/skills/padlock.png");
 }
 
 .sk_icon.sk_selected_aced {
-  background-image: url("/img/skills/ace.png"); 
+  background-image: url("../img/skills/ace.png"); 
 }
 
 .sk_icon.sk_invalid > div {

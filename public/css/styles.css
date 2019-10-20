@@ -3,7 +3,7 @@
 /**********************************/
 
 body {
-  background: rgb(11, 11, 21) url("/img/bg.png"); 
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
   color: rgb(240, 240, 240); 
 }
