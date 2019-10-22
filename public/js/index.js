@@ -1,4 +1,5 @@
 import Builder from "./Builder.js";
+import Language from "./Language.js";
 
 jQuery.fn.reverse = [].reverse;
 
@@ -113,7 +114,7 @@ $(document).ready(async function () {
     $(".pk_deck").each(function () {
         $(this).click(function () {
             const id = this.id; 
-            if (builder.exp.perkDeck === id || $(this).hasClass(".pk_locked")) return; 
+            if (builder.exp.perkDeck === id || $(this).hasClass("pk_locked")) return; 
 
             builder.exp.perkDeck = id; 
             builder.gui.PerkDeck_Select($(this)); 
@@ -145,7 +146,7 @@ $(document).ready(async function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
             if (builder.exp.armor === id || $(this).hasClass("arm_locked")) return;
-            console.log($(this))
+
             builder.exp.armor = id;
             builder.gui.Armor_Select($(this)); 
             builder.gui.Armor_DisplayDescriptionCard(id);
@@ -160,7 +161,7 @@ $(document).ready(async function () {
     $(".th_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (builder.exp.throwable === id || $(this).hasClass(".th_locked")) return;
+            if (builder.exp.throwable === id || $(this).hasClass("th_locked")) return;
 
             builder.exp.throwable = id;
             builder.gui.Throwable_Select($(this));
@@ -174,7 +175,7 @@ $(document).ready(async function () {
     $(".dp_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (builder.exp.deployable === id || $(this).hasClass(".dp_locked")) return; 
+            if (builder.exp.deployable === id || $(this).hasClass("dp_locked")) return; 
             builder.exp.deployable = id;
             builder.gui.Deployable_Select($(this));
         });
@@ -217,6 +218,8 @@ $(document).ready(async function () {
         builder.io.LoadBuildFromURL();
     }
 
+    builder.loadLanguage(await fetch("./lang/en-us.json").then(res => res.json()));
+
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
 
@@ -226,3 +229,4 @@ $(document).ready(async function () {
 });
 
 window.builder = builder; //make the builder instance visible so people can hack it and we can debug it
+window.Language = Language;

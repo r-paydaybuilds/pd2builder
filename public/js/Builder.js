@@ -1,6 +1,7 @@
 import { skillMap, System, dbMap } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
+import Language from "./Language.js";
 
 /**
  * Singleton class containing million of things (gangs of four accepts this)
@@ -73,6 +74,10 @@ export default class Builder {
          * @type {Promise<Array>}
          */
         this.fetchPromises = this.dbs.fetchAll();
+    }
+
+    loadLanguage(obj) {
+        this.lang = new Language(obj);
     }
 }
 
