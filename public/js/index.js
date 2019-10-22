@@ -173,12 +173,20 @@ $(document).ready(async function () {
     // Deployables icon buttons //
     $(".dp_icon").each(function () {
         $(this).click(function () {
+            builder.exp.deployable = this.firstElementChild.id;
             builder.gui.Deployable_Select($(this));
         });
 
         $(this).contextmenu(function (event) {
             event.preventDefault(); 
-            builder.gui.Deployable_SelectSecondary($(this)); 
+            const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades");
+            if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2) {
+                builder.exp.deployableSecondary = this.firstElementChild.id;
+                builder.gui.Deployable_SelectSecondary($(this));
+            } else {
+                $(this).click();
+            } 
+            
         });
         $(this).mouseenter(function() {
             builder.gui.Deployable_DisplayDescriptionCard(this.firstElementChild.id); 

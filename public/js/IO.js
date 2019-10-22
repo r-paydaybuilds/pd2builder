@@ -42,82 +42,92 @@ export default class IO {
     GetEncodedBuild() {
         var self = this; // Prevent jQuery from screwing up this's scope
 
-        let buildString = window.location.href.replace(window.location.search, ""); // Get pure address without params 
-        let skillsString = ""; 
+        const buildURLParam = new URLSearchParams(); // Get pure address without params 
         
         // Manage Skills
-        $(".sk_subtree").each(function () {
-            let subtreeBasicChar = 0; 
-            let subtreeAcedChar = 0; 
+        if(this.builder.exp.skills.points !== 120) {
+            let skillsString = ""; 
+            $(".sk_subtree").each(function () {
+                let subtreeBasicChar = 0; 
+                let subtreeAcedChar = 0; 
 
-            $(this).children(".sk_tier").each(function () {
-                $(this).find(".sk_icon").each(function () {
-                    if ($(this).hasClass("sk_selected_basic")) {
-                        subtreeBasicChar = subtreeBasicChar | 1;
-                    }
-                    else if ($(this).hasClass("sk_selected_aced")) {
-                        subtreeAcedChar = subtreeAcedChar | 1; 
-                    }
+                $(this).children(".sk_tier").each(function () {
+                    $(this).find(".sk_icon").each(function () {
+                        if ($(this).hasClass("sk_selected_basic")) {
+                            subtreeBasicChar = subtreeBasicChar | 1;
+                        }
+                        else if ($(this).hasClass("sk_selected_aced")) {
+                            subtreeAcedChar = subtreeAcedChar | 1; 
+                        }
 
-                    if ($(this).closest(".sk_tier").data("tier") != 1) { // Skip for last 
-                        subtreeBasicChar = subtreeBasicChar << 1; 
-                        subtreeAcedChar = subtreeAcedChar << 1; 
-                    }
-                });
+                        if ($(this).closest(".sk_tier").data("tier") != 1) { // Skip for last 
+                            subtreeBasicChar = subtreeBasicChar << 1; 
+                            subtreeAcedChar = subtreeAcedChar << 1; 
+                        }
+                    });
+                }); 
+                skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
             }); 
-            skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
-        }); 
-        buildString += "?s=" + encodeURIComponent(skillsString); 
-        buildString += "&k=" + this.builder.exp.skills.points; 
+            buildURLParam.set("s", encodeURIComponent(skillsString)); 
+        }
 
         // Manage Perk Decks
-        let pkCount = 0; 
-        $(".pk_deck").each(function () {
-            if ($(this).hasClass("pk_selected")) return false; 
-            
-            pkCount++; 
-        });
-        buildString += "&p=" + self.EncodeByte(pkCount); 
+        if(this.builder.exp.perkDeck) {
+            let pkCount = 0; 
+            $(".pk_deck").each(function () {
+                if ($(this).hasClass("pk_selected")) return false; 
+                
+                pkCount++; 
+            });
+            buildURLParam.set("p", self.EncodeByte(pkCount)); 
+        }
 
         // Manage Armors
-        let armCount = 0; 
-        $(".arm_icon").each(function () {
-            if ($(this).hasClass("arm_selected")) return false; 
+        if(this.builder.exp.armor) {
+            let armCount = 0; 
+            $(".arm_icon").each(function () {
+                if ($(this).hasClass("arm_selected")) return false; 
 
-            armCount++; 
-        });
-        buildString += "&a=" + armCount; 
+                armCount++; 
+            });
+            buildURLParam.set("a", armCount); 
+        }
 
         // Manage Throwables
-        let thCount = 0; 
-        $(".th_icon").each(function () {
-            if ($(this).hasClass("th_selected")) return false; 
+        if(this.builder.exp.throwable) {
+            let thCount = 0; 
+            $(".th_icon").each(function () {
+                if ($(this).hasClass("th_selected")) return false; 
 
-            thCount++; 
-        });
-        buildString += "&t=" + self.EncodeByte(thCount);  
+                thCount++; 
+            });
+            buildURLParam.set("t", self.EncodeByte(thCount));  
+        }
 
         // Manage Deployables
-        let dpCount = 0; 
-        $(".dp_icon").each(function () {
-            if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
+        if(this.builder.exp.deployable) {
+            let dpCount = 0; 
+            $(".dp_icon").each(function () {
+                if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
 
-            dpCount++; 
-        });
-        buildString += "&d=" + dpCount;
-        
+                dpCount++; 
+            });
+            buildURLParam.set("d", dpCount);
+        }
+
         // Account for secondary deployables 
-        let dpCount2 = 0; 
         if ($(".dp_icon").hasClass("dp_secondary")) {
+            let dpCount2 = 0; 
             $(".dp_icon").each(function () {
                 if ($(this).hasClass("dp_secondary")) return false; 
     
                 dpCount2++; 
             });
-            buildString += dpCount2.toString();
+            buildURLParam.set("d", buildURLParam.get("d") + dpCount2);
         }
 
-        return buildString; 
+        return window.location.href.replace(window.location.search, "") + 
+            (buildURLParam.toString() == "" ? "" : "?" + buildURLParam.toString()); 
     }
 
     /**
@@ -242,16 +252,15 @@ export default class IO {
      */
     loadDeployable(deployable) {
         let dpParam = String(deployable); 
-        const self = this;
         let dp1 = dpParam.substr(0, 1); // === deployable if deployable.length === 1
         let dp2 = dpParam.length > 1 ? dpParam.substr(1, 1) : -1; 
 
         $(".dp_icon").each(function (index) {
             if (index === parseInt(dp1)) {
-                self.builder.gui.Deployable_Select($(this));
+                $(this).click();
             }
             else if (index === parseInt(dp2)) {
-                self.builder.gui.Deployable_SelectSecondary($(this));
+                $(this).contextmenu();
             }
         }); 
     }

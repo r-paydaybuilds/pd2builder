@@ -1120,7 +1120,9 @@
             "title": "Throwables"
         },
         "deployables": {
-            "title": "Deployables"
+            "title": "Deployables",
+            "primary": "PRIMARY",
+            "secondary": "SECONDARY"
         },
         "share": {
             "title": "Share Build",

@@ -552,17 +552,8 @@ class GUI {
     Deployable_SelectSecondary(deployableObj) {
         if (deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_secondary") || deployableObj.hasClass("dp_locked")) return; 
 
-        if (!$("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
-            this.Deployable_Select(deployableObj); 
-        }
-
-        if (!$(".dp_icon").hasClass("dp_primary")) { // Means: if no primary is selected, treat right click as primary. 
-            this.Deployable_Select(deployableObj); 
-        }
-        else {
-            $(".dp_icon.dp_secondary").removeClass("dp_secondary"); 
-            deployableObj.addClass("dp_secondary"); 
-        }       
+        $(".dp_icon.dp_secondary").removeClass("dp_secondary"); 
+        deployableObj.addClass("dp_secondary");        
     }
 
     /**
