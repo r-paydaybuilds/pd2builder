@@ -113,7 +113,7 @@ $(document).ready(async function () {
     $(".pk_deck").each(function () {
         $(this).click(function () {
             const id = this.id; 
-            if (builder.exp.perkDeck === id) return; 
+            if (builder.exp.perkDeck === id || $(this).hasClass(".pk_locked")) return; 
 
             builder.exp.perkDeck = id; 
             builder.gui.PerkDeck_Select($(this)); 
@@ -144,7 +144,7 @@ $(document).ready(async function () {
     $(".arm_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (builder.exp.armor === id) return;
+            if (builder.exp.armor === id || $(this).hasClass(".arm_locked")) return;
 
             builder.exp.armor = id;
             builder.gui.Armor_Select($(this)); 
@@ -160,7 +160,7 @@ $(document).ready(async function () {
     $(".th_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (builder.exp.throwable === id) return;
+            if (builder.exp.throwable === id || $(this).hasClass(".th_locked")) return;
 
             builder.exp.throwable = id;
             builder.gui.Throwable_Select($(this));
@@ -173,7 +173,9 @@ $(document).ready(async function () {
     // Deployables icon buttons //
     $(".dp_icon").each(function () {
         $(this).click(function () {
-            builder.exp.deployable = this.firstElementChild.id;
+            const id = this.firstElementChild.id;
+            if (builder.exp.deployable === id || $(this).hasClass(".dp_locked")) return; 
+            builder.exp.deployable = id;
             builder.gui.Deployable_Select($(this));
         });
 

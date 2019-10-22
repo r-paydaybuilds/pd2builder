@@ -290,8 +290,6 @@ class GUI {
      * @param {Object} perkdeckObj A jQuery object representing the clicked perk deck
      */
     PerkDeck_Select(perkdeckObj) {
-        if (perkdeckObj.hasClass("pk_selected")) return; 
-
         const oldTitle = $(".pk_deck.pk_selected p").text();
         $(".pk_deck.pk_selected p").text(oldTitle.replace("EQUIPPED: ", "")); 
         $(".pk_deck.pk_selected").removeClass("pk_selected"); 
@@ -376,7 +374,6 @@ class GUI {
      * @param {Object} armorObj A jQuery object representing the clicked armor icon
      */
     Armor_Select(armorObj) {
-        if (armorObj.hasClass("arm_selected") || armorObj.hasClass("arm_locked")) return; 
         $(".arm_icon.arm_selected").removeClass("arm_selected"); 
         armorObj.addClass("arm_selected"); 
     }
@@ -454,8 +451,6 @@ class GUI {
      * @param {Object} throwableObj A jQuery object representing the clicked throwable icon
      */
     Throwable_Select(throwableObj) {
-        if (throwableObj.hasClass("th_selected") || throwableObj.hasClass("th_locked")) return; 
-
         $(".th_icon.th_selected").removeClass("th_selected"); 
         if (throwableObj !== "") {
             throwableObj.addClass("th_selected"); 
@@ -520,13 +515,10 @@ class GUI {
      * @param {Object} deployableObj A jQuery object representing the clicked deployable icon
      */
     Deployable_Select(deployableObj) {
-        if (deployableObj.hasClass("dp_selected") || deployableObj.hasClass("dp_primary") || deployableObj.hasClass("dp_locked")) return; 
-
         if ($("#jack_of_all_trades").closest(".sk_icon").hasClass("sk_selected_aced")) { 
             $(".dp_icon.dp_primary").removeClass("dp_primary"); 
             deployableObj.addClass("dp_primary"); 
-        }
-        else {
+        } else {
             $(".dp_icon.dp_selected").removeClass("dp_selected"); 
             deployableObj.addClass("dp_selected"); 
         }
