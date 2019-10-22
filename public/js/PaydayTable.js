@@ -21,6 +21,15 @@ export default class PaydayTable extends Map {
         }
 
         /**
+         * Contains the names shown for the columns
+         * @type {Map}
+         */
+        this.columnNames = new Map();
+        for(const [key] of this) {
+            this.columnNames.set(key, key.toUpperCase());
+        }
+
+        /**
          * Contains what CSS class it uses
          * @type {String}
          */
@@ -93,9 +102,9 @@ export default class PaydayTable extends Map {
         let html = `<table${this.tableClass ? ` class="${this.tableClass}"`: ""}>
     <thead>
         <tr>`;
-        for(const [key] of this) {
+        for(const [,value] of this.columnNames) {
             html += `
-            <td>${key.toUpperCase()}</td>`;
+            <td>${value}</td>`;
         }
         html += `
         </tr>
@@ -118,5 +127,17 @@ export default class PaydayTable extends Map {
     </tbody>
 </table>`;
         return html;
+    }
+
+    translate(obj = {}) {
+        const staticRows = this.get("");
+        for(const [key, value] of Object.entries(obj.rows)) {
+            if(staticRows.has(key)) staticRows.set(key, value);
+        }
+        
+        for(const [key, value] of Object.entries(obj.columns)) {
+            if(this.columnNames.has(key)) this.columnNames.set(key, value);
+        }
+        return this;
     }
 }

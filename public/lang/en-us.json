@@ -1039,20 +1039,20 @@
         "name": "PD2 Builder",
         "home": "Home",
         "requires": {
-            "text": "Requires the %{name} %{type}%{verb}",
-            "type": {
-                "perk_deck": "Perk Deck",
-                "perk_card": "Perk Card",
-                "throwable": "Throwable",
-                "skill": "Skill",
-                "deployable": "Deployable"
+            "text": "REQUIRES THE %{name} %{type}%{verb}",
+            "types": {
+                "perk_deck": "PERK DECK",
+                "perk_card": "PERK CARD",
+                "throwable": "THROWABLE",
+                "skill": "SKILL",
+                "deployable": "DEPLOYABLE"
             },
-            "verb": {
-                "perk_deck": " equipped",
-                "perk_card": " equipped",
-                "throwable": " equipped",
+            "verbs": {
+                "perk_deck": " EQUIPPED",
+                "perk_card": " EQUIPPED",
+                "throwable": " EQUIPPED",
                 "skill": "",
-                "deployable": " equipped"
+                "deployable": " EQUIPPED"
             }
         },
         "equipped": "EQUIPPED",
@@ -1107,14 +1107,23 @@
         },
         "armors": {
             "title": "Armors",
-            "total": "TOTAL",
-            "skill": "SKILL",
-            "armor": "ARMOR",
-            "concealment": "CONCEALMENT",
-            "speed": "SPEED",
-            "dodge": "DODGE",
-            "steadiness": "STEADINESS",
-            "stamina": "STAMINA"
+            "table": {
+                "columns": {
+                    "total": "TOTAL",
+                    "base": "BASE",
+                    "skill": "SKILL",
+                    "equipped": "EQUIPPED",
+                    "selected": "SELECTED"
+                },
+                "rows": {
+                    "armor": "ARMOR",
+                    "concealment": "CONCEALMENT",
+                    "speed": "SPEED",
+                    "dodge": "DODGE",
+                    "steadiness": "STEADINESS",
+                    "stamina": "STAMINA"
+                }
+            }
         },
         "throwables": {
             "title": "Throwables"

@@ -187,6 +187,7 @@ export { System, dbMap, skillMap };
 
 /**
  * A class that should be filled with absolutely not useless stuff
+ * @static
  */
 export default class Util {
     constructor() {
@@ -195,50 +196,16 @@ export default class Util {
 
     /**
      * Gives you a nice Payday 2 requires text
+     * @static
      * @param {String} type type of thing
      * @param {String} name name of thing
+     * @param {Language} lang language instance
      */
-    static resolveRequire(type, name) {
-        return `Requires the ${name} ${this.resolveType(type)}${this.resolveVerb(type)}`;
-    }
-
-    /**
-     * Gives you the type name that doesn't look computer-y
-     * @param {String} type type of thing 
-     */
-    static resolveType(type) {
-        return this.typeName.get(type);
-    }
-
-    /**
-     * Gives you the verb that should be used because natural libraries are something that we shouldn't end up using
-     * @param {String} type type of thing 
-     */
-    static resolveVerb(type) {
-        return this.typeVerb.get(type);
+    static resolveRequire(type, name, lang) {
+        return lang.get("system.requires.text")({ rep: {
+            name: name,
+            type: lang.get("system.requires.types." + type),
+            verb: lang.get("system.requires.verbs." + type)
+        }});
     }
 }
-
-/**
- * Contains a map which has the name of each type
- * @type {Map<String, String>}
- */
-Util.typeName = new Map([
-    ["perk_deck", "Perk Deck"],
-    ["perk_card", "Perk Card"],
-    ["throwable", "Throwable"],
-    ["skill", "Skill"],
-    ["deployable", "Deployable"]
-]);
-
-/**
- * Contains a map which has the verb that should be used with each type
- * @type {Map<String, String>}
- */
-Util.typeVerb = new Map([
-    ["perk_deck", " equipped"],
-    ["perk_card", " equipped"],
-    ["throwable", " equipped"],
-    ["skill", ""],
-    ["deployable", " equipped"]
-]);

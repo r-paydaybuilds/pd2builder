@@ -71,12 +71,13 @@ class GUI {
     Tree_ChangeTo(treeId) {
         // Clean the skill description text 
         const desc = $(".sk_description");
+        const tree = treeId.split("_")[1];
         desc.data("skill", "none");
         desc.text("");
 
         // Manage the buttons
         $("#sk_tree_buttons").children().removeClass("sk_tree_button_active"); 
-        $("#sk_" + treeId.split("_")[1] + "_button").addClass("sk_tree_button_active"); 
+        $("#sk_" + tree + "_button").addClass("sk_tree_button_active"); 
 
         // Switch tree content 
         $("#sk_container_r").children(".sk_tree").each(function () {
@@ -87,11 +88,11 @@ class GUI {
         // Change displayed subtree names 
         let subtrees = $("#" + treeId).children(".sk_subtree");
         for (let i = 0; i < subtrees.length; i++) {
-            subtrees[i] = String($(subtrees[i]).data("name")).toUpperCase(); 
+            subtrees[i] = String($(subtrees[i]).data("name")); 
         }
-        $("#sk_subtree_name_left p").text(subtrees[0]);
-        $("#sk_subtree_name_center p").text(subtrees[1]);
-        $("#sk_subtree_name_right p").text(subtrees[2]);
+        $("#sk_subtree_name_left p").text(this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[0]}`));
+        $("#sk_subtree_name_center p").text(this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[1]}`));
+        $("#sk_subtree_name_right p").text(this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[2]}`));
     }
 
     /**
@@ -231,7 +232,7 @@ class GUI {
      */
     Skill_DisplayDescription(skillId) {
         const desc = $(".sk_description"); 
-        const skill = this.builder.dbs.get("skills").get(skillId);
+        const skill = this.builder.lang.get(`skills.${skillId}`);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
             skill.description
@@ -291,12 +292,12 @@ class GUI {
      */
     PerkDeck_Select(perkdeckObj) {
         const oldTitle = $(".pk_deck.pk_selected p").text();
-        $(".pk_deck.pk_selected p").text(oldTitle.replace("EQUIPPED: ", "")); 
+        $(".pk_deck.pk_selected p").text(oldTitle.replace(`${this.builder.lang.get("system.equipped")}: `, "")); 
         $(".pk_deck.pk_selected").removeClass("pk_selected"); 
 
         perkdeckObj.addClass("pk_selected"); 
         const newTitle = perkdeckObj.children("p"); 
-        newTitle.text("EQUIPPED: " + newTitle.text()); 
+        newTitle.text(`${this.builder.lang.get("system.equipped")}: ${newTitle.text()}`); 
 
         $(".pk_deck").each(function () {
             if ($(this) !== perkdeckObj) {
@@ -319,7 +320,7 @@ class GUI {
      */
     PerkDeck_DisplayDescription(perkdeckId) {
         const desc = $(".pk_description"); 
-        const pk = this.builder.dbs.get("perk_decks").get(perkdeckId);
+        const pk = this.builder.lang.get(`perk_decks.${perkdeckId}`);
 
         let html = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
             pk.description
@@ -340,7 +341,7 @@ class GUI {
 
         const desc = $(".pk_description");
         const pk = this.builder.dbs.get("perk_decks").get(cardObj.parent()[0].id);
-        const perkCard = this.builder.dbs.get("perk_cards").get(pk.perks[cardObj.index() - 1]);
+        const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[cardObj.index() - 1]}`);
 
         let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
         
@@ -413,24 +414,28 @@ class GUI {
         const desc = $(".arm_description");
         const arm = this.builder.dbs.get("armors").get(armorId);
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
+        const lang = this.builder.lang.get("system.armors.table");
 
-        let html = `<p class="description_title">${arm.name.toUpperCase()}`;
+        let html = `<p class="description_title">${this.builder.lang.get(`armors.${armorId}`).toUpperCase()}`;
 
 
         if(!oldArm) {
             html +=  "</p>" + new PaydayTable(["selected"], Object.keys(arm.stats), { tableClass: "armor_not_chosen" })
                 .addRows("selected", Object.entries(arm.stats))
+                .translate(lang)
                 .toHTML();
         } else if(armorId === this.builder.exp.armor) {
-            html += "<br><span class=\"font-size-13\">EQUIPPED</span></p>" 
+            html += `<br><span class="font-size-13">${this.builder.lang.get("system.equipped")}</span></p>` 
             + new PaydayTable(["total", "base", "skill"], Object.keys(arm.stats), { tableClass: "armor_details" })
                 .addRows("base", Object.entries(arm.stats))
+                .translate(lang)
                 .toHTML();
         } else {
             html += "</p>" +new PaydayTable(["equipped", "selected"], Object.keys(arm.stats), { tableClass: "armor_compare" })
                 .addRows("equipped", Object.entries(oldArm.stats))
                 .addRows("selected", Object.entries(arm.stats))
                 .compare("equipped", "selected")
+                .translate(lang)
                 .toHTML();
         }
 
@@ -438,8 +443,9 @@ class GUI {
             for(const requirement of arm.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
-                ).toUpperCase() + "</span>";
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang
+                ) + "</span>";
             }
         }
 
@@ -491,19 +497,21 @@ class GUI {
     Throwable_DisplayDescriptionCard(throwableId) {
         const desc = $(".th_description");
         const th = this.builder.dbs.get("throwables").get(throwableId);
+        const lang = this.builder.lang.get("throwables." + throwableId);
 
-        let html = `<p class="description_title">${th.name.toUpperCase()}`;
+        let html = `<p class="description_title">${lang.name}`;
 
         if($("#" + throwableId).parent().hasClass("th_locked")) {
             for(const requirement of th.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
-                ).toUpperCase() + "</span>";
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang
+                ) + "</span>";
             }
         }
 
-        html += `</p><p>${th.description}</p>`
+        html += `</p><p>${lang.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 
@@ -575,19 +583,21 @@ class GUI {
     Deployable_DisplayDescriptionCard(deployableId) {
         const desc = $(".dp_description");
         const dp = this.builder.dbs.get("deployables").get(deployableId);
+        const lang = this.builder.lang.get("deployables." + deployableId);
 
-        let html = `<p class="description_title">${dp.name.toUpperCase()}`;
+        let html = `<p class="description_title">${lang.name}`;
 
         if($("#" + deployableId).parent().hasClass("dp_locked")) {
             for(const requirement of dp.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name
-                ).toUpperCase() + "</span>";
+                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang
+                ) + "</span>";
             }
         }
         
-        html += `</p><p>${dp.description}</p>`
+        html += `</p><p>${lang.description}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>");
 

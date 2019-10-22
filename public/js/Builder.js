@@ -77,7 +77,42 @@ export default class Builder {
     }
 
     loadLanguage(obj) {
+        const self = this;
         this.lang = new Language(obj);
+
+        $(".navbar-brand").text(this.lang.get("system.name"));
+        $(".navbar-link").text(this.lang.get("system.home"));
+
+        $("#tab_page_buttons > button").each(function() {
+            $(this).text(self.lang.get(`system.${$(this).data("name")}.title`));
+        });
+
+        for(const value of Builder.TREES) {
+            $(`#sk_${value}_button`).text(this.lang.get(`system.skills.${value}.title`));
+        }
+
+        for(const [key] of this.dbs.get("skills")) {
+            $(`#${key}`).parent().next().text(this.lang.get(`skills.${key}.name`).toLocaleUpperCase());
+        }
+
+        $(".sk_points_remaining > p").html(this.lang.get("system.skills.remaining") + $(".sk_points_remaining p span")[0].outerHTML);
+
+        for(const [key] of this.dbs.get("perk_decks")) {
+            $(`#${key} > p`).text(this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase());
+        }
+
+        $("#io_save_r p").text(this.lang.get("system.share.description"));
+        $("#io_copy_btn").text(this.lang.get("system.share.copy"));
+
+        $("#io_other_r > p").text(this.lang.get("system.credits.title"));
+        $("#io_other_r > .font-size-16 p:first-child").text(this.lang.get("system.credits.p1"));
+        $("#io_other_r > .font-size-16 p:last-child").html(this.lang.get("system.credits.p2")({
+            ref: [x => `<a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">${x}</a>`]
+        }));
+        $("#io_other_r > .font-size-14").children().html(this.lang.get("system.credits.license")({
+            ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]
+        }));
+        $(".io_widgets > p").text(this.lang.get("system.credits.reach"));
     }
 }
 

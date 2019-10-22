@@ -1,5 +1,4 @@
 import Builder from "./Builder.js";
-import Language from "./Language.js";
 
 jQuery.fn.reverse = [].reverse;
 
@@ -8,6 +7,15 @@ const builder = new Builder();
 $(document).ready(async function () {
     //Add a big ass loading spinner to make people not touch things //
     builder.gui.LoadingSpinner_Display(true); 
+
+    // Wait for all DBs to load before loading anything //
+    await builder.fetchPromises;
+    if (builder.io.HasToLoadBuild()) {
+        builder.io.LoadBuildFromURL();
+    }
+
+    // Load language
+    builder.loadLanguage(await fetch("./lang/en-us.json").then(res => res.json()));
 
     //
     // Bind Events on page 
@@ -212,14 +220,6 @@ $(document).ready(async function () {
     builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
     builder.gui.Tree_ChangeTo("sk_mastermind_container");
 
-    // Wait for all DBs to load before loading build from URL //
-    await builder.fetchPromises;
-    if (builder.io.HasToLoadBuild()) {
-        builder.io.LoadBuildFromURL();
-    }
-
-    builder.loadLanguage(await fetch("./lang/en-us.json").then(res => res.json()));
-
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
 
@@ -229,4 +229,3 @@ $(document).ready(async function () {
 });
 
 window.builder = builder; //make the builder instance visible so people can hack it and we can debug it
-window.Language = Language;

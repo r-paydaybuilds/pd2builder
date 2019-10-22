@@ -80,12 +80,12 @@
       <div class="row-fluid">
         <div class="col">
           <div id="tab_page_buttons" class="btn-group nav_buttons" role="group">
-            <button id="tab_skills_button" type="button" class="btn btn-secondary">Skills</button>
-            <button id="tab_perk_decks_button" type="button" class="btn btn-secondary">Perk Decks</button>
-            <button id="tab_armors_button" type="button" class="btn btn-secondary">Armors</button>
-            <button id="tab_throwables_button" type="button" class="btn btn-secondary">Throwables</button>
-            <button id="tab_deployables_button" type="button" class="btn btn-secondary">Deployables</button>
-            <button id="tab_io_button" type="button" class="btn btn-secondary">Share Build</button>
+            <button id="tab_skills_button" data-name=skills type="button" class="btn btn-secondary">Skills</button>
+            <button id="tab_perk_decks_button" data-name=perk_decks type="button" class="btn btn-secondary">Perk Decks</button>
+            <button id="tab_armors_button" data-name=armors type="button" class="btn btn-secondary">Armors</button>
+            <button id="tab_throwables_button" data-name=throwables type="button" class="btn btn-secondary">Throwables</button>
+            <button id="tab_deployables_button" data-name=deployables type="button" class="btn btn-secondary">Deployables</button>
+            <button id="tab_io_button" data-name=share type="button" class="btn btn-secondary">Share Build</button>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
         <div id="sk_container_l" class="col-9">
           <div id="sk_container_r"> 
             <div id="sk_mastermind_container" class="row sk_tree">
-              <div id="sk_medic_subtree" data-name="Medic" class="col sk_subtree">
+              <div id="sk_medic_subtree" data-name="medic" class="col sk_subtree">
                 <div id="sk_medic_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -154,7 +154,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_controller_subtree" data-name="Controller" class="col sk_subtree">
+              <div id="sk_controller_subtree" data-name="controller" class="col sk_subtree">
                 <div id="sk_controller_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -200,7 +200,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_sharpshooter_subtree" data-name="Sharpshooter" class="col sk_subtree">
+              <div id="sk_sharpshooter_subtree" data-name="sharpshooter" class="col sk_subtree">
                 <div id="sk_sharpshooter_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -248,7 +248,7 @@
               </div>
             </div>
             <div id="sk_enforcer_container" class="row sk_tree">
-              <div id="sk_shotgunner_subtree" data-name="Shotgunner" class="col sk_subtree">
+              <div id="sk_shotgunner_subtree" data-name="shotgunner" class="col sk_subtree">
                 <div id="sk_shotgunner_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -294,7 +294,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_tank_subtree" data-name="Tank" class="col sk_subtree">
+              <div id="sk_tank_subtree" data-name="tank" class="col sk_subtree">
                 <div id="sk_tank_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -340,7 +340,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_ammo_specialist_subtree" data-name="Ammo Specialist" class="col sk_subtree">
+              <div id="sk_ammo_specialist_subtree" data-name="ammo_specialist" class="col sk_subtree">
                 <div id="sk_ammo_specialist_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -388,7 +388,7 @@
               </div>
             </div>
             <div id="sk_technician_container" class="row sk_tree">
-              <div id="sk_engineer_subtree" data-name="Engineer" class="col sk_subtree">
+              <div id="sk_engineer_subtree" data-name="engineer" class="col sk_subtree">
                 <div id="sk_technician_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -434,7 +434,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_breacher_subtree" data-name="Breacher" class="col sk_subtree">
+              <div id="sk_breacher_subtree" data-name="breacher" class="col sk_subtree">
                 <div id="sk_breacher_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -480,7 +480,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_oppressor_subtree" data-name="Oppressor" class="col sk_subtree">
+              <div id="sk_oppressor_subtree" data-name="oppressor" class="col sk_subtree">
                 <div id="sk_oppressor_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -528,7 +528,7 @@
               </div>
             </div>
             <div id="sk_ghost_container" class="row sk_tree">
-              <div id="sk_shinobi_subtree" data-name="Shinobi" class="col sk_subtree">
+              <div id="sk_shinobi_subtree" data-name="shinobi" class="col sk_subtree">
                 <div id="sk_ghost_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -574,7 +574,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_artful_dodger_subtree" data-name="Artful Dodger" class="col sk_subtree">
+              <div id="sk_artful_dodger_subtree" data-name="artful_dodger" class="col sk_subtree">
                 <div id="sk_artful_dodger_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -621,7 +621,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_silent_killer_subtree" data-name="Silent Killer" class="col sk_subtree">
+              <div id="sk_silent_killer_subtree" data-name="silent_killer" class="col sk_subtree">
                 <div id="sk_silent_killer_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -669,7 +669,7 @@
               </div>
             </div>
             <div id="sk_fugitive_container" class="row sk_tree">
-              <div id="sk_gunslinger_subtree" data-name="Gunslinger" class="col sk_subtree">
+              <div id="sk_gunslinger_subtree" data-name="gunslinger" class="col sk_subtree">
                 <div id="sk_gunslinger_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -715,7 +715,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_revenant_subtree" data-name="Revenant" class="col sk_subtree">
+              <div id="sk_revenant_subtree" data-name="revenant" class="col sk_subtree">
                 <div id="sk_revenant_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
@@ -761,7 +761,7 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_brawler_subtree" data-name="Brawler" class="col sk_subtree">
+              <div id="sk_brawler_subtree" data-name="brawler" class="col sk_subtree">
                 <div id="sk_brawler_tier_4" class="row sk_tier" data-tier="4">
                   <div class="col text-center">
                     <div class="sk_icon sk_locked">
