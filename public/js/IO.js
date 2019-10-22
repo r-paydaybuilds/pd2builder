@@ -68,7 +68,7 @@ export default class IO {
                 }); 
                 skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
             }); 
-            buildURLParam.set("s", encodeURIComponent(skillsString)); 
+            buildURLParam.set("s", skillsString); 
         }
 
         // Manage Perk Decks
@@ -126,6 +126,11 @@ export default class IO {
             buildURLParam.set("d", buildURLParam.get("d") + dpCount2);
         }
 
+        
+        for(const [key, value] of buildURLParam) {
+            buildURLParam.set(key, this.compressData(value));
+        }
+
         return window.location.href.replace(window.location.search, "") + 
             (buildURLParam.toString() == "" ? "" : "?" + buildURLParam.toString()); 
     }
@@ -138,24 +143,25 @@ export default class IO {
         const urlParams = new URLSearchParams(window.location.search);
 
         for(const [key, value] of urlParams) {
+            const decompressed = this.decompressData(value);
             switch(key) {
             case "s":
-                this.loadSkills(decodeURIComponent(value));
+                this.loadSkills(decompressed);
                 break;
             case "k":
-                this.loadSkillPoints(parseInt(value));
+                this.loadSkillPoints(parseInt(decompressed));
                 break;
             case "p":
-                this.loadPerkDeck(parseInt(this.DecodeByte(value)));
+                this.loadPerkDeck(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "a":
-                this.loadArmor(parseInt(value));
+                this.loadArmor(parseInt(decompressed));
                 break;
             case "t":
-                this.loadThrowable(parseInt(this.DecodeByte(value)));
+                this.loadThrowable(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "d":
-                this.loadDeployable(value); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
+                this.loadDeployable(decompressed); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
                 break;
             }
         }
@@ -263,6 +269,52 @@ export default class IO {
                 $(this).contextmenu();
             }
         }); 
+    }
+
+    /**
+     * Compresses data in a run-length encoding way (its length compression not data compression)
+     * @param {String} data Data for compressing
+     * @returns {String}
+     */
+    compressData(data) {
+        let count = 1, thing = data.charAt(0), compressed = "";
+        for(let i = 1; i < data.length + 1; i++) {
+            const value = data.charAt(i);
+            if(value === thing) {
+                if(count > 8) {
+                    compressed += `${thing}-${count}`;
+                    count = 0;
+                }
+                count++;
+                continue;
+            }
+            if(count > 3) {
+                compressed += `${thing}-${count}`;
+            } else {
+                compressed += thing.repeat(count);
+            }
+            thing = value;
+            count = 1;
+        }
+        return compressed;
+    }
+
+    /**
+     * Decompresses data in a run-length encoding way
+     * @param {String} data Data for decompressing
+     * @returns {String}
+     */
+    decompressData(data) {
+        let decompressed = "";
+        for(let i = 0; i < data.length; i++) {
+            if(data.charAt(i + 1) === "-") {
+                decompressed += data.charAt(i).repeat(parseInt(data.charAt(i+2))); 
+                i += 2;
+                continue;
+            }
+            decompressed += data.charAt(i);
+        }
+        return decompressed;
     }
 
     /**
