@@ -586,7 +586,7 @@ class GUI {
 
         let html = `<p class="description_title">${dp.name.toUpperCase()}`;
 
-        if($("#" + deployableId).parent().hasClass("th_locked")) {
+        if($("#" + deployableId).parent().hasClass("dp_locked")) {
             for(const requirement of dp.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
