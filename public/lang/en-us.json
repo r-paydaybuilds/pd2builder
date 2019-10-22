@@ -1060,7 +1060,7 @@
         "selected": "SELECTED",
         "skills": {
             "title": "Skills",
-            "remaining": "Remaining skill points %{points}",
+            "remaining": "Remaining skill points: ",
             "mastermind": {
                 "title": "MASTERMIND",
                 "subtrees": {
