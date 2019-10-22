@@ -144,8 +144,8 @@ $(document).ready(async function () {
     $(".arm_icon").each(function () {
         $(this).click(function () {
             const id = this.firstElementChild.id;
-            if (builder.exp.armor === id || $(this).hasClass(".arm_locked")) return;
-
+            if (builder.exp.armor === id || $(this).hasClass("arm_locked")) return;
+            console.log($(this))
             builder.exp.armor = id;
             builder.gui.Armor_Select($(this)); 
             builder.gui.Armor_DisplayDescriptionCard(id);
