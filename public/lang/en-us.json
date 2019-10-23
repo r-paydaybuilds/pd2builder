@@ -1039,25 +1039,18 @@
         "name": "PD2 Builder",
         "home": "Home",
         "requires": {
-            "text": "REQUIRES THE %{name} %{type}%{verb}",
-            "types": {
-                "perk_deck": "PERK DECK",
-                "perk_card": "PERK CARD",
-                "throwable": "THROWABLE",
-                "skill": "SKILL",
-                "deployable": "DEPLOYABLE"
-            },
-            "verbs": {
-                "perk_deck": " EQUIPPED",
-                "perk_card": " EQUIPPED",
-                "throwable": " EQUIPPED",
-                "skill": "",
-                "deployable": " EQUIPPED"
-            }
+            "perk_deck": "REQUIRES THE %{name} PERK DECK EQUIPPED",
+            "perk_card": "REQUIRES THE %{name} PERK CARD EQUIPPED",
+            "throwable": "REQUIRES THE %{name} THROWABLE EQUIPPED",
+            "skill": "REQUIRES THE %{name} SKILL",
+            "deployable": "REQUIRES THE %{name} DEPLOYABLE EQUIPPED"
         },
         "equipped": "EQUIPPED",
-        "equipped_short": "EQUIP.",
+        "equip": "EQUIP.",
         "selected": "SELECTED",
+        "primary": "PRIMARY",
+        "secondary": "SECONDARY",
+        "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
         "skills": {
             "title": "Skills",
             "remaining": "Remaining skill points: ",
@@ -1129,9 +1122,7 @@
             "title": "Throwables"
         },
         "deployables": {
-            "title": "Deployables",
-            "primary": "PRIMARY",
-            "secondary": "SECONDARY"
+            "title": "Deployables"
         },
         "share": {
             "title": "Share Build",

@@ -202,10 +202,6 @@ export default class Util {
      * @param {Language} lang language instance
      */
     static resolveRequire(type, name, lang) {
-        return lang.get("system.requires.text")({ rep: {
-            name: name,
-            type: lang.get("system.requires.types." + type),
-            verb: lang.get("system.requires.verbs." + type)
-        }});
+        return lang.get("system.requires." + type)({ rep: { name: name }});
     }
 }

@@ -1,5 +1,8 @@
 import Builder from "./Builder.js";
 
+const langs = ["en-us", "ru-ru"];
+let defaultLang = "en-us";
+
 jQuery.fn.reverse = [].reverse;
 
 const builder = new Builder();
@@ -10,12 +13,14 @@ $(document).ready(async function () {
 
     // Wait for all DBs to load before loading anything //
     await builder.fetchPromises;
-    if (builder.io.HasToLoadBuild()) {
-        builder.io.LoadBuildFromURL();
-    }
 
     // Load language
-    builder.loadLanguage(await fetch("./lang/en-us.json").then(res => res.json()));
+    if(langs.includes(navigator.language)) {
+        defaultLang = navigator.language;
+    } else {
+        defaultLang = navigator.languages.find(e => langs.includes(e)) || defaultLang;
+    }
+    builder.loadLanguage(await fetch(`./lang/${defaultLang}.json`).then(res => res.json()));
 
     //
     // Bind Events on page 
@@ -219,6 +224,11 @@ $(document).ready(async function () {
     builder.gui.Tab_ChangeTo("tab_skills_page"); 
     builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
     builder.gui.Tree_ChangeTo("sk_mastermind_container");
+
+    // Load build if it has one
+    if (builder.io.HasToLoadBuild()) {
+        builder.io.LoadBuildFromURL();
+    }
 
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);

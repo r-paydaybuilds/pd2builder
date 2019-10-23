@@ -443,7 +443,7 @@ class GUI {
             for(const requirement of arm.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang.get(`${requirement.type}s.${requirement.name}.name`),
                     this.builder.lang
                 ) + "</span>";
             }
@@ -505,7 +505,7 @@ class GUI {
             for(const requirement of th.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang.get(`${requirement.type}s.${requirement.name}.name`),
                     this.builder.lang
                 ) + "</span>";
             }
@@ -591,7 +591,7 @@ class GUI {
             for(const requirement of dp.requires) {
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
                     requirement.type,
-                    this.builder.dbs.get(requirement.type + "s").get(requirement.name).name,
+                    this.builder.lang.get(`${requirement.type}s.${requirement.name}.name`),
                     this.builder.lang
                 ) + "</span>";
             }

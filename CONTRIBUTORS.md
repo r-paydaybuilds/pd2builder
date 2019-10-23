@@ -24,6 +24,11 @@ pd2builder Contributors
 * **[Hondrus](https://steamcommunity.com/profiles/76561198091232093/)**
   * Watermarking resources since 2019 
   * Graphics and resources
-  
+
+* **[Viv@T](https://steamcommunity.com/id/0vivat0/)**, **[YouRock](https://steamcommunity.com/id/youroplay)** and **[FO0KBOII](https://steamcommunity.com/profiles/76561198158839792/)**
+  * Resurrectors of a dead project
+  * Made Russian translation
+  * If I didn't support their language they said they would have killed me with their russian mafia
+
 [More contributors may or may not be found here](https://github.com/r-paydaybuilds/pd2builder/graphs/contributors)
 ### YOU ARE FREE TO ADD YOURSELF ON THIS IF YOU AT LEAST CONTRIBUTED ON SOMETHING.

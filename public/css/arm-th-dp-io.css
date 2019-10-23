@@ -94,15 +94,15 @@
 .arm_icon.arm_selected > div::before,
 .th_icon.th_selected > div::before,
 .dp_icon.dp_selected > div::before {
-  content: 'EQUIP.'; 
+  content: attr(data-equip);
 }
 
 .dp_icon.dp_primary > div::before {
-  content: 'PRIMARY'; 
+  content: attr(data-primary);
 }
 
 .dp_icon.dp_secondary > div::before {
-  content: 'SECONDARY'; 
+  content: attr(data-secondary);
 }
 
 

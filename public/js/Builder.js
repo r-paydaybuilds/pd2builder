@@ -87,6 +87,10 @@ export default class Builder {
             $(this).text(self.lang.get(`system.${$(this).data("name")}.title`));
         });
 
+        $(".arm_icon > div, .th_icon > div, .dp_icon > div").attr("data-equip", this.lang.get("system.equip"));
+        $(".dp_icon > div").attr("data-primary", this.lang.get("system.primary"));
+        $(".dp_icon > div").attr("data-secondary", this.lang.get("system.secondary"));
+
         for(const value of Builder.TREES) {
             $(`#sk_${value}_button`).text(this.lang.get(`system.skills.${value}.title`));
         }
@@ -113,6 +117,8 @@ export default class Builder {
             ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]
         }));
         $(".io_widgets > p").text(this.lang.get("system.credits.reach"));
+        
+        GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
     }
 }
 
