@@ -6,10 +6,11 @@ body {
   background: rgb(11, 11, 21) url("../img/bg.png"); 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
   color: rgb(240, 240, 240); 
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body > div {
-  font-family: "DINEngschrift"; 
+  font-family: "DINEngschrift", "Noto Sans", sans-serif; 
 }
 
 .modal {

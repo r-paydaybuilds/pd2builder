@@ -16,12 +16,23 @@ $(document).ready(async function () {
 
     // Load language
     if(langs.includes(navigator.language)) {
-        defaultLang = navigator.language;
+        defaultLang = navigator.language.toLowerCase();
     } else {
-        defaultLang = navigator.languages.find(e => langs.includes(e)) || defaultLang;
+        defaultLang = navigator.languages.find(e => langs.includes(e.toLowerCase())) || defaultLang;
     }
     builder.loadLanguage(await fetch(`./lang/${defaultLang}.json`).then(res => res.json()));
 
+    {
+        const langDrop = document.getElementById("langDrop");
+        for(const lang of langs) {
+            const option = new Option(lang, lang, lang === defaultLang);
+            langDrop.appendChild(option);
+            if(lang === defaultLang) langDrop.value = lang;
+        }
+        langDrop.addEventListener("change", async (e) => {
+            builder.loadLanguage(await fetch(`./lang/${e.target.value}.json`).then(res => res.json()));
+        });
+    }
     //
     // Bind Events on page 
 
