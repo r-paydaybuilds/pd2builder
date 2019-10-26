@@ -16,10 +16,11 @@ $(document).ready(async function () {
 
     // Load language
     if(langs.includes(navigator.language)) {
-        defaultLang = navigator.language.toLowerCase();
+        defaultLang = navigator.language;
     } else {
         defaultLang = navigator.languages.find(e => langs.includes(e.toLowerCase())) || defaultLang;
     }
+    defaultLang = defaultLang.toLowerCase();
     builder.loadLanguage(await fetch(`./lang/${defaultLang}.json`).then(res => res.json()));
 
     {
