@@ -33,6 +33,28 @@ body > div {
 }
 
 
+/* -- Language selectbox -- */ 
+nav.navbar ul {
+  align-items: center; 
+}
+
+select {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 82px; 
+  height: 30px; 
+  padding: 2px 8px;
+  outline: none;
+  color: rgb(40, 40, 40);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 2px rgb(215, 220, 225);
+  background: rgb(240, 240, 240) url("../img/dropdown-arrow.png") 95% / 15% no-repeat;  
+}
+
+
 #loading_spinner {
   position: absolute; 
   top: 0;
