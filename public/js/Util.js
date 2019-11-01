@@ -71,6 +71,17 @@ class skillMap extends Map {
             
         return points;
     }
+
+    /**
+     * 
+     */
+    toJSON() {
+        const obj = {};
+        for(const [key, value] of this) {
+            obj[key] = value;
+        }
+        return obj;
+    }
 }
 
 class dbMap extends Map {
@@ -203,5 +214,31 @@ export default class Util {
      */
     static resolveRequire(type, name, lang) {
         return lang.get("system.requires." + type)({ rep: { name: name }});
+    }
+
+    /**
+     * Sets new parameters in the current query string context
+     * @static
+     * @param {...String[]} args
+     * @returns {URLSearchParams} query string
+     */
+    static setParams(...args) {
+        const params = new URLSearchParams(window.location.search);
+        for(const [key, value] of args) {
+            params.set(key, value);
+        }
+        return params;
+    }
+
+    static makeState(lang, exp) {
+        return {
+            lang: lang,
+            skills: exp.skills.toJSON(),
+            armor: exp.armor,
+            perkDeck: exp.perkDeck,
+            throwable: exp.throwable,
+            deployable: exp.deployable,
+            deployableSecondary: exp.deployableSecondary
+        };
     }
 }

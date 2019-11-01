@@ -1127,7 +1127,8 @@
         "share": {
             "title": "Share Build",
             "description": "Share your Build with anyone!",
-            "copy": "Copy Link"
+            "copy": "Copy Link",
+            "copied": "Link copied!"
         },
         "credits": {
             "title": "Credits",

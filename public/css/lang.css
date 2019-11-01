@@ -1,0 +1,12 @@
+/*
+    This is where you can force certain elements have whatever you want them to have
+    (mostly font-size)
+*/
+
+.ru-ru .sk_name {
+    font-size: 11pt;
+}
+
+.ru-ru table {
+    font-size: 12pt;
+}

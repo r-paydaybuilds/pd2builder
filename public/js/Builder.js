@@ -76,9 +76,11 @@ export default class Builder {
         this.fetchPromises = this.dbs.fetchAll();
     }
 
-    loadLanguage(obj) {
+    loadLanguage(obj, lang) {
         const self = this;
-        this.lang = new Language(obj);
+        this.lang = new Language(obj, lang);
+
+        document.getElementsByTagName("body")[0].className = lang;
 
         $(".navbar-brand").text(this.lang.get("system.name"));
         $(".navbar-link").text(this.lang.get("system.home"));
@@ -103,6 +105,7 @@ export default class Builder {
 
         for(const [key] of this.dbs.get("perk_decks")) {
             $(`#${key} > p`).text(this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase());
+            $(`#${key}.pk_selected > p`).text(`${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`);
         }
 
         $("#io_save_r p").text(this.lang.get("system.share.description"));

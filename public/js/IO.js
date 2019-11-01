@@ -37,112 +37,152 @@ export default class IO {
 
     /**
      * Encode the currently set build into a URI string parameter.
-     * @returns {string}
+     * @returns {URL}
      */
     GetEncodedBuild() {
-        var self = this; // Prevent jQuery from screwing up this's scope
+        const url = new URL(window.location.href); // Get pure address without params 
+        url.href = url.href.replace(url.search, "");
 
-        const buildURLParam = new URLSearchParams(); // Get pure address without params 
-        
         // Manage Skills
-        if(this.builder.exp.skills.points !== 120) {
-            let skillsString = ""; 
-            $(".sk_subtree").each(function () {
-                let subtreeBasicChar = 0; 
-                let subtreeAcedChar = 0; 
-
-                $(this).children(".sk_tier").each(function () {
-                    $(this).find(".sk_icon").each(function () {
-                        if ($(this).hasClass("sk_selected_basic")) {
-                            subtreeBasicChar = subtreeBasicChar | 1;
-                        }
-                        else if ($(this).hasClass("sk_selected_aced")) {
-                            subtreeAcedChar = subtreeAcedChar | 1; 
-                        }
-
-                        if ($(this).closest(".sk_tier").data("tier") != 1) { // Skip for last 
-                            subtreeBasicChar = subtreeBasicChar << 1; 
-                            subtreeAcedChar = subtreeAcedChar << 1; 
-                        }
-                    });
-                }); 
-                skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
-            }); 
-            buildURLParam.set("s", skillsString); 
-        }
+        if(this.builder.exp.skills.points !== 120) url.searchParams.set("s", this.encodeSkills()); 
 
         // Manage Perk Decks
-        if(this.builder.exp.perkDeck) {
-            let pkCount = 0; 
-            $(".pk_deck").each(function () {
-                if ($(this).hasClass("pk_selected")) return false; 
-                
-                pkCount++; 
-            });
-            buildURLParam.set("p", self.EncodeByte(pkCount)); 
-        }
+        if(this.builder.exp.perkDeck) url.searchParams.set("p", this.encodePerkDeck());
 
         // Manage Armors
-        if(this.builder.exp.armor) {
-            let armCount = 0; 
-            $(".arm_icon").each(function () {
-                if ($(this).hasClass("arm_selected")) return false; 
-
-                armCount++; 
-            });
-            buildURLParam.set("a", armCount); 
-        }
+        if(this.builder.exp.armor) url.searchParams.set("a", this.encodeArmor());
 
         // Manage Throwables
-        if(this.builder.exp.throwable) {
-            let thCount = 0; 
-            $(".th_icon").each(function () {
-                if ($(this).hasClass("th_selected")) return false; 
-
-                thCount++; 
-            });
-            buildURLParam.set("t", self.EncodeByte(thCount));  
-        }
+        if(this.builder.exp.throwable) url.searchParams.set("t", this.encodeThrowable());
 
         // Manage Deployables
-        if(this.builder.exp.deployable) {
-            let dpCount = 0; 
-            $(".dp_icon").each(function () {
-                if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
-
-                dpCount++; 
-            });
-            buildURLParam.set("d", dpCount);
-        }
-
-        // Account for secondary deployables 
-        if ($(".dp_icon").hasClass("dp_secondary")) {
-            let dpCount2 = 0; 
-            $(".dp_icon").each(function () {
-                if ($(this).hasClass("dp_secondary")) return false; 
-    
-                dpCount2++; 
-            });
-            buildURLParam.set("d", buildURLParam.get("d") + dpCount2);
-        }
-
+        if(this.builder.exp.deployable) url.searchParams.set("d", this.encodeDeployables());
         
-        for(const [key, value] of buildURLParam) {
-            buildURLParam.set(key, this.compressData(value));
+        for(const [key, value] of url.searchParams) {
+            url.searchParams.set(key, this.compressData(value));
         }
 
-        return window.location.href.replace(window.location.search, "") + 
-            (buildURLParam.toString() == "" ? "" : "?" + buildURLParam.toString()); 
+        return url; 
     }
 
     /**
-     * Decodes the parameters in the URI, and sets the current build to match it the build encoded in it. 
+     * Encodes the skills into a loadable string
+     * @returns {String}
+     */
+    encodeSkills() {
+        const self = this;
+        let skillsString = "";
+        $(".sk_subtree").each(function () {
+            let subtreeBasicChar = 0; 
+            let subtreeAcedChar = 0; 
+
+            $(this).children(".sk_tier").each(function () {
+                $(this).find(".sk_icon").each(function () {
+                    if ($(this).hasClass("sk_selected_basic")) {
+                        subtreeBasicChar = subtreeBasicChar | 1;
+                    }
+                    else if ($(this).hasClass("sk_selected_aced")) {
+                        subtreeAcedChar = subtreeAcedChar | 1; 
+                    }
+
+                    if ($(this).closest(".sk_tier").data("tier") != 1) { // Skip for last 
+                        subtreeBasicChar = subtreeBasicChar << 1; 
+                        subtreeAcedChar = subtreeAcedChar << 1; 
+                    }
+                });
+            }); 
+            skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
+        }); 
+        return skillsString;
+    }
+
+    /**
+     * Encodes the perk deck into a loadable string
+     * @returns {String}
+     */
+    encodePerkDeck() {
+        let pkCount = 0; 
+        $(".pk_deck").each(function () {
+            if ($(this).hasClass("pk_selected")) return false; 
+                
+            pkCount++; 
+        });
+        return this.EncodeByte(pkCount);
+    }
+
+    /**
+     * Encodes the armor into a loadable number
+     * @returns {Number}
+     */
+    encodeArmor() {
+        let armCount = 0; 
+        $(".arm_icon").each(function () {
+            if ($(this).hasClass("arm_selected")) return false; 
+
+            armCount++; 
+        });
+        return armCount;
+    }
+
+    /**
+     * Encodes the throwable into a loadable string
+     * @returns {String}
+     */
+    encodeThrowable() {
+        let thCount = 0; 
+        $(".th_icon").each(function () {
+            if ($(this).hasClass("th_selected")) return false; 
+
+            thCount++; 
+        });
+        return this.EncodeByte(thCount);
+    }
+
+    /**
+     * Encodes the deployable into a loadable number
+     * @returns {Number}
+     */
+    encodeDeployable() {
+        let dpCount = 0; 
+        $(".dp_icon").each(function () {
+            if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
+
+            dpCount++; 
+        });
+        return dpCount;
+    }
+
+    /**
+     * Encodes the secondary deployable into a loadable number
+     * @returns {Number}
+     */
+    encodeSecondaryDeployable() {
+        let dpCount2 = 0; 
+        $(".dp_icon").each(function () {
+            if ($(this).hasClass("dp_secondary")) return false; 
+    
+            dpCount2++; 
+        });
+        return dpCount2;
+    }
+
+    /**
+     * Encodes both deployables into a loadable string
+     * @returns {String}
+     */
+    encodeDeployables() {
+        let ret = "" + this.encodeDeployable();
+        if(this.builder.exp.deployableSecondary) ret += this.encodeSecondaryDeployable();
+        return ret;
+    }
+
+    /**
+     * Decodes the parameters in the iterable, and sets the current build to match it the build encoded in it. 
+     * @param {Iterable<String[]>} iterable to load
      * @returns {void}
      */
-    LoadBuildFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        for(const [key, value] of urlParams) {
+    LoadBuildFromIterable(iterable) {
+        for(const [key, value] of iterable) {
             const decompressed = this.decompressData(value);
             switch(key) {
             case "s":
@@ -319,7 +359,7 @@ export default class IO {
 
     /**
      * Check if an encoded build is present in the url querystring. Returns true if there is one, false if it's fresh
-     * @returns {boolean}
+     * @returns {Boolean}
      */
     HasToLoadBuild() {
         const urlParams = new URLSearchParams(window.location.search);

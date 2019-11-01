@@ -616,7 +616,7 @@ class GUI {
 
         let btn = $("#io_copy_btn"); 
         let text = btn.text(); 
-        btn.text("Link copied!"); 
+        btn.text(this.builder.lang.get("system.share.copied")); 
 
         setTimeout(function () {
             el.removeClass("io_link_flash"); 

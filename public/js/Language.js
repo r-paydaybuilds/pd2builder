@@ -2,21 +2,32 @@
  * Class for the use of language files
  */
 export default class Language {
-    constructor(lang) {
+    /**
+     * Class used for loading up a language
+     * @param {Object} obj An object that contains keys and values that are only strings
+     * @param {String} lang The language used
+     */
+    constructor(obj, lang) {
         /**
          * An object filled with strings, functions and more objects
          * @type {Object}
          */
-        this.lang;
+        this.dictionary;
 
-        this.loadLanguage(lang);
+        /**
+         * BCP-47 language version currently being used
+         * @type {String}
+         */
+        this.used = lang;
+
+        this.loadDictionary(obj);
     }
 
     /**
      * Loads an object that contains strings and objects
      * @param {Object} lang
      */
-    loadLanguage(obj) {
+    loadDictionary(obj) {
         for(const prop in obj) {
             const thing = obj[prop];
             if(typeof thing === "string") {
@@ -25,10 +36,10 @@ export default class Language {
                 if(res.length === 0) continue;
                 obj[prop] = obj => Language.refFormat(Language.replaceFormat(thing, obj.rep), obj.ref);
             } else {
-                this.loadLanguage(thing);
+                this.loadDictionary(thing);
             }
         }
-        this.lang = obj;
+        this.dictionary = obj;
     }
 
     /**
@@ -38,7 +49,7 @@ export default class Language {
      */
     get(loc = "") {
         const array = loc.split(".");
-        let res = this.lang;
+        let res = this.dictionary;
         for(const value of array) {
             res = res[value];
         }
@@ -88,14 +99,14 @@ export default class Language {
 }
 
 /**
- * RegExp that helps locates special variables
+ * RegExp that helps locate special variables
  * @static
  * @type {RegExp}
  */
 Language.LOCATEREGEX = /(%|&){(.+)}/g;
 
 /**
- * RegExp that helps locates reference variables
+ * RegExp that helps locate reference variables
  * @static
  * @type {RegExp}
  */
