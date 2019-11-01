@@ -1,0 +1,261 @@
+/* hi  */ 
+
+html {
+  font-size: calc(1em + 1vw); /* I can finally use em like a real man */
+}
+
+button { 
+  font-size: inherit; 
+}
+
+body {
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
+  color: rgb(240, 240, 240); 
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body > div {
+  font-family: "DINEngschrift", "Noto Sans", sans-serif; 
+}
+
+
+nav.navbar {
+  height: 8vh; 
+  padding-top: 1vh; 
+  padding-bottom: 1vh; 
+}
+
+nav.navbar a.navbar-brand {
+  font-size: 1em; 
+}
+
+nav.navbar button.navbar-toggler {
+  margin: auto 0; 
+  height: 6vh; 
+}
+
+nav.navbar .navbar-toggler-icon {
+  width: 1em !important; 
+  height: 1em !important;  
+}
+
+nav.navbar ul {
+  align-items: center; 
+}
+
+select {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 82px; 
+  height: 30px; 
+  padding: 2px 8px;
+  outline: none;
+  color: rgb(40, 40, 40);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 2px rgb(215, 220, 225);
+  background: rgb(240, 240, 240) url("../img/dropdown-arrow.png") 95% / 15% no-repeat;  
+}
+
+#title {
+  display: flex;
+  justify-content: space-evenly; 
+  
+  height: 8vh; 
+  padding: 1vh 0;
+  
+  font-size: 1.5em; 
+}
+
+#title p {
+  margin: auto 0; 
+  padding: 0; 
+}
+
+.page_gutter {
+  padding: 0 15px; 
+}
+
+#sk_tree_buttons {
+  height: 8vh;  
+  padding: 1vh 5vw; 
+}
+
+#sk_tree_buttons .dropdown-menu {
+  z-index: 5000; 
+  width: 60%; 
+  text-align: center; 
+
+  top: 75% !important; 
+  left: 50% !important; 
+  
+  transform: translate3d(-50%, 0%, 0px) !important; 
+}
+
+#tab_skills_page {
+  width: 100%; 
+  padding: 0 3vw; 
+}
+
+#sk_container_l {
+  position: relative; 
+  width: 100%; 
+  padding: 0 10px; 
+
+  border-image: url("../img/borders/skill_border.png") 3 15 repeat;
+  border-top: 3px solid transparent; 
+  border-bottom: 3px solid transparent; 
+}
+
+#sk_container_l::before,
+#sk_container_l::after,
+#sk_container_r::before,
+#sk_container_r::after {
+  content: ""; 
+  position: absolute; 
+  height: 15px; 
+  width: 3px;  
+}
+
+#sk_container_l::before {
+  top: 0; 
+  left: 0; 
+  background: url("../img/borders/corner-topleft.png") no-repeat; 
+}
+ 
+#sk_container_l::after {
+  bottom: 0; 
+  left: 0; 
+  background: url("../img/borders/corner-bottomleft.png") no-repeat; 
+}
+
+#sk_container_r::before {
+  top: 0; 
+  right: 0; 
+  background: url("../img/borders/corner-topright.png") no-repeat; 
+}
+
+#sk_container_r::after {
+  bottom: 0; 
+  right: 0; 
+  background: url("../img/borders/corner-bottomright.png") no-repeat; 
+}
+
+
+.sk_tree {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly; 
+}
+
+.sk_subtree {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: space-evenly; 
+
+  background:         url("../img/skills/background-90deg.png") 0 0 no-repeat;
+  background-size:    25% 100%;  
+
+  max-height: 33%; 
+  
+  margin: 3px 0;
+
+  -webkit-transition: background-size 0.4s ease;
+  -moz-transition:    background-size 0.4s ease;
+  -o-transition:      background-size 0.4s ease;
+  transition:         background-size 0.4s ease;
+}
+
+.sk_tier {
+  position: relative; 
+  
+  flex-basis: 25%; 
+  
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly; 
+}
+
+.sk_tier:not(:last-child) {
+  border-right: 1px solid rgb(40, 100, 140); 
+}
+
+.sk_tier:not(:last-child)::before,
+.sk_tier:not(:last-child)::after {
+  content: ""; 
+  position: absolute; 
+  border-left: 2px solid white; 
+  width: 2px; 
+  height: 8%; 
+}
+
+.sk_tier:not(:last-child)::before {
+  top: 0; 
+  right: 0; 
+}
+
+.sk_tier:not(:last-child)::after {
+  bottom: 0;
+  right: 0; 
+}
+
+.sk_tier > div {
+  position: relative; 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly;  
+
+  width: 100%; 
+  height: 100%; 
+}
+
+.sk_icon {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-around;
+
+  width: 100%; 
+  background-position: center center; 
+}
+
+.sk_icon > div {
+  position: relative; 
+  display: block; 
+  z-index: 1200; 
+
+  background: url("../img/skills/icons_atlas.png") no-repeat;
+  background-size: 1200% 1300%; 
+  opacity: 1; 
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+
+  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+}
+
+.sk_name {
+  position: absolute; 
+  display: inline-block; 
+
+  bottom: 0; 
+  left: 50%; 
+
+  font-size: 0.5em; 
+  line-height: 1em; 
+  
+  -webkit-transition: color .2s ease;
+  -moz-transition:    color .2s ease;
+  -o-transition:      color .2s ease;
+  transition:         color .2s ease;
+
+  transform: translate(-50%, -50%);
+}
+
