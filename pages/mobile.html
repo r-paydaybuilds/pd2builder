@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if(!/Mobi|Android/i.test(navigator.userAgent)) {
+        const url = new URL(window.location.href);
+        url.pathname = url.pathname.replace("mobile.html", "");
+        window.location.replace(url);
+      }
+    </script>
     <meta charset="utf-8">
     <meta name="language" content="english"> 
     <meta http-equiv="content-type" content="text/html">
