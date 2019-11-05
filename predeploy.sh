@@ -20,14 +20,13 @@ done
 echo "done"
 echo "Minifying JSON"
 cd ../db
-curDir = pwd
+cd ../db
 for file in ./*.json; do
-    npm run json -- "$curDir/$file"
+    npm run json -- "./public/db/$file"
 done
 cd ../lang
-curDir = pwd
 for file in ./*.json; do
-    npm run json -- "$curDir/$file"
+    npm run json -- "./public/lang/$file"
 done
 echo "done"
 
