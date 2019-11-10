@@ -7,7 +7,7 @@ jobs:
     script: npm run lint
   - stage: "Deploy to Github Pages"
     if: branch = master
-    script: mv ./pages/* ./public/
+    script: chmod +x predeploy.sh && ./predeploy.sh
     deploy:
       provider: pages
       skip-cleanup: true
