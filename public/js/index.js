@@ -52,8 +52,7 @@ document.onreadystatechange = async () => {
     }
 
     // Tab page navigation //
-    document.querySelectorAll("#tab_page_buttons button").forEach(e => {
-        
+    document.querySelectorAll("#tab_page_buttons button").forEach(e => {      
         e.addEventListener("click", () => {
             const targetTab = e.getAttribute("id").replace("_button", "_page");
             if (builder.gui.Tab_IsOn(targetTab)) return;
@@ -71,22 +70,25 @@ document.onreadystatechange = async () => {
         });
     }); 
 
-    // Skill tab navigation //
-    for (const value of Builder.TREES) {
-        document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
-            builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
-        }); 
-    }
-
-    // Want websites to behave like games? Call me // 
-    document.getElementById("sk_page").addEventListener("wheel", (event) => {
-        if (event.deltaY < 0) {
-            builder.gui.Tree_ChangeByScrolling(false); 
-        } else {
-            builder.gui.Tree_ChangeByScrolling(true); 
+    if(!builder.mobile) {
+        // Skill tab navigation //
+        for (const value of Builder.TREES) {
+            document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
+                builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
+            }); 
         }
-        event.preventDefault();
-    });
+    
+
+        // Want websites to behave like games? Call me // 
+        document.getElementById("sk_page").addEventListener("wheel", (event) => {
+            if (event.deltaY < 0) {
+                builder.gui.Tree_ChangeByScrolling(false); 
+            } else {
+                builder.gui.Tree_ChangeByScrolling(true); 
+            }
+            event.preventDefault();
+        });
+    }
 
     // Subtree //
     for(const e of document.getElementsByClassName("sk_subtree")) {
@@ -101,6 +103,8 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
+        let touching;
+
         e.addEventListener("click", ev => {
             const id = e.firstElementChild.id; 
 
@@ -159,6 +163,22 @@ document.onreadystatechange = async () => {
             }
         });
 
+        const start = () => {
+            if(touching) clearTimeout(touching);
+            touching = setTimeout(() => {
+                e.dispatchEvent(new MouseEvent("contextmenu"));
+                start();
+            }, 500);
+        };
+        const end = () => {
+            if(!touching) return;
+            clearTimeout(touching);
+            touching = null;
+        };
+
+        e.addEventListener("touchstart", start, false);
+        e.addEventListener("touchend", end, false);
+        e.addEventListener("touchcancel", end, false);
     }
 
     // Perk deck buttons //
@@ -286,16 +306,18 @@ document.onreadystatechange = async () => {
     }
 
     // Share build section //
-    document.getElementById("io_copy_btn").addEventListener("click", () => {
-        const e = document.getElementById("io_share_link"); 
+    if(!builder.mobile) {
+        document.getElementById("io_copy_btn").addEventListener("click", () => {
+            const e = document.getElementById("io_share_link"); 
         
     
-        e.select();
-        document.execCommand("copy");
-        e.blur(); 
+            e.select();
+            document.execCommand("copy");
+            e.blur(); 
 
-        builder.gui.IO_CopyLinkFlash(); 
-    });
+            builder.gui.IO_CopyLinkFlash(); 
+        });
+    }
 
     // When in popups, do like the popups do (history pop event)
     window.onpopstate = async e => {
@@ -374,13 +396,15 @@ document.onreadystatechange = async () => {
     // Wait for all DBs to load before loading anything //
     await builder.fetchPromises;
 
-    // Load language
-    builder.loadLanguage(await fetchLang, curLang);
+    if(!builder.mobile) {
+        // Load language
+        builder.loadLanguage(await fetchLang, curLang);
 
-    // Prepare document when first opening // 
-    builder.gui.Tab_ChangeTo("tab_skills_page"); 
-    builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
-    builder.gui.Tree_ChangeTo("sk_mastermind_container");
+        // Prepare document when first opening // 
+        builder.gui.Tab_ChangeTo("tab_skills_page"); 
+        builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
+        builder.gui.Tree_ChangeTo("sk_mastermind_container");
+    }
 
     // Load build if it has one
     if (builder.io.HasToLoadBuild()) {

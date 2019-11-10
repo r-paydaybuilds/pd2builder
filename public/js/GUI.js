@@ -203,6 +203,7 @@ export default class GUI {
      * @param {Number} pointsRemaining Number to set the label to
      */
     Skill_UpdatePointsRemaining(pointsRemaining) {
+        if(this.builder.mobile) return;
         document.querySelector(".sk_points_remaining p span").innerHTML = pointsRemaining; 
 
         if (pointsRemaining === 0) {
