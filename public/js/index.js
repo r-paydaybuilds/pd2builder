@@ -392,7 +392,7 @@ document.onreadystatechange = async () => {
     builder.gui.LoadingSpinner_Display(false);
 
     if (window.outerWidth < 1003) { // #UNSUPPORTED 
-        document.getElementById("modal_notification").style.visibility = "visible"; 
+        $("#modal_notification").modal("show"); 
     }
 };
 
