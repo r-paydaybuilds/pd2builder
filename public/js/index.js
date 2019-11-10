@@ -376,7 +376,8 @@ document.onreadystatechange = async () => {
             case "deployable":
                 if(!value) {
                     builder.exp.deployable = null;
-                    builder.gui.Deployable_Unselect(document.querySelector(".dp_primary, .dp_selected"));
+                    const query = document.querySelector(".dp_primary, .dp_selected");
+                    if(query) builder.gui.Deployable_Unselect(query);
                     break;
                 }
                 document.getElementById(value).parentElement.click();
@@ -384,7 +385,8 @@ document.onreadystatechange = async () => {
             case "deployableSecondary":
                 if(!value) {
                     builder.exp.deployableSecondary = null;
-                    builder.gui.Deployable_Unselect(document.querySelector(".dp_secondary"));
+                    const query = document.querySelector(".dp_secondary");
+                    if(query) builder.gui.Deployable_Unselect(query);
                     break;
                 }
                 document.getElementById(value).parentElement.dispatchEvent(new MouseEvent("contextmenu"));
