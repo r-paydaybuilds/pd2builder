@@ -6,13 +6,10 @@ let defaultLang = "en-us";
 
 jQuery.fn.reverse = [].reverse;
 
-const builder = new Builder();
+const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent));
 
-$(document).ready(async function () {
+document.onreadystatechange = async () => {
     let fetchLang, curLang;
-    //Add a big ass loading spinner to make people not touch things //
-    builder.gui.LoadingSpinner_Display(true); 
-
     //
     // Bind Events on page 
     {
@@ -49,25 +46,26 @@ $(document).ready(async function () {
         langDrop.addEventListener("change", async (e) => {
             const choosenLang = e.target.value;
             sessionStorage.setItem("lang", choosenLang);
-            window.history.pushState(Util.makeState(builder.lang.used, builder.exp), `language changed to ${choosenLang}`);
             builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
+            window.history.pushState(Util.makeState(builder.lang.used, builder.exp), `language changed to ${choosenLang}`);
         });
     }
 
     // Tab page navigation //
-    $("#tab_page_buttons button").each(function (){
-        $(this).click(function () {
-            const targetTab = $(this).attr("id").replace("_button", "_page");
+    document.querySelectorAll("#tab_page_buttons button").forEach(e => {
+        
+        e.addEventListener("click", () => {
+            const targetTab = e.getAttribute("id").replace("_button", "_page");
             if (builder.gui.Tab_IsOn(targetTab)) return;
 
             if (targetTab === "tab_deployables_page") { 
                 const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
                 builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
             } else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
-                $("#io_share_link").val(builder.io.GetEncodedBuild()); 
+                document.getElementById("io_share_link").value = builder.io.GetEncodedBuild(); 
             }
 
-            builder.gui.HandleRequirements($(this).attr("id").replace(/tab_|_button/g, ""));
+            builder.gui.HandleRequirements(e.getAttribute("id").replace(/tab_|_button/g, ""));
 
             builder.gui.Tab_ChangeTo(targetTab); 
         });
@@ -75,14 +73,14 @@ $(document).ready(async function () {
 
     // Skill tab navigation //
     for (const value of Builder.TREES) {
-        $(`#sk_${value}_button`).click(function (event) {
+        document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
             builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
         }); 
     }
 
     // Want websites to behave like games? Call me // 
-    $("#sk_page").on("wheel", function(event) {
-        if (event.originalEvent.deltaY < 0) {
+    document.getElementById("sk_page").addEventListener("wheel", (event) => {
+        if (event.deltaY < 0) {
             builder.gui.Tree_ChangeByScrolling(false); 
         } else {
             builder.gui.Tree_ChangeByScrolling(true); 
@@ -91,35 +89,34 @@ $(document).ready(async function () {
     });
 
     // Subtree //
-    $(".sk_subtree").each(function () {
-        $(this).mouseenter(function () {
-            builder.gui.Subtree_HoveringHighlightOn($(this)); 
+    for(const e of document.getElementsByClassName("sk_subtree")) {
+        e.addEventListener("mouseenter", () => {
+            builder.gui.Subtree_HoveringHighlightOn(e); 
         });
 
-        $(this).mouseleave(function () {
+        e.addEventListener("mouseleave", () => {
             builder.gui.Subtree_HoveringHighlightOff(); 
         });
-    });
+    }
 
     // Skill Icon buttons //
-    $(".sk_icon").each(function () {
-        $(this).click(function (e) {
-            const element = $(this);
-            const id = this.firstElementChild.id; 
+    for(const e of document.getElementsByClassName("sk_icon")) {
+        e.addEventListener("click", ev => {
+            const id = e.firstElementChild.id; 
 
-            if (element.hasClass("sk_locked") || element.hasClass("sk_selected_aced")) {
-                builder.gui.Skill_AnimateInvalid(element);
+            if (e.classList.contains("sk_locked") || e.classList.contains("sk_selected_aced")) {
+                builder.gui.Skill_AnimateInvalid(e);
                 return;
             }
 
             if (builder.sys.Skill_Add(id)) {
-                builder.gui.Skill_Add(element); 
+                builder.gui.Skill_Add(e); 
 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
 
-                if(e.hasOwnProperty("originalEvent")) {
+                if(ev.isTrusted) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `added skill ${id}`,
@@ -127,56 +124,53 @@ $(document).ready(async function () {
                     );
                 }
             } else {
-                builder.gui.Skill_AnimateInvalid(element);
+                builder.gui.Skill_AnimateInvalid(e);
             }
         });
 
-        $(this).contextmenu(function (event) {
-            event.preventDefault(); 
-
-            const element = $(this);
-            const id = this.firstElementChild.id; 
+        e.addEventListener("contextmenu", ev => {
+            ev.preventDefault(); 
+            const id = e.firstElementChild.id; 
 
             if (builder.sys.Skill_Remove(id)) { 
-                builder.gui.Skill_Remove(element); 
+                builder.gui.Skill_Remove(e); 
                 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
 
-                if(event.hasOwnProperty("originalEvent")) {
+                if(ev.isTrusted) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `removed skill ${id}`,
                         `?${Util.setParams(["s", builder.io.compressData(builder.io.encodeSkills())])}`
                     );
                 }
-            }
-            else {
-                builder.gui.Skill_AnimateInvalid(element);
+            } else {
+                builder.gui.Skill_AnimateInvalid(e);
             }
         });
 
-        $(this).mouseover(function () {
-            const id = this.firstElementChild.id; 
+        e.addEventListener("mouseover", () => {
+            const id = e.firstElementChild.id; 
             
-            if ($(".sk_description").data("skill") !== id) {
+            if (document.getElementsByClassName("sk_description")[0].dataset.skill !== id) {
                 builder.gui.Skill_DisplayDescription(id); 
             }
         });
 
-    });
+    }
 
     // Perk deck buttons //
-    $(".pk_deck").each(function () {
-        $(this).click(function (e) {
-            const id = this.id; 
-            if (builder.exp.perkDeck === id || $(this).hasClass("pk_locked")) return; 
+    for(const e of document.getElementsByClassName("pk_deck")) {
+        e.addEventListener("click", ev => {
+            const id = e.id; 
+            if (builder.exp.perkDeck === id) return; 
 
             builder.exp.perkDeck = id; 
-            builder.gui.PerkDeck_Select($(this));
+            builder.gui.PerkDeck_Select(e);
             
-            if(e.hasOwnProperty("originalEvent")) {
+            if(ev.isTrusted) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
@@ -185,38 +179,37 @@ $(document).ready(async function () {
             }
         });
 
-        $(this).mouseenter(function () {
-            const id = this.id; 
-            
-            if ($(".pk_description").data("perkdeck") !== id) {
+        e.addEventListener("mouseenter", () => {
+            const id = e.id; 
+            if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
                 builder.gui.PerkDeck_DisplayDescription(id); 
             }
         });
-    }); 
+    } 
 
     // Perk deck cards highlight // 
-    $(".pk_deck > div").each(function () {
-        $(this).mouseenter(function () {
-            builder.gui.PerkDeck_HoveringHighlightOn($(this)); 
-            builder.gui.PerkDeck_DisplayDescriptionCard($(this)); 
+    document.querySelectorAll(".pk_deck > div").forEach(e => {
+        e.addEventListener("mouseenter", () => {
+            builder.gui.PerkCard_HoveringHighlightOn(e); 
+            builder.gui.PerkCard_DisplayDescription(e); 
         });
 
-        $(this).mouseleave(function () {
-            builder.gui.PerkDeck_HoveringHighlightOff(); 
+        e.addEventListener("mouseleave", () => {
+            builder.gui.PerkCard_HoveringHighlightOff(); 
         });
     });
 
     // Armor icon buttons //
-    $(".arm_icon").each(function () {
-        $(this).click(function (e) {
-            const id = this.firstElementChild.id;
-            if (builder.exp.armor === id || $(this).hasClass("arm_locked")) return;
+    for(const e of document.getElementsByClassName("arm_icon")) {
+        e.addEventListener("click", ev => {
+            const id = e.firstElementChild.id;
+            if (builder.exp.armor === id || e.classList.contains("arm_locked")) return;
 
             builder.exp.armor = id;
-            builder.gui.Armor_Select($(this)); 
+            builder.gui.Armor_Select(e); 
             builder.gui.Armor_DisplayDescriptionCard(id);
 
-            if(e.hasOwnProperty("originalEvent")) {
+            if(ev.isTrusted) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used armor ${id}`,
@@ -225,21 +218,21 @@ $(document).ready(async function () {
             }
         });
 
-        $(this).mouseenter(function () {
-            builder.gui.Armor_DisplayDescriptionCard(this.firstElementChild.id);
+        e.addEventListener("mouseenter", () => {
+            builder.gui.Armor_DisplayDescriptionCard(e.firstElementChild.id);
         });
-    });
+    }
 
     // Throwables icon buttons // 
-    $(".th_icon").each(function () {
-        $(this).click(function (e) {
-            const id = this.firstElementChild.id;
-            if (builder.exp.throwable === id || $(this).hasClass("th_locked")) return;
+    for(const e of document.getElementsByClassName("th_icon")) {
+        e.addEventListener("click", ev => {
+            const id = e.firstElementChild.id;
+            if (builder.exp.throwable === id || e.classList.contains("th_locked")) return;
 
             builder.exp.throwable = id;
-            builder.gui.Throwable_Select($(this));
+            builder.gui.Throwable_Select(e);
 
-            if(e.hasOwnProperty("originalEvent")) {
+            if(ev.isTrusted) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used throwable ${id}`,
@@ -247,20 +240,18 @@ $(document).ready(async function () {
                 );
             }
         });
-        $(this).mouseenter(function() {
-            builder.gui.Throwable_DisplayDescriptionCard(this.firstElementChild.id); 
-        });
-    });
+        e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
+    }
 
     // Deployables icon buttons //
-    $(".dp_icon").each(function () {
-        $(this).click(function (e) {
-            const id = this.firstElementChild.id;
-            if (builder.exp.deployable === id || $(this).hasClass("dp_locked")) return; 
+    for(const e of document.getElementsByClassName("dp_icon")) {
+        e.addEventListener("click", ev => {
+            const id = e.firstElementChild.id;
+            if (builder.exp.deployable === id || e.classList.contains("dp_locked")) return; 
             builder.exp.deployable = id;
-            builder.gui.Deployable_Select($(this));
+            builder.gui.Deployable_Select(e);
 
-            if(e.hasOwnProperty("originalEvent")) {
+            if(ev.isTrusted) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
@@ -269,15 +260,15 @@ $(document).ready(async function () {
             }
         });
 
-        $(this).contextmenu(function (event) {
-            event.preventDefault(); 
+        e.addEventListener("contextmenu", ev => {
+            ev.preventDefault(); 
             const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades");
             if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2 && builder.exp.deployable) {
-                const id = this.firstElementChild.id;
+                const id = e.firstElementChild.id;
                 builder.exp.deployableSecondary = id;
-                builder.gui.Deployable_SelectSecondary($(this));
+                builder.gui.Deployable_SelectSecondary(e);
 
-                if(event.hasOwnProperty("originalEvent")) {
+                if(ev.isTrusted) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `used perk ${id}`,
@@ -285,22 +276,23 @@ $(document).ready(async function () {
                     );
                 }
             } else {
-                $(this).click();
+                e.click();
             } 
             
         });
-        $(this).mouseenter(function() {
-            builder.gui.Deployable_DisplayDescriptionCard(this.firstElementChild.id); 
-        });
-    });
+        e.addEventListener("mouseenter", () => 
+            builder.gui.Deployable_DisplayDescriptionCard(e.firstElementChild.id)
+        );
+    }
 
     // Share build section //
-    $("#io_copy_btn").click(function () {
-        let el = $("#io_share_link"); 
+    document.getElementById("io_copy_btn").addEventListener("click", () => {
+        const e = document.getElementById("io_share_link"); 
         
-        el.val(el.val()).select();
+    
+        e.select();
         document.execCommand("copy");
-        el.blur(); 
+        e.blur(); 
 
         builder.gui.IO_CopyLinkFlash(); 
     });
@@ -316,22 +308,23 @@ $(document).ready(async function () {
                 builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
                 break;
             case "skills":
-                for(const [key, value2] of Array.from(builder.exp.skills).reverse()) {
+                for(const [key, value2] of [...builder.exp.skills].reverse()) {
                     const originalValue = value[key];
+                    const e = document.getElementById(key).parentElement;
                     if(!originalValue) {
                         for(let val = value2.state; val > 0; val--) {
-                            $(`#${key}`).parent().contextmenu();
+                            e.dispatchEvent(new MouseEvent("contextmenu"));
                         }
                     } else if(value2.state > originalValue.state) {
-                        $(`#${key}`).parent().contextmenu();
+                        e.dispatchEvent(new MouseEvent("contextmenu"));
                     } else if(value2.state < originalValue.state) {
-                        $(`#${key}`).parent().click();
+                        e.click();
                     }
                     delete value[key];
                 }
                 for(const [key, originalValue] of Object.entries(value)) {
                     for(let val = 0; val < originalValue.state; val++) {
-                        $(`#${key}`).parent().click();
+                        document.getElementById(key).parentElement.click();
                     }
                 } 
                 break;
@@ -339,9 +332,10 @@ $(document).ready(async function () {
                 if(!value) {
                     builder.exp.perkDeck = null;
                     builder.gui.PerkDeck_Unselect();
+                    builder.gui.PerkCard_HoveringHighlightOff();
                     break;
                 }
-                $(`#${value}`).click();
+                document.getElementById(value).click();
                 break;
             case "armor":
                 if(!value) {
@@ -360,17 +354,18 @@ $(document).ready(async function () {
             case "deployable":
                 if(!value) {
                     builder.exp.deployable = null;
-                    builder.gui.Deployable_Unselect();
+                    builder.gui.Deployable_Unselect(document.querySelector(".dp_primary, .dp_selected"));
                     break;
                 }
-                $(`#${value}`).parent().click();
+                document.getElementById(value).parentElement.click();
                 break;
             case "deployableSecondary":
                 if(!value) {
                     builder.exp.deployableSecondary = null;
+                    builder.gui.Deployable_Unselect(document.querySelector(".dp_secondary"));
                     break;
                 }
-                $(`#${value}`).parent().contextmenu();
+                document.getElementById(value).parentElement.dispatchEvent(new MouseEvent("contextmenu"));
                 break;
             }
         }
@@ -396,9 +391,9 @@ $(document).ready(async function () {
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
 
-    if ($(window).width() < 1003) { // #UNSUPPORTED 
-        $("#modal_notification").modal("show"); 
+    if (window.outerWidth < 1003) { // #UNSUPPORTED 
+        document.getElementById("modal_notification").style.visibility = "visible"; 
     }
-});
+};
 
 window.builder = builder; //make the builder instance visible so people can hack it and we can debug it

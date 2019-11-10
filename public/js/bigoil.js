@@ -15,54 +15,56 @@ const valid_engines = {
     lower: [1, 3, 4, 5, 7, 8, 9, 10]
 };
 
-$(document).ready(function() {
-    $("#hydrogen").children().each(function() {
-        $(this).click(function () {
-            $("#hydrogen > .selected").removeClass("selected");
-            $(this).addClass("selected");
+document.onreadystatechange = () => {
+    for(const e of document.getElementById("hydrogen").children) {
+        e.addEventListener("click", () => {
+            const query = document.querySelector("#hydrogen > .selected");
+            if(query) query.classList.remove("selected");
+            e.classList.add("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
                 if(active.includes(i)) {
-                    $(`#en${i}`).addClass("active");
+                    document.getElementById(`en${i}`).classList.add("active");
                 } else {
-                    $(`#en${i}`).removeClass("active");
+                    document.getElementById(`en${i}`).classList.remove("active");
                 }
             }
         });
-    });
-    $("#element").children().each(function() {
-        $(this).click(function () {
-            $("#element > .selected").removeClass("selected");
-            $(this).addClass("selected");
+    }
+    for(const e of document.getElementById("element").children) {
+        e.addEventListener("click", () => {
+            const query = document.querySelector("#element > .selected");
+            if(query) query.classList.remove("selected");
+            e.classList.add("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
                 if(active.includes(i)) {
-                    $(`#en${i}`).addClass("active");
+                    document.getElementById(`en${i}`).classList.add("active");
                 } else {
-                    $(`#en${i}`).removeClass("active");
+                    document.getElementById(`en${i}`).classList.remove("active");
                 }
             }
         });
-    });
-    $("#pressure").children().each(function() {
-        $(this).click(function () {
-            $("#pressure > .selected").removeClass("selected");
-            $(this).addClass("selected");
+    }
+    for(const e of document.getElementById("pressure").children) {
+        e.addEventListener("click", () => {
+            const query = document.querySelector("pressure > .selected");
+            if(query) query.classList.remove("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
                 if(active.includes(i)) {
-                    $(`#en${i}`).addClass("active");
+                    document.getElementById(`en${i}`).classList.add("active");
                 } else {
-                    $(`#en${i}`).removeClass("active");
+                    document.getElementById(`en${i}`).classList.remove("active");
                 }
             }
         });
-    });
-});
+    }
+};
 
 function calculate() {
     const array = [];
-    for(const element of $(".selected")) {
+    for(const element of document.getElementsByClassName("selected")) {
         const valid = valid_engines[element.id];
         if(valid) {
             array.push(valid);

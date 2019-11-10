@@ -25,9 +25,66 @@ String.prototype.toCamelCase = function() {
     return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
 };
 
-//a lot of classes are in here
+/**
+ * A class that should be filled with absolutely not useless stuff
+ * @static
+ */
+class Util {
+    constructor() {
+        throw new Error("This class isn't supposed to be initialized");
+    }
 
-class skillMap extends Map {
+    /**
+     * Gives you a nice Payday 2 requires text
+     * @static
+     * @param {String} type type of thing
+     * @param {String} name name of thing
+     * @param {Language} lang language instance
+     */
+    static resolveRequire(type, name, lang) {
+        return lang.get("system.requires." + type)({ rep: { name: name }});
+    }
+
+    /**
+     * Sets new parameters in the current query string context
+     * @static
+     * @param {...String[]} args
+     * @returns {URLSearchParams} query string
+     */
+    static setParams(...args) {
+        const params = new URLSearchParams(window.location.search);
+        for(const [key, value] of args) {
+            params.set(key, value);
+        }
+        return params;
+    }
+
+    static makeState(lang, exp) {
+        return {
+            lang: lang,
+            skills: exp.skills.toJSON(),
+            armor: exp.armor,
+            perkDeck: exp.perkDeck,
+            throwable: exp.throwable,
+            deployable: exp.deployable,
+            deployableSecondary: exp.deployableSecondary
+        };
+    }
+
+    /**
+     * Gives you the index of the node related to it's sibilings
+     * @param {Node} e 
+     */
+    static getNodeIndex(e) {
+        return [...e.parentNode.children].indexOf(e);
+    }
+}
+
+/**
+ * Map for storing skills that are active
+ * @extends {Map}
+ */
+class SkillMap extends Map {
     constructor(...args) {
         super(...args);
         this.points = 120;
@@ -84,7 +141,11 @@ class skillMap extends Map {
     }
 }
 
-class dbMap extends Map {
+/**
+ * Map for storing all DBs
+ * @extends {Map}
+ */
+class DBMap extends Map {
     fetchAll() {
         const array = [];
         const self = this;
@@ -194,51 +255,5 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-export { System, dbMap, skillMap };
-
-/**
- * A class that should be filled with absolutely not useless stuff
- * @static
- */
-export default class Util {
-    constructor() {
-        throw new Error("This class isn't supposed to be initialized");
-    }
-
-    /**
-     * Gives you a nice Payday 2 requires text
-     * @static
-     * @param {String} type type of thing
-     * @param {String} name name of thing
-     * @param {Language} lang language instance
-     */
-    static resolveRequire(type, name, lang) {
-        return lang.get("system.requires." + type)({ rep: { name: name }});
-    }
-
-    /**
-     * Sets new parameters in the current query string context
-     * @static
-     * @param {...String[]} args
-     * @returns {URLSearchParams} query string
-     */
-    static setParams(...args) {
-        const params = new URLSearchParams(window.location.search);
-        for(const [key, value] of args) {
-            params.set(key, value);
-        }
-        return params;
-    }
-
-    static makeState(lang, exp) {
-        return {
-            lang: lang,
-            skills: exp.skills.toJSON(),
-            armor: exp.armor,
-            perkDeck: exp.perkDeck,
-            throwable: exp.throwable,
-            deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary
-        };
-    }
-}
+export { Util as default, SkillMap, DBMap, System };
+export const { querySelector: $, querySelectorAll: $$, getElementById: $i, getElementsByClassName: $c, getElementsByTagName: $t } = document;

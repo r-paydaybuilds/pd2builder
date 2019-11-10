@@ -247,6 +247,20 @@ select {
   transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
 }
 
+.sk_icon.sk_invalid > div {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.sk_icon.sk_invalid + .sk_name {
+  color: #FF4751;
+}
+
+.sk_icon.sk_selected_basic > div,
+.sk_icon.sk_selected_aced > div {
+  opacity: 1; 
+}
+
 .sk_name {
   position: relative; 
   display: block; 
