@@ -26,7 +26,6 @@ body > div {
 
 
 nav.navbar {
-  height: 8%; 
   padding-top: 1vh; 
   padding-bottom: 1vh; 
 }
@@ -69,9 +68,8 @@ select {
   display: flex;
   justify-content: space-evenly; 
   
-  height: 8%; 
   padding: 1vh 0;
-  
+
   font-size: 1.5em; 
 }
 
@@ -84,20 +82,117 @@ select {
   padding: 0 15px; 
 }
 
-#sk_tree_buttons {
-  height: 8%;  
-  padding: 1vh 5vw; 
+
+@-webkit-keyframes slideInDown {
+  0% {
+    top: -100%; 
+    opacity: 0;
+  }
+  100% {
+    top: 100%; 
+    opacity: 1;
+  }
 }
 
-#sk_tree_buttons .dropdown-menu {
-  z-index: 5000; 
+@keyframes slideInDown {
+  0% {
+    top: -100%; 
+    opacity: 0;
+  }
+  100% {
+    top: 100%; 
+    opacity: 1;
+  }
+}
+
+
+#sk_tree_buttons {
+  position: relative;
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+}
+
+#sk_tree_buttons button {
   width: 60%; 
+
+  border: 1px solid rgb(240, 240, 240); 
+  border-bottom: none; 
+  border-radius: 10px 10px 0 0; 
+
+  padding: 5px 10px; 
+
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 1.4em; 
+  text-align: center;
+
+  -webkit-transition: color 0.2s ease, background-color 0.2s ease;
+  -moz-transition:    color 0.2s ease, background-color 0.2s ease;
+  -o-transition:      color 0.2s ease, background-color 0.2s ease;
+  transition:         color 0.2s ease, background-color 0.2s ease;
+}
+
+#sk_tree_buttons button:active,
+#sk_tree_buttons button:focus {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#sk_tree_buttons .sk_tree_button_group {
+  visibility: hidden;
+  
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  z-index: 2000; 
+
+  width: 60%; 
+  transform: translate(-50%, 0); 
+
+  background: rgb(215, 220, 225); 
+  border: 1px solid rgb(240, 240, 240); 
+  border-top: none; 
+  border-radius: 0 0 10px 10px; 
+ 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+              0 3px 6px rgba(0, 0, 0, 0.23);
+
+  /* Align text children like cute ducks in a line */
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#sk_tree_buttons .sk_tree_button_group.slideInDown {
+  visibility: visible; 
+
+  -webkit-animation: slideInDown 0.4s both;
+  animation: slideInDown 0.4s both;
+}
+
+#sk_tree_buttons .sk_tree_button_group > div {  
+  width: 100%; 
+  min-height: 40px;
+  height: 4vh;
+
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  
+  color: rgb(11, 11, 21); 
+  font-size: 1.2rem; 
   text-align: center; 
 
-  top: 75% !important; 
-  left: 50% !important; 
-  
-  transform: translate3d(-50%, 0%, 0px) !important; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+#sk_tree_buttons .sk_tree_button_group > div:hover {
+  background: rgb(190, 195, 200); 
 }
 
 #tab_skills_page {
