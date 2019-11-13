@@ -82,30 +82,6 @@ select {
   padding: 0 15px; 
 }
 
-
-@-webkit-keyframes slideInDown {
-  0% {
-    top: -100%; 
-    opacity: 0;
-  }
-  100% {
-    top: 100%; 
-    opacity: 1;
-  }
-}
-
-@keyframes slideInDown {
-  0% {
-    top: -100%; 
-    opacity: 0;
-  }
-  100% {
-    top: 100%; 
-    opacity: 1;
-  }
-}
-
-
 #sk_tree_buttons {
   position: relative;
 
@@ -128,21 +104,22 @@ select {
   font-size: 1.4em; 
   text-align: center;
 
-  -webkit-transition: color 0.2s ease, background-color 0.2s ease;
-  -moz-transition:    color 0.2s ease, background-color 0.2s ease;
-  -o-transition:      color 0.2s ease, background-color 0.2s ease;
-  transition:         color 0.2s ease, background-color 0.2s ease;
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition:    color 0.3s ease, background-color 0.3s ease;
+  -o-transition:      color 0.3s ease, background-color 0.3s ease;
+  transition:         color 0.3s ease, background-color 0.3s ease;
 }
 
-#sk_tree_buttons button:active,
-#sk_tree_buttons button:focus {
+#sk_tree_buttons:focus button,
+#sk_tree_buttons:hover button {
   background: rgb(215, 220, 225); 
   background-size: 100% 100%; 
   color: rgb(11, 11, 21); 
 }
 
 #sk_tree_buttons .sk_tree_button_group {
-  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
   
   position: absolute; 
   top: 100%; 
@@ -151,6 +128,7 @@ select {
 
   width: 60%; 
   transform: translate(-50%, 0); 
+  transition: max-height 0.3s ease;
 
   background: rgb(215, 220, 225); 
   border: 1px solid rgb(240, 240, 240); 
@@ -167,14 +145,12 @@ select {
   align-items: center; 
 }
 
-#sk_tree_buttons .sk_tree_button_group.slideInDown {
-  visibility: visible; 
-
-  -webkit-animation: slideInDown 0.4s both;
-  animation: slideInDown 0.4s both;
+#sk_tree_buttons:focus > .sk_tree_button_group,
+#sk_tree_buttons:hover > .sk_tree_button_group {
+  max-height: 20em;
 }
 
-#sk_tree_buttons .sk_tree_button_group > div {  
+.sk_tree_button_group > div {  
   width: 100%; 
   min-height: 40px;
   height: 4vh;
@@ -191,8 +167,13 @@ select {
   align-items: center; 
 }
 
-#sk_tree_buttons .sk_tree_button_group > div:hover {
+.sk_tree_button_group > div:focus,
+.sk_tree_button_group > div:hover {
   background: rgb(190, 195, 200); 
+}
+.sk_tree_button_group > div.sk_tree_button_active {
+  color: #fff;
+  background: rgb(40, 90, 130); 
 }
 
 #tab_skills_page {
@@ -336,10 +317,10 @@ select {
   height: 0;
   padding-bottom: 100%;
 
-  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -webkit-transition: opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  -moz-transition:    opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  -o-transition:      opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
 }
 
 .sk_icon.sk_invalid > div {
@@ -365,9 +346,9 @@ select {
   font-size: 0.9em; 
   line-height: 1em; 
 
-  -webkit-transition: color .2s ease;
-  -moz-transition:    color .2s ease;
-  -o-transition:      color .2s ease;
-  transition:         color .2s ease;
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
 }
 

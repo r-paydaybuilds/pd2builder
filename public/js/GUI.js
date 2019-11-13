@@ -64,14 +64,18 @@ export default class GUI {
      * @param {String} treeId Id of the Tree to switch to 
      */
     Tree_ChangeTo(treeId) {
-        // Clean the skill description text 
-        const [desc] = document.getElementsByClassName("sk_description");
         const tree = treeId.split("_")[1];
-        desc.dataset.skill = "none";
-        desc.innerHTML = "";
+        if(!this.builder.mobile) {
+            // Clean the skill description text 
+            const [desc] = document.getElementsByClassName("sk_description");
+            desc.dataset.skill = "none";
+            desc.innerHTML = "";
+        } else {
+            document.querySelector("#sk_tree_buttons button").textContent = tree;
+        }
 
         // Manage the buttons
-        document.querySelectorAll("#sk_tree_buttons > .sk_tree_button_active").forEach(e => {
+        document.querySelectorAll(".sk_tree_button_active").forEach(e => {
             e.classList.remove("sk_tree_button_active");
         });
         document.getElementById(`sk_${tree}_button`).classList.add("sk_tree_button_active"); 

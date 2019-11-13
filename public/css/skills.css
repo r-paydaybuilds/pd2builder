@@ -152,10 +152,10 @@
   z-index: 1002; 
   background: url("../img/skills/icons.png") no-repeat;
   opacity: 0.2; 
-  -webkit-transition: opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  -moz-transition:    opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  -o-transition:      opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
-  transition:         opacity .2s ease, transform .3s ease, -webkit-filter .3s ease, filter .3s ease;
+  -webkit-transition: opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  -moz-transition:    opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  -o-transition:      opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
+  transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
 }
 
 .sk_icon:hover + .sk_name {
@@ -197,10 +197,10 @@
   font-size: 14pt; 
   line-height: 1.1em; 
   visibility: hidden; 
-  -webkit-transition: color .2s ease;
-  -moz-transition:    color .2s ease;
-  -o-transition:      color .2s ease;
-  transition:         color .2s ease;
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
 }
 
 .sk_subtree_name {

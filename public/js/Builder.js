@@ -58,7 +58,7 @@ export default class Builder {
         
         /**
          * The Databases where you can find info of each type of thing
-         * @type {dbMap}
+         * @type {DBMap}
          */
         this.dbs = new DBMap([
             ["skills", null],

@@ -70,25 +70,24 @@ document.onreadystatechange = async () => {
         });
     }); 
 
-    if(!builder.mobile) {
-        // Skill tab navigation //
-        for (const value of Builder.TREES) {
-            document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
-                builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
-            }); 
-        }
+    // Skill tab navigation //
+    for (const value of Builder.TREES) {
+        document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
+            builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
+        }); 
+    }
     
 
-        // Want websites to behave like games? Call me // 
-        document.getElementById("sk_page").addEventListener("wheel", (event) => {
-            if (event.deltaY < 0) {
-                builder.gui.Tree_ChangeByScrolling(false); 
-            } else {
-                builder.gui.Tree_ChangeByScrolling(true); 
-            }
-            event.preventDefault();
-        });
-    }
+    // Want websites to behave like games? Call me // 
+    document.getElementById("sk_page").addEventListener("wheel", (event) => {
+        if (event.deltaY < 0) {
+            builder.gui.Tree_ChangeByScrolling(false); 
+        } else {
+            builder.gui.Tree_ChangeByScrolling(true); 
+        }
+        event.preventDefault();
+    });
+    
 
     // Subtree //
     for(const e of document.getElementsByClassName("sk_subtree")) {
@@ -405,8 +404,9 @@ document.onreadystatechange = async () => {
         // Prepare document when first opening // 
         builder.gui.Tab_ChangeTo("tab_skills_page"); 
         builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
-        builder.gui.Tree_ChangeTo("sk_mastermind_container");
     }
+
+    builder.gui.Tree_ChangeTo("sk_mastermind_container");
 
     // Load build if it has one
     if (builder.io.HasToLoadBuild()) {
