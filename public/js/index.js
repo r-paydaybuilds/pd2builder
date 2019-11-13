@@ -104,7 +104,7 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
-        let touching = false;
+        let double = false;
 
         e.addEventListener("click", ev => {
             const id = e.firstElementChild.id; 
@@ -166,20 +166,20 @@ document.onreadystatechange = async () => {
 
         const end = ev => {
             ev.preventDefault();
-            if(touching) {
+            if(double) {
                 const skill = builder.exp.skills.get(e.firstElementChild.id);
                 if(skill) {
                     Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu")));
                 } else {
                     [0,1].forEach(() => e.click());
                 }
-                touching = false;
+                double = false;
                 return;
             }
-            touching = true;
+            double = true;
             setTimeout(() => { 
-                if(touching) {
-                    touching = false;
+                if(double) {
+                    double = false;
                     e.click();
                 }
             }, 200);
