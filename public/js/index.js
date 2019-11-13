@@ -104,7 +104,7 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
-        let touching;
+        let touching = false;
 
         e.addEventListener("click", ev => {
             const id = e.firstElementChild.id; 
@@ -164,22 +164,27 @@ document.onreadystatechange = async () => {
             }
         });
 
-        const start = () => {
-            if(touching) clearTimeout(touching);
-            touching = setTimeout(() => {
-                e.dispatchEvent(new MouseEvent("contextmenu"));
-                start();
-            }, 500);
+        const end = ev => {
+            ev.preventDefault();
+            if(touching) {
+                const skill = builder.exp.skills.get(e.firstElementChild.id);
+                if(skill) {
+                    Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu")));
+                } else {
+                    [0,1].forEach(() => e.click());
+                }
+                touching = false;
+                return;
+            }
+            touching = true;
+            setTimeout(() => { 
+                if(touching) {
+                    touching = false;
+                    e.click();
+                }
+            }, 200);
         };
-        const end = () => {
-            if(!touching) return;
-            clearTimeout(touching);
-            touching = null;
-        };
-
-        e.addEventListener("touchstart", start, false);
         e.addEventListener("touchend", end, false);
-        e.addEventListener("touchcancel", end, false);
     }
 
     // Perk deck buttons //
