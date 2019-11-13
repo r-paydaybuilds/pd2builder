@@ -1,10 +1,12 @@
+if("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+}
+
 import Builder from "./Builder.js";
 import Util from "./Util.js";
 
 const langs = ["en-us", "ru-ru"];
 let defaultLang = "en-us";
-
-jQuery.fn.reverse = [].reverse;
 
 const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent));
 
