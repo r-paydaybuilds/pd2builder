@@ -18,11 +18,12 @@
     <meta name="keywords" content="Payday 2,PD2,Skill,Builder,Manager,share,payday builds,payday skills">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="theme-color" content="#0a1428">
     
     <title>PD2 Builder Mobile</title>
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/mobile.css">
@@ -31,29 +32,23 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">PD2 Builder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <select name="language" id="langDrop"></select>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="bigoil.html">Big Oil Engine Calc</a>
-            </li>
-          </ul>
+    <div class="navbar">
+      <a href="#">PD2 Builder</a>
+      <button>
+        <span></span>
+      </button>
+      <div class="navbar-dropdown">
+        <div>
+          <select name="language" id="langDrop"></select>
+        </div>
+        <div>
+          <a class="current" href="#">Home</a>  
+        </div>
+        <div>
+          <a href="bigoil.html">Big Oil Engine Calc</a>
         </div>
       </div>
-    </nav>
+    </div>
 
     <!-- Title -->
     <div id="title">
@@ -786,11 +781,14 @@
       </div>
     </div>
 
+    <div class="footer">
+      <span>Courtesy of r/paydaybuilds subreddit.</span>
+      <span>Licensed under the terms of the <a href="https://opensource.org/licenses/MIT">MIT license.</a></span>
+    </div>
 
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
     <script src="js/index.js" type="module"></script>
   </body>

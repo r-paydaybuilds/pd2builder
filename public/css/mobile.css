@@ -7,45 +7,167 @@ html {
     * Parameters are: max font size - min font size, and min-max viewport width to use the max font sizes at 
     */
   font-size: calc(12px + (26 - 12) * ((100vw - 300px) / (1000 - 300)));
+  
+  box-sizing: border-box; 
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
+*,
+::after,
+::before {
+  box-sizing: border-box; 
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; /* Fuck nexus and kindle fire */ 
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+  outline: none !important;
+} 
+
 button { 
+  margin: 0; 
+
   font-size: inherit; 
+  font-family: inherit; 
+  line-height: inherit; 
+  text-transform: none;
 }
 
 body {
   background: rgb(11, 11, 21) url("../img/bg.png"); 
+  margin: 0; 
+  
+  font-family: 'Noto Sans', sans-serif;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
   color: rgb(240, 240, 240); 
-  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5; 
 }
 
 body > div {
   font-family: "DINEngschrift", "Noto Sans", sans-serif; 
 }
 
+div.footer {
+  width: 100%; 
+  padding: 2vh 6vw; 
+  font-family: "Noto Sans", sans-serif; 
+  font-size: 0.5em; 
+  font-style: italic; 
 
-nav.navbar {
-  padding-top: 1vh; 
-  padding-bottom: 1vh; 
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center;
+  align-items: center; 
 }
 
-nav.navbar a.navbar-brand {
+div.footer span {
+  text-align: center; 
+}
+
+div.footer a,
+div.footer a:visited,
+div.footer a:focus,
+div.footer a:hover {
+  color: rgb(240, 240, 240); 
+}
+
+
+div.navbar {
+  position: relative; 
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: space-between; 
+  align-items: center;
+  flex: 1 1 auto; 
+
+  font-family: "Noto Sans", sans-serif; 
+
+  background-color: rgb(50, 55, 60); 
+  padding: 1vh 3vw; 
+}
+
+div.navbar a {
+  font-size: 1.2em; 
+  line-height: 2em; 
+  text-decoration: none; 
+  background-color: transparent; 
+  color: rgb(240, 240, 240);  
+}
+
+div.navbar a:hover {
+  cursor: pointer; 
+}
+
+div.navbar a:visited {
+  color: rgb(240, 240, 240); 
+}
+
+div.navbar button {
+  height: 80%; 
+  margin: auto 0;
+
+  background-color: transparent; 
+
+  outline: none; 
+  border: 1px solid rgb(80, 85, 90); 
+  border-radius: 5px; 
+	cursor: pointer;
+}
+
+div.navbar button > span {
+  display: inline-block;
+  vertical-align: middle;
+  
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(130, 135, 140, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+  width: 1.5em;
+  height: 1.5em; 
+}
+
+div.navbar .navbar-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  background-color: rgb(50, 55, 60); 
+  
+  position: absolute; 
+  z-index: 2001; 
+  top: 100%; 
+  left: 50%; 
+
+  width: 100%; 
+  transform: translate(-50%, 0); 
+  transition: max-height 0.3s ease;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center; 
+}
+
+div.navbar button:focus + .navbar-dropdown, 
+div.navbar button:hover + .navbar-dropdown {
+  max-height: 20em; 
+}
+
+div.navbar .navbar-dropdown > div {
+  padding: 5px 0; 
+}
+
+div.navbar .navbar-dropdown a {
   font-size: 1em; 
 }
 
-nav.navbar button.navbar-toggler {
-  margin: auto 15px auto 0; 
-  height: 80%; 
+div.navbar .navbar-dropdown a:not(.current) {
+  color: rgba(240, 240, 240, 0.5); 
 }
 
-nav.navbar .navbar-toggler-icon {
-  width: 1em !important; 
-  height: 1em !important;  
-}
-
-nav.navbar ul {
-  align-items: center; 
+div.navbar .navbar-dropdown a:not(.current):active,
+div.navbar .navbar-dropdown a:not(.current):hover {
+  color: rgba(240, 240, 240, 0.75); 
 }
 
 select {
@@ -110,8 +232,8 @@ select {
   transition:         color 0.3s ease, background-color 0.3s ease;
 }
 
-#sk_tree_buttons:focus button,
-#sk_tree_buttons:hover button {
+#sk_tree_buttons button:focus,
+#sk_tree_buttons button:hover {
   background: rgb(215, 220, 225); 
   background-size: 100% 100%; 
   color: rgb(11, 11, 21); 
@@ -145,8 +267,8 @@ select {
   align-items: center; 
 }
 
-#sk_tree_buttons:focus > .sk_tree_button_group,
-#sk_tree_buttons:hover > .sk_tree_button_group {
+#sk_tree_buttons button:focus + .sk_tree_button_group,
+#sk_tree_buttons button:hover + .sk_tree_button_group {
   max-height: 20em;
 }
 
@@ -171,9 +293,10 @@ select {
 .sk_tree_button_group > div:hover {
   background: rgb(190, 195, 200); 
 }
+
 .sk_tree_button_group > div.sk_tree_button_active {
-  color: #fff;
-  background: rgb(40, 90, 130); 
+  color: rgb(240, 240, 240);
+  background: rgb(55, 120, 175); 
 }
 
 #tab_skills_page {
@@ -323,6 +446,14 @@ select {
   transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
 }
 
+.sk_icon.sk_locked {
+  /* background-image: url("../img/skills/padlock.png"); need to be resized */
+}
+
+.sk_icon.sk_selected_aced {
+  /* background-image: url("../img/skills/ace.png"); need to be resized */
+}
+
 .sk_icon.sk_invalid > div {
   filter: hue-rotate(180deg);
   -webkit-filter: hue-rotate(180deg);
@@ -345,6 +476,7 @@ select {
 
   font-size: 0.9em; 
   line-height: 1em; 
+  text-align: center; 
 
   -webkit-transition: color .1s ease;
   -moz-transition:    color .1s ease;
