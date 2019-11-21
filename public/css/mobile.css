@@ -228,17 +228,17 @@ select {
 #tab_page_buttons_wrapper .fadeLeft {
   left: 0; 
 
-  background: -moz-linear-gradient(left, rgba(0, 10, 30, 1) 0%, rgba(255, 255, 255, 0) 35%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(0, 10, 30, 1) 0%,rgba(255, 255, 255, 0) 35%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(0, 10, 30, 1) 0%,rgba(255, 255, 255, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 35%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 #tab_page_buttons_wrapper .fadeRight  {
   right: 0; 
 
-  background: -moz-linear-gradient(right, rgba(0, 10, 30, 1) 0%, rgba(255, 255, 255, 0) 35%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(right, rgba(0, 10, 30, 1) 0%,rgba(255, 255, 255, 0) 35%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to left, rgba(0, 10, 30, 1) 0%,rgba(255, 255, 255, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(right, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 35%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 #tab_page_buttons {

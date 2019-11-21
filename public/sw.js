@@ -96,7 +96,7 @@ self.addEventListener("fetch", ev =>
         fetch(ev.request.clone())
             .then(r =>
                 caches.open("v1").then(cache => {
-                    cache.put(ev.request, r.clone());
+                    cache.put(ev.request.url.replace(/\?.*/, ""), r.clone());
                     return r;
                 })
             )
