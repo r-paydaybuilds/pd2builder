@@ -12,10 +12,11 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>PD2 Builder</title>
+    <title>PD2 Builder | Big Oil Calc</title>
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/bigoil.css">
     <link rel="manifest" href="./manifest.webmanifest">
   </head>
@@ -42,76 +43,46 @@
     </nav>
 
     <!-- Big Oil Engine Calculator -->
-    <div class="container-fluid" id="selector">
-      <div class="row flex-nowrap justify-content-center">
-        <div class="col-7" id="element">
-          <div class="selected" id="noelement">???</div>
-          <div id="nitrogen">Nitrogen</div>
-          <div id="deuterium">Deuterium</div>
-          <div id="helium">Helium</div>
-        </div>
-        <div class="col-5" id="hydrogen">
-          <div class="selected" id="nohydrogen">???</div>
-          <div id="h_1">1 x H</div> <!-- Temporarily removed <span class="special_char">&infin;</span> because it screwed with sizing -->
-          <div id="h_2">2 x H</div>
-          <div id="h_3">3 x H</div>
-        </div>
-      </div>      
-      <div class="row mt-3 px-3 flex-nowrap" id="pressure">
-        <div class="col selected" id="nopressure">???</div>
-        <div class="col" id="higher">&gt; 5713</div> <!-- <span class="special_char">&ge;</span> -->
-        <div class="col" id="lower">&lt; 5812</div> <!-- <span class="special_char">&le;</span> -->
+    <div id="selector">
+      <div id="element">
+        <div class="selected" id="noelement">???</div>
+        <div id="nitrogen">Nitrogen</div>
+        <div id="deuterium">Deuterium</div>
+        <div id="helium">Helium</div>
+      </div>
+      <div id="hydrogen">
+        <div class="selected" id="nohydrogen">???</div>
+        <div id="h_1">1 x H</div> <!-- Temporarily removed <span class="special_char">&infin;</span> because it screwed with sizing -->
+        <div id="h_2">2 x H</div>
+        <div id="h_3">3 x H</div>
+      </div>
+      <div id="pressure">
+        <div class="selected" id="nopressure">???</div>
+        <div id="higher">&gt; 5713</div> <!-- <span class="special_char">&ge;</span> -->
+        <div id="lower">&lt; 5812</div> <!-- <span class="special_char">&le;</span> -->
       </div>
     </div>
-      <div class="row result">
-        <div class="col" id="room_left">
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en12">12</div> 
-              <div class="col engine active" id="en7">7</div> 
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en10">10</div> 
-              <div class="col engine active" id="en9">9</div> 
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en8">8</div> 
-              <div class="col engine active" id="en11">11</div> 
-            </div>
-          </div>
+      <div class="result">
+        <div id="room_left">
+          <div class="engine active" id="en12">12</div> 
+          <div class="engine active" id="en7">7</div> 
+          <div class="engine active" id="en10">10</div> 
+          <div class="engine active" id="en9">9</div> 
+          <div class="engine active" id="en8">8</div> 
+          <div class="engine active" id="en11">11</div> 
         </div>
 
-        <div class="col" id="room_stairs"></div>
+        <div id="room_stairs">STAIRS</div>
 
-        <div class="col" id="room_right">
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en2">2</div> 
-              <div class="col engine active" id="en1">1</div> 
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en4">4</div> 
-              <div class="col engine active" id="en3">3</div> 
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <div class="col engine active" id="en6">6</div> 
-              <div class="col engine active" id="en5">5</div> 
-            </div>
-          </div>
+        <div id="room_right">
+          <div class="engine active" id="en2">2</div> 
+          <div class="engine active" id="en1">1</div> 
+          <div class="engine active" id="en4">4</div> 
+          <div class="engine active" id="en3">3</div> 
+          <div class="engine active" id="en6">6</div> 
+          <div class="engine active" id="en5">5</div> 
         </div>        
       </div>
-    </div>
-
-    <div class="container-fluid result">
-      
     </div>
 
     <!-- Script loading section -->

@@ -18,8 +18,7 @@ const valid_engines = {
 document.onreadystatechange = () => {
     for(const e of document.getElementById("hydrogen").children) {
         e.addEventListener("click", () => {
-            const query = document.querySelector("#hydrogen > .selected");
-            if(query) query.classList.remove("selected");
+            document.querySelector("#hydrogen > .selected").classList.remove("selected");
             e.classList.add("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
@@ -33,8 +32,7 @@ document.onreadystatechange = () => {
     }
     for(const e of document.getElementById("element").children) {
         e.addEventListener("click", () => {
-            const query = document.querySelector("#element > .selected");
-            if(query) query.classList.remove("selected");
+            document.querySelector("#element > .selected").classList.remove("selected");
             e.classList.add("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
@@ -48,8 +46,8 @@ document.onreadystatechange = () => {
     }
     for(const e of document.getElementById("pressure").children) {
         e.addEventListener("click", () => {
-            const query = document.querySelector("pressure > .selected");
-            if(query) query.classList.remove("selected");
+            document.querySelector("#pressure > .selected").classList.remove("selected");
+            e.classList.add("selected");
             const active = calculate();
             for(let i = 1; i < engines.length + 1; i++) {
                 if(active.includes(i)) {

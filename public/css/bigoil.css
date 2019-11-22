@@ -10,27 +10,35 @@ body {
 
 body > div {
   font-family: "DINEngschrift"; 
-  font-size: 3.5em; 
+  font-size: 5.4vmin; 
+
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 15px;
 }
 
 @media screen and (max-width: 992px) {
   body > div {
     font-family: "DINEngschrift"; 
-    font-size: 3.2em; 
+    font-size: 4.8vmin; 
   }
 }
 
 @media screen and (max-width: 768px) {
   body > div {
     font-family: "DINEngschrift"; 
-    font-size: 2.6em; 
+    font-size: 4.4vmin; 
   }
 }
 
 @media screen and (max-width: 576px) {
   body > div {
     font-family: "DINEngschrift"; 
-    font-size: 2em; 
+    font-size: 3.3vmax; 
   }
 }
 
@@ -38,39 +46,49 @@ span.special_char {
   font-family: 'Courier New', Courier, monospace; /* suggest a default font for characters or find the full pd2 set */
 }
 
-
-#selector {
-  padding: 15px; 
-  text-align: center; 
+#selector > div {
+  flex-grow: 1;
+  padding-right: 15px;
 }
 
-#element > div { 
-  /* max-width: 750px; */
+#element {
+  padding-left: 15px;
 }
 
-#hydrogen > div {
-  /* max-width: 550px; */
+#pressure {
+  padding-left: 15px;
+  margin-top: 15px;
+  display: flex;
+  flex-basis: 100%;
 }
 
 #pressure > div {
-  display: inline-block; 
+  flex-grow: 1;
 }
 
-#element > div, 
-#hydrogen > div,
-#pressure > div {
-  margin: 3px; 
+#selector > div > div {
+  margin: 3px;
   border: 3px solid rgb(140, 140, 140);
 }
 
-#element > div.selected, 
-#hydrogen > div.selected,
-#pressure > div.selected {
-  /* border: 3px solid rgb(240, 240, 240); */
+#selector > div > div.selected {
+  border: 3px solid rgb(240, 240, 240);
   color: rgb(240, 240, 240); 
 }
 
+.result > div {
+  flex: 1;
+  display: flex;
+  flex-flow: wrap;
+}
+
+#room_stairs {
+  flex: 0.5;
+  background: repeating-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 5px, transparent 5px, transparent 20px);
+}
+
 .engine {
+  flex-basis: 50%;
   color: #333;
 }
 
