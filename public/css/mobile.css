@@ -290,24 +290,40 @@ div.footer a:hover {
 }
 
 #tab_page_buttons button {
-  border: 1px solid rgb(240, 240, 240); 
+  position: relative; 
   padding: 5px 10px; 
+
+  border: 1px solid rgb(240, 240, 240); 
+  border-right: none; /* "border collapse"-style fix */ 
 
   background: rgba(0, 0, 0, 0); 
   color: rgb(40, 90, 130);   
   font-size: 1.2em; 
   text-align: center;
   white-space: nowrap;
+
+  -webkit-transition: box-shadow .15s, color .15s linear;
+  -moz-transition:    box-shadow .15s, color .15s linear;
+  -o-transition:      box-shadow .15s, color .15s linear;
+  transition:         box-shadow .15s, color .15s linear;
 }
 
-#tab_page_buttons button:first-of-type {
+#tab_page_buttons button:first-of-type{
   border-radius: 10px 0 0 10px; 
 }
 
 #tab_page_buttons button:last-of-type {
   border-radius: 0 10px 10px 0; 
+  border-right: 1px solid rgb(240, 240, 240); 
 }
 
+#tab_page_buttons button.tab_selected {
+  color: rgb(240, 240, 240); 
+  
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+  -moz-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+  box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+}
 
 /**********************************/
 /*            SKILL CSS           */
@@ -565,6 +581,7 @@ div.footer a:hover {
 
 .sk_icon.sk_locked {
   background-image: url("../img/skills/padlock.png");
+  background-size: 50%; 
 }
 
 .sk_icon.sk_selected_aced {
