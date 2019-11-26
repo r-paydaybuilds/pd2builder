@@ -208,7 +208,7 @@ div.footer a:hover {
 }
 
 .bordered {
-  padding: 10px;
+  padding: 20px;
 
   background:
     linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
@@ -325,6 +325,11 @@ div.footer a:hover {
   box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
 }
 
+.tab_page_content {
+  width: 100%; 
+  padding: 0 3vw; 
+}
+
 /**********************************/
 /*            SKILL CSS           */
 /**********************************/
@@ -423,11 +428,6 @@ div.footer a:hover {
 .sk_tree_button_group > div.sk_tree_button_active {
   color: rgb(240, 240, 240);
   background: rgb(55, 120, 175); 
-}
-
-#tab_skills_page {
-  width: 100%; 
-  padding: 0 3vw; 
 }
 
 #sk_container_l {
@@ -634,46 +634,93 @@ div.footer a:hover {
 
 .arm_icon {
   cursor: pointer; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center;
+  
+  flex-basis: 50%; 
+  width: 50%; 
+  
+  max-width: 256px; 
+
+  border: 3px solid transparent; 
 }
 
 .arm_icon > div {
   position: relative;
+  display: block; 
   z-index: -1;
-  min-width: 256px;
-  min-height: 256px;
-  border: 3px solid transparent; 
-  -webkit-transition: transform .3s ease;
-  -moz-transition: transform .3s ease;
-  -o-transition: transform .3s ease;
-  transition: transform .3s ease;
+  
+  width: 100%; 
+  height: 0; 
+  padding-bottom: 100%; 
+
+  background-size: 100%; 
   background-repeat: no-repeat; 
   background-position: center center; 
+
+  -webkit-transition: transform .2s ease;
+  -moz-transition: transform .2s ease;
+  -o-transition: transform .2s ease;
+  transition: transform .2s ease;
+
+  transform: scale(0.85); 
+}
+
+.arm_icon.arm_selected {
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.arm_icon.arm_locked {
+  background: url("../img/lock_skill.png") no-repeat center center;
+}
+
+.arm_icon.arm_locked > div {
+  -webkit-filter: brightness(0.2);
+  filter: brightness(0.2);
+}
+
+.arm_icon.arm_selected > div {
+  transform: scale(1); 
+}
+
+.arm_icon.arm_selected > div::before {
+  font-size: 1em; /* UNTESTED !!!!!!! TODO */
+
+  position: absolute; 
+  top: 10%;
+  left: 10%;
+}
+
+.arm_icon.arm_selected > div::before {
+  content: attr(data-equip);
 }
 
 #suit {
-  background: url("../img/armors/suit.png"); 
+  background-image: url("../img/armors/suit.png"); 
 }
 
 #light_ballistic {
-  background: url("../img/armors/light_ballistic.png"); 
+  background-image: url("../img/armors/light_ballistic.png"); 
 }
 
 #ballistic {
-  background: url("../img/armors/ballistic.png"); 
+  background-image: url("../img/armors/ballistic.png"); 
 }
 
 #heavy_ballistic {
-  background: url("../img/armors/heavy_ballistic.png"); 
+  background-image: url("../img/armors/heavy_ballistic.png"); 
 }
 
 #flak {
-  background: url("../img/armors/flak.png"); 
+  background-image: url("../img/armors/flak.png"); 
 }
 
 #ctv {
-  background: url("../img/armors/ctv.png"); 
+  background-image: url("../img/armors/ctv.png"); 
 }
 
 #ictv {
-  background: url("../img/armors/ictv.png"); 
+  background-image: url("../img/armors/ictv.png"); 
 }
