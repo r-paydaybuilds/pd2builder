@@ -208,7 +208,7 @@ div.footer a:hover {
 }
 
 .bordered {
-  padding: 20px;
+  padding: 10px;
 
   background:
     linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
@@ -617,4 +617,63 @@ div.footer a:hover {
   -moz-transition:    color .1s ease;
   -o-transition:      color .1s ease;
   transition:         color .1s ease;
+}
+
+
+/**********************************/
+/*            ARMOR CSS           */
+/**********************************/
+
+#arm_page {
+  display: flex; 
+  flex-flow: row wrap; 
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start; 
+}
+
+.arm_icon {
+  cursor: pointer; 
+}
+
+.arm_icon > div {
+  position: relative;
+  z-index: -1;
+  min-width: 256px;
+  min-height: 256px;
+  border: 3px solid transparent; 
+  -webkit-transition: transform .3s ease;
+  -moz-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  background-repeat: no-repeat; 
+  background-position: center center; 
+}
+
+#suit {
+  background: url("../img/armors/suit.png"); 
+}
+
+#light_ballistic {
+  background: url("../img/armors/light_ballistic.png"); 
+}
+
+#ballistic {
+  background: url("../img/armors/ballistic.png"); 
+}
+
+#heavy_ballistic {
+  background: url("../img/armors/heavy_ballistic.png"); 
+}
+
+#flak {
+  background: url("../img/armors/flak.png"); 
+}
+
+#ctv {
+  background: url("../img/armors/ctv.png"); 
+}
+
+#ictv {
+  background: url("../img/armors/ictv.png"); 
 }
