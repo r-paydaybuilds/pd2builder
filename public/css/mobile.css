@@ -455,6 +455,7 @@ select {
 .sk_tier {
   position: relative; 
   
+  padding: 3px 0; 
   flex-basis: 25%; 
   
   display: flex; 
@@ -525,12 +526,19 @@ select {
   transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
 }
 
+.sk_icon.sk_locked, 
+.sk_icon.sk_selected_aced {
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+
 .sk_icon.sk_locked {
-  /* background-image: url("../img/skills/padlock.png"); need to be resized */
+  background-image: url("../img/skills/padlock.png");
 }
 
 .sk_icon.sk_selected_aced {
-  /* background-image: url("../img/skills/ace.png"); need to be resized */
+  background-image: url("../img/skills/ace.png");
+  background-size: 125%; 
 }
 
 .sk_icon.sk_invalid > div {
@@ -563,3 +571,19 @@ select {
   transition:         color .1s ease;
 }
 
+.bordered {
+  padding: 20px;
+
+  background:
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
