@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    background: rgb(11, 11, 21) url("../img/bg.png"); 
+}
+
+#sim {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
