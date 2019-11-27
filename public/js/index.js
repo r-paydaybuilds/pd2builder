@@ -404,14 +404,12 @@ document.onreadystatechange = async () => {
     // Wait for all DBs to load before loading anything //
     await builder.fetchPromises;
 
-    if(!builder.mobile) {
-        // Load language
-        builder.loadLanguage(await fetchLang, curLang);
+    // Load language
+    if (!builder.mobile) builder.loadLanguage(await fetchLang, curLang);
 
-        // Prepare document when first opening // 
-        builder.gui.Tab_ChangeTo("tab_skills_page"); 
-        builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
-    }
+    // Prepare document when first opening // 
+    builder.gui.Tab_ChangeTo("tab_skills_page"); 
+    builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
 
     builder.gui.Tree_ChangeTo("sk_mastermind_container");
 

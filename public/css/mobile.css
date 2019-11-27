@@ -1,4 +1,6 @@
-/* hi  */ 
+/**********************************/
+/*           GENERAL CSS          */
+/**********************************/
 
 html {
   /**
@@ -49,30 +51,10 @@ body > div {
   font-family: "DINEngschrift", "Noto Sans", sans-serif; 
 }
 
-div.footer {
-  width: 100%; 
-  padding: 2vh 6vw; 
-  font-family: "Noto Sans", sans-serif; 
-  font-size: 0.5em; 
-  font-style: italic; 
 
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: center;
-  align-items: center; 
-}
-
-div.footer span {
-  text-align: center; 
-}
-
-div.footer a,
-div.footer a:visited,
-div.footer a:focus,
-div.footer a:hover {
-  color: rgb(240, 240, 240); 
-}
-
+/**********************************/
+/*        HEADER AND FOOTER       */
+/**********************************/
 
 div.navbar {
   position: relative; 
@@ -200,9 +182,52 @@ select {
   padding: 0; 
 }
 
-.page_gutter {
-  padding: 0 15px; 
+
+div.footer {
+  width: 100%; 
+  padding: 2vh 6vw; 
+  font-family: "Noto Sans", sans-serif; 
+  font-size: 0.5em; 
+  font-style: italic; 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center;
+  align-items: center; 
 }
+
+div.footer span {
+  text-align: center; 
+}
+
+div.footer a,
+div.footer a:visited,
+div.footer a:focus,
+div.footer a:hover {
+  color: rgb(240, 240, 240); 
+}
+
+.bordered {
+  padding: 20px;
+
+  background:
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+
+/**********************************/
+/*          TAB PAGE CSS          */
+/**********************************/
 
 #tab_page_buttons_wrapper {
   position: relative; 
@@ -265,23 +290,50 @@ select {
 }
 
 #tab_page_buttons button {
-  border: 1px solid rgb(240, 240, 240); 
+  position: relative; 
   padding: 5px 10px; 
+
+  border: 1px solid rgb(240, 240, 240); 
+  border-right: none; /* "border collapse"-style fix */ 
 
   background: rgba(0, 0, 0, 0); 
   color: rgb(40, 90, 130);   
   font-size: 1.2em; 
   text-align: center;
   white-space: nowrap;
+
+  -webkit-transition: box-shadow .15s, color .15s linear;
+  -moz-transition:    box-shadow .15s, color .15s linear;
+  -o-transition:      box-shadow .15s, color .15s linear;
+  transition:         box-shadow .15s, color .15s linear;
 }
 
-#tab_page_buttons button:first-of-type {
+#tab_page_buttons button:first-of-type{
   border-radius: 10px 0 0 10px; 
 }
 
 #tab_page_buttons button:last-of-type {
   border-radius: 0 10px 10px 0; 
+  border-right: 1px solid rgb(240, 240, 240); 
 }
+
+#tab_page_buttons button.tab_selected {
+  color: rgb(240, 240, 240); 
+  
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+  -moz-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+  box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
+}
+
+.tab_page_content {
+  width: 100%; 
+  padding: 0 3vw; 
+}
+
+/**********************************/
+/*            SKILL CSS           */
+/**********************************/
+
 
 #sk_tree_buttons {
   position: relative;
@@ -378,11 +430,6 @@ select {
   background: rgb(55, 120, 175); 
 }
 
-#tab_skills_page {
-  width: 100%; 
-  padding: 0 3vw; 
-}
-
 #sk_container_l {
   position: relative; 
   width: 100%; 
@@ -455,6 +502,7 @@ select {
 .sk_tier {
   position: relative; 
   
+  padding: 3px 0; 
   flex-basis: 25%; 
   
   display: flex; 
@@ -525,12 +573,20 @@ select {
   transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
 }
 
+.sk_icon.sk_locked, 
+.sk_icon.sk_selected_aced {
+  background-position: center center; 
+  background-repeat: no-repeat; 
+}
+
 .sk_icon.sk_locked {
-  /* background-image: url("../img/skills/padlock.png"); need to be resized */
+  background-image: url("../img/skills/padlock.png");
+  background-size: 50%; 
 }
 
 .sk_icon.sk_selected_aced {
-  /* background-image: url("../img/skills/ace.png"); need to be resized */
+  background-image: url("../img/skills/ace.png");
+  background-size: 125%; 
 }
 
 .sk_icon.sk_invalid > div {
@@ -563,3 +619,108 @@ select {
   transition:         color .1s ease;
 }
 
+
+/**********************************/
+/*            ARMOR CSS           */
+/**********************************/
+
+#arm_page {
+  display: flex; 
+  flex-flow: row wrap; 
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start; 
+}
+
+.arm_icon {
+  cursor: pointer; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center;
+  
+  flex-basis: 50%; 
+  width: 50%; 
+  
+  max-width: 256px; 
+
+  border: 3px solid transparent; 
+}
+
+.arm_icon > div {
+  position: relative;
+  display: block; 
+  z-index: -1;
+  
+  width: 100%; 
+  height: 0; 
+  padding-bottom: 100%; 
+
+  background-size: 100%; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+
+  -webkit-transition: transform .2s ease;
+  -moz-transition: transform .2s ease;
+  -o-transition: transform .2s ease;
+  transition: transform .2s ease;
+
+  transform: scale(0.85); 
+}
+
+.arm_icon.arm_selected {
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+.arm_icon.arm_locked {
+  background: url("../img/lock_skill.png") no-repeat center center;
+}
+
+.arm_icon.arm_locked > div {
+  -webkit-filter: brightness(0.2);
+  filter: brightness(0.2);
+}
+
+.arm_icon.arm_selected > div {
+  transform: scale(1); 
+}
+
+.arm_icon.arm_selected > div::before {
+  font-size: 1em; /* UNTESTED !!!!!!! TODO */
+
+  position: absolute; 
+  top: 10%;
+  left: 10%;
+}
+
+.arm_icon.arm_selected > div::before {
+  content: attr(data-equip);
+}
+
+#suit {
+  background-image: url("../img/armors/suit.png"); 
+}
+
+#light_ballistic {
+  background-image: url("../img/armors/light_ballistic.png"); 
+}
+
+#ballistic {
+  background-image: url("../img/armors/ballistic.png"); 
+}
+
+#heavy_ballistic {
+  background-image: url("../img/armors/heavy_ballistic.png"); 
+}
+
+#flak {
+  background-image: url("../img/armors/flak.png"); 
+}
+
+#ctv {
+  background-image: url("../img/armors/ctv.png"); 
+}
+
+#ictv {
+  background-image: url("../img/armors/ictv.png"); 
+}

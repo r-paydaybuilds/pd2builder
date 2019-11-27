@@ -91,9 +91,11 @@ export default class GUI {
         document.querySelectorAll(`#${treeId} > .sk_subtree`).forEach(e => {
             subtrees.push(e.dataset.name); 
         });
-        document.querySelector("#sk_subtree_name_left p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[0]}`);
-        document.querySelector("#sk_subtree_name_center p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[1]}`);
-        document.querySelector("#sk_subtree_name_right p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[2]}`);
+        if (!this.builder.mobile) {
+            document.querySelector("#sk_subtree_name_left p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[0]}`);
+            document.querySelector("#sk_subtree_name_center p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[1]}`);
+            document.querySelector("#sk_subtree_name_right p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[2]}`);
+        }
     }
 
     /**
@@ -279,7 +281,7 @@ export default class GUI {
      */
     Skill_AnimateInvalid({ classList }) {
         if (classList.contains("sk_invalid")) return;
-        if("vibrate" in navigator) navigator.vibrate(300);
+        if("vibrate" in navigator) navigator.vibrate(100);
         classList.add("sk_invalid");
         setTimeout(() =>{
             classList.remove("sk_invalid");
