@@ -65,20 +65,20 @@ export default class GUI {
      */
     Tree_ChangeTo(treeId) {
         const tree = treeId.split("_")[1];
-        if(!this.builder.mobile) {
-            // Clean the skill description text 
-            const [desc] = document.getElementsByClassName("sk_description");
-            desc.dataset.skill = "none";
-            desc.innerHTML = "";
-        } else {
-            document.querySelector("#sk_tree_buttons button").textContent = tree;
-        }
+        // Clean the skill description text 
+        const [desc] = document.getElementsByClassName("sk_description");
+        desc.dataset.skill = "none";
+        desc.innerHTML = "";
 
         // Manage the buttons
-        document.querySelectorAll(".sk_tree_button_active").forEach(e => {
-            e.classList.remove("sk_tree_button_active");
-        });
-        document.getElementById(`sk_${tree}_button`).classList.add("sk_tree_button_active"); 
+        if(this.builder.mobile) {
+            document.querySelector("#sk_tree_buttons button").textContent = this.builder.lang.get(`system.skills.${tree}.title`);
+        } else {
+            document.querySelectorAll(".sk_tree_button_active").forEach(e => {
+                e.classList.remove("sk_tree_button_active");
+            });
+            document.getElementById(`sk_${tree}_button`).classList.add("sk_tree_button_active"); 
+        }
 
         // Switch tree content 
         document.querySelectorAll("#sk_container_r > .sk_tree").forEach(e => {
@@ -245,6 +245,23 @@ export default class GUI {
 
         desc.innerHTML = html;
         desc.dataset.skill = skillId;
+    }
+
+    /**
+     * Show description card of skills (MOBILE ONLY!)
+     */
+    Skill_ShowDescription() {
+        if(!this.builder.mobile) return;
+        document.querySelector("#sk_description_container").classList.add("active");
+    }
+
+    /**
+     * Hide description card of skills (MOBILE ONLY!)
+     */
+    Skill_HideDescription() {
+        if(!this.builder.mobile) return;
+        const container = document.querySelector("#sk_description_container.active");
+        if(container) container.classList.remove("active");
     }
 
     /**
@@ -448,6 +465,23 @@ export default class GUI {
         }
 
         desc.innerHTML = html;
+    }
+
+    /**
+     * Show description card of armors (MOBILE ONLY!)
+     */
+    Armor_ShowDescription() {
+        if(!this.builder.mobile) return;
+        document.querySelector("#arm_description_container").classList.add("active");
+    }
+
+    /**
+     * Hide description card of armors (MOBILE ONLY!)
+     */
+    Armor_HideDescription() {
+        if(!this.builder.mobile) return;
+        const container = document.querySelector("#arm_description_container.active");
+        if(container) container.classList.remove("active");
     }
 
     /**

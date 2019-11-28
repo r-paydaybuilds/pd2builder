@@ -53,6 +53,11 @@ document.onreadystatechange = async () => {
         });
     }
 
+    if(builder.mobile) document.onclick = ev => {
+        if(!ev.target.closest("#sk_description_container.active")) builder.gui.Skill_HideDescription();
+        if(!ev.target.closest("#arm_description_container.active")) builder.gui.Armor_HideDescription();
+    };
+
     // Tab page navigation //
     document.querySelectorAll("#tab_page_buttons button").forEach(e => {      
         e.addEventListener("click", () => {
@@ -104,9 +109,16 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
-        let double = false;
+        let double = false, holding = false, successHolding = false;
 
         e.addEventListener("click", ev => {
+            holding = false;
+            if(successHolding) {
+                successHolding = false;
+                ev.preventDefault();
+                return;
+            }
+
             const id = e.firstElementChild.id; 
 
             if (e.classList.contains("sk_locked") || e.classList.contains("sk_selected_aced")) {
@@ -156,7 +168,7 @@ document.onreadystatechange = async () => {
             }
         });
 
-        e.addEventListener("mouseover", () => {
+        if(!builder.mobile) e.addEventListener("mouseover", () => {
             const id = e.firstElementChild.id; 
             
             if (document.getElementsByClassName("sk_description")[0].dataset.skill !== id) {
@@ -164,8 +176,13 @@ document.onreadystatechange = async () => {
             }
         });
 
-        const end = ev => {
+        e.addEventListener("touchend", ev => {
             ev.preventDefault();
+            holding = false;
+            if(successHolding) {
+                successHolding = false;
+                return;
+            }
             if(double) {
                 const skill = builder.exp.skills.get(e.firstElementChild.id);
                 if(skill) {
@@ -183,8 +200,25 @@ document.onreadystatechange = async () => {
                     e.click();
                 }
             }, 200);
+        }, false);
+
+        const start = ev => {
+            if(ev instanceof MouseEvent && ev.button != 0) return;
+            holding = true;
+            setTimeout(() => {
+                if(!holding) return;
+                ev.preventDefault();
+                successHolding = true;
+
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.Skill_ShowDescription();
+                if (document.getElementsByClassName("sk_description")[0].dataset.skill !== id) {
+                    builder.gui.Skill_DisplayDescription(id); 
+                }
+            }, 750);
         };
-        e.addEventListener("touchend", end, false);
+        if(builder.mobile) e.addEventListener("mousedown", start);
+        e.addEventListener("touchstart", start);
     }
 
     // Perk deck buttons //
@@ -227,7 +261,15 @@ document.onreadystatechange = async () => {
 
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
+        let holding = false, successHolding = false;
+
         e.addEventListener("click", ev => {
+            holding = false;
+            if(successHolding) {
+                successHolding = false;
+                return;
+            }
+
             const id = e.firstElementChild.id;
             if (builder.exp.armor === id || e.classList.contains("arm_locked")) return;
 
@@ -244,9 +286,34 @@ document.onreadystatechange = async () => {
             }
         });
 
-        e.addEventListener("mouseenter", () => {
+        if(builder.mobile) e.addEventListener("mouseenter", () => {
             builder.gui.Armor_DisplayDescriptionCard(e.firstElementChild.id);
         });
+
+        e.addEventListener("touchend", ev => {
+            holding = false;
+            if(successHolding) {
+                ev.preventDefault();
+                successHolding = false;
+                return;
+            }
+        });
+
+        const start = ev => {
+            if(ev instanceof MouseEvent && ev.button != 0) return;
+            holding = true;
+            setTimeout(() => {
+                if(!holding) return;
+                ev.preventDefault();
+                successHolding = true;
+
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.Armor_ShowDescription();
+                builder.gui.Armor_DisplayDescriptionCard(id);
+            }, 750);
+        };
+        if(builder.mobile) e.addEventListener("mousedown", start);
+        e.addEventListener("touchstart", start);
     }
 
     // Throwables icon buttons // 
@@ -405,7 +472,7 @@ document.onreadystatechange = async () => {
     await builder.fetchPromises;
 
     // Load language
-    if (!builder.mobile) builder.loadLanguage(await fetchLang, curLang);
+    builder.loadLanguage(await fetchLang, curLang);
 
     // Prepare document when first opening // 
     builder.gui.Tab_ChangeTo("tab_skills_page"); 

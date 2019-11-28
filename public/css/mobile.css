@@ -11,6 +11,7 @@ html {
   font-size: calc(12px + (26 - 12) * ((100vw - 300px) / (1000 - 300)));
   
   box-sizing: border-box; 
+  overflow-x: hidden;
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -40,6 +41,7 @@ button {
 body {
   background: rgb(11, 11, 21) url("../img/bg.png"); 
   margin: 0; 
+  overflow-x: hidden;
   
   font-family: 'Noto Sans', sans-serif;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
@@ -222,6 +224,42 @@ div.footer a:hover {
 
   background-repeat: no-repeat;
   background-size: 15px 15px;
+}
+
+.description_container {
+  overflow: scroll;
+  
+  position: absolute; 
+  bottom: 0%; 
+  left: 25%; 
+  z-index: 2000; 
+
+  margin-left: 80%;
+  width: 80%;
+  height: 100%; 
+  transition: margin-left 0.5s ease;
+
+  background: rgb(0, 10, 30); 
+  border: 1px solid rgb(240, 240, 240); 
+ 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+              0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.description_container.active {
+  margin-left: 0;
+}
+
+.description_title {
+  font-size: 1.7em; 
+}
+
+.color_number {
+  color: rgb(50, 190, 255); 
+}
+
+.requires {
+  color: #ED6A71;
 }
 
 
@@ -619,6 +657,10 @@ div.footer a:hover {
   transition:         color .1s ease;
 }
 
+.sk_description {
+  margin: 5px; 
+  padding: 0 5px; 
+}
 
 /**********************************/
 /*            ARMOR CSS           */
@@ -695,6 +737,11 @@ div.footer a:hover {
 
 .arm_icon.arm_selected > div::before {
   content: attr(data-equip);
+}
+
+.arm_description { 
+  margin: 5px; 
+  padding: 0 5px; 
 }
 
 #suit {

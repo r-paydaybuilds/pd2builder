@@ -90,8 +90,8 @@ export default class Builder {
 
     loadLanguage(obj, lang) {
         this.lang = new Language(obj, lang);
-
         document.getElementsByTagName("body")[0].className = lang;
+        if(this.mobile) return;
 
         document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
         document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
