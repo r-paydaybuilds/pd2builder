@@ -444,18 +444,15 @@ document.onreadystatechange = async () => {
     }
 
     // Share build section //
-    if(!builder.mobile) {
-        document.getElementById("io_copy_btn").addEventListener("click", () => {
-            const e = document.getElementById("io_share_link"); 
-        
-    
-            e.select();
-            document.execCommand("copy");
-            e.blur(); 
+    document.getElementById("io_copy_btn").addEventListener("click", () => {
+        const e = document.getElementById("io_share_link"); 
 
-            builder.gui.IO_CopyLinkFlash(); 
-        });
-    }
+        e.select();
+        document.execCommand("copy");
+        e.blur(); 
+
+        builder.gui.IO_CopyLinkFlash(); 
+    });
 
     // When in popups, do like the popups do (history pop event)
     window.onpopstate = async e => {
