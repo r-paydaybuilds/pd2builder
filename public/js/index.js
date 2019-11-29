@@ -553,10 +553,6 @@ document.onreadystatechange = async () => {
 
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
-
-    if (window.innerWidth < 1003 && !builder.mobile) { // #UNSUPPORTED 
-        $("#modal_notification").modal("show"); 
-    }
 };
 
 window.builder = builder; //make the builder instance visible so people can hack it and we can debug it
