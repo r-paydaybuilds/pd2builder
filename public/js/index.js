@@ -66,7 +66,7 @@ document.onreadystatechange = async () => {
 
             if (targetTab === "tab_deployables_page") { 
                 const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
-                builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
+                //builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
             } else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
                 document.getElementById("io_share_link").value = builder.io.GetEncodedBuild(); 
             }
