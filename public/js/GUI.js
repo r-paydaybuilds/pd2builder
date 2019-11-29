@@ -72,12 +72,12 @@ export default class GUI {
         // Manage the buttons
         if(this.builder.mobile) {
             document.querySelector("#sk_tree_buttons button").textContent = this.builder.lang.get(`system.skills.${tree}.title`);
-        } else {
-            document.querySelectorAll(".sk_tree_button_active").forEach(e => {
-                e.classList.remove("sk_tree_button_active");
-            });
-            document.getElementById(`sk_${tree}_button`).classList.add("sk_tree_button_active"); 
-        }
+        } 
+        
+        document.querySelectorAll(".sk_tree_button_active").forEach(e => {
+            e.classList.remove("sk_tree_button_active");
+        });
+        document.getElementById(`sk_${tree}_button`).classList.add("sk_tree_button_active"); 
 
         // Switch tree content 
         document.querySelectorAll("#sk_container_r > .sk_tree").forEach(e => {
