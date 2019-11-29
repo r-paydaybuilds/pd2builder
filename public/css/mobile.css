@@ -673,16 +673,14 @@ div.footer a:hover {
   transition:         color .1s ease;
 }
 
-.sk_description {
-  margin: 5px; 
-  padding: 0 5px; 
-}
 
 /**********************************/
-/*            ARMOR CSS           */
+/*         ARMOR-TH-DP CSS        */
 /**********************************/
 
-#arm_page {
+#arm_page, 
+#th_page, 
+#dp_page {
   display: flex; 
   flex-flow: row wrap; 
   justify-content: space-around;
@@ -690,7 +688,9 @@ div.footer a:hover {
   align-content: flex-start; 
 }
 
-.arm_icon {
+.arm_icon, 
+.th_icon, 
+.dp_icon {
   cursor: pointer; 
 
   display: flex; 
@@ -699,13 +699,22 @@ div.footer a:hover {
   
   flex-basis: 50%; 
   width: 50%; 
-  
-  max-width: 256px; 
 
   border: 3px solid transparent; 
 }
 
-.arm_icon > div {
+.arm_icon,
+.dp_icon {  
+  max-width: 256px; 
+}
+
+.th_icon {
+  max-width: 128px;  
+}
+
+.arm_icon > div, 
+.th_icon > div, 
+.dp_icon > div {
   position: relative;
   display: block; 
   z-index: -1;
@@ -722,19 +731,35 @@ div.footer a:hover {
   -moz-transition: transform .2s ease;
   -o-transition: transform .2s ease;
   transition: transform .2s ease;
+}
 
+.arm_icon > div {
   transform: scale(0.85); 
 }
 
-.arm_icon.arm_selected {
+.th_icon > div {
+  transform: scale(1); 
+}
+
+.dp_icon > div {
+  transform: scale(0.7); 
+}
+
+.arm_icon.arm_selected,
+.th_icon.th_selected, 
+.dp_icon.dp_selected {
   border: 3px solid rgb(240, 240, 240); 
 }
 
-.arm_icon.arm_locked {
+.arm_icon.arm_locked,
+.th_icon.th_locked, 
+.dp_icon.dp_locked {
   background: url("../img/lock_skill.png") no-repeat center center;
 }
 
-.arm_icon.arm_locked > div {
+.arm_icon.arm_locked > div,
+.th_icon.th_locked > div, 
+.dp_icon.dp_locked > div {
   -webkit-filter: brightness(0.2);
   filter: brightness(0.2);
 }
@@ -743,7 +768,18 @@ div.footer a:hover {
   transform: scale(1); 
 }
 
-.arm_icon.arm_selected > div::before {
+.th_icon.th_selected > div {
+  transform: scale(1.15); 
+}
+
+.dp_icon.dp_selected > div {
+  transform: scale(0.85); 
+}
+
+.arm_icon.arm_selected > div::before,
+.th_icon.th_selected > div::before, 
+.dp_icon.dp_selected > div::before {
+  content: attr(data-equip);
   font-size: 1em; /* UNTESTED !!!!!!! TODO */
 
   position: absolute; 
@@ -751,14 +787,18 @@ div.footer a:hover {
   left: 10%;
 }
 
-.arm_icon.arm_selected > div::before {
-  content: attr(data-equip);
+.dp_icon.dp_primary > div::before {
+  content: attr(data-primary);
 }
 
-.arm_description { 
-  margin: 5px; 
-  padding: 0 5px; 
+.dp_icon.dp_secondary > div::before {
+  content: attr(data-secondary);
 }
+
+
+/**********************************/
+/*          ARMOR ICONS           */
+/**********************************/
 
 #suit {
   background-image: url("../img/armors/suit.png"); 
@@ -786,4 +826,118 @@ div.footer a:hover {
 
 #ictv {
   background-image: url("../img/armors/ictv.png"); 
+}
+
+
+/**********************************/
+/*       THROWABLES ICONS         */
+/**********************************/
+
+#matryoshka_grenade {
+  background-image: url("../img/throwables/matryushka_grenade.png"); 
+}
+
+#incendiary_grenade {
+  background-image: url("../img/throwables/incendiary_grenade.png"); 
+}
+
+#hef_grenade {
+  background-image: url("../img/throwables/hef_frag_grenade.png"); 
+}
+
+#ace_of_spades {
+  background-image: url("../img/throwables/ace_of_spades.png"); 
+}
+
+#concussion_grenade {
+  background-image: url("../img/throwables/concussion_grenade.png"); 
+}
+
+#frag_grenade {
+  background-image: url("../img/throwables/frag_grenade.png"); 
+}
+
+#molotov_cocktail {
+  background-image: url("../img/throwables/molotov.png"); 
+}
+
+#dynamite {
+  background-image: url("../img/throwables/dynamite.png"); 
+}
+
+#shuriken {
+  background-image: url("../img/throwables/shuriken.png"); 
+}
+
+#javelin {
+  background-image: url("../img/throwables/javelin.png"); 
+}
+
+#throwing_knife {
+  background-image: url("../img/throwables/throwing_knife.png"); 
+}
+
+#throwing_axe {
+  background-image: url("../img/throwables/throwing_axe.png"); 
+}
+
+#stoic_hip_flask {
+  background-image: url("../img/throwables/stoic_hip_flask.png"); 
+}
+
+#pocket_ecm_device {
+  background-image: url("../img/throwables/pocket_ecm.png"); 
+}
+
+#smoke_bomb {
+  background-image: url("../img/throwables/smoke_bomb.png"); 
+}
+
+#gas_dispenser {
+  background-image: url("../img/throwables/gas_dispenser.png"); 
+}
+
+#injector {
+  background-image: url("../img/throwables/injector.png"); 
+}
+
+
+/**********************************/
+/*       DEPLOYABLES ICONS        */
+/**********************************/
+
+#ammo_bag {
+  background-image: url("../img/deployables/ammo_bag.png"); 
+}
+
+#armor_bag {
+  background-image: url("../img/deployables/armor_kit.png"); 
+}
+
+#body_bag_case {
+  background-image: url("../img/deployables/bodybags_bag.png"); 
+}
+
+#doctor_bag {
+  background-image: url("../img/deployables/doctor_bag.png"); 
+}
+
+#ecm_jammer {
+  background-image: url("../img/deployables/ecm_jammer.png"); 
+}
+
+#first_aid_kit {
+  background-image: url("../img/deployables/first_aid_kit.png"); 
+}
+
+#sentry_gun {
+  background-image: url("../img/deployables/sentry_gun.png"); 
+}
+
+#suppressed_sentry_gun {
+  background-image: url("../img/deployables/sentry_gun_silent.png"); 
+}
+
+#trip_mines_and_shaped_charges {
+  background-image: url("../img/deployables/trip_mine.png"); 
 }
