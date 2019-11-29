@@ -260,23 +260,6 @@ export default class GUI {
     }
 
     /**
-     * Show description card of skills (MOBILE ONLY!)
-     
-    Skill_ShowDescription() {
-        if(!this.builder.mobile) return;
-        document.querySelector("#sk_description_container").classList.add("active");
-    }*/
-
-    /**
-     * Hide description card of skills (MOBILE ONLY!)
-     
-    Skill_HideDescription() {
-        if(!this.builder.mobile) return;
-        const container = document.querySelector("#sk_description_container.active");
-        if(container) container.classList.remove("active");
-    }*/
-
-    /**
      * Supposed to be triggered by clicking on an icon of a skill. 
      * This checks the state of the clicked skill and adds it basic or aced, accordingly to the state it is in. 
      * @param {HTMLDivElement} skill An element object representing the clicked parent div of the skill icon  
@@ -478,23 +461,6 @@ export default class GUI {
 
         desc.innerHTML = html;
     }
-
-    /**
-     * Show description card of armors (MOBILE ONLY!)
-     
-    Armor_ShowDescription() {
-        if(!this.builder.mobile) return;
-        document.querySelector("#arm_description_container").classList.add("active");
-    }*/
-
-    /**
-     * Hide description card of armors (MOBILE ONLY!)
-     
-    Armor_HideDescription() {
-        if(!this.builder.mobile) return;
-        const container = document.querySelector("#arm_description_container.active");
-        if(container) container.classList.remove("active");
-    }*/
 
     /**
      * Select a specified throwable. 

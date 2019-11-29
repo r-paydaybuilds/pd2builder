@@ -54,8 +54,7 @@ document.onreadystatechange = async () => {
     }
 
     if(builder.mobile) document.onclick = ev => {
-        if(!ev.target.closest("#sk_description_container.active")) builder.gui.DescriptionCard_Show(false);
-        if(!ev.target.closest("#arm_description_container.active")) builder.gui.DescriptionCard_Show(false);
+        if(!ev.target.closest("#description_container.active")) builder.gui.DescriptionCard_Show(false);
     };
 
     // Tab page navigation //
@@ -65,7 +64,7 @@ document.onreadystatechange = async () => {
             if (builder.gui.Tab_IsOn(targetTab)) return;
 
             if (targetTab === "tab_deployables_page") { 
-                const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
+                //const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
                 //builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
             } else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
                 document.getElementById("io_share_link").value = builder.io.GetEncodedBuild(); 
@@ -109,10 +108,10 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
-        let double = false, holding = false, successHolding = false;
+        let double = false, successHolding = false, holding;
 
         e.addEventListener("click", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
                 ev.preventDefault();
@@ -178,7 +177,7 @@ document.onreadystatechange = async () => {
 
         e.addEventListener("touchend", ev => {
             ev.preventDefault();
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
                 return;
@@ -193,7 +192,7 @@ document.onreadystatechange = async () => {
                 double = false;
                 return;
             }
-            double = true;
+            double = true;  
             setTimeout(() => { 
                 if(double) {
                     double = false;
@@ -204,9 +203,7 @@ document.onreadystatechange = async () => {
 
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = true;
-            setTimeout(() => {
-                if(!holding) return;
+            holding = setTimeout(() => {
                 ev.preventDefault();
                 successHolding = true;
 
@@ -260,10 +257,10 @@ document.onreadystatechange = async () => {
 
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
-        let holding = false, successHolding = false;
+        let holding, successHolding = false;
 
         e.addEventListener("click", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
                 return;
@@ -290,7 +287,7 @@ document.onreadystatechange = async () => {
         });
 
         e.addEventListener("touchend", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 ev.preventDefault();
                 successHolding = false;
@@ -300,9 +297,7 @@ document.onreadystatechange = async () => {
 
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = true;
-            setTimeout(() => {
-                if(!holding) return;
+            holding = setTimeout(() => {
                 ev.preventDefault();
                 successHolding = true;
 
@@ -317,10 +312,10 @@ document.onreadystatechange = async () => {
 
     // Throwables icon buttons // 
     for(const e of document.getElementsByClassName("th_icon")) {
-        let holding = false, successHolding = false;
+        let holding, successHolding = false;
 
         e.addEventListener("click", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
                 return;
@@ -343,7 +338,7 @@ document.onreadystatechange = async () => {
         e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
 
         e.addEventListener("touchend", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 ev.preventDefault();
                 successHolding = false;
@@ -353,9 +348,7 @@ document.onreadystatechange = async () => {
 
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = true;
-            setTimeout(() => {
-                if(!holding) return;
+            holding = setTimeout(() => {
                 ev.preventDefault();
                 successHolding = true;
 
@@ -370,10 +363,10 @@ document.onreadystatechange = async () => {
 
     // Deployables icon buttons //
     for(const e of document.getElementsByClassName("dp_icon")) {
-        let holding = false, successHolding = false;
+        let holding, successHolding = false;
 
         e.addEventListener("click", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
                 return;
@@ -418,7 +411,7 @@ document.onreadystatechange = async () => {
         );
 
         e.addEventListener("touchend", ev => {
-            holding = false;
+            clearTimeout(holding);
             if(successHolding) {
                 ev.preventDefault();
                 successHolding = false;
@@ -428,9 +421,7 @@ document.onreadystatechange = async () => {
 
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = true;
-            setTimeout(() => {
-                if(!holding) return;
+            holding = setTimeout(() => {
                 ev.preventDefault();
                 successHolding = true;
 
