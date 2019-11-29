@@ -797,6 +797,167 @@ div.footer a:hover {
 
 
 /**********************************/
+/*          SAVE/LOAD CSS         */
+/**********************************/
+
+#tab_io_page,
+#tab_io_page > div {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+}
+
+#tab_io_page > div {
+  align-items: flex-start;  
+}
+
+#io_page {
+  margin-bottom: 2vh; 
+}
+
+#io_other {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: flex-start;
+}
+
+.section-title {
+  align-self: center; 
+  font-size: 1.7em; 
+}
+
+#io_page p,
+#io_other p {
+  margin: 0;
+  margin-bottom: 2vh; 
+}
+
+#io_other p:last-of-type {
+  align-self: center; 
+}
+
+#io_share_link {
+  -webkit-transition: background-color .5s ease;
+  -moz-transition:    background-color .5s ease;
+  -o-transition:      background-color .5s ease;
+  transition:         background-color .5s ease;
+}
+
+#io_share_link.io_link_flash {
+  background-color: rgb(130, 255, 130); 
+
+  -webkit-transition: background-color .01s ease;
+  -moz-transition:    background-color .01s ease;
+  -o-transition:      background-color .01s ease;
+  transition:         background-color .01s ease;
+}
+
+.share-url-group {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: baseline; 
+
+  width: 100%; 
+
+  color: rgb(0, 0, 0); 
+}
+
+.share-url-group span, 
+.share-url-group input, 
+.share-url-group button {
+  border: 2px solid rgb(240, 240, 240); 
+  border-color: rgb(130, 135, 140); 
+
+  padding: 10px; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+}
+
+.share-url-group span,
+.share-url-group button {
+  background-color: rgb(240, 240, 240); 
+}
+
+.share-url-group span {
+  width: 15%; 
+  flex-basis: 15%; 
+
+  border-right: none; /* "border collapse"-style fix */
+  border-radius: 5px 0 0 5px; 
+}
+
+.share-url-group input {
+  position: relative; 
+  
+  border-left: none; 
+  border-right: none; 
+
+  align-self: stretch; 
+ 
+  /** Width and flex-basis 1% may look weird but it's a starting point, then flex-grow 1 stretches them out to fill the available space,
+   *  after the span and button have taken their share. Means that it's gonna shrink to that if needed to resize for the resolution. 
+   */
+  width: 1%; 
+  flex: 1 1 1%;  
+}
+
+.share-url-group input:focus::after,
+.share-url-group input:active::after {
+  content: ""; 
+  position: absolute; 
+  
+  top: 0; 
+  left: 0; 
+
+  width: 100%; 
+  height: 100%; 
+
+  outline: 2px solid rgba(50, 190, 255, 0.7); 
+}
+
+.share-url-group button {
+  width: 25%; 
+  flex-basis: 25%; 
+
+  border-left: none;
+  border-radius: 0 5px 5px 0; 
+  
+  text-align: center;
+  white-space: nowrap;
+}
+
+#io_share_link {
+  -webkit-transition: background-color .5s ease;
+  -moz-transition:    background-color .5s ease;
+  -o-transition:      background-color .5s ease;
+  transition:         background-color .5s ease;
+}
+
+#io_share_link.io_link_flash {
+  background-color: rgb(130, 255, 130); 
+
+  -webkit-transition: background-color .01s ease;
+  -moz-transition:    background-color .01s ease;
+  -o-transition:      background-color .01s ease;
+  transition:         background-color .01s ease;
+}
+
+
+#io_widgets {
+  display: flex; 
+  flex-flow: row wrap; 
+  justify-content: space-around; 
+  align-items: center; 
+  
+  width: 100%; 
+}
+
+
+/**********************************/
 /*          ARMOR ICONS           */
 /**********************************/
 
