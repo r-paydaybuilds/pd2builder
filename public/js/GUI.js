@@ -534,7 +534,7 @@ export default class GUI {
      * @param {String} throwableId ID of the throwable of which to display the description
      */
     Throwable_DisplayDescriptionCard(throwableId) {
-        const [desc] = document.getElementsByClassName("th_description");
+        const desc = document.getElementById("description_container");
         const th = this.builder.dbs.get("throwables").get(throwableId);
         const lang = this.builder.lang.get("throwables." + throwableId);
 
@@ -612,7 +612,7 @@ export default class GUI {
      * @param {String} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {
-        const [desc] = document.getElementsByClassName("dp_description");
+        const desc = document.getElementById("description_container");
         const dp = this.builder.dbs.get("deployables").get(deployableId);
         const lang = this.builder.lang.get("deployables." + deployableId);
 
