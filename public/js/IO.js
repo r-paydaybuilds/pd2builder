@@ -42,6 +42,8 @@ export default class IO {
     GetEncodedBuild() {
         const url = new URL(window.location.href); // Get pure address without params 
         url.href = url.href.replace(url.search, "");
+        
+        url.href = url.href.replace("mobile.html", ""); // Remove mobile specification if necessary
 
         // Manage Skills
         if(this.builder.exp.skills.points !== 120) url.searchParams.set("s", this.encodeSkills()); 
