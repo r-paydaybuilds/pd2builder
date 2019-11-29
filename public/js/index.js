@@ -54,8 +54,8 @@ document.onreadystatechange = async () => {
     }
 
     if(builder.mobile) document.onclick = ev => {
-        if(!ev.target.closest("#sk_description_container.active")) builder.gui.Skill_HideDescription();
-        if(!ev.target.closest("#arm_description_container.active")) builder.gui.Armor_HideDescription();
+        if(!ev.target.closest("#sk_description_container.active")) builder.gui.DescriptionCard_Show(false);
+        if(!ev.target.closest("#arm_description_container.active")) builder.gui.DescriptionCard_Show(false);
     };
 
     // Tab page navigation //
@@ -211,10 +211,9 @@ document.onreadystatechange = async () => {
                 successHolding = true;
 
                 const id = e.firstElementChild.id; 
-                if(builder.mobile) builder.gui.Skill_ShowDescription();
-                if (document.getElementsByClassName("sk_description")[0].dataset.skill !== id) {
-                    builder.gui.Skill_DisplayDescription(id); 
-                }
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
+                
+                builder.gui.Skill_DisplayDescription(id); 
             }, 750);
         };
         if(builder.mobile) e.addEventListener("mousedown", start);
@@ -308,7 +307,7 @@ document.onreadystatechange = async () => {
                 successHolding = true;
 
                 const id = e.firstElementChild.id; 
-                if(builder.mobile) builder.gui.Armor_ShowDescription();
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Armor_DisplayDescriptionCard(id);
             }, 750);
         };

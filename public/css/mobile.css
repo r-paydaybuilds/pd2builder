@@ -226,39 +226,55 @@ div.footer a:hover {
   background-size: 15px 15px;
 }
 
-.description_container {
-  overflow: scroll;
-  
-  position: absolute; 
-  bottom: 0%; 
-  left: 25%; 
+#description_container {
+  position: fixed; 
   z-index: 2000; 
+  top: 50%; 
+  right: -100%; 
+  
+  transform: translateY(-50%); 
 
-  margin-left: 80%;
-  width: 80%;
-  height: 100%; 
-  transition: margin-left 0.5s ease;
+  width: 80vw;
+  height: 75vh; 
+
+  padding: 15px; 
+
+  overflow-y: scroll;
+
+  -webkit-overflow-scrolling: touch; /* "momentum" scrolling" */ 
+  overscroll-behavior: contain; /* don't propagate to parent */ 
 
   background: rgb(0, 10, 30); 
   border: 1px solid rgb(240, 240, 240); 
- 
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
-              0 3px 6px rgba(0, 0, 0, 0.23);
+
+  -webkit-box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.6), -6px 0px 8px 4px rgba(0, 0, 0, 0.45), -10px 0px 10px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.6), -6px 0px 8px 4px rgba(0, 0, 0, 0.45), -10px 0px 10px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: -3px 0px 6px 2px rgba(0, 0, 0, 0.6), -6px 0px 8px 4px rgba(0, 0, 0, 0.45), -10px 0px 10px 6px rgba(0, 0, 0, 0.3);
+
+  transition: right 0.5s ease; 
 }
 
-.description_container.active {
-  margin-left: 0;
+#description_container.active {
+  right: 0; 
 }
 
-.description_title {
+#description_container div {
+  overscroll-behavior: contain; /* don't propagate to parent */ 
+}
+
+#description_container .description_title {
   font-size: 1.7em; 
 }
 
-.color_number {
+#description_container .description_title span {
+  font-size: 0.8em; 
+}
+
+#description_container .color_number {
   color: rgb(50, 190, 255); 
 }
 
-.requires {
+#description_container .requires {
   color: #ED6A71;
 }
 

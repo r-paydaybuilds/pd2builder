@@ -58,6 +58,19 @@ export default class GUI {
         return document.getElementById(tabId).offsetParent !== null; 
     }
 
+    /** 
+     * Opens/closes the description card, the place where every item's description is shown on mobile 
+     * @param {Boolean} open Should the card open or close? true = open | false = close 
+     */
+    DescriptionCard_Show(open = true) {
+        if (open) {
+            document.getElementById("description_container").classList.add("active"); 
+        }
+        else {
+            document.getElementById("description_container").classList.remove("active"); 
+        }        
+    }
+
     /**
      * Change selected Skill Tree to another.
      * @param {String} treeId Id of the Tree to switch to 
@@ -65,7 +78,7 @@ export default class GUI {
     Tree_ChangeTo(treeId) {
         const tree = treeId.split("_")[1];
         // Clean the skill description text 
-        const [desc] = document.getElementsByClassName("sk_description");
+        const desc = document.getElementById("description_container");
         desc.dataset.skill = "none";
         desc.innerHTML = "";
 
@@ -232,7 +245,7 @@ export default class GUI {
      * @param {String} skillId ID of the skill that needs its description shown
      */
     Skill_DisplayDescription(skillId) {
-        const desc = document.getElementsByClassName("sk_description")[0]; 
+        const desc = document.getElementById("description_container"); 
         const skill = this.builder.lang.get(`skills.${skillId}`);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
@@ -248,20 +261,20 @@ export default class GUI {
 
     /**
      * Show description card of skills (MOBILE ONLY!)
-     */
+     
     Skill_ShowDescription() {
         if(!this.builder.mobile) return;
         document.querySelector("#sk_description_container").classList.add("active");
-    }
+    }*/
 
     /**
      * Hide description card of skills (MOBILE ONLY!)
-     */
+     
     Skill_HideDescription() {
         if(!this.builder.mobile) return;
         const container = document.querySelector("#sk_description_container.active");
         if(container) container.classList.remove("active");
-    }
+    }*/
 
     /**
      * Supposed to be triggered by clicking on an icon of a skill. 
@@ -425,7 +438,7 @@ export default class GUI {
      * @param {String} armorId ID of the armor of which to display the description
      */
     Armor_DisplayDescriptionCard(armorId) {
-        const [desc] = document.getElementsByClassName("arm_description");
+        const desc = document.getElementById("description_container");
         const arm = this.builder.dbs.get("armors").get(armorId);
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
         const lang = this.builder.lang.get("system.armors.table");
@@ -439,7 +452,7 @@ export default class GUI {
                 .translate(lang)
                 .toHTML();
         } else if(armorId === this.builder.exp.armor) {
-            html += `<br><span class="font-size-13">${this.builder.lang.get("system.equipped")}</span></p>` 
+            html += `<br><span>${this.builder.lang.get("system.equipped")}</span></p>` 
             + new PaydayTable(["total", "base", "skill"], Object.keys(arm.stats), { tableClass: "armor_details" })
                 .addRows("base", Object.entries(arm.stats))
                 .translate(lang)
@@ -468,20 +481,20 @@ export default class GUI {
 
     /**
      * Show description card of armors (MOBILE ONLY!)
-     */
+     
     Armor_ShowDescription() {
         if(!this.builder.mobile) return;
         document.querySelector("#arm_description_container").classList.add("active");
-    }
+    }*/
 
     /**
      * Hide description card of armors (MOBILE ONLY!)
-     */
+     
     Armor_HideDescription() {
         if(!this.builder.mobile) return;
         const container = document.querySelector("#arm_description_container.active");
         if(container) container.classList.remove("active");
-    }
+    }*/
 
     /**
      * Select a specified throwable. 
