@@ -317,7 +317,15 @@ document.onreadystatechange = async () => {
 
     // Throwables icon buttons // 
     for(const e of document.getElementsByClassName("th_icon")) {
+        let holding = false, successHolding = false;
+
         e.addEventListener("click", ev => {
+            holding = false;
+            if(successHolding) {
+                successHolding = false;
+                return;
+            }
+
             const id = e.firstElementChild.id;
             if (builder.exp.throwable === id || e.classList.contains("th_locked")) return;
 
@@ -333,11 +341,44 @@ document.onreadystatechange = async () => {
             }
         });
         e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
+
+        e.addEventListener("touchend", ev => {
+            holding = false;
+            if(successHolding) {
+                ev.preventDefault();
+                successHolding = false;
+                return;
+            }
+        });
+
+        const start = ev => {
+            if(ev instanceof MouseEvent && ev.button != 0) return;
+            holding = true;
+            setTimeout(() => {
+                if(!holding) return;
+                ev.preventDefault();
+                successHolding = true;
+
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
+                builder.gui.Throwable_DisplayDescriptionCard(id);
+            }, 750);
+        };
+        if(builder.mobile) e.addEventListener("mousedown", start);
+        e.addEventListener("touchstart", start);
     }
 
     // Deployables icon buttons //
     for(const e of document.getElementsByClassName("dp_icon")) {
+        let holding = false, successHolding = false;
+
         e.addEventListener("click", ev => {
+            holding = false;
+            if(successHolding) {
+                successHolding = false;
+                return;
+            }
+
             const id = e.firstElementChild.id;
             if (builder.exp.deployable === id || e.classList.contains("dp_locked")) return; 
             builder.exp.deployable = id;
@@ -375,6 +416,31 @@ document.onreadystatechange = async () => {
         e.addEventListener("mouseenter", () => 
             builder.gui.Deployable_DisplayDescriptionCard(e.firstElementChild.id)
         );
+
+        e.addEventListener("touchend", ev => {
+            holding = false;
+            if(successHolding) {
+                ev.preventDefault();
+                successHolding = false;
+                return;
+            }
+        });
+
+        const start = ev => {
+            if(ev instanceof MouseEvent && ev.button != 0) return;
+            holding = true;
+            setTimeout(() => {
+                if(!holding) return;
+                ev.preventDefault();
+                successHolding = true;
+
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
+                builder.gui.Deployable_DisplayDescriptionCard(id);
+            }, 750);
+        };
+        if(builder.mobile) e.addEventListener("mousedown", start);
+        e.addEventListener("touchstart", start);
     }
 
     // Share build section //
