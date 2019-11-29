@@ -310,7 +310,7 @@ export default class GUI {
      */
     Skill_AnimateInvalid({ classList }) {
         if (classList.contains("sk_invalid")) return;
-        if("vibrate" in navigator) navigator.vibrate(100);
+        if("vibrate" in navigator) navigator.vibrate(75);
         classList.add("sk_invalid");
         setTimeout(() =>{
             classList.remove("sk_invalid");
