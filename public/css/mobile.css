@@ -170,20 +170,6 @@ select {
   background: rgb(240, 240, 240) url("../img/dropdown-arrow.png") 95% / 15% no-repeat;  
 }
 
-#title {
-  display: flex;
-  justify-content: space-evenly; 
-  
-  padding: 1vh 0;
-
-  font-size: 1.5em; 
-}
-
-#title p {
-  margin: auto 0; 
-  padding: 0; 
-}
-
 
 div.footer {
   width: 100%; 
