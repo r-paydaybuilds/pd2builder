@@ -458,8 +458,7 @@ document.onreadystatechange = async () => {
         builder.gui.IO_CopyLinkFlash(); 
     });
 
-    // Natively share your build
-    if(builder.mobile) {
+    { // Natively share your build
         const button = document.getElementById("io_share_button");
         if("share" in navigator) {
             button.addEventListener("click",
@@ -473,6 +472,7 @@ document.onreadystatechange = async () => {
             button.style.display = "none";
         }
     }
+
 
     // When in popups, do like the popups do (history pop event)
     window.onpopstate = async e => {

@@ -140,6 +140,13 @@
   margin: 0 10px;
 }
 
+#io_share_button {
+  text-align: center;
+
+  width: 25%;
+  margin-top: 2%;
+}
+
 
 /**********************************/
 /*          ARMOR IMAGES          */
