@@ -96,6 +96,10 @@ export default class Builder {
             e.textContent = this.lang.get(`system.${e.dataset.name}.title`);
         });
 
+        for(const value of Builder.TREES) {
+            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
+        }
+
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
             e.setAttribute("data-equip", this.lang.get("system.equip"))
         );
@@ -103,6 +107,11 @@ export default class Builder {
             e.setAttribute("data-primary", this.lang.get("system.primary"));
             e.setAttribute("data-secondary", this.lang.get("system.secondary"));
         });
+        for(const [key] of this.dbs.get("perk_decks")) {
+            document.querySelector(`#${key} > p`).textContent = this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase();
+            const query = document.querySelector(`#${key}.pk_selected > p`);
+            if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
+        }
 
         for(const [key] of this.dbs.get("skills")) {
             document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
@@ -111,22 +120,15 @@ export default class Builder {
         document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
 
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
-        if(this.mobile) return;
+        if(this.mobile) {
+            if(document.getElementById("sk_tree_buttons").dataset.tree) document.querySelector("#sk_tree_buttons > button").textContent = this.lang.get(`system.skills.${document.getElementById("sk_tree_buttons").dataset.tree}.title`).toLocaleUpperCase();
+            return;
+        }
 
         document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
         document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
 
-        for(const value of Builder.TREES) {
-            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
-        }
-
         document.querySelector(".sk_points_remaining > p").innerHTML = this.lang.get("system.skills.remaining") + document.querySelector(".sk_points_remaining p span").outerHTML;
-
-        for(const [key] of this.dbs.get("perk_decks")) {
-            document.querySelector(`#${key} > p`).textContent = this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase();
-            const query = document.querySelector(`#${key}.pk_selected > p`);
-            if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
-        }
 
         document.querySelector("#io_save_r p").textContent = this.lang.get("system.share.description");
         document.querySelector("#io_other_r > p").textContent = this.lang.get("system.credits.title");

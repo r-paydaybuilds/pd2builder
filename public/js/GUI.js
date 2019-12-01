@@ -84,6 +84,7 @@ export default class GUI {
 
         // Manage the buttons
         if(this.builder.mobile) {
+            document.getElementById("sk_tree_buttons").dataset.tree = tree;
             document.querySelector("#sk_tree_buttons button").textContent = this.builder.lang.get(`system.skills.${tree}.title`);
         } 
         
