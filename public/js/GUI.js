@@ -547,6 +547,14 @@ export default class GUI {
     }
 
     /**
+     * Unselect secondary deployable
+     */
+    DeployableSecondary_Unselect() {
+        const [query] = document.getElementsByClassName("dp_secondary");
+        if(query) query.classList.remove("dp_secondary");
+    }
+
+    /**
      * Select a specified deployable as secondary
      * @param {HTMLDivElement} deployable An element object representing the clicked deployable icon
      */
@@ -640,20 +648,54 @@ export default class GUI {
     HandleUnlocks(...objects) {
         const ret = [];
         for(const { type, id, unlocks } of objects) {
+            if(!unlocks) continue;
             switch(type) {
             case "skill": {
                 const { state } = this.builder.exp.skills.get(id) || { state: 0 };
                 for(const unlock of unlocks) {
-                    if(state >= unlock.whenState) ret.push(unlock);
+                    if(state < unlock.whenState) ret.push(unlock);
                 }
                 break;
             }
-            default: 
-                for(const unlock of unlocks) {
-                    if(unlock === id) ret.push(unlock);
+            default:
+                if(this.builder.exp[type] !== id) ret.push(...unlocks);
+            }
+        }
+        for(const { type, name } of ret) {
+            const methodType = type.charAt(0).toUpperCase() + type.slice(1, type.length);
+            switch(type) {
+            case "deployable":
+                if(!name) {
+                    const query = document.querySelector(".dp_primary, .dp_selected");
+                    if(!query) continue;
+                    this.Deployable_Unselect(query);
+                    this.builder.exp[type] = null;
+                } else if(this.builder.exp[type] === name || this.builder.exp.deployableSecondary === name) {
+                    this.Deployable_Unselect(document.getElementById(name).parentElement);
+                    if(this.builder.exp[type] === name) {
+                        this.builder.exp[type] = null;
+                    } else {
+                        this.builder.exp.deployableSecondary === name;
+                        continue;
+                    }
+                    const secondary = this.builder.exp.deployableSecondary;
+                    this.builder.exp.deployableSecondary = null;
+                    this.builder.exp[type] = secondary;
+                    this.DeployableSecondary_Unselect();
+                    this.Deployable_Select(document.getElementById(secondary).parentElement);
+                }
+                break;
+            default:
+                if(!name) {
+                    this[methodType + "_Unselect"]();
+                    this.builder.exp[type] = null;
+                } else if(this.builder.exp[type] === name) {
+                    this[methodType + "_Unselect"]();
+                    this.builder.exp[type] = null;
                 }
             }
         }
+        return ret;
     }
 
     /**

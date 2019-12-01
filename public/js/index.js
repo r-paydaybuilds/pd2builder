@@ -154,6 +154,11 @@ document.onreadystatechange = async () => {
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
+                builder.gui.HandleUnlocks({
+                    type: "skill",
+                    id,
+                    unlocks: s.unlocks
+                });
 
                 if(ev.isTrusted) {
                     window.history.pushState(
@@ -221,10 +226,17 @@ document.onreadystatechange = async () => {
     for(const e of document.getElementsByClassName("pk_deck")) {
         e.addEventListener("click", ev => {
             const id = e.id; 
+            const pastId = builder.exp.perkDeck;
             if (builder.exp.perkDeck === id) return; 
 
             builder.exp.perkDeck = id; 
             builder.gui.PerkDeck_Select(e);
+
+            if(pastId) builder.gui.HandleUnlocks({
+                type: "perkDeck",
+                id: pastId,
+                unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
+            });
             
             if(ev.isTrusted) {
                 window.history.pushState(
