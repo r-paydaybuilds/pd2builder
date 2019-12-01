@@ -3,10 +3,10 @@
     (mostly font-size)
 */
 
-.ru-ru .sk_name {
+.sk_name:lang(ru_ru) {
     font-size: 11pt;
 }
 
-.ru-ru table {
+table:lang(ru-ru) {
     font-size: 12pt;
 }

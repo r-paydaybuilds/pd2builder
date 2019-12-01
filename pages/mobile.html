@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script>
-      if(!/Mobi|Android/i.test(navigator.userAgent)) {
+      if(!/Mobi|Android/i.test(navigator.userAgent) && window.innerWidth >= 1003) {
         const url = new URL(window.location.href);
         url.pathname = url.pathname.replace("mobile.html", "");
         window.location.replace(url);

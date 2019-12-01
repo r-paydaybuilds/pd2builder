@@ -90,11 +90,7 @@ export default class Builder {
 
     loadLanguage(obj, lang) {
         this.lang = new Language(obj, lang);
-        document.getElementsByTagName("body")[0].className = lang;
-        if(this.mobile) return;
-
-        document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
-        document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
+        document.documentElement.setAttribute("lang", lang);
 
         document.querySelectorAll("#tab_page_buttons > button").forEach(e => {
             e.textContent = this.lang.get(`system.${e.dataset.name}.title`);
@@ -107,12 +103,21 @@ export default class Builder {
             e.setAttribute("data-primary", this.lang.get("system.primary"));
             e.setAttribute("data-secondary", this.lang.get("system.secondary"));
         });
-        for(const value of Builder.TREES) {
-            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
-        }
 
         for(const [key] of this.dbs.get("skills")) {
             document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
+        }
+
+        document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
+
+        GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
+        if(this.mobile) return;
+
+        document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
+        document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
+
+        for(const value of Builder.TREES) {
+            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
         }
 
         document.querySelector(".sk_points_remaining > p").innerHTML = this.lang.get("system.skills.remaining") + document.querySelector(".sk_points_remaining p span").outerHTML;
@@ -124,8 +129,6 @@ export default class Builder {
         }
 
         document.querySelector("#io_save_r p").textContent = this.lang.get("system.share.description");
-        document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
-
         document.querySelector("#io_other_r > p").textContent = this.lang.get("system.credits.title");
         document.querySelector("#io_other_r > .font-size-16 p:first-child").textContent = this.lang.get("system.credits.p1");
         document.querySelector("#io_other_r > .font-size-16 p:last-child").innerHTML = this.lang.get("system.credits.p2")({
@@ -136,7 +139,6 @@ export default class Builder {
         });
         document.querySelector(".io_widgets > p").textContent = this.lang.get("system.credits.reach");
         
-        GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
     }
 }
 

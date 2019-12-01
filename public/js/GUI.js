@@ -78,7 +78,7 @@ export default class GUI {
     Tree_ChangeTo(treeId) {
         const tree = treeId.split("_")[1];
         // Clean the skill description text 
-        const desc = document.getElementById("description_container");
+        const desc = document.querySelector("#description_container, #sk_description_container");
         desc.dataset.skill = "none";
         desc.innerHTML = "";
 
@@ -245,7 +245,7 @@ export default class GUI {
      * @param {String} skillId ID of the skill that needs its description shown
      */
     Skill_DisplayDescription(skillId) {
-        const desc = document.getElementById("description_container"); 
+        const desc = document.querySelector("#description_container, #sk_description_container");
         const skill = this.builder.lang.get(`skills.${skillId}`);
 
         let html = `<p class="description_title">${skill.name.toUpperCase()}</p><p>${
@@ -421,7 +421,7 @@ export default class GUI {
      * @param {String} armorId ID of the armor of which to display the description
      */
     Armor_DisplayDescriptionCard(armorId) {
-        const desc = document.getElementById("description_container");
+        const desc = document.querySelector("#description_container, #arm_description_container");
         const arm = this.builder.dbs.get("armors").get(armorId);
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
         const lang = this.builder.lang.get("system.armors.table");
@@ -500,7 +500,7 @@ export default class GUI {
      * @param {String} throwableId ID of the throwable of which to display the description
      */
     Throwable_DisplayDescriptionCard(throwableId) {
-        const desc = document.getElementById("description_container");
+        const desc = document.querySelector("#description_container, #th_description_container");
         const th = this.builder.dbs.get("throwables").get(throwableId);
         const lang = this.builder.lang.get("throwables." + throwableId);
 
@@ -578,7 +578,7 @@ export default class GUI {
      * @param {String} deployableId ID of the deployable of which to display the description
      */
     Deployable_DisplayDescriptionCard(deployableId) {
-        const desc = document.getElementById("description_container");
+        const desc = document.querySelector("#description_container, #dp_description_container");
         const dp = this.builder.dbs.get("deployables").get(deployableId);
         const lang = this.builder.lang.get("deployables." + deployableId);
 
