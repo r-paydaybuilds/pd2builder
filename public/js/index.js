@@ -172,7 +172,7 @@ document.onreadystatechange = async () => {
             }
         });
 
-        if(!builder.mobile) e.addEventListener("mouseover", () => {
+        if(!builder.mobile) e.addEventListener("mouseenter", () => {
             const id = e.firstElementChild.id; 
             
             if (document.getElementsByClassName("sk_description")[0].dataset.skill !== id) {
@@ -247,7 +247,7 @@ document.onreadystatechange = async () => {
             }
         });
 
-        e.addEventListener("mouseenter", () => {
+        if(!builder.mobile) e.addEventListener("mouseenter", () => {
             const id = e.id; 
             if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
                 builder.gui.PerkDeck_DisplayDescription(id); 
@@ -294,7 +294,7 @@ document.onreadystatechange = async () => {
             }
         });
 
-        if(builder.mobile) e.addEventListener("mouseenter", () => {
+        if(!builder.mobile) e.addEventListener("mouseenter", () => {
             builder.gui.Armor_DisplayDescriptionCard(e.firstElementChild.id);
         });
 
@@ -347,7 +347,8 @@ document.onreadystatechange = async () => {
                 );
             }
         });
-        e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
+
+        if(!builder.mobile) e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
 
         e.addEventListener("touchend", ev => {
             clearTimeout(holding);
@@ -418,7 +419,7 @@ document.onreadystatechange = async () => {
             } 
             
         });
-        e.addEventListener("mouseenter", () => 
+        if(!builder.mobile) e.addEventListener("mouseenter", () => 
             builder.gui.Deployable_DisplayDescriptionCard(e.firstElementChild.id)
         );
 
