@@ -445,6 +445,22 @@ document.onreadystatechange = async () => {
         builder.gui.IO_CopyLinkFlash(); 
     });
 
+    // Natively share your build
+    if(builder.mobile) {
+        const button = document.getElementById("io_share_button");
+        if("share" in navigator) {
+            button.addEventListener("click",
+                navigator.share({
+                    title: "PD2Builder",
+                    text: "Check out this build!",
+                    url: builder.io.GetEncodedBuild()
+                })
+            );
+        } else {
+            button.style.display = "none";
+        }
+    }
+
     // When in popups, do like the popups do (history pop event)
     window.onpopstate = async e => {
         if(!e.state) return;

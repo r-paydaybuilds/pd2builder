@@ -988,7 +988,6 @@ div.footer a:hover {
 }
 
 .share-url-group button {
-  width: 25%; 
   flex-basis: 25%; 
 
   border-left: none;
@@ -1012,6 +1011,17 @@ div.footer a:hover {
   -moz-transition:    background-color .01s ease;
   -o-transition:      background-color .01s ease;
   transition:         background-color .01s ease;
+}
+
+#io_share_button {
+  background-color: rgb(0, 155, 0);
+  border: 2px solid rgb(130, 135, 140);
+
+  text-align: center;
+
+  width: 25%;
+  margin: auto;
+  margin-top: 2vh;
 }
 
 
