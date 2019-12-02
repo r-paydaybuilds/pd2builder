@@ -437,8 +437,7 @@ div.footer a:hover {
   align-items: center; 
 }
 
-#sk_tree_buttons button:focus + .sk_tree_button_group,
-#sk_tree_buttons button:hover + .sk_tree_button_group {
+#sk_tree_buttons .sk_tree_button_group.active {
   max-height: 20em;
 }
 

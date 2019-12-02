@@ -53,9 +53,16 @@ document.onreadystatechange = async () => {
         });
     }
 
-    if(builder.mobile) document.onclick = ev => {
-        if(!ev.target.closest("#description_container.active")) builder.gui.DescriptionCard_Show(false);
-    };
+    if(builder.mobile) {
+        document.onclick = ev => {
+            if(!ev.target.closest("#description_container.active")) builder.gui.DescriptionCard_Show(false);
+            if(!ev.target.closest("#sk_tree_buttons button, sk_tree_button_group")) builder.gui.Tree_ShowSelection(false);
+        };
+
+        document.querySelector("#sk_tree_buttons button").addEventListener("click", () =>
+            builder.gui.Tree_ShowSelection()
+        );
+    }
 
     // Tab page navigation //
     document.querySelectorAll("#tab_page_buttons button").forEach(e => {      
@@ -79,7 +86,8 @@ document.onreadystatechange = async () => {
     // Skill tab navigation //
     for (const value of Builder.TREES) {
         document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
-            builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container")); 
+            builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container"));
+            builder.gui.Tree_ShowSelection(false);
         }); 
     }
     

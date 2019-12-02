@@ -143,6 +143,19 @@ export default class GUI {
     }
 
     /**
+     * Shows the submenu for selecting a skill tree (MOBILE ONLY!)
+     * @param {Boolean} open Show or hide
+     */
+    Tree_ShowSelection(open = true) {
+        const { classList } = document.querySelector(".sk_tree_button_group");
+        if(open) {
+            classList.add("active");
+        } else {
+            classList.remove("active");
+        }
+    }
+
+    /**
      * Raise or lower the subtree background according to points set in it.
      * @param {String} subtreeId Id of the subtree to move
      * @param {Number} pointsInTree Number of points to "move to"
