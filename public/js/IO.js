@@ -72,13 +72,13 @@ export default class IO {
      * @returns {String}
      */
     encodeSkills() {
-        const self = this;
         let skillsString = "";
         for(const e of document.getElementsByClassName("sk_subtree")) {
             let subtreeBasicChar = 0; 
             let subtreeAcedChar = 0; 
 
-            e.querySelectorAll(".sk_icon").forEach(e => {
+            const arr = [...e.querySelectorAll(".sk_icon")];
+            (this.builder.mobile ? arr.reverse() : arr).forEach(e => {
                 if (e.classList.contains("sk_selected_basic")) {
                     subtreeBasicChar = subtreeBasicChar | 1;
                 }
@@ -91,7 +91,7 @@ export default class IO {
                     subtreeAcedChar = subtreeAcedChar << 1; 
                 }
             }); 
-            skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
+            skillsString += this.EncodeByte(subtreeBasicChar) + this.EncodeByte(subtreeAcedChar); 
         } 
         return skillsString;
     }
@@ -213,7 +213,8 @@ export default class IO {
             let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
             let mask = 1; 
 
-            [...e.querySelectorAll(".sk_tier")].reverse().forEach(el => 
+            const tiers = [...e.querySelectorAll(".sk_tier")];
+            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el => 
                 [...el.querySelectorAll(".sk_icon")].reverse().forEach(ele => {
                     let skillBasicBit = subtreeBasicChar & mask;
                     let skillAcedBit = subtreeAcedChar & mask; 
