@@ -3,6 +3,7 @@
 /**
  * Array intersection, to find the elements present in each of the passed arguments. Accepts an array of arrays as parameter
  * @param {...Array<Object>} param An array containg what to intersect
+ * @memberof Array.prototype
  */
 Array.prototype.intersect = function(...args) {
     for(const array of args) {
@@ -19,7 +20,20 @@ Array.prototype.intersect = function(...args) {
 };
 
 /**
+ * Reverse middle of array that is not of odd length
+ * @memberof Array.prototype
+ */
+Array.prototype.reverseMiddle = function() {
+    const array = this.slice(1, this.length - 1);
+    for(let i = 0; i < array.length; i += 2) {
+        [array[i], array[i+1]] = [array[i+1], array[i]];
+    }
+    return [this[0], ...array, this[this.length - 1]];
+};
+
+/**
  * Returns the string in camelCase if it has snake_case
+ * @memberof String.prototype
  */
 String.prototype.toCamelCase = function() {
     return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());

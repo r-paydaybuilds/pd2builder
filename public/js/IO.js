@@ -78,7 +78,7 @@ export default class IO {
             let subtreeAcedChar = 0; 
 
             const arr = [...e.querySelectorAll(".sk_icon")];
-            (this.builder.mobile ? arr.reverse() : arr).forEach(e => {
+            (this.builder.mobile ? arr.reverse().reverseMiddle() : arr).forEach(e => {
                 if (e.classList.contains("sk_selected_basic")) {
                     subtreeBasicChar = subtreeBasicChar | 1;
                 }
