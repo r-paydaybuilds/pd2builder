@@ -469,7 +469,7 @@ document.onreadystatechange = async () => {
     { // Natively share your build
         const button = document.getElementById("io_share_button");
         if("share" in navigator) {
-            button.addEventListener("click",
+            button.addEventListener("click", () =>
                 navigator.share({
                     title: "PD2Builder",
                     text: "Check out this build!",
