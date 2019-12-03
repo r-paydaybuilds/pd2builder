@@ -118,6 +118,7 @@ export default class Builder {
         }
 
         document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
+        document.getElementById("io_share_button").textContent = this.lang.get("system.share.native");
 
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
         if(this.mobile) {
