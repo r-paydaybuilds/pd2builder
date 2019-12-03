@@ -814,7 +814,9 @@ div.footer a:hover {
 
 .arm_icon.arm_selected,
 .th_icon.th_selected, 
-.dp_icon.dp_selected {
+.dp_icon.dp_selected,
+.dp_icon.dp_primary,
+.dp_icon.dp_secondary {
   border: 3px solid rgb(240, 240, 240); 
 }
 
@@ -839,7 +841,9 @@ div.footer a:hover {
   transform: scale(1.15); 
 }
 
-.dp_icon.dp_selected > div {
+.dp_icon.dp_selected > div,
+.dp_icon.dp_primary > div,
+.dp_icon.dp_secondary > div {
   transform: scale(0.85); 
 }
 
