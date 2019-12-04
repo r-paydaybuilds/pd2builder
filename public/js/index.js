@@ -54,11 +54,64 @@ document.onreadystatechange = async () => {
     }
 
     if(builder.mobile) {
+        //Detect when you dont click on x part of the document
         document.onclick = ev => {
-            if(!ev.target.closest("#description_container.active")) builder.gui.DescriptionCard_Show(false);
+            if(!ev.target.closest("#description_card.active")) builder.gui.DescriptionCard_Show(false);
             if(!ev.target.closest("#sk_tree_buttons button, sk_tree_button_group")) builder.gui.Tree_ShowSelection(false);
         };
 
+        //Make the X do something
+        document.querySelector("#description_card > a").addEventListener("click", () =>
+            builder.gui.DescriptionCard_Show(false)
+        );
+        
+        //Slide to exit
+        {
+            const desc = document.getElementById("description_card");
+            let remaining = desc.clientWidth/3, startX = 0, deltaX = 0, currentTouch = null;
+            document.addEventListener("resize", () => remaining = desc.clientWidth/3);
+
+            desc.addEventListener("touchstart", ev => {
+                if(currentTouch !== null) return;
+                const touch = ev.touches.item(0);
+                currentTouch = touch.identifier;
+
+                startX = touch.pageX;
+            });
+
+            desc.addEventListener("touchmove", ev => {
+                if(currentTouch === null) return;
+                for(const touch of ev.changedTouches) {
+                    if(touch.identifier !== currentTouch) continue;
+                    deltaX = touch.pageX - startX;
+                    startX = touch.pageX;
+                    remaining -= deltaX;
+                    if(remaining <= 0) {
+                        currentTouch = null;
+                        builder.gui.DescriptionCard_Show(false);
+                    }
+                    return;
+                }
+            });
+
+            desc.addEventListener("touchend", ev => {
+                for(const touch of ev.changedTouches) {
+                    if(touch.identifier === currentTouch) return;
+                }
+                if(ev.touches.length > 0) {
+                    currentTouch = ev.touches.item(0).identifier;
+                } else {
+                    currentTouch = null;
+                    remaining = desc.clientWidth/3;
+                }
+            });
+            desc.addEventListener("touchcancel", () => {
+                currentTouch = null;
+                remaining = desc.clientWidth/3;
+            });
+        }
+
+        //Show selection of trees when clicking the tree button
         document.querySelector("#sk_tree_buttons button").addEventListener("click", () =>
             builder.gui.Tree_ShowSelection()
         );
