@@ -19,3 +19,7 @@
 3. Optional: add yourself on contributors.md
 4. Pull Request
 5. Profit?!
+
+## What we use
+[![BrowserStack](https://i.imgur.com/wT7FyNd.png)](https://www.browserstack.com/)
+We are using BrowserStack for testing the app easily with different machines including mobile!
