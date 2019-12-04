@@ -4,7 +4,7 @@ echo "Minifying HTML..."
 cd pages
 #minify html
 for file in ./*; do
-    npx html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype $file -o a
+    npx html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --use-short-doctype $file -o a
     mv a $file
 done
 mv ./* ../public/ #move all pages
