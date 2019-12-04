@@ -318,14 +318,16 @@ export default class GUI {
      * Select a specified perk deck. 
      * @param {HTMLDivElement} perkDeck An element object representing the perk deck
      */
-    PerkDeck_Select({ classList, firstElementChild: p }) {
+    PerkDeck_Select(element) {
         this.PerkDeck_Unselect();
 
-        classList.add("pk_selected"); 
+        const p = element.querySelector("p"); 
+
+        element.classList.add("pk_selected"); 
         p.innerHTML = `${this.builder.lang.get("system.equipped")}: ${p.innerHTML}`; 
 
         document.querySelectorAll(".pk_deck:not(.pk_deck_dim)").forEach(e => e.classList.add("pk_deck_dim"));
-        classList.remove("pk_deck_dim"); 
+        element.classList.remove("pk_deck_dim"); 
     }
 
     /**
@@ -334,7 +336,7 @@ export default class GUI {
     PerkDeck_Unselect() {
         const [selected] = document.getElementsByClassName("pk_selected");
         if(selected) {
-            selected.firstElementChild.innerHTML = selected.firstElementChild.innerHTML.replace(`${this.builder.lang.get("system.equipped")}: `, ""); 
+            selected.querySelector("p").innerHTML = selected.querySelector("p").innerHTML.replace(`${this.builder.lang.get("system.equipped")}: `, ""); 
             selected.classList.remove("pk_selected"); 
             document.querySelectorAll(".pk_deck.pk_deck_dim").forEach(e => e.classList.remove("pk_deck_dim"));
         }
@@ -345,7 +347,7 @@ export default class GUI {
      * @param {string} perkdeckId ID of the perk deck that needs its description shown
      */
     PerkDeck_DisplayDescription(perkdeckId) {
-        const [desc] = document.getElementsByClassName("pk_description"); 
+        const desc = document.getElementsByClassName("#description_container, .pk_description"); 
         const pk = this.builder.lang.get(`perk_decks.${perkdeckId}`);
         
         desc.innerHTML = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
@@ -363,7 +365,7 @@ export default class GUI {
     PerkCard_DisplayDescription(card) {
         if (!card) return; 
 
-        const [desc] = document.getElementsByClassName("pk_description");
+        const desc = document.getElementsByClassName("#description_container, .pk_description"); 
         const pk = this.builder.dbs.get("perk_decks").get(card.parentElement.id);
         const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card) - 1]}`);
 
