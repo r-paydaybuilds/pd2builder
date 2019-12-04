@@ -70,10 +70,7 @@ document.onreadystatechange = async () => {
             const targetTab = e.getAttribute("id").replace("_button", "_page");
             if (builder.gui.Tab_IsOn(targetTab)) return;
 
-            if (targetTab === "tab_deployables_page") { 
-                //const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades"); 
-                //builder.gui.HandleJackOfAllTrades(jackOfAllTradesSkill); 
-            } else if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
+            if (targetTab === "tab_io_page") { // Display build string when changing to save/load tab 
                 document.getElementById("io_share_link").value = builder.io.GetEncodedBuild(); 
             }
 
@@ -87,7 +84,7 @@ document.onreadystatechange = async () => {
     for (const value of Builder.TREES) {
         document.getElementById(`sk_${value}_button`).addEventListener("click", event => {
             builder.gui.Tree_ChangeTo(event.target.id.replace("button", "container"));
-            builder.gui.Tree_ShowSelection(false);
+            if(builder.mobile) builder.gui.Tree_ShowSelection(false);
         }); 
     }
     
@@ -136,6 +133,8 @@ document.onreadystatechange = async () => {
             if (builder.sys.Skill_Add(id)) {
                 builder.gui.Skill_Add(e); 
 
+                if(id === "jack_of_all_trades") builder.gui.HandleJoat(); 
+
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
@@ -159,6 +158,8 @@ document.onreadystatechange = async () => {
             if (builder.sys.Skill_Remove(id)) { 
                 builder.gui.Skill_Remove(e); 
                 
+                if(id === "jack_of_all_trades") builder.gui.HandleJoat(); 
+
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
@@ -211,7 +212,7 @@ document.onreadystatechange = async () => {
                     double = false;
                     e.click();
                 }
-            }, 200);
+            }, 250);
         }, false);
 
         const start = ev => {
@@ -384,7 +385,7 @@ document.onreadystatechange = async () => {
 
     // Deployables icon buttons //
     for(const e of document.getElementsByClassName("dp_icon")) {
-        let holding, successHolding = false;
+        let double = false, successHolding = false, holding;
 
         e.addEventListener("click", ev => {
             clearTimeout(holding);
@@ -394,7 +395,11 @@ document.onreadystatechange = async () => {
             }
 
             const id = e.firstElementChild.id;
-            if (builder.exp.deployable === id || e.classList.contains("dp_locked")) return; 
+            if (builder.exp.deployable === id || e.classList.contains("dp_locked")) return;
+            if(builder.exp.deployableSecondary === id) {
+                builder.exp.deployableSecondary = null;
+                builder.gui.DeployableSecondary_Unselect();
+            }
             builder.exp.deployable = id;
             builder.gui.Deployable_Select(e);
 
@@ -410,8 +415,8 @@ document.onreadystatechange = async () => {
         e.addEventListener("contextmenu", ev => {
             ev.preventDefault(); 
             const jackOfAllTradesSkill = builder.exp.skills.get("jack_of_all_trades");
-            if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2 && builder.exp.deployable) {
-                const id = e.firstElementChild.id;
+            const id = e.firstElementChild.id;
+            if (jackOfAllTradesSkill && jackOfAllTradesSkill.state == 2 && builder.exp.deployable !== id) {
                 builder.exp.deployableSecondary = id;
                 builder.gui.Deployable_SelectSecondary(e);
 
@@ -432,13 +437,25 @@ document.onreadystatechange = async () => {
         );
 
         e.addEventListener("touchend", ev => {
+            ev.preventDefault();
             clearTimeout(holding);
             if(successHolding) {
-                ev.preventDefault();
                 successHolding = false;
                 return;
             }
-        });
+            if(double) {
+                double = false;
+                e.dispatchEvent(new MouseEvent("contextmenu"));
+                return;
+            }
+            double = true;  
+            setTimeout(() => { 
+                if(double) {
+                    double = false;
+                    e.click();
+                }
+            }, 250);
+        }, false);
 
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;

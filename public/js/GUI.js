@@ -644,6 +644,19 @@ export default class GUI {
     }
 
     /**
+     * Checks if primary deployable has selected instead of primary class and viceversa
+     */
+    HandleJoat() {
+        const query = document.querySelector(".dp_selected, .dp_primary");
+        if(!query) return;
+        if(query.classList.contains("dp_selected")) {
+            query.classList.replace("dp_selected", "dp_primary");
+        } else {
+            query.classList.replace("dp_primary", "dp_selected");
+        }
+    }
+
+    /**
      * The unlocks of the object containing the properties of the type above for it to be unlocked
      * @typedef {Object} Unlocked
      * @property {String} type The type of the unlocked object

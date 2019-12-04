@@ -244,6 +244,23 @@ div.footer a:hover {
   right: 0; 
 }
 
+#description_container::after {
+  content: ""; 
+  position: absolute; 
+
+  top: 5%; 
+  right: 5%; 
+
+  width: 5vh; 
+  height: 5vh; 
+
+  background: url("../img/cross.png") center center no-repeat; 
+  background-size: 75%; 
+
+  -webkit-filter: invert(100%);
+  filter: invert(100%); 
+}
+
 #description_container div {
   overscroll-behavior: contain; /* don't propagate to parent */ 
 }
@@ -814,7 +831,9 @@ div.footer a:hover {
 
 .arm_icon.arm_selected,
 .th_icon.th_selected, 
-.dp_icon.dp_selected {
+.dp_icon.dp_selected,
+.dp_icon.dp_primary,
+.dp_icon.dp_secondary {
   border: 3px solid rgb(240, 240, 240); 
 }
 
@@ -839,7 +858,9 @@ div.footer a:hover {
   transform: scale(1.15); 
 }
 
-.dp_icon.dp_selected > div {
+.dp_icon.dp_selected > div,
+.dp_icon.dp_primary > div,
+.dp_icon.dp_secondary > div {
   transform: scale(0.85); 
 }
 
