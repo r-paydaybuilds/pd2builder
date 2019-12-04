@@ -186,7 +186,7 @@ document.onreadystatechange = async () => {
             if (builder.sys.Skill_Add(id)) {
                 builder.gui.Skill_Add(e); 
 
-                if(id === "jack_of_all_trades") builder.gui.HandleJoat(); 
+                if(id === "jack_of_all_trades" && e.classList.contains("sk_selected_aced")) builder.gui.HandleJoat(); 
 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
@@ -211,7 +211,7 @@ document.onreadystatechange = async () => {
             if (builder.sys.Skill_Remove(id)) { 
                 builder.gui.Skill_Remove(e); 
                 
-                if(id === "jack_of_all_trades") builder.gui.HandleJoat(); 
+                if(id === "jack_of_all_trades" && !e.classList.contains("sk_selected_aced")) builder.gui.HandleJoat(); 
 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
