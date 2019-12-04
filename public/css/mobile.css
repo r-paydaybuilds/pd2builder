@@ -847,7 +847,6 @@ div.footer a:hover {
 .th_icon.th_selected > div::before, 
 .dp_icon.dp_selected > div::before {
   content: attr(data-equip);
-  font-size: 1em; /* UNTESTED !!!!!!! TODO */
 
   position: absolute; 
   top: 10%;
@@ -861,6 +860,21 @@ div.footer a:hover {
 .dp_icon.dp_secondary > div::before {
   content: attr(data-secondary);
 }
+
+.arm_icon.arm_selected > div::before {    
+  font-size: 1.5em; 
+}
+
+.th_icon.th_selected > div::before {
+  font-size: 1.2em; 
+}
+
+.dp_icon.dp_selected > div::before, 
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  font-size: 1.6em; 
+}
+
 
 
 /**********************************/
