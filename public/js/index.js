@@ -8,7 +8,7 @@ import Util from "./Util.js";
 const langs = ["en-us", "ru-ru"];
 let defaultLang = "en-us";
 
-const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent));
+const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003);
 
 document.onreadystatechange = async () => {
     let fetchLang, curLang;
@@ -60,12 +60,12 @@ document.onreadystatechange = async () => {
             if(!ev.target.closest("#sk_tree_buttons button, sk_tree_button_group")) builder.gui.Tree_ShowSelection(false);
         };
 
-        //Make the X do something
+        //Make the X of description do something
         document.querySelector("#description_card > a").addEventListener("click", () =>
             builder.gui.DescriptionCard_Show(false)
         );
         
-        //Slide to exit
+        //Slide to exit description
         {
             const desc = document.getElementById("description_card");
             let remaining = desc.clientWidth/3, startX = 0, deltaX = 0, currentTouch = null;
@@ -115,6 +115,24 @@ document.onreadystatechange = async () => {
         document.querySelector("#sk_tree_buttons button").addEventListener("click", () =>
             builder.gui.Tree_ShowSelection()
         );
+
+        document.getElementById("sk_prev_tree").addEventListener("click", ev => {
+            if(ev.target.classList.contains("hidden")) return;
+            const trees = [...document.querySelectorAll(".sk_tree_button_group > div")];
+            const index = trees.findIndex(el => 
+                el.classList.contains("sk_tree_button_active")
+            );
+            trees[index - 1].click();
+        });
+
+        document.getElementById("sk_next_tree").addEventListener("click", ev => {
+            if(ev.target.classList.contains("hidden")) return;
+            const trees = [...document.querySelectorAll(".sk_tree_button_group > div")];
+            const index = trees.findIndex(el => 
+                el.classList.contains("sk_tree_button_active")
+            );
+            trees[index + 1].click();
+        });
     }
 
     // Tab page navigation //

@@ -81,12 +81,6 @@ export default class GUI {
         const desc = document.querySelector("#description_container, .sk_description");
         desc.dataset.skill = "none";
         desc.innerHTML = "";
-
-        // Manage the buttons
-        if(this.builder.mobile) {
-            document.getElementById("sk_tree_buttons").dataset.tree = tree;
-            document.querySelector("#sk_tree_buttons button").textContent = this.builder.lang.get(`system.skills.${tree}.title`);
-        } 
         
         document.querySelectorAll(".sk_tree_button_active").forEach(e => {
             e.classList.remove("sk_tree_button_active");
@@ -104,7 +98,27 @@ export default class GUI {
         document.querySelectorAll(`#${treeId} > .sk_subtree`).forEach(e => {
             subtrees.push(e.dataset.name); 
         });
-        if (!this.builder.mobile) {
+
+        // Manage the buttons
+        if(this.builder.mobile) {
+            document.getElementById("sk_tree_buttons").dataset.tree = tree;
+            document.querySelector("#sk_tree_buttons button").textContent = this.builder.lang.get(`system.skills.${tree}.title`);
+
+            const trees = [...document.querySelectorAll(".sk_tree_button_group > div")];
+            const index = trees.findIndex(el => 
+                el.classList.contains("sk_tree_button_active")
+            );
+            if(index == 0) {
+                this.Tree_PrevOpacity(false);
+                this.Tree_NextOpacity();
+            } else if(index == trees.length - 1) {
+                this.Tree_NextOpacity(false);
+                this.Tree_PrevOpacity();
+            } else {
+                this.Tree_NextOpacity();
+                this.Tree_PrevOpacity();
+            }
+        } else {
             document.querySelector("#sk_subtree_name_left p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[0]}`);
             document.querySelector("#sk_subtree_name_center p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[1]}`);
             document.querySelector("#sk_subtree_name_right p").innerHTML = this.builder.lang.get(`system.skills.${tree}.subtrees.${subtrees[2]}`);
@@ -152,6 +166,34 @@ export default class GUI {
             classList.add("active");
         } else {
             classList.remove("active");
+        }
+    }
+
+    /**
+     * Change opacity of the next button
+     * @param {Boolean} opacity Show(true) or hide(false)
+     * @param {}
+     */
+    Tree_NextOpacity(opacity = true) {
+        const { classList } = document.getElementById("sk_next_tree");
+        if(opacity) {
+            classList.remove("hidden");
+        } else {
+            classList.add("hidden");
+        }
+    }
+
+    /**
+     * Change opacity of the previous button
+     * @param {Boolean} opacity Show(true) or hide(false)
+     * @param {}
+     */
+    Tree_PrevOpacity(opacity = true) {
+        const { classList } = document.getElementById("sk_prev_tree");
+        if(opacity) {
+            classList.remove("hidden");
+        } else {
+            classList.add("hidden");
         }
     }
 
