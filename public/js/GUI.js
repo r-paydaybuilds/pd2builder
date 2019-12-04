@@ -64,10 +64,10 @@ export default class GUI {
      */
     DescriptionCard_Show(open = true) {
         if (open) {
-            document.getElementById("description_container").classList.add("active"); 
+            document.getElementById("description_card").classList.add("active"); 
         }
         else {
-            document.getElementById("description_container").classList.remove("active"); 
+            document.getElementById("description_card").classList.remove("active"); 
         }        
     }
 
