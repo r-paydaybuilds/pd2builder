@@ -897,14 +897,30 @@ div.footer a:hover {
   transform: scale(0.85); 
 }
 
+.arm_icon.arm_selected > div::before {
+  position: absolute; 
+  top: 10%;
+  left: 10%;
+}
+
+.th_icon.th_selected > div::before {
+  position: absolute; 
+  top: 15%;
+  left: 15%;
+}
+
+.dp_icon.dp_selected > div::before,
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  position: absolute; 
+  top: 5%;
+  left: 5%;
+}
+
 .arm_icon.arm_selected > div::before,
 .th_icon.th_selected > div::before, 
 .dp_icon.dp_selected > div::before {
   content: attr(data-equip);
-  
-  position: absolute; 
-  top: 10%;
-  left: 10%;
 }
 
 .dp_icon.dp_primary > div::before {
