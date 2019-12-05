@@ -701,7 +701,7 @@ div.footer a:hover {
 
 .pk_deck {
   display: flex; 
-  flex-flow: row nowrap; 
+  flex-flow: column nowrap; 
   justify-content: flex-start;
   align-items: center; 
 
@@ -720,11 +720,10 @@ div.footer a:hover {
   border: 2px solid rgb(240, 240, 240); 
 }
 
-.pk_deck > p {
-  font-size: 1.5em; 
+.pk_deck p {
+  font-size: 1.4em; 
 
   width: 75%; 
-  
   flex: 0 1 auto; 
   
   margin: 0; 
@@ -736,34 +735,48 @@ div.footer a:hover {
 }
 
 .pk_preview {
-  position: relative; 
-
-  width: 50%; 
-  max-width: 92px; 
+  width: 100%; 
 
   display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: center; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
   align-items: center; 
 }
 
-.pk_preview > div {
+.pk_preview_card {
+  width: 100%; 
+  max-width: 92px; 
+}
+
+.pk_preview_card > div {
   position: relative; 
 
   width: 100%; 
-  height: 0; 
+  height: 0;
   padding-bottom: 100%; 
 
-  background: url("../img/perks/card.png") center center no-repeat; 
+  background: url("../img/perks/card.png") center center no-repeat;  
   background-size: 75%; 
 
   display: flex; 
   flex-flow: row nowrap; 
   justify-content: center; 
-  align-items: center; 
+  align-items: center;   
 }
 
-.pk_preview > div > div {
+.pk_preview_card > div > div {
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0); 
+
+  width: 100%; 
+  max-width: 48px;
+}
+
+.pk_preview_card > div > div::after {
+  content: ""; 
   position: absolute; 
 
   top: 50%; 
@@ -771,25 +784,40 @@ div.footer a:hover {
   transform: translate3d(-50%, -50%, 0); 
   
   width: 100%; 
-  max-width: 48px; 
-
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: center; 
-  align-items: center; 
-}
-
-.pk_preview > div > div::after {
-  content: ""; 
-
-  width: 100%; 
-  height: 0;
+  height: 0;  
   padding-bottom: 100%; 
 
   background: url("../img/perks/icons.png") no-repeat; 
   background-size: 500% 2200%; 
 }
 
+.pk_deck .pk_deck_cards {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center;   
+}
+
+.pk_deck .pk_deck_cards {
+  position: relative; 
+
+  width: 100%; 
+  max-width: 0; 
+}
+
+.pk_deck.pk_selected .pk_deck_cards > div {
+  max-width: 92px; 
+} 
+
+.pk_deck .pk_deck_cards > div::after {
+  width: 100%; 
+  height: 0;
+  padding-bottom: 100%; 
+
+  background: url("../img/perks/card.png") center center no-repeat; 
+  background-size: 75%; 
+}
+  
 
 /**********************************/
 /*         ARMOR-TH-DP CSS        */

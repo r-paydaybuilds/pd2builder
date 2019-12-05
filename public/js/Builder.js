@@ -108,8 +108,8 @@ export default class Builder {
             e.setAttribute("data-secondary", this.lang.get("system.secondary"));
         });
         for(const [key] of this.dbs.get("perk_decks")) {
-            document.querySelector(`#${key} > p`).textContent = this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase();
-            const query = document.querySelector(`#${key}.pk_selected > p`);
+            document.querySelector(`#${key} p`).textContent = this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase();
+            const query = document.querySelector(`#${key}.pk_selected p`);
             if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
         }
 
