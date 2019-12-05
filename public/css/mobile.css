@@ -575,10 +575,10 @@ div.footer a:hover {
   
   margin: 3px 0;
 
-  -webkit-transition: background-size 0.4s ease;
-  -moz-transition:    background-size 0.4s ease;
-  -o-transition:      background-size 0.4s ease;
-  transition:         background-size 0.4s ease;
+  -webkit-transition: background-size .4s ease;
+  -moz-transition:    background-size .4s ease;
+  -o-transition:      background-size .4s ease;
+  transition:         background-size .4s ease;
 }
 
 .sk_tier {
@@ -748,7 +748,8 @@ div.footer a:hover {
   opacity: 0.6;  
 }
 
-.pk_preview {
+.pk_preview,
+.pk_deck_cards {
   width: 100%; 
 
   display: flex; 
@@ -760,6 +761,15 @@ div.footer a:hover {
 .pk_preview_card {
   width: 100%; 
   max-width: 92px; 
+  
+  -webkit-transition: max-width .4s ease;
+  -moz-transition:    max-width .4s ease;
+  -o-transition:      max-width .4s ease;
+  transition:         max-width .4s ease;
+}
+
+.pk_selected .pk_preview_card {
+  max-width: 69px; 
 }
 
 .pk_preview_card > div {
@@ -787,6 +797,15 @@ div.footer a:hover {
 
   width: 100%; 
   max-width: 48px;
+
+  -webkit-transition: max-width .4s ease;
+  -moz-transition:    max-width .4s ease;
+  -o-transition:      max-width .4s ease;
+  transition:         max-width .4s ease;
+}
+
+.pk_selected .pk_preview_card > div > div {
+  max-width: 36px;
 }
 
 .pk_preview_card > div > div::after {
@@ -805,30 +824,25 @@ div.footer a:hover {
   background-size: 500% 2200%; 
 }
 
-.pk_deck .pk_deck_cards {
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: center; 
-  align-items: center;   
-}
-
-.pk_deck .pk_deck_cards {
-  position: relative; 
-
+.pk_deck_cards > div {
+  position: relative;
+  
   width: 100%; 
   max-width: 0; 
 }
 
-.pk_deck.pk_selected .pk_deck_cards > div {
+.pk_selected .pk_deck_cards > div {
   max-width: 92px; 
 } 
 
 .pk_deck .pk_deck_cards > div::after {
+  content: ""; 
+
   width: 100%; 
   height: 0;
   padding-bottom: 100%; 
-
-  background: url("../img/perks/card.png") center center no-repeat; 
+  
+  background: url("../img/perks/icons.png") center center no-repeat; 
   background-size: 75%; 
 }
   
