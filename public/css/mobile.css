@@ -748,8 +748,7 @@ div.footer a:hover {
   opacity: 0.6;  
 }
 
-.pk_preview,
-.pk_deck_cards {
+.pk_preview {
   width: 100%; 
 
   display: flex; 
@@ -769,7 +768,7 @@ div.footer a:hover {
 }
 
 .pk_selected .pk_preview_card {
-  max-width: 69px; 
+  max-width: 0; 
 }
 
 .pk_preview_card > div {
@@ -805,7 +804,7 @@ div.footer a:hover {
 }
 
 .pk_selected .pk_preview_card > div > div {
-  max-width: 36px;
+  max-width: 0;
 }
 
 .pk_preview_card > div > div::after {
@@ -824,27 +823,91 @@ div.footer a:hover {
   background-size: 500% 2200%; 
 }
 
-.pk_deck_cards > div {
+.pk_deck_cards_ring {
   position: relative;
-  
-  width: 100%; 
-  max-width: 0; 
-}
-
-.pk_selected .pk_deck_cards > div {
-  max-width: 92px; 
-} 
-
-.pk_deck .pk_deck_cards > div::after {
-  content: ""; 
 
   width: 100%; 
-  height: 0;
-  padding-bottom: 100%; 
   
-  background: url("../img/perks/icons.png") center center no-repeat; 
-  background-size: 75%; 
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
+  align-items: center; 
 }
+
+.pk_deck_cards_ring .fadeLeft, 
+.pk_deck_cards_ring .fadeRight {
+  position: absolute; 
+  z-index: 1000; 
+  
+  pointer-events: none;
+
+  width: 50%; 
+  height: 100%; 
+
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.pk_deck_cards_ring .fadeLeft {
+  left: 0; 
+
+  background: -moz-linear-gradient(left, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 25%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.pk_deck_cards_ring .fadeRight  {
+  right: 0; 
+
+  background: -moz-linear-gradient(right, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 25%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.pk_deck_cards {
+  width: 100%; 
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: left;
+  align-items: center; 
+}
+
+.pk_deck_cards::-webkit-scrollbar {
+  display: none; 
+}
+
+.pk_deck_cards .spacer {
+  flex: 1 0 50px; 
+}
+
+.pk_deck_cards > div:not(.spacer) {
+  position: relative;
+
+  width: 0; 
+  height: 0; 
+
+  flex: 0 0 auto; 
+
+  -webkit-transition: width .4s ease, height .4s ease;
+  -moz-transition:    width .4s ease, height .4s ease;
+  -o-transition:      width .4s ease, height .4s ease;
+  transition:         width .4s ease, height .4s ease;
+}
+
+.pk_selected .pk_deck_cards > div:not(.spacer) {
+  width: 64px; 
+  height: 92px; 
+
+  background: url("../img/perks/card.png") 0 0 no-repeat;  
+}
+
+
+
+
   
 
 /**********************************/
