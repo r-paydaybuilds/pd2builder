@@ -432,6 +432,20 @@ div.footer a:hover {
   transition:         color 0.3s ease, background-color 0.3s ease;
 }
 
+.sk_tree_easy {
+  padding: 10px 10px;
+  color: rgb(40, 90, 130); 
+}
+
+.sk_tree_easy:not(.hidden):hover,
+.sk_tree_easy:not(.hidden):active {
+  color: rgb(215, 220, 225); 
+}
+
+.sk_tree_easy.hidden {
+  opacity: 0.2
+}
+
 #sk_tree_buttons button:focus,
 #sk_tree_buttons button:hover {
   background: rgb(215, 220, 225); 
