@@ -65,8 +65,7 @@ document.onreadystatechange = async () => {
             builder.gui.DescriptionCard_Show(false)
         );
         
-        //Slide to exit description
-        {
+        { //Slide to exit description
             const desc = document.getElementById("description_card");
             let remaining = desc.clientWidth/3, startX = 0, deltaX = 0, currentTouch = null;
             document.addEventListener("resize", () => remaining = desc.clientWidth/3);
@@ -116,6 +115,7 @@ document.onreadystatechange = async () => {
             builder.gui.Tree_ShowSelection()
         );
 
+        //Previous and Next button for easy use
         document.getElementById("sk_prev_tree").addEventListener("click", ev => {
             if(ev.target.classList.contains("hidden")) return;
             const trees = [...document.querySelectorAll(".sk_tree_button_group > div")];
@@ -184,8 +184,10 @@ document.onreadystatechange = async () => {
 
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
+        // Values for touch: double and successHolding being booleans and holding an ID for timeouts
         let double = false, successHolding = false, holding;
 
+        // On click event, add skill
         e.addEventListener("click", ev => {
             clearTimeout(holding);
             if(successHolding) {
@@ -222,6 +224,7 @@ document.onreadystatechange = async () => {
             }
         });
 
+        // When right click, remove skill
         e.addEventListener("contextmenu", ev => {
             ev.preventDefault(); 
             const id = e.firstElementChild.id; 
@@ -252,6 +255,7 @@ document.onreadystatechange = async () => {
             }
         });
 
+        //not mobile? mouse enter to the icon shows the description of such
         if(!builder.mobile) e.addEventListener("mouseenter", () => {
             const id = e.firstElementChild.id; 
             
@@ -260,6 +264,7 @@ document.onreadystatechange = async () => {
             }
         });
 
+        // when you stop touching the screen, check for holding and double tap
         e.addEventListener("touchend", ev => {
             ev.preventDefault();
             clearTimeout(holding);
@@ -286,6 +291,7 @@ document.onreadystatechange = async () => {
             }, 250);
         }, false);
 
+        // Start timeout for holding and holding mouse for mobile too
         const start = ev => {
             if(ev instanceof MouseEvent && ev.button != 0) return;
             holding = setTimeout(() => {
@@ -304,6 +310,7 @@ document.onreadystatechange = async () => {
 
     // Perk deck buttons //
     for(const e of document.getElementsByClassName("pk_deck")) {
+        // Values for successHolding being a boolean and holding an ID for timeouts
         let successHolding = false, holding;
         e.addEventListener("click", ev => {
             clearTimeout(holding);
