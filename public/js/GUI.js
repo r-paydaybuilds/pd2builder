@@ -389,7 +389,7 @@ export default class GUI {
      * @param {string} perkdeckId ID of the perk deck that needs its description shown
      */
     PerkDeck_DisplayDescription(perkdeckId) {
-        const desc = document.getElementsByClassName("#description_container, .pk_description"); 
+        const desc = document.querySelector("#description_container, .pk_description"); 
         const pk = this.builder.lang.get(`perk_decks.${perkdeckId}`);
         
         desc.innerHTML = `<p class="description_title">${pk.name.toUpperCase()}</p><p>${
@@ -407,9 +407,13 @@ export default class GUI {
     PerkCard_DisplayDescription(card) {
         if (!card) return; 
 
-        const desc = document.getElementsByClassName("#description_container, .pk_description"); 
-        const pk = this.builder.dbs.get("perk_decks").get(card.parentElement.id);
-        const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card) - 1]}`);
+        const desc = document.querySelector("#description_container, .pk_description"); 
+        const pk = this.builder.dbs.get("perk_decks").get(
+            util.parentElement(card, this.builder.mobile ? 3 : 1).id
+        );
+        const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
+            e instanceof Element && e.tagName === "DIV"
+        )]}`);
 
         let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
         

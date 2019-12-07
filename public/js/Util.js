@@ -54,6 +54,7 @@ class Util {
      * @param {String} type type of thing
      * @param {String} name name of thing
      * @param {Language} lang language instance
+     * @returns {String}
      */
     static resolveRequire(type, name, lang) {
         return lang.get("system.requires." + type)({ rep: { name: name }});
@@ -86,11 +87,39 @@ class Util {
     }
 
     /**
-     * Gives you the index of the node related to it's sibilings
-     * @param {Node} e 
+     * Used for filtering nodes
+     * @callback filterCallback
+     * @param {Node} value 
+     * @param {Number} index 
+     * @param {Node[]} array
+     * @param {Object} thisArg
      */
-    static getNodeIndex(e) {
-        return [...e.parentNode.children].indexOf(e);
+
+    /**
+     * Gives you the index of the node related to it's sibilings
+     * @static
+     * @param {Node} e 
+     * @param {filterCallback} 
+     * @returns {Number}
+     */
+    static getNodeIndex(e, filter = () => true) {
+        return [...e.parentNode.children].filter(filter).indexOf(e);
+    }
+
+
+    /**
+     * Get parent element of rec times. Like parentElement(e, 2) = e.parentElement.parentElement
+     * @static
+     * @param {Element} e 
+     * @param {Number=} rec 
+     * @returns {Element}
+     */
+    static parentElement(e, rec = 1) {
+        let parent = e;
+        for(let i = 0; i < rec; i++) {
+            parent = parent.parentElement;
+        }
+        return parent;
     }
 }
 

@@ -304,7 +304,14 @@ document.onreadystatechange = async () => {
 
     // Perk deck buttons //
     for(const e of document.getElementsByClassName("pk_deck")) {
+        let successHolding = false, holding;
         e.addEventListener("click", ev => {
+            clearTimeout(holding);
+            if(successHolding) {
+                successHolding = false;
+                return;
+            }
+
             const id = e.id; 
             const pastId = builder.exp.perkDeck;
             if (builder.exp.perkDeck === id) return; 
@@ -333,19 +340,79 @@ document.onreadystatechange = async () => {
                 builder.gui.PerkDeck_DisplayDescription(id); 
             }
         });
+
+        e.addEventListener("touchend", ev => {
+            clearTimeout(holding);
+            if(successHolding) {
+                ev.preventDefault();
+                successHolding = false;
+                return;
+            }
+        });
+
+        const start = ev => {
+            if(ev instanceof MouseEvent && ev.button != 0) return;
+            holding = setTimeout(() => {
+                ev.preventDefault();
+                successHolding = true;
+
+                let id = e.firstElementChild.id; 
+                if(builder.mobile) {
+                    builder.gui.DescriptionCard_Show();
+                    id = e.id;
+                }
+                builder.gui.PerkDeck_DisplayDescription(id); 
+            }, 750);
+        };
+        if(builder.mobile) e.addEventListener("mousedown", start);
+        e.addEventListener("touchstart", start);
     } 
 
     // Perk deck cards highlight // 
-    document.querySelectorAll(".pk_deck > div").forEach(e => {
-        e.addEventListener("mouseenter", () => {
-            builder.gui.PerkCard_HoveringHighlightOn(e); 
-            builder.gui.PerkCard_DisplayDescription(e); 
-        });
+    if(builder.mobile) {
+        document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
+            let successHolding = false, holding;
+    
+            const start = ev => {
+                if(ev instanceof MouseEvent && ev.button != 0) return;
+                holding = setTimeout(() => {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    successHolding = true;
+    
+                    builder.gui.DescriptionCard_Show();
+                    builder.gui.PerkCard_DisplayDescription(e); 
+                }, 750);
+            };
+            const end = ev => {
+                if(ev instanceof MouseEvent && ev.button != 0) return;
+                clearTimeout(holding);
+                if(successHolding) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    successHolding = false;
+                    return;
+                }
+            };
 
-        e.addEventListener("mouseleave", () => {
-            builder.gui.PerkCard_HoveringHighlightOff(); 
+            e.addEventListener("mousedown", start);
+            e.addEventListener("touchstart", start);
+
+            e.addEventListener("mouseup", end);
+            e.addEventListener("touchend", end);
         });
-    });
+    } else {
+        document.querySelectorAll(".pk_deck > div").forEach(e => {
+            e.addEventListener("mouseenter", () => {
+                builder.gui.PerkCard_HoveringHighlightOn(e); 
+                builder.gui.PerkCard_DisplayDescription(e); 
+            });
+
+            e.addEventListener("mouseleave", () => {
+                builder.gui.PerkCard_HoveringHighlightOff(); 
+            });
+        });
+    }
 
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
