@@ -433,13 +433,40 @@ div.footer a:hover {
 }
 
 .sk_tree_easy {
-  padding: 10px 10px;
-  color: rgb(40, 90, 130); 
+  flex-grow: 1; 
+  height: 100%;
+  padding-top: 5px; 
+
+  background: url("../img/dropdown-arrow.png") 50% / 30% no-repeat;  
+  filter: invert(26%) sepia(82%) saturate(374%) hue-rotate(162deg) brightness(104%) contrast(96%); 
+  /* filter: black -> rgb(40, 90, 130) */
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: baseline; 
+  align-items: baseline; 
+}
+
+#sk_prev_tree {
+  transform: rotate(90deg); 
+}
+
+#sk_next_tree {
+  transform: rotate(-90deg); 
+}
+
+#sk_prev_tree::after, 
+#sk_next_tree::after {
+  content: ""; 
+
+  width: 100%; 
+  padding-bottom: 50%; 
 }
 
 .sk_tree_easy:not(.hidden):hover,
 .sk_tree_easy:not(.hidden):active {
-  color: rgb(215, 220, 225); 
+  filter: invert(91%) sepia(8%) saturate(156%) hue-rotate(169deg) brightness(102%) contrast(82%);
+  /* filter: black -> rgb(215, 220, 225) */
 }
 
 .sk_tree_easy.hidden {
