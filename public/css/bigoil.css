@@ -2,78 +2,140 @@
 /*         CALCULATOR CSS         */
 /**********************************/
 
-body {
-  background: rgb(11, 11, 21) url("../img/bg.png"); 
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
-  color: rgb(140, 140, 140); 
-}
-
-body > div {
-  font-family: "DINEngschrift"; 
-  font-size: 5.4vmin; 
-
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  text-align: center;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 15px;
-}
-
-@media screen and (max-width: 992px) {
-  body > div {
-    font-family: "DINEngschrift"; 
-    font-size: 4.8vmin; 
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body > div {
-    font-family: "DINEngschrift"; 
-    font-size: 4.4vmin; 
-  }
-}
-
-@media screen and (max-width: 576px) {
-  body > div {
-    font-family: "DINEngschrift"; 
-    font-size: 3.3vmax; 
-  }
-}
-
 span.special_char {
-  font-family: 'Courier New', Courier, monospace; /* suggest a default font for characters or find the full pd2 set */
+  font-family: "Noto Sans", sans-serif; 
+}
+
+#selector {
+  padding: 2vh 3vw; 
+
+  color: rgb(140, 140, 140); 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 #selector > div {
-  flex-grow: 1;
-  padding-right: 15px;
+  width: 100%; 
+}
+
+#selector > div:first-of-type {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+
+  margin-bottom: 2vh; 
+}
+
+#selector > div:last-of-type {
+  flex: 1 1 100%; 
+}
+
+#element, 
+#hydrogen,
+#pressure {
+  width: 100%; 
+}
+
+#element, 
+#hydrogen {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 #element {
-  padding-left: 15px;
+  margin-right: 3vw; 
 }
 
 #pressure {
-  padding-left: 15px;
-  margin-top: 15px;
-  display: flex;
-  flex-basis: 100%;
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#element > div,
+#hydrogen > div, 
+#pressure > div {
+  font-size: 1.5em; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+
+  -webkit-transition: border-color .2s, color .2s ease;
+  -moz-transition:    border-color .2s, color .2s ease;
+  -o-transition:      border-color .2s, color .2s ease;
+  transition:         border-color .2s, color .2s ease;
+}
+
+#element > div,
+#pressure > div {
+  width: 100%; 
+} 
+
+#hydrogen > div {
+  width: 80%; 
 }
 
 #pressure > div {
-  flex-grow: 1;
+  border: 3px solid rgb(0, 85, 5);   
 }
 
-#selector > div > div {
-  margin: 3px;
-  border: 3px solid rgb(140, 140, 140);
+#pressure > div.selected {
+  border: 3px solid rgb(0, 190, 10); 
 }
 
-#selector > div > div.selected {
-  border: 3px solid rgb(240, 240, 240);
+#element > div:not(:last-of-type), 
+#hydrogen > div:not(:last-of-type) {
+  margin-bottom: 5px; 
+}
+
+#pressure > div:not(:last-of-type) {
+  margin-right: 2vw; 
+}
+
+#selector div.selected {
   color: rgb(240, 240, 240); 
+}
+
+#noelement,
+#hydrogen > div {
+  border: 3px solid rgb(140, 140, 140); 
+}
+
+#noelement.selected,
+#hydrogen > div.selected {
+  border: 3px solid rgb(240, 240, 240); 
+}
+
+#nitrogen {
+  border: 3px solid rgb(105, 80, 0);
+}
+
+#nitrogen.selected {
+  border-color: rgb(200, 170, 35);
+}
+
+#deuterium {
+  border: 3px solid rgb(0, 60, 110);
+}
+
+#deuterium.selected {
+  border-color: rgb(30, 125, 185);
+}
+
+#helium {
+  border: 3px solid rgb(80, 100, 80); 
+}
+
+#helium.selected {
+  border-color: rgb(75, 190, 95);
 }
 
 .result > div {
