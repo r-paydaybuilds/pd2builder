@@ -61,7 +61,8 @@ div.navbar {
   flex-flow: row nowrap; 
   justify-content: space-between; 
   align-items: center;
-  flex: 1 1 auto; 
+
+  max-height: 80px; 
 
   font-family: "Noto Sans", sans-serif; 
 
@@ -70,7 +71,7 @@ div.navbar {
 }
 
 div.navbar a {
-  font-size: 1.2em; 
+  font-size: 1.1em; 
   line-height: 2em; 
   text-decoration: none; 
   background-color: transparent; 
@@ -164,7 +165,7 @@ div.navbar .navbar-dropdown > div {
 }
 
 div.navbar .navbar-dropdown a {
-  font-size: 1em; 
+  font-size: 0.8em; 
 }
 
 div.navbar .navbar-dropdown a:not(.current) {

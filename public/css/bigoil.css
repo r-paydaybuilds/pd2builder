@@ -68,27 +68,29 @@ span.special_char {
   justify-content: center; 
   align-items: baseline; 
 
-  -webkit-transition: border-color .2s, color .2s ease;
-  -moz-transition:    border-color .2s, color .2s ease;
-  -o-transition:      border-color .2s, color .2s ease;
-  transition:         border-color .2s, color .2s ease;
+  -webkit-transition: border-color .2s, color .2s ease, background-color .2s, color .2s ease;
+  -moz-transition:    border-color .2s, color .2s ease, background-color .2s, color .2s ease;
+  -o-transition:      border-color .2s, color .2s ease, background-color .2s, color .2s ease;
+  transition:         border-color .2s, color .2s ease, background-color .2s, color .2s ease;
 }
 
 #element > div,
-#pressure > div {
-  width: 100%; 
-} 
-
 #hydrogen > div {
   width: 80%; 
 }
 
 #pressure > div {
+  width: 100%; 
+} 
+
+#pressure > div {
   border: 3px solid rgb(0, 85, 5);   
+  background-color: rgba(0, 0, 0, 0);   
 }
 
 #pressure > div.selected {
   border: 3px solid rgb(0, 190, 10); 
+  background-color: rgba(0, 190, 10, 0.1); 
 }
 
 #element > div:not(:last-of-type), 
@@ -107,51 +109,84 @@ span.special_char {
 #noelement,
 #hydrogen > div {
   border: 3px solid rgb(140, 140, 140); 
+  background-color: rgba(0, 0, 0, 0); 
 }
 
 #noelement.selected,
 #hydrogen > div.selected {
   border: 3px solid rgb(240, 240, 240); 
+  background-color: rgba(240, 240, 240, 0.1); 
 }
 
 #nitrogen {
   border: 3px solid rgb(105, 80, 0);
+  background-color: rgba(0, 0, 0, 0); 
 }
 
 #nitrogen.selected {
   border-color: rgb(200, 170, 35);
+  background-color: rgba(200, 170, 35, 0.1); 
 }
 
 #deuterium {
   border: 3px solid rgb(0, 60, 110);
+  background-color: rgba(0, 0, 0, 0); 
 }
 
 #deuterium.selected {
   border-color: rgb(30, 125, 185);
+  background-color: rgba(30, 125, 185, 0.1); 
 }
 
 #helium {
   border: 3px solid rgb(80, 100, 80); 
+  background-color: rgba(0, 0, 0, 0); 
 }
 
 #helium.selected {
   border-color: rgb(75, 190, 95);
+  background-color: rgba(75, 190, 95, 0.1);
 }
 
-.result > div {
-  flex: 1;
+
+#result,
+#result > div {
   display: flex;
-  flex-flow: wrap;
+  justify-content: center; 
+  align-items: center; 
+}
+
+#result {
+  flex-flow: row nowrap;
+
+  font-size: 1.5em; 
+
+  margin: 2vh 3vw; 
+  padding: 20px; 
+}
+
+.engine_room {
+  flex-flow: row wrap;
+  flex-basis: 40%; 
 }
 
 #room_stairs {
-  flex: 0.5;
+  flex-flow: column nowrap; 
+  flex-basis: 20%; 
+  align-self: stretch; 
+  
   background: repeating-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 5px, transparent 5px, transparent 20px);
 }
 
 .engine {
   flex-basis: 50%;
-  color: #333;
+
+  color: rgba(80, 80, 80, 0.5);
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 .engine.active {
