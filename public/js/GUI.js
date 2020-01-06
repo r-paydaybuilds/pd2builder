@@ -172,7 +172,6 @@ export default class GUI {
     /**
      * Change opacity of the next button
      * @param {Boolean} opacity Show(true) or hide(false)
-     * @param {}
      */
     Tree_NextOpacity(opacity = true) {
         const { classList } = document.getElementById("sk_next_tree");
@@ -186,7 +185,6 @@ export default class GUI {
     /**
      * Change opacity of the previous button
      * @param {Boolean} opacity Show(true) or hide(false)
-     * @param {}
      */
     Tree_PrevOpacity(opacity = true) {
         const { classList } = document.getElementById("sk_prev_tree");

@@ -380,7 +380,7 @@
         },
         "the_perfect_line": {
             "name": "The Perfect Line",
-            "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\t;Armor recovery speed is reset whenever your armor recovers.",
+            "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\tArmor recovery speed is reset whenever your armor recovers.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "excitement": {
@@ -775,7 +775,7 @@
         },
         "transporter": {
             "name": "Transporter",
-            "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penaly is reduced by 1%."
+            "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penalty is reduced by 1%."
         },
         "shock_and_awe": {
             "name": "Shock and Awe",

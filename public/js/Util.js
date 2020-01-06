@@ -57,7 +57,7 @@ class Util {
      * @returns {String}
      */
     static resolveRequire(type, name, lang) {
-        return lang.get("system.requires." + type)({ rep: { name: name }});
+        return lang.get("system.requires." + type)({ rep: { name }});
     }
 
     /**
@@ -191,15 +191,62 @@ class SkillMap extends Map {
 class DBMap extends Map {
     fetchAll() {
         const array = [];
-        const self = this;
         for(const [key] of this) {
             array.push(
                 fetch(`./db/${key}.json`)
                     .then( res => res.json() )
-                    .then( json => self.set(key, new Map(Object.entries(json))) )
+                    .then( json => {
+                        if(key === "skills" || key === "perk_cards") {
+                            for(const prop in json) {
+                                if(!json[prop].stats) continue;
+                                if(key === "skills") {
+                                    if(json[prop].stats.basic) DBMap.processModifiers(...json[prop].stats.basic);
+                                    if(json[prop].stats.ace) DBMap.processModifiers(...json[prop].stats.ace);
+                                } else {
+                                    DBMap.processModifiers(...json[prop].stats);
+                                }
+                            }
+                        }
+                        this.set(key, new Map(Object.entries(json)));
+                    })
             );
         }
         return Promise.all(array);
+    }
+
+    /**
+     * The unlocks of the object containing the properties of the type above for it to be unlocked
+     * @typedef {Object} StatModifier
+     * @property {String} type The stat that is being modified
+     * @property {String|Number} value Value to apply if is number. Value to make a function out of if it's an string (needs to return a number)
+     * @property {Boolean=} multiply Flag to check if you want to multiply the value
+     * @property {String[]=} arguments Arguments that are stat names to apply to function if value is String
+     * @property {String[]=} whitelist Armors that are in the whitelist
+     * @property {String[]=} blacklist Armors that are in the blacklist
+     */
+
+    /**
+     * Makes functions out of the stat modifier info
+     * @param  {...StatModifier} mods 
+     */
+    static processModifiers(...mods) {
+        for(const mod of mods) {
+            if(!mod) continue;
+            if(typeof mod.value === "number") {
+                if(mod.multiply) {
+                    mod.exec = x => x * mod.value;
+                } else {
+                    mod.exec = x => x + mod.value;
+                }
+            } else {
+                const func = Function.apply(this, [...mod.arguments, `return ${mod.value}`]);
+                if(mod.multiply) {
+                    mod.exec = (x, ...args) => x * func.apply(this, args);
+                } else {
+                    mod.exec = (x, ...args) => x + func.apply(this, args);
+                }
+            }
+        }
     }
 }
 
