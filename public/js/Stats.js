@@ -22,12 +22,10 @@ export default class Stats {
         let base = this.getBaseStat(key);
         const mods = this.modifiers.filter(e => {
             let bool = e.type === key;
-            console.log(bool);
             if(e.whitelist) bool = bool && e.whitelist.includes(this.builder.exp.armor);
             if(e.blacklist) bool = bool && !e.blacklist.includes(this.builder.exp.armor);
             return bool;
         });
-        console.log(mods);
         for(const mod of mods) {
             const args = mod.arguments ? this.getMultiple(...mod.arguments) : [];
             base = mod.exec(base, ...args);
