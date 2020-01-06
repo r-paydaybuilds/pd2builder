@@ -436,6 +436,7 @@ document.onreadystatechange = async () => {
             if (builder.exp.armor === id || e.classList.contains("arm_locked")) return;
 
             builder.exp.armor = id;
+            builder.stats.setBaseStats(builder.dbs.get("armors").get(id).stats);
             builder.gui.Armor_Select(e); 
             builder.gui.Armor_DisplayDescriptionCard(id);
 

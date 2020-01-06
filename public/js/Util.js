@@ -99,7 +99,7 @@ class Util {
      * Gives you the index of the node related to it's sibilings
      * @static
      * @param {Node} e 
-     * @param {filterCallback} 
+     * @param {filterCallback} filter
      * @returns {Number}
      */
     static getNodeIndex(e, filter = () => true) {
@@ -186,7 +186,8 @@ class SkillMap extends Map {
 
 /**
  * Map for storing all DBs
- * @extends {Map}
+ * @extends {Map<String,Map<String,Object>>}
+ * 
  */
 class DBMap extends Map {
     fetchAll() {
@@ -239,11 +240,11 @@ class DBMap extends Map {
                     mod.exec = x => x + mod.value;
                 }
             } else {
-                const func = Function.apply(this, [...mod.arguments, `return ${mod.value}`]);
+                const func = Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
                 if(mod.multiply) {
-                    mod.exec = (x, ...args) => x * func.apply(this, args);
+                    mod.exec = (x, ...args) => x * func.apply({}, args);
                 } else {
-                    mod.exec = (x, ...args) => x + func.apply(this, args);
+                    mod.exec = (x, ...args) => x + func.apply({}, args);
                 }
             }
         }

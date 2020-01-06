@@ -2,6 +2,7 @@ import { SkillMap, System, DBMap } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
+import Stats from "./Stats.js";
 
 /**
  * Singleton class containing million of things (gangs of four accepts this)
@@ -37,6 +38,12 @@ export default class Builder {
             deployable: null, 
             deployableSecondary: null
         };
+
+        /**
+         * The stats manager
+         * @type {Stats}
+         */
+        this.stats = new Stats(this);
         
         /**
          * The System that manages the Skills
@@ -71,7 +78,7 @@ export default class Builder {
         
         /**
          * The promise of the fetching of all databases
-         * @type {Promise<Array>}
+         * @type {Promise<Object[]>}
          */
         this.fetchPromises = this.dbs.fetchAll();
 
