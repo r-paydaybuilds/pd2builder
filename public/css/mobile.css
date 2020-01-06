@@ -226,6 +226,15 @@ div.footer a:hover {
 /*            SKILL CSS           */
 /**********************************/
 
+.sk_points_remaining {
+  display: flex;
+  justify-content: center;
+}
+
+.sk_points_remaining > p {
+  margin-top: 0;
+  margin-bottom: 1%;
+}
 
 #sk_tree_buttons {
   position: relative;

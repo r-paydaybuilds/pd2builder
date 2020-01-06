@@ -10,6 +10,18 @@ let defaultLang = "en-us";
 
 const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003);
 
+//Change to mobile version if browser was resized to a very small size
+window.addEventListener("resize", () => {
+    const url = new URL(window.location.href);
+    if(!builder.mobile && window.innerWidth < 1003) {
+        url.pathname += "mobile.html";
+        window.location.replace(url);
+    } else if(builder.mobile && window.innerWidth >= 1003) {
+        url.pathname = url.pathname.replace("mobile.html", "");
+        window.location.replace(url);
+    }
+});
+
 document.onreadystatechange = async () => {
     let fetchLang, curLang;
     //
