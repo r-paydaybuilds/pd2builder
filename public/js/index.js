@@ -224,7 +224,7 @@ document.onreadystatechange = async () => {
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
                 builder.gui.Subtree_MoveBackground(s.subtree, builder.exp.subtrees[s.subtree].points);
 
-                if(ev.isTrusted) {
+                if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `added skill ${id}`,
@@ -255,7 +255,7 @@ document.onreadystatechange = async () => {
                     unlocks: s.unlocks
                 });
 
-                if(ev.isTrusted) {
+                if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `removed skill ${id}`,
@@ -287,7 +287,7 @@ document.onreadystatechange = async () => {
             if(double) {
                 const skill = builder.exp.skills.get(e.firstElementChild.id);
                 if(skill) {
-                    Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu")));
+                    Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })));
                 } else {
                     [0,1].forEach(() => e.click());
                 }
@@ -298,7 +298,7 @@ document.onreadystatechange = async () => {
             setTimeout(() => { 
                 if(double) {
                     double = false;
-                    e.click();
+                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
                 }
             }, 250);
         }, false);
@@ -561,7 +561,7 @@ document.onreadystatechange = async () => {
             builder.exp.deployable = id;
             builder.gui.Deployable_Select(e);
 
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
@@ -578,7 +578,7 @@ document.onreadystatechange = async () => {
                 builder.exp.deployableSecondary = id;
                 builder.gui.Deployable_SelectSecondary(e);
 
-                if(ev.isTrusted) {
+                if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
                         Util.makeState(builder.lang.used, builder.exp),
                         `used perk ${id}`,
@@ -586,7 +586,7 @@ document.onreadystatechange = async () => {
                     );
                 }
             } else {
-                e.click();
+                e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
             } 
             
         });
@@ -603,14 +603,14 @@ document.onreadystatechange = async () => {
             }
             if(double) {
                 double = false;
-                e.dispatchEvent(new MouseEvent("contextmenu"));
+                e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 }));
                 return;
             }
             double = true;  
             setTimeout(() => { 
                 if(double) {
                     double = false;
-                    e.click();
+                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
                 }
             }, 250);
         }, false);
