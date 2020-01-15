@@ -63,12 +63,23 @@ export default class GUI {
      * @param {Boolean} open Should the card open or close? true = open | false = close 
      */
     DescriptionCard_Show(open = true) {
+        const descriptionCard = document.getElementById("description_card");
+        descriptionCard.style.right = null;
         if (open) {
-            document.getElementById("description_card").classList.add("active"); 
+            descriptionCard.classList.add("active"); 
         }
         else {
-            document.getElementById("description_card").classList.remove("active"); 
+            descriptionCard.classList.remove("active"); 
         }        
+    }
+
+    /**
+     * Change how much description card is shown on mobile
+     * @param {Number} open
+     */
+    DescriptionCard_Analog(open) {
+        const descriptionCard = document.getElementById("description_card");
+        descriptionCard.style.right = `${open}px`;
     }
 
     /**

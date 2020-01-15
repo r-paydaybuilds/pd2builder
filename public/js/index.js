@@ -79,25 +79,24 @@ document.onreadystatechange = async () => {
         
         { //Slide to exit description
             const desc = document.getElementById("description_card");
-            let remaining = desc.clientWidth/3, startX = 0, deltaX = 0, currentTouch = null;
-            document.addEventListener("resize", () => remaining = desc.clientWidth/3);
+            let remaining = 0, startX = 0, currentTouch = null;
 
             desc.addEventListener("touchstart", ev => {
                 if(currentTouch !== null) return;
                 const touch = ev.touches.item(0);
                 currentTouch = touch.identifier;
 
-                startX = touch.pageX;
+                startX = touch.clientX;
             });
 
             desc.addEventListener("touchmove", ev => {
+                ev.preventDefault();
                 if(currentTouch === null) return;
                 for(const touch of ev.changedTouches) {
-                    if(touch.identifier !== currentTouch) continue;
-                    deltaX = touch.pageX - startX;
-                    startX = touch.pageX;
-                    remaining -= deltaX;
-                    if(remaining <= 0) {
+                    remaining = -(touch.clientX - startX);
+                    if(remaining > 0) remaining = 0;
+                    builder.gui.DescriptionCard_Analog(remaining);
+                    if(remaining <= desc.clientWidth/-3) {
                         currentTouch = null;
                         builder.gui.DescriptionCard_Show(false);
                     }
@@ -106,19 +105,20 @@ document.onreadystatechange = async () => {
             });
 
             desc.addEventListener("touchend", ev => {
-                for(const touch of ev.changedTouches) {
+                if(currentTouch === null) return;
+                for(const touch of ev.targetTouches) {
                     if(touch.identifier === currentTouch) return;
                 }
                 if(ev.touches.length > 0) {
                     currentTouch = ev.touches.item(0).identifier;
                 } else {
                     currentTouch = null;
-                    remaining = desc.clientWidth/3;
+                    builder.gui.DescriptionCard_Show();
                 }
             });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
-                remaining = desc.clientWidth/3;
+                builder.gui.DescriptionCard_Show();            
             });
         }
 
