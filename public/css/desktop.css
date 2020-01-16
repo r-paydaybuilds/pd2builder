@@ -1,18 +1,37 @@
 /**********************************/
+/*        HEADER AND FOOTER       */
+/**********************************/
+
+@media only screen and (min-width: 1003px) {
+  div.navbar a {
+    font-size: 22px; 
+  }
+
+  div.navbar .navbar-dropdown a {
+    font-size: 20px; 
+  }
+}
+
+/**********************************/
 /*          TAB PAGE CSS          */
 /**********************************/
+
+#tab_page_buttons_wrapper {
+  padding: 50px 15px; 
+}
 
 #tab_page_buttons {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center; 
+  justify-content: stretch;
+  align-items: stretch; 
 
   scrollbar-width: none; /* Moz experimental */ 
 }
 
 #tab_page_buttons button {
-  font-size: 0.8em; 
+  font-size: 22px; 
+  width: 100%; 
 }
 
 #tab_page_buttons button:hover {
@@ -25,7 +44,25 @@
 
 .tab_page_content {
   width: 100%; 
-  padding: 0 15px; 
+
+  -webkit-transition: padding .15s linear;
+  -moz-transition:    padding .15s linear;
+  -o-transition:      padding .15s linear;
+  transition:         padding .15s linear;
+}
+
+/* For when it's wayyy too large */ 
+@media only screen and (max-width: 1366px) {
+  .tab_page_content {
+    padding: 0 15px; 
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  .tab_page_content {
+    width: 100%; 
+    padding: 0 2em; 
+  }
 }
 
 .tab_page_content > div {
@@ -72,14 +109,13 @@
   background: rgba(0, 0, 0, 0); 
   
   text-align: center; 
-  font-size: 0.7em;
+  font-size: 20px;
   color: rgb(40, 90, 130);   
 
   -webkit-transition: background-color .15s, color .15s linear;
   -moz-transition:    background-color .15s, color .15s linear;
   -o-transition:      background-color .15s, color .15s linear;
   transition:         background-color .15s, color .15s linear;
-
 }
 
 #sk_tree_buttons button:hover {
@@ -126,6 +162,14 @@
   -moz-transition:    background-size .4s ease, filter .1s linear;
   -o-transition:      background-size .4s ease, filter .1s linear;
   transition:         background-size .4s ease, filter .1s linear;
+}
+
+.sk_subtree:first-of-type {
+  margin-left: 0; 
+}
+
+.sk_subtree:last-of-type {
+  margin-right: 0; 
 }
 
 .sk_subtree_highlight {
@@ -190,7 +234,7 @@
 
   visibility: hidden; 
 
-  font-size: 0.6em; 
+  font-size: 18px; 
   line-height: 1em; 
   text-align: center; 
 
@@ -212,7 +256,7 @@
   max-width: 25%; 
 
   font-family: "DINEngschrift";
-  font-size: 1.4em; 
+  font-size: 36px; 
   text-align: center; 
   color: rgb(40, 90, 130);   
 }
@@ -253,7 +297,7 @@
 
 .sk_points_remaining p, 
 .sk_points_remaining span {  
-  font-size: 0.9em;   
+  font-size: 26px;
 }
 
 #sk_description {
@@ -275,7 +319,7 @@
 
 .sk_description {
   margin: 0;
-  font-size: 0.6em;
+  font-size: 16px;
 }
 
 #sk_description > div::-webkit-scrollbar {

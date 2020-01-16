@@ -118,6 +118,11 @@ div.footer a:hover {
 /*          TAB PAGE CSS          */
 /**********************************/
 
+#tab_page_buttons_wrapper {
+  position: relative; 
+  padding: 2vh 0; 
+}
+
 #tab_page_buttons_wrapper .fadeLeft,
 #tab_page_buttons_wrapper .fadeRight {
   position: absolute; 
