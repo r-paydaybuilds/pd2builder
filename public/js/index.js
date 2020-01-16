@@ -173,14 +173,16 @@ document.onreadystatechange = async () => {
     
 
     // Want websites to behave like games? Call me // 
-    document.getElementById("sk_page").addEventListener("wheel", (event) => {
-        if (event.deltaY < 0) {
-            builder.gui.Tree_ChangeByScrolling(false); 
-        } else {
-            builder.gui.Tree_ChangeByScrolling(true); 
-        }
-        event.preventDefault();
-    });
+    for (const e of document.getElementsByClassName("mousewheel_scrollable")) {
+        e.addEventListener("wheel", (event) => {
+            if (event.deltaY < 0) {
+                builder.gui.Tree_ChangeByScrolling(false); 
+            } else {
+                builder.gui.Tree_ChangeByScrolling(true); 
+            }
+            event.preventDefault();
+        }); 
+    }
     
 
     // Subtree //
