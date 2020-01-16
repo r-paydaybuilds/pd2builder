@@ -79,10 +79,6 @@ div.footer a:hover {
   font-size: 0.8em; 
 }
 
-#description_card .color_number {
-  color: rgb(50, 190, 255); 
-}
-
 #description_card .requires {
   color: #ED6A71;
 }
@@ -121,12 +117,6 @@ div.footer a:hover {
 /**********************************/
 /*          TAB PAGE CSS          */
 /**********************************/
-
-#tab_page_buttons_wrapper {
-  position: relative; 
-
-  padding: 2vh 0; 
-}
 
 #tab_page_buttons_wrapper .fadeLeft,
 #tab_page_buttons_wrapper .fadeRight {
@@ -173,48 +163,12 @@ div.footer a:hover {
   scrollbar-width: none; /* Moz experimental */ 
 }
 
-#tab_page_buttons::-webkit-scrollbar {
-  display: none; 
+#tab_page_buttons button {
+  font-size: 1.2em; 
 }
 
 #tab_page_buttons .spacer {
   flex: 1 0 50px; 
-}
-
-#tab_page_buttons button {
-  position: relative; 
-  padding: 5px 10px; 
-
-  border: 1px solid rgb(240, 240, 240); 
-  border-right: none; /* "border collapse"-style fix */ 
-
-  background: rgba(0, 0, 0, 0); 
-  color: rgb(40, 90, 130);   
-  font-size: 1.2em; 
-  text-align: center;
-  white-space: nowrap;
-
-  -webkit-transition: box-shadow .15s, color .15s linear;
-  -moz-transition:    box-shadow .15s, color .15s linear;
-  -o-transition:      box-shadow .15s, color .15s linear;
-  transition:         box-shadow .15s, color .15s linear;
-}
-
-#tab_page_buttons button:first-of-type{
-  border-radius: 10px 0 0 10px; 
-}
-
-#tab_page_buttons button:last-of-type {
-  border-radius: 0 10px 10px 0; 
-  border-right: 1px solid rgb(240, 240, 240); 
-}
-
-#tab_page_buttons button.tab_selected {
-  color: rgb(240, 240, 240); 
-  
-  -webkit-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
-  -moz-box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
-  box-shadow: inset 0px 0px 0px 2px rgb(240, 240, 240); 
 }
 
 .tab_page_content {
@@ -241,7 +195,7 @@ div.footer a:hover {
 
   display: flex; 
   flex-flow: row nowrap; 
-  justify-content: center; 
+  justify-content: center;  
 }
 
 #sk_tree_buttons button {
@@ -255,7 +209,7 @@ div.footer a:hover {
 
   background: rgba(0, 0, 0, 0); 
   color: rgb(40, 90, 130);   
-  font-size: 1.4em; 
+  font-size: 1.2em; 
   text-align: center;
 
   -webkit-transition: color 0.3s ease, background-color 0.3s ease;
@@ -371,50 +325,6 @@ div.footer a:hover {
   background: rgb(55, 120, 175); 
 }
 
-#sk_container_l {
-  position: relative; 
-  width: 100%; 
-  padding: 0 10px; 
-
-  border-image: url("../img/borders/skill_border.png") 3 15 repeat;
-  border-top: 3px solid transparent; 
-  border-bottom: 3px solid transparent; 
-}
-
-#sk_container_l::before,
-#sk_container_l::after,
-#sk_container_r::before,
-#sk_container_r::after {
-  content: ""; 
-  position: absolute; 
-  height: 15px; 
-  width: 3px;  
-}
-
-#sk_container_l::before {
-  top: 0; 
-  left: 0; 
-  background: url("../img/borders/corner-topleft.png") no-repeat; 
-}
- 
-#sk_container_l::after {
-  bottom: 0; 
-  left: 0; 
-  background: url("../img/borders/corner-bottomleft.png") no-repeat; 
-}
-
-#sk_container_r::before {
-  top: 0; 
-  right: 0; 
-  background: url("../img/borders/corner-topright.png") no-repeat; 
-}
-
-#sk_container_r::after {
-  bottom: 0; 
-  right: 0; 
-  background: url("../img/borders/corner-bottomright.png") no-repeat; 
-}
-
 
 .sk_tree {
   display: flex; 
@@ -474,74 +384,9 @@ div.footer a:hover {
   right: 0; 
 }
 
-.sk_tier > div {
-  position: relative; 
-
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: center;  
-  align-items: center; 
-
-  width: 100%; 
-  height: 100%; 
-}
-
 .sk_icon {
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: space-around;  
-
   width: 75%; 
-  background-position: center center; 
-}
-
-.sk_icon > div {
-  position: relative; 
-  display: block; 
-  z-index: 1200; 
-
-  background: url("../img/skills/icons_atlas.png") 0 0 no-repeat;
-  background-size: 1200% 1300%; 
-  opacity: 0.2; 
-
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%;
-
-  -webkit-transition: opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
-  -moz-transition:    opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
-  -o-transition:      opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
-  transition:         opacity .2s ease, transform .2s ease, -webkit-filter .2s ease, filter .2s ease;
-}
-
-.sk_icon.sk_locked, 
-.sk_icon.sk_selected_aced {
-  background-position: center center; 
-  background-repeat: no-repeat; 
-}
-
-.sk_icon.sk_locked {
-  background-image: url("../img/skills/padlock.png");
-  background-size: 50%; 
-}
-
-.sk_icon.sk_selected_aced {
-  background-image: url("../img/skills/ace.png");
-  background-size: 125%; 
-}
-
-.sk_icon.sk_invalid > div {
-  filter: hue-rotate(180deg);
-  -webkit-filter: hue-rotate(180deg);
-}
-
-.sk_icon.sk_invalid + .sk_name {
-  color: #FF4751;
-}
-
-.sk_icon.sk_selected_basic > div,
-.sk_icon.sk_selected_aced > div {
-  opacity: 1; 
+  max-width: 80px; 
 }
 
 .sk_name {
