@@ -96,10 +96,6 @@ document.onreadystatechange = async () => {
                     remaining = -(touch.clientX - startX);
                     if(remaining > 0) remaining = 0;
                     builder.gui.DescriptionCard_Analog(remaining);
-                    if(remaining <= desc.clientWidth/-3) {
-                        currentTouch = null;
-                        builder.gui.DescriptionCard_Show(false);
-                    }
                     return;
                 }
             });
@@ -111,9 +107,13 @@ document.onreadystatechange = async () => {
                 }
                 if(ev.touches.length > 0) {
                     currentTouch = ev.touches.item(0).identifier;
-                } else {
+                } else { 
                     currentTouch = null;
-                    builder.gui.DescriptionCard_Show();
+                    if(remaining <= desc.clientWidth/-3) {
+                        builder.gui.DescriptionCard_Show(false);
+                    } else {
+                        builder.gui.DescriptionCard_Show();
+                    }
                 }
             });
             desc.addEventListener("touchcancel", () => {
