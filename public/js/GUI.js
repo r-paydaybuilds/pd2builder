@@ -64,7 +64,7 @@ export default class GUI {
      */
     DescriptionCard_Show(open = true) {
         const descriptionCard = document.getElementById("description_card");
-        descriptionCard.style.right = null;
+        descriptionCard.style.cssText = "";
         if (open) {
             descriptionCard.classList.add("active"); 
         }
@@ -79,7 +79,7 @@ export default class GUI {
      */
     DescriptionCard_Analog(open) {
         const descriptionCard = document.getElementById("description_card");
-        descriptionCard.style.right = `${open}px`;
+        descriptionCard.style.cssText = `right: ${open}px; transition-duration: 0ms`;
     }
 
     /**

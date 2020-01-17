@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <script>
-      if(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003) { 
+      /*if(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003) { 
         const url = new URL(window.location.href);
         url.pathname += "mobile.html";
         window.location.replace(url);
-      }
+      }*/
     </script>
     <meta charset="utf-8">
     <meta name="language" content="english"> 
@@ -24,122 +24,99 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="apple-touch-icon" href="img/favicon.png"/>
     <link rel="apple-touch-startup-image" href="img/bg.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"> 
-    <link rel="stylesheet" href="css/skills.css">
-    <link rel="stylesheet" href="css/skills_offset.css">
-    <link rel="stylesheet" href="css/perkdecks.css">
-    <link rel="stylesheet" href="css/perks_offset.css">
-    <link rel="stylesheet" href="css/arm-th-dp-io.css">
-    <link rel="stylesheet" href="css/pd2table.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pd2table.css">
+    <link rel="stylesheet" href="css/offsets.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/lang.css">
     <link rel="manifest" href="./manifest.webmanifest">
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">PD2 Builder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <select name="language" id="langDrop"></select>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="bigoil.html">Big Oil Engine Calc</a>
-            </li>
-          </ul>
+    <div class="navbar">
+      <a href="#">PD2 Builder</a>
+      <button>
+        <span></span>
+      </button>
+      <div class="navbar-dropdown">
+        <div>
+          <select name="language" id="langDrop"></select>
         </div>
-      </div>
-    </nav>
-
-    <!-- Top section Content -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div id="title" class="col">
-          <p class="font-size-40">New r/paydaybuilds skill builder</h1>
+        <div>
+          <a class="current" href="#">Home</a>  
         </div>
-      </div>
-      <div class="row-fluid">
-        <div class="col">
-          <div id="tab_page_buttons" class="btn-group nav_buttons" role="group">
-            <button id="tab_skills_button" data-name=skills type="button" class="btn btn-secondary">Skills</button>
-            <button id="tab_perk_decks_button" data-name=perk_decks type="button" class="btn btn-secondary">Perk Decks</button>
-            <button id="tab_armors_button" data-name=armors type="button" class="btn btn-secondary">Armors</button>
-            <button id="tab_throwables_button" data-name=throwables type="button" class="btn btn-secondary">Throwables</button>
-            <button id="tab_deployables_button" data-name=deployables type="button" class="btn btn-secondary">Deployables</button>
-            <button id="tab_io_button" data-name=share type="button" class="btn btn-secondary">Share Build</button>
-          </div>
+        <div>
+          <a href="bigoil.html">Big Oil Engine Calc</a>
         </div>
       </div>
     </div>
 
-    <!-- Skills Tab Content -->
-    <div id="tab_skills_page" class="container-fluid tab_page_content">
-      <div class="row-fluid">
-        <div class="col"> 
-          <div id="sk_tree_buttons" class="btn-group" role="group">
-            <button id="sk_mastermind_button" type="button" class="btn btn-secondary sk_tree_button_active">MASTERMIND</button>
-            <button id="sk_enforcer_button" type="button" class="btn btn-secondary">ENFORCER</button>
-            <button id="sk_technician_button" type="button" class="btn btn-secondary">TECHNICIAN</button>
-            <button id="sk_ghost_button" type="button" class="btn btn-secondary">GHOST</button>
-            <button id="sk_fugitive_button" type="button" class="btn btn-secondary">FUGITIVE</button>
-          </div>
-        </div>
+    <!-- Tab selector -->
+    <div id="tab_page_buttons_wrapper">
+      <div id="tab_page_buttons">
+        <button id="tab_skills_button" data-name="skills">Skills</button>
+        <button id="tab_armors_button" data-name="armors">Armors</button>
+        <button id="tab_perk_decks_button" data-name="perk_decks">Perk Decks</button>
+        <button id="tab_throwables_button" data-name="throwables">Throwables</button>
+        <button id="tab_deployables_button" data-name="deployables">Deployables</button>
+        <button id="tab_io_button" data-name="share">Share Build</button>
       </div>
-      <div id="sk_page" class="row page_gutter mousewheel_scrollable">
-        <div id="sk_container_l" class="col-9">
+    </div>
+
+    <!-- Skills Tab Content -->
+    <div id="tab_skills_page" class="tab_page_content">
+      <div id="sk_tree_buttons" class="mousewheel_scrollable">
+        <button id="sk_mastermind_button" class="sk_tree_button_active">MASTERMIND</button>
+        <button id="sk_enforcer_button">ENFORCER</button>
+        <button id="sk_technician_button">TECHNICIAN</button>
+        <button id="sk_ghost_button">GHOST</button>
+        <button id="sk_fugitive_button">FUGITIVE</button>
+      </div>
+      <div id="sk_page">
+        <div id="sk_container_l" class="mousewheel_scrollable">
           <div id="sk_container_r"> 
-            <div id="sk_mastermind_container" class="row sk_tree">
-              <div id="sk_medic_subtree" data-name="medic" class="col sk_subtree">
-                <div id="sk_medic_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+            <div id="sk_mastermind_container" class="sk_tree">
+              <div id="sk_medic_subtree" data-name="medic" class="sk_subtree">
+                <div id="sk_medic_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="inspire"></div>
                     </div>
                     <span class="sk_name">INSPIRE</span>
                   </div>
                 </div>
-                <div id="sk_medic_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_medic_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="uppers"></div>
                     </div>
                     <span class="sk_name">UPPERS</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="combat_doctor"></div>
                     </div>
                     <span class="sk_name">COMBAT DOCTOR</span>
                   </div>
                 </div>
-                <div id="sk_medic_tier_2" class="row sk_tier" data-tier="2"> 
-                  <div class="col text-center">
+                <div id="sk_medic_tier_2" class="sk_tier" data-tier="2"> 
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="quick_fix"></div>
                     </div>
                     <span class="sk_name">QUICK FIX</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="painkillers"></div>
                     </div>
                     <span class="sk_name">PAINKILLERS</span>
                   </div>
                 </div>
-                <div id="sk_medic_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_medic_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="combat_medic"></div>
                     </div>
@@ -147,45 +124,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_controller_subtree" data-name="controller" class="col sk_subtree">
-                <div id="sk_controller_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_controller_subtree" data-name="controller" class="sk_subtree">
+                <div id="sk_controller_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="hostage_taker"></div>
                     </div>
                     <span class="sk_name">HOSTAGE TAKER</span>
                   </div>
                 </div>
-                <div id="sk_controller_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_controller_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="stockholm_syndrome"></div>
                     </div>
                     <span class="sk_name">STOCKHOLM SYNDROME</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="partners_in_crime"></div>
                     </div>
                     <span class="sk_name">PARTNERS IN CRIME</span>
                   </div>
                 </div>
-                <div id="sk_controller_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_controller_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="confident"></div>
                     </div>
                     <span class="sk_name">CONFIDENT</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="joker"></div>
                     </div>
                     <span class="sk_name">JOKER</span>
                   </div>
                 </div>
-                <div id="sk_controller_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_controller_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="forced_friendship"></div>
                     </div>
@@ -193,45 +170,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_sharpshooter_subtree" data-name="sharpshooter" class="col sk_subtree">
-                <div id="sk_sharpshooter_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_sharpshooter_subtree" data-name="sharpshooter" class="sk_subtree">
+                <div id="sk_sharpshooter_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="graze"></div>
                     </div>
                     <span class="sk_name">GRAZE</span>
                   </div>
                 </div>
-                <div id="sk_sharpshooter_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_sharpshooter_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="ammo_efficiency"></div>
                     </div>
                     <span class="sk_name">AMMO EFFICIENCY</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="aggressive_reload"></div>
                     </div>
                     <span class="sk_name">AGGRESSIVE RELOAD</span>
                   </div>
                 </div>
-                <div id="sk_sharpshooter_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_sharpshooter_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="rifleman"></div>
                     </div>
                     <span class="sk_name">RIFLEMAN</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="marksman"></div>
                     </div>
                     <span class="sk_name">MARKSMAN</span>
                   </div>
                 </div>
-                <div id="sk_sharpshooter_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_sharpshooter_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="stable_shot"></div>
                     </div>
@@ -240,46 +217,46 @@
                 </div>
               </div>
             </div>
-            <div id="sk_enforcer_container" class="row sk_tree">
-              <div id="sk_shotgunner_subtree" data-name="shotgunner" class="col sk_subtree">
-                <div id="sk_shotgunner_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+            <div id="sk_enforcer_container" class="sk_tree">
+              <div id="sk_shotgunner_subtree" data-name="shotgunner" class="sk_subtree">
+                <div id="sk_shotgunner_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="overkill"></div>
                     </div>
                     <span class="sk_name">OVERKILL</span>
                   </div>
                 </div>
-                <div id="sk_shotgunner_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_shotgunner_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="far_away"></div>
                     </div>
                     <span class="sk_name">FAR AWAY</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="close_by"></div>
                     </div>
                     <span class="sk_name">CLOSE BY</span>
                   </div>
                 </div>
-                <div id="sk_shotgunner_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_shotgunner_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="shotgun_cqb"></div>
                     </div>
                     <span class="sk_name">SHOTGUN CQB</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="shotgun_impact"></div>
                     </div>
                     <span class="sk_name">SHOTGUN IMPACT</span>
                   </div>
                 </div>
-                <div id="sk_shotgunner_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_shotgunner_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="underdog"></div>
                     </div>
@@ -287,45 +264,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_tank_subtree" data-name="tank" class="col sk_subtree">
-                <div id="sk_tank_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_tank_subtree" data-name="tank" class="sk_subtree">
+                <div id="sk_tank_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="iron_man"></div>
                     </div>
                     <span class="sk_name">IRON MAN</span>
                   </div>
                 </div>
-                <div id="sk_tank_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_tank_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="shock_and_awe"></div>
                     </div>
                     <span class="sk_name">SHOCK AND AWE</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="bullseye"></div>
                     </div>
                     <span class="sk_name">BULLSEYE</span>
                   </div>
                 </div>
-                <div id="sk_tank_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_tank_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="die_hard"></div>
                     </div>
                     <span class="sk_name">DIE HARD</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="transporter"></div>
                     </div>
                     <span class="sk_name">TRANSPORTER</span>
                   </div>
                 </div>
-                <div id="sk_tank_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_tank_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="resilience"></div>
                     </div>
@@ -333,45 +310,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_ammo_specialist_subtree" data-name="ammo_specialist" class="col sk_subtree">
-                <div id="sk_ammo_specialist_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_ammo_specialist_subtree" data-name="ammo_specialist" class="sk_subtree">
+                <div id="sk_ammo_specialist_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="fully_loaded"></div>
                     </div>
                     <span class="sk_name">FULLY LOADED</span>
                   </div>
                 </div>
-                <div id="sk_ammo_specialist_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_ammo_specialist_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="extra_lead"></div>
                     </div>
                     <span class="sk_name">EXTRA LEAD</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="saw_massacre"></div>
                     </div>
                     <span class="sk_name">SAW MASSACRE</span>
                   </div>
                 </div>
-                <div id="sk_ammo_specialist_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_ammo_specialist_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="bulletstorm"></div>
                     </div>
                     <span class="sk_name">BULLETSTORM</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="portable_saw"></div>
                     </div>
                     <span class="sk_name">PORTABLE SAW</span>
                   </div>
                 </div>
-                <div id="sk_ammo_specialist_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_ammo_specialist_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="scavenger"></div>
                     </div>
@@ -380,46 +357,46 @@
                 </div>
               </div>
             </div>
-            <div id="sk_technician_container" class="row sk_tree">
-              <div id="sk_engineer_subtree" data-name="engineer" class="col sk_subtree">
-                <div id="sk_technician_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+            <div id="sk_technician_container" class="sk_tree">
+              <div id="sk_engineer_subtree" data-name="engineer" class="sk_subtree">
+                <div id="sk_technician_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="tower_defense"></div>
                     </div>
                     <span class="sk_name">TOWER DEFENSE</span>
                   </div>
                 </div>
-                <div id="sk_technician_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_technician_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="engineering"></div>
                     </div>
                     <span class="sk_name">ENGINEERING</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="jack_of_all_trades"></div>
                     </div>
                     <span class="sk_name">JACK OF ALL TRADES</span>
                   </div>
                 </div>
-                <div id="sk_technician_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_technician_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="sentry_targeting_package"></div>
                     </div>
                     <span class="sk_name">SENTRY TARGETING PACKAGE</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="eco_sentry"></div>
                     </div>
                     <span class="sk_name">ECO SENTRY</span>
                   </div>
                 </div>
-                <div id="sk_technician_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_technician_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="third_law"></div>
                     </div>
@@ -427,45 +404,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_breacher_subtree" data-name="breacher" class="col sk_subtree">
-                <div id="sk_breacher_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_breacher_subtree" data-name="breacher" class="sk_subtree">
+                <div id="sk_breacher_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="fire_trap"></div>
                     </div>
                     <span class="sk_name">FIRE TRAP</span>
                   </div>
                 </div>
-                <div id="sk_breacher_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_breacher_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="more_firepower"></div>
                     </div>
                     <span class="sk_name">MORE FIREPOWER</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="kickstarter"></div>
                     </div>
                     <span class="sk_name">KICKSTARTER</span>
                   </div>
                 </div>
-                <div id="sk_breacher_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_breacher_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="combat_engineering"></div>
                     </div>
                     <span class="sk_name">COMBAT ENGINEERING</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="drill_sawgeant"></div>
                     </div>
                     <span class="sk_name">DRILL SAWGEANT</span>
                   </div>
                 </div>
-                <div id="sk_breacher_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_breacher_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="hardware_expert"></div>
                     </div>
@@ -473,45 +450,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_oppressor_subtree" data-name="oppressor" class="col sk_subtree">
-                <div id="sk_oppressor_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_oppressor_subtree" data-name="oppressor" class="sk_subtree">
+                <div id="sk_oppressor_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="body_expertise"></div>
                     </div>
                     <span class="sk_name">BODY EXPERTISE</span>
                   </div>
                 </div>
-                <div id="sk_oppressor_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_oppressor_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="lock_n_load"></div>
                     </div>
                     <span class="sk_name">LOCK N' LOAD</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="surefire"></div>
                     </div>
                     <span class="sk_name">SUREFIRE</span>
                   </div>
                 </div>
-                <div id="sk_oppressor_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_oppressor_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="heavy_impact"></div>
                     </div>
                     <span class="sk_name">HEAVY IMPACT</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="fire_control"></div>
                     </div>
                     <span class="sk_name">FIRE CONTROL</span>
                   </div>
                 </div>
-                <div id="sk_oppressor_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_oppressor_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="steady_grip"></div>
                     </div>
@@ -520,46 +497,46 @@
                 </div>
               </div>
             </div>
-            <div id="sk_ghost_container" class="row sk_tree">
-              <div id="sk_shinobi_subtree" data-name="shinobi" class="col sk_subtree">
-                <div id="sk_ghost_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+            <div id="sk_ghost_container" class="sk_tree">
+              <div id="sk_shinobi_subtree" data-name="shinobi" class="sk_subtree">
+                <div id="sk_ghost_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="ecm_specialist"></div>
                     </div>
                     <span class="sk_name">ECM SPECIALIST</span>
                   </div>
                 </div>
-                <div id="sk_ghost_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_ghost_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="nimble"></div>
                     </div>
                     <span class="sk_name">NIMBLE</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="ecm_overdrive"></div>
                     </div>
                     <span class="sk_name">ECM OVERDRIVE</span>
                   </div>
                 </div>
-                <div id="sk_ghost_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_ghost_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="cleaner"></div>
                     </div>
                     <span class="sk_name">CLEANER</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="sixth_sense"></div>
                     </div>
                     <span class="sk_name">SIXTH SENSE</span>
                   </div>
                 </div>
-                <div id="sk_ghost_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_ghost_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="chameleon"></div>
                     </div>
@@ -567,46 +544,46 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_artful_dodger_subtree" data-name="artful_dodger" class="col sk_subtree">
-                <div id="sk_artful_dodger_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_artful_dodger_subtree" data-name="artful_dodger" class="sk_subtree">
+                <div id="sk_artful_dodger_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="sneaky_bastard"></div>
                     </div>
                     <span class="sk_name">SNEAKY BASTARD</span>
                   </div>
                 </div>
-                <div id="sk_artful_dodger_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_artful_dodger_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="dire_need"></div>
                     </div>
                     
                     <span class="sk_name">DIRE NEED</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="shockproof"></div>
                     </div>
                     <span class="sk_name">SHOCKPROOF</span>
                   </div>
                 </div>
-                <div id="sk_artful_dodger_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_artful_dodger_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="parkour"></div>
                     </div>
                     <span class="sk_name">PARKOUR</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="inner_pockets"></div>
                     </div>
                     <span class="sk_name">INNER POCKETS</span>
                   </div>
                 </div>
-                <div id="sk_artful_dodger_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_artful_dodger_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="duck_and_cover"></div>
                     </div>
@@ -614,45 +591,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_silent_killer_subtree" data-name="silent_killer" class="col sk_subtree">
-                <div id="sk_silent_killer_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_silent_killer_subtree" data-name="silent_killer" class="sk_subtree">
+                <div id="sk_silent_killer_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="unseen_strike"></div>
                     </div>
                     <span class="sk_name">UNSEEN STRIKE</span>
                   </div>
                 </div>
-                <div id="sk_silent_killer_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_silent_killer_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="low_blow"></div>
                     </div>
                     <span class="sk_name">LOW BLOW</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="high_value_target"></div>
                     </div>
                     <span class="sk_name">HIGH VALUE TARGET</span>
                   </div>
                 </div>
-                <div id="sk_silent_killer_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_silent_killer_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="optical_illusions"></div>
                     </div>
                     <span class="sk_name">OPTICAL ILLUSIONS</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="the_professional"></div>
                     </div>
                     <span class="sk_name">THE PROFESSIONAL</span>
                   </div>
                 </div>
-                <div id="sk_silent_killer_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_silent_killer_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="second_wind"></div>
                     </div>
@@ -661,46 +638,46 @@
                 </div>
               </div>
             </div>
-            <div id="sk_fugitive_container" class="row sk_tree">
-              <div id="sk_gunslinger_subtree" data-name="gunslinger" class="col sk_subtree">
-                <div id="sk_gunslinger_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+            <div id="sk_fugitive_container" class="sk_tree">
+              <div id="sk_gunslinger_subtree" data-name="gunslinger" class="sk_subtree">
+                <div id="sk_gunslinger_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="trigger_happy"></div>
                     </div>
                     <span class="sk_name">TRIGGER HAPPY</span>
                   </div>
                 </div>
-                <div id="sk_gunslinger_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_gunslinger_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="one_handed_talent"></div>
                     </div>
                     <span class="sk_name">ONE HANDED TALENT</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="desperado"></div>
                     </div>
                     <span class="sk_name">DESPERADO</span>
                   </div>
                 </div>
-                <div id="sk_gunslinger_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_gunslinger_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="gun_nut"></div>
                     </div>
                     <span class="sk_name">GUN NUT</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="akimbo"></div>
                     </div>
                     <span class="sk_name">AKIMBO</span>
                   </div>
                 </div>
-                <div id="sk_gunslinger_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_gunslinger_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="equilibrium"></div>
                     </div>
@@ -708,45 +685,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_revenant_subtree" data-name="revenant" class="col sk_subtree">
-                <div id="sk_revenant_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_revenant_subtree" data-name="revenant" class="sk_subtree">
+                <div id="sk_revenant_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="messiah"></div>
                     </div>
                     <span class="sk_name">MESSIAH</span>
                   </div>
                 </div>
-                <div id="sk_revenant_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_revenant_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="swan_song"></div>
                     </div>
                     <span class="sk_name">SWAN SONG</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="feign_death"></div>
                     </div>
                     <span class="sk_name">FEIGN DEATH</span>
                   </div>
                 </div>
-                <div id="sk_revenant_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_revenant_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="running_from_death"></div>
                     </div>
                     <span class="sk_name">RUNNING FROM DEATH</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="up_you_go"></div>
                     </div>
                     <span class="sk_name">UP YOU GO</span>
                   </div>
                 </div>
-                <div id="sk_revenant_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_revenant_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="nine_lives"></div>
                     </div>
@@ -754,45 +731,45 @@
                   </div>
                 </div>
               </div>
-              <div id="sk_brawler_subtree" data-name="brawler" class="col sk_subtree">
-                <div id="sk_brawler_tier_4" class="row sk_tier" data-tier="4">
-                  <div class="col text-center">
+              <div id="sk_brawler_subtree" data-name="brawler" class="sk_subtree">
+                <div id="sk_brawler_tier_4" class="sk_tier" data-tier="4">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="frenzy"></div>
                     </div>
                     <span class="sk_name">FRENZY</span>
                   </div>
                 </div>
-                <div id="sk_brawler_tier_3" class="row sk_tier" data-tier="3">
-                  <div class="col text-center">
+                <div id="sk_brawler_tier_3" class="sk_tier" data-tier="3">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="counterstrike"></div>
                     </div>
                     <span class="sk_name">COUNTERSTRIKE</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="berserker"></div>
                     </div>
                     <span class="sk_name">BERSERKER</span>
                   </div>
                 </div>
-                <div id="sk_brawler_tier_2" class="row sk_tier" data-tier="2">
-                  <div class="col text-center">
+                <div id="sk_brawler_tier_2" class="sk_tier" data-tier="2">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="bloodthirst"></div>
                     </div>
                     <span class="sk_name">BLOODTHIRST</span>
                   </div>
-                  <div class="col text-center">
+                  <div>
                     <div class="sk_icon sk_locked">
                       <div id="pumping_iron"></div>
                     </div>
                     <span class="sk_name">PUMPING IRON</span>
                   </div>
                 </div>
-                <div id="sk_brawler_tier_1" class="row sk_tier" data-tier="1">
-                  <div class="col text-center">
+                <div id="sk_brawler_tier_1" class="sk_tier" data-tier="1">
+                  <div>
                     <div class="sk_icon">
                       <div id="martial_arts"></div>
                     </div>
@@ -806,29 +783,25 @@
             <div class="spinner-border"></div>
           </div>
         </div>
-        <div id="sk_description_container" class="col-3 description_container">
-          <div class="row sk_points_remaining">
+        <div id="sk_description_container" class="description_container">
+          <div class="sk_points_remaining">
             <p>Remaining skill points: <span></span></p> 
           </div>
-          <div id="sk_description_t" class="row corners_t">
-            <div id="sk_description_b" class="corners_b">
-              <div id="sk_description_l" class="corners_l">
-                <div id="sk_description_r" class="corners_r">
-                  <p class="sk_description font-size-13"></p>  
-                </div>
-              </div>
+          <div id="sk_description" class="bordered">
+            <div>
+              <p class="sk_description"></p>  
             </div>
           </div>
         </div>
       </div>
-      <div id="sk_subtree_names_container" class="row">
-        <div id="sk_subtree_name_left" class="col-3 sk_subtree_name">
+      <div id="sk_subtree_names_container">
+        <div id="sk_subtree_name_left" class="sk_subtree_name">
           <p>LEFT</p>
         </div>
-        <div id="sk_subtree_name_center" class="col-3 sk_subtree_name">
+        <div id="sk_subtree_name_center" class="sk_subtree_name">
           <p>CENTER</p>
         </div>
-        <div id="sk_subtree_name_right" class="col-3 sk_subtree_name">
+        <div id="sk_subtree_name_right" class="sk_subtree_name">
           <p>RIGHT</p>
         </div>
       </div>
@@ -1173,7 +1146,6 @@
 
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     
     <script src="js/index.js" type="module"></script>
   </body>

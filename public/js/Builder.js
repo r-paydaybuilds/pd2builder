@@ -128,7 +128,7 @@ export default class Builder {
         document.getElementById("io_share_button").textContent = this.lang.get("system.share.native");
 
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
-        if(this.mobile) {
+        if(this.mobile || true) { // TODO: Fix 
             if(document.getElementById("sk_tree_buttons").dataset.tree) document.querySelector("#sk_tree_buttons > button").textContent = this.lang.get(`system.skills.${document.getElementById("sk_tree_buttons").dataset.tree}.title`).toLocaleUpperCase();
             return;
         }

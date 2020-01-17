@@ -10,3 +10,7 @@
 table:lang(ru-ru) {
     font-size: 12pt;
 }
+
+.sk_subtree_name > p:lang(ru-ru) {
+    font-size: 24pt;
+}
