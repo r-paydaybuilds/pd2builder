@@ -36,7 +36,7 @@
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <a href="#">PD2 Builder</a>
+      <a href="#" data-lang="system.name">PD2 Builder</a>
       <button>
         <span></span>
       </button>
@@ -45,10 +45,10 @@
           <select name="language" id="langDrop"></select>
         </div>
         <div>
-          <a class="current" href="#">Home</a>  
+          <a class="current" href="#" data-lang="system.home">Home</a>  
         </div>
         <div>
-          <a href="bigoil.html">Big Oil Engine Calc</a>
+          <a href="bigoil.html" data-lang="system.bigoil">Big Oil Engine Calc</a>
         </div>
       </div>
     </div>
@@ -56,23 +56,23 @@
     <!-- Tab selector -->
     <div id="tab_page_buttons_wrapper">
       <div id="tab_page_buttons">
-        <button id="tab_skills_button" data-name="skills">Skills</button>
-        <button id="tab_armors_button" data-name="armors">Armors</button>
-        <button id="tab_perk_decks_button" data-name="perk_decks">Perk Decks</button>
-        <button id="tab_throwables_button" data-name="throwables">Throwables</button>
-        <button id="tab_deployables_button" data-name="deployables">Deployables</button>
-        <button id="tab_io_button" data-name="share">Share Build</button>
+        <button id="tab_skills_button" data-name="skills" data-lang="system.skills.title">Skills</button>
+        <button id="tab_armors_button" data-name="armors" data-lang="system.armors.title">Armors</button>
+        <button id="tab_perk_decks_button" data-name="perk_decks" data-lang="system.perk_decks.title">Perk Decks</button>
+        <button id="tab_throwables_button" data-name="throwables" data-lang="system.throwables.title">Throwables</button>
+        <button id="tab_deployables_button" data-name="deployables" data-lang="system.deployables.title">Deployables</button>
+        <button id="tab_io_button" data-name="share" data-lang="system.share.title">Share Build</button>
       </div>
     </div>
 
     <!-- Skills Tab Content -->
     <div id="tab_skills_page" class="tab_page_content">
       <div id="sk_tree_buttons" class="mousewheel_scrollable">
-        <button id="sk_mastermind_button" class="sk_tree_button_active">MASTERMIND</button>
-        <button id="sk_enforcer_button">ENFORCER</button>
-        <button id="sk_technician_button">TECHNICIAN</button>
-        <button id="sk_ghost_button">GHOST</button>
-        <button id="sk_fugitive_button">FUGITIVE</button>
+        <button id="sk_mastermind_button" class="sk_tree_button_active" data-lang="system.skills.mastermind.title">MASTERMIND</button>
+        <button id="sk_enforcer_button" data-lang="system.skills.enforcer.title">ENFORCER</button>
+        <button id="sk_technician_button" data-lang="system.skills.technician.title">TECHNICIAN</button>
+        <button id="sk_ghost_button" data-lang="system.skills.ghost.title">GHOST</button>
+        <button id="sk_fugitive_button" data-lang="system.skills.fugitive.title">FUGITIVE</button>
       </div>
       <div id="sk_page">
         <div id="sk_container_l" class="mousewheel_scrollable">
@@ -1098,7 +1098,7 @@
             <div id="io_save_l" class="corners_l">
               <div id="io_save_r" class="corners_r">
                 <div class="row">
-                  <p class="font-size-20">Share your Build with anyone!</p>
+                  <p class="font-size-20" data-lang="system.share.description">Share your Build with anyone!</p>
                 </div>
                 <div class="row">
                   <div class="input-group">
@@ -1107,12 +1107,12 @@
                     </div>                  
                     <input id="io_share_link" type="text" class="form-control" input onmouseover="this.select()" onmouseleave="this.blur()" readonly>
                     <div class="input-group-append">
-                      <button id="io_copy_btn" type="button" class="btn btn-secondary">Copy Link</button>
+                      <button id="io_copy_btn" type="button" class="btn btn-secondary" data-lang="system.share.copy">Copy Link</button>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <button id="io_share_button" type="button" class="btn btn-secondary">Share!</button>
+                  <button id="io_share_button" type="button" class="btn btn-secondary" data-lang="system.share.native">Share!</button>
                 </div>
               </div>
             </div>
@@ -1122,16 +1122,16 @@
           <div id="io_other_b" class="corners_b">
             <div id="io_other_l" class="corners_l">
               <div id="io_other_r" class="corners_r">
-                <p class="font-size-20">Credits</p>
+                <p class="font-size-20" data-lang="system.credits.title">Credits</p>
                 <div class="font-size-16">
-                  <p>This site was made possible by the combined effort of r/paydaybuilds community.</p>
-                  <p>Contributors of this project can be found <a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">here</a>.</p>
+                  <p data-lang="system.credits.p1">This site was made possible by the combined effort of r/paydaybuilds community.</p data-lang="system.credits.p1">
+                  <p data-lang="system.credits.p2">Contributors of this project can be found <a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">here</a>.</p data-lang="system.credits.p2">
                 </div>
                 <div class="font-size-14">
-                  <p>This software is provided under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. Do what you want with it, but please respect its open-source nature.</p>
+                  <p data-lang="system.credits.license">This software is provided under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. Do what you want with it, but please respect its open-source nature.</p data-lang="system.credits.license">
                 </div>
                 <div class="io_widgets">
-                  <p class="font-size-14">Reach us at: </p>
+                  <p class="font-size-14" data-lang="system.credits.reach">Reach us at: </p>
                   <a href="https://discord.gg/3ndGBWC"><img alt="Discord Server" src="https://img.shields.io/badge/Chat-Discord-7289DA.svg?logo=discord&style=flat" width="103px" height="20px"></img></a>
                   <a href="https://www.reddit.com/r/paydaybuilds/"><img alt="Subreddit" src="https://img.shields.io/badge/reddit-r/paydaybuilds-ff5700.svg?logo=reddit&style=flat" width="150px" height="20px"></a>
                   <a href="https://github.com/r-paydaybuilds/pd2builder"><img alt="GitHub stars" src="https://img.shields.io/github/stars/r-paydaybuilds/pd2builder.svg?style=social" width="74px" height="20px"></img></a>

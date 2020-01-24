@@ -1038,6 +1038,7 @@
     "system": {
         "name": "PD2 Builder",
         "home": "Home",
+        "bigoil": "Big Oil Engine Calc",
         "requires": {
             "perk_deck": "REQUIRES THE %{name} PERK DECK EQUIPPED",
             "perk_card": "REQUIRES THE %{name} PERK CARD EQUIPPED",

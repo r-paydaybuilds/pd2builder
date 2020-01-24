@@ -111,3 +111,13 @@ Language.LOCATEREGEX = /(%|&){(.+)}/g;
  * @type {RegExp}
  */
 Language.REFREGEX = /&{(.+)}/g;
+
+/**
+ * I dont know how to call this
+ * @static
+ * @type {Map<String,Object>}
+ */
+Language.ref = new Map([
+    ["system.credits.p2", {ref: [x => `<a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">${x}</a>`]}],
+    ["system.credits.license", {ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]}]
+]);
