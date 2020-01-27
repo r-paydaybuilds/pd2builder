@@ -1,117 +1,117 @@
 {
     "armors": {
         "suit": "Traje de Vestir (Sin Protección)",
-        "light_ballistic": "Chaleco Antibalas Ligero",
-        "ballistic": "Chaleco Antibalas",
-        "heavy_ballistic": "Chaleco Antibalas Pesado",
-        "flak": "Chaleco Antiexplosivos",
-        "ctv": "Armadura Corporal Táctica",
-        "ictv": "Armadura Corporal Experimental"
+        "light_ballistic": "Light Ballistic Vest",
+        "ballistic": "Ballistic Vest",
+        "heavy_ballistic": "Heavy Ballistic Vest",
+        "flak": "Flak",
+        "ctv": "Combined Tactical Vest",
+        "ictv": "Improved Combined Tactical Vest"
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Bolsa de Munición",
-            "description": "Para usar la Bolsa de Munición, debes desplegarla manteniendo [G]. Esta contiene munición suficiente como para reponer las reservas de un arma hasta 4 veces (puedes ver cuánta queda mirando los cargadores). Una vez desplegada no se puede mover, pero puede ser usada por ti y tu equipo manteniendo [F] para tomar munición hasta alcanzar el máximo.\nLa bolsa de munición es fácil de transportar. y fue originalmente diseñada para que un soldado pudiese llevar más munición al combatir."
+            "name": "Ammo Bag",
+            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
         },
         "armor_bag": {
-            "name": "Caja de Armadura",
-            "description": "Para usar la Caja de Armadura, mantén [G] para equipar la protección corporal que has seleccionado (hasta entonces, estarás sin protección). Esta tiene solo 1 uso.\nLa caja de armadura es fácil de transportar, y es usada para llevar un chaleco antibalas o armadura corporal sin llamar la atención."
+            "name": "Armor Bag",
+            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
         },
         "body_bag_case": {
-            "name": "Caja de Bolsas para Cadáveres",
-            "description": "Para usar la Caja de Bolsas para Cadáveres. debes desplegarla manteniendo [G]. Esta contiene 3 bolsas (puedes ver cuántas quedan mirando su interior). Una vez desplegada no se puede mover. pero puede ser usada por ti y tu equipo manteniendo [F] para tomar una bolsa.\nLa caja de bolsas para cadáveres es fácil de transportar y contiene bolsas diseñadas para compactar y contener un cuerpo humano."
+            "name": "Body Bag Case",
+            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
         },
         "doctor_bag": {
-            "name": "Botiquin Médico",
-            "description": "Para usar el Botiquin Médico, debes desplegarlo manteniendo [G]. Este tiene 2 usos (puedes ver cuántos quedan mirando las bolsas de sangre. Una vez desplegado no se puede mover, pero puede ser usado por ti y tu equipo manteniendo [F] para recuperar salud y restablecer las vidas.\nEl botiquín médico es fácil de transportar, y suele ser usado por profesionales asociados con la medicina para llevar consigo suministros médicas y medicamentos para tratar heridas muy graves."
+            "name": "Botiquín Médico",
+            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine"
         },
         "ecm_jammer": {
-            "name": "Dispositivo ECM",
-            "description": "Para usar el Dispositivo ECM. debes desplegarlo manteniendo [G]. Una vez desplegado no se puede mover y el efecto de inhibición será activado. Este desactiva cámaras, teléfonos y comunicadores por 20 segundos y no se puede recargar.\nPuedes activar el efecto de acople pulsando [F] en el dispositivo. Este puede aturdir a la mayoría de enemigos cercanos y se recarga cada 4 minutos.\nUna contramedida electrónica (ECM en inglés) está diseñada para engañar sistemas de detección."
+            "name": "ECM Jammer",
+            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
         },
         "first_aid_kit": {
-            "name": "Botiquín de Primeros Auxilios",
-            "description": "Para usar el Botiquín de Primeros Auxilios. debes desplegarlo manteniendo [G]. Este tiene solo 1 uso. Una vez desplegado no se puede mover, pero puede ser usado por ti o tu equipo manteniendo [F] para recuperar salud rápidamente.\nEl botiquín de primeros auxilios es un pequeño bolso que contiene suministros necesarios para administrar primeros auxilios rápidamente."
+            "name": "First Aid Kit",
+            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
         },
         "sentry_gun": {
-            "name": "Torreta Portátil",
-            "description": "Para usar la Torreta Portátil. debes desplegarla manteniendo [G]. Al hacerlo, la torreta usará hasta un 30% de tus reservas de munición. Al quedarse sin munición, dejará de disparar. Esta puede ser dañada por enemigos, pero mientras no haya sido destruida por completo, puedes tomarla para repararla y recuperar la munición que quede en ella.\nLa torreta portátil es un arma fácil de transportar que apunta y dispara automáticamente a enemigos detectados por sus sensores. Esta versión es mejor usada como distracción."
+            "name": "Sentry Gun",
+            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team."
         },
         "suppressed_sentry_gun": {
-            "name": "Torreta Portátil con Supresor",
-            "description": "Para usar la Torreta Portátil con Supresor. debes desplegarla manteniendo [G]. Al hacerlo, la torreta usará hasta un 30% de tus reservas de munición. Al quedarse sin munición, dejará de disparar. Esta puede ser dañada por enemigos, pero mientras no haya sido destruida por completo, puedes tomarla para repararla y recuperar la munición que quede en ella.\nLa torreta portátil es un arma fácil de transportar que apunta y dispara automáticamente a enemigos detectados por sus sensores. Esta versión con supresor es mejor usada para eliminar enemigos."
+            "name": "Suppressed Sentry Gun",
+            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
         },
         "trip_mines_and_shaped_charges": {
-            "name": "Mina de Sensor - Carga Hueca",
-            "description": "Para usar la Mina de Sensor, debes desplegarla manteniendo [G]. Esta se puede alternar entre modo explosivo (láser rojo. detonará con cualquier enemigo) o detector (láser azul, marcará enemigos no especiales en sigilo y enemigos especiales en combate). Para usar una Carga Hueca, debes plantarla manteniendo [F].\nLa mina de sensor es un dispositivo diseñado para eliminar o detectar a quienes pasen frente al láser. La carga hueca suele ser usada para abrir puertas u cajas fuertes. Ambas pueden son muy útiles en un combate."
+            "name": "Trip Mines and Shaped Charges",
+            "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
         }
     },
     "perk_cards": {
         "helmet_popping": {
-            "name": "Revientacascos",
-            "description": "El daño que infliges con disparos en la cabeza es aumentado por un 25%."
+            "name": "Helmet Popping",
+            "description": "Increases your headshot damage by 25%."
         },
         "blending_in": {
-            "name": "Uno entre Muchos",
-            "description": "Tu ocultación es aumentada por 1.\nAl usar protección corporal, tu velocidad de movimiento será un 25% menos afectada.\nLa experiencia que obtienes al completar días y trabajos es aumentado por un 45%."
+            "name": "Blending In",
+            "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs."
         },
         "walk-in_closet": {
-            "name": "Armario Caminante",
-            "description": "Desbloquea la Caja de Armadura en tu inventario. Puedes usar la caja para transportar un chaleco o armadura corporal para cuando te sea necesario.\nLa munición que obtienes al tomar paquetes de munición es aumentada por un 35%."
+            "name": "Walk-in Closet",
+            "description": "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\nIncreases your ammo pickup to 135% of the normal rate."
         },
         "fast_and_furious": {
-            "name": "Rápido y Furioso",
-            "description": "Obtienes una bonificación de 5% de daño para todas tus armas excepto Arrojadizas, Cuerpo A Cuerpo, Lanzagranadas o Lanzacohetes.\nTu velocidad para usar Botiquines Médicos es aumentada por un 20%."
+            "name": "Fast and Furious",
+            "description": "You do 5% more damage. Does not apply to melee damage, throwables, grenade launchers or rocket launchers.\nIncreases your doctor bag interaction speed by 20%."
         },
         "brute_strength-1": {
-            "name": "Pez Gordo",
-            "description": "Todos los jugadores obtienen una bonificación de 8% de resistencia al daño.\nEsta bonificación se duplica para ti cuando tu salud está por debajo del 50%.\nNOTA: los talentos de equipo no se acumulan.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "name": "Brute Strength",
+            "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "marathon_man": {
-            "name": "Maratonista",
-            "description": "Tu alcance para gritar o marcar es aumentado por un 25%.\nCuando eres el objetivo de uno o más enemigos que están a menos de 18 metros de distancia obtienes una bonificación de 6% de resistencia al daño durante 7 segundos.\nLa resistencia (para esprintar) de todos los jugadores es aumentada por un 50%.\nNOTA: los talentos de equipo no se acumulan.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "name": "Marathon Man",
+            "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "wolf_pack": {
-            "name": "Manada de Lobos",
-            "description": "Tu salud es aumentada por un 10%.\nLa salud de los demás jugadores es aumentada por un 20%.\nNOTA: los talentos de equipo no se acumulan.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "name": "Wolf Pack",
+            "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "testudo": {
             "name": "Testudo",
-            "description": "Tu blindaje es aumentado por un 10%\nEl blindaje de los demás jugadores es aumentado por un 5%\nNOTA: los talentos de equipo no se acumulan.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "hostage_situation": {
-            "name": "Situación con Rehenes",
-            "description": "Por cada rehén que tiene tu equipo, la salud y la resistencia (para esprintar) de todos los jugadores son aumentadas por un 6% y un 12%, respectivamente, hasta un máximo de 4 rehenes.\nTener al menos un rehén otorga a todos los jugadores una bonificación adicional de resistencia al daño de un 8%\nNOTA: los talentos de equipo no se acumulan.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "name": "Hostage Situation",
+            "description": "You and your crew will gain 6% max health and 12% stamina for each hostage up to 4 times.\nYou and your crew will gain 8% damage reduction for having one or more hostages.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "brute_strength-2": {
-            "name": "Fuerza Bruta",
-            "description": "Tu salud es aumentada por un 10%.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "name": "Brute Strength",
+            "description": "You gain 10% more health",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "meat_shield": {
-            "name": "Escudo de Carne",
-            "description": "Eres un 15% más propenso a ser el objetivo de enemigos.\nLa bonificación de salud es aumentada un 10%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "name": "Meat Shield",
+            "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "giant_strength": {
-            "name": "Fuerza Gigantesca",
-            "description": "La bonificacion de salud es aumentada un 20%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "name": "Giant Strength",
+            "description": "You gain an additional 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "disturbing_the_peace": {
-            "name": "Destruyendo la Paz",
-            "description": "Todas tus armas excepto Arrojadizas, Arcos, Ballestas, Lanzagranadas, Lanzacohetes o equipadas con un supresor tienen una probabilidad de causar pánico en enemigos no especiales al disparar en su dirección. Los enemigos menos entrenados son más propensos a entrar en pánico.\nCuando un enemigo entra en pánico, este será incapaz de atacar.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "name": "Disturbing the Peace",
+            "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "800-pound_gorilla": {
-            "name": "Alfa Invencible",
-            "description": "La bonificacion de salud es aumentada un 40%.\nRegeneras un 3% de salud cada 5 segundos.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "name": "800-pound Gorilla",
+            "description": "You gain an additional 40% more health.\nYou regenerate 3% of your life every 5 seconds.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "type_1_armor": {
             "name": "Type I Armor",
@@ -286,52 +286,52 @@
         "medical_supplies": {
             "name": "Medical Supplies",
             "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "ammo_give_out": {
             "name": "Ammo Give Out",
             "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "sharing_is_caring": {
             "name": "Sharing Is Caring",
             "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "more_healing_1": {
             "name": "More Healing 1",
             "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "more_healing_2": {
             "name": "More Healing 1",
             "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "histamine": {
             "name": "Histamine",
             "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "adrenaline": {
             "name": "Adrenaline",
             "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "endorphins": {
             "name": "Endorphins",
             "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "dopamine": {
             "name": "Dopamine",
             "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "euphoria": {
             "name": "Euphoria",
             "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "koi_irezumi": {
             "name": "Koi Irezumi",
@@ -361,27 +361,27 @@
         "point_break": {
             "name": "Point Break",
             "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "the_emerging_force": {
             "name": "The Emerging Force",
             "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "life_of_ice": {
             "name": "Life of Ice",
             "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "awakening_earth": {
             "name": "Awakening Earth",
             "description": "Increases the amount of health stored from kills by 4.\nYou gain 20% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "the_perfect_line": {
             "name": "The Perfect Line",
             "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\tArmor recovery speed is reset whenever your armor recovers.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "excitement": {
             "name": "Excitement",
@@ -461,27 +461,27 @@
         "bad_guy_coming_through": {
             "name": "Bad Guy Coming Through",
             "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "play_rough": {
             "name": "Play Rough",
             "description": "You gain 10% more health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "public_enemy_no_1": {
             "name": "Public Enemy No. 1",
             "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "balls_vs_bullets": {
             "name": "Balls vs Bullets",
             "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "right_to_the_top": {
             "name": "Right to the Top",
             "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "smoker": {
             "name": "Smoker",
@@ -511,52 +511,52 @@
         "virtue": {
             "name": "Virtue",
             "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "un-moved": {
             "name": "Un-moved",
             "description": "All of your armor is converted and applied to your health.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "calm": {
             "name": "Calm",
             "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "imperturbable": {
             "name": "Imperturbable",
             "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "enduring": {
             "name": "Enduring",
             "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "soul_mates": {
             "name": "Soul Mates",
             "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
-            "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "scent": {
             "name": "Scent",
             "description": "Your maximum health is increased by 20%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "synergy": {
             "name": "Synergy",
             "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "inhale": {
             "name": "Inhale",
             "description": "Your maximum health is increased by 20%.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "harmony": {
             "name": "Harmony",
             "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
-            "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "code_glitch": {
             "name": "Code Glitch",
