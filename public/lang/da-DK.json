@@ -1,0 +1,1213 @@
+{
+    "armors": {
+        "suit": "Two-Piece Suit",
+        "light_ballistic": "Light Ballistic Vest",
+        "ballistic": "Ballistic Vest",
+        "heavy_ballistic": "Heavy Ballistic Vest",
+        "flak": "Flak",
+        "ctv": "Combined Tactical Vest",
+        "ictv": "Improved Combined Tactical Vest"
+    },
+    "deployables": {
+        "ammo_bag": {
+            "name": "Ammo Bag",
+            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
+        },
+        "armor_bag": {
+            "name": "Armor Bag",
+            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
+        },
+        "body_bag_case": {
+            "name": "Body Bag Case",
+            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
+        },
+        "doctor_bag": {
+            "name": "Doctor Bag",
+            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine"
+        },
+        "ecm_jammer": {
+            "name": "ECM Jammer",
+            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
+        },
+        "first_aid_kit": {
+            "name": "First Aid Kit",
+            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
+        },
+        "sentry_gun": {
+            "name": "Sentry Gun",
+            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team."
+        },
+        "suppressed_sentry_gun": {
+            "name": "Suppressed Sentry Gun",
+            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
+        },
+        "trip_mines_and_shaped_charges": {
+            "name": "Trip Mines and Shaped Charges",
+            "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
+        }
+    },
+    "perk_cards": {
+        "helmet_popping": {
+            "name": "Helmet Popping",
+            "description": "Increases your headshot damage by 25%."
+        },
+        "blending_in": {
+            "name": "Blending In",
+            "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs."
+        },
+        "walk-in_closet": {
+            "name": "Walk-in Closet",
+            "description": "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\nIncreases your ammo pickup to 135% of the normal rate."
+        },
+        "fast_and_furious": {
+            "name": "Fast and Furious",
+            "description": "You do 5% more damage. Does not apply to melee damage, throwables, grenade launchers or rocket launchers.\nIncreases your doctor bag interaction speed by 20%."
+        },
+        "brute_strength-1": {
+            "name": "Brute Strength",
+            "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "marathon_man": {
+            "name": "Marathon Man",
+            "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "wolf_pack": {
+            "name": "Wolf Pack",
+            "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "testudo": {
+            "name": "Testudo",
+            "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "hostage_situation": {
+            "name": "Hostage Situation",
+            "description": "You and your crew will gain 6% max health and 12% stamina for each hostage up to 4 times.\nYou and your crew will gain 8% damage reduction for having one or more hostages.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "brute_strength-2": {
+            "name": "Brute Strength",
+            "description": "You gain 10% more health",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "meat_shield": {
+            "name": "Meat Shield",
+            "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "giant_strength": {
+            "name": "Giant Strength",
+            "description": "You gain an additional 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "disturbing_the_peace": {
+            "name": "Disturbing the Peace",
+            "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "800-pound_gorilla": {
+            "name": "800-pound Gorilla",
+            "description": "You gain an additional 40% more health.\nYou regenerate 3% of your life every 5 seconds.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "type_1_armor": {
+            "name": "Type I Armor",
+            "description": "You gain 10% more armor",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+        },
+        "type_2_armor": {
+            "name": "Type II Armor",
+            "description": "You gain an additional 10% more armor.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "type_3_armor": {
+            "name": "Type III Armor",
+            "description": "You gain an additional 10% more armor.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "reinforced_armor": {
+            "name": "Reinforced Armor",
+            "description": "Your armor recovery rate is increased by 10%.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "liquid_armor": {
+            "name": "Liquid Armor",
+            "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "subtle-1": {
+            "name": "Subtle",
+            "description": "Your chance to dodge is increased by 15%.",
+            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+        },
+        "elusive": {
+            "name": "Elusive",
+            "description": "You are 15% less likely to be targeted when you are close to your crew members.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+        },
+        "evasive": {
+            "name": "Evasive",
+            "description": "Your chance to dodge is increased by an additional 15%.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+        },
+        "shadow_warrior": {
+            "name": "Shadow Warrior",
+            "description": "Your chance to dodge is increased by an additional 15%.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+        },
+        "killer_instinct": {
+            "name": "Killer Instinct",
+            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+        },
+        "basic_recovery": {
+            "name": "Basic Recovery",
+            "description": "Your armor recovery rate is increased by 5%.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+        },
+        "ambidexterity": {
+            "name": "Ambidexterity",
+            "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "advanced_recovery": {
+            "name": "Advanced Recovery",
+            "description": "Your armor recovery rate is increased by an additional 10%.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "expert_recovery": {
+            "name": "Expert Recovery",
+            "description": "Your armor recovery rate is increased by an additional 10%.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "tooth_and_claw": {
+            "name": "Tooth and Claw",
+            "description": "Your armor recovery rate is increased by an additional 10%.\nYour armor will recover 1.5 seconds after being broken no matter what the situation.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "subtle-2": {
+            "name": "Subtle",
+            "description": "Your chance to dodge is increased by 15%.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+        },
+        "basic_composure": {
+            "name": "Basic Composure",
+            "description": "Your chance to dodge is increased by 5% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "advanced_composure": {
+            "name": "Advanced Composure",
+            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "expert_composure": {
+            "name": "Expert Composure",
+            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 25% for ballistic vests.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "master_recovery": {
+            "name": "Master Recovery",
+            "description": "Your armor recovery rate is increased by 10%",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "sneaky": {
+            "name": "Sneaky",
+            "description": "Your chance to dodge is increased by 20%.",
+            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+        },
+        "bag_of_tricks": {
+            "name": "Bag of Tricks",
+            "description": "Standing still and crouching decreases your chances to be targeted by 10%.\nYou bag corpses 20% faster.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+        },
+        "luck_of_the_irish": {
+            "name": "Luck of the Irish",
+            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
+        },
+        "dutch_courage": {
+            "name": "Dutch Courage",
+            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
+        },
+        "breath_of_fresh_air": {
+            "name": "Breath of Fresh Air",
+            "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+        },
+        "overdog": {
+            "name": "OVERDOG",
+            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+        },
+        "basic_close_combat": {
+            "name": "Basic Close Combat",
+            "description": "When you are within medium range of an enemy, you receive 8% less damage from enemies.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "advanced_close_combat": {
+            "name": "Advanced Close Combat",
+            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "expert_close_combat": {
+            "name": "Expert Close Combat",
+            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "life_drain": {
+            "name": "Life Drain",
+            "description": "Striking an enemy with your melee weapon regenerates 20% of your health. This cannot occur more than once every 10 seconds.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "tension": {
+            "name": "Tension",
+            "description": "Killing an enemy regenerates 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "clean_hit": {
+            "name": "Clean Hit",
+            "description": "Killing an enemy with a melee weapon regenerates 10% health.\nThis cannot occur more than once every 1 second.\nWhen you are within medium range of an enemy you receive 8% less damage.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "overdose": {
+            "name": "Overdose",
+            "description": "Killing an enemy at medium range recovers 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "showdown": {
+            "name": "Showdown",
+            "description": "Killing an enemy at medium range has a 75% chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every 1 second.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "medical_supplies": {
+            "name": "Medical Supplies",
+            "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "ammo_give_out": {
+            "name": "Ammo Give Out",
+            "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "sharing_is_caring": {
+            "name": "Sharing Is Caring",
+            "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "more_healing_1": {
+            "name": "More Healing 1",
+            "description": "Increase health gained from ammo packs by additional 8.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "more_healing_2": {
+            "name": "More Healing 1",
+            "description": "Increase health gained from ammo packs by additional 8.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "histamine": {
+            "name": "Histamine",
+            "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "adrenaline": {
+            "name": "Adrenaline",
+            "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "endorphins": {
+            "name": "Endorphins",
+            "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "dopamine": {
+            "name": "Dopamine",
+            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "euphoria": {
+            "name": "Euphoria",
+            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "koi_irezumi": {
+            "name": "Koi Irezumi",
+            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to 20% armor recovery rate.\nNOTE: Entering this state negates third party regeneration effects.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+        },
+        "hebi_irezumi": {
+            "name": "Hebi Irezumi",
+            "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "tora_irezumi": {
+            "name": "Tora Irezumi",
+            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "ryu_irezumi": {
+            "name": "Ryu Irezumi",
+            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "oni_irezumi": {
+            "name": "Oni Irezumi",
+            "description": "All berserker state effects in this perk deck will start at 50% health instead of 25%.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "point_break": {
+            "name": "Point Break",
+            "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "the_emerging_force": {
+            "name": "The Emerging Force",
+            "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "life_of_ice": {
+            "name": "Life of Ice",
+            "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "awakening_earth": {
+            "name": "Awakening Earth",
+            "description": "Increases the amount of health stored from kills by 4.\nYou gain 20% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "the_perfect_line": {
+            "name": "The Perfect Line",
+            "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\tArmor recovery speed is reset whenever your armor recovers.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "excitement": {
+            "name": "Excitement",
+            "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+        },
+        "outburst": {
+            "name": "Outburst",
+            "description": "Members of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "fervor": {
+            "name": "Fervor",
+            "description": "Change the decay of your Hysteria Stacks to 60% + 40 every 8 seconds.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "recklessness": {
+            "name": "Recklessness",
+            "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "insanity": {
+            "name": "Insanity",
+            "description": "Damage absorption from Hysteria Stacks on you is increased by 100%.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "blitzkrieg_bop": {
+            "name": "Blitzkrieg Bop",
+            "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
+            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+        },
+        "straight_edge": {
+            "name": "Straight Edge",
+            "description": "50% of your health is converted into 100% armor.",
+            "vr_description": "The dash effect is now from 2 up to a maximum of 5."
+        },
+        "death_or_glory": {
+            "name": "Death or Glory",
+            "description": "50% of your health is converted into 110% armor.",
+            "vr_description": "The dash effect is now from 3 up to a maximum of 7."
+        },
+        "rise_above": {
+            "name": "Rise Above",
+            "description": "50% of your health is converted into 120% armor.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 9."
+        },
+        "lust_for_life": {
+            "name": "Lust for Life",
+            "description": "Dealing damage will grant you 10 armor - this can only occur once every 1.5 seconds.",
+            "vr_description": "The dash effect is now from 5 up to a maximum of 11."
+        },
+        "prospect": {
+            "name": "Prospect",
+            "description": "Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 4 times every 4 seconds.",
+            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+        },
+        "tail_gunner": {
+            "name": "Tail Gunner",
+            "description": "Every 10% health missing will increase the amount of armor gained from kills by 1.",
+            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        },
+        "road_captain": {
+            "name": "Road Captain",
+            "description": "Every 10% health missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
+            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+        },
+        "sgt-at-arms": {
+            "name": "Sgt-at-Arms",
+            "description": "Every 10% armor missing will increase the amount of health gained from kills by 1.",
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        },
+        "prez": {
+            "name": "Prez",
+            "description": "Every 10% armor missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
+            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+        },
+        "bad_guy_coming_through": {
+            "name": "Bad Guy Coming Through",
+            "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "play_rough": {
+            "name": "Play Rough",
+            "description": "You gain 10% more health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "public_enemy_no_1": {
+            "name": "Public Enemy No. 1",
+            "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "balls_vs_bullets": {
+            "name": "Balls vs Bullets",
+            "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "right_to_the_top": {
+            "name": "Right to the Top",
+            "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "smoker": {
+            "name": "Smoker",
+            "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
+            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+        },
+        "twitch": {
+            "name": "Twitch",
+            "description": "Every time the player gets shot, 20% dodge chance is gained. This effect is reset once the player dodges and will not occur for the next 4 second.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+        },
+        "subtle-3": {
+            "name": "Subtle",
+            "description": "Your chance to dodge is increased by 15%.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+        },
+        "agility_shield": {
+            "name": "Agility Shield",
+            "description": "Dodging will replenish your armor.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+        },
+        "unseen_shadow": {
+            "name": "Unseen Shadow",
+            "description": "All of your perk deck effects are increased by 100% while you are standing in the smoke screen. While any of your allies are standing in the smoke screen, they gain 10% dodge chance.",
+            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+        },
+        "virtue": {
+            "name": "Virtue",
+            "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "un-moved": {
+            "name": "Un-moved",
+            "description": "All of your armor is converted and applied to your health.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "calm": {
+            "name": "Calm",
+            "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "imperturbable": {
+            "name": "Imperturbable",
+            "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "enduring": {
+            "name": "Enduring",
+            "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "soul_mates": {
+            "name": "Soul Mates",
+            "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
+            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        },
+        "scent": {
+            "name": "Scent",
+            "description": "Your maximum health is increased by 20%.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        },
+        "synergy": {
+            "name": "Synergy",
+            "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+        },
+        "inhale": {
+            "name": "Inhale",
+            "description": "Your maximum health is increased by 20%.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        },
+        "harmony": {
+            "name": "Harmony",
+            "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
+            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+        },
+        "code_glitch": {
+            "name": "Code Glitch",
+            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+        },
+        "opsec": {
+            "name": "OpSec",
+            "description": "You gain 20% more health."
+        },
+        "bit_decay": {
+            "name": "Bit Decay",
+            "description": "Killing an enemy while the feedback effect is active will regenerate 20 health."
+        },
+        "kluge": {
+            "name": "Kluge",
+            "description": "Killing at least 1 enemy while the feedback or jamming effect is active will grant 20 dodge for 30 seconds."
+        },
+        "botnet": {
+            "name": "Botnet",
+            "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health."
+        }
+    },
+    "perk_decks": {
+        "crew_chief": {
+            "name": "Crew Chief",
+            "description": "The Crew Chief. also known as the Caporegime, is the head of a branch of an organized crime syndicate. The Crew Chief commands a crew of soldiers and reports directly to a boss or an underboss.\nWhen the crime syndicate needs to have someone dealt with, the Crew Chief and his soldiers make sure it's done."
+        },
+        "muscle": {
+            "name": "Muscle",
+            "description": "The Muscle is a tough guy who uses violence to send messages from his Mafia superioris. They are the backbone of any criminal organization.\nThe muscle is called in whenever you need to rough someone up, break some legs, crush a skull or remind people who's boss."
+        },
+        "armorer": {
+            "name": "Armorer",
+            "description": "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors.\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection to do their jobs."
+        },
+        "rogue": {
+            "name": "Rogue",
+            "description": "The Rogue is a stealthy criminal, capable of sneaky tricks and deadly force. Versatile and deceptive, the Rogue is hired to do anything from pickpocketing, to burglaries and con jobs.\nThe trademark of a Rogue is his versatility - what he lacks in strength he makes up for in skill."
+        },
+        "hitman": {
+            "name": "Hitman",
+            "description": "The Hitman is a professional killer from the criminal underworld who excels at close and ranged combat.\nCriminal syndicates will hire a hitman as a last resort to enforce criminal authority, deliver retribution or eliminate competition."
+        },
+        "crook": {
+            "name": "Crook",
+            "description": "The Crook is a versatile criminal. The term is as old as crime itself.\nTruly, the crook is a jack of all trades and a master of none. He steals, lies, cheats and does any and every dishonest or illegal work necessary to get by."
+        },
+        "burglar": {
+            "name": "Burglar",
+            "description": "The natural dexterity of the Burglar has benefits beyond merely breaking and entering. Being nimble allows the Burglar to pick locks, bag bodies and answer pagers faster. They are aslo harder to hit in combat. They stay alive by staying out of the way.\nThis physical conditioning also gives the Burglar a high tolerance to pain and the ability to shrug off wounds quickly."
+        },
+        "infiltrator": {
+            "name": "Infiltrator",
+            "description": "The Infiltrator is an agent hired by a government or large criminal organization to obtain information about its enemies, or by a corporation to obtain industrial secrets from its competitors.\nThe Infiltrator is a close combat specialist who knows how to use the environment in order to get the upper hand."
+        },
+        "sociopath": {
+            "name": "Sociopath",
+            "description": "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy."
+        },
+        "gambler": {
+            "name": "Gambler",
+            "description": "Heading into the furnace of battle requires skill, hardness and more than a little luck. Some people just have it.\nLuck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big."
+        },
+        "grinder": {
+            "name": "Grinder",
+            "description": "A typical grinder is a hard working individual, able to take control of difficult situations and turn them around.\nThe grinder relies heavily on always being in the front and dishing out punishment, being able to survive due to the fact that he does damage to the enemies regardless of how much damage he has sustained."
+        },
+        "yakuza": {
+            "name": "Yakuza",
+            "description": "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly."
+        },
+        "ex-president": {
+            "name": "Ex-President",
+            "description": "The Ex-Presidents are one of the most daring heisting crews out there. Great risk takers and brothers in arms. Their lack of fear for their own mortality brought them together and made them as successful as they are.\nAn Ex-President follows no rules and only adheres to the Ozaki 8, a set of trials to honor their nature."
+        },
+        "maniac": {
+            "name": "Maniac",
+            "description": "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit."
+        },
+        "anarchist": {
+            "name": "Anarchist",
+            "description": "The Anarchist refuses to acknowledge the arbitrary laws imposed by traditional authority. Kings, queens and presidents hold no sway over the Anarchist mind. Fly free and make your own rules is the motto. This refusal to abide by established truths enables the Anarchist to go where others cannot, employing unconventional tactics to slip through the cracks and reach seemingly impossible objectives."
+        },
+        "biker": {
+            "name": "Biker",
+            "description": "Biker gangs are feared all over the world, and the biggest clubs are common household names. To be a biker you need to be tough and loyal, and know that the rules of the club are absolute. Bikers are known to be ruthless and violent people, and they are never afraid to challenge anyone that dare to cross them.\nWhen wearing your patch and riding your bike, you proclaim to everyone that you belong to the 1%. The 1% that refuse to follow the rules of society and proudly carry the title of Outlaw. For a biker, all that matters are your fellow club members and your ride."
+        },
+        "kingpin": {
+            "name": "Kingpin",
+            "description": "The Kingpin is the boss, an autocrat whose every whim must be obeyed. But you gotta get the money first. Then when you get the money, you get the power. Remember, the only thing in this world that gives orders...is balls."
+        },
+        "sicario": {
+            "name": "Sicario",
+            "description": "The Sicario is a must in every drug cartel. Someone who takes care of all types of problems in a most lethal way. The Sicario never ducks out of a fight, they get the job done - without hesitation or fear."
+        },
+        "stoic": {
+            "name": "Stoic",
+            "description": "You are an unbreakable wall of resolve and calm. Discipline of the mind helps the Stoic overcome situations that would make others fall crying into shaking heaps. Combinations of breathing and physical reaction-control learned from buddhist monks will let you keep going long enough to finish the job, no matter what he enemy throws at you."
+        },
+        "tag_team": {
+            "name": "Tag Team",
+            "description": "Some way that experiences are best when shared, even in the case of performance-enhancing aerosol dispensers! For that special heister you like, this is something to bond over while you're looting bank vaults and taking care of business."
+        },
+        "hacker": {
+            "name": "Hacker",
+            "description": "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening."
+        }
+    },
+    "skills": {
+        "combat_medic": {
+            "name": "Combat Medic",
+            "description": "BASIC: 1 point\tYou gain a 30% damage reduction for 5 seconds both after and during reviving another player.\nACE: 3 points\tReviving a crew member gives them 30% more health."
+        },
+        "quick_fix": {
+            "name": "Quick Fix",
+            "description": "BASIC: 2 points\tDecreases your First Aid Kit and Doctor Bag deploy time by 50%.\nACE: 4 points\tCrew Members that use your First Aid Kits or Doctor Bags take 10% less damage for 120 seconds."
+        },
+        "painkillers": {
+            "name": "Painkillers",
+            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%"
+        },
+        "uppers": {
+            "name": "Uppers",
+            "description": "BASIC: 3 points\tAdds 7 more First Aid Kits to your inventory.\nACE: 6 points\tAdds 3 First Aid Kits to your inventory. Your deployed First Aid Kits will be automatically used if a player is downed within a 5 meter radius of the First Aid Kit. This cannot occur more than once every 20 seconds."
+        },
+        "combat_doctor": {
+            "name": "Combat Doctor",
+            "description": "BASIC: 3 points\tYou can now deploy 2 Doctor Bags instead of just one.\nACE: 6 points\tYour doctor bags have 2 more charges."
+        },
+        "inspire": {
+            "name": "Inspire",
+            "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds."
+        },
+        "forced_friendship": {
+            "name": "Forced Friendship",
+            "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill."
+        },
+        "confident": {
+            "name": "Confident",
+            "description": "BASIC: 2 points\tThe power and range of your intimidation is increased by 50%.\nACE: 4 points\tYou can now have 2 converted enemies at the same time."
+        },
+        "joker": {
+            "name": "Joker",
+            "description": "BASIC: 2 points\tYou can convert a non-special enemy to fight on your side.\tThis can not be done during stealth and the enemy must have surrendered in order for you to convert them.\nYou can only convert one non-special enemy at a time.\nACE: 4 points\tYour converted enemy deals 35% more damage. The time to convert an enemy is reduced by 65%."
+        },
+        "stockholm_syndrome": {
+            "name": "Stockholm Syndrome",
+            "description": "BASIC: 3 points\tCivilians are intimidated by the noise you make and remain intimidated 50% longer.\nACE: 6 points\tYour hostages will not flee when they have been rescued by law enforcers. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only 1 time during a heist."
+        },
+        "partners_in_crime": {
+            "name": "Partners in Crime",
+            "description": "BASIC: 3 points\tHaving a converted enemy increases your movement speed by 10%.\nYour converted enemy takes 45% less damage.\nACE: 6 points\tHaving a converted enemy increases your health by 30%.\nYour converted enemy takes an additional 54% less damage."
+        },
+        "hostage_taker": {
+            "name": "Hostage Taker",
+            "description": "BASIC: 4 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 1.5% health every 5 seconds.\nACE: 8 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 4.5% health every 5 seconds."
+        },
+        "stable_shot": {
+            "name": "Stable Shot",
+            "description": "BASIC: 1 point\tYou gain 8 weapon stability.\nACE: 3 points\tYou gain 16 weapon accuracy while standing still."
+        },
+        "rifleman": {
+            "name": "Rifleman",
+            "description": "BASIC: 2 points\tYour snap to zoom is 100% faster with all weapons.\nYour movement speed is unhindered while using steel sight.\nACE: 4 points\tYour weapon zoom level is increased by 25% with all weapons. Your weapon accuracy while moving with SMGs, Assault Rifles and Sniper Rifles is increased by 16.",
+            "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina.\tEvery 25 points of stamina consumed by dashing will refill 5% of their ammo pool to single shot weapons.\tACE: The improved accuracy lasts from 1 up to a maximum of 5 seconds after dashing."
+        },
+        "marksman": {
+            "name": "Marksman",
+            "description": "BASIC: 2 points\tYou gain 8 weapon accuracy with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 4 points\tYou gain a 20% accuracy bonus while aiming down sights with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
+        },
+        "ammo_efficiency": {
+            "name": "Ammo Efficiency",
+            "description": "BASIC: 3 points\tGetting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 6 points\tThe amount of headshots required is reduced to 2."
+        },
+        "aggressive_reload": {
+            "name": "Aggressive Reload",
+            "description": "BASIC: 3 points\tIncreases your reload speed with SMGs, Assault Rifles and Sniper Rifles by 15%.\nACE: 6 points\tAny killing headshot will increase your reload speed by 100% for 4 seconds. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
+        },
+        "graze": {
+            "name": "Graze",
+            "description": "BASIC: 4 points\tSnipers that hit their target deal 20% of the damage dealth in a 100cm radius around the bullet trajectory.\nACE: 8 points\tIf a bullet would headshot-kill someone, the graze skill will deal 100% of the weapon's damage instead of 20%."
+        },
+        "underdog": {
+            "name": "Underdog",
+            "description": "BASIC: 1 point\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
+        },
+        "shotgun_cqb": {
+            "name": "Shotgun CQB",
+            "description": "BASIC: 2 points\tYou reload Shotguns 15% faster.\nACE: 4 points\tYou reload Shotguns 35% faster. You gain a 125% increased steel sight zoom speed when using Shotguns.",
+            "vr_description": "Addition in VR:\tACE: Every kill while aiming down sight will regenerate 2% stamina."
+        },
+        "shotgun_impact": {
+            "name": "Shotgun Impact",
+            "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns."
+        },
+        "far_away": {
+            "name": "Far Away",
+            "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights."
+        },
+        "close_by": {
+            "name": "Close By",
+            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells",
+            "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
+        },
+        "overkill": {
+            "name": "Overkill",
+            "description": "BASIC: 4 points\tWhen you kill an enemy with a Shotgun or the OVE9000 portable saw, you receive 75% damage increase for 20 seconds.\nACE: 8 points\tThe damage bonus now applies to all weapons. Skill must still be activated using a Shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
+        },
+        "resilience": {
+            "name": "Resilience",
+            "description": "BASIC: 1 point\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%."
+        },
+        "die_hard": {
+            "name": "Die Hard",
+            "description": "BASIC: 2 points\tYou take 50% less damage while interacting with objects.\nACE: 4 points\tIncreases the armor of all Ballistic vests by 20."
+        },
+        "transporter": {
+            "name": "Transporter",
+            "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penalty is reduced by 1%."
+        },
+        "shock_and_awe": {
+            "name": "Shock and Awe",
+            "description": "BASIC: 3 points\tIncreases the armor recovery rate for you and your crew by 25%.\nACE: 6 points\tEnables your weapons to have a chance to knock back Shield enemies when attacking them. Ranged weapons' knockback chance is increased the higher the total damage of the weapon is. Melee weapons' knockback chance is 100%."
+        },
+        "bullseye": {
+            "name": "Bullseye",
+            "description": "BASIC: 3 points\tYou regenerate 5 armor for each succesful headshot. This can not occur more than once every 2 seconds.\nACE: 6 points\tYou regenerate an additional 20 armor for each succesful headshot."
+        },
+        "iron_man": {
+            "name": "Iron Man",
+            "description": "BASIC: 4 points\tYour total armor value is increased by 30%.\nACE: 8 points\tUnlocks the ability to wear the Improved Combined Tactical Vest."
+        },
+        "scavenger": {
+            "name": "Scavenger",
+            "description": "BASIC: 1 point\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box."
+        },
+        "bulletstorm": {
+            "name": "Bulletstorm",
+            "description": "BASIC: 2 points\tAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to 5 seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\nACE: 4 points\tIncreases the base duration of the effect by up to 15 seconds."
+        },
+        "portable_saw": {
+            "name": "Portable Saw",
+            "description": "BASIC: 2 points\tUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\nACE: 4 points\tYou gain 1 extra saw blade for the OVE9000 portable saw. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%."
+        },
+        "extra_lead": {
+            "name": "Extra Lead",
+            "description": "BASIC: 3 points\tYou can now place 2 ammo bags instead of just one.\nACE: 6 points\tEach ammo bag now contains 50% more ammunition."
+        },
+        "saw_massacre": {
+            "name": "Saw Massacre",
+            "description": "BASIC: 3 points\tReducing the wear down of the blades on enemies by 50%.\nACE: 6 points\tYou can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear."
+        },
+        "fully_loaded": {
+            "name": "Fully Loaded",
+            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
+        },
+        "third_law": {
+            "name": "Third Law",
+            "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
+        },
+        "sentry_targeting_package": {
+            "name": "Sentry Targeting Package",
+            "description": "BASIC: 2 points\tYour sentry guns gain a 100% increase in accuracy.\nACE: 4 points\tYour sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
+        },
+        "eco_sentry": {
+            "name": "Eco Sentry",
+            "description": "BASIC: 2 points\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 4 points\tYour sentry guns gain 150% increased health."
+        },
+        "engineering": {
+            "name": "Engineering",
+            "description": "BASIC: 3 points\tYou can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.\nACE: 6 points\tYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75%, but increasing damage by 250% and allowing it to pierce through enemies and shields."
+        },
+        "jack_of_all_trades": {
+            "name": "Jack of All Trades",
+            "description": "BASIC: 3 points\tYou deploy and interact with all deployable 100% faster.\nACE: 6 points\tYou can now equip a secondary deployable to bring with you. If your deployable is equipped as a secondary deployable, you can only bring half of what you should bring if it was equipped as a primary deployable."
+        },
+        "tower_defense": {
+            "name": "Tower Defense",
+            "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
+        },
+        "hardware_expert": {
+            "name": "Hardware Expert",
+            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
+        },
+        "combat_engineering": {
+            "name": "Combat Engineering",
+            "description": "BASIC: 2 points\tThe radius of your trip mine explosion is increased by 30%.\nACE: 4 points\tYour trip mine damage is increased by 50%."
+        },
+        "drill_sawgeant": {
+            "name": "Drill Sawgeant",
+            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw"
+        },
+        "more_firepower": {
+            "name": "More Firepower",
+            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain more shaped charges and 7 more trip mines."
+        },
+        "kickstarter": {
+            "name": "Kickstarter",
+            "description": "BASIC: 3 points\tYour drills and saws gain an additional 20% chance to automatically restart after breaking.\nACE: 6 points\tEnables the ability to reset a broken drill or saw with a melee attack. The ability has a 50% chance to fix the drill or saw. The ability can only be used once per time the drill or saw is broken.\nNote: Skill does not affect the OVE9000 saw."
+        },
+        "fire_trap": {
+            "name": "Fire Trap",
+            "description": "BASIC: 4 points\tYour trip mines now spread fire around the area of detonation for 10 seconds in a 4 meter diameter.\nACE: 8 points\tIncreases the fire effect duration by 10 seconds and increases the fire effect radius by 50%."
+        },
+        "steady_grip": {
+            "name": "Steady Grip",
+            "description": "BASIC: 1 point\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability."
+        },
+        "heavy_impact": {
+            "name": "Heavy Impact",
+            "description": "BASIC: 2 points\tYour shots have a 5% chance to stagger all enemies except Bulldozers and Captain Winters.\nACE: 4 points\tIncreases your stagger chance to 20%."
+        },
+        "fire_control": {
+            "name": "Fire Control",
+            "description": "BASIC: 2 points\tYou gain 12 weapon accuracy while firing from the hip.\nACE: 4 points\tYour accuracy penalty is decreased by 20% when shooting while moving.",
+            "vr_description": "Addition in VR:\tACE: The decreased accuracy penalty lasts from 1 up to a maximum of 5 seconds after dashing."
+        },
+        "lock_n_load": {
+            "name": "Lock N' Load",
+            "description": "BASIC: 3 points\tYou can how hip-fire with your weapons while sprinting.\nACE: 6 points\tKilling 2 enemies with SMGs, LMGs, Assault Rifles or Special Weapons set on automatic fire mode will increase your next reload speed by up to 100%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a maximum of 40% reload speed increase.",
+            "vr_description": "Addition in VR:\tBASIC: Every 40 points of stamina consumed by dashin will refill 5% of their ammo pool to automatic weapons."
+        },
+        "surefire": {
+            "name": "Surefire",
+            "description": "BASIC: 3 points\t Your SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
+        },
+        "body_expertise": {
+            "name": "Body Expertise",
+            "description": "BASIC: 4 points\t30% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode.\nACE: 8 points\t90% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode."
+        },
+        "chameleon": {
+            "name": "Chamaleon",
+            "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
+        },
+        "cleaner": {
+            "name": "Cleaner",
+            "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
+        },
+        "sixth_sense": {
+            "name": "Sixth Sense",
+            "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
+        },
+        "nimble": {
+            "name": "Nimble",
+            "description": "BASIC: 3 points\tYou gain the ability to disable 1 camera from detecting you and your crew. Effect lasts for 25 seconds.\nACE: 6 points\tYou lockpick 100% faster. You also gain the ability to lockpick safes."
+        },
+        "ecm_overdrive": {
+            "name": "ECM Overdrive",
+            "description": "BASIC: 3 points\tYour ECM jammer and feedback duration is increased by 25%.\nACE: 6 points\tYour ECM jammer can now also be used to open certain electronic doors."
+        },
+        "ecm_specialist": {
+            "name": "ECM Specialist",
+            "description": "BASIC: 4 points\tYou can now place 2 ECM jammers instead of just one.\nACE: 8 points\tThe ECM jammer duration is increased by an additional 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammers."
+        },
+        "duck_and_cover": {
+            "name": "Duck and Cover",
+            "description": "BASIC: 1 point\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
+            "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
+        },
+        "parkour": {
+            "name": "Parkour",
+            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting",
+            "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
+        },
+        "inner_pockets": {
+            "name": "Inner Pockets",
+            "description": "BASIC: 2 points\tIncreases the concealment of melee weapons by 2.\nACE: 4 points\tIncreases the concealment of all ballistic vests by 4."
+        },
+        "dire_need": {
+            "name": "Dire Need",
+            "description": "BASIC: 3 points\tWhen your armor breaks, the first shot on every enemy will cause that enemy to stagger. This effect ends when your armor recovers.\nACE: 6 points\tThe effect persists for 6 after your armor has recovered."
+        },
+        "shockproof": {
+            "name": "Shockproof",
+            "description": "BASIC: 3 points\tWhen tased, the shock effect has a 30% chance to backfire on the Taser, knocking them back.\nACE: 6 points\tWhen tased, you are able to free yourself from the taser by interacting with it within 2 seconds of getting tased."
+        },
+        "sneaky_bastard": {
+            "name": "Sneaky Bastard",
+            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+        },
+        "second_wind": {
+            "name": "Second Wind",
+            "description": "BASIC: 1 point\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered."
+        },
+        "optical_illusions": {
+            "name": "Optical Illusions",
+            "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
+        },
+        "the_professional": {
+            "name": "The Professional",
+            "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
+            "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
+        },
+        "low_blow": {
+            "name": "Low Blow",
+            "description": "BASIC: 3 points\tYou gain a 3% critical hit for every 3 points of detection rate under 35 up to 30%.\nACE: 6 points\tYou gain 3% critical hit chance for every 1 point of detection rate under 35 up to 30%.\nNote: Does not apply to grenade launchers."
+        },
+        "high_value_target": {
+            "name": "High Value Target",
+            "description": "BASIC: 3 points\tEnemies you mark take 15% more damage.\nACE: 6 points\tEnemies you mark take an additional 50% damage when further away than 10 meters. Increase the duration of marked enemies by 100% and you can now mark specials by aiming down at them with any weapon."
+        },
+        "unseen_strike": {
+            "name": "Unseen Strike",
+            "description": "BASIC: 4 points\tIf you do not lose any armor or health for 4 seconds, you gain 35% critical hit chance for 6 seconds.\nACE: 8 points\tThe critical hit chance duration is increased to 18 seconds.\nTaking any damage will cancel the effect."
+        },
+        "equilibrium": {
+            "name": "Equilibrium",
+            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+        },
+        "gun_nut": {
+            "name": "Gun Nut",
+            "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+        },
+        "akimbo": {
+            "name": "Akimbo",
+            "description": "BASIC: 2 points\tYour Akimbo weapons' stability penalty is reduced by 8.\nACE: 4 points\tYour Akimbo weapons' stability penalty is reduced by an additional 8 and they also have 50% increased ammo capacity."
+        },
+        "one_handed_talent": {
+            "name": "One Handed Talent",
+            "description": "BASIC: 3 points\tThe base damage of all pistols is increased by 5.\nACE: 6 points\tThe base damage of all pistols is increased by an additional 10 damage."
+        },
+        "desperado": {
+            "name": "Desperado",
+            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10% and you can stack it 4 times.\nACE: 6 points\tYou reload 50% faster."
+        },
+        "trigger_happy": {
+            "name": "Trigger Happy",
+            "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
+        },
+        "nine_lives": {
+            "name": "Nine Lives",
+            "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
+        },
+        "running_from_death": {
+            "name": "Running from Death",
+            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10% seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
+        },
+        "up_you_go": {
+            "name": "Up You Go",
+            "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
+        },
+        "swan_song": {
+            "name": "Swan Song",
+            "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
+        },
+        "feign_death": {
+            "name": "Feign Death",
+            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
+        },
+        "messiah": {
+            "name": "Messiah",
+            "description": "BASIC: 4 points\tWhile in bleedout, you can revive yourself if you kill an enemy. You only have 1 charge.\nACE: 8 points\tYour messiah charge is replenished whenever you use a doctor bag."
+        },
+        "martial_arts": {
+            "name": "Martial Arts",
+            "description": "BASIC: 1 point\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike."
+        },
+        "bloodthirst": {
+            "name": "Bloodthirst",
+            "description": "BASIC: 2 points\tEvery kill you get will increase your next melee attack damage by 100%, up to a maximum of 1600%. This effect gets reset when you kill an enemy with a melee attack.\nACE: 4 points\tWhenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds."
+        },
+        "pumping_iron": {
+            "name": "Pumping Iron",
+            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage"
+        },
+        "counterstrike": {
+            "name": "Counterstrike",
+            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks"
+        },
+        "berserker": {
+            "name": "Berserker",
+            "description": "BASIC: 3 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.\nACE 6 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well.\nNote: Does not apply to throwables, grenade launchers or rocket launchers.\nEntering berserker state negates third-party regeneration effects."
+        },
+        "frenzy": {
+            "name": "Frenzy",
+            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%"
+        }
+    },
+    "system": {
+        "name": "PD2 Builder",
+        "home": "Home",
+        "bigoil": "Big Oil Engine Calc",
+        "requires": {
+            "perk_deck": "REQUIRES THE %{name} PERK DECK EQUIPPED",
+            "perk_card": "REQUIRES THE %{name} PERK CARD EQUIPPED",
+            "throwable": "REQUIRES THE %{name} THROWABLE EQUIPPED",
+            "skill": "REQUIRES THE %{name} SKILL",
+            "deployable": "REQUIRES THE %{name} DEPLOYABLE EQUIPPED"
+        },
+        "equipped": "EQUIPPED",
+        "equip": "EQUIP.",
+        "selected": "SELECTED",
+        "primary": "PRIMARY",
+        "secondary": "SECONDARY",
+        "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
+        "skills": {
+            "title": "Skills",
+            "remaining": "Remaining skill points: ",
+            "mastermind": {
+                "title": "MASTERMIND",
+                "subtrees": {
+                    "medic": "MEDIC",
+                    "controller": "CONTROLLER",
+                    "sharpshooter": "SHARPSHOOTER"
+                }
+            },
+            "enforcer": {
+                "title": "ENFORCER",
+                "subtrees": {
+                    "shotgunner": "SHOTGUNNER",
+                    "tank": "TANK",
+                    "ammo_specialist": "AMMO SPECIALIST"
+                }
+            },
+            "technician": {
+                "title": "TECHNICIAN",
+                "subtrees": {
+                    "engineer": "ENGINEER",
+                    "breacher": "BREACHER",
+                    "oppressor": "OPPRESSOR"
+                }
+            },
+            "ghost": {
+                "title": "GHOST",
+                "subtrees": {
+                    "shinobi": "SHINOBI",
+                    "artful_dodger": "ARTFUL DODGER",
+                    "silent_killer": "SILENT KILLER"
+                }
+            },
+            "fugitive": {
+                "title": "FUGITIVE",
+                "subtrees": {
+                    "gunslinger": "GUNSLINGER",
+                    "revenant": "REVENANT",
+                    "brawler": "BRAWLER"
+                }
+            }
+        },
+        "perk_decks": {
+            "title": "Perk Decks"
+        },
+        "armors": {
+            "title": "Armors",
+            "table": {
+                "columns": {
+                    "total": "TOTAL",
+                    "base": "BASE",
+                    "skill": "SKILL",
+                    "equipped": "EQUIPPED",
+                    "selected": "SELECTED"
+                },
+                "rows": {
+                    "armor": "ARMOR",
+                    "concealment": "CONCEALMENT",
+                    "speed": "SPEED",
+                    "dodge": "DODGE",
+                    "steadiness": "STEADINESS",
+                    "stamina": "STAMINA"
+                }
+            }
+        },
+        "throwables": {
+            "title": "Throwables"
+        },
+        "deployables": {
+            "title": "Deployables"
+        },
+        "share": {
+            "title": "Share Build",
+            "description": "Share your Build with anyone!",
+            "copy": "Copy Link",
+            "copied": "Copied!",
+            "native": "Share!"
+        },
+        "credits": {
+            "title": "Credits",
+            "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
+            "p2": "Contributors of this project can be found &{here}.",
+            "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
+            "reach": "Reach us at: "
+        }
+    },
+    "throwables": {
+        "matryoshka_grenade": {
+            "name": "Matryoshka Grenade",
+            "description": "The Matryoshka Grenade is a throwable explosive device. The doll's outer layers hides its inner workings. Creates substantial damage at the same time as it pays tribute to the motherland."
+        },
+        "incendiary_grenade": {
+            "name": "Incendiary Grenade",
+            "description": "The Incendiary Grenade is a nasty self igniting phosphorus container. It ignites after a few seconds, making it perfect for bouncing off walls towards your enemies. Upon ignition it causes serious damage – setting enemies ablaze."
+        },
+        "hef_grenade": {
+            "name": "HEF Grenade",
+            "description": "This is an updated version of the classic hand grenade. Even though the original frag grenade is still in use, this new sleek design will provide that OVERKILL touch to each blast. Still as cheap and still as effective."
+        },
+        "ace_of_spades": {
+            "name": "Ace of Spades",
+            "description": "Throwing cards are generally associated with magicians splitting watermelons across a stage but add weight and razor edges and you have a silent killer. Have one of these steel aces in your sleeves and you will always be ready to deal yourself into the game, regardless of the circumstances.\nThe Ace of Spades is a free throwable given to the community to celebrate two years of PAYDAY 2!"
+        },
+        "concussion_grenade": {
+            "name": "Concussion Grenade",
+            "description": "This stunning little beauty will take everyone's breath away, giving you those couple of extra seconds you need to kill them."
+        },
+        "frag_grenade": {
+            "name": "Frag Grenade",
+            "description": "The frag grenade is a concept that has changed little from its inception. It is a thrown casing that explodes, sending shards and splinters away with such force they can slice through flesh, bone and light armor. Cheap and effective."
+        },
+        "molotov_cocktail": {
+            "name": "Molotov Cocktail",
+            "description": "The Molotov cocktail is perhaps the simplest weapon that can call itself a grenade. Nothing more than a breakable bottle of flammable liquid with a 'fuse' replaced by a burning rag. It is cheap, simple and highly effective."
+        },
+        "dynamite": {
+            "name": "Dynamite",
+            "description": "Swedish engineer. Alfred Nobel, discovered dynamite and its effectiveness in blastic rock. But it was drunk prospector. Ol' Kenneth, who discovered its effectiveness in blasting people."
+        },
+        "shuriken": {
+            "name": "Shuriken",
+            "description": "Like a sword hidden in the user's hand the shuriken is a deadly weapon and perfectly silent. First made of nails and needles, the throwing star has had a long history filled with blood and battle. These modern stars of stainless steel will pose a lethal threat to anyone in front of you, and as long as you can find them there will be no stopping you.\nThe Shurikens have been coated in poison which deals damage over time and has a chance to interrupt enemies."
+        },
+        "javelin": {
+            "name": "Javelin",
+            "description": "With its origins lost in murky pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day. Despite this simplicity, it still requires skill and strength to use."
+        },
+        "throwing_knife": {
+            "name": "Throwing Knife",
+            "description": "A solid backup plan and a reliable tactic for a precise and silent kill. The Throwing Knife has been present in martial history for as long as people grew tired of throwing objects in a general direction and wanted a reliable weapon instead."
+        },
+        "throwing_axe": {
+            "name": "Throwing Axe",
+            "description": "A sharp axe is never wrong, and as this one is especially good when throwing, it got popular amongst bikers. Riding a bike, can sometimes be dangerous, and you need some \"protection\". So this sporting axe suddenly ran out of stock as bikers found it extra handy for highway battles."
+        },
+        "stoic_hip_flask": {
+            "name": "Stoic's Hip Flask",
+            "description": "An antique flask from 1882 bearing the inscription \"Stoic\" and \"JW Spirits\", given to Duke in his youth when he trained with Buddhist monks. Duke keeps it filled with his favorite whiskey; taking a swig is a symbolic gesture of calming and gives the bearer a moment of zen-like focus, easing away damage."
+        },
+        "pocket_ecm_device": {
+            "name": "Pocket ECM Device",
+            "description": "A small device for intercepting and overriding nearby encrypted signals. With sophisticated algorithms for sniffing out and disrupting wireless data, the Pocket ECM Device gives the user an edge both while hiding in the shadows and in the heat of combat."
+        },
+        "smoke_bomb": {
+            "name": "Smoke Bomb",
+            "description": "Drop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you. Dodging bullets is a piece of cake when they can't see you properly."
+        },
+        "gas_dispenser": {
+            "name": "Gas Dispenser",
+            "description": "A small gas dispenser that temporarily enhance the body's senses and provide healing effect for two allies."
+        },
+        "injector": {
+            "name": "Injector",
+            "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
+        }
+    }
+}
