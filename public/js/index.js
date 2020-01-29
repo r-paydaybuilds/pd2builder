@@ -423,7 +423,7 @@ document.onreadystatechange = async () => {
             e.addEventListener("touchend", end);
         });
     } else {
-        document.querySelectorAll(".pk_deck > div").forEach(e => {
+        document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
             e.addEventListener("mouseenter", () => {
                 builder.gui.PerkCard_HoveringHighlightOn(e); 
                 builder.gui.PerkCard_DisplayDescription(e); 
