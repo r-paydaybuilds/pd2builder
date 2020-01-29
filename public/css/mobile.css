@@ -423,24 +423,10 @@ div.footer a:hover {
 }
 
 .pk_deck {
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: flex-start;
-  align-items: center; 
-
-  width: 100%; 
-  padding: 5px; 
-
-  border: 2px solid transparent; 
-
   -webkit-transition: opacity .2s ease;
   -moz-transition:    opacity .2s ease;
   -o-transition:      opacity .2s ease;
   transition:         opacity .2s ease;
-}
-
-.pk_deck.pk_selected {
-  border: 2px solid rgb(240, 240, 240); 
 }
 
 .pk_deck p {
@@ -451,19 +437,6 @@ div.footer a:hover {
   
   margin: 0; 
   margin-left: 5%; 
-}
-
-.pk_deck.pk_deck_dim {
-  opacity: 0.6;  
-}
-
-.pk_preview {
-  width: 100%; 
-
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: flex-start; 
-  align-items: center; 
 }
 
 .pk_preview_card {
@@ -579,15 +552,10 @@ div.footer a:hover {
 }
 
 .pk_deck_cards {
-  width: 100%; 
-
   overflow-x: scroll;
   overflow-y: hidden;
 
-  display: flex; 
-  flex-flow: row nowrap; 
   justify-content: left;
-  align-items: center; 
 }
 
 .pk_deck_cards::-webkit-scrollbar {

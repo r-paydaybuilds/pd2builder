@@ -51,6 +51,7 @@ body > div {
   font-family: "DINEngschrift", "Noto Sans", sans-serif; 
 }
 
+
 /**********************************/
 /*        HEADER AND FOOTER       */
 /**********************************/
@@ -275,6 +276,7 @@ select {
   display: none; 
 }
 
+
 /**********************************/
 /*            SKILLS CSS          */
 /**********************************/
@@ -391,4 +393,46 @@ select {
 .sk_icon.sk_selected_basic > div,
 .sk_icon.sk_selected_aced > div {
   opacity: 1; 
+}
+
+
+/**********************************/
+/*         PERK DECKS CSS         */
+/**********************************/
+
+.pk_deck {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start;
+  align-items: center; 
+
+  width: 100%; 
+  padding: 5px; 
+
+  border: 2px solid transparent; 
+}
+
+.pk_deck.pk_selected {
+  border: 2px solid rgb(240, 240, 240); 
+}
+
+.pk_deck.pk_deck_dim {
+  opacity: 0.6;  
+}
+
+.pk_preview {
+  width: 100%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+
+.pk_deck_cards {
+  width: 100%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  align-items: center; 
 }
