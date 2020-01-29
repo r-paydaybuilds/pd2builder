@@ -57,8 +57,8 @@
     <div id="tab_page_buttons_wrapper">
       <div id="tab_page_buttons">
         <button id="tab_skills_button" data-name="skills">Skills</button>
-        <button id="tab_armors_button" data-name="armors">Armors</button>
         <button id="tab_perk_decks_button" data-name="perk_decks">Perk Decks</button>
+        <button id="tab_armors_button" data-name="armors">Armors</button>
         <button id="tab_throwables_button" data-name="throwables">Throwables</button>
         <button id="tab_deployables_button" data-name="deployables">Deployables</button>
         <button id="tab_io_button" data-name="share">Share Build</button>
@@ -787,7 +787,7 @@
           <div class="sk_points_remaining">
             <p>Remaining skill points: <span></span></p> 
           </div>
-          <div id="sk_description" class="bordered">
+          <div id="sk_description" class="description_textbox bordered">
             <div>
               <p class="sk_description"></p>  
             </div>
@@ -803,6 +803,189 @@
         </div>
         <div id="sk_subtree_name_right" class="sk_subtree_name">
           <p>RIGHT</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perk Deck Tab Content -->
+    <div id="tab_perk_decks_page" class="tab_page_content">
+      <div id="pk_page" class="bordered">
+        <div id="pk_container">
+          <div id="crew_chief" class="pk_deck">
+            <div class="pk_preview">
+              <p>CREW CHIEF</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="muscle" class="pk_deck">
+            <div class="pk_preview">
+              <p>MUSCLE</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>                  
+          <div id="armorer" class="pk_deck">
+            <div class="pk_preview">
+              <p>ARMORER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="rogue" class="pk_deck">
+            <div class="pk_preview">
+              <p>ROGUE</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="hitman" class="pk_deck">
+            <div class="pk_preview">
+              <p>HITMAN</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="crook" class="pk_deck">
+            <div class="pk_preview">
+              <p>CROOK</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="burglar" class="pk_deck">
+            <div class="pk_preview">
+              <p>BURGLAR</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="infiltrator" class="pk_deck">
+            <div class="pk_preview">
+              <p>INFILTRATOR</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="sociopath" class="pk_deck">
+            <div class="pk_preview">
+              <p>SOCIOPATH</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="gambler" class="pk_deck">
+            <div class="pk_preview">
+              <p>GAMBLER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="grinder" class="pk_deck">
+            <div class="pk_preview">
+              <p>GRINDER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="yakuza" class="pk_deck">
+            <div class="pk_preview">
+              <p>YAKUZA</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="ex-president" class="pk_deck">
+            <div class="pk_preview">
+              <p>EX-PRESIDENT</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="maniac" class="pk_deck">
+            <div class="pk_preview">
+              <p>MANIAC</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="anarchist" class="pk_deck">
+            <div class="pk_preview">
+              <p>ANARCHIST</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="biker" class="pk_deck">
+            <div class="pk_preview">
+              <p>BIKER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="kingpin" class="pk_deck">
+            <div class="pk_preview">
+              <p>KINGPIN</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="sicario" class="pk_deck">
+            <div class="pk_preview">
+              <p>SICARIO</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="stoic" class="pk_deck">
+            <div class="pk_preview">
+              <p>STOIC</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="tag_team" class="pk_deck">
+            <div class="pk_preview">
+              <p>TAG TEAM</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="hacker" class="pk_deck">
+            <div class="pk_preview">
+              <p>HACKER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pk_description_container" class="description_container">
+        <div id="pk_description" class="description_textbox bordered">
+          <div>
+            <p class="pk_description"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -852,116 +1035,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Perk Deck Tab Content -->
-    <div id="tab_perk_decks_page" class="container-fluid tab_page_content">
-      <div id="pk_page" class="row page_gutter">
-        <div id="pk_container_t" class="col-9 corners_t">
-          <div id="pk_container_b" class="corners_b">
-            <div id="pk_container_l" class="corners_l">
-              <div id="pk_container_r" class="corners_r">
-                <div id="crew_chief" class="row pk_deck">
-                  <p>CREW CHIEF</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="muscle" class="row pk_deck">
-                  <p>MUSCLE</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>                  
-                <div id="armorer" class="row pk_deck">
-                  <p>ARMORER</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="rogue" class="row pk_deck">
-                  <p>ROGUE</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="hitman" class="row pk_deck">
-                  <p>HITMAN</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="crook" class="row pk_deck">
-                  <p>CROOK</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="burglar" class="row pk_deck">
-                  <p>BURGLAR</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="infiltrator" class="row pk_deck">
-                  <p>INFILTRATOR</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="sociopath" class="row pk_deck">
-                  <p>SOCIOPATH</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="gambler" class="row pk_deck">
-                  <p>GAMBLER</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="grinder" class="row pk_deck">
-                  <p>GRINDER</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="yakuza" class="row pk_deck">
-                  <p>YAKUZA</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="ex-president" class="row pk_deck">
-                  <p>EX-PRESIDENT</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="maniac" class="row pk_deck">
-                  <p>MANIAC</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="anarchist" class="row pk_deck">
-                  <p>ANARCHIST</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="biker" class="row pk_deck">
-                  <p>BIKER</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="kingpin" class="row pk_deck">
-                  <p>KINGPIN</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="sicario" class="row pk_deck">
-                  <p>SICARIO</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="stoic" class="row pk_deck">
-                  <p>STOIC</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="tag_team" class="row pk_deck">
-                  <p>TAG TEAM</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-                <div id="hacker" class="row pk_deck">
-                  <p>HACKER</p>
-                  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="pk_description_container" class="col-3 description_container">
-          <div id="pk_description_t" class="row corners_t">
-            <div id="pk_description_b" class="corners_b">
-              <div id="pk_description_l" class="corners_l">
-                <div id="pk_description_r" class="corners_r">
-                  <p class="pk_description font-size-13"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
     <!-- Throwables Tab Content -->
     <div id="tab_throwables_page" class="container-fluid tab_page_content">
       <div id="th_page" class="row page_gutter">
