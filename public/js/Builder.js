@@ -99,14 +99,6 @@ export default class Builder {
         this.lang = new Language(obj, lang);
         document.documentElement.setAttribute("lang", lang);
 
-        document.querySelectorAll("#tab_page_buttons > button").forEach(e => {
-            e.textContent = this.lang.get(`system.${e.dataset.name}.title`);
-        });
-
-        for(const value of Builder.TREES) {
-            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
-        }
-
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
             e.setAttribute("data-equip", this.lang.get("system.equip"))
         );
@@ -119,36 +111,17 @@ export default class Builder {
             const query = document.querySelector(`#${key}.pk_selected p`);
             if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
         }
-
+    
         for(const [key] of this.dbs.get("skills")) {
             document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
         }
-
-        document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
-        document.getElementById("io_share_button").textContent = this.lang.get("system.share.native");
-
-        GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
-        if(this.mobile || true) { // TODO: Fix 
-            if(document.getElementById("sk_tree_buttons").dataset.tree) document.querySelector("#sk_tree_buttons > button").textContent = this.lang.get(`system.skills.${document.getElementById("sk_tree_buttons").dataset.tree}.title`).toLocaleUpperCase();
-            return;
-        }
-
-        document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
-        document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
-
         document.querySelector(".sk_points_remaining > p").innerHTML = this.lang.get("system.skills.remaining") + document.querySelector(".sk_points_remaining p span").outerHTML;
 
-        document.querySelector("#io_save_r p").textContent = this.lang.get("system.share.description");
-        document.querySelector("#io_other_r > p").textContent = this.lang.get("system.credits.title");
-        document.querySelector("#io_other_r > .font-size-16 p:first-child").textContent = this.lang.get("system.credits.p1");
-        document.querySelector("#io_other_r > .font-size-16 p:last-child").innerHTML = this.lang.get("system.credits.p2")({
-            ref: [x => `<a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">${x}</a>`]
+        document.querySelectorAll("[data-lang]").forEach(e => {
+            const lang = this.lang.get(e.dataset.lang);
+            e.innerHTML = Language.ref.has(e.dataset.lang) ? lang(Language.ref.get(e.dataset.lang)) : lang;
         });
-        document.querySelector("#io_other_r > .font-size-14").children[0].innerHTML = this.lang.get("system.credits.license")({
-            ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]
-        });
-        document.querySelector(".io_widgets > p").textContent = this.lang.get("system.credits.reach");
-        
+        GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
     }
 }
 

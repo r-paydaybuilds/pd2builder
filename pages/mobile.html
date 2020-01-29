@@ -40,7 +40,7 @@
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <a href="#">PD2 Builder</a>
+      <a href="#" data-lang="system.name">PD2 Builder</a>
       <button>
         <span></span>
       </button>
@@ -49,10 +49,10 @@
           <select name="language" id="langDrop"></select>
         </div>
         <div>
-          <a class="current" href="#">Home</a>  
+          <a class="current" href="#" data-lang="system.home">Home</a>  
         </div>
         <div>
-          <a href="bigoil.html">Big Oil Engine Calc</a>
+          <a href="bigoil.html" data-lang="system.bigoil">Big Oil Engine Calc</a>
         </div>
       </div>
     </div>
@@ -63,12 +63,12 @@
       <div class="fadeRight"></div>
       <div id="tab_page_buttons">
         <aside class="spacer">&nbsp;</aside>
-        <button id="tab_skills_button" data-name="skills">Skills</button>
-        <button id="tab_armors_button" data-name="armors">Armors</button>
-        <button id="tab_perk_decks_button" data-name="perk_decks">Perk Decks</button>
-        <button id="tab_throwables_button" data-name="throwables">Throwables</button>
-        <button id="tab_deployables_button" data-name="deployables">Deployables</button>
-        <button id="tab_io_button" data-name="share">Share Build</button>
+        <button id="tab_skills_button" data-name="skills" data-lang="system.skills.title">Skills</button>
+        <button id="tab_armors_button" data-name="armors" data-lang="system.armors.title">Armors</button>
+        <button id="tab_perk_decks_button" data-name="perk_decks" data-lang="system.perk_decks.title">Perk Decks</button>
+        <button id="tab_throwables_button" data-name="throwables" data-lang="system.throwables.title">Throwables</button>
+        <button id="tab_deployables_button" data-name="deployables" data-lang="system.deployables.title">Deployables</button>
+        <button id="tab_io_button" data-name="share" data-lang="system.share.title">Share Build</button>
         <aside class="spacer">&nbsp;</aside>
       </div>
     </div>
@@ -84,11 +84,11 @@
         <button>Current SK Tree Name</button>
         <div id="sk_next_tree" class="sk_tree_easy"></div>
         <div class="sk_tree_button_group">
-          <div id="sk_mastermind_button">Mastermind</div>
-          <div id="sk_enforcer_button">Enforcer</div>
-          <div id="sk_technician_button">Technician</div>
-          <div id="sk_ghost_button">Ghost</div> 
-          <div id="sk_fugitive_button">Fugitive</div>
+          <div id="sk_mastermind_button" data-lang="system.skills.mastermind.title">Mastermind</div>
+          <div id="sk_enforcer_button" data-lang="system.skills.enforcer.title">Enforcer</div>
+          <div id="sk_technician_button" data-lang="system.skills.technician.title">Technician</div>
+          <div id="sk_ghost_button" data-lang="system.skills.ghost.title">Ghost</div> 
+          <div id="sk_fugitive_button" data-lang="system.skills.fugitive.title">Fugitive</div>
         </div>
       </div>
       <div id="sk_page">
@@ -1202,20 +1202,20 @@
     <!-- Save/Load Tab Content -->
     <div id="tab_io_page" class="tab_page_content">
       <div id="io_page" class="bordered">        
-        <p class="section-title">Share your Build with anyone!</p>
+        <p class="section-title" data-lang="system.share.description">Share your Build with anyone!</p>
         <div class="share-url-group">
           <span>URL</span>
           <input id="io_share_link" type="text" class="form-control" input onmouseover="this.select()" onmouseleave="this.blur()" readonly>
-          <button id="io_copy_btn" type="button" class="btn btn-secondary">Copy Link</button>
+          <button id="io_copy_btn" type="button" class="btn btn-secondary" data-lang="system.share.copy">Copy Link</button>
         </div>
-        <button id="io_share_button" type="button">Share!</button>
+        <button id="io_share_button" type="button" data-lang="system.share.native">Share!</button>
       </div>
       <div id="io_other" class="bordered">
-        <p class="section-title">Credits</p>
-        <p>This site was made possible by the combined effort of r/paydaybuilds community.</p>
-        <p>Contributors of this project can be found <a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">here</a>.</p>
-        <p>This software is provided under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. Do what you want with it, but please respect its open-source nature.</p>
-        <p>Reach us at: </p>
+        <p class="section-title" data-lang="system.credits.title">Credits</p>
+        <p data-lang="system.credits.p1">This site was made possible by the combined effort of r/paydaybuilds community.</p>
+        <p data-lang="system.credits.p2">Contributors of this project can be found <a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">here</a>.</p>
+        <p data-lang="system.credits.license">This software is provided under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. Do what you want with it, but please respect its open-source nature.</p>
+        <p data-lang="system.credits.reach">Reach us at: </p>
         <div id="io_widgets">
           <a href="https://discord.gg/3ndGBWC"><img alt="Discord Server" src="https://img.shields.io/badge/Chat-Discord-7289DA.svg?logo=discord&style=flat" width="103px" height="20px"></img></a>
           <a href="https://www.reddit.com/r/paydaybuilds/"><img alt="Subreddit" src="https://img.shields.io/badge/reddit-r/paydaybuilds-ff5700.svg?logo=reddit&style=flat" width="150px" height="20px"></a>
