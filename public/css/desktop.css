@@ -83,7 +83,7 @@ body {
   position: relative; 
 
   width: 25% !important; 
-  border-left: 10px solid transparent;   
+  border-left: 10px solid transparent;
 
   align-self: stretch; 
 }
@@ -511,3 +511,89 @@ body {
   justify-content: flex-start; 
   align-items: flex-start; 
 }
+
+
+
+/**********************************/
+/*         ARMOR-TH-DP CSS        */
+/**********************************/
+
+.th_icon {
+  max-width: 192px;
+}
+
+.arm_icon.arm_selected > div::before {    
+  font-size: 22px; 
+}
+
+.th_icon.th_selected > div::before {
+  font-size: 20px; 
+}
+
+.dp_icon.dp_selected > div::before, 
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  font-size: 22px; 
+}
+
+
+
+/**********************************/
+/*          SAVE/LOAD CSS         */
+/**********************************/
+
+#tab_io_page {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: stretch; 
+}
+
+#tab_io_page > div {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+#io_save p,
+#io_other p {
+  margin: 0; 
+  margin-bottom: 20px; 
+}
+
+#io_save p.section-title, 
+#io_other p.section-title {
+  margin-bottom: 40px; 
+}
+
+#io_other p a {
+  color: rgb(40, 90, 130); 
+
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
+}
+
+#io_other p a:hover {
+  color: rgb(50, 190, 255); 
+}
+
+.share-url-group {
+  font-size: 16px; 
+}
+
+#io_other {
+  border-left: 10px solid transparent;
+}
+
+#io_other > p:not(.section-title) {
+  font-size: 18px; 
+}
+
+.section-title {
+  align-self: center; 
+  font-size: 28px; 
+}
+
