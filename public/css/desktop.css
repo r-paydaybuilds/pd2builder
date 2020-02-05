@@ -581,7 +581,19 @@ body {
 }
 
 .share-url-group {
-  font-size: 16px; 
+  font-size: 16px;
+  
+  -webkit-transition: width .15s ease;
+  -moz-transition:    width .15s ease;
+  -o-transition:      width .15s ease;
+  transition:         width .15s ease;
+}
+
+@media only screen and (min-width: 1367px) {  
+  .share-url-group {
+    width: 75%;
+    align-self: center; 
+  }
 }
 
 #io_other {
