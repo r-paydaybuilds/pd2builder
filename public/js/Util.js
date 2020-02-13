@@ -3,6 +3,7 @@
 /**
  * Array intersection, to find the elements present in each of the passed arguments. Accepts an array of arrays as parameter
  * @param {...Array<Object>} param An array containg what to intersect
+ * @memberof Array.prototype
  */
 Array.prototype.intersect = function(...args) {
     for(const array of args) {
@@ -19,15 +20,114 @@ Array.prototype.intersect = function(...args) {
 };
 
 /**
+ * Reverse middle of array that is not of odd length
+ * @memberof Array.prototype
+ */
+Array.prototype.reverseMiddle = function() {
+    const array = this.slice(1, this.length - 1);
+    for(let i = 0; i < array.length; i += 2) {
+        [array[i], array[i+1]] = [array[i+1], array[i]];
+    }
+    return [this[0], ...array, this[this.length - 1]];
+};
+
+/**
  * Returns the string in camelCase if it has snake_case
+ * @memberof String.prototype
  */
 String.prototype.toCamelCase = function() {
     return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
 };
 
-//a lot of classes are in here
+/**
+ * A class that should be filled with absolutely not useless stuff
+ * @static
+ */
+class Util {
+    constructor() {
+        throw new Error("This class isn't supposed to be initialized");
+    }
 
-class skillMap extends Map {
+    /**
+     * Gives you a nice Payday 2 requires text
+     * @static
+     * @param {String} type type of thing
+     * @param {String} name name of thing
+     * @param {Language} lang language instance
+     * @returns {String}
+     */
+    static resolveRequire(type, name, lang) {
+        return lang.get("system.requires." + type)({ rep: { name }});
+    }
+
+    /**
+     * Sets new parameters in the current query string context
+     * @static
+     * @param {...String[]} args
+     * @returns {URLSearchParams} query string
+     */
+    static setParams(...args) {
+        const params = new URLSearchParams(window.location.search);
+        for(const [key, value] of args) {
+            params.set(key, value);
+        }
+        return params;
+    }
+
+    static makeState(lang, exp) {
+        return {
+            lang: lang,
+            skills: exp.skills.toJSON(),
+            armor: exp.armor,
+            perkDeck: exp.perkDeck,
+            throwable: exp.throwable,
+            deployable: exp.deployable,
+            deployableSecondary: exp.deployableSecondary
+        };
+    }
+
+    /**
+     * Used for filtering nodes
+     * @callback filterCallback
+     * @param {Node} value 
+     * @param {Number} index 
+     * @param {Node[]} array
+     * @param {Object} thisArg
+     */
+
+    /**
+     * Gives you the index of the node related to it's sibilings
+     * @static
+     * @param {Node} e 
+     * @param {filterCallback} filter
+     * @returns {Number}
+     */
+    static getNodeIndex(e, filter = () => true) {
+        return [...e.parentNode.children].filter(filter).indexOf(e);
+    }
+
+
+    /**
+     * Get parent element of rec times. Like parentElement(e, 2) = e.parentElement.parentElement
+     * @static
+     * @param {Element} e 
+     * @param {Number=} rec 
+     * @returns {Element}
+     */
+    static parentElement(e, rec = 1) {
+        let parent = e;
+        for(let i = 0; i < rec; i++) {
+            parent = parent.parentElement;
+        }
+        return parent;
+    }
+}
+
+/**
+ * Map for storing skills that are active
+ * @extends {Map}
+ */
+class SkillMap extends Map {
     constructor(...args) {
         super(...args);
         this.points = 120;
@@ -84,18 +184,70 @@ class skillMap extends Map {
     }
 }
 
-class dbMap extends Map {
+/**
+ * Map for storing all DBs
+ * @extends {Map<String,Map<String,Object>>}
+ * 
+ */
+class DBMap extends Map {
     fetchAll() {
         const array = [];
-        const self = this;
         for(const [key] of this) {
             array.push(
                 fetch(`./db/${key}.json`)
                     .then( res => res.json() )
-                    .then( json => self.set(key, new Map(Object.entries(json))) )
+                    .then( json => {
+                        if(key === "skills" || key === "perk_cards") {
+                            for(const prop in json) {
+                                if(!json[prop].stats) continue;
+                                if(key === "skills") {
+                                    if(json[prop].stats.basic) DBMap.processModifiers(...json[prop].stats.basic);
+                                    if(json[prop].stats.ace) DBMap.processModifiers(...json[prop].stats.ace);
+                                } else {
+                                    DBMap.processModifiers(...json[prop].stats);
+                                }
+                            }
+                        }
+                        this.set(key, new Map(Object.entries(json)));
+                    })
             );
         }
         return Promise.all(array);
+    }
+
+    /**
+     * The unlocks of the object containing the properties of the type above for it to be unlocked
+     * @typedef {Object} StatModifier
+     * @property {String} type The stat that is being modified
+     * @property {String|Number} value Value to apply if is number. Value to make a function out of if it's an string (needs to return a number)
+     * @property {Boolean=} multiply Flag to check if you want to multiply the value
+     * @property {String[]=} arguments Arguments that are stat names to apply to function if value is String
+     * @property {String[]=} whitelist Armors that are in the whitelist
+     * @property {String[]=} blacklist Armors that are in the blacklist
+     */
+
+    /**
+     * Makes functions out of the stat modifier info
+     * @param  {...StatModifier} mods 
+     */
+    static processModifiers(...mods) {
+        for(const mod of mods) {
+            if(!mod) continue;
+            if(typeof mod.value === "number") {
+                if(mod.multiply) {
+                    mod.exec = x => x * mod.value;
+                } else {
+                    mod.exec = x => x + mod.value;
+                }
+            } else {
+                const func = Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
+                if(mod.multiply) {
+                    mod.exec = (x, ...args) => x * func.apply({}, args);
+                } else {
+                    mod.exec = (x, ...args) => x + func.apply({}, args);
+                }
+            }
+        }
     }
 }
 
@@ -194,51 +346,5 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-export { System, dbMap, skillMap };
-
-/**
- * A class that should be filled with absolutely not useless stuff
- * @static
- */
-export default class Util {
-    constructor() {
-        throw new Error("This class isn't supposed to be initialized");
-    }
-
-    /**
-     * Gives you a nice Payday 2 requires text
-     * @static
-     * @param {String} type type of thing
-     * @param {String} name name of thing
-     * @param {Language} lang language instance
-     */
-    static resolveRequire(type, name, lang) {
-        return lang.get("system.requires." + type)({ rep: { name: name }});
-    }
-
-    /**
-     * Sets new parameters in the current query string context
-     * @static
-     * @param {...String[]} args
-     * @returns {URLSearchParams} query string
-     */
-    static setParams(...args) {
-        const params = new URLSearchParams(window.location.search);
-        for(const [key, value] of args) {
-            params.set(key, value);
-        }
-        return params;
-    }
-
-    static makeState(lang, exp) {
-        return {
-            lang: lang,
-            skills: exp.skills.toJSON(),
-            armor: exp.armor,
-            perkDeck: exp.perkDeck,
-            throwable: exp.throwable,
-            deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary
-        };
-    }
-}
+export { Util as default, SkillMap, DBMap, System };
+export const { querySelector: $, querySelectorAll: $$, getElementById: $i, getElementsByClassName: $c, getElementsByTagName: $t } = document;

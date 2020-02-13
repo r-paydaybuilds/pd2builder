@@ -69,7 +69,16 @@
         "ace": 4,
         "tier": 2,
         "subtree": "controller",
-        "tree": "mastermind"
+        "tree": "mastermind",
+        "stats": {
+            "basic": [
+                {
+                    "type": "shout",
+                    "value": 1.5,
+                    "multiply": true
+                }
+            ]
+        }
     },
     "joker": {
         "name": "Joker",
@@ -225,7 +234,16 @@
         "ace": 3,
         "tier": 1,
         "subtree": "tank",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "stats": {
+            "basic": [
+                {
+                    "type": "armorRecoveryRate",
+                    "value": 1.15,
+                    "multiply": true
+                }
+            ]
+        }
     },
     "die_hard": {
         "name": "Die Hard",
@@ -234,11 +252,24 @@
         "ace": 4,
         "tier": 2,
         "subtree": "tank",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "stats": {
+            "ace": [
+                {
+                    "type": "armor",
+                    "value": 20,
+                    "whitelist": [
+                        "light_ballistic",
+                        "ballistic",
+                        "heavy_ballistic"
+                    ]
+                }
+            ]
+        }
     },
     "transporter": {
         "name": "Transporter",
-        "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penaly is reduced by 1%.",
+        "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penalty is reduced by 1%.",
         "basic": 2,
         "ace": 4,
         "tier": 2,
@@ -252,7 +283,21 @@
         "ace": 6,
         "tier": 3,
         "subtree": "tank",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "stats": {
+            "basic": [
+                {
+                    "type": "armor",
+                    "value": 1.25,
+                    "multiply": true
+                },
+                {
+                    "type": "crewArmor",
+                    "value": 1.25,
+                    "multiply": true
+                }
+            ]
+        }
     },
     "bullseye": {
         "name": "Bullseye",
@@ -270,7 +315,19 @@
         "ace": 8,
         "tier": 4,
         "subtree": "tank",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "unlocks": [
+            { "type": "armor", "name": "ictv", "whenState": 2 }
+        ],
+        "stats": {
+            "basic": [
+                {
+                    "type": "armor",
+                    "value": 1.30,
+                    "multiply": true
+                }
+            ]
+        }
     },
     "scavenger": {
         "name": "Scavenger",
@@ -360,7 +417,10 @@
         "ace": 6,
         "tier": 3,
         "subtree": "engineer",
-        "tree": "technician"
+        "tree": "technician",
+        "unlocks": [
+            { "type": "deployable", "name": "suppressed_sentry_gun", "whenState": 1 }
+        ]
     },
     "jack_of_all_trades": {
         "name": "Jack of All Trades",
@@ -369,7 +429,10 @@
         "ace": 6,
         "tier": 3,
         "subtree": "engineer",
-        "tree": "technician"
+        "tree": "technician",
+        "unlocks": [
+            { "type": "deployableSecondary", "whenState": 2 }
+        ]
     },
     "tower_defense": {
         "name": "Tower Defense",

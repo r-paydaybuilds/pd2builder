@@ -1,0 +1,758 @@
+/**********************************/
+/* SKILL ICON SPRITESHEET OFFSETS */
+/**********************************/
+
+/* MASTERMIND */
+
+/* Medic */
+#combat_medic {
+  background-position: calc((400% / (960 - 80)) * 100) calc((560% / (1040 - 80)) * 100);  
+}
+#quick_fix {
+  background-position: calc((80% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100);
+}
+#painkillers {
+  background-position: 0% calc((800% / (1040 - 80)) * 100);
+}
+#uppers {
+  background-position: calc((160% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100);
+}
+#combat_doctor {
+  background-position: calc((400% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100);
+}
+#inspire {
+  background-position: calc((320% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100);
+}
+
+/* Controller */
+#forced_friendship {
+  background-position: calc((320% / (960 - 80)) * 100) calc((560% / (1040  - 80)) * 100); 
+}
+#confident {
+  background-position: calc((160% / (960 - 80)) * 100) calc((640% / (1040  - 80)) * 100); 
+}
+#joker {
+  background-position: calc((480% / (960 - 80)) * 100) calc((640% / (1040  - 80)) * 100); 
+}
+#stockholm_syndrome {
+  background-position: calc((240% / (960 - 80)) * 100) calc((640% / (1040  - 80)) * 100); 
+}
+#partners_in_crime {
+  background-position: calc((80% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+#hostage_taker {
+  background-position: calc((160% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+
+/* Sharpshooter */
+#stable_shot {
+  background-position: 0% calc((400% / (1040 - 80)) * 100); 
+}
+#rifleman {
+  background-position: calc((480% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#marksman {
+  background-position: calc((640% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#ammo_efficiency {
+  background-position: calc((640% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+#aggressive_reload {
+  background-position: calc((640% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#graze {
+  background-position: calc((880% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100);
+}
+
+
+/* ENFORCER */
+
+/* Shotgunner */
+#underdog {
+  background-position: calc((160% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#shotgun_cqb {
+  background-position: calc((640% / (960 - 80)) * 100) calc((560% / (1040 - 80)) * 100); 
+}
+#shotgun_impact {
+  background-position: calc((320% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#far_away {
+  background-position: calc((640% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#close_by {
+  background-position: calc((640% / (960 - 80)) * 100) calc((480% / (1040 - 80)) * 100); 
+}
+#overkill {
+  background-position: calc((240% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+
+/* Tank */
+#resilience {
+  background-position: calc((160% / (960 - 80)) * 100) calc((960% / (1040 - 80)) * 100); 
+}
+#die_hard {
+  background-position: calc((640% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100); 
+}
+#transporter {
+  background-position: calc((640% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100); 
+}
+#shock_and_awe {
+  background-position: calc((640% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+#bullseye {
+  background-position: calc((480% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+#iron_man {
+  background-position: calc((240% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+
+/* Ammo Specialist */
+#scavenger {
+  background-position: calc((640% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+#bulletstorm {
+  background-position: calc((320% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#portable_saw {
+  background-position: 0% calc((80% / (1040 - 80)) * 100); 
+}
+#extra_lead {
+  background-position: calc((560% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#saw_massacre {
+  background-position: 0% calc((160% / (1040 - 80)) * 100); 
+}
+#fully_loaded { 
+  background-position: calc((240% / (960 - 80)) * 100) 0%;
+}
+
+
+/* TECHNICIAN */
+
+/* Engineer */
+#third_law {
+  background-position: calc((720% / (960 - 80)) * 100) 0%; 
+}
+#sentry_targeting_package {
+  background-position: calc((720% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#eco_sentry {
+  background-position: calc((720% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#engineering {
+  background-position: calc((720% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#jack_of_all_trades {
+  background-position: calc((720% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+#tower_defense {
+  background-position: calc((720% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+
+/* Breacher */
+#hardware_expert {
+  background-position: calc((720% / (960 - 80)) * 100) calc((480% / (1040 - 80)) * 100); 
+}
+#combat_engineering {
+  background-position: calc((80% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#drill_sawgeant {
+  background-position: calc((240% / (960 - 80)) * 100) calc((480% / (1040 - 80)) * 100); 
+}
+#more_firepower {
+  background-position: calc((720% / (960 - 80)) * 100) calc((560% / (1040 - 80)) * 100); 
+}
+#kickstarter {
+  background-position: calc((720% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100); 
+}
+#fire_trap {
+  background-position: calc((720% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100); 
+}
+
+/* Oppressor */
+#steady_grip {
+  background-position: calc((720% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+#heavy_impact {
+  background-position: calc((800% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#fire_control {
+  background-position: calc((720% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+#lock_n_load {
+  background-position: calc((800% / (960 - 80)) * 100) 0%; 
+}
+#surefire {
+  background-position: calc((800% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#body_expertise {
+  background-position: calc((800% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+
+
+/* GHOST */
+
+/* Shinobi */
+#chameleon {
+  background-position: calc((400% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#cleaner {
+  background-position: calc((560% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#sixth_sense {
+  background-position: calc((480% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+#nimble {
+  background-position: calc((800% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+#ecm_overdrive {
+  background-position: calc((480% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#ecm_specialist {
+  background-position: calc((240% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+
+/* Artful Dodger */
+#duck_and_cover {
+  background-position: calc((800% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#parkour {
+  background-position: calc((800% / (960 - 80)) * 100) calc((480% / (1040 - 80)) * 100); 
+}
+#inner_pockets {
+  background-position: calc((800% / (960 - 80)) * 100) calc((560% / (1040 - 80)) * 100); 
+}
+#dire_need {
+  background-position: calc((800% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100); 
+}
+#shockproof {
+  background-position: calc((240% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#sneaky_bastard {
+  background-position: calc((80% / (960 - 80)) * 100) calc((960% / (1040 - 80)) * 100); 
+}
+
+/* Silent Killer */
+#second_wind {
+  background-position: calc((800% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100); 
+}
+#optical_illusions {
+  background-position: calc((800% / (960 - 80)) * 100) calc((800% / (1040 - 80)) * 100); 
+}
+#the_professional {
+  background-position: calc((320% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+#low_blow {
+  background-position: 0% calc((960% / (1040 - 80)) * 100); 
+}
+#high_value_target {
+  background-position: calc((640% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#unseen_strike {
+  background-position: calc((800% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+
+
+/* FUGITIVE */
+
+/* Gunslinger */
+#equilibrium {
+  background-position: calc((240% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100); 
+}
+#gun_nut {
+  background-position: calc((880% / (960 - 80)) * 100) 0%; 
+}
+#akimbo {
+  background-position: calc((240% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+#one_handed_talent {
+  background-position: calc((560% / (960 - 80)) * 100) calc((880% / (1040 - 80)) * 100); 
+}
+#desperado {
+  background-position: calc((880% / (960 - 80)) * 100) calc((80% / (1040 - 80)) * 100); 
+}
+#trigger_happy {
+  background-position: calc((880% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+
+/* Revenant */
+#nine_lives {
+  background-position: calc((400% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#running_from_death {
+  background-position: calc((880% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#up_you_go {
+  background-position: calc((880% / (960 - 80)) * 100) calc((320% / (1040 - 80)) * 100); 
+}
+#swan_song {
+  background-position: calc((400% / (960 - 80)) * 100) calc((960% / (1040 - 80)) * 100); 
+}
+#feign_death {
+  background-position: calc((880% / (960 - 80)) * 100) calc((400% / (1040 - 80)) * 100); 
+}
+#messiah {
+  background-position: calc((160% / (960 - 80)) * 100) calc((720% / (1040 - 80)) * 100); 
+}
+
+/* Brawler */
+#martial_arts {
+  background-position: calc((880% / (960 - 80)) * 100) calc((560% / (1040 - 80)) * 100); 
+}
+#bloodthirst {
+  background-position: calc((880% / (960 - 80)) * 100) calc((480% / (1040 - 80)) * 100); 
+}
+#pumping_iron {
+  background-position: calc((80% / (960 - 80)) * 100) calc((240% / (1040 - 80)) * 100); 
+}
+#counterstrike {
+  background-position: calc((320% / (960 - 80)) * 100) calc((960% / (1040 - 80)) * 100); 
+}
+#berserker {
+  background-position: calc((160% / (960 - 80)) * 100) calc((160% / (1040 - 80)) * 100); 
+}
+#frenzy {
+  background-position: calc((880% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100); 
+}
+
+  
+
+/**********************************/
+/* PERKS ICON SPRITESHEET OFFSETS */
+/**********************************/
+
+
+/* SHARED */
+
+.pk_deck .pk_deck_cards > div:nth-of-type(2)::after {
+  background-position: calc((48% / (240 - 48)) * 100) 0% 
+}
+.pk_deck .pk_deck_cards > div:nth-of-type(4)::after {
+  background-position: calc((96% / (240 - 48)) * 100) 0% 
+}
+.pk_deck .pk_deck_cards > div:nth-of-type(6)::after {
+  background-position: calc((144% / (240 - 48)) * 100) 0% 
+}
+.pk_deck .pk_deck_cards > div:nth-of-type(8)::after {
+  background-position: calc((192% / (240 - 48)) * 100) 0% 
+}
+
+
+/* CREW CHIEF */ 
+
+#crew_chief .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((48% / (1056 - 48)) * 100);
+}
+#crew_chief .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+}
+#crew_chief .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+}
+#crew_chief .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+}
+#crew_chief .pk_deck_cards > div:nth-of-type(9)::after,
+#crew_chief .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);  
+}
+
+
+/* MUSCLE */ 
+
+#muscle .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((96% / (1056 - 48)) * 100);
+}
+#muscle .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+}
+#muscle .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+}
+#muscle .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+}
+#muscle .pk_deck_cards > div:nth-of-type(9)::after,
+#muscle .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+}
+
+
+/* ARMORER */ 
+
+#armorer .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((144% / (1056 - 48)) * 100);
+}
+#armorer .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+}
+#armorer .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+}
+#armorer .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+}
+#armorer .pk_deck_cards > div:nth-of-type(9)::after,
+#armorer .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+}
+
+
+/* ROGUE */ 
+
+#rogue .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((192% / (1056 - 48)) * 100); 
+}
+#rogue .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+}
+#rogue .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+}
+#rogue .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+}
+#rogue .pk_deck_cards > div:nth-of-type(9)::after,
+#rogue .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+}
+
+
+/* HITMAN */ 
+
+#hitman .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((240% / (1056 - 48)) * 100); 
+}
+#hitman .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+}
+#hitman .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+}
+#hitman .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+}
+#hitman .pk_deck_cards > div:nth-of-type(9)::after,
+#hitman .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+}
+
+/* CROOK */ 
+
+#crook .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((288% / (1056 - 48)) * 100); 
+}
+#crook .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+}
+#crook .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+}
+#crook .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+}
+#crook .pk_deck_cards > div:nth-of-type(9)::after,
+#crook .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+}
+
+
+/* BURGLAR */ 
+
+#burglar .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((336% / (1056 - 48)) * 100); 
+}
+#burglar .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+}
+#burglar .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+}
+#burglar .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+}
+#burglar .pk_deck_cards > div:nth-of-type(9)::after,
+#burglar .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+}
+
+
+/* INFILTRATOR */ 
+
+#infiltrator .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((384% / (1056 - 48)) * 100); 
+}
+#infiltrator .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+}
+#infiltrator .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+}
+#infiltrator .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+}
+#infiltrator .pk_deck_cards > div:nth-of-type(9)::after,
+#infiltrator .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+}
+
+
+/* SOCIOPATH */ 
+
+#sociopath .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((432% / (1056 - 48)) * 100); 
+}
+#sociopath .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+}
+#sociopath .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+}
+#sociopath .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+}
+#sociopath .pk_deck_cards > div:nth-of-type(9)::after,
+#sociopath .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+}
+
+
+/* GAMBLER */ 
+
+#gambler .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((480% / (1056 - 48)) * 100); 
+}
+#gambler .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+}
+#gambler .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+}
+#gambler .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+}
+#gambler .pk_deck_cards > div:nth-of-type(9)::after,
+#gambler .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+}
+
+
+/* GRINDER */ 
+
+#grinder .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((528% / (1056 - 48)) * 100); 
+}
+#grinder .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+}
+#grinder .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+}
+#grinder .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+}
+#grinder .pk_deck_cards > div:nth-of-type(9)::after,
+#grinder .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+}
+
+
+/* YAKUZA */ 
+
+#yakuza .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((576% / (1056 - 48)) * 100); 
+}
+#yakuza .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+}
+#yakuza .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+}
+#yakuza .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+}
+#yakuza .pk_deck_cards > div:nth-of-type(9)::after,
+#yakuza .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+}
+
+
+/* EX-PRESIDENT */ 
+
+#ex-president .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((624% / (1056 - 48)) * 100); 
+}
+#ex-president .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+}
+#ex-president .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+}
+#ex-president .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+}
+#ex-president .pk_deck_cards > div:nth-of-type(9)::after,
+#ex-president .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+}
+
+
+/* MANIAC */ 
+
+#maniac .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((672% / (1056 - 48)) * 100); 
+}
+#maniac .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+}
+#maniac .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+}
+#maniac .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+}
+#maniac .pk_deck_cards > div:nth-of-type(9)::after,
+#maniac .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+}
+
+
+/* ANARCHIST */ 
+
+#anarchist .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((720% / (1056 - 48)) * 100); 
+}
+#anarchist .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+}
+#anarchist .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+}
+#anarchist .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+}
+#anarchist .pk_deck_cards > div:nth-of-type(9)::after,
+#anarchist .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+}
+
+
+/* BIKER */ 
+
+#biker .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((768% / (1056 - 48)) * 100); 
+}
+#biker .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+}
+#biker .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+}
+#biker .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+}
+#biker .pk_deck_cards > div:nth-of-type(9)::after,
+#biker .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+}
+
+
+/* KINGPIN */ 
+
+#kingpin .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((816% / (1056 - 48)) * 100); 
+}
+#kingpin .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+}
+#kingpin .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+}
+#kingpin .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+}
+#kingpin .pk_deck_cards > div:nth-of-type(9)::after,
+#kingpin .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+}
+
+
+/* SICARIO */ 
+
+#sicario .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((864% / (1056 - 48)) * 100); 
+}
+#sicario .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+}
+#sicario .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+}
+#sicario .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+}
+#sicario .pk_deck_cards > div:nth-of-type(9)::after,
+#sicario .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+}
+
+
+/* STOIC */ 
+
+#stoic .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((912% / (1056 - 48)) * 100); 
+}
+#stoic .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+}
+#stoic .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+}
+#stoic .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+}
+#stoic .pk_deck_cards > div:nth-of-type(9)::after,
+#stoic .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+}
+
+
+/* TAG TEAM */ 
+
+#tag_team .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((960% / (1056 - 48)) * 100); 
+}
+#tag_team .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+}
+#tag_team .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+}
+#tag_team .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+}
+#tag_team .pk_deck_cards > div:nth-of-type(9)::after,
+#tag_team .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+}
+
+
+/* HACKER */ 
+
+#hacker .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((1008% / (1056 - 48)) * 100); 
+}
+#hacker .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+}
+#hacker .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+}
+#hacker .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+}
+#hacker .pk_deck_cards > div:nth-of-type(9)::after,
+#hacker .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+}

@@ -42,6 +42,8 @@ export default class IO {
     GetEncodedBuild() {
         const url = new URL(window.location.href); // Get pure address without params 
         url.href = url.href.replace(url.search, "");
+        
+        url.href = url.href.replace("mobile.html", ""); // Remove mobile specification if necessary
 
         // Manage Skills
         if(this.builder.exp.skills.points !== 120) url.searchParams.set("s", this.encodeSkills()); 
@@ -70,29 +72,27 @@ export default class IO {
      * @returns {String}
      */
     encodeSkills() {
-        const self = this;
         let skillsString = "";
-        $(".sk_subtree").each(function () {
+        for(const e of document.getElementsByClassName("sk_subtree")) {
             let subtreeBasicChar = 0; 
             let subtreeAcedChar = 0; 
 
-            $(this).children(".sk_tier").each(function () {
-                $(this).find(".sk_icon").each(function () {
-                    if ($(this).hasClass("sk_selected_basic")) {
-                        subtreeBasicChar = subtreeBasicChar | 1;
-                    }
-                    else if ($(this).hasClass("sk_selected_aced")) {
-                        subtreeAcedChar = subtreeAcedChar | 1; 
-                    }
+            const arr = [...e.querySelectorAll(".sk_icon")];
+            (this.builder.mobile ? arr.reverse().reverseMiddle() : arr).forEach(e => {
+                if (e.classList.contains("sk_selected_basic")) {
+                    subtreeBasicChar = subtreeBasicChar | 1;
+                }
+                else if (e.classList.contains("sk_selected_aced")) {
+                    subtreeAcedChar = subtreeAcedChar | 1; 
+                }
 
-                    if ($(this).closest(".sk_tier").data("tier") != 1) { // Skip for last 
-                        subtreeBasicChar = subtreeBasicChar << 1; 
-                        subtreeAcedChar = subtreeAcedChar << 1; 
-                    }
-                });
+                if (e.closest(".sk_tier").dataset.tier != 1) { // Skip for last 
+                    subtreeBasicChar = subtreeBasicChar << 1; 
+                    subtreeAcedChar = subtreeAcedChar << 1; 
+                }
             }); 
-            skillsString += self.EncodeByte(subtreeBasicChar) + self.EncodeByte(subtreeAcedChar); 
-        }); 
+            skillsString += this.EncodeByte(subtreeBasicChar) + this.EncodeByte(subtreeAcedChar); 
+        } 
         return skillsString;
     }
 
@@ -102,11 +102,10 @@ export default class IO {
      */
     encodePerkDeck() {
         let pkCount = 0; 
-        $(".pk_deck").each(function () {
-            if ($(this).hasClass("pk_selected")) return false; 
-                
+        for(const { classList } of document.getElementsByClassName("pk_deck")) {
+            if (classList.contains("pk_selected")) break; 
             pkCount++; 
-        });
+        }
         return this.EncodeByte(pkCount);
     }
 
@@ -116,11 +115,10 @@ export default class IO {
      */
     encodeArmor() {
         let armCount = 0; 
-        $(".arm_icon").each(function () {
-            if ($(this).hasClass("arm_selected")) return false; 
-
+        for(const { classList } of document.getElementsByClassName("arm_icon")) {
+            if (classList.contains("arm_selected")) break; 
             armCount++; 
-        });
+        }
         return armCount;
     }
 
@@ -130,11 +128,10 @@ export default class IO {
      */
     encodeThrowable() {
         let thCount = 0; 
-        $(".th_icon").each(function () {
-            if ($(this).hasClass("th_selected")) return false; 
-
+        for(const { classList } of document.getElementsByClassName("th_icon")) {
+            if (classList.contains("th_selected")) break; 
             thCount++; 
-        });
+        }
         return this.EncodeByte(thCount);
     }
 
@@ -144,11 +141,10 @@ export default class IO {
      */
     encodeDeployable() {
         let dpCount = 0; 
-        $(".dp_icon").each(function () {
-            if ($(this).hasClass("dp_selected") || $(this).hasClass("dp_primary")) return false; 
-
+        for(const { classList } of document.getElementsByClassName("dp_icon")) {
+            if (classList.contains("dp_selected") || classList.contains("dp_primary")) break; 
             dpCount++; 
-        });
+        }
         return dpCount;
     }
 
@@ -157,13 +153,12 @@ export default class IO {
      * @returns {Number}
      */
     encodeSecondaryDeployable() {
-        let dpCount2 = 0; 
-        $(".dp_icon").each(function () {
-            if ($(this).hasClass("dp_secondary")) return false; 
-    
-            dpCount2++; 
-        });
-        return dpCount2;
+        let dpCount = 0; 
+        for(const { classList } of document.getElementsByClassName("dp_icon")) {
+            if (classList.contains("dp_secondary")) break; 
+            dpCount++; 
+        }
+        return dpCount;
     }
 
     /**
@@ -213,30 +208,30 @@ export default class IO {
      * @returns {void}
      */
     loadSkills(skills) {
-        let self = this;
-        $(".sk_subtree").each(function () {
-            let subtreeBasicChar = self.DecodeByte(skills.substr(0, 1)); 
-            let subtreeAcedChar = self.DecodeByte(skills.substr(1, 1));  
+        for(const e of document.getElementsByClassName("sk_subtree")) {
+            let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
+            let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
             let mask = 1; 
 
-            $(this).children(".sk_tier").reverse().each(function () {
-                $(this).find(".sk_icon").reverse().each(function () {
+            const tiers = [...e.querySelectorAll(".sk_tier")];
+            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el => 
+                [...el.querySelectorAll(".sk_icon")].reverse().forEach(ele => {
                     let skillBasicBit = subtreeBasicChar & mask;
                     let skillAcedBit = subtreeAcedChar & mask; 
             
                     if (skillBasicBit !== 0) {
-                        $(this).click(); 
+                        ele.click(); 
                     }
                     else if (skillAcedBit !== 0) {
-                        $(this).click(); 
-                        $(this).click();
+                        ele.click(); 
+                        ele.click();
                     }
 
                     mask = mask << 1; 
-                });
-            });
+                })
+            );
             skills = skills.substr(2); 
-        }); 
+        } 
     }
 
     /**
@@ -255,12 +250,12 @@ export default class IO {
      * @returns {void}
      */
     loadPerkDeck(perk) {
-        $(".pk_deck").each(function (index) {
+        document.querySelectorAll(".pk_deck").forEach((e, index) => {
             if (index === perk) {
-                $(this).click();
-                $("#tab_perk_decks_button").one("click", 
-                    () => this.scrollIntoView({ block: "center" })
-                );
+                e.click();
+                document.getElementById("tab_perk_decks_button").addEventListener("click", 
+                    () => e.scrollIntoView({ block: "center" }),
+                    { once: true });
             }
         }); 
     } 
@@ -271,9 +266,9 @@ export default class IO {
      * @returns {void}
      */
     loadArmor(armor) {
-        $(".arm_icon").each(function (index) {
+        document.querySelectorAll(".arm_icon").forEach((e, index) => {
             if (index === armor) {
-                $(this).click();
+                e.click();
             }
         }); 
     }
@@ -284,9 +279,9 @@ export default class IO {
      * @returns {void}
      */
     loadThrowable(throwable) {
-        $(".th_icon").each(function (index) {
+        document.querySelectorAll(".th_icon").forEach((e, index) => {
             if (index === throwable) {
-                $(this).click();
+                e.click();
             }
         }); 
     }
@@ -298,17 +293,18 @@ export default class IO {
      */
     loadDeployable(deployable) {
         let dpParam = String(deployable); 
-        let dp1 = dpParam.substr(0, 1); // === deployable if deployable.length === 1
-        let dp2 = dpParam.length > 1 ? dpParam.substr(1, 1) : -1; 
+        let dp1 = parseInt(dpParam.substr(0, 1)); // === deployable if deployable.length === 1
+        let dp2 = parseInt(dpParam.length > 1 ? dpParam.substr(1, 1) : -1); 
+        let dp2Found;
 
-        $(".dp_icon").each(function (index) {
+        document.querySelectorAll(".dp_icon").forEach((e, index) => {
             if (index === parseInt(dp1)) {
-                $(this).click();
-            }
-            else if (index === parseInt(dp2)) {
-                $(this).contextmenu();
+                e.click();
+            } else if (index === parseInt(dp2)) {
+                dp2Found = e;
             }
         }); 
+        if(dp2Found) dp2Found.dispatchEvent(new MouseEvent("contextmenu"));
     }
 
     /**

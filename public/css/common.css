@@ -1,0 +1,212 @@
+/**********************************/
+/*           GENERAL CSS          */
+/**********************************/
+
+html {
+  /**
+    * I can finally use em like a real man 
+    * This constraints the font size from a minimum to a maximum (floor and ceiling cap)
+    * Parameters are: max font size - min font size, and min-max viewport width to use the max font sizes at 
+    */
+  font-size: calc(12px + (26 - 12) * ((100vw - 300px) / (1000 - 300)));
+  
+  box-sizing: border-box; 
+  overflow-x: hidden;
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box; 
+}
+
+* {
+  outline: none !important;
+}
+
+button { 
+  margin: 0; 
+
+  font-size: inherit; 
+  font-family: inherit; 
+  line-height: inherit; 
+  text-transform: none;
+}
+
+body {
+  background: rgb(11, 11, 21) url("../img/bg.png"); 
+  margin: 0; 
+  overflow-x: hidden;
+  
+  font-family: 'Noto Sans', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.01); /* Font "antialiasing" */
+  color: rgb(240, 240, 240); 
+  line-height: 1.5; 
+}
+
+body > div {
+  font-family: "DINEngschrift", "Noto Sans", sans-serif; 
+}
+
+/**********************************/
+/*        HEADER AND FOOTER       */
+/**********************************/
+
+div.navbar {
+  position: relative; 
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: space-between; 
+  align-items: center;
+
+  max-height: 80px; 
+
+  font-family: "Noto Sans", sans-serif; 
+
+  background-color: rgb(50, 55, 60); 
+  padding: 1vh 3vw; 
+}
+
+div.navbar a {
+  font-size: 1.1em; 
+  line-height: 2em; 
+  text-decoration: none; 
+  background-color: transparent; 
+  color: rgb(240, 240, 240);  
+}
+
+div.navbar a:hover {
+  cursor: pointer; 
+}
+
+div.navbar a:visited {
+  color: rgb(240, 240, 240); 
+}
+
+/* Small screens, have navbar collapse */ 
+@media only screen and (max-width: 767px) { 
+  div.navbar button {
+    height: 80%; 
+    margin: auto 0;
+
+    background-color: transparent; 
+
+    outline: none; 
+    border: 1px solid rgb(80, 85, 90); 
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+
+  div.navbar button > span {
+    display: inline-block;
+    vertical-align: middle;
+    
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(130, 135, 140, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    width: 1.5em;
+    height: 1.5em; 
+  }
+
+  div.navbar .navbar-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgb(50, 55, 60); 
+    
+    position: absolute; 
+    z-index: 2001; 
+    top: 100%; 
+    left: 50%; 
+  
+    width: 100%; 
+    transform: translate(-50%, 0); 
+    transition: max-height 0.3s ease;
+  
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  div.navbar button:focus + .navbar-dropdown, 
+  div.navbar button:hover + .navbar-dropdown {
+    max-height: 20em; 
+  }
+}
+
+/* Large screens (or landscape mode), have navbar expand */ 
+@media only screen and (min-width: 768px) {
+  div.navbar button {
+    display: none; 
+  }
+
+  div.navbar button > span {
+    display: none;
+  }
+
+  div.navbar .navbar-dropdown {
+    display: flex; 
+    flex-flow: row nowrap;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  div.navbar .navbar-dropdown > div:not(:last-of-type) {
+    margin-right: 25px; 
+  }
+}
+
+div.navbar .navbar-dropdown > div {
+  padding: 5px 0; 
+}
+
+div.navbar .navbar-dropdown a {
+  font-size: 0.8em; 
+}
+
+div.navbar .navbar-dropdown a:not(.current) {
+  color: rgba(240, 240, 240, 0.5); 
+}
+
+div.navbar .navbar-dropdown a:not(.current):active,
+div.navbar .navbar-dropdown a:not(.current):hover {
+  color: rgba(240, 240, 240, 0.75); 
+}
+
+select {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 82px; 
+  height: 30px; 
+  padding: 2px 8px;
+  outline: none;
+  color: rgb(40, 40, 40);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 2px rgb(215, 220, 225);
+  background: rgb(240, 240, 240) url("../img/dropdown-arrow.png") 95% / 15% no-repeat;  
+}
+
+
+.bordered {
+  padding: 20px;
+
+  background:
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to right, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, rgb(215, 220, 225) 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, rgb(215, 220, 225) 3px, transparent 3px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}

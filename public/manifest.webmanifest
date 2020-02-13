@@ -1,0 +1,19 @@
+{
+    "name": "PD2Builder",
+    "short_name": "PD2Builder",
+    "start_url": "./",
+    "display": "minimal-ui",
+    "background_color": "#01091D",
+    "theme_color": "#01091D",
+    "description": "A inventory builder for Payday 2",
+    "icons": [{
+        "src": "img/favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "categories": ["games", "utilities"],
+    "orientation": "any",
+    "serviceworker": {
+        "src": "sw.js"
+    }
+}

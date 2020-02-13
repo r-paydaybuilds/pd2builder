@@ -260,6 +260,9 @@
             "fast_and_furious",
             "right_to_the_top"
         ],
+        "unlocks": [
+            { "type": "throwable", "name": "injector" }
+        ],
         "dlc": "Scarface Character Pack"
     },
     "sicario": {
@@ -275,6 +278,9 @@
             "agility_shield",
             "fast_and_furious",
             "unseen_shadow"
+        ],
+        "unlocks": [
+            { "type": "throwable", "name": "smoke_bomb" }
         ]
     },
     "stoic": {
@@ -290,6 +296,9 @@
             "imperturbable",
             "fast_and_furious",
             "enduring"
+        ],
+        "unlocks": [
+            { "type": "throwable", "name": "stoic_hip_flask" }
         ]
     },
     "tag_team": {
@@ -306,6 +315,9 @@
             "fast_and_furious",
             "harmony"
         ],
+        "unlocks": [
+            { "type": "throwable", "name": "gas_dispenser" }
+        ],
         "dlc": "H3H3 Character Pack"
     },
     "hacker": {
@@ -321,6 +333,9 @@
             "kluge",
             "fast_and_furious",
             "botnet"
+        ],
+        "unlocks": [
+            { "type": "throwable", "name": "pocket_ecm_device" }
         ]
     }
 }

@@ -1,19 +1,20 @@
-import { skillMap, System, dbMap } from "./Util.js";
+import { SkillMap, System, DBMap } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
+import Stats from "./Stats.js";
 
 /**
  * Singleton class containing million of things (gangs of four accepts this)
  */
 export default class Builder {
-    constructor() {
+    constructor(mobile = false) {
         /**
          * An object containing most info that should be exported
          * @type {Object}
          */
         this.exp = {
-            skills: new skillMap(),
+            skills: new SkillMap(),
             subtrees: {
                 medic: { tier: 1, points: 0 },
                 controller: { tier: 1, points: 0 },
@@ -37,6 +38,12 @@ export default class Builder {
             deployable: null, 
             deployableSecondary: null
         };
+
+        /**
+         * The stats manager
+         * @type {Stats}
+         */
+        this.stats = new Stats(this);
         
         /**
          * The System that manages the Skills
@@ -58,9 +65,9 @@ export default class Builder {
         
         /**
          * The Databases where you can find info of each type of thing
-         * @type {dbMap}
+         * @type {DBMap}
          */
-        this.dbs = new dbMap([
+        this.dbs = new DBMap([
             ["skills", null],
             ["perk_decks", null],
             ["perk_cards", null],
@@ -71,57 +78,77 @@ export default class Builder {
         
         /**
          * The promise of the fetching of all databases
-         * @type {Promise<Array>}
+         * @type {Promise<Object[]>}
          */
         this.fetchPromises = this.dbs.fetchAll();
+
+        /**
+         * Is this mobile
+         * @type {Boolean}
+         */
+        this.mobile = mobile;
+
+        /**
+         * Used for requesting strings of the used language
+         * @type {Language}
+         */
+        this.lang;
     }
 
     loadLanguage(obj, lang) {
-        const self = this;
         this.lang = new Language(obj, lang);
+        document.documentElement.setAttribute("lang", lang);
 
-        document.getElementsByTagName("body")[0].className = lang;
-
-        $(".navbar-brand").text(this.lang.get("system.name"));
-        $(".navbar-link").text(this.lang.get("system.home"));
-
-        $("#tab_page_buttons > button").each(function() {
-            $(this).text(self.lang.get(`system.${$(this).data("name")}.title`));
+        document.querySelectorAll("#tab_page_buttons > button").forEach(e => {
+            e.textContent = this.lang.get(`system.${e.dataset.name}.title`);
         });
 
-        $(".arm_icon > div, .th_icon > div, .dp_icon > div").attr("data-equip", this.lang.get("system.equip"));
-        $(".dp_icon > div").attr("data-primary", this.lang.get("system.primary"));
-        $(".dp_icon > div").attr("data-secondary", this.lang.get("system.secondary"));
-
         for(const value of Builder.TREES) {
-            $(`#sk_${value}_button`).text(this.lang.get(`system.skills.${value}.title`));
+            document.getElementById(`sk_${value}_button`).textContent = this.lang.get(`system.skills.${value}.title`);
+        }
+
+        document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
+            e.setAttribute("data-equip", this.lang.get("system.equip"))
+        );
+        document.querySelectorAll(".dp_icon > div").forEach(e => {
+            e.setAttribute("data-primary", this.lang.get("system.primary"));
+            e.setAttribute("data-secondary", this.lang.get("system.secondary"));
+        });
+        for(const [key] of this.dbs.get("perk_decks")) {
+            document.querySelector(`#${key} p`).textContent = this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase();
+            const query = document.querySelector(`#${key}.pk_selected p`);
+            if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
         }
 
         for(const [key] of this.dbs.get("skills")) {
-            $(`#${key}`).parent().next().text(this.lang.get(`skills.${key}.name`).toLocaleUpperCase());
+            document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
         }
 
-        $(".sk_points_remaining > p").html(this.lang.get("system.skills.remaining") + $(".sk_points_remaining p span")[0].outerHTML);
+        document.getElementById("io_copy_btn").textContent = this.lang.get("system.share.copy");
+        document.getElementById("io_share_button").textContent = this.lang.get("system.share.native");
 
-        for(const [key] of this.dbs.get("perk_decks")) {
-            $(`#${key} > p`).text(this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase());
-            $(`#${key}.pk_selected > p`).text(`${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`);
-        }
-
-        $("#io_save_r p").text(this.lang.get("system.share.description"));
-        $("#io_copy_btn").text(this.lang.get("system.share.copy"));
-
-        $("#io_other_r > p").text(this.lang.get("system.credits.title"));
-        $("#io_other_r > .font-size-16 p:first-child").text(this.lang.get("system.credits.p1"));
-        $("#io_other_r > .font-size-16 p:last-child").html(this.lang.get("system.credits.p2")({
-            ref: [x => `<a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">${x}</a>`]
-        }));
-        $("#io_other_r > .font-size-14").children().html(this.lang.get("system.credits.license")({
-            ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]
-        }));
-        $(".io_widgets > p").text(this.lang.get("system.credits.reach"));
-        
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
+        if(this.mobile) {
+            if(document.getElementById("sk_tree_buttons").dataset.tree) document.querySelector("#sk_tree_buttons > button").textContent = this.lang.get(`system.skills.${document.getElementById("sk_tree_buttons").dataset.tree}.title`).toLocaleUpperCase();
+            return;
+        }
+
+        document.getElementsByClassName("navbar-brand")[0].textContent = this.lang.get("system.name");
+        document.getElementsByClassName("nav-link")[0].textContent = this.lang.get("system.home");
+
+        document.querySelector(".sk_points_remaining > p").innerHTML = this.lang.get("system.skills.remaining") + document.querySelector(".sk_points_remaining p span").outerHTML;
+
+        document.querySelector("#io_save_r p").textContent = this.lang.get("system.share.description");
+        document.querySelector("#io_other_r > p").textContent = this.lang.get("system.credits.title");
+        document.querySelector("#io_other_r > .font-size-16 p:first-child").textContent = this.lang.get("system.credits.p1");
+        document.querySelector("#io_other_r > .font-size-16 p:last-child").innerHTML = this.lang.get("system.credits.p2")({
+            ref: [x => `<a href="https://github.com/r-paydaybuilds/pd2builder/blob/master/CONTRIBUTORS.md">${x}</a>`]
+        });
+        document.querySelector("#io_other_r > .font-size-14").children[0].innerHTML = this.lang.get("system.credits.license")({
+            ref: [x => `<a href="https://opensource.org/licenses/MIT">${x}</a>`]
+        });
+        document.querySelector(".io_widgets > p").textContent = this.lang.get("system.credits.reach");
+        
     }
 }
 

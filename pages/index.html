@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003) { 
+        const url = new URL(window.location.href);
+        url.pathname += "mobile.html";
+        window.location.replace(url);
+      }
+    </script>
     <meta charset="utf-8">
     <meta name="language" content="english"> 
     <meta http-equiv="content-type" content="text/html">
@@ -15,6 +22,8 @@
     <title>PD2 Builder</title>
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="apple-touch-icon" href="img/favicon.png"/>
+    <link rel="apple-touch-startup-image" href="img/bg.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"> 
     <link rel="stylesheet" href="css/skills.css">
@@ -26,30 +35,9 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/lang.css">
+    <link rel="manifest" href="./manifest.webmanifest">
   </head>
   <body>
-    <!-- Modal for notices -->
-    <div class="modal fade" id="modal_notification" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal_notification_title">#UNSUPPORTED RESOLUTION</h5>
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>You are either viewing this site from a mobile device, or your browser window is too small. This site <span class="strong">WILL NOT WORK</span> properly.</p>
-            <p>Right now we are officially supporting only the most common modern browsers updated to the latest version, on resolutions at least 1000 pixels wide.</p>
-            <p>The site is best viewed on the latest version of Chrome, but should nonetheless work properly on the latest versions of Firefox, Safari and Opera as long as you have a sufficiently wide resolution.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
@@ -814,7 +802,7 @@
               </div>
             </div>
           </div>
-          <div id="loading_spinner" style="display: none;">
+          <div id="loading_spinner">
             <div class="spinner-border"></div>
           </div>
         </div>
@@ -1144,11 +1132,14 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">URL</span>
                     </div>                  
-                    <input id="io_share_link" type="text" class="form-control" input onmouseover="this.select()" onmouseleave="$(this).blur()" readonly>
+                    <input id="io_share_link" type="text" class="form-control" input onmouseover="this.select()" onmouseleave="this.blur()" readonly>
                     <div class="input-group-append">
                       <button id="io_copy_btn" type="button" class="btn btn-secondary">Copy Link</button>
                     </div>
                   </div>
+                </div>
+                <div class="row">
+                  <button id="io_share_button" type="button" class="btn btn-secondary">Share!</button>
                 </div>
               </div>
             </div>
@@ -1182,7 +1173,7 @@
 
     <!-- Script loading section -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     
     <script src="js/index.js" type="module"></script>
   </body>
