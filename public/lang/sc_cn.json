@@ -310,27 +310,27 @@
         },
         "histamine": {
             "name": "Histamine",
-            "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
+            "description": "Damaging an enemy heals 1 life点 every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
             "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "adrenaline": {
             "name": "Adrenaline",
-            "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+            "description": "Damaging an enemy now heals 2 life点 every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 6."
         },
         "endorphins": {
             "name": "Endorphins",
-            "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
+            "description": "Damaging an enemy now heals 3 life点 every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 9."
         },
         "dopamine": {
             "name": "Dopamine",
-            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
+            "description": "Damaging an enemy now heals 4 life点 every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "euphoria": {
             "name": "Euphoria",
-            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
+            "description": "Damaging an enemy now heals 4 life点 every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "koi_irezumi": {
@@ -480,7 +480,7 @@
         },
         "right_to_the_top": {
             "name": "Right to the Top",
-            "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
+            "description": "You gain 40% more health.\nFor every 5点 of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "smoker": {
@@ -712,7 +712,7 @@
         },
         "hostage_taker": {
             "name": "绑匪",
-            "description": "基础：4点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复1.5%血量。\n精通：8点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复4.5%血量。"
+            "description": "基础：4点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复1.5%血量。\n专精：8点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复4.5%血量。"
         },
         "stable_shot": {
             "name": "稳定射击",
@@ -720,8 +720,8 @@
         },
         "rifleman": {
             "name": "步枪手",
-            "description": "基础：2点\t提升100%武器开镜速度。\t使用武器机瞄时，你的移动速度将不受影响。\n专精：4点\t提升25%武器焦距。\t提升16点移动时冲锋枪，突击步枪或狙击步枪的精准。",
-            "vr_description": "VR附加技能：\t基础：开镜时杀敌将回复2%耐力。\t每消耗25点耐力，都将回复5%半自动武器的弹药。\t专精：移动提升的精准将根据移动的距离额外持续1~5秒。"
+            "description": "基础：2点\t提升100%武器开镜速度。\t使用机械瞄具时，你瞄准时移动速度将不受影响。\n专精：4点\t提升25%武器焦距。\t提升16点移动时冲锋枪，突击步枪或狙击步枪的精准。",
+            "vr_description": "VR附加技能：\t基础：开镜时杀敌将回复2%耐力。\t每消耗25点耐力，都将回复5%半自动武器的弹药。\t专精：移动提升的精准将根据冲刺所消耗的耐力额外持续1~5秒。"
         },
         "marksman": {
             "name": "精确射手",
@@ -741,298 +741,298 @@
         },
         "underdog": {
             "name": "落水狗",
-            "description": "基础：1点\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
+            "description": "基础：1点\t当你在10米范围存在三名或以上敌人时，你将在7秒内获得15%伤害加成。\n专精：3点\t除上述加成外，你还将在7秒内获得10%伤害减免。"
         },
         "shotgun_cqb": {
             "name": "霰弹枪CQB",
-            "description": "BASIC: 2 points\tYou reload Shotguns 15% faster.\nACE: 4 points\tYou reload Shotguns 35% faster. You gain a 125% increased steel sight zoom speed when using Shotguns.",
-            "vr_description": "Addition in VR:\tACE: Every kill while aiming down sight will regenerate 2% stamina."
+            "description": "基础：2点\t提升15%霰弹枪的换弹速度。\n专精：4点\t提升35%霰弹枪的换弹速度。\t提升125%霰弹枪的开镜速度。",
+            "vr_description": "VR附加技能：\t专精：开镜时杀敌将回复2%耐力。"
         },
         "shotgun_impact": {
             "name": "霰弹冲击",
-            "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns."
+            "description": "基础：2点\t提升8点霰弹枪的稳定。\t提升5%霰弹枪的伤害。\n专精：4点\t额外提升10%霰弹枪的伤害。"
         },
         "far_away": {
             "name": "远射",
-            "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights."
+            "description": "基础：3点\t提升40%霰弹枪在开镜时的精准。\n专精：6点\t提升50%霰弹枪在开镜时的射程。"
         },
         "close_by": {
             "name": "突进",
-            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells",
-            "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
+            "description": "基础：3点\t你现在可以在冲刺时进行霰弹枪腰射。\n专精：6点\t提升35%半自动霰弹枪腰射时的射速。\t增加15发使用弹匣/弹鼓供弹的霰弹枪的弹匣容量。",
+            "vr_description": "VR附加技能：\t基础：冲刺后杀敌将有100%几率使8米范围内的敌人陷入恐惧，该效果将根据跳跃所消耗的耐力持续1~3秒。"
         },
         "overkill": {
             "name": "杀戮",
-            "description": "BASIC: 4 points\tWhen you kill an enemy with a Shotgun or the OVE9000 portable saw, you receive 75% damage increase for 20 seconds.\nACE: 8 points\tThe damage bonus now applies to all weapons. Skill must still be activated using a Shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
+            "description": "基础：4点\t当使用霰弹枪或OVE9000型便携式电锯杀敌后，你将在20秒内获得75%伤害加成。\n专精：8点\t伤害加成对将对所有武器生效，但该技能仍需要由霰弹枪或OVE9000型便携式电锯触发。\t提升80%武器切换速度。"
         },
         "resilience": {
             "name": "韧性",
-            "description": "基础：1点\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%."
+            "description": "基础：1点\t提升15%护甲恢复速度。\n专精：3点\t减少75%闪光弹效果的持续时间。"
         },
         "die_hard": {
             "name": "虎胆龙威",
-            "description": "BASIC: 2 points\tYou take 50% less damage while interacting with objects.\nACE: 4 points\tIncreases the armor of all Ballistic vests by 20."
+            "description": "基础：2点\t你在交互时将获得50%伤害减免。\n专精：4点\t提升20点防弹背心护甲。"
         },
         "transporter": {
             "name": "运输者",
-            "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penaly is reduced by 1%."
+            "description": "基础：2点\t提升50%投掷包裹的距离。\n专精：4点\t每拥有10点护甲，携带包裹对你移动速度影响减少1%。"
         },
         "shock_and_awe": {
             "name": "震慑",
-            "description": "BASIC: 3 points\tIncreases the armor recovery rate for you and your crew by 25%.\nACE: 6 points\tEnables your weapons to have a chance to knock back Shield enemies when attacking them. Ranged weapons' knockback chance is increased the higher the total damage of the weapon is. Melee weapons' knockback chance is 100%."
+            "description": "基础：3点\t提升25%你和你的队友的护甲恢复速度。\n专精：6点\t近战或射击盾兵(Shield)将有几率推倒他们。\t远程武器击倒概率随武器的伤害而提升。\t近战攻击的击倒概率为100%。"
         },
         "bullseye": {
             "name": "正中靶心",
-            "description": "BASIC: 3 points\tYou regenerate 5 armor for each succesful headshot. This can not occur more than once every 2 seconds.\nACE: 6 points\tYou regenerate an additional 20 armor for each succesful headshot."
+            "description": "基础：3点\t你的每次爆头将为你回复5点护甲。技能冷却时间为2秒。\n专精：6点\t你的每次爆头将额外回复20点护甲。"
         },
         "iron_man": {
             "name": "铁人",
-            "description": "BASIC: 4 points\tYour total armor value is increased by 30%.\nACE: 8 points\tUnlocks the ability to wear the Improved Combined Tactical Vest."
+            "description": "基础：4点\t提升30%总护甲值。\n专精：8点\t解锁改良型联合战术防弹衣。"
         },
         "scavenger": {
             "name": "拾荒者",
-            "description": "基础：1点\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box."
+            "description": "基础：1点\t提升50%弹药盒拾取范围。\n专精：3点\t每击杀六名敌人，将会掉落一个额外的弹药盒。"
         },
         "bulletstorm": {
             "name": "子弹风暴",
-            "description": "BASIC: 2 points\tAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to 5 seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\nACE: 4 points\tIncreases the base duration of the effect by up to 15 seconds."
+            "description": "基础：2点\t玩家使用你放置的的弹药包后可以在短时间内获得无限弹药。\t持续效果随补充弹药的数量而提升，最长持续5秒。\n专精：4点\t该技能的最长持续时间延长至15秒。"
         },
         "portable_saw": {
             "name": "便携式电锯",
-            "description": "BASIC: 2 points\tUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\nACE: 4 points\tYou gain 1 extra saw blade for the OVE9000 portable saw. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%."
+            "description": "基础：2点\t解锁副武器中的OVE9000型便携式电锯。\n专精：4点\t额外获得1片电锯锯片。\t电锯锯片将升级为碳化锯片，电锯效率提升40%。"
         },
         "extra_lead": {
             "name": "额外弹药",
-            "description": "BASIC: 3 points\tYou can now place 2 ammo bags instead of just one.\nACE: 6 points\tEach ammo bag now contains 50% more ammunition."
+            "description": "基础：3点\t你现在可以携带2个弹药包。\n专精：6点\t每个弹药包将增加50%携弹量。"
         },
         "saw_massacre": {
             "name": "电锯狂杀",
-            "description": "BASIC: 3 points\tReducing the wear down of the blades on enemies by 50%.\nACE: 6 points\tYou can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear."
+            "description": "基础：3点\t减少50%电锯攻击敌人时的耗损。\n专精：6点\t你现在可以使用OVE9000型便携式电锯锯开盾兵(Shield)。\t当使用电锯击杀敌人，你将有50%几率让半径10米内的敌人陷入恐惧。恐惧将使敌人陷入不可控的惊慌状态。"
         },
         "fully_loaded": {
             "name": "全副武装",
-            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
+            "description": "基础：4点\t提升25%武器总弹量。\n专精：8点\t提升75%从弹药盒中拾取的子弹数量。\t你同时获得5%从弹药盒中拾取投掷物的几率。\t若你没有从弹药盒获取投掷物，该几率将提升1%，直至你成功获取投掷物。"
         },
         "third_law": {
             "name": "第三定律",
-            "description": "基础：1点\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
+            "description": "基础：1点\t减少5%放置炮台所需的弹药。\n专精：3点\t你的炮台将增设一面护盾。"
         },
         "sentry_targeting_package": {
             "name": "炮台精准修正",
-            "description": "BASIC: 2 points\tYour sentry guns gain a 100% increase in accuracy.\nACE: 4 points\tYour sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
+            "description": "基础：2点\t提升100%炮台精准。\n专精：4点\t提升150%炮台转向速度。\t提升50%炮台携弹量。"
         },
         "eco_sentry": {
             "name": "经济炮台",
-            "description": "BASIC: 2 points\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 4 points\tYour sentry guns gain 150% increased health."
+            "description": "基础：2点\t减少5%放置炮台所需的弹药。\n专精：4点\t提升150%炮台血量。"
         },
         "engineering": {
             "name": "工程学",
-            "description": "BASIC: 3 points\tYou can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.\nACE: 6 points\tYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75%, but increasing damage by 250% and allowing it to pierce through enemies and shields."
+            "description": "基础：3点\t你现在可以携带更安静的消音炮台，它们更不容易被敌人视作攻击目标。\n专精：6点\t你的炮台现在可以切换成AP弹，这将降低其75%射速，但会提升250%伤害，且能射穿敌人和盾牌。"
         },
         "jack_of_all_trades": {
             "name": "万事通",
-            "description": "BASIC: 3 points\tYou deploy and interact with all deployable 100% faster.\nACE: 6 points\tYou can now equip a secondary deployable to bring with you. If your deployable is equipped as a secondary deployable, you can only bring half of what you should bring if it was equipped as a primary deployable."
+            "description": "基础：3点\t提升100%放置及使用放置物的速度。\n专精：6点\t你现在可以装备副手放置物。\t副手放置物的携带数量将减半。"
         },
         "tower_defense": {
             "name": "塔防",
-            "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
+            "description": "基础：4点\t你现在可以额外携带1个炮台。\n专精：8点\t你现在可以再额外携带2个炮台。"
         },
         "hardware_expert": {
             "name": "硬件专家",
-            "description": "基础：1点\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
+            "description": "基础：1点\t提升25%修理钻机和电锯的速度。\t钻机和电锯变为消音，使得市民和警卫必须看到钻机或电锯才会报警。\n专精：3点\t钻机和电锯有10%几率在坏掉后自动重启。"
         },
         "combat_engineering": {
             "name": "战地工程",
-            "description": "BASIC: 2 points\tThe radius of your trip mine explosion is increased by 30%.\nACE: 4 points\tYour trip mine damage is increased by 50%."
+            "description": "基础：2点\t提升30%绊雷爆炸半径。\n专精：4点\t提升50%绊雷爆炸伤害。"
         },
         "drill_sawgeant": {
             "name": "钻锯军士",
-            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw"
+            "description": "基础：2点\t缩短15%钻机和电锯运作所需的时间。\n专精：4点\t额外缩短15%钻机和电锯运作所需的时间。"
         },
         "more_firepower": {
             "name": "更多火力",
-            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain more shaped charges and 7 more trip mines."
+            "description": "基础：3点\t你现在可以额外携带1个塑形炸药和4个绊雷。\n专精：6点\t你现在可以再额外携带2个塑形炸药和7个绊雷。"
         },
         "kickstarter": {
             "name": "脚踹钻机",
-            "description": "BASIC: 3 points\tYour drills and saws gain an additional 20% chance to automatically restart after breaking.\nACE: 6 points\tEnables the ability to reset a broken drill or saw with a melee attack. The ability has a 50% chance to fix the drill or saw. The ability can only be used once per time the drill or saw is broken.\nNote: Skill does not affect the OVE9000 saw."
+            "description": "基础：3点\t额外增加20%钻机和电锯在坏掉后自动重启的几率。\n专精：6点\t你可以使用近战攻击重启钻机，成功几率为50%。\t该技能在每次钻机或电锯损坏后只能使用一次。"
         },
         "fire_trap": {
             "name": "火焰陷阱",
-            "description": "BASIC: 4 points\tYour trip mines now spread fire around the area of detonation for 10 seconds in a 4 meter diameter.\nACE: 8 points\tIncreases the fire effect duration by 10 seconds and increases the fire effect radius by 50%."
+            "description": "基础：4点\t你的绊雷在爆炸时会在直径4米内造成燃烧效果，燃烧持续10秒。\n专精：8点\t绊雷燃烧效果的持续时间增加10秒，且燃烧范围增加50%。"
         },
         "steady_grip": {
             "name": "稳定握把",
-            "description": "基础：1点\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability."
+            "description": "基础：1点\t提升8点武器精准。\n专精：3点\t提升16点武器稳定。"
         },
         "heavy_impact": {
             "name": "沉重打击",
-            "description": "BASIC: 2 points\tYour shots have a 5% chance to stagger all enemies except Bulldozers and Captain Winters.\nACE: 4 points\tIncreases your stagger chance to 20%."
+            "description": "基础：2点\t你的子弹有5%几率击倒敌人。\t该效果对Bulldozer和冬日队长无效。\n专精：4点\t子弹击倒敌人的几率提升至20%。"
         },
         "fire_control": {
             "name": "火力控制",
-            "description": "BASIC: 2 points\tYou gain 12 weapon accuracy while firing from the hip.\nACE: 4 points\tYour accuracy penalty is decreased by 20% when shooting while moving.",
-            "vr_description": "Addition in VR:\tACE: The decreased accuracy penalty lasts from 1 up to a maximum of 5 seconds after dashing."
+            "description": "基础：2点\t提升12点武器腰射精准。\n专精：4点\t减少20%移动射击时的精准惩罚。",
+            "vr_description": "VR附加技能：\t专精：移动减少的精准惩罚将根据冲刺所消耗的耐力额外持续1~5秒。"
         },
         "lock_n_load": {
             "name": "重装攻势",
-            "description": "BASIC: 3 points\tYou can how hip-fire with your weapons while sprinting.\nACE: 6 points\tKilling 2 enemies with SMGs, LMGs, Assault Rifles or Special Weapons set on automatic fire mode will increase your next reload speed by up to 100%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a maximum of 40% reload speed increase.",
-            "vr_description": "Addition in VR:\tBASIC: Every 40 points of stamina consumed by dashin will refill 5% of their ammo pool to automatic weapons."
+            "description": "基础：3点\t你现在可以在冲刺时进行腰射。\n专精：6点\t使用全自动模式下的冲锋枪，轻机枪，突击步枪或特殊武器杀死2名敌人将最多提升100%你下次的换弹速度。\t当所用武器的弹匣容量高于20发时，每一发弹匣容量都将减少1%换弹加成，至多减少至40%。",
+            "vr_description": "VR附加技能：\t基础：每消耗40点耐力，都将回复5%全自动武器的弹药。"
         },
         "surefire": {
             "name": "万全之策",
-            "description": "BASIC: 3 points\t Your SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
+            "description": "基础：3点\t增加15发冲锋枪，轻机枪及突击步枪的弹匣容量。\t该技能不会对\"重装攻势\"专精造成影响。\nAce: 6点\t你的武器将能射穿敌人护甲。"
         },
         "body_expertise": {
             "name": "人体解析",
-            "description": "BASIC: 4 points\t30% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode.\nACE: 8 points\t90% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode."
+            "description": "基础：4点\t射击敌人身体能额外造成原定爆头所造成的额外伤害的30%。\t该技能只能由全自动模式下的冲锋枪，轻机枪，突击步枪或特殊武器触发。\n专精：8点\t额外造成的爆头伤害百分比提升至90%。"
         },
         "chameleon": {
             "name": "变色龙",
-            "description": "基础：1点\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
+            "description": "基础：1点\t延长25%你在踩点模式下被察觉到的时间，同时你可以在踩点模式下标记敌人。\n专精：3点\t你可以在踩点模式下捡起物品，同时你捡起的物品将增值30%。"
         },
         "cleaner": {
             "name": "清道夫",
-            "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
+            "description": "基础：2点\t增加1个初始携带的尸体袋。\t你可携带的最大尸体袋数量增加至3。\n专精：4点\t你现在可以携带2个尸体袋箱。"
         },
         "sixth_sense": {
             "name": "第六感",
-            "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
+            "description": "基础：2点\t在潜入时站止不动3.5秒后，你半径10米内的警卫和平民都将被自动标记。\n专精：4点\t解锁所有有利条件的购买权限。\t减少75%杀死平民的清理费用。"
         },
         "nimble": {
             "name": "机敏",
-            "description": "BASIC: 3 points\tYou gain the ability to disable 1 camera from detecting you and your crew. Effect lasts for 25 seconds.\nACE: 6 points\tYou lockpick 100% faster. You also gain the ability to lockpick safes."
+            "description": "基础：3点\t你可以让1个摄像头的画面循环25秒，使它暂时无法探测到你和你的队友。\n专精：6点\t提升100%开锁速度。\t现在你可以撬开部分保险箱。"
         },
         "ecm_overdrive": {
             "name": "ECM过载",
-            "description": "BASIC: 3 points\tYour ECM jammer and feedback duration is increased by 25%.\nACE: 6 points\tYour ECM jammer can now also be used to open certain electronic doors."
+            "description": "基础：3点\t延长25%ECM干扰与反馈的持续时间。\n专精：6点\t你的ECM干扰器现在能打开部分电子门。"
         },
         "ecm_specialist": {
             "name": "ECM专家",
-            "description": "BASIC: 4 points\tYou can now place 2 ECM jammers instead of just one.\nACE: 8 points\tThe ECM jammer duration is increased by an additional 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammers."
+            "description": "基础：4点\t你现在可以携带2个ECM干扰器。\n专精：8点\t额外延长25%ECM干扰与反馈的持续时间。\tECM干扰器现在可以推迟对讲机应答。"
         },
         "duck_and_cover": {
             "name": "蹲防战术",
-            "description": "基础：1点\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
-            "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
+            "description": "基础：1点\t减少25%耐力恢复间隔。\t提升25%冲刺速度和耐力回复速度。\n专精：3点\t提升10%在冲刺时的闪避。\t提升15%使用滑索时的闪避。",
+            "vr_description": "VR附加技能：\t专精：移动提升的闪避将根据冲刺所消耗的耐力额外持续1~5秒。"
         },
         "parkour": {
             "name": "跑酷",
-            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting",
-            "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
+            "description": "基础：2点\t提升10%移动速度和20%爬梯速度。\n专精：4点\t你可以向任何方向冲刺。\t你可以在冲刺的时候换弹。",
+            "vr_description": "VR附加技能：\t专精：当你冲刺过后，将根据冲刺所消耗的耐力提升20%~50%换弹速度。"
         },
         "inner_pockets": {
             "name": "内层袋",
-            "description": "BASIC: 2 points\tIncreases the concealment of melee weapons by 2.\nACE: 4 points\tIncreases the concealment of all ballistic vests by 4."
+            "description": "基础：2点\t提升2点近战武器的隐蔽值。\n专精：4点\t提升4点防弹背心的隐蔽值。"
         },
         "dire_need": {
             "name": "极端需求",
-            "description": "BASIC: 3 points\tWhen your armor breaks, the first shot on every enemy will cause that enemy to stagger. This effect ends when your armor recovers.\nACE: 6 points\tThe effect persists for 6 after your armor has recovered."
+            "description": "基础：3点\t当你被射穿护甲时，你的第一发子弹将必定击倒敌人。\t该效果在你护甲恢复的时候结束。\n专精：6点\t该效果在你护甲恢复后仍能持续6秒。"
         },
         "shockproof": {
             "name": "防电保护",
-            "description": "BASIC: 3 points\tWhen tased, the shock effect has a 30% chance to backfire on the Taser, knocking them back.\nACE: 6 points\tWhen tased, you are able to free yourself from the taser by interacting with it within 2 seconds of getting tased."
+            "description": "基础：3点\t当Taser电击你时，你有30%几率逆火，反电Taser。\n专精：6点\t当被电击时，2秒内你能够通过与Taser交互摆脱被电状态。"
         },
         "sneaky_bastard": {
             "name": "卑鄙小人",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "基础：4点\t当你的暴露度低于35时，每降低3点暴露度都将获得1%闪避，最多增加10%。\n专精：8点\t当你的暴露度低于35时，每降低1点暴露度都将获得1%闪避，最多增加10%。"
         },
         "second_wind": {
             "name": "第二春",
-            "description": "基础：1点\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered."
+            "description": "基础：1点\t当你被护甲击穿时，移动速度将在5秒内提升30%.\n专精：3点\t该技能对队友适用。"
         },
         "optical_illusions": {
             "name": "光学幻象",
-            "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
+            "description": "基础：2点\t降低35%被敌人视作攻击目标的几率。\n专精：4点\t装备消音武器时，你会增加1点隐蔽度，同时降低2点消音武器的隐蔽度惩罚。."
         },
         "the_professional": {
             "name": "专业人士",
-            "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
-            "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
+            "description": "基础：2点\t提升8点消音武器的稳定与100%消音武器的开镜速度。\n专精：4点\t提升12点消音武器精准。",
+            "vr_description": "VR附加技能：\t基础：开镜时杀敌将回复2%耐力。"
         },
         "low_blow": {
             "name": "下作手段",
-            "description": "BASIC: 3 points\tYou gain a 3% critical hit for every 3 points of detection rate under 35 up to 30%.\nACE: 6 points\tYou gain 3% critical hit chance for every 1 point of detection rate under 35 up to 30%.\nNote: Does not apply to grenade launchers."
+            "description": "基础：4点\t当你的暴露度低于35时，每降低3点暴露度都将获得1%暴击，最多增加30%。\n专精：8点\t当你的暴露度低于35时，每降低1点暴露度都将获得1%暴击，最多增加30%。"
         },
         "high_value_target": {
             "name": "高价目标",
-            "description": "BASIC: 3 points\tEnemies you mark take 15% more damage.\nACE: 6 points\tEnemies you mark take an additional 50% damage when further away than 10 meters. Increase the duration of marked enemies by 100% and you can now mark specials by aiming down at them with any weapon."
+            "description": "基础：3点\t被你标记的敌人将受到15%额外伤害。\n专精：6点\t在10米远且被你标记的敌人将额外受到50%额外伤害。\t敌人被标记的时间延长100%，你现在可以通过开镜瞄准来标记特殊敌人。"
         },
         "unseen_strike": {
             "name": "隐匿袭击",
-            "description": "BASIC: 4 points\tIf you do not lose any armor or health for 4 seconds, you gain 35% critical hit chance for 6 seconds.\nACE: 8 points\tThe critical hit chance duration is increased to 18 seconds.\nTaking any damage will cancel the effect."
+            "description": "基础：4点\t如果你在4秒内未受到任何伤害，则在6秒内获得35%暴击，期间受到伤害会取消效果。\n专精：8点\t暴击加成的持续时间延长至18秒。"
         },
         "equilibrium": {
             "name": "沉着",
-            "description": "基础：1点\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+            "description": "基础：1点\t减少33%切换手枪的时间。\n专精：3点\t提升8点手枪的精准。"
         },
         "gun_nut": {
             "name": "枪械狂",
-            "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "基础：2点\t增加5发手枪的弹匣容量。\n专精：4点\t提升50%手枪射速。"
         },
         "akimbo": {
             "name": "双持",
-            "description": "BASIC: 2 points\tYour Akimbo weapons' stability penalty is reduced by 8.\nACE: 4 points\tYour Akimbo weapons' stability penalty is reduced by an additional 8 and they also have 50% increased ammo capacity."
+            "description": "基础：2点\t减少8点双持武器稳定惩罚。\n专精：4点\t额外减少8点双持武器稳定惩罚，同时增加50%双持武器携弹量。"
         },
         "one_handed_talent": {
             "name": "只手遮天",
-            "description": "BASIC: 3 points\tThe base damage of all pistols is increased by 5.\nACE: 6 points\tThe base damage of all pistols is increased by an additional 10 damage."
+            "description": "基础：3点\t提升5点手枪伤害。\n专精：6点\t额外提升10点手枪伤害。"
         },
         "desperado": {
             "name": "亡命之徒",
-            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10% and you can stack it 4 times.\nACE: 6 points\tYou reload 50% faster."
+            "description": "基础：3点\t手枪每命中一次敌人，将会在10秒内提升10%精准。\t效果最多累计叠加4次。\n专精：6点\t提升50%手枪换弹速度。"
         },
         "trigger_happy": {
             "name": "乱枪狂人",
-            "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
+            "description": "基础：4点\t手枪每命中一次敌人，将会在2秒内提升120%伤害。\tt效果最多累计叠加1次。\n专精：8点\t伤害加成的持续时间延长至4秒。"
         },
         "nine_lives": {
             "name": "九命猫",
-            "description": "基础：1点\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
+            "description": "基础：1点\t提升50%倒地状态下的血量。\n专精：3点\t增加1次被拘捕前的倒地次数。"
         },
         "running_from_death": {
             "name": "死里逃生",
-            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10% seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
+            "description": "基础：2点\t在你起身后，10秒内换弹与切枪速度提升100%。\n专精：4点\t在你起身后，10秒内移动速度提升30%。"
         },
         "up_you_go": {
             "name": "卷土重来",
-            "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
+            "description": "基础：2点\t在你起身后，10秒内将获得30%伤害减免。\n专精：4点\t你起身后将额外获得40%血量。"
         },
         "swan_song": {
             "name": "绝唱",
-            "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
+            "description": "基础：3点\t在你倒地前，你可以持续战斗3秒，期间你的行动速度减少60%。\n专精：6点\t该技能的持续时间延长3秒。\t在技能效果内射击将不消耗弹匣弹药。"
         },
         "feign_death": {
             "name": "诈死",
-            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
+            "description": "基础：3点\t当你进入倒地状态，你有15%几率能立刻起身。\n专精：6点\t自起几率额外提升30%。"
         },
         "messiah": {
             "name": "弥赛亚",
-            "description": "BASIC: 4 points\tWhile in bleedout, you can revive yourself if you kill an enemy. You only have 1 charge.\nACE: 8 points\tYour messiah charge is replenished whenever you use a doctor bag."
+            "description": "基础：4点\t当你进入倒地状态，如果你杀死一名敌人，则可立即起身。\t该技能只可触发1次。\n专精：8点\t你可以通过使用医疗包重置触发次数。"
         },
         "martial_arts": {
             "name": "武术",
-            "description": "基础：1点\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike."
+            "description": "基础：1点\t经过训练，你受到的近战伤害将减少50%。\n专精：3点\t提升50%近战击倒敌人的几率。"
         },
         "bloodthirst": {
             "name": "嗜血",
-            "description": "BASIC: 2 points\tEvery kill you get will increase your next melee attack damage by 100%, up to a maximum of 1600%. This effect gets reset when you kill an enemy with a melee attack.\nACE: 4 points\tWhenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds."
+            "description": "基础：2点\t每次击杀敌人都会提升100%你下次近战的伤害，最多叠加至1600%。\t该效果将在你使用近战成功击杀敌人后重置。\n专精：4点\t当你使用近战击杀敌人后，在10秒内你的换弹速度将提升50%。"
         },
         "pumping_iron": {
             "name": "钢铁之击",
-            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage"
+            "description": "基础：2点\t提升100%对非特种敌人的近战伤害。\n专精：4点\t提升100%对特种敌人的近战伤害。"
         },
         "counterstrike": {
             "name": "后发制人",
-            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks"
+            "description": "基础：3点\t你在蓄力近战武器时将自动反击近战你的敌人，这将击倒他们，但不会造成伤害。\n专精：6点\t该技能现在可用于反制Cloaker飞踢。"
         },
         "berserker": {
             "name": "狂战士",
-            "description": "BASIC: 3 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.\nACE 6 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well.\nNote: Does not apply to throwables, grenade launchers or rocket launchers.\nEntering berserker state negates third-party regeneration effects."
+            "description": "基础：3点\t你的血量越低，造成的伤害越高。\t当你的血量低于50%时，随着血量降低，近战以及电锯伤害将逐步提升，最多提升250%。\nACE 6点\t当你的血量低于50%时，随着血量降低，远程武器伤害将逐步提升，最多提升100%。\t当触发该技能，任何血量回复都将失效。"
         },
         "frenzy": {
             "name": "狂乱",
-            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%"
+            "description": "基础：4点\t你的最大血量将锁定为30%，任何血量回复都无法超过该阈值。\t但你将获得10%伤害减免，同时血量回复的效果变为减少75%。\n专精：8点\t伤害减免提升至25%。\t血量回复效果减少量降低为0%。"
         }
     },
     "system": {
@@ -1139,72 +1139,72 @@
     },
     "throwables": {
         "matryoshka_grenade": {
-            "name": "Matryoshka Grenade",
-            "description": "The Matryoshka Grenade is a throwable explosive device. The doll's outer layers hides its inner workings. Creates substantial damage at the same time as it pays tribute to the motherland."
+            "name": "俄罗斯套娃手雷",
+            "description": "俄罗斯套娃手雷是一件投掷类爆炸装置。其玩具般的外表隐藏了其内心的蠢蠢欲动。在向祖国致敬的同时，它也能对敌人造成重大伤害。"
         },
         "incendiary_grenade": {
-            "name": "Incendiary Grenade",
-            "description": "The Incendiary Grenade is a nasty self igniting phosphorus container. It ignites after a few seconds, making it perfect for bouncing off walls towards your enemies. Upon ignition it causes serious damage – setting enemies ablaze."
+            "name": "白磷弹",
+            "description": "内部填充满白磷的肮脏武器，在拉开拉环后的几秒内会自燃爆炸。使用方法很简单，丢向敌人群内，把他们都烧到发焦。"
         },
         "hef_grenade": {
-            "name": "HEF Grenade",
-            "description": "This is an updated version of the classic hand grenade. Even though the original frag grenade is still in use, this new sleek design will provide that OVERKILL touch to each blast. Still as cheap and still as effective."
+            "name": "HEF手雷",
+            "description": "经典手雷的升级版。尽管原始的手雷依然被使用，但这个新款手雷每次都能提供超量伤害，且依旧便宜又好用。"
         },
         "ace_of_spades": {
-            "name": "Ace of Spades",
-            "description": "Throwing cards are generally associated with magicians splitting watermelons across a stage but add weight and razor edges and you have a silent killer. Have one of these steel aces in your sleeves and you will always be ready to deal yourself into the game, regardless of the circumstances.\nThe Ace of Spades is a free throwable given to the community to celebrate two years of PAYDAY 2!"
+            "name": "黑桃A",
+            "description": "虽说纸牌一般只有魔术师在表演切西瓜时才会拿来丢来丢去，但只要增加质量以及利刃边后，你就拥有了一个无声杀器。在袖间藏匿这些铁质王牌，永远准备将全身心投入这暗杀游戏之中。\n黑桃A是为庆祝PAYDAY2两周年的免费社区礼物！"
         },
         "concussion_grenade": {
-            "name": "Concussion Grenade",
-            "description": "This stunning little beauty will take everyone's breath away, giving you those couple of extra seconds you need to kill them."
+            "name": "震撼弹",
+            "description": "这个晕人的小美人会令所有人窒息，给你额外的时间杀死他们。"
         },
         "frag_grenade": {
-            "name": "Frag Grenade",
-            "description": "The frag grenade is a concept that has changed little from its inception. It is a thrown casing that explodes, sending shards and splinters away with such force they can slice through flesh, bone and light armor. Cheap and effective."
+            "name": "破片手雷",
+            "description": "破片手雷相比它的原型已有些许改进。它是一个会爆炸的投掷物，利用巨大的冲击波将破片向四处发射，对肉体、骨头和轻型护甲造成损伤。廉价而实用。"
         },
         "molotov_cocktail": {
-            "name": "Molotov Cocktail",
-            "description": "The Molotov cocktail is perhaps the simplest weapon that can call itself a grenade. Nothing more than a breakable bottle of flammable liquid with a 'fuse' replaced by a burning rag. It is cheap, simple and highly effective."
+            "name": "燃烧瓶",
+            "description": "莫洛托夫鸡尾酒可能是能够叫手雷的武器中最简易的一款了。仅由一个易碎的酒瓶，可燃的液体和烧布\"引线\"组成，简易而高效。"
         },
         "dynamite": {
-            "name": "Dynamite",
-            "description": "Swedish engineer. Alfred Nobel, discovered dynamite and its effectiveness in blastic rock. But it was drunk prospector. Ol' Kenneth, who discovered its effectiveness in blasting people."
+            "name": "炸药",
+            "description": "瑞典工程师阿尔弗雷德·诺贝尔，发现了炸药和它高效的矿石爆破能力。而喝得稀烂的探矿者老肯尼思，发现了它高效的炸人能力。"
         },
         "shuriken": {
-            "name": "Shuriken",
-            "description": "Like a sword hidden in the user's hand the shuriken is a deadly weapon and perfectly silent. First made of nails and needles, the throwing star has had a long history filled with blood and battle. These modern stars of stainless steel will pose a lethal threat to anyone in front of you, and as long as you can find them there will be no stopping you.\nThe Shurikens have been coated in poison which deals damage over time and has a chance to interrupt enemies."
+            "name": "手里剑",
+            "description": "如同隐藏在手中的剑，手里剑是种完美无声且致命的武器。它最早是由钉子和针制作而成，这颗可投掷的星星饱含了充满血和火的悠久历史。只要你能抢在敌人之前先发制人，那么这些现代的不锈钢星星会对出现在你面前的任何敌人造成致命威胁。\n淬满了毒药的手里剑会对敌人造成持续伤害，并有几率能够打断敌人的攻击。"
         },
         "javelin": {
-            "name": "Javelin",
-            "description": "With its origins lost in murky pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day. Despite this simplicity, it still requires skill and strength to use."
+            "name": "标枪",
+            "description": "标枪作为一把简易的武器，它的起源已经遗失在历史洪流之中。毕竟它只是个一端尖头可投掷的木棍，随时可以结束某人的余生。尽管它如此简单，依然需要技巧和力量才能使用。"
         },
         "throwing_knife": {
-            "name": "Throwing Knife",
-            "description": "A solid backup plan and a reliable tactic for a precise and silent kill. The Throwing Knife has been present in martial history for as long as people grew tired of throwing objects in a general direction and wanted a reliable weapon instead."
+            "name": "飞刀",
+            "description": "暗杀绝佳的战术选择。当人们厌倦了只是向个大概的方向丢些杂七杂八的东西来杀人并且想要一些可靠的武器时候，飞刀就这么出现在了军事历史中。"
         },
         "throwing_axe": {
-            "name": "Throwing Axe",
-            "description": "A sharp axe is never wrong, and as this one is especially good when throwing, it got popular amongst bikers. Riding a bike, can sometimes be dangerous, and you need some \"protection\". So this sporting axe suddenly ran out of stock as bikers found it extra handy for highway battles."
+            "name": "飞斧",
+            "description": "在飞车党之中十分流行的装备。斧锋利点永远不会错，特别是当它被拿来丢的时候。当你骑着机车还唱着歌，突然就被敌对帮派给劫了，这时候你就需要些\"防御手段\"。飞车党们发觉在公路战时手滑扔出飞斧意外好用。"
         },
         "stoic_hip_flask": {
-            "name": "Stoic's Hip Flask",
-            "description": "An antique flask from 1882 bearing the inscription \"Stoic\" and \"JW Spirits\", given to Duke in his youth when he trained with Buddhist monks. Duke keeps it filled with his favorite whiskey; taking a swig is a symbolic gesture of calming and gives the bearer a moment of zen-like focus, easing away damage."
+            "name": "斯多葛的酒壶",
+            "description": "杜克年轻时，和其一同修行的僧侣赠与他的一瓶1882年的古董酒壶，瓶上刻有\"斯多葛\"和\"JW精神\"。杜克将他钟爱的威士忌装满酒壶，痛饮一口调整内息，冥想禅意，缓解伤痛。"
         },
         "pocket_ecm_device": {
-            "name": "Pocket ECM Device",
-            "description": "A small device for intercepting and overriding nearby encrypted signals. With sophisticated algorithms for sniffing out and disrupting wireless data, the Pocket ECM Device gives the user an edge both while hiding in the shadows and in the heat of combat."
+            "name": "便携式ECM",
+            "description": "用来拦截和覆盖附近加密信号的小装置。通过能够检测和扰乱无线信号的精密算法，便携式ECM给了使用者机会，得以行走在激进和低调这两个极端之间。"
         },
         "smoke_bomb": {
-            "name": "Smoke Bomb",
-            "description": "Drop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you. Dodging bullets is a piece of cake when they can't see you properly."
+            "name": "烟雾弹",
+            "description": "在战火中丢出烟雾弹让你遁入无形，不管敌人有多想要击中你也是事倍功半。"
         },
         "gas_dispenser": {
-            "name": "Gas Dispenser",
-            "description": "A small gas dispenser that temporarily enhance the body's senses and provide healing effect for two allies."
+            "name": "嗨气瓶/电子烟",
+            "description": "一个电子烟瓶，能加强你和你的一名队友之间的感知力，并提供临时的治疗效果。"
         },
         "injector": {
-            "name": "Injector",
-            "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
+            "name": "注射器",
+            "description": "使用者将不惧疼痛且变得无所畏惧。不惧疼痛能使使用者的战斗之魂时刻燃起，无所畏惧则使使用者成为敌人面前的极大威胁。"
         }
     }
 }
