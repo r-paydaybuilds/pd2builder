@@ -4,9 +4,9 @@
         "light_ballistic": "轻型防弹背心",
         "ballistic": "防弹背心",
         "heavy_ballistic": "重型防弹背心",
-        "flak": "Flak",
-        "ctv": "Combined Tactical Vest",
-        "ictv": "Improved Combined Tactical Vest"
+        "flak": "防弹衣",
+        "ctv": "联合战术防弹衣",
+        "ictv": "改良型联合战术防弹衣"
     },
     "deployables": {
         "ammo_bag": {
@@ -34,11 +34,11 @@
             "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
         },
         "sentry_gun": {
-            "name": "步哨",
+            "name": "炮台",
             "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team."
         },
         "suppressed_sentry_gun": {
-            "name": "消音步哨",
+            "name": "消音炮台",
             "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
         },
         "trip_mines_and_shaped_charges": {
@@ -48,20 +48,20 @@
     },
     "perk_cards": {
         "helmet_popping": {
-            "name": "Helmet Popping",
-            "description": "Increases your headshot damage by 25%."
+            "name": "让头盔飞",
+            "description": "提升25%爆头伤害。"
         },
         "blending_in": {
-            "name": "Blending In",
-            "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs."
+            "name": "匿迹隐形",
+            "description": "提升1点隐蔽值。\n当你身着护具时，将降低15%移动速度惩罚。\n在结算时增加45%经验获得。"
         },
         "walk-in_closet": {
-            "name": "Walk-in Closet",
-            "description": "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\nIncreases your ammo pickup to 135% of the normal rate."
+            "name": "衣帽间",
+            "description": "解锁放置物护甲包。在劫案过程中你可以使用护甲包替换你的护甲。\n你的基础捡弹量提至135%。"
         },
         "fast_and_furious": {
-            "name": "Fast and Furious",
-            "description": "You do 5% more damage. Does not apply to melee damage, throwables, grenade launchers or rocket launchers.\nIncreases your doctor bag interaction speed by 20%."
+            "name": "速度与激情",
+            "description": "你所造成的伤害将提升5%。该牌组对近战，投掷物，榴弹发射器，火箭发射器和弓弩无效。\n提升20%你与医疗包的交互速度。"
         },
         "brute_strength-1": {
             "name": "Brute Strength",
@@ -581,561 +581,560 @@
     },
     "perk_decks": {
         "crew_chief": {
-            "name": "Crew Chief",
-            "description": "The Crew Chief. also known as the Caporegime, is the head of a branch of an organized crime syndicate. The Crew Chief commands a crew of soldiers and reports directly to a boss or an underboss.\nWhen the crime syndicate needs to have someone dealt with, the Crew Chief and his soldiers make sure it's done."
+            "name": "领队",
+            "description": "领队，亦被称为军师，他能在一个有组织的犯罪集团中独当一面，掌管属于自己的手下，并直接对上级负责。\n当犯罪集团需要处理某人时，领队和他的人手会确保让那家伙尸骨无存。"
         },
         "muscle": {
-            "name": "Muscle",
-            "description": "The Muscle is a tough guy who uses violence to send messages from his Mafia superioris. They are the backbone of any criminal organization.\nThe muscle is called in whenever you need to rough someone up, break some legs, crush a skull or remind people who's boss."
+            "name": "肌肉",
+            "description": "肌肉男是一个使用暴力来为他的黑手党上级\"送信\"的硬汉。他们是所有犯罪组织的中坚力量。\n当你需要将一个人狠揍一顿，打断一些腿，压碎头颅或提醒人们谁是老大时，你就会需要他们。"
         },
         "armorer": {
-            "name": "Armorer",
-            "description": "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors.\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection to do their jobs."
+            "name": "军械",
+            "description": "军械的前身是军队里的一名专家。军械师的工作是维护，修理和改进装甲。\n任何有自尊心的犯罪集团都需要有人保障他们的战士在完成工作时拥有必要的保护。"
         },
         "rogue": {
-            "name": "Rogue",
-            "description": "The Rogue is a stealthy criminal, capable of sneaky tricks and deadly force. Versatile and deceptive, the Rogue is hired to do anything from pickpocketing, to burglaries and con jobs.\nThe trademark of a Rogue is his versatility - what he lacks in strength he makes up for in skill."
+            "name": "浪人",
+            "description": "浪人是一种神秘的罪犯，他们对使用卑鄙的诡计和致死的暴力手段有着与生俱来的天赋。正因如此。，浪人被雇来做从撬锁到偷盗或者欺诈之类的任何事情。\n变化无常是一名合格浪人的标志———他的能力足以弥补他的力量。"
         },
         "hitman": {
-            "name": "Hitman",
-            "description": "The Hitman is a professional killer from the criminal underworld who excels at close and ranged combat.\nCriminal syndicates will hire a hitman as a last resort to enforce criminal authority, deliver retribution or eliminate competition."
+            "name": "杀手",
+            "description": "地下组织的职业杀手有着比其他人更娴熟的近战和射击技巧。\n犯罪集团通常将雇佣杀手作为最后的手段来宣誓权威、打击报复、或是消除竞争。"
         },
         "crook": {
-            "name": "Crook",
-            "description": "The Crook is a versatile criminal. The term is as old as crime itself.\nTruly, the crook is a jack of all trades and a master of none. He steals, lies, cheats and does any and every dishonest or illegal work necessary to get by."
+            "name": "诡术/骗术师",
+            "description": "诡术是罪犯中的艺术家。存在久远如同犯罪这词本身。\n说实话，诡术欺诈师什么都能干，却又什么都不专精。他偷，骗，作弊，做着一切羞耻非法的勾当。"
         },
         "burglar": {
-            "name": "Burglar",
-            "description": "The natural dexterity of the Burglar has benefits beyond merely breaking and entering. Being nimble allows the Burglar to pick locks, bag bodies and answer pagers faster. They are aslo harder to hit in combat. They stay alive by staying out of the way.\nThis physical conditioning also gives the Burglar a high tolerance to pain and the ability to shrug off wounds quickly."
+            "name": "夜贼/窃贼",
+            "description": "夜贼与生俱来的机敏所带来的好处已经不仅仅是撬门入室了。敏捷的夜贼能更快地开锁，打包，和回答对讲机。但这也让他们很难进行战斗。他们生存下去的诀窍就是隔岸观火。\n这些天赋也给了夜贼对疼痛的较高耐受性，和迅速摆脱创伤的能力。"
         },
         "infiltrator": {
-            "name": "Infiltrator",
-            "description": "The Infiltrator is an agent hired by a government or large criminal organization to obtain information about its enemies, or by a corporation to obtain industrial secrets from its competitors.\nThe Infiltrator is a close combat specialist who knows how to use the environment in order to get the upper hand."
+            "name": "间谍",
+            "description": "间谍是被政府或大型犯罪集团为了获取敌方情报而雇佣的特工，或者被企业雇佣来从竞争对手那窃取商业机密。\n间谍是个懂得利用环境获得先手的近战专家。"
         },
         "sociopath": {
-            "name": "Sociopath",
-            "description": "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy."
+            "name": "疯子/反社会者",
+            "description": "拥有反社会人格的疯子被普遍认为是最能让人留下深刻印象的罪犯之一。当然除此之外，疯子也不是什么善茬，这就是为什么大型组织见他都会选择绕道而过。\n总而言之，很明显疯子擅长应对最暴力的工作。他对他自身犯下的罪行毫无愧疚，这就是他的危险之处。"
         },
         "gambler": {
-            "name": "Gambler",
-            "description": "Heading into the furnace of battle requires skill, hardness and more than a little luck. Some people just have it.\nLuck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big."
+            "name": "赌徒",
+            "description": "踏进战场的熔炉里需要技巧，刻苦和不止一点点的运气。世界上就是有那么些人同时具备这三点。$NL;$NL;运气是一个可望而不可及的能力。古希腊人认为，这是神的旨意。但它并不是，它无处不在，它是一种你可以获得的能力。它需要充分的准备和深谋远虑让你的棋子到位，最大限度地提高获得回报的几率。它更像是对之前努力的回报，而不是单纯的祈祷神明。\n赌徒天赋牌组属于支援类牌组。任何人都可以帮助团队取得胜利，但是赌徒能使团队赢得更彻底。"
         },
         "grinder": {
-            "name": "Grinder",
-            "description": "A typical grinder is a hard working individual, able to take control of difficult situations and turn them around.\nThe grinder relies heavily on always being in the front and dishing out punishment, being able to survive due to the fact that he does damage to the enemies regardless of how much damage he has sustained."
+            "name": "前卫/冲锋手",
+            "description": "通常来说，前卫是个十分刻苦的角色，而努力的回报就是：他们有足够的能力来扭转乾坤。\n前卫总是冲在第一线并且教对手做人，他不管自己承受多大的伤害都会给予敌人最大的反击。"
         },
         "yakuza": {
-            "name": "Yakuza",
-            "description": "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly."
+            "name": "极道",
+            "description": "极道是世界上最具威慑力的犯罪集团之一。仁侠是其信条，家族是其组织。极道驰名于严格的戒律，黑社会性质以及成员覆满全身的刺青。\n流浪者，被社会遗弃之人，在极道懂得了给养自身。当他的行径愈发得体，就代表他不再是个被小瞧的人物。"
         },
         "ex-president": {
-            "name": "Ex-President",
-            "description": "The Ex-Presidents are one of the most daring heisting crews out there. Great risk takers and brothers in arms. Their lack of fear for their own mortality brought them together and made them as successful as they are.\nAn Ex-President follows no rules and only adheres to the Ozaki 8, a set of trials to honor their nature."
+            "name": "前总统",
+            "description": "\"前总统\"是最胆大妄为的抢劫团伙之一。无所畏惧形同比肩。\"战胜死亡的恐惧\"这个理念让他们走在了一起。\n前总统成员不遵循规则，只认尾崎八项试炼，一条向大自然表达敬畏之心的轨迹之路。"
         },
         "maniac": {
-            "name": "Maniac",
-            "description": "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit."
+            "name": "狂人/瘾君子",
+            "description": "狂人天赋牌组是疯狂且临危不惧的代表。时刻全身投入面对伤害，你的队友将获得由吉米坚不可摧的意念凝结成的临时防护盾。"
         },
         "anarchist": {
-            "name": "Anarchist",
-            "description": "The Anarchist refuses to acknowledge the arbitrary laws imposed by traditional authority. Kings, queens and presidents hold no sway over the Anarchist mind. Fly free and make your own rules is the motto. This refusal to abide by established truths enables the Anarchist to go where others cannot, employing unconventional tactics to slip through the cracks and reach seemingly impossible objectives."
+            "name": "安那其/反动派",
+            "description": "无政府主义者相信社会秩序不应该由条子来维护，并且人们应该有能力自制。破坏，反抗，暴力只是为了达到更好的结果的手段。无政府主义者在战斗中从来不逃避，并勇敢面对冲击。他们是团队中强有力的队友———因为他们不仅仅为了钱而战，更为了毁灭的快感而奋斗着。"
         },
         "biker": {
-            "name": "Biker",
-            "description": "Biker gangs are feared all over the world, and the biggest clubs are common household names. To be a biker you need to be tough and loyal, and know that the rules of the club are absolute. Bikers are known to be ruthless and violent people, and they are never afraid to challenge anyone that dare to cross them.\nWhen wearing your patch and riding your bike, you proclaim to everyone that you belong to the 1%. The 1% that refuse to follow the rules of society and proudly carry the title of Outlaw. For a biker, all that matters are your fellow club members and your ride."
+            "name": "飞车党",
+            "description": "飞车党是威慑全世界，无人不知晓的最大帮派。要想成为飞车党的一员，你必须得坚毅忠诚，并清楚：帮派之内，规则至上。飞车党成员都是出了名的冷血暴力，并且不畏惧向任何\"绊脚石\"发出挑战。\n一旦你穿上装备骑上机车，就等同于向世人宣告你属于那1%，拒绝社会规则、打着\"就是违法你拿老子怎样\"的信条的那1%。作为一名飞车党，重要的东西只有俩———你的兄弟和你的坐骑。"
         },
         "kingpin": {
-            "name": "Kingpin",
-            "description": "The Kingpin is the boss, an autocrat whose every whim must be obeyed. But you gotta get the money first. Then when you get the money, you get the power. Remember, the only thing in this world that gives orders...is balls."
+            "name": "霸王/金并",
+            "description": "霸王是名领导者，也是名逼迫他人遵守他所有念头的独裁者。但要想成为霸王。首先你得要有钱。当你有了钱，你就有权。记住，这世上唯一能下令的...只有胆识。"
         },
         "sicario": {
-            "name": "Sicario",
-            "description": "The Sicario is a must in every drug cartel. Someone who takes care of all types of problems in a most lethal way. The Sicario never ducks out of a fight, they get the job done - without hesitation or fear."
+            "name": "刺客",
+            "description": "刺客是每一个毒枭集团必须的一份子，毕竟总得有个人以残忍的方式来干脏活。刺客永远不会逃避，他们只专注于工作，不管手段如何，不留惧怕妥协，不带一丝怜悯。"
         },
         "stoic": {
-            "name": "Stoic",
-            "description": "You are an unbreakable wall of resolve and calm. Discipline of the mind helps the Stoic overcome situations that would make others fall crying into shaking heaps. Combinations of breathing and physical reaction-control learned from buddhist monks will let you keep going long enough to finish the job, no matter what he enemy throws at you."
+            "name": "斯多葛/修士",
+            "description": "你拥有坚如墙般的意志和镇定自若的思维。精神上的自律让斯多葛渡过能让普通人陷入崩溃的处境。结合从僧侣那学来的吐纳与肉体锻炼，你能更持久的完成任务，无论敌人向你射来何物。"
         },
         "tag_team": {
-            "name": "Tag Team",
-            "description": "Some way that experiences are best when shared, even in the case of performance-enhancing aerosol dispensers! For that special heister you like, this is something to bond over while you're looting bank vaults and taking care of business."
+            "name": "双档/双人搭档",
+            "description": "你知道什么是比\"互相分享经验\"还要棒的吗？当然是互相分享能提高自身能力的嗨气了！当你和你的队友在洗劫金库或是干票的时候，将这特别的礼物(指嗨气)送给特别的他(指劫匪)真是再合适不过了。"
         },
         "hacker": {
-            "name": "Hacker",
-            "description": "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening."
+            "name": "黑客",
+            "description": "凭借敏锐的头脑和精良的装备，你能够只按几个按钮就把所有安保系统瘫痪。你永远也不会被监控和安保发现，就算事情出了差错，你也能轻易地进入敌人的通讯系统，并给他们的鼓膜一个大大的惊喜。"
         }
     },
     "skills": {
         "combat_medic": {
-            "name": "Combat Medic",
-            "description": "BASIC: 1 point\tYou gain a 30% damage reduction for 5 seconds both after and during reviving another player.\nACE: 3 points\tReviving a crew member gives them 30% more health."
+            "name": "医疗兵",
+            "description": "基础：1点\t救起队友途中及救起队友后，你都将在5秒内获得30%伤害减免。\n精通：3点\t救起队友将给予他们30%额外血量。"
         },
         "quick_fix": {
-            "name": "Quick Fix",
+            "name": "快速包扎",
             "description": "BASIC: 2 points\tDecreases your First Aid Kit and Doctor Bag deploy time by 50%.\nACE: 4 points\tCrew Members that use your First Aid Kits or Doctor Bags take 10% less damage for 120 seconds."
         },
         "painkillers": {
-            "name": "Painkillers",
+            "name": "止痛药",
             "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%"
         },
         "uppers": {
-            "name": "Uppers",
+            "name": "兴奋剂",
             "description": "BASIC: 3 points\tAdds 7 more First Aid Kits to your inventory.\nACE: 6 points\tAdds 3 First Aid Kits to your inventory. Your deployed First Aid Kits will be automatically used if a player is downed within a 5 meter radius of the First Aid Kit. This cannot occur more than once every 20 seconds."
         },
         "combat_doctor": {
-            "name": "Combat Doctor",
+            "name": "战地医师",
             "description": "BASIC: 3 points\tYou can now deploy 2 Doctor Bags instead of just one.\nACE: 6 points\tYour doctor bags have 2 more charges."
         },
         "inspire": {
-            "name": "Inspire",
+            "name": "激励",
             "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds."
         },
         "forced_friendship": {
-            "name": "Forced Friendship",
+            "name": "强制友谊",
             "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill."
         },
         "confident": {
-            "name": "Confident",
+            "name": "狂妄",
             "description": "BASIC: 2 points\tThe power and range of your intimidation is increased by 50%.\nACE: 4 points\tYou can now have 2 converted enemies at the same time."
         },
         "joker": {
-            "name": "Joker",
+            "name": "小丑",
             "description": "BASIC: 2 points\tYou can convert a non-special enemy to fight on your side.\tThis can not be done during stealth and the enemy must have surrendered in order for you to convert them.\nYou can only convert one non-special enemy at a time.\nACE: 4 points\tYour converted enemy deals 35% more damage. The time to convert an enemy is reduced by 65%."
         },
         "stockholm_syndrome": {
-            "name": "Stockholm Syndrome",
+            "name": "人质综合征",
             "description": "BASIC: 3 points\tCivilians are intimidated by the noise you make and remain intimidated 50% longer.\nACE: 6 points\tYour hostages will not flee when they have been rescued by law enforcers. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only 1 time during a heist."
         },
         "partners_in_crime": {
-            "name": "Partners in Crime",
+            "name": "共犯",
             "description": "BASIC: 3 points\tHaving a converted enemy increases your movement speed by 10%.\nYour converted enemy takes 45% less damage.\nACE: 6 points\tHaving a converted enemy increases your health by 30%.\nYour converted enemy takes an additional 54% less damage."
         },
         "hostage_taker": {
-            "name": "Hostage Taker",
+            "name": "绑匪",
             "description": "BASIC: 4 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 1.5% health every 5 seconds.\nACE: 8 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 4.5% health every 5 seconds."
         },
         "stable_shot": {
-            "name": "Stable Shot",
+            "name": "稳定射击",
             "description": "BASIC: 1 point\tYou gain 8 weapon stability.\nACE: 3 points\tYou gain 16 weapon accuracy while standing still."
         },
         "rifleman": {
-            "name": "Rifleman",
+            "name": "步枪手",
             "description": "BASIC: 2 points\tYour snap to zoom is 100% faster with all weapons.\nYour movement speed is unhindered while using steel sight.\nACE: 4 points\tYour weapon zoom level is increased by 25% with all weapons. Your weapon accuracy while moving with SMGs, Assault Rifles and Sniper Rifles is increased by 16.",
             "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina.\tEvery 25 points of stamina consumed by dashing will refill 5% of their ammo pool to single shot weapons.\tACE: The improved accuracy lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "marksman": {
-            "name": "Marksman",
+            "name": "精确射手",
             "description": "BASIC: 2 points\tYou gain 8 weapon accuracy with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 4 points\tYou gain a 20% accuracy bonus while aiming down sights with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
         },
         "ammo_efficiency": {
-            "name": "Ammo Efficiency",
+            "name": "效率弹药",
             "description": "BASIC: 3 points\tGetting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 6 points\tThe amount of headshots required is reduced to 2."
         },
         "aggressive_reload": {
-            "name": "Aggressive Reload",
+            "name": "激进装填",
             "description": "BASIC: 3 points\tIncreases your reload speed with SMGs, Assault Rifles and Sniper Rifles by 15%.\nACE: 6 points\tAny killing headshot will increase your reload speed by 100% for 4 seconds. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
         },
         "graze": {
-            "name": "Graze",
+            "name": "擦伤",
             "description": "BASIC: 4 points\tSnipers that hit their target deal 20% of the damage dealth in a 100cm radius around the bullet trajectory.\nACE: 8 points\tIf a bullet would headshot-kill someone, the graze skill will deal 100% of the weapon's damage instead of 20%."
         },
         "underdog": {
-            "name": "Underdog",
+            "name": "落水狗",
             "description": "BASIC: 1 point\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
         },
         "shotgun_cqb": {
-            "name": "Shotgun CQB",
+            "name": "霰弹枪CQB",
             "description": "BASIC: 2 points\tYou reload Shotguns 15% faster.\nACE: 4 points\tYou reload Shotguns 35% faster. You gain a 125% increased steel sight zoom speed when using Shotguns.",
             "vr_description": "Addition in VR:\tACE: Every kill while aiming down sight will regenerate 2% stamina."
         },
         "shotgun_impact": {
-            "name": "Shotgun Impact",
+            "name": "霰弹冲击",
             "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns."
         },
         "far_away": {
-            "name": "Far Away",
+            "name": "远射",
             "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights."
         },
         "close_by": {
-            "name": "Close By",
+            "name": "突进",
             "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
         "overkill": {
-            "name": "Overkill",
+            "name": "杀戮",
             "description": "BASIC: 4 points\tWhen you kill an enemy with a Shotgun or the OVE9000 portable saw, you receive 75% damage increase for 20 seconds.\nACE: 8 points\tThe damage bonus now applies to all weapons. Skill must still be activated using a Shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
         },
         "resilience": {
-            "name": "Resilience",
+            "name": "韧性",
             "description": "BASIC: 1 point\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%."
         },
         "die_hard": {
-            "name": "Die Hard",
+            "name": "虎胆龙威",
             "description": "BASIC: 2 points\tYou take 50% less damage while interacting with objects.\nACE: 4 points\tIncreases the armor of all Ballistic vests by 20."
         },
         "transporter": {
-            "name": "Transporter",
+            "name": "运输者",
             "description": "BASIC: 2 points\tYou can throw bags 50% further.\nACE: 4 points\tFor each 10 armor points the bag movement penaly is reduced by 1%."
         },
         "shock_and_awe": {
-            "name": "Shock and Awe",
+            "name": "震慑",
             "description": "BASIC: 3 points\tIncreases the armor recovery rate for you and your crew by 25%.\nACE: 6 points\tEnables your weapons to have a chance to knock back Shield enemies when attacking them. Ranged weapons' knockback chance is increased the higher the total damage of the weapon is. Melee weapons' knockback chance is 100%."
         },
         "bullseye": {
-            "name": "Bullseye",
+            "name": "正中靶心",
             "description": "BASIC: 3 points\tYou regenerate 5 armor for each succesful headshot. This can not occur more than once every 2 seconds.\nACE: 6 points\tYou regenerate an additional 20 armor for each succesful headshot."
         },
         "iron_man": {
-            "name": "Iron Man",
+            "name": "铁人",
             "description": "BASIC: 4 points\tYour total armor value is increased by 30%.\nACE: 8 points\tUnlocks the ability to wear the Improved Combined Tactical Vest."
         },
         "scavenger": {
-            "name": "Scavenger",
+            "name": "拾荒者",
             "description": "BASIC: 1 point\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box."
         },
         "bulletstorm": {
-            "name": "Bulletstorm",
+            "name": "子弹风暴",
             "description": "BASIC: 2 points\tAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to 5 seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\nACE: 4 points\tIncreases the base duration of the effect by up to 15 seconds."
         },
         "portable_saw": {
-            "name": "Portable Saw",
+            "name": "便携式电锯",
             "description": "BASIC: 2 points\tUnlocks the OVE9000 portable saw for you to use as a secondary weapon.\nACE: 4 points\tYou gain 1 extra saw blade for the OVE9000 portable saw. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%."
         },
         "extra_lead": {
-            "name": "Extra Lead",
+            "name": "额外弹药",
             "description": "BASIC: 3 points\tYou can now place 2 ammo bags instead of just one.\nACE: 6 points\tEach ammo bag now contains 50% more ammunition."
         },
         "saw_massacre": {
-            "name": "Saw Massacre",
+            "name": "电锯狂杀",
             "description": "BASIC: 3 points\tReducing the wear down of the blades on enemies by 50%.\nACE: 6 points\tYou can now saw through shield enemies with your OVE9000 portable saw. When killing an enemy with the saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear."
         },
         "fully_loaded": {
-            "name": "Fully Loaded",
+            "name": "全副武装",
             "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
-            "name": "Third Law",
+            "name": "第三定律",
             "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
         },
         "sentry_targeting_package": {
-            "name": "Sentry Targeting Package",
+            "name": "炮台精准修正",
             "description": "BASIC: 2 points\tYour sentry guns gain a 100% increase in accuracy.\nACE: 4 points\tYour sentry guns rotation speed is increased by 150%. Your sentry guns also have 50% more ammunition."
         },
         "eco_sentry": {
-            "name": "Eco Sentry",
+            "name": "经济炮台",
             "description": "BASIC: 2 points\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 4 points\tYour sentry guns gain 150% increased health."
         },
         "engineering": {
-            "name": "Engineering",
+            "name": "工程学",
             "description": "BASIC: 3 points\tYou can now select a less noisy version of the sentry guns, making them much less likely to be targeted by enemies.\nACE: 6 points\tYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75%, but increasing damage by 250% and allowing it to pierce through enemies and shields."
         },
         "jack_of_all_trades": {
-            "name": "Jack of All Trades",
+            "name": "万事通",
             "description": "BASIC: 3 points\tYou deploy and interact with all deployable 100% faster.\nACE: 6 points\tYou can now equip a secondary deployable to bring with you. If your deployable is equipped as a secondary deployable, you can only bring half of what you should bring if it was equipped as a primary deployable."
         },
         "tower_defense": {
-            "name": "Tower Defense",
+            "name": "塔防",
             "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
         },
         "hardware_expert": {
-            "name": "Hardware Expert",
+            "name": "硬件专家",
             "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
-            "name": "Combat Engineering",
+            "name": "战地工程",
             "description": "BASIC: 2 points\tThe radius of your trip mine explosion is increased by 30%.\nACE: 4 points\tYour trip mine damage is increased by 50%."
         },
         "drill_sawgeant": {
-            "name": "Drill Sawgeant",
+            "name": "钻锯军士",
             "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw"
         },
         "more_firepower": {
-            "name": "More Firepower",
+            "name": "更多火力",
             "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain more shaped charges and 7 more trip mines."
         },
         "kickstarter": {
-            "name": "Kickstarter",
+            "name": "脚踹钻机",
             "description": "BASIC: 3 points\tYour drills and saws gain an additional 20% chance to automatically restart after breaking.\nACE: 6 points\tEnables the ability to reset a broken drill or saw with a melee attack. The ability has a 50% chance to fix the drill or saw. The ability can only be used once per time the drill or saw is broken.\nNote: Skill does not affect the OVE9000 saw."
         },
         "fire_trap": {
-            "name": "Fire Trap",
+            "name": "火焰陷阱",
             "description": "BASIC: 4 points\tYour trip mines now spread fire around the area of detonation for 10 seconds in a 4 meter diameter.\nACE: 8 points\tIncreases the fire effect duration by 10 seconds and increases the fire effect radius by 50%."
         },
         "steady_grip": {
-            "name": "Steady Grip",
+            "name": "稳定握把",
             "description": "BASIC: 1 point\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability."
         },
         "heavy_impact": {
-            "name": "Heavy Impact",
+            "name": "沉重打击",
             "description": "BASIC: 2 points\tYour shots have a 5% chance to stagger all enemies except Bulldozers and Captain Winters.\nACE: 4 points\tIncreases your stagger chance to 20%."
         },
         "fire_control": {
-            "name": "Fire Control",
+            "name": "火力控制",
             "description": "BASIC: 2 points\tYou gain 12 weapon accuracy while firing from the hip.\nACE: 4 points\tYour accuracy penalty is decreased by 20% when shooting while moving.",
             "vr_description": "Addition in VR:\tACE: The decreased accuracy penalty lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "lock_n_load": {
-            "name": "Lock N' Load",
+            "name": "重装攻势",
             "description": "BASIC: 3 points\tYou can how hip-fire with your weapons while sprinting.\nACE: 6 points\tKilling 2 enemies with SMGs, LMGs, Assault Rifles or Special Weapons set on automatic fire mode will increase your next reload speed by up to 100%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a maximum of 40% reload speed increase.",
             "vr_description": "Addition in VR:\tBASIC: Every 40 points of stamina consumed by dashin will refill 5% of their ammo pool to automatic weapons."
         },
         "surefire": {
-            "name": "Surefire",
+            "name": "万全之策",
             "description": "BASIC: 3 points\t Your SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
         },
         "body_expertise": {
-            "name": "Body Expertise",
+            "name": "人体解析",
             "description": "BASIC: 4 points\t30% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode.\nACE: 8 points\t90% from the bonus headshot damage is permanently applied to hitting enemies on the body. This skill is only activated by SMGs, LMGs, Assault Rifles or Special Weapons fired in automatic fire mode."
         },
         "chameleon": {
-            "name": "Chamaleon",
+            "name": "变色龙",
             "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
         },
         "cleaner": {
-            "name": "Cleaner",
+            "name": "清道夫",
             "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
         },
         "sixth_sense": {
-            "name": "Sixth Sense",
+            "name": "第六感",
             "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
         },
         "nimble": {
-            "name": "Nimble",
+            "name": "机敏",
             "description": "BASIC: 3 points\tYou gain the ability to disable 1 camera from detecting you and your crew. Effect lasts for 25 seconds.\nACE: 6 points\tYou lockpick 100% faster. You also gain the ability to lockpick safes."
         },
         "ecm_overdrive": {
-            "name": "ECM Overdrive",
+            "name": "ECM过载",
             "description": "BASIC: 3 points\tYour ECM jammer and feedback duration is increased by 25%.\nACE: 6 points\tYour ECM jammer can now also be used to open certain electronic doors."
         },
         "ecm_specialist": {
-            "name": "ECM Specialist",
+            "name": "ECM专家",
             "description": "BASIC: 4 points\tYou can now place 2 ECM jammers instead of just one.\nACE: 8 points\tThe ECM jammer duration is increased by an additional 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammers."
         },
         "duck_and_cover": {
-            "name": "Duck and Cover",
+            "name": "蹲防战术",
             "description": "BASIC: 1 point\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
             "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "parkour": {
-            "name": "Parkour",
+            "name": "跑酷",
             "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting",
             "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
         },
         "inner_pockets": {
-            "name": "Inner Pockets",
+            "name": "内层袋",
             "description": "BASIC: 2 points\tIncreases the concealment of melee weapons by 2.\nACE: 4 points\tIncreases the concealment of all ballistic vests by 4."
         },
         "dire_need": {
-            "name": "Dire Need",
+            "name": "极端需求",
             "description": "BASIC: 3 points\tWhen your armor breaks, the first shot on every enemy will cause that enemy to stagger. This effect ends when your armor recovers.\nACE: 6 points\tThe effect persists for 6 after your armor has recovered."
         },
         "shockproof": {
-            "name": "Shockproof",
+            "name": "防电保护",
             "description": "BASIC: 3 points\tWhen tased, the shock effect has a 30% chance to backfire on the Taser, knocking them back.\nACE: 6 points\tWhen tased, you are able to free yourself from the taser by interacting with it within 2 seconds of getting tased."
         },
         "sneaky_bastard": {
-            "name": "Sneaky Bastard",
+            "name": "卑鄙小人",
             "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
-            "name": "Second Wind",
+            "name": "第二春",
             "description": "BASIC: 1 point\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered."
         },
         "optical_illusions": {
-            "name": "Optical Illusions",
+            "name": "光学幻象",
             "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
         },
         "the_professional": {
-            "name": "The Professional",
+            "name": "专业人士",
             "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
             "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
         },
         "low_blow": {
-            "name": "Low Blow",
+            "name": "下作手段",
             "description": "BASIC: 3 points\tYou gain a 3% critical hit for every 3 points of detection rate under 35 up to 30%.\nACE: 6 points\tYou gain 3% critical hit chance for every 1 point of detection rate under 35 up to 30%.\nNote: Does not apply to grenade launchers."
         },
         "high_value_target": {
-            "name": "High Value Target",
+            "name": "高价目标",
             "description": "BASIC: 3 points\tEnemies you mark take 15% more damage.\nACE: 6 points\tEnemies you mark take an additional 50% damage when further away than 10 meters. Increase the duration of marked enemies by 100% and you can now mark specials by aiming down at them with any weapon."
         },
         "unseen_strike": {
-            "name": "Unseen Strike",
+            "name": "隐匿袭击",
             "description": "BASIC: 4 points\tIf you do not lose any armor or health for 4 seconds, you gain 35% critical hit chance for 6 seconds.\nACE: 8 points\tThe critical hit chance duration is increased to 18 seconds.\nTaking any damage will cancel the effect."
         },
         "equilibrium": {
-            "name": "Equilibrium",
+            "name": "沉着",
             "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
-            "name": "Gun Nut",
+            "name": "枪械狂",
             "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
         },
         "akimbo": {
-            "name": "Akimbo",
+            "name": "双持",
             "description": "BASIC: 2 points\tYour Akimbo weapons' stability penalty is reduced by 8.\nACE: 4 points\tYour Akimbo weapons' stability penalty is reduced by an additional 8 and they also have 50% increased ammo capacity."
         },
         "one_handed_talent": {
-            "name": "One Handed Talent",
+            "name": "只手遮天",
             "description": "BASIC: 3 points\tThe base damage of all pistols is increased by 5.\nACE: 6 points\tThe base damage of all pistols is increased by an additional 10 damage."
         },
         "desperado": {
-            "name": "Desperado",
+            "name": "亡命之徒",
             "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10% and you can stack it 4 times.\nACE: 6 points\tYou reload 50% faster."
         },
         "trigger_happy": {
-            "name": "Trigger Happy",
+            "name": "乱枪狂人",
             "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
         },
         "nine_lives": {
-            "name": "Nine Lives",
+            "name": "九命猫",
             "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
-            "name": "Running from Death",
+            "name": "死里逃生",
             "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10% seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
-            "name": "Up You Go",
+            "name": "卷土重来",
             "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
         },
         "swan_song": {
-            "name": "Swan Song",
+            "name": "绝唱",
             "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
         },
         "feign_death": {
-            "name": "Feign Death",
+            "name": "诈死",
             "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
-            "name": "Messiah",
+            "name": "弥赛亚",
             "description": "BASIC: 4 points\tWhile in bleedout, you can revive yourself if you kill an enemy. You only have 1 charge.\nACE: 8 points\tYour messiah charge is replenished whenever you use a doctor bag."
         },
         "martial_arts": {
-            "name": "Martial Arts",
+            "name": "武术",
             "description": "BASIC: 1 point\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike."
         },
         "bloodthirst": {
-            "name": "Bloodthirst",
+            "name": "嗜血",
             "description": "BASIC: 2 points\tEvery kill you get will increase your next melee attack damage by 100%, up to a maximum of 1600%. This effect gets reset when you kill an enemy with a melee attack.\nACE: 4 points\tWhenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds."
         },
         "pumping_iron": {
-            "name": "Pumping Iron",
+            "name": "钢铁之击",
             "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage"
         },
         "counterstrike": {
-            "name": "Counterstrike",
+            "name": "后发制人",
             "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks"
         },
         "berserker": {
-            "name": "Berserker",
+            "name": "狂战士",
             "description": "BASIC: 3 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.\nACE 6 points\tThe lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well.\nNote: Does not apply to throwables, grenade launchers or rocket launchers.\nEntering berserker state negates third-party regeneration effects."
         },
         "frenzy": {
-            "name": "Frenzy",
+            "name": "狂乱",
             "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%"
         }
     },
     "system": {
-        "name": "PD2 Builder",
+        "name": "PD2 Builder / PD2加点模拟器",
         "home": "Home",
         "requires": {
-            "perk_deck": "REQUIRES THE %{name} PERK DECK EQUIPPED",
-            "perk_card": "REQUIRES THE %{name} PERK CARD EQUIPPED",
-            "throwable": "REQUIRES THE %{name} THROWABLE EQUIPPED",
-            "skill": "REQUIRES THE %{name} SKILL",
-            "deployable": "REQUIRES THE %{name} DEPLOYABLE EQUIPPED"
+            "perk_deck": "需要装备%{name}天赋",
+            "perk_card": "需要拥有%{name}牌组",
+            "throwable": "需要装备投掷物%{name}",
+            "skill": "需要拥有%{name}技能",
+            "deployable": "需要装备放置物%{name}"
         },
-        "equipped": "EQUIPPED",
-        "equip": "EQUIP.",
-        "selected": "SELECTED",
-        "primary": "PRIMARY",
-        "secondary": "SECONDARY",
+        "equipped": "已装备",
+        "selected": "已选择",
+        "primary": "主放置物",
+        "secondary": "副放置物",
         "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
         "skills": {
-            "title": "Skills",
-            "remaining": "Remaining skill points: ",
+            "title": "技能",
+            "remaining": "剩余技能点：",
             "mastermind": {
-                "title": "MASTERMIND",
+                "title": "黑手",
                 "subtrees": {
-                    "medic": "MEDIC",
-                    "controller": "CONTROLLER",
-                    "sharpshooter": "SHARPSHOOTER"
+                    "medic": "医者",
+                    "controller": "控制狂",
+                    "sharpshooter": "神射手"
                 }
             },
             "enforcer": {
-                "title": "ENFORCER",
+                "title": "暴徒",
                 "subtrees": {
-                    "shotgunner": "SHOTGUNNER",
-                    "tank": "TANK",
-                    "ammo_specialist": "AMMO SPECIALIST"
+                    "shotgunner": "霰弹枪手",
+                    "tank": "军械专家",
+                    "ammo_specialist": "弹药专家"
                 }
             },
             "technician": {
-                "title": "TECHNICIAN",
+                "title": "技师",
                 "subtrees": {
-                    "engineer": "ENGINEER",
-                    "breacher": "BREACHER",
-                    "oppressor": "OPPRESSOR"
+                    "engineer": "工程兵",
+                    "breacher": "破坏者",
+                    "oppressor": "压制者"
                 }
             },
             "ghost": {
-                "title": "GHOST",
+                "title": "幽灵",
                 "subtrees": {
-                    "shinobi": "SHINOBI",
-                    "artful_dodger": "ARTFUL DODGER",
-                    "silent_killer": "SILENT KILLER"
+                    "shinobi": "忍者",
+                    "artful_dodger": "矫健跑者",
+                    "silent_killer": "无声杀手"
                 }
             },
             "fugitive": {
-                "title": "FUGITIVE",
+                "title": "逃犯",
                 "subtrees": {
-                    "gunslinger": "GUNSLINGER",
-                    "revenant": "REVENANT",
-                    "brawler": "BRAWLER"
+                    "gunslinger": "枪手",
+                    "revenant": "战斗续行",
+                    "brawler": "狂怒战士"
                 }
             }
         },
         "perk_decks": {
-            "title": "Perk Decks"
+            "title": "天赋牌组"
         },
         "armors": {
-            "title": "Armors",
+            "title": "护甲",
             "table": {
                 "columns": {
-                    "total": "TOTAL",
-                    "base": "BASE",
-                    "skill": "SKILL",
-                    "equipped": "EQUIPPED",
-                    "selected": "SELECTED"
+                    "total": "总计",
+                    "base": "基础",
+                    "skill": "技能",
+                    "equipped": "已装备",
+                    "selected": "已选择"
                 },
                 "rows": {
-                    "armor": "ARMOR",
-                    "concealment": "CONCEALMENT",
-                    "speed": "SPEED",
-                    "dodge": "DODGE",
-                    "steadiness": "STEADINESS",
-                    "stamina": "STAMINA"
+                    "armor": "护甲",
+                    "concealment": "隐蔽度",
+                    "speed": "速度",
+                    "dodge": "闪避",
+                    "steadiness": "稳定性",
+                    "stamina": "耐力"
                 }
             }
         },
         "throwables": {
-            "title": "Throwables"
+            "title": "投掷物"
         },
         "deployables": {
-            "title": "Deployables"
+            "title": "放置物"
         },
         "share": {
-            "title": "Share Build",
-            "description": "Share your Build with anyone!",
-            "copy": "Copy Link",
-            "copied": "Link copied!"
+            "title": "分享加点",
+            "description": "与别人分享这套加点！",
+            "copy": "复制链接",
+            "copied": "连接已复制！"
         },
         "credits": {
-            "title": "Credits",
-            "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
-            "p2": "Contributors of this project can be found &{here}.",
-            "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
-            "reach": "Reach us at: "
+            "title": "感谢名单：",
+            "p1": "本网站的建立离不开r/paydaybuilds社区的帮助。",
+            "p2": "您可以在&{此处}阅读贡献者名单。",
+            "license": "本网站遵循&{MIT许可}。您可以随意使用我们的资源，但请遵守开源条例。",
+            "reach": "联系我们："
         }
     },
     "throwables": {
