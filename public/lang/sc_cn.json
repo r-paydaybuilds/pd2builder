@@ -11,39 +11,39 @@
     "deployables": {
         "ammo_bag": {
             "name": "弹药包",
-            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
+            "description": "按住[G]放置弹药包。\n弹药包一旦放置就不能被移动，但你和你队友可以通过对弹药包进行交互(按住[F])来补充弹药。\n弹药包默认可提供共400%的总弹药，一旦用完就会消失。\n你可以通过观察弹药包来判断还剩多少弹药。\n弹药包是一个便携挎包，原本设计用来让士兵携带额外的弹药上战场。"
         },
         "armor_bag": {
             "name": "护甲包",
-            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
+            "description": "按住[G]使用护甲包穿戴护甲。在使用之前，你会穿着两件套西装。\n护甲包只能使用一次，用过就会消失。\n护甲包是一个便携的挎包，可以用来携带你选择的用于劫案当中的的护甲。"
         },
         "body_bag_case": {
             "name": "尸体袋箱",
-            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
+            "description": "按住[G]来放置尸体袋箱。\n尸体袋箱一旦放置就不能被移动，但你和你队友可以通过对尸体袋箱进行交互(按住[F])来获取尸体袋。\n尸体袋盒的使用次数有限，一旦用完就会消失。\n你可以通过观察尸体袋盒来判断还有多少个尸体袋。\n尸体袋箱是一个装有尸体袋的手提箱，用与在潜入中打包尸体。"
         },
         "doctor_bag": {
             "name": "医疗包",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine"
+            "description": "按住[G]来放置医疗包。\n医疗包一旦放置就不能被移动，但你和你队友可以通过对医疗包进行交互(按住[F])来回复血量并重置倒地次数。\n医疗包的使用次数有限，一旦用完就会消失。\n你可以通过观察医疗包来判断还剩多少使用次数。\n医疗包是一个便携挎包，通常被外科医生和医疗专家用来携带医疗物品和药品。"
         },
         "ecm_jammer": {
             "name": "ECM干扰器",
-            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
+            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal.按住[G]来放置ECM。\nECM一旦放置就不能被移动，它会即时运作20秒。\n你可以通过对ECM进行交互(按下[F])来开启ECM的反馈功能，使一定范围内的敌人失去战斗能力，之后便会停止工作。\n电子干扰器(ECM)是一个用来欺骗雷达，声纳和其他探测系统的电子设备，它某种程度上能助你完成劫案。"
         },
         "first_aid_kit": {
             "name": "急救包",
-            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
+            "description": "按住[G]放置急救包。\n急救包一旦放置就不能被移动，但你和你队友可以通过对急救包进行交互(按住[F])来回复血量。\n急救包只能使用一次，一旦用完就会消失。\n急救包是用来提供急救的散装携件。"
         },
         "sentry_gun": {
             "name": "炮台",
-            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team."
+            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team.按住[G]来放置炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n炮台能够自动感应的目标并向其开火，它被广泛用于为团队吸引火力。"
         },
         "suppressed_sentry_gun": {
             "name": "消音炮台",
-            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
+            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.按住[G]来放置消音炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n消音炮台相对于普通的、更响的炮台干敌人的同时不容易被当作目标。"
         },
         "trip_mines_and_shaped_charges": {
-            "name": "Trip Mines and Shaped Charges",
-            "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
+            "name": "绊雷与塑性炸药",
+            "description": "按住[G]来放置绊雷。\n你可以通过对绊雷进行交互(按下[F])来切换它的爆炸和探测模式。\n对可放置塑性炸药的地方进行交互将放置塑性炸药，它将在几秒钟后爆炸并摧毁接触的物体。\n绊雷可以伤害到经过它的人，而塑性炸药则被广泛用于破门与炸开保险箱，两者都适合在战斗中使用。"
         }
     },
     "perk_cards": {
@@ -64,519 +64,519 @@
             "description": "你所造成的伤害将提升5%。该牌组对近战，投掷物，榴弹发射器，火箭发射器和弓弩无效。\n提升20%你与医疗包的交互速度。"
         },
         "brute_strength-1": {
-            "name": "Brute Strength",
-            "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "蛮力",
+            "description": "你与你的队友将获得8%伤害减免。当你的血量低于50%时，你本人获得的减伤效果将翻倍。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "marathon_man": {
-            "name": "Marathon Man",
-            "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "长跑健将",
+            "description": "你与你的队友将提升50%耐力。\n你呼喊的距离将提升25%。\n当你的中距离范围内存在敌人，则获得6%伤害减免。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "wolf_pack": {
-            "name": "Wolf Pack",
-            "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "狼群战术",
+            "description": "你的队友将提升10%血量。\n你将提升20%血量。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "testudo": {
-            "name": "Testudo",
-            "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "龟缩",
+            "description": "你将获得10%额外护甲，同时你的队友将额外再获得5%护甲。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "hostage_situation": {
-            "name": "Hostage Situation",
-            "description": "You and your crew will gain 6% max health and 12% stamina for each hostage up to 4 times.\nYou and your crew will gain 8% damage reduction for having one or more hostages.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "人质危机",
+            "description": "你的团队每持有一名人质，你和你的队友都将获得6%额外血量以及12%额外耐力，效果最多叠加4次\n只要你的团队持有人质，你和你的队友都将获得8%伤害减免。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "brute_strength-2": {
-            "name": "Brute Strength",
-            "description": "You gain 10% more health",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "蛮力",
+            "description": "你将获得10%额外血量。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "meat_shield": {
-            "name": "Meat Shield",
-            "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "肉身之盾",
+            "description": "当你靠近队友时，你有15%几率优先被敌人视作攻击目标。\n你将获得10%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "giant_strength": {
-            "name": "Giant Strength",
-            "description": "You gain an additional 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "巨人之力",
+            "description": "你将获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "disturbing_the_peace": {
-            "name": "Disturbing the Peace",
-            "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "打破和平",
+            "description": "你现在可以在敌人中散播恐惧。\t恐惧敌人的几率取决于你所使用武器的威胁度。\n恐惧将使敌人陷入不可控的惊慌状态。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "800-pound_gorilla": {
-            "name": "800-pound Gorilla",
-            "description": "You gain an additional 40% more health.\nYou regenerate 3% of your life every 5 seconds.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "无法无天",
+            "description": "你将获得40%额外血量。\n每间隔5秒你都将回复3%血量。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "type_1_armor": {
-            "name": "Type I Armor",
-            "description": "You gain 10% more armor",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "I型护甲",
+            "description": "你将获得10%额外护甲。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "type_2_armor": {
-            "name": "Type II Armor",
-            "description": "You gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "II型护甲",
+            "description": "你将获得10%额外护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "type_3_armor": {
-            "name": "Type III Armor",
-            "description": "You gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "III型护甲",
+            "description": "你将获得10%额外护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "reinforced_armor": {
-            "name": "Reinforced Armor",
-            "description": "Your armor recovery rate is increased by 10%.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "坚固护甲",
+            "description": "提升10%护甲恢复速度。\n当你的护甲耗尽，你将在2秒内无敌。\t效果冷却时间15秒",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "liquid_armor": {
-            "name": "Liquid Armor",
-            "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "液态",
+            "description": "你将获得5%额外护甲。\n提升10%你与你的队友的护甲恢复速度。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "subtle-1": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "name": "狡捷",
+            "description": "提升15%闪避。",
+            "vr_description": "冲刺所消耗的耐力将在3秒内为你提升1%~6%闪避。"
         },
         "elusive": {
-            "name": "Elusive",
-            "description": "You are 15% less likely to be targeted when you are close to your crew members.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "name": "深藏不露",
+            "description": "当你靠近队友时，你优先被敌人视作攻击目标的几率减少15%。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~7%。"
         },
         "evasive": {
-            "name": "Evasive",
-            "description": "Your chance to dodge is increased by an additional 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+            "name": "闪烁其辞",
+            "description": "额外提升15%闪避。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~8%。"
         },
         "shadow_warrior": {
-            "name": "Shadow Warrior",
-            "description": "Your chance to dodge is increased by an additional 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+            "name": "暗影武士",
+            "description": "额外提升15%闪避。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~9%。"
         },
         "killer_instinct": {
-            "name": "Killer Instinct",
-            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "name": "杀手本能",
+            "description": "你的所有武器都有25%几率穿透敌人护甲。\n提升80%武器切换速度。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~10%。"
         },
         "basic_recovery": {
-            "name": "Basic Recovery",
-            "description": "Your armor recovery rate is increased by 5%.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "基础恢复",
+            "description": "提升5%护甲恢复速度。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "ambidexterity": {
-            "name": "Ambidexterity",
-            "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "两手同利",
+            "description": "所有的双持武器都将获得-16点稳定惩罚，同时备弹提升50%。\n额外提升10%护甲恢复速度。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "advanced_recovery": {
-            "name": "Advanced Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "进阶恢复",
+            "description": "额外提升10%护甲恢复速度。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "expert_recovery": {
-            "name": "Expert Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "职业恢复",
+            "description": "额外提升10%护甲恢复速度。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "tooth_and_claw": {
-            "name": "Tooth and Claw",
-            "description": "Your armor recovery rate is increased by an additional 10%.\nYour armor will recover 1.5 seconds after being broken no matter what the situation.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "殚精竭虑",
+            "description": "额外提升10%护甲恢复速度。\n你的护甲在被击穿后的1.5秒无条件恢复。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "subtle-2": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+            "name": "狡捷",
+            "description": "提升15%闪避。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "basic_composure": {
-            "name": "Basic Composure",
-            "description": "Your chance to dodge is increased by 5% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "若无其事",
+            "description": "当你身着防弹背心时，提升5%闪避。\n提升20%防弹背心护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "advanced_composure": {
-            "name": "Advanced Composure",
-            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "从容不迫",
+            "description": "当你身着防弹背心时，提升10%闪避。\n提升20%防弹背心护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "expert_composure": {
-            "name": "Expert Composure",
-            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 25% for ballistic vests.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "泰然处之",
+            "description": "当你身着防弹背心时，提升10%闪避。\n提升25%防弹背心护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "master_recovery": {
-            "name": "Master Recovery",
-            "description": "Your armor recovery rate is increased by 10%",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "大师级恢复",
+            "description": "提升10%护甲恢复速度。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "sneaky": {
-            "name": "Sneaky",
-            "description": "Your chance to dodge is increased by 20%.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "name": "鬼祟",
+            "description": "提升20%闪避。",
+            "vr_description": "冲刺所消耗的耐力将在3秒内为你提升1%~6%闪避。"
         },
         "bag_of_tricks": {
-            "name": "Bag of Tricks",
-            "description": "Standing still and crouching decreases your chances to be targeted by 10%.\nYou bag corpses 20% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "name": "魔术袋",
+            "description": "当你站定不动且蹲下时，将降低10%被视作攻击目标的几率。\n提升20%打包尸体的速度。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~7%。"
         },
         "luck_of_the_irish": {
-            "name": "Luck of the Irish",
-            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
+            "name": "爱尔兰的运气",
+            "description": "额外提升5%闪避。\n当你站定不动且蹲下时，将额外降低5%被视作攻击目标的几率。\n提升20%开锁速度。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~8%。"
         },
         "dutch_courage": {
-            "name": "Dutch Courage",
-            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
+            "name": "酒后胆大",
+            "description": "额外提升5%闪避。\n当你站定不动且蹲下时，将额外降低5%被视作攻击目标的几率。\n提升10%回答对讲机的速度。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~9%。"
         },
         "breath_of_fresh_air": {
-            "name": "Breath of Fresh Air",
-            "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "name": "耳目一新",
+            "description": "当你站定不动且蹲下时，你的护甲恢复速度提升20%。\n提升10%蹲下时的移动速度。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~10%。"
         },
         "overdog": {
-            "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "统领上风",
+            "description": "当你的附近存在三个或以上敌人时，你将获得12%伤害减免。\n在你近战造成伤害后的1秒内，你的近战伤害将变为10倍。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "basic_close_combat": {
-            "name": "Basic Close Combat",
-            "description": "When you are within medium range of an enemy, you receive 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "基础近战",
+            "description": "当你的中距离范围内存在敌人，则获得8%伤害减免。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "advanced_close_combat": {
-            "name": "Advanced Close Combat",
-            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "进阶近战",
+            "description": "当你的中距离范围内存在敌人，则额外获得8%伤害减免。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "expert_close_combat": {
-            "name": "Expert Close Combat",
-            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "专家近战",
+            "description": "当你的中距离范围内存在敌人，则额外获得8%伤害减免。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "life_drain": {
-            "name": "Life Drain",
-            "description": "Striking an enemy with your melee weapon regenerates 20% of your health. This cannot occur more than once every 10 seconds.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "生命汲取",
+            "description": "使用你的近战武器击中敌人将回复20%血量。\t效果冷却时间为10秒。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "tension": {
-            "name": "Tension",
-            "description": "Killing an enemy regenerates 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "张力",
+            "description": "当你杀敌后，将回复30护甲。\t效果冷却时间为1秒。\n提升10%护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "clean_hit": {
-            "name": "Clean Hit",
-            "description": "Killing an enemy with a melee weapon regenerates 10% health.\nThis cannot occur more than once every 1 second.\nWhen you are within medium range of an enemy you receive 8% less damage.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "利索一击",
+            "description": "当你使用近战武器杀敌后，将回复10%血量。\t效果冷却时间为1秒。\n当你的中距离范围内存在敌人，则获得8%伤害减免。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "overdose": {
-            "name": "Overdose",
-            "description": "Killing an enemy at medium range recovers 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "药物过量",
+            "description": "当你杀死中距离内的敌人后，将回复30护甲。\t效果冷却时间为1秒。\n额外提升10%护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "showdown": {
-            "name": "Showdown",
-            "description": "Killing an enemy at medium range has a 75% chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every 1 second.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "一决高下",
+            "description": "当你杀死中距离内的敌人后，将有75%几率在敌人之间散播恐惧。\t效果冷却时间为1秒。\n恐惧将使敌人陷入不可控的惊慌状态。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "medical_supplies": {
-            "name": "Medical Supplies",
-            "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "医疗补给",
+            "description": "拾取掉落的弹药盒将同时为你提供治疗，回复16至24点血量。\t效果冷却时间为3秒。\n若使用\"赌徒\"天赋的玩家的血量低于其他玩家，则该玩家的治疗效果提升20%。\t效果最多叠加三次。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "ammo_give_out": {
-            "name": "Ammo Give Out",
-            "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "弹药分享",
+            "description": "当你拾取弹药盒时，你的队友将同时获得基础捡弹量50%的弹药。\t效果冷却时间为5秒。\n你获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "sharing_is_caring": {
-            "name": "Sharing Is Caring",
-            "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "大爱无疆",
+            "description": "当你获得弹药盒回血时，你的队友将同时获得50%的治疗。\n你获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "more_healing_1": {
-            "name": "More Healing 1",
-            "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "强化治疗1",
+            "description": "额外提升8点捡弹回血量。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "more_healing_2": {
-            "name": "More Healing 1",
-            "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "强化治疗2",
+            "description": "额外提升8点捡弹回血量。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "histamine": {
-            "name": "Histamine",
-            "description": "Damaging an enemy heals 1 life点 every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "组织胺",
+            "description": "对一名敌人造成伤害将会使你每0.3秒回复1点血量，效果持续3秒。\t效果冷却时间为1.5秒，但可以叠加。\n该天赋仅在穿着两件套西服或轻型防弹背心时生效。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "adrenaline": {
-            "name": "Adrenaline",
-            "description": "Damaging an enemy now heals 2 life点 every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "肾上腺素",
+            "description": "对一名敌人造成伤害将会使你每0.3秒回复2点血量，效果持续3秒。\n你将获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "endorphins": {
-            "name": "Endorphins",
-            "description": "Damaging an enemy now heals 3 life点 every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "内啡肽",
+            "description": "对一名敌人造成伤害将会使你每0.3秒回复3点血量，效果持续3秒。\n你的所有武器都有10%几率穿透敌人护甲。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "dopamine": {
-            "name": "Dopamine",
-            "description": "Damaging an enemy now heals 4 life点 every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "多巴胺",
+            "description": "对一名敌人造成伤害将会使你每0.3秒回复4点血量，效果持续3秒。\n你将获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "euphoria": {
-            "name": "Euphoria",
-            "description": "Damaging an enemy now heals 4 life点 every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "致幻剂",
+            "description": "对一名敌人造成伤害将会使你每0.3秒回复4点血量，效果持续4.2秒。\n额外提升20%穿透敌人护甲的几率。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "koi_irezumi": {
-            "name": "Koi Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to 20% armor recovery rate.\nNOTE: Entering this state negates third party regeneration effects.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "锦鲤刺青",
+            "description": "你的血量越低，护甲的恢复速度就越快。\t当你的血量低于25%时，随着血量降低，护甲的恢复速度将逐步提高20%。\n当触发该效果，任何护甲回复都将失效。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "hebi_irezumi": {
-            "name": "Hebi Irezumi",
-            "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "蛇蟒刺青",
+            "description": "你的血量越低，移动速度就越快。\t当你的血量低于25%时，随着血量降低，移动速度将逐步提高20%。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "tora_irezumi": {
-            "name": "Tora Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "猛虎刺青",
+            "description": "你的血量越低，护甲的恢复速度就越快。\t当你的血量低于25%时，随着血量降低，护甲的恢复速度将额外逐步提高20%。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "ryu_irezumi": {
-            "name": "Ryu Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "青龙刺青",
+            "description": "你的血量越低，护甲的恢复速度就越快。\t当你的血量低于25%时，随着血量降低，护甲的恢复速度将额外逐步提高20%。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "oni_irezumi": {
-            "name": "Oni Irezumi",
-            "description": "All berserker state effects in this perk deck will start at 50% health instead of 25%.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "恶鬼刺青",
+            "description": "触发此天赋的所有\"狂战士\"效果所需的血量从25%提升至50%。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "point_break": {
-            "name": "Point Break",
-            "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "惊爆点",
+            "description": "当你拥有全部护甲时，你和你的队友每杀死1名敌人，都将为你储存4点血量。\n当你的护甲耗尽并且重新恢复时，你将同时回复之前储存的全部血量。\n能储存的最大血量取决于你装备的护甲。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "the_emerging_force": {
-            "name": "The Emerging Force",
-            "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "新兴之力",
+            "description": "提升4点杀敌后的储血量。\n你将获得10%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "life_of_ice": {
-            "name": "Life of Ice",
-            "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "冰之冻结",
+            "description": "提升50%最大储血量。\n你将获得10%额外血量。\n你将提升10%闪避。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "awakening_earth": {
-            "name": "Awakening Earth",
-            "description": "Increases the amount of health stored from kills by 4.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "灵性觉醒",
+            "description": "提升4点杀敌后的储血量。\n你将获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "the_perfect_line": {
-            "name": "The Perfect Line",
-            "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\t;Armor recovery speed is reset whenever your armor recovers.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "完美极限",
+            "description": "杀死敌人后，将基于你剩余的护甲量，缩短你的护甲恢复时间。剩余护甲值越高，杀敌后获得的增益效果越少。\t当你护甲回满后，护甲恢复加成将重置。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "excitement": {
-            "name": "Excitement",
-            "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "亢奋",
+            "description": "你造成的伤害量的100%将被转化进狂躁槽，最大转化速度为4秒提升240点。\t狂躁槽容量为600点。\n关于狂躁槽：\t每拥有30点狂躁值，你都将获得1点伤害吸收。\t狂躁槽每8秒将流失60%+80点。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "outburst": {
-            "name": "Outburst",
-            "description": "Members of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "爆发",
+            "description": "你的团队成员将共享你的狂躁槽效果。\n多位玩家同时使用\"狂人\"天赋时，狂躁槽不叠加，只取最高伤害吸收的效果。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "fervor": {
-            "name": "Fervor",
-            "description": "Change the decay of your Hysteria Stacks to 60% + 40 every 8 seconds.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "狂热",
+            "description": "减缓狂躁槽的流失速度至每8秒60%+40点。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "recklessness": {
-            "name": "Recklessness",
-            "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "鲁莽",
+            "description": "增加狂躁槽的伤害吸收效率，每拥有25点狂躁值，将获得1点伤害吸收。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "insanity": {
-            "name": "Insanity",
-            "description": "Damage absorption from Hysteria Stacks on you is increased by 100%.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "癫狂",
+            "description": "来自狂躁槽的伤害吸收效果提升100%。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "blitzkrieg_bop": {
             "name": "Blitzkrieg Bop",
-            "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+            "description": "与正常\"一段时间内不受到攻击后，一次性恢复全部护甲\"不同，安那其可以无时不刻地回复护甲。\t越重型的护甲每次回复的护甲越多，但回复的时间间隔更长。\t提升护甲恢复速度的技能将因此失效。\n当你护甲耗尽，你将在2秒内无敌。\t效果冷却时间为15秒。",
+            "vr_description": "冲刺所消耗的耐力将为你回复1~3点护甲，每5秒最多触发3次。"
         },
         "straight_edge": {
-            "name": "Straight Edge",
-            "description": "50% of your health is converted into 100% armor.",
-            "vr_description": "The dash effect is now from 2 up to a maximum of 5."
+            "name": "硬核朋克",
+            "description": "你50%的血量将被转化成100%护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至2~5点护甲。"
         },
         "death_or_glory": {
-            "name": "Death or Glory",
-            "description": "50% of your health is converted into 110% armor.",
-            "vr_description": "The dash effect is now from 3 up to a maximum of 7."
+            "name": "成雄败寇",
+            "description": "你50%的血量将被转化成110%护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至3~7点护甲。"
         },
         "rise_above": {
-            "name": "Rise Above",
-            "description": "50% of your health is converted into 120% armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 9."
+            "name": "超越极限",
+            "description": "你50%的血量将被转化成120%护甲。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~9点护甲。"
         },
         "lust_for_life": {
-            "name": "Lust for Life",
-            "description": "Dealing damage will grant you 10 armor - this can only occur once every 1.5 seconds.",
-            "vr_description": "The dash effect is now from 5 up to a maximum of 11."
+            "name": "欲海浮生",
+            "description": "对敌人造成伤害将会回复10点护甲。\t效果冷却时间为1.5秒。",
+            "vr_description": "消耗耐力的回复护甲量提升至5~11点护甲。"
         },
         "prospect": {
-            "name": "Prospect",
-            "description": "Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 4 times every 4 seconds.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+            "name": "勘察者",
+            "description": "你和你的队友每杀死一名敌人，都将为你回复5点血量以及5点护甲。\t效果可被连续触发4次，每次都将单独计算4秒冷却时间。",
+            "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "tail_gunner": {
-            "name": "Tail Gunner",
-            "description": "Every 10% health missing will increase the amount of armor gained from kills by 1.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "列尾枪手",
+            "description": "每损失10%血量，杀敌回复的护甲提升1点。",
+            "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "road_captain": {
-            "name": "Road Captain",
-            "description": "Every 10% health missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "车队领头",
+            "description": "每损失10%血量，效果冷却时间减少0.1秒。",
+            "vr_description": "消耗耐力的回复护甲量提升至6~14点护甲。"
         },
         "sgt-at-arms": {
-            "name": "Sgt-at-Arms",
-            "description": "Every 10% armor missing will increase the amount of health gained from kills by 1.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "道路执法者",
+            "description": "每损失10%护甲，杀敌回复的血量提升1点。",
+            "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "prez": {
-            "name": "Prez",
-            "description": "Every 10% armor missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "帮派统领",
+            "description": "每损失10%护甲，效果冷却时间减少0.1秒。",
+            "vr_description": "消耗耐力的回复护甲量提升至10~22点护甲。"
         },
         "bad_guy_coming_through": {
-            "name": "Bad Guy Coming Through",
-            "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "坏蛋来临",
+            "description": "解锁并装备霸王注射器。\t切换成其他的天赋牌组会使注射器失效。\t注射器会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n在游戏中你可以使用投掷物键来激活注射器。\t注射器持续时间为6秒，注射器效果内，你将回复等同于你所受到伤害量75%的血量。\t持续效果内你依然会受到伤害。\n注射器冷却时间为30秒，从注射开始计算。\t每杀死一名敌人将减少1秒冷却时间。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "play_rough": {
-            "name": "Play Rough",
-            "description": "You gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "铁血铮铮",
+            "description": "你获得10%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "public_enemy_no_1": {
-            "name": "Public Enemy No. 1",
-            "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "全民公敌No.1",
+            "description": "你获得10%额外血量。\n在注射器效果内，附近的敌人会更倾向攻击你。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "balls_vs_bullets": {
-            "name": "Balls vs Bullets",
-            "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "胆识对枪子儿",
+            "description": "你获得20%额外血量。\n在注射器效果内，如果使用者血量低于50%，治疗量则升25%。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "right_to_the_top": {
-            "name": "Right to the Top",
-            "description": "You gain 40% more health.\nFor every 5点 of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "巅峰",
+            "description": "你获得40%额外血量。\n在注射器效果内，每获得5点血量的过量治疗，将减少1秒注射器充能时间。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "smoker": {
-            "name": "Smoker",
-            "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "name": "烟雾弹手",
+            "description": "解锁并装备烟雾弹。\t切换成其他的天赋牌组会使烟雾弹失效。\t烟雾弹会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n当烟雾弹被抛掷出后，烟雾弹将制造出一面被烟雾覆盖的场地，并在持续10秒后消散。\t当任何玩家身处烟雾中时，都有50%几率躲过敌人的子弹(非闪避)。\t而当任何敌人身处烟雾中时，射击精度都将减少50%。\n烟雾弹冷却时间为60秒，从被投掷出开始计算。\t每杀死一名敌人将减少1秒冷却时间。",
+            "vr_description": "冲刺所消耗的耐力将在3秒内为你提升1%~6%闪避。"
         },
         "twitch": {
-            "name": "Twitch",
-            "description": "Every time the player gets shot, 20% dodge chance is gained. This effect is reset once the player dodges and will not occur for the next 4 second.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "name": "不可撼动",
+            "description": "玩家每受到一次伤害，都将提升20%闪避。该效果将在玩家成功闪避后被重置，并进入4秒的效果冷却。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~7%。"
         },
         "subtle-3": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+            "name": "狡黠如我",
+            "description": "提升15%闪避。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~8%。"
         },
         "agility_shield": {
-            "name": "Agility Shield",
-            "description": "Dodging will replenish your armor.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+            "name": "敏捷之盾",
+            "description": "成功闪避敌人的攻击将回满你的护甲。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~9%。"
         },
         "unseen_shadow": {
-            "name": "Unseen Shadow",
-            "description": "All of your perk deck effects are increased by 100% while you are standing in the smoke screen. While any of your allies are standing in the smoke screen, they gain 10% dodge chance.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "name": "暗影化身",
+            "description": "本天赋对玩家的所有加成都将在玩家身处烟雾中时提升100%。\n当你的队友身处烟雾中时，他将获得10%闪避。",
+            "vr_description": "消耗耐力的闪避提升量提升至1%~10%。"
         },
         "virtue": {
-            "name": "Virtue",
-            "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "高情远致",
+            "description": "解锁并装备斯多葛酒壶。\t切换成其他的天赋牌组会使斯多葛酒壶失效。\t斯多葛酒壶会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n你获得75%的伤害减免。\t在受到敌人的攻击后，你所减免的75%伤害将以缓慢流血的形式在接下来的12内持续减少你的血量。\n你可以按下投掷键激活斯多葛酒壶以立即消除流血状态。\n酒壶冷却时间为10秒，从被使用后开始计算。\t每杀死一名敌人将减少1秒冷却时间。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "un-moved": {
-            "name": "Un-moved",
-            "description": "All of your armor is converted and applied to your health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "不动如山",
+            "description": "你所有的护甲将被转换成血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "calm": {
-            "name": "Calm",
-            "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "镇定自若",
+            "description": "从最后一次受到伤害开始计时，在4秒内不被敌人击中，你的流血状态将被停止。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "imperturbable": {
-            "name": "Imperturbable",
-            "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "泰然处之",
+            "description": "当你的血量低于35%时，击杀敌人所减少的酒壶冷却时间从1秒提升至2秒。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "enduring": {
-            "name": "Enduring",
-            "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "不屈不挠",
+            "description": "当流血状态被停止的同时，你将额外恢复流血状态下叠加的50%血量。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "soul_mates": {
-            "name": "Soul Mates",
-            "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "灵魂伴侣",
+            "description": "解锁并装备嗨气瓶。\t切换成其他的天赋牌组会使嗨气瓶失效。\t嗨气瓶会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n要想启用嗨气瓶的效果，你需要盯着距离你18米以内的一名队友，同时按下投掷物键来将其标记为你的搭档，且视野内不能有障碍物。\n你与你的搭档每杀死一名敌人，都将使你回复15点血量，使你的搭档回复7.5血量。\n你每杀死一名敌人，你与你的搭档的\"搭档\"效果将延长1.3秒，嗨气瓶的冷却时间将减少2秒。\n\"搭档\"效果可持续2秒，冷却时间为12秒，从建立搭档后开始计算。",
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "scent": {
-            "name": "Scent",
-            "description": "Your maximum health is increased by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "敏感嗅觉",
+            "description": "你获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "synergy": {
-            "name": "Synergy",
-            "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "强强携手",
+            "description": "在\"搭档\"效果内，你与你的搭档每杀死一个敌人都将获得2点伤害吸收，最高叠加至20点。\n效果将在嗨气瓶冷却完成时清零。",
+            "vr_description": "消耗耐力的回血量提升至0~9点血。"
         },
         "inhale": {
-            "name": "Inhale",
-            "description": "Your maximum health is increased by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "波纹呼吸",
+            "description": "你获得20%额外血量。",
+            "vr_description": "消耗耐力的回血量提升至0~12点血。"
         },
         "harmony": {
-            "name": "Harmony",
-            "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "心心相犀",
+            "description": "在\"搭档\"效果内，你的搭档每杀死一名敌人，都将减少嗨气瓶冷却时间2秒。",
+            "vr_description": "消耗耐力的回血量提升至0~15点血。"
         },
         "code_glitch": {
-            "name": "Code Glitch",
-            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+            "name": "代码错误",
+            "description": "解锁并装备便携式ECM。\t切换成其他的天赋牌组会使便携式ECM失效。\t便携式会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n你可以使用投掷物键来激活便携式ECM。\t在警报响起前使用便携式ECM，6秒内所有的警报，电子设备，对讲机都会被拦截。\t在警报响起后使用便携式ECM则会开启ECM反馈，6秒内地图上的敌人将每秒受到一次反馈伤害。\n便携式ECM共能使用2次，冷却时间为100秒。\t便携式ECM的冷却时间按先后计算。\t每杀死一名敌人将减少6秒冷却时间。"
         },
         "opsec": {
-            "name": "OpSec",
-            "description": "You gain 20% more health."
+            "name": "安全保障",
+            "description": "你获得20%额外血量。"
         },
         "bit_decay": {
-            "name": "Bit Decay",
-            "description": "Killing an enemy while the feedback effect is active will regenerate 20 health."
+            "name": "比特衰减",
+            "description": "在ECM反馈内，每杀死一名敌人，你都将回复20点血量。"
         },
         "kluge": {
-            "name": "Kluge",
-            "description": "Killing at least 1 enemy while the feedback or jamming effect is active will grant 20 dodge for 30 seconds."
+            "name": "应急对策",
+            "description": "在ECM干扰/反馈效果内杀死至少1名敌人，将在30秒内获得20闪避。"
         },
         "botnet": {
-            "name": "Botnet",
-            "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health."
+            "name": "傀儡网络",
+            "description": "你的队友在ECM干扰/反馈效果内每杀死一名敌人，都将为他们回复10点血量。"
         }
     },
     "perk_decks": {
@@ -1139,15 +1139,15 @@
     },
     "throwables": {
         "matryoshka_grenade": {
-            "name": "俄罗斯套娃手雷",
+            "name": "俄罗斯套娃手雷/套娃手雷",
             "description": "俄罗斯套娃手雷是一件投掷类爆炸装置。其玩具般的外表隐藏了其内心的蠢蠢欲动。在向祖国致敬的同时，它也能对敌人造成重大伤害。"
         },
         "incendiary_grenade": {
-            "name": "白磷弹",
+            "name": "白磷弹/燃烧手雷",
             "description": "内部填充满白磷的肮脏武器，在拉开拉环后的几秒内会自燃爆炸。使用方法很简单，丢向敌人群内，把他们都烧到发焦。"
         },
         "hef_grenade": {
-            "name": "HEF手雷",
+            "name": "HEF手雷/高能手雷",
             "description": "经典手雷的升级版。尽管原始的手雷依然被使用，但这个新款手雷每次都能提供超量伤害，且依旧便宜又好用。"
         },
         "ace_of_spades": {
@@ -1155,7 +1155,7 @@
             "description": "虽说纸牌一般只有魔术师在表演切西瓜时才会拿来丢来丢去，但只要增加质量以及利刃边后，你就拥有了一个无声杀器。在袖间藏匿这些铁质王牌，永远准备将全身心投入这暗杀游戏之中。\n黑桃A是为庆祝PAYDAY2两周年的免费社区礼物！"
         },
         "concussion_grenade": {
-            "name": "震撼弹",
+            "name": "震撼弹/震荡弹",
             "description": "这个晕人的小美人会令所有人窒息，给你额外的时间杀死他们。"
         },
         "frag_grenade": {
@@ -1163,11 +1163,11 @@
             "description": "破片手雷相比它的原型已有些许改进。它是一个会爆炸的投掷物，利用巨大的冲击波将破片向四处发射，对肉体、骨头和轻型护甲造成损伤。廉价而实用。"
         },
         "molotov_cocktail": {
-            "name": "燃烧瓶",
+            "name": "燃烧瓶/莫洛托夫燃烧瓶",
             "description": "莫洛托夫鸡尾酒可能是能够叫手雷的武器中最简易的一款了。仅由一个易碎的酒瓶，可燃的液体和烧布\"引线\"组成，简易而高效。"
         },
         "dynamite": {
-            "name": "炸药",
+            "name": "炸药/石破天惊",
             "description": "瑞典工程师阿尔弗雷德·诺贝尔，发现了炸药和它高效的矿石爆破能力。而喝得稀烂的探矿者老肯尼思，发现了它高效的炸人能力。"
         },
         "shuriken": {
@@ -1183,15 +1183,15 @@
             "description": "暗杀绝佳的战术选择。当人们厌倦了只是向个大概的方向丢些杂七杂八的东西来杀人并且想要一些可靠的武器时候，飞刀就这么出现在了军事历史中。"
         },
         "throwing_axe": {
-            "name": "飞斧",
+            "name": "飞斧/投斧",
             "description": "在飞车党之中十分流行的装备。斧锋利点永远不会错，特别是当它被拿来丢的时候。当你骑着机车还唱着歌，突然就被敌对帮派给劫了，这时候你就需要些\"防御手段\"。飞车党们发觉在公路战时手滑扔出飞斧意外好用。"
         },
         "stoic_hip_flask": {
-            "name": "斯多葛的酒壶",
+            "name": "斯多葛的酒壶/修士酒壶",
             "description": "杜克年轻时，和其一同修行的僧侣赠与他的一瓶1882年的古董酒壶，瓶上刻有\"斯多葛\"和\"JW精神\"。杜克将他钟爱的威士忌装满酒壶，痛饮一口调整内息，冥想禅意，缓解伤痛。"
         },
         "pocket_ecm_device": {
-            "name": "便携式ECM",
+            "name": "便携式ECM/便携式电子干扰器",
             "description": "用来拦截和覆盖附近加密信号的小装置。通过能够检测和扰乱无线信号的精密算法，便携式ECM给了使用者机会，得以行走在激进和低调这两个极端之间。"
         },
         "smoke_bomb": {

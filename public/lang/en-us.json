@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Doctor Bag",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine"
+            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
         },
         "ecm_jammer": {
             "name": "ECM Jammer",
@@ -90,7 +90,7 @@
         },
         "brute_strength-2": {
             "name": "Brute Strength",
-            "description": "You gain 10% more health",
+            "description": "You gain 10% more health.",
             "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "meat_shield": {
@@ -160,7 +160,7 @@
         },
         "killer_instinct": {
             "name": "Killer Instinct",
-            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
+            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
         },
         "basic_recovery": {
@@ -210,7 +210,7 @@
         },
         "master_recovery": {
             "name": "Master Recovery",
-            "description": "Your armor recovery rate is increased by 10%",
+            "description": "Your armor recovery rate is increased by 10%.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "sneaky": {
@@ -304,7 +304,7 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "more_healing_2": {
-            "name": "More Healing 1",
+            "name": "More Healing 2",
             "description": "Increase health gained from ammo packs by additional 8.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
@@ -411,7 +411,7 @@
         "blitzkrieg_bop": {
             "name": "Blitzkrieg Bop",
             "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds."
         },
         "straight_edge": {
             "name": "Straight Edge",
@@ -560,7 +560,7 @@
         },
         "code_glitch": {
             "name": "Code Glitch",
-            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
         },
         "opsec": {
             "name": "OpSec",
