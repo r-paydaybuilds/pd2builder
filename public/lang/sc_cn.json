@@ -668,80 +668,80 @@
     "skills": {
         "combat_medic": {
             "name": "医疗兵",
-            "description": "基础：1点\t救起队友途中及救起队友后，你都将在5秒内获得30%伤害减免。\n精通：3点\t救起队友将给予他们30%额外血量。"
+            "description": "基础：1点\t救起队友途中及救起队友后，你都将在5秒内获得30%伤害减免。\n专精：3点\t救起队友将给予他们30%额外血量。"
         },
         "quick_fix": {
             "name": "快速包扎",
-            "description": "BASIC: 2 points\tDecreases your First Aid Kit and Doctor Bag deploy time by 50%.\nACE: 4 points\tCrew Members that use your First Aid Kits or Doctor Bags take 10% less damage for 120 seconds."
+            "description": "基础：2点\t减少50%放置急救包和医疗包的时间。\n专精：4点\t任何人使用你的急救包或医疗包都将在120秒内获得10%伤害减免。"
         },
         "painkillers": {
             "name": "止痛药",
-            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%"
+            "description": "基础：2点\t被你救起的队友将在5秒内获得30%伤害减免。\n专精：4点\t额外增加50%伤害减免。"
         },
         "uppers": {
             "name": "兴奋剂",
-            "description": "BASIC: 3 points\tAdds 7 more First Aid Kits to your inventory.\nACE: 6 points\tAdds 3 First Aid Kits to your inventory. Your deployed First Aid Kits will be automatically used if a player is downed within a 5 meter radius of the First Aid Kit. This cannot occur more than once every 20 seconds."
+            "description": "基础：3点\t你现在可以额外携带7个急救包。\n专精：6点\t你现在可以额外携带3个急救包。\t以你放置的急救包为半径5米内如有玩家空血，该急救包将会被自动使用于救治该玩家。技能冷却时间为20秒。"
         },
         "combat_doctor": {
             "name": "战地医师",
-            "description": "BASIC: 3 points\tYou can now deploy 2 Doctor Bags instead of just one.\nACE: 6 points\tYour doctor bags have 2 more charges."
+            "description": "基础：3点\t你现在可以携带2个医疗包。\n专精：6点\t你的医疗包将增加2次使用次数。"
         },
         "inspire": {
             "name": "激励",
-            "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds."
+            "description": "基础：4点\t你救起队友的速度加快100%。\t向你的队友呼喊将在10秒内提升他们20%的移动速度及换弹速度。\n专精：8点\t在9米范围内朝倒地的队友呼喊，有100%几率将其直接吼起。技能冷却时间为20秒。"
         },
         "forced_friendship": {
             "name": "强制友谊",
-            "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill."
+            "description": "基础：1点\t增加4根初始携带的绑带。\t你捆绑人质的速度提升75%。\n专精：3点\t每持有一名人质，你和你的队友都将获得0.5点伤害吸收，该效果最多叠加8次。\n注：该技能不与其他玩家的技能叠加。"
         },
         "confident": {
             "name": "狂妄",
-            "description": "BASIC: 2 points\tThe power and range of your intimidation is increased by 50%.\nACE: 4 points\tYou can now have 2 converted enemies at the same time."
+            "description": "基础：2点\t提升50%威慑强度和范围。\n专精：4点\t你现在能同时拥有2名被转化的敌人。"
         },
         "joker": {
             "name": "小丑",
-            "description": "BASIC: 2 points\tYou can convert a non-special enemy to fight on your side.\tThis can not be done during stealth and the enemy must have surrendered in order for you to convert them.\nYou can only convert one non-special enemy at a time.\nACE: 4 points\tYour converted enemy deals 35% more damage. The time to convert an enemy is reduced by 65%."
+            "description": "基础：2点\t你可以转化一名非特殊敌人为你而战。\t该技能在潜入时无效，敌人须先投降才能被转化。\n你只能同时拥有一名被转化的敌人。\n专精：4点\t你的被转化的敌人将额外造成35%伤害。\t转化敌人所需的时间减少65%。"
         },
         "stockholm_syndrome": {
             "name": "人质综合征",
-            "description": "BASIC: 3 points\tCivilians are intimidated by the noise you make and remain intimidated 50% longer.\nACE: 6 points\tYour hostages will not flee when they have been rescued by law enforcers. Whenever you get into custody, your hostages will trade themselves for your safe return. This effect can occur during assaults, but only 1 time during a heist."
+            "description": "基础：3点\t平民将被你的枪声压制，同时被控制时间将延长50%。\n专精：6点\t你的人质被警察解救后将不会逃走。\t当你被捕时，场上的人质将主动与你交换。该技能可在突袭过程中触发，但单次劫案内只能触发1次。"
         },
         "partners_in_crime": {
             "name": "共犯",
-            "description": "BASIC: 3 points\tHaving a converted enemy increases your movement speed by 10%.\nYour converted enemy takes 45% less damage.\nACE: 6 points\tHaving a converted enemy increases your health by 30%.\nYour converted enemy takes an additional 54% less damage."
+            "description": "基础：3点\t拥有一名被转化的敌人将为你提供10%移动速度加成。\t你的被转化的敌人获得45%伤害减免。\n专精：6点\t拥有一名被转化的敌人将为你提供30%血量加成。\t你的被转化的敌人额外获得54%伤害减免。"
         },
         "hostage_taker": {
             "name": "绑匪",
-            "description": "BASIC: 4 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 1.5% health every 5 seconds.\nACE: 8 points\tHaving at least one of your own hostage or converted law enforcer makes you regenerate 4.5% health every 5 seconds."
+            "description": "基础：4点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复1.5%血量。\n精通：8点\t在拥有至少一名人质或被转化敌人的情况下，每间隔5秒你都将回复4.5%血量。"
         },
         "stable_shot": {
             "name": "稳定射击",
-            "description": "BASIC: 1 point\tYou gain 8 weapon stability.\nACE: 3 points\tYou gain 16 weapon accuracy while standing still."
+            "description": "基础：1点\t提升8点武器稳定。\n专精：3点\t当你站定不动时，提升16点武器精准。"
         },
         "rifleman": {
             "name": "步枪手",
-            "description": "BASIC: 2 points\tYour snap to zoom is 100% faster with all weapons.\nYour movement speed is unhindered while using steel sight.\nACE: 4 points\tYour weapon zoom level is increased by 25% with all weapons. Your weapon accuracy while moving with SMGs, Assault Rifles and Sniper Rifles is increased by 16.",
-            "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina.\tEvery 25 points of stamina consumed by dashing will refill 5% of their ammo pool to single shot weapons.\tACE: The improved accuracy lasts from 1 up to a maximum of 5 seconds after dashing."
+            "description": "基础：2点\t提升100%武器开镜速度。\t使用武器机瞄时，你的移动速度将不受影响。\n专精：4点\t提升25%武器焦距。\t提升16点移动时冲锋枪，突击步枪或狙击步枪的精准。",
+            "vr_description": "VR附加技能：\t基础：开镜时杀敌将回复2%耐力。\t每消耗25点耐力，都将回复5%半自动武器的弹药。\t专精：移动提升的精准将根据移动的距离额外持续1~5秒。"
         },
         "marksman": {
             "name": "精确射手",
-            "description": "BASIC: 2 points\tYou gain 8 weapon accuracy with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 4 points\tYou gain a 20% accuracy bonus while aiming down sights with all SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
+            "description": "基础：2点\t提升8点半自动模式下的冲锋枪，突击步枪，狙击步枪的精准。\n专精：4点\t提升20%半自动模式下的冲锋枪，步枪或狙击步枪在开镜时的精准。"
         },
         "ammo_efficiency": {
             "name": "效率弹药",
-            "description": "BASIC: 3 points\tGetting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\nACE: 6 points\tThe amount of headshots required is reduced to 2."
+            "description": "基础：3点\t在6秒内完成3次爆头，将返还你1颗子弹。\t该技能只能被半自动模式下的冲锋枪，突击步枪或狙击步枪触发。\n专精：6点\t触发该技能所需的爆头数减少至2。"
         },
         "aggressive_reload": {
             "name": "激进装填",
-            "description": "BASIC: 3 points\tIncreases your reload speed with SMGs, Assault Rifles and Sniper Rifles by 15%.\nACE: 6 points\tAny killing headshot will increase your reload speed by 100% for 4 seconds. Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode."
+            "description": "基础：3点\t提升15%冲锋枪，突击步枪或狙击步枪的换弹速度。\n专精：6点\t进行爆头击杀将会在4秒内提升100%的换弹速度。\t该技能只能被半自动模式下的冲锋枪，突击步枪或狙击步枪触发。"
         },
         "graze": {
             "name": "擦伤",
-            "description": "BASIC: 4 points\tSnipers that hit their target deal 20% of the damage dealth in a 100cm radius around the bullet trajectory.\nACE: 8 points\tIf a bullet would headshot-kill someone, the graze skill will deal 100% of the weapon's damage instead of 20%."
+            "description": "基础：4点\t当使用狙击步枪射中敌人时，以弹道为半径100cm内的敌人将受到该次伤害量的20%。\n专精：8点\t若子弹爆头且击杀敌人，擦伤效果则提升至该次伤害量的20%。"
         },
         "underdog": {
             "name": "落水狗",
-            "description": "BASIC: 1 point\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
+            "description": "基础：1点\tWhen three or more enemies within 10 meters are targeting you, you receive a 15% damage bonus that lasts for 7 seconds.\nACE: 3 points\tWhen three or more enemies within 18 meters are targeting you, you also receive a 10% damage reduction that lasts for 7 seconds.\nNote: Does not apply to melee damage, throwables, grenade launchers or rocket launchers."
         },
         "shotgun_cqb": {
             "name": "霰弹枪CQB",
@@ -767,7 +767,7 @@
         },
         "resilience": {
             "name": "韧性",
-            "description": "BASIC: 1 point\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%."
+            "description": "基础：1点\tIncreases your armor recovery rate by 15%.\nACE: 3 points\tReduces the visual effect duration of Flashbangs by 75%."
         },
         "die_hard": {
             "name": "虎胆龙威",
@@ -791,7 +791,7 @@
         },
         "scavenger": {
             "name": "拾荒者",
-            "description": "BASIC: 1 point\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box."
+            "description": "基础：1点\tYour ammo pick up range is increased by 50%.\nACE: 3 points\tEvery 6th enemy you kill will drop an extra ammo box."
         },
         "bulletstorm": {
             "name": "子弹风暴",
@@ -815,7 +815,7 @@
         },
         "third_law": {
             "name": "第三定律",
-            "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
+            "description": "基础：1点\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
         },
         "sentry_targeting_package": {
             "name": "炮台精准修正",
@@ -839,7 +839,7 @@
         },
         "hardware_expert": {
             "name": "硬件专家",
-            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
+            "description": "基础：1点\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
             "name": "战地工程",
@@ -863,7 +863,7 @@
         },
         "steady_grip": {
             "name": "稳定握把",
-            "description": "BASIC: 1 point\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability."
+            "description": "基础：1点\tYou gain 8 weapon accuracy.\nACE: 3 points\tYou gain 16 weapon stability."
         },
         "heavy_impact": {
             "name": "沉重打击",
@@ -889,7 +889,7 @@
         },
         "chameleon": {
             "name": "变色龙",
-            "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
+            "description": "基础：1点\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
         },
         "cleaner": {
             "name": "清道夫",
@@ -913,7 +913,7 @@
         },
         "duck_and_cover": {
             "name": "蹲防战术",
-            "description": "BASIC: 1 point\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
+            "description": "基础：1点\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
             "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "parkour": {
@@ -939,7 +939,7 @@
         },
         "second_wind": {
             "name": "第二春",
-            "description": "BASIC: 1 point\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered."
+            "description": "基础：1点\tWhen your armor breaks your movement speed is increased by 30% for 5 seconds.\nACE: 3 points\tThis effect also applies to your crew when triggered."
         },
         "optical_illusions": {
             "name": "光学幻象",
@@ -964,7 +964,7 @@
         },
         "equilibrium": {
             "name": "沉着",
-            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+            "description": "基础：1点\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
             "name": "枪械狂",
@@ -988,7 +988,7 @@
         },
         "nine_lives": {
             "name": "九命猫",
-            "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
+            "description": "基础：1点\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
             "name": "死里逃生",
@@ -1012,7 +1012,7 @@
         },
         "martial_arts": {
             "name": "武术",
-            "description": "BASIC: 1 point\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike."
+            "description": "基础：1点\tYou take 50% less damage from all melee attacks. Because of training.\nACE: 3 points\tYou are 50% more likely to knock down enemies with a melee strike."
         },
         "bloodthirst": {
             "name": "嗜血",
