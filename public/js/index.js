@@ -8,7 +8,7 @@ import Util from "./Util.js";
 const langs = ["en-us", "ru-ru", "zh-hans"];
 let defaultLang = "en-us";
 
-const builder = new Builder(/Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 1003);
+const builder = new Builder(window.innerWidth < 1003);
 
 //Change to mobile version if browser was resized to a very small size
 window.addEventListener("resize", () => {
