@@ -1038,6 +1038,7 @@
     "system": {
         "name": "PD2 Builder / PD2加点模拟器",
         "home": "Home",
+        "bigoil": "Big Oil Engine Calc",
         "requires": {
             "perk_deck": "需要装备%{name}天赋",
             "perk_card": "需要拥有%{name}牌组",
