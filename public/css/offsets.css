@@ -316,7 +316,7 @@
   background-position: calc((880% / (960 - 80)) * 100) calc((640% / (1040 - 80)) * 100); 
 }
 
-  
+
 
 /**********************************/
 /* PERKS ICON SPRITESHEET OFFSETS */
@@ -756,3 +756,154 @@
 #hacker .pk_preview_card > div > div::after {
   background-position: calc((192% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
 }
+
+
+
+/**********************************/
+/*          ARMOR ICONS           */
+/**********************************/
+
+#suit {
+  background-image: url("../img/armors/suit.png"); 
+}
+
+#light_ballistic {
+  background-image: url("../img/armors/light_ballistic.png"); 
+}
+
+#ballistic {
+  background-image: url("../img/armors/ballistic.png"); 
+}
+
+#heavy_ballistic {
+  background-image: url("../img/armors/heavy_ballistic.png"); 
+}
+
+#flak {
+  background-image: url("../img/armors/flak.png"); 
+}
+
+#ctv {
+  background-image: url("../img/armors/ctv.png"); 
+}
+
+#ictv {
+  background-image: url("../img/armors/ictv.png"); 
+}
+
+
+
+/**********************************/
+/*       THROWABLES ICONS         */
+/**********************************/
+
+#matryoshka_grenade {
+  background-image: url("../img/throwables/matryushka_grenade.png"); 
+}
+
+#incendiary_grenade {
+  background-image: url("../img/throwables/incendiary_grenade.png"); 
+}
+
+#hef_grenade {
+  background-image: url("../img/throwables/hef_frag_grenade.png"); 
+}
+
+#ace_of_spades {
+  background-image: url("../img/throwables/ace_of_spades.png"); 
+}
+
+#concussion_grenade {
+  background-image: url("../img/throwables/concussion_grenade.png"); 
+}
+
+#frag_grenade {
+  background-image: url("../img/throwables/frag_grenade.png"); 
+}
+
+#molotov_cocktail {
+  background-image: url("../img/throwables/molotov.png"); 
+}
+
+#dynamite {
+  background-image: url("../img/throwables/dynamite.png"); 
+}
+
+#shuriken {
+  background-image: url("../img/throwables/shuriken.png"); 
+}
+
+#javelin {
+  background-image: url("../img/throwables/javelin.png"); 
+}
+
+#throwing_knife {
+  background-image: url("../img/throwables/throwing_knife.png"); 
+}
+
+#throwing_axe {
+  background-image: url("../img/throwables/throwing_axe.png"); 
+}
+
+#stoic_hip_flask {
+  background-image: url("../img/throwables/stoic_hip_flask.png"); 
+}
+
+#pocket_ecm_device {
+  background-image: url("../img/throwables/pocket_ecm.png"); 
+}
+
+#smoke_bomb {
+  background-image: url("../img/throwables/smoke_bomb.png"); 
+}
+
+#gas_dispenser {
+  background-image: url("../img/throwables/gas_dispenser.png"); 
+}
+
+#injector {
+  background-image: url("../img/throwables/injector.png"); 
+}
+
+
+
+/**********************************/
+/*       DEPLOYABLES ICONS        */
+/**********************************/
+
+#ammo_bag {
+  background-image: url("../img/deployables/ammo_bag.png"); 
+}
+
+#armor_bag {
+  background-image: url("../img/deployables/armor_kit.png"); 
+}
+
+#body_bag_case {
+  background-image: url("../img/deployables/bodybags_bag.png"); 
+}
+
+#doctor_bag {
+  background-image: url("../img/deployables/doctor_bag.png"); 
+}
+
+#ecm_jammer {
+  background-image: url("../img/deployables/ecm_jammer.png"); 
+}
+
+#first_aid_kit {
+  background-image: url("../img/deployables/first_aid_kit.png"); 
+}
+
+#sentry_gun {
+  background-image: url("../img/deployables/sentry_gun.png"); 
+}
+
+#suppressed_sentry_gun {
+  background-image: url("../img/deployables/sentry_gun_silent.png"); 
+}
+
+#trip_mines_and_shaped_charges {
+  background-image: url("../img/deployables/trip_mine.png"); 
+}
+

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script>
-      if(!/Mobi|Android/i.test(navigator.userAgent) && window.innerWidth >= 1003) {
+      if(window.innerWidth >= 1003) {
         const url = new URL(window.location.href);
         url.pathname = url.pathname.replace("mobile.html", "");
         window.location.replace(url);
@@ -29,7 +29,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="apple-touch-icon" href="img/favicon.png"/>
     <link rel="apple-touch-startup-image" href="img/bg.png">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+SC&display=swap">
     <link rel="stylesheet" href="css/pd2table.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/common.css">
@@ -64,8 +64,8 @@
       <div id="tab_page_buttons">
         <aside class="spacer">&nbsp;</aside>
         <button id="tab_skills_button" data-name="skills" data-lang="system.skills.title">Skills</button>
-        <button id="tab_armors_button" data-name="armors" data-lang="system.armors.title">Armors</button>
         <button id="tab_perk_decks_button" data-name="perk_decks" data-lang="system.perk_decks.title">Perk Decks</button>
+        <button id="tab_armors_button" data-name="armors" data-lang="system.armors.title">Armors</button>
         <button id="tab_throwables_button" data-name="throwables" data-lang="system.throwables.title">Throwables</button>
         <button id="tab_deployables_button" data-name="deployables" data-lang="system.deployables.title">Deployables</button>
         <button id="tab_io_button" data-name="share" data-lang="system.share.title">Share Build</button>
@@ -803,33 +803,6 @@
       </div>
     </div>
 
-    <!-- Armor Tab Content -->
-    <div id="tab_armors_page" class="tab_page_content">
-      <div id="arm_page" class="bordered">
-        <div class="arm_icon">
-          <div id="suit"></div>
-        </div>
-        <div class="arm_icon">
-          <div id="light_ballistic"></div>
-        </div>
-        <div class="arm_icon">
-          <div id="ballistic"></div>
-        </div>
-        <div class="arm_icon">
-          <div id="heavy_ballistic"></div>
-        </div>
-        <div class="arm_icon">
-          <div id="flak"></div>
-        </div>
-        <div class="arm_icon">
-          <div id="ctv"></div>
-        </div>                   
-        <div class="arm_icon">
-          <div id="ictv"></div>
-        </div> 
-      </div>
-    </div>  
-
     <!-- Perk Deck Tab Content -->
     <div id="tab_perk_decks_page" class="tab_page_content">
       <div id="pk_page" class="bordered">
@@ -1109,6 +1082,33 @@
       </div>
     </div>
 
+    <!-- Armor Tab Content -->
+    <div id="tab_armors_page" class="tab_page_content">
+      <div id="arm_page" class="bordered">
+        <div class="arm_icon">
+          <div id="suit"></div>
+        </div>
+        <div class="arm_icon">
+          <div id="light_ballistic"></div>
+        </div>
+        <div class="arm_icon">
+          <div id="ballistic"></div>
+        </div>
+        <div class="arm_icon">
+          <div id="heavy_ballistic"></div>
+        </div>
+        <div class="arm_icon">
+          <div id="flak"></div>
+        </div>
+        <div class="arm_icon">
+          <div id="ctv"></div>
+        </div>                   
+        <div class="arm_icon">
+          <div id="ictv"></div>
+        </div> 
+      </div>
+    </div>
+
     <!-- Throwables Tab Content -->
     <div id="tab_throwables_page" class="tab_page_content">
       <div id="th_page" class="bordered">
@@ -1201,7 +1201,7 @@
 
     <!-- Save/Load Tab Content -->
     <div id="tab_io_page" class="tab_page_content">
-      <div id="io_page" class="bordered">        
+      <div id="io_save" class="bordered">        
         <p class="section-title" data-lang="system.share.description">Share your Build with anyone!</p>
         <div class="share-url-group">
           <span>URL</span>

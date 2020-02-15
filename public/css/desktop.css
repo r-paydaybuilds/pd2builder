@@ -12,6 +12,10 @@
   }
 }
 
+body {
+  height: 100vh; 
+}
+
 /**********************************/
 /*          TAB PAGE CSS          */
 /**********************************/
@@ -32,6 +36,8 @@
 #tab_page_buttons button {
   font-size: 22px; 
   width: 100%; 
+
+  cursor: pointer; 
 }
 
 #tab_page_buttons button:hover {
@@ -45,6 +51,10 @@
 .tab_page_content {
   width: 100%; 
 
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+
   -webkit-transition: padding .15s linear;
   -moz-transition:    padding .15s linear;
   -o-transition:      padding .15s linear;
@@ -54,14 +64,14 @@
 /* For when it's wayyy too large */ 
 @media only screen and (max-width: 1366px) {
   .tab_page_content {
-    padding: 0 15px; 
+    padding: 0 15px 50px; 
   }
 }
 
 @media only screen and (min-width: 1367px) {
   .tab_page_content {
     width: 100%; 
-    padding: 0 2em; 
+    padding: 0 2em 50px;
   }
 }
 
@@ -70,10 +80,49 @@
 }
 
 .description_container {
-  width: 25%; 
-  border-left: 10px solid transparent;   
+  position: relative; 
+
+  width: 25% !important; 
+  border-left: 10px solid transparent;
 
   align-self: stretch; 
+}
+
+.description_container > div {
+  position: absolute;
+  left: 0; 
+
+  width: 100%; 
+}
+
+.description_textbox {
+  height: 100%; 
+}
+
+.description_textbox p:not(.description_title) {
+  margin: 0;
+  font-size: 16px;
+}
+
+.description_textbox > div::-webkit-scrollbar {
+  width: 4px; 
+}
+
+.description_textbox > div::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.3);   
+}
+
+.description_textbox > div::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 240); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.description_title {
+  font-size: 22px; 
+
+  margin-top: 0;
 }
 
 
@@ -82,10 +131,7 @@
 /**********************************/
 
 #tab_skills_page {
-  display: flex; 
   flex-flow: column nowrap; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
 }
 
 #sk_tree_buttons {
@@ -102,6 +148,8 @@
   flex-flow: column nowrap; 
   justify-content: flex-end; 
   align-items: flex-end; 
+
+  cursor: pointer; 
 
   padding: .375em .5em; 
   border: 0; 
@@ -214,6 +262,8 @@
 
 .sk_icon {
   width: 80px; 
+
+  cursor: pointer; 
 }
 
 .sk_icon:hover + .sk_name {
@@ -270,18 +320,6 @@
   color: rgb(240, 240, 240); 
 }
 
-
-#sk_description_container {
-  position: relative; 
-}
-
-#sk_description_container > div {
-  position: absolute;
-  left: 0; 
-
-  width: 100%; 
-}
-
 .sk_points_remaining {
   height: 15%; 
 
@@ -317,22 +355,257 @@
   align-items: flex-start; 
 }
 
-.sk_description {
-  margin: 0;
-  font-size: 16px;
+
+/**********************************/
+/*         PERK DECKS CSS         */
+/**********************************/
+
+#tab_perk_decks_page {
+  flex-flow: row nowrap; 
 }
 
-#sk_description > div::-webkit-scrollbar {
+#pk_page {
+  width: 75%; 
+  height: 600px; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#pk_container {
+  width: 100%; 
+  height: 100%; 
+  
+  overflow-y: scroll; 
+  
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+
+#pk_container::-webkit-scrollbar {
   width: 4px; 
 }
 
-#sk_description > div::-webkit-scrollbar-track {
+#pk_container::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.3);   
 }
 
-#sk_description > div::-webkit-scrollbar-thumb {
+#pk_container::-webkit-scrollbar-thumb {
   background-color: rgb(240, 240, 240); 
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
+
+.pk_deck {
+  margin: 5px; 
+
+  -webkit-transition: opacity .15s ease;
+  -moz-transition:    opacity .15s ease;
+  -o-transition:      opacity .15s ease;
+  transition:         opacity .15s ease;
+}
+
+.pk_deck:not(.pk_selected):hover {
+  border: 2px solid rgb(190, 190, 190); 
+}
+
+.pk_deck.pk_deck_dim {
+  opacity: 0.6; 
+}
+
+.pk_deck p {
+  font-size: 24px; 
+  margin: 0; 
+  
+  margin-left: 5%; 
+
+  -webkit-transition: margin .15s ease;
+  -moz-transition:    margin .15s ease;
+  -o-transition:      margin .15s ease;
+  transition:         margin .15s ease;
+}
+
+.pk_deck_cards {
+  justify-content: center;
+}
+
+.pk_deck_cards > div {
+  position: relative; 
+
+  width: 64px; 
+  height: 92px; 
+
+  background: url("../img/perks/card.png") 0 0 no-repeat;  
+  
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: left;
+  align-items: center; 
+
+  -webkit-transition: opacity .15s ease;
+  -moz-transition:    opacity .15s ease;
+  -o-transition:      opacity .15s ease;
+  transition:         opacity .15s ease;
+}
+
+.pk_deck_cards > div:not(:last-of-type) {
+  -webkit-transition: opacity .15s ease, margin .15s ease;
+  -moz-transition:    opacity .15s ease, margin .15s ease;
+  -o-transition:      opacity .15s ease, margin .15s ease;
+  transition:         opacity .15s ease, margin .15s ease;
+}
+
+.pk_deck_cards > div::after {
+  content: ""; 
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0);
+  
+  width: 48px; 
+  height: 48px;  
+
+  background: url("../img/perks/icons.png") no-repeat;  
+  background-size: 500% 2200%; 
+}
+
+.pk_deck_cards > div.pk_card_dim {
+  opacity: 0.8; 
+}
+
+/* More large screen adaptation */ 
+@media only screen and (max-width: 1366px) {  
+  #pk_container {
+    padding: 0 10px; 
+  }
+
+  .pk_deck_cards > div:not(:last-of-type) {
+    margin-right: 10px; 
+  }
+}
+
+@media only screen and (min-width: 1367px) {  
+  #pk_container {
+    padding: 0 5vw; 
+  }
+
+  .pk_deck_cards > div:not(:last-of-type) {
+    margin-right: 20px; 
+  }
+}
+
+#pk_description > div {
+  width: 100%; 
+  height: 100%; 
+
+  overflow-y: scroll;  
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+
+
+/**********************************/
+/*         ARMOR-TH-DP CSS        */
+/**********************************/
+
+.th_icon {
+  max-width: 192px;
+}
+
+.arm_icon.arm_selected > div::before {    
+  font-size: 22px; 
+}
+
+.th_icon.th_selected > div::before {
+  font-size: 20px; 
+}
+
+.dp_icon.dp_selected > div::before, 
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  font-size: 22px; 
+}
+
+
+
+/**********************************/
+/*          SAVE/LOAD CSS         */
+/**********************************/
+
+#tab_io_page {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: stretch; 
+}
+
+#tab_io_page > div {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+#io_save p,
+#io_other p {
+  margin: 0; 
+  margin-bottom: 20px; 
+}
+
+#io_save p.section-title, 
+#io_other p.section-title {
+  margin-bottom: 40px; 
+}
+
+#io_other p a {
+  color: rgb(40, 90, 130); 
+
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
+}
+
+#io_other p a:hover {
+  color: rgb(50, 190, 255); 
+}
+
+.share-url-group {
+  font-size: 16px;
+  
+  -webkit-transition: width .15s ease;
+  -moz-transition:    width .15s ease;
+  -o-transition:      width .15s ease;
+  transition:         width .15s ease;
+}
+
+@media only screen and (min-width: 1367px) {  
+  .share-url-group {
+    width: 75%;
+    align-self: center; 
+  }
+}
+
+#io_other {
+  border-left: 10px solid transparent;
+}
+
+#io_other > p:not(.section-title) {
+  font-size: 18px; 
+}
+
+.section-title {
+  align-self: center; 
+  font-size: 28px; 
+}
+

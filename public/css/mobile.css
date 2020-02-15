@@ -423,24 +423,10 @@ div.footer a:hover {
 }
 
 .pk_deck {
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: flex-start;
-  align-items: center; 
-
-  width: 100%; 
-  padding: 5px; 
-
-  border: 2px solid transparent; 
-
   -webkit-transition: opacity .2s ease;
   -moz-transition:    opacity .2s ease;
   -o-transition:      opacity .2s ease;
   transition:         opacity .2s ease;
-}
-
-.pk_deck.pk_selected {
-  border: 2px solid rgb(240, 240, 240); 
 }
 
 .pk_deck p {
@@ -451,19 +437,6 @@ div.footer a:hover {
   
   margin: 0; 
   margin-left: 5%; 
-}
-
-.pk_deck.pk_deck_dim {
-  opacity: 0.6;  
-}
-
-.pk_preview {
-  width: 100%; 
-
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: flex-start; 
-  align-items: center; 
 }
 
 .pk_preview_card {
@@ -579,15 +552,10 @@ div.footer a:hover {
 }
 
 .pk_deck_cards {
-  width: 100%; 
-
   overflow-x: scroll;
   overflow-y: hidden;
 
-  display: flex; 
-  flex-flow: row nowrap; 
   justify-content: left;
-  align-items: center; 
 }
 
 .pk_deck_cards::-webkit-scrollbar {
@@ -639,149 +607,14 @@ div.footer a:hover {
   background-size: 500% 2200%; 
 }
 
-
-
-
-  
+ 
 
 /**********************************/
 /*         ARMOR-TH-DP CSS        */
 /**********************************/
 
-#arm_page, 
-#th_page, 
-#dp_page {
-  display: flex; 
-  flex-flow: row wrap; 
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: flex-start; 
-}
-
-.arm_icon, 
-.th_icon, 
-.dp_icon {
-  cursor: pointer; 
-
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: center;
-  
-  flex-basis: 50%; 
-  width: 50%; 
-
-  border: 3px solid transparent; 
-}
-
-.arm_icon,
-.dp_icon {  
-  max-width: 256px; 
-}
-
 .th_icon {
   max-width: 128px;  
-}
-
-.arm_icon > div, 
-.th_icon > div, 
-.dp_icon > div {
-  position: relative;
-  display: block; 
-  z-index: -1;
-  
-  width: 100%; 
-  height: 0; 
-  padding-bottom: 100%; 
-
-  background-size: 100%; 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-
-  -webkit-transition: transform .2s ease;
-  -moz-transition: transform .2s ease;
-  -o-transition: transform .2s ease;
-  transition: transform .2s ease;
-}
-
-.arm_icon > div {
-  transform: scale(0.85); 
-}
-
-.th_icon > div {
-  transform: scale(1); 
-}
-
-.dp_icon > div {
-  transform: scale(0.7); 
-}
-
-.arm_icon.arm_selected,
-.th_icon.th_selected, 
-.dp_icon.dp_selected,
-.dp_icon.dp_primary,
-.dp_icon.dp_secondary {
-  border: 3px solid rgb(240, 240, 240); 
-}
-
-.arm_icon.arm_locked,
-.th_icon.th_locked, 
-.dp_icon.dp_locked {
-  background: url("../img/lock_skill.png") no-repeat center center;
-}
-
-.arm_icon.arm_locked > div,
-.th_icon.th_locked > div, 
-.dp_icon.dp_locked > div {
-  -webkit-filter: brightness(0.2);
-  filter: brightness(0.2);
-}
-
-.arm_icon.arm_selected > div {
-  transform: scale(1); 
-}
-
-.th_icon.th_selected > div {
-  transform: scale(1.15); 
-}
-
-.dp_icon.dp_selected > div,
-.dp_icon.dp_primary > div,
-.dp_icon.dp_secondary > div {
-  transform: scale(0.85); 
-}
-
-.arm_icon.arm_selected > div::before {
-  position: absolute; 
-  top: 10%;
-  left: 10%;
-}
-
-.th_icon.th_selected > div::before {
-  position: absolute; 
-  top: 15%;
-  left: 15%;
-}
-
-.dp_icon.dp_selected > div::before,
-.dp_icon.dp_primary > div::before,
-.dp_icon.dp_secondary > div::before {
-  position: absolute; 
-  top: 5%;
-  left: 5%;
-}
-
-.arm_icon.arm_selected > div::before,
-.th_icon.th_selected > div::before, 
-.dp_icon.dp_selected > div::before {
-  content: attr(data-equip);
-}
-
-.dp_icon.dp_primary > div::before {
-  content: attr(data-primary);
-}
-
-.dp_icon.dp_secondary > div::before {
-  content: attr(data-secondary);
 }
 
 .arm_icon.arm_selected > div::before {    
@@ -811,309 +644,17 @@ div.footer a:hover {
   justify-content: center; 
 }
 
-#tab_io_page > div {
-  align-items: flex-start;  
-}
-
-#io_page {
+#io_save p,
+#io_other p {
+  margin: 0;
   margin-bottom: 2vh; 
 }
 
-#io_other {
-  display: flex; 
-  flex-flow: column nowrap; 
-  justify-content: center; 
-  align-items: flex-start;
+#io_save {
+  margin-bottom: 2vh; 
 }
 
 .section-title {
   align-self: center; 
   font-size: 1.7em; 
 }
-
-#io_page p,
-#io_other p {
-  margin: 0;
-  margin-bottom: 2vh; 
-}
-
-#io_other p:last-of-type {
-  align-self: center; 
-}
-
-#io_share_link {
-  -webkit-transition: background-color .5s ease;
-  -moz-transition:    background-color .5s ease;
-  -o-transition:      background-color .5s ease;
-  transition:         background-color .5s ease;
-}
-
-#io_share_link.io_link_flash {
-  background-color: rgb(130, 255, 130); 
-
-  -webkit-transition: background-color .01s ease;
-  -moz-transition:    background-color .01s ease;
-  -o-transition:      background-color .01s ease;
-  transition:         background-color .01s ease;
-}
-
-.share-url-group {
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: center; 
-  align-items: baseline; 
-
-  width: 100%; 
-
-  color: rgb(0, 0, 0); 
-}
-
-.share-url-group span, 
-.share-url-group input, 
-.share-url-group button {
-  border: 2px solid rgb(240, 240, 240); 
-  border-color: rgb(130, 135, 140); 
-
-  padding: 10px; 
-
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: center; 
-}
-
-.share-url-group span,
-.share-url-group button {
-  background-color: rgb(240, 240, 240); 
-}
-
-.share-url-group span {
-  width: 15%; 
-  flex-basis: 15%; 
-
-  border-right: none; /* "border collapse"-style fix */
-  border-radius: 5px 0 0 5px; 
-}
-
-.share-url-group input {
-  position: relative; 
-  
-  border-left: none; 
-  border-right: none; 
-
-  align-self: stretch; 
- 
-  /** Width and flex-basis 1% may look weird but it's a starting point, then flex-grow 1 stretches them out to fill the available space,
-   *  after the span and button have taken their share. Means that it's gonna shrink to that if needed to resize for the resolution. 
-   */
-  width: 1%; 
-  flex: 1 1 1%;  
-}
-
-.share-url-group input:focus::after,
-.share-url-group input:active::after {
-  content: ""; 
-  position: absolute; 
-  
-  top: 0; 
-  left: 0; 
-
-  width: 100%; 
-  height: 100%; 
-
-  outline: 2px solid rgba(50, 190, 255, 0.7); 
-}
-
-.share-url-group button {
-  flex-basis: 25%; 
-
-  border-left: none;
-  border-radius: 0 5px 5px 0; 
-  
-  text-align: center;
-  white-space: nowrap;
-}
-
-#io_share_link {
-  -webkit-transition: background-color .5s ease;
-  -moz-transition:    background-color .5s ease;
-  -o-transition:      background-color .5s ease;
-  transition:         background-color .5s ease;
-}
-
-#io_share_link.io_link_flash {
-  background-color: rgb(130, 255, 130); 
-
-  -webkit-transition: background-color .01s ease;
-  -moz-transition:    background-color .01s ease;
-  -o-transition:      background-color .01s ease;
-  transition:         background-color .01s ease;
-}
-
-#io_share_button {
-  background-color: rgb(0, 155, 0);
-  border: 2px solid rgb(130, 135, 140);
-
-  text-align: center;
-
-  width: 25%;
-  margin: auto;
-  margin-top: 2vh;
-}
-
-
-#io_widgets {
-  display: flex; 
-  flex-flow: row wrap; 
-  justify-content: space-around; 
-  align-items: center; 
-  
-  width: 100%; 
-}
-
-
-/**********************************/
-/*          ARMOR ICONS           */
-/**********************************/
-
-#suit {
-  background-image: url("../img/armors/suit.png"); 
-}
-
-#light_ballistic {
-  background-image: url("../img/armors/light_ballistic.png"); 
-}
-
-#ballistic {
-  background-image: url("../img/armors/ballistic.png"); 
-}
-
-#heavy_ballistic {
-  background-image: url("../img/armors/heavy_ballistic.png"); 
-}
-
-#flak {
-  background-image: url("../img/armors/flak.png"); 
-}
-
-#ctv {
-  background-image: url("../img/armors/ctv.png"); 
-}
-
-#ictv {
-  background-image: url("../img/armors/ictv.png"); 
-}
-
-
-/**********************************/
-/*       THROWABLES ICONS         */
-/**********************************/
-
-#matryoshka_grenade {
-  background-image: url("../img/throwables/matryushka_grenade.png"); 
-}
-
-#incendiary_grenade {
-  background-image: url("../img/throwables/incendiary_grenade.png"); 
-}
-
-#hef_grenade {
-  background-image: url("../img/throwables/hef_frag_grenade.png"); 
-}
-
-#ace_of_spades {
-  background-image: url("../img/throwables/ace_of_spades.png"); 
-}
-
-#concussion_grenade {
-  background-image: url("../img/throwables/concussion_grenade.png"); 
-}
-
-#frag_grenade {
-  background-image: url("../img/throwables/frag_grenade.png"); 
-}
-
-#molotov_cocktail {
-  background-image: url("../img/throwables/molotov.png"); 
-}
-
-#dynamite {
-  background-image: url("../img/throwables/dynamite.png"); 
-}
-
-#shuriken {
-  background-image: url("../img/throwables/shuriken.png"); 
-}
-
-#javelin {
-  background-image: url("../img/throwables/javelin.png"); 
-}
-
-#throwing_knife {
-  background-image: url("../img/throwables/throwing_knife.png"); 
-}
-
-#throwing_axe {
-  background-image: url("../img/throwables/throwing_axe.png"); 
-}
-
-#stoic_hip_flask {
-  background-image: url("../img/throwables/stoic_hip_flask.png"); 
-}
-
-#pocket_ecm_device {
-  background-image: url("../img/throwables/pocket_ecm.png"); 
-}
-
-#smoke_bomb {
-  background-image: url("../img/throwables/smoke_bomb.png"); 
-}
-
-#gas_dispenser {
-  background-image: url("../img/throwables/gas_dispenser.png"); 
-}
-
-#injector {
-  background-image: url("../img/throwables/injector.png"); 
-}
-
-
-/**********************************/
-/*       DEPLOYABLES ICONS        */
-/**********************************/
-
-#ammo_bag {
-  background-image: url("../img/deployables/ammo_bag.png"); 
-}
-
-#armor_bag {
-  background-image: url("../img/deployables/armor_kit.png"); 
-}
-
-#body_bag_case {
-  background-image: url("../img/deployables/bodybags_bag.png"); 
-}
-
-#doctor_bag {
-  background-image: url("../img/deployables/doctor_bag.png"); 
-}
-
-#ecm_jammer {
-  background-image: url("../img/deployables/ecm_jammer.png"); 
-}
-
-#first_aid_kit {
-  background-image: url("../img/deployables/first_aid_kit.png"); 
-}
-
-#sentry_gun {
-  background-image: url("../img/deployables/sentry_gun.png"); 
-}
-
-#suppressed_sentry_gun {
-  background-image: url("../img/deployables/sentry_gun_silent.png"); 
-}
-
-#trip_mines_and_shaped_charges {
-  background-image: url("../img/deployables/trip_mine.png"); 
-}
-

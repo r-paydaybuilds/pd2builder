@@ -417,7 +417,7 @@ export default class GUI {
 
         const desc = document.querySelector("#description_container, .pk_description"); 
         const pk = this.builder.dbs.get("perk_decks").get(
-            util.parentElement(card, this.builder.mobile ? 3 : 1).id
+            util.parentElement(card, this.builder.mobile ? 3 : 2).id
         );
         const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
             e instanceof Element && e.tagName === "DIV"
