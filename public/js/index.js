@@ -5,7 +5,7 @@ if("serviceWorker" in navigator) {
 import Builder from "./Builder.js";
 import Util from "./Util.js";
 
-const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-hans", "Simplified Chinese"]]);
+const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
 let defaultLang = "en-us";
 
 const builder = new Builder(window.innerWidth < 1003);
