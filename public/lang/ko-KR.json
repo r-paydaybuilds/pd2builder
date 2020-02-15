@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Doctor Bag",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine"
+            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
         },
         "ecm_jammer": {
             "name": "ECM Jammer",
@@ -90,7 +90,7 @@
         },
         "brute_strength-2": {
             "name": "Brute Strength",
-            "description": "You gain 10% more health",
+            "description": "You gain 10% more health.",
             "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "meat_shield": {
@@ -160,7 +160,7 @@
         },
         "killer_instinct": {
             "name": "Killer Instinct",
-            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%",
+            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
         },
         "basic_recovery": {
@@ -210,7 +210,7 @@
         },
         "master_recovery": {
             "name": "Master Recovery",
-            "description": "Your armor recovery rate is increased by 10%",
+            "description": "Your armor recovery rate is increased by 10%.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "sneaky": {
@@ -304,7 +304,7 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "more_healing_2": {
-            "name": "More Healing 1",
+            "name": "More Healing 2",
             "description": "Increase health gained from ammo packs by additional 8.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
@@ -411,7 +411,7 @@
         "blitzkrieg_bop": {
             "name": "Blitzkrieg Bop",
             "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds."
         },
         "straight_edge": {
             "name": "Straight Edge",
@@ -560,7 +560,7 @@
         },
         "code_glitch": {
             "name": "Code Glitch",
-            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
         },
         "opsec": {
             "name": "OpSec",
@@ -676,7 +676,7 @@
         },
         "painkillers": {
             "name": "Painkillers",
-            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%"
+            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%."
         },
         "uppers": {
             "name": "Uppers",
@@ -758,7 +758,7 @@
         },
         "close_by": {
             "name": "Close By",
-            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells",
+            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells.",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
         "overkill": {
@@ -811,7 +811,7 @@
         },
         "fully_loaded": {
             "name": "Fully Loaded",
-            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
+            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
             "name": "Third Law",
@@ -839,7 +839,7 @@
         },
         "hardware_expert": {
             "name": "Hardware Expert",
-            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Decreases trip mine deploy time by 20%. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking\nNote: Skill does not affect the OVE9000 saw."
+            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
             "name": "Combat Engineering",
@@ -847,11 +847,11 @@
         },
         "drill_sawgeant": {
             "name": "Drill Sawgeant",
-            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw"
+            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw."
         },
         "more_firepower": {
             "name": "More Firepower",
-            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain more shaped charges and 7 more trip mines."
+            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain 2 more shaped charges and 7 more trip mines."
         },
         "kickstarter": {
             "name": "Kickstarter",
@@ -881,7 +881,7 @@
         },
         "surefire": {
             "name": "Surefire",
-            "description": "BASIC: 3 points\t Your SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
+            "description": "BASIC: 3 points\tYour SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
         },
         "body_expertise": {
             "name": "Body Expertise",
@@ -914,11 +914,11 @@
         "duck_and_cover": {
             "name": "Duck and Cover",
             "description": "BASIC: 1 point\tYour stamina starts regenerating 25% earlier and 25% faster. You also sprint 25% faster.\nACE: 3 points\tYou have a 10% increased chance to dodge while sprinting you gain 15% chance to dodge while ziplining.",
-            "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
+            "vr_description": "Addition in VR:\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "parkour": {
             "name": "Parkour",
-            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting",
+            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting.",
             "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
         },
         "inner_pockets": {
@@ -980,7 +980,7 @@
         },
         "desperado": {
             "name": "Desperado",
-            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10% and you can stack it 4 times.\nACE: 6 points\tYou reload 50% faster."
+            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10 seconds and you can stack it 4 times.\nACE: 6 points\tYou reload all pistols 50% faster."
         },
         "trigger_happy": {
             "name": "Trigger Happy",
@@ -992,7 +992,7 @@
         },
         "running_from_death": {
             "name": "Running from Death",
-            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10% seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
+            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
             "name": "Up You Go",
@@ -1004,7 +1004,7 @@
         },
         "feign_death": {
             "name": "Feign Death",
-            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
+            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
             "name": "Messiah",
@@ -1020,11 +1020,11 @@
         },
         "pumping_iron": {
             "name": "Pumping Iron",
-            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage"
+            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage."
         },
         "counterstrike": {
             "name": "Counterstrike",
-            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks"
+            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks."
         },
         "berserker": {
             "name": "Berserker",
@@ -1032,7 +1032,7 @@
         },
         "frenzy": {
             "name": "Frenzy",
-            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%"
+            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%."
         }
     },
     "system": {
