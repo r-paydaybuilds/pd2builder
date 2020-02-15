@@ -5,7 +5,7 @@ if("serviceWorker" in navigator) {
 import Builder from "./Builder.js";
 import Util from "./Util.js";
 
-const langs = ["en-us", "ru-ru", "zh-hans"];
+const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-hans", "Simplified Chinese"]]);
 let defaultLang = "en-us";
 
 const builder = new Builder(window.innerWidth < 1003);
@@ -30,23 +30,36 @@ document.onreadystatechange = async () => {
         const langDrop = document.getElementById("langDrop");
         const params = new URLSearchParams(window.location.search);
         // Fill the select node
-        for(const lang of langs) {
-            const option = new Option(lang);
+        for(const [langKey, langName] of langs) {
+            const option = new Option(langName, langKey);
             langDrop.appendChild(option);
         }
 
-        // Save what lang is going to be used
-        if(params.has("lang") && langs.includes(params.get("lang"))) {
+        const langKeys = [...langs.keys()];
+        // If a param with lang has been included, force that one
+        if(params.has("lang") && langs.has(params.get("lang"))) {
             const lang = params.get("lang");
             curLang = lang;
             sessionStorage.setItem("lang", lang);
+        // If user already configured a lang use that one
         } else if(sessionStorage.getItem("lang")) {
             curLang = sessionStorage.getItem("lang");
         } else {
-            if(langs.includes(navigator.language)) {
+            // Check if we have the lang currently being used in the PC
+            if(langs.has(navigator.language.toLowerCase())) {
                 defaultLang = navigator.language;
-            } else {
-                defaultLang = navigator.languages.find(e => langs.includes(e.toLowerCase())) || defaultLang;
+            // Check if we have a variant of such 
+            } else if(langKeys.some(langKey => langKey.startsWith(navigator.language.slice(0,2)) )) {
+                defaultLang = langKeys.find(langKey => 
+                    langKey.startsWith(navigator.language.slice(0,2))
+                );
+            } else if(navigator.languages) {
+                // Check if we even have any of the languages the PC has
+                defaultLang = navigator.languages.find(e => langs.has(e.toLowerCase())) 
+                    // Then check if we have any other variants of the languages that the PC has
+                    || langKeys.find(langKey => navigator.languages.some(navLang => langKey.startsWith(navLang.slice(0,2))))
+                    // and then if nothing worked, just go for the already default language
+                    || defaultLang;
             }
 
             defaultLang = defaultLang.toLowerCase(),
