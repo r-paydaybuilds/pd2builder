@@ -27,7 +27,7 @@
         },
         "ecm_jammer": {
             "name": "ECM干扰器",
-            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal.按住[G]来放置ECM。\nECM一旦放置就不能被移动，它会即时运作20秒。\n你可以通过对ECM进行交互(按下[F])来开启ECM的反馈功能，使一定范围内的敌人失去战斗能力，之后便会停止工作。\n电子干扰器(ECM)是一个用来欺骗雷达，声纳和其他探测系统的电子设备，它某种程度上能助你完成劫案。"
+            "description": "按住[G]来放置ECM。\nECM一旦放置就不能被移动，它会即时运作20秒。\n你可以通过对ECM进行交互(按下[F])来开启ECM的反馈功能，使一定范围内的敌人失去战斗能力，之后便会停止工作。\n电子干扰器(ECM)是一个用来欺骗雷达，声纳和其他探测系统的电子设备，它某种程度上能助你完成劫案。"
         },
         "first_aid_kit": {
             "name": "急救包",
@@ -35,11 +35,11 @@
         },
         "sentry_gun": {
             "name": "炮台",
-            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team.按住[G]来放置炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n炮台能够自动感应的目标并向其开火，它被广泛用于为团队吸引火力。"
+            "description": "按住[G]来放置炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n炮台能够自动感应的目标并向其开火，它被广泛用于为团队吸引火力。"
         },
         "suppressed_sentry_gun": {
             "name": "消音炮台",
-            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.按住[G]来放置消音炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n消音炮台相对于普通的、更响的炮台干敌人的同时不容易被当作目标。"
+            "description": "按住[G]来放置消音炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n消音炮台相对于普通的、更响的炮台干敌人的同时不容易被当作目标。"
         },
         "trip_mines_and_shaped_charges": {
             "name": "绊雷与塑性炸药",
@@ -618,7 +618,7 @@
         },
         "gambler": {
             "name": "赌徒",
-            "description": "踏进战场的熔炉里需要技巧，刻苦和不止一点点的运气。世界上就是有那么些人同时具备这三点。$NL;$NL;运气是一个可望而不可及的能力。古希腊人认为，这是神的旨意。但它并不是，它无处不在，它是一种你可以获得的能力。它需要充分的准备和深谋远虑让你的棋子到位，最大限度地提高获得回报的几率。它更像是对之前努力的回报，而不是单纯的祈祷神明。\n赌徒天赋牌组属于支援类牌组。任何人都可以帮助团队取得胜利，但是赌徒能使团队赢得更彻底。"
+            "description": "踏进战场的熔炉里需要技巧，刻苦和不止一点点的运气。世界上就是有那么些人同时具备这三点。运气是一个可望而不可及的能力。古希腊人认为，这是神的旨意。但它并不是，它无处不在，它是一种你可以获得的能力。它需要充分的准备和深谋远虑让你的棋子到位，最大限度地提高获得回报的几率。它更像是对之前努力的回报，而不是单纯的祈祷神明。\n赌徒天赋牌组属于支援类牌组。任何人都可以帮助团队取得胜利，但是赌徒能使团队赢得更彻底。"
         },
         "grinder": {
             "name": "前卫/冲锋手",
