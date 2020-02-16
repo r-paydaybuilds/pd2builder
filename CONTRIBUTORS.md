@@ -30,5 +30,10 @@ pd2builder Contributors
   * Made Russian translation
   * If I didn't support their language they said they would have killed me with their russian mafia
 
+* **[Schrodinger_Sig](https://steamcommunity.com/id/xdedxg/)**
+  * Made Simplified Chinese translation
+  * Shout out to **[联合汉化组](https://modworkshop.net/mod/25388)**, most of skill/item name are based on their translation
+  * (**[√](https://cdn.discordapp.com/attachments/671478410220142592/678430571600412700/nice.jpg)**)
+
 [More contributors may or may not be found here](https://github.com/r-paydaybuilds/pd2builder/graphs/contributors)
 ### YOU ARE FREE TO ADD YOURSELF ON THIS IF YOU AT LEAST CONTRIBUTED ON SOMETHING.
