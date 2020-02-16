@@ -1037,8 +1037,8 @@
     },
     "system": {
         "name": "PD2 Builder / PD2加点模拟器",
-        "home": "Home",
-        "bigoil": "Big Oil Engine Calc",
+        "home": "主页",
+        "bigoil": "石油大亨引擎模拟器",
         "requires": {
             "perk_deck": "需要装备%{name}天赋",
             "perk_card": "需要拥有%{name}牌组",
@@ -1047,7 +1047,7 @@
             "deployable": "需要装备放置物%{name}"
         },
         "equipped": "已装备",
-        "equip": "EQUIP.",
+        "equip": "已装备",
         "selected": "已选择",
         "primary": "主放置物",
         "secondary": "副放置物",
@@ -1130,7 +1130,7 @@
             "description": "与别人分享这套加点！",
             "copy": "复制链接",
             "copied": "连接已复制！",
-            "native": "Share!"
+            "native": "分享加点！"
         },
         "credits": {
             "title": "感谢名单：",
