@@ -748,11 +748,15 @@ select {
     (mostly font-size)
 */
 
-/* Chinese */
-body:lang(zh-hans) {
-  font-family: "Noto Sans", "Noto Sans SC", sans-serif;
+/* Russian */
+body:lang(-ru-ru),
+body:lang(ru-ru) > div {
+  font-family: "Noto Sans", sans-serif;
 }
 
-body > div:lang(zh-hans) {
+/* Chinese */
+body:lang(zh-cn),
+body:lang(zh-cn) > div {
+  font-family: "Noto Sans", "Noto Sans SC", sans-serif;
   font-family: "Noto Sans", "Noto Sans SC", sans-serif;
 }

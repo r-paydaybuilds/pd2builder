@@ -631,11 +631,24 @@ body {
 }
 
 table:lang(ru-ru) {
-  font-size: 12pt;
+  font-size: 11px;
 }
 
 .sk_subtree_name > p:lang(ru-ru) {
   font-size: 24pt;
+}
+
+.sk_points_remaining:lang(ru-ru) p,
+.sk_points_remaining:lang(ru-ru) span {
+  font-size: 19px;
+}
+
+.description_title:lang(ru-ru) {
+  font-size: 17px;
+}
+
+.sk_subtree_name:lang(ru-ru) {
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* Chinese */
