@@ -204,7 +204,7 @@
 }
 
 .sk_subtree_name {
-  font-family: "DINEngschrift";
+  font-family: "DINEngschrift", "Noto Sans";
   font-size: 28pt; 
   text-align: center; 
   color: rgb(40, 90, 130);   

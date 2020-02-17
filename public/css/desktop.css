@@ -311,7 +311,7 @@ body {
   flex-basis: 25%; 
   max-width: 25%; 
 
-  font-family: "DINEngschrift";
+  font-family: "DINEngschrift", "Noto Sans", sans-serif;
   font-size: 36px; 
   text-align: center; 
   color: rgb(40, 90, 130);   
@@ -636,4 +636,9 @@ table:lang(ru-ru) {
 
 .sk_subtree_name > p:lang(ru-ru) {
   font-size: 24pt;
+}
+
+/* Chinese */
+.sk_subtree_name:lang(zh-cn) {
+  font-family: "Noto Sans", "Noto Sans SC", sans-serif;
 }
