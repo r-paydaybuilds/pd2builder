@@ -117,6 +117,8 @@ export default class Builder {
         }
         document.querySelector(".sk_points_remaining > p").innerHTML = this.lang.get("system.skills.remaining") + document.querySelector(".sk_points_remaining p span").outerHTML;
 
+        this.gui.Tree_ChangeTo(document.querySelector(".sk_tree_button_active").id.replace("button", "container"));
+
         document.querySelectorAll("[data-lang]").forEach(e => {
             const lang = this.lang.get(e.dataset.lang);
             e.innerHTML = Language.ref.has(e.dataset.lang) ? lang(Language.ref.get(e.dataset.lang)) : lang;
