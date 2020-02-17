@@ -20,7 +20,6 @@ done
 echo "done"
 echo "Minifying JSON"
 cd ../db
-cd ../db
 for file in ./*.json; do
     npm run json -- "./public/db/$file"
 done
