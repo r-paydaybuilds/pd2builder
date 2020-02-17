@@ -8,10 +8,11 @@
 #### Kind of a to-do list can be found in the [wiki](https://github.com/r-paydaybuilds/pd2builder/wiki/To-Do-list)
 
 ## Running locally
-1. Clone the repo
-2. `npm install`
-3. `node pd2builder.js`
-4. Go to http://localhost:9999
+1. Get node.js (LTS or more)
+2. Clone the repo
+3. `npm install`
+4. `node pd2builder.js`
+5. Go to http://localhost:9999
 
 ## Contributing
 1. Fork the repo
