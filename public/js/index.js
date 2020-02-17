@@ -49,15 +49,15 @@ document.onreadystatechange = async () => {
             if(langs.has(navigator.language.toLowerCase())) {
                 defaultLang = navigator.language;
             // Check if we have a variant of such 
-            } else if(langKeys.some(langKey => langKey.startsWith(navigator.language.slice(0,2)) )) {
+            } else if(langKeys.some(langKey => langKey.startsWith(navigator.language.split("-")[0]) )) {
                 defaultLang = langKeys.find(langKey => 
-                    langKey.startsWith(navigator.language.slice(0,2))
+                    langKey.startsWith(navigator.language.split("-")[0])
                 );
             } else if(navigator.languages) {
                 // Check if we even have any of the languages the PC has
                 defaultLang = navigator.languages.find(e => langs.has(e.toLowerCase())) 
                     // Then check if we have any other variants of the languages that the PC has
-                    || langKeys.find(langKey => navigator.languages.some(navLang => langKey.startsWith(navLang.slice(0,2))))
+                    || langKeys.find(langKey => navigator.languages.some(navLang => langKey.startsWith(navLang.split("-")[0]) ))
                     // and then if nothing worked, just go for the already default language
                     || defaultLang;
             }
