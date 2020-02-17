@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Медицинская сумка",
-            "description": "Медицинская сумка - это переносная сумка, обычно используемая врачами или другими медиками для хранения медикаментов и медицинских принадлежностей.\nЧтобы использовать медицинскую сумку, Вам нужно установить её, зажав [G]. После установки её нельзя переместить, но можно использовать Вам и Вашим напарникам нажатием [F], чтобы восстановить здоровье. Каждый раз при использовании  медицинской сумки вы будите сбрасывать счётчик падений до нуля. Тем самым, вы отсрочите своё путешествие под стражу.\nМедицинскую сумку можно использовать ограниченное количество раз. Она исчезнет после опустошения. Вы можете увидеть сколько еще раз можно использовать медицинскую сумку, посмотрев на неё."
+            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
         },
         "ecm_jammer": {
             "name": "Генератор помех",
@@ -90,7 +90,7 @@
         },
         "brute_strength-2": {
             "name": "Грубая сила",
-            "description": "Здоровье увеличено на 10 %",
+            "description": "Здоровье увеличенно на 10%.",
             "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
         },
         "meat_shield": {
@@ -160,7 +160,7 @@
         },
         "killer_instinct": {
             "name": "Инстинкт убийцы",
-            "description": "Шанс пробить вражескую броню из любого оружия равен 25%.\nУменьшает время переключения между оружием на 80%.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%.",
+            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
         },
         "basic_recovery": {
@@ -210,7 +210,7 @@
         },
         "master_recovery": {
             "name": "Мастерская броня",
-            "description": "Скорость восстановления брони увеличена на 10%.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%.",
+            "description": "Your armor recovery rate is increased by 10%.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "sneaky": {
@@ -304,7 +304,7 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "more_healing_2": {
-            "name": "Больше здоровья 2",
+            "name": "More Healing 2",
             "description": "Количество здоровья, получаемого из боеприпасов, оставленных противниками, увеличено еще на 8.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
@@ -411,7 +411,7 @@
         "blitzkrieg_bop": {
             "name": "Блицкриг-боп",
             "description": "Вместо того чтобы полностью восстановить броню вне боя. Анархист может делать это постепенно и в самом бою. Чем мощнее Ваша броня, тем больше Вы сможете восстанавливать её, но с более долгим интервалом.\nКогда прочность брони дойдёт до нуля Вы  будете невосприимчивы ко всем видам урона на 2 секунды. Эффект срабатывает один раз в 15 секунд.\nВнимание: навыки и перки, которые сокращают время, нужное, для повышения скорости восстановления брони не работают с данным набором перков.",
-            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds."
         },
         "straight_edge": {
             "name": "Чёткая грань",
@@ -560,7 +560,7 @@
         },
         "code_glitch": {
             "name": "Глюк в системе",
-            "description": "Разблокирует и позволяет взять с собой карманный генератор помех.\nЕсли вы смените набор перков на другой, карманный генератор помех будет недоступен для использования. Карманный генератор помех использует слот для метательного оружия, но вы можете взять вместо него что-нибудь другое. Чтобы воспользоваться карманным генератором помех, достаточно нажать на кнопку для метательного оружия.\nЕсли генератор помех был использован до поднятия тревоги, то он отключит все пейджеры и электронику на 6 секунд. Использование генератора помех после поднятия тревоги будет генерировать поле, которое имеет шанс оглушить противников на 6 секунд.\nКарманный генератор помех имеет 2 заряда с 100 секундным временем восстановления, но каждое убийство уменьшает время восстановления на 6 секунд."
+            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
         },
         "opsec": {
             "name": "OpSec",
@@ -676,7 +676,7 @@
         },
         "painkillers": {
             "name": "Обезболивающее",
-            "description": "БАЗОВЫЙ: 2 очка\tНапарники, поднятые вами, получают на 30% меньше урона в течение 5 секунд.\nПРО: 4 очка\tНапарники поднятые вами получают ещё на 50%, меньше урона"
+            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%."
         },
         "uppers": {
             "name": "Колёса",
@@ -758,7 +758,7 @@
         },
         "close_by": {
             "name": "Вблизи",
-            "description": "БАЗОВЫЙ: 3 очка\tСтрельба на бегу: вы можете стрелять из дробовиков от бедра во время бега.\nПРО: 6 очков\tВаша скорострельность будет увеличена на 35% при стрельбе от бедра из дробовиков с одиночным режимом стрельбы. Магазинные дробовики получают прибавку в размере 15 патронов в магазин.",
+            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells.",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
         "overkill": {
@@ -811,7 +811,7 @@
         },
         "fully_loaded": {
             "name": "Вооружен до зубов",
-            "description": "БАЗОВЫЙ: 4 очка\tПовышает количество переносимых боеприпасов на 25%.\nПРО: 8 очков\tВраги оставляют на 75% больше боеприпасов. У вас есть 5% шанс найти метательное оружие в оставленных врагами боеприпасах. Шанс устанавливается на 1% за каждый подобранный боеприпас, в котором не было метательного оружия. Когда метательное оружие будет найдено в боеприпасах,шанс будет сброшен к стандартному значению. Данный навык не складывается с бонусом ''Тяжёлый пехотинец'' из набора перков."
+            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
             "name": "Третий закон",
@@ -839,7 +839,7 @@
         },
         "hardware_expert": {
             "name": "Эксперт по технике",
-            "description": "БАЗОВЫЙ: 1 очко\tВы чините дрель и пилу на 25% быстрее. Уменьшает время, нужное для установки мин на 20%. Ваша пила и дрель бесшумны. Гражданские и охранники должны увидеть их, чтобы поднять тревогу.\nПРО: 3 очка\tДаёт пиле и дрели 10% шанс автоматической поичинки, если они сломались\nВнимание: навык не распространяется на пилу OVE9000"
+            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
             "name": "Военный инженер",
@@ -847,11 +847,11 @@
         },
         "drill_sawgeant": {
             "name": "Капитан дрель",
-            "description": "БАЗОВЫЙ: 2 очка\tПовышает эффективность вашей пилы и дрели, делая их на 15% быстрее.\nПРО: 4 очка\tПовышает эффективность пилы и дрели ещё на 15%.\nВнимание: действие навыка не распространяется на пилу OVE9000."
+            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw."
         },
         "more_firepower": {
             "name": "Больше взрывчатки",
-            "description": "БАЗОВЫЙ: 3 очка\tВы получаете ещё 1 кумулятивный заряд и 4 мины.\nПРО: 6 очков\tВы получаете ещё 2 кумулятивных заряда и 7 мин."
+            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain 2 more shaped charges and 7 more trip mines."
         },
         "kickstarter": {
             "name": "С полпинка",
@@ -881,7 +881,7 @@
         },
         "surefire": {
             "name": "Шквальный огонь",
-            "description": "БАЗОВЫЙ: 3 очка\tВаши пистолеты-пулемёты, пулемёты и штурмовые винтовки получают прибавку в виде 15 патронов в магазин. Данный навык не работает с ПРО версией навыка ``Оружие к бою``.\nПРО: 6 очков\tВаше оружие получает возможность пробивать вражескую броню.\nВнимание: данный навык не работает с метательным оружием."
+            "description": "BASIC: 3 points\tYour SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
         },
         "body_expertise": {
             "name": "Хирургическая точность",
@@ -914,11 +914,11 @@
         "duck_and_cover": {
             "name": "Пригнись и прикройся",
             "description": "БАЗОВЫЙ: 1 очко\tСнижает время до начала регенерации выносливости на 25% и повышает скорость её восстановления на 25%. Повышает скорость бега на 25%\nПРО: 3 очка\tУ вас есть шанс увернуться от вражеского огня во время бега на 10%. Вы получаете 15% шанс увернуться, если вы передвигаетесь на зиплайне.",
-            "vr_description": "Addition in VR\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
+            "vr_description": "Addition in VR:\tACE: The increased dodge chance lasts from 1 up to a maximum of 5 seconds after dashing."
         },
         "parkour": {
             "name": "Паркур",
-            "description": "БАЗОВЫЙ: 2 очка\tСкорость вашего передвижения увеличена на 10%. Скорость подъёма по навесным лестницам увеличена на 20%.\nПРО: 4 очка\tПозволяет бегать в любом направлении.\nПерезарядка на бегу: вы можете перезаряжаться во время бега.",
+            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting.",
             "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
         },
         "inner_pockets": {
@@ -980,7 +980,7 @@
         },
         "desperado": {
             "name": "Отчаянный",
-            "description": "БАЗОВЫЙ: 3 очка\tКаждое попадание из пистолета увеличивает вашу точность на 10% в течение 10 секунд и может складываться до 4 раз.\nПРО: 6 очков \tВы перезаряжаете пистолеты на 50% бысрее."
+            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10 seconds and you can stack it 4 times.\nACE: 6 points\tYou reload all pistols 50% faster."
         },
         "trigger_happy": {
             "name": "Неудержимый стрелок",
@@ -992,7 +992,7 @@
         },
         "running_from_death": {
             "name": "Убегая от смерти",
-            "description": "БАЗОВЫЙ: 2 очка\tВы перезаряжаетесь и переключаетесь между оружием на 100% быстрее в течение 10 секунд после того, как вас подняли.\nПРО: 4 очка\tСкорость вашего передвижения увеличена на 30% в течение 10 секунд после того, как вас подняли."
+            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
             "name": "Проснись и пой",
@@ -1004,7 +1004,7 @@
         },
         "feign_death": {
             "name": "Притвориться мёртвым",
-            "description": "БАЗОВЫЙ: 3 очка\tКогда вы упали, у вас есть 15% шанс подняться без чьей-либо помощи.\nПРО: 6 очков\tШанс подняться увеличен на 30%."
+            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
             "name": "Мессия",
@@ -1020,11 +1020,11 @@
         },
         "pumping_iron": {
             "name": "Качая железо",
-            "description": "БАЗОВЫЙ: 2 очка\tВаши рукопашные атаки наносят на 100% больше урона (всем, кроме специальных юнитов). \nПРО: 4 очка\tВаши рукопашные атаки наносят на 100% больше урона специальным юнитам."
+            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage."
         },
         "counterstrike": {
             "name": "Контрудар",
-            "description": "БАЗОВЫЙ: 3 очка\tВы будете контратаковать противников и сбивать их с ног, если держите оружие ближнего боя наготове. Контратакуя, вы не наносите урона.\nПРО: 6 очков\tВы можете контратаковать клокеров."
+            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks."
         },
         "berserker": {
             "name": "Берсеркер",
@@ -1032,7 +1032,7 @@
         },
         "frenzy": {
             "name": "Безумие",
-            "description": "БАЗОВЫЙ: 4 очка\tТеперь у вас только 30% от максимального запаса здоровья и вы не сможете восполнить его выше этой отметки. Вы получаете на 10% меньше урона. Вы восполняете на 75% меньше здоровья.\nПРО: 8 очков\tТеперь вы получаете на 25% меньше урона. Вы восполняете на 0% меньше здоровья."
+            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%."
         }
     },
     "system": {
@@ -1128,7 +1128,7 @@
         "share": {
             "title": "ПОДЕЛИТЬСЯ",
             "description": "Поделись своим набором навыков !",
-            "copy": "КОПИРОВАТЬ" ,
+            "copy": "КОПИРОВАТЬ",
             "copied": "СКОПИРОВАТЬ!",
             "native": "Share!"
         },

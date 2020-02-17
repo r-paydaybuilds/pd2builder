@@ -27,7 +27,7 @@
         },
         "ecm_jammer": {
             "name": "ECM干扰器",
-            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal.按住[G]来放置ECM。\nECM一旦放置就不能被移动，它会即时运作20秒。\n你可以通过对ECM进行交互(按下[F])来开启ECM的反馈功能，使一定范围内的敌人失去战斗能力，之后便会停止工作。\n电子干扰器(ECM)是一个用来欺骗雷达，声纳和其他探测系统的电子设备，它某种程度上能助你完成劫案。"
+            "description": "按住[G]来放置ECM。\nECM一旦放置就不能被移动，它会即时运作20秒。\n你可以通过对ECM进行交互(按下[F])来开启ECM的反馈功能，使一定范围内的敌人失去战斗能力，之后便会停止工作。\n电子干扰器(ECM)是一个用来欺骗雷达，声纳和其他探测系统的电子设备，它某种程度上能助你完成劫案。"
         },
         "first_aid_kit": {
             "name": "急救包",
@@ -35,11 +35,11 @@
         },
         "sentry_gun": {
             "name": "炮台",
-            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team.按住[G]来放置炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n炮台能够自动感应的目标并向其开火，它被广泛用于为团队吸引火力。"
+            "description": "按住[G]来放置炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n炮台能够自动感应的目标并向其开火，它被广泛用于为团队吸引火力。"
         },
         "suppressed_sentry_gun": {
             "name": "消音炮台",
-            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.按住[G]来放置消音炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n消音炮台相对于普通的、更响的炮台干敌人的同时不容易被当作目标。"
+            "description": "按住[G]来放置消音炮台，放置炮台将消耗你所持有的总弹量的30%。\n炮台可以被射毁，但只要它还未被完全摧毁，你仍可以拾取它，这将自动修复炮台，并返还剩余弹药。\n一旦炮台的子弹用尽，它就会停止射击，但你仍可以通过捡起并重新放置来为其补充弹药。\n消音炮台相对于普通的、更响的炮台干敌人的同时不容易被当作目标。"
         },
         "trip_mines_and_shaped_charges": {
             "name": "绊雷与塑性炸药",
@@ -90,7 +90,7 @@
         },
         "brute_strength-2": {
             "name": "蛮力",
-            "description": "你将获得10%额外血量。",
+            "description": "你获得10%额外血量。",
             "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
         },
         "meat_shield": {
@@ -111,7 +111,7 @@
         "800-pound_gorilla": {
             "name": "无法无天",
             "description": "你将获得40%额外血量。\n每间隔5秒你都将回复3%血量。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "type_1_armor": {
             "name": "I型护甲",
@@ -306,7 +306,7 @@
         "more_healing_2": {
             "name": "强化治疗2",
             "description": "额外提升8点捡弹回血量。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "histamine": {
             "name": "组织胺",
@@ -331,7 +331,7 @@
         "euphoria": {
             "name": "致幻剂",
             "description": "对一名敌人造成伤害将会使你每0.3秒回复4点血量，效果持续4.2秒。\n额外提升20%穿透敌人护甲的几率。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "koi_irezumi": {
             "name": "锦鲤刺青",
@@ -381,7 +381,7 @@
         "the_perfect_line": {
             "name": "完美极限",
             "description": "杀死敌人后，将基于你剩余的护甲量，缩短你的护甲恢复时间。剩余护甲值越高，杀敌后获得的增益效果越少。\t当你护甲回满后，护甲恢复加成将重置。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "excitement": {
             "name": "亢奋",
@@ -481,7 +481,7 @@
         "right_to_the_top": {
             "name": "巅峰",
             "description": "你获得40%额外血量。\n在注射器效果内，每获得5点血量的过量治疗，将减少1秒注射器充能时间。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "smoker": {
             "name": "烟雾弹手",
@@ -494,7 +494,7 @@
             "vr_description": "消耗耐力的闪避提升量提升至1%~7%。"
         },
         "subtle-3": {
-            "name": "狡黠如我",
+            "name": "狡捷",
             "description": "提升15%闪避。",
             "vr_description": "消耗耐力的闪避提升量提升至1%~8%。"
         },
@@ -531,7 +531,7 @@
         "enduring": {
             "name": "不屈不挠",
             "description": "当流血状态被停止的同时，你将额外恢复流血状态下叠加的50%血量。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "soul_mates": {
             "name": "灵魂伴侣",
@@ -556,7 +556,7 @@
         "harmony": {
             "name": "心心相犀",
             "description": "在\"搭档\"效果内，你的搭档每杀死一名敌人，都将减少嗨气瓶冷却时间2秒。",
-            "vr_description": "消耗耐力的回血量提升至0~15点血。"
+            "vr_description": "消耗耐力的回血量提升至0~15点血"
         },
         "code_glitch": {
             "name": "代码错误",
@@ -618,7 +618,7 @@
         },
         "gambler": {
             "name": "赌徒",
-            "description": "踏进战场的熔炉里需要技巧，刻苦和不止一点点的运气。世界上就是有那么些人同时具备这三点。$NL;$NL;运气是一个可望而不可及的能力。古希腊人认为，这是神的旨意。但它并不是，它无处不在，它是一种你可以获得的能力。它需要充分的准备和深谋远虑让你的棋子到位，最大限度地提高获得回报的几率。它更像是对之前努力的回报，而不是单纯的祈祷神明。\n赌徒天赋牌组属于支援类牌组。任何人都可以帮助团队取得胜利，但是赌徒能使团队赢得更彻底。"
+            "description": "踏进战场的熔炉里需要技巧，刻苦和不止一点点的运气。世界上就是有那么些人同时具备这三点。\n运气是一个可望而不可及的能力。古希腊人认为，这是神的旨意。但它并不是，它无处不在，它是一种你可以获得的能力。它需要充分的准备和深谋远虑让你的棋子到位，最大限度地提高获得回报的几率。它更像是对之前努力的回报，而不是单纯的祈祷神明。\n赌徒天赋牌组属于支援类牌组。任何人都可以帮助团队取得胜利，但是赌徒能使团队赢得更彻底。"
         },
         "grinder": {
             "name": "前卫/冲锋手",
@@ -1037,8 +1037,8 @@
     },
     "system": {
         "name": "PD2 Builder / PD2加点模拟器",
-        "home": "Home",
-        "bigoil": "Big Oil Engine Calc",
+        "home": "主页",
+        "bigoil": "石油大亨引擎模拟器",
         "requires": {
             "perk_deck": "需要装备%{name}天赋",
             "perk_card": "需要拥有%{name}牌组",
@@ -1047,10 +1047,11 @@
             "deployable": "需要装备放置物%{name}"
         },
         "equipped": "已装备",
+        "equip": "已装备",
         "selected": "已选择",
         "primary": "主放置物",
         "secondary": "副放置物",
-        "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?(点|%|cm)?",
+        "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
         "skills": {
             "title": "技能",
             "remaining": "剩余技能点：",
@@ -1128,7 +1129,8 @@
             "title": "分享加点",
             "description": "与别人分享这套加点！",
             "copy": "复制链接",
-            "copied": "连接已复制！"
+            "copied": "连接已复制！",
+            "native": "分享加点！"
         },
         "credits": {
             "title": "感谢名单：",
