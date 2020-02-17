@@ -1,6 +1,7 @@
 [![GitHub License](https://img.shields.io/github/license/r-paydaybuilds/pd2builder.svg)](https://raw.githubusercontent.com/r-paydaybuilds/pd2builder/master/LICENSE)
 [![Discord](https://img.shields.io/badge/Chat-Discord-7289da.svg)](https://discord.gg/3ndGBWC)
 [![Travis CI](https://api.travis-ci.org/r-paydaybuilds/pd2builder.svg)](https://travis-ci.org/r-paydaybuilds/pd2builder)
+[![Crowdin](https://badges.crowdin.net/pd2builder/localized.svg)](https://crowdin.com/project/pd2builder)
 # pd2builder, a loadout simulator of Payday 2 that works
 
 #### You can currently find a demo in [here](https://pd2builder.netlify.com/)
