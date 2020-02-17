@@ -276,6 +276,10 @@ select {
   display: none; 
 }
 
+#tab_page_buttons {
+  scrollbar-width: none;
+}
+
 
 /**********************************/
 /*            SKILLS CSS          */

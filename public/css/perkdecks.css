@@ -45,6 +45,13 @@
   border-radius: 10px;
 }
 
+#pk_container_r,
+#pk_description_t,
+#pk_card_t {
+  scrollbar-color: rgb(240, 240, 240) rgba(0, 0, 0, 0.3);
+  scrollbar-width: thin;
+}
+
 #pk_description_container {
   display: inline-flex;  
   flex-direction: column; 

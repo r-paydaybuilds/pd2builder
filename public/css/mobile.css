@@ -554,6 +554,7 @@ div.footer a:hover {
 .pk_deck_cards {
   overflow-x: scroll;
   overflow-y: hidden;
+  scrollbar-width: none;
 
   justify-content: left;
 }
