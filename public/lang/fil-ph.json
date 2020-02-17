@@ -31,7 +31,7 @@
         },
         "first_aid_kit": {
             "name": "Pangunang Tulong-Lunas",
-            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
+            "description": "Ang Kit ng Pangunang Tulong-Lunas ay isang koleksyon ng mga kagamitan upang magamit sa mga pangunahing lunas.\nUpang gamitin ang Kit ng Pangunang Tulong-lunas, kailangan mo na i-hold ang [G] upang mailagay ito. Kapag ito ay nalagay na, hindi ito maaring maigalaw pa, pero ito ay maaring gamitin para sa iyo at ang iyong tauhan gamit ang pag-hold ng [F] para makakuha ulit ng health.\nAng isang nakalagay na Kit ng Pangunang Tulong-lunas ay maaring gamitin ng isang beses at pag ito ay nagamit na, ito ay mawawala."
         },
         "sentry_gun": {
             "name": "Sentry Gun",
@@ -154,7 +154,7 @@
             "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
         },
         "shadow_warrior": {
-            "name": "Shadow Warrior",
+            "name": "Mandirigma ng Anino",
             "description": "Your chance to dodge is increased by an additional 15%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
         },
@@ -224,17 +224,17 @@
             "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
         },
         "luck_of_the_irish": {
-            "name": "Luck of the Irish",
+            "name": "Swerte ng Irlandes",
             "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
         },
         "dutch_courage": {
-            "name": "Dutch Courage",
+            "name": "Lakas ng Loob ng Olandes",
             "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
         },
         "breath_of_fresh_air": {
-            "name": "Breath of Fresh Air",
+            "name": "Hinga ng Sariwang Hangin",
             "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
         },
@@ -399,7 +399,7 @@
             "vr_description": "The dash effect is now from 6 up to a maximum of 14."
         },
         "recklessness": {
-            "name": "Recklessness",
+            "name": "Kawalang-ingat",
             "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
@@ -519,7 +519,7 @@
             "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "calm": {
-            "name": "Calm",
+            "name": "Kalmado",
             "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
             "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
@@ -638,7 +638,7 @@
         },
         "anarchist": {
             "name": "Anarkista",
-            "description": "The Anarchist refuses to acknowledge the arbitrary laws imposed by traditional authority. Kings, queens and presidents hold no sway over the Anarchist mind. Fly free and make your own rules is the motto. This refusal to abide by established truths enables the Anarchist to go where others cannot, employing unconventional tactics to slip through the cracks and reach seemingly impossible objectives."
+            "description": "Ang Anarkista ay hindi kinikilanan ang mga batas ng traditional na autoridad. Mga hari, mga reyna at mga presidente ay hindi mapipigil ang isang isip ng isang Anarkista. \"Lumipad ng malaya at gumawa ng sarili mong patakaran\" ang kasabihan. Itong hinding pangsang-ayon sa katotohan ay nagbibigay-daan sa Anarkista kung saan hindi pwede makapunta ang iba at gumagamit ng mga taktika na hindi ikinakauligan upang dumulas sa mga bitak at makayanan ang mga tunguhin na mukhang imposible."
         },
         "biker": {
             "name": "Biker",
@@ -668,7 +668,7 @@
     "skills": {
         "combat_medic": {
             "name": "Combat Medic",
-            "description": "BASIC: 1 point\tYou gain a 30% damage reduction for 5 seconds both after and during reviving another player.\nACE: 3 points\tReviving a crew member gives them 30% more health."
+            "description": "BASIC: 1 punto\tIkaw ay makakakuha ng 30% damage reduction sa 5 segundo pagkatapos at habang muling binubuhayan ang isang manlalaro.\nACE: 3 punto\tAng manlalaro na binuhay ulit ay makakakuha ng 30% pa na health."
         },
         "quick_fix": {
             "name": "Quick Fix",
@@ -688,11 +688,11 @@
         },
         "inspire": {
             "name": "Inspire",
-            "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds."
+            "description": "BASIC: 4 puntos\tAng bilis ng iyong revive speed ay mas mabilis ng 100%. Ang pagsigaw sa iyong kasamahan ay bibilisan ang kanilang paggalaw at reload speed ng 20% para sa 10 segundo.\nACE: 8 puntos\tMeron kang 100% na pagkakataon na ikaw ay makakabuhay ng ibang tauhan hanggang 9 metro sa pagsigaw. Hindi ito maaring mangyari ulit bawat 20 segundo."
         },
         "forced_friendship": {
-            "name": "Forced Friendship",
-            "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill."
+            "name": "Pinilit na Pagkakaibigan",
+            "description": "BASIC: 1 punto\tDagdagan ng 4 ang iyong mga cable ties. Ang iyong bilis sa pag-cable tie ng mga hostage ay mas magiging mabilis ng 75%.\nACE: 3 punto\tIkaw at ang mga ibang tauhan ay makakakuha ng 0.5 damage absorption para sa bawat isang hostage na meron kayo. Ito ay papantay hanggang 8 hostages.\nPuna: Ito ay hindi magpapatong-patong sa kakayahan na \"Pinilit na Pagkakaibigan\" mula sa ibang manlalaro."
         },
         "confident": {
             "name": "Confident",
@@ -753,11 +753,11 @@
             "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns."
         },
         "far_away": {
-            "name": "Far Away",
+            "name": "Malayo",
             "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights."
         },
         "close_by": {
-            "name": "Close By",
+            "name": "Malapit",
             "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells.",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
@@ -892,11 +892,11 @@
             "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
         },
         "cleaner": {
-            "name": "Cleaner",
+            "name": "Tagalinis",
             "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
         },
         "sixth_sense": {
-            "name": "Sixth Sense",
+            "name": "Pang-anim na Pakiramdam",
             "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
         },
         "nimble": {
@@ -946,7 +946,7 @@
             "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
         },
         "the_professional": {
-            "name": "The Professional",
+            "name": "Ang Propesyonal",
             "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
             "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
         },
@@ -999,11 +999,11 @@
             "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
         },
         "swan_song": {
-            "name": "Swan Song",
+            "name": "Awit ng Swan",
             "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
         },
         "feign_death": {
-            "name": "Feign Death",
+            "name": "Pekeng Pagkakamatay",
             "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
@@ -1053,8 +1053,8 @@
         "secondary": "SECONDARY",
         "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
         "skills": {
-            "title": "Skills",
-            "remaining": "Remaining skill points: ",
+            "title": "Mga Kakayahan",
+            "remaining": "Natitirang punto: ",
             "mastermind": {
                 "title": "ANG UTAK",
                 "subtrees": {
@@ -1076,7 +1076,7 @@
                 "subtrees": {
                     "engineer": "INHINYERO",
                     "breacher": "BREACHER",
-                    "oppressor": "OPPRESSOR"
+                    "oppressor": "MANINIIL"
                 }
             },
             "ghost": {
