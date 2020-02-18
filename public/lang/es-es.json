@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Botiquín Médico",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
+            "description": "Para usar el Botiquín Médico, debes desplegarlo manteniendo [G]. Este tiene 2 usos (puedes ver cuántos quedan mirando las bolsas de sangre. Una vez desplegado no se puede mover, pero puede ser usado por ti y tu equipo manteniendo [F] para recuperar salud y restablecer las vidas.\nEl botiquín médico es fácil de transportar, y suele ser usado por profesionales asociados con la medicina para llevar consigo suministros médicas y medicamentos para tratar heridas muy graves."
         },
         "ecm_jammer": {
             "name": "Dispositivo ECM",
@@ -116,7 +116,7 @@
         "type_1_armor": {
             "name": "Type I Armor",
             "description": "You gain 10% more armor",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "type_2_armor": {
             "name": "Type II Armor",
@@ -130,12 +130,12 @@
         },
         "reinforced_armor": {
             "name": "Reinforced Armor",
-            "description": "Your armor recovery rate is increased by 10%.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.",
+            "description": "Recuperas la armadura un 10% más rápido.\nCuando te quedas sin armadura, te haces inmune al daño de salud por 2 segundos. Este efecto no puede ocurrir más de una vez dentro de 15 segundos.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "liquid_armor": {
             "name": "Liquid Armor",
-            "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
+            "description": "Recuperas la armadura un 5% adicional más rápido.\nReduce el tiempo de recuperación de la armadura para vos y tu equipo por un 10%.\nNota: los talentos de equipo no se acumulan.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "subtle-1": {
@@ -165,27 +165,27 @@
         },
         "basic_recovery": {
             "name": "Basic Recovery",
-            "description": "Your armor recovery rate is increased by 5%.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "description": "Recuperas la armadura un 5% más rápido.",
+            "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "ambidexterity": {
             "name": "Ambidexterity",
-            "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
+            "description": "Las armas duales tienen una penalidad de -16 de estabilidad.\nRecuperas la armadura un 10% adicional más rápido.\nLa capacidad de munición para tus armas akimbo es incrementada un 50%.",
             "vr_description": "The dash effect is now from 4 up to a maximum of 10."
         },
         "advanced_recovery": {
             "name": "Advanced Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
+            "description": "Recuperas la armadura un 10% adicional más rápido.",
             "vr_description": "The dash effect is now from 6 up to a maximum of 14."
         },
         "expert_recovery": {
             "name": "Expert Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
+            "description": "Recuperas la armadura un 10% adicional más rápido.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "tooth_and_claw": {
             "name": "Tooth and Claw",
-            "description": "Your armor recovery rate is increased by an additional 10%.\nYour armor will recover 1.5 seconds after being broken no matter what the situation.",
+            "description": "Recuperas la armadura un 10% adicional más rápido.\nTu armadura se recuperara 1.5 segundos despues de haberse roto sin importa la situación.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "subtle-2": {
@@ -210,7 +210,7 @@
         },
         "master_recovery": {
             "name": "Master Recovery",
-            "description": "Your armor recovery rate is increased by 10%.",
+            "description": "Recuperas la armadura un 10% más rápido.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "sneaky": {
@@ -240,8 +240,8 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "description": "Cuando estas rodeado por tres enemigos o más, recibís 12% menos de daño de los enemigos.\nTu segundo y cada golpe melee consecutivo dentro de 1 segundo del anterior hará 10 veces el daño normal.",
+            "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "basic_close_combat": {
             "name": "Basic Close Combat",
@@ -279,23 +279,23 @@
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "showdown": {
-            "name": "Showdown",
-            "description": "Killing an enemy at medium range has a 75% chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every 1 second.",
+            "name": "Confrontación",
+            "description": "Matando un enemigo desde medio rango tiene una chance de 75% para propagar pánico entre tus enemigos.\nEl pánico hará que el enemigo tenga miedo incontrolable por unos segundos.\nEsto no puede ocurrir mas de una vez cada 1 segundo.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "medical_supplies": {
             "name": "Medical Supplies",
-            "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
+            "description": "Los bolsos de munición que agarras también dan suministros médicos y te curan de 16 a 24 de vida.\nNo puede ocurrir más de una vez cada 3 segundos.\nSi tu vida actual es mas baja que otro jugador, el efecto de curación del Apostador es incrementada un 20%. El efecto se apila hasta tres veces.",
             "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
         },
         "ammo_give_out": {
             "name": "Ammo Give Out",
-            "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
+            "description": "Cuando recoges munición, provocas un evento de recoger munición que contiene 50% de lo que habías recogido para los otros jugadores del equipo.\nNo puede ocurrir mas de una vez cada 5 segundos.\nGanas 20% más de vida.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
         },
         "sharing_is_caring": {
             "name": "Sharing Is Caring",
-            "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
+            "description": "Cuando te curas de agarrar munición, tus compañeros de equipo también se curan pero el 50% de la cantidad.\nGanas 20% más de vida.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
         },
         "more_healing_1": {
@@ -304,7 +304,7 @@
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
         },
         "more_healing_2": {
-            "name": "More Healing 2",
+            "name": "Más Curación 2",
             "description": "Increase health gained from ammo packs by additional 8.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
@@ -335,22 +335,22 @@
         },
         "koi_irezumi": {
             "name": "Koi Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to 20% armor recovery rate.\nNOTE: Entering this state negates third party regeneration effects.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "description": "La más baja tu vida, lo más rápido recuperas tu armadura. Cuando tu vida esta debajo del 25%, vas a ganar hasta un 20% de índice de recuperación para tu armadura.\nNOTA: Entrar en este estado anula los efectos de regeneración de terceros.",
+            "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "hebi_irezumi": {
             "name": "Hebi Irezumi",
-            "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
+            "description": "La más baja tu vida, lo más rápido sos. Cuando tu vida esta debajo del 25%, vas a ganar hasta un 20% de velocidad.",
             "vr_description": "The dash effect is now from 4 up to a maximum of 10."
         },
         "tora_irezumi": {
             "name": "Tora Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+            "description": "La más baja tu vida, lo más rápido recuperas tu armadura. Cuando tu vida esta debajo del 25%, vas a ganar hasta un 20% de índice de recuperación adicional para tu armadura.",
             "vr_description": "The dash effect is now from 6 up to a maximum of 14."
         },
         "ryu_irezumi": {
             "name": "Ryu Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
+            "description": "La más baja tu vida, lo más rápido recuperas tu armadura. Cuando tu vida esta debajo del 25%, vas a ganar hasta un 20% de índice de recuperación adicional para tu armadura.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "oni_irezumi": {
@@ -386,7 +386,7 @@
         "excitement": {
             "name": "Excitement",
             "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "outburst": {
             "name": "Outburst",
