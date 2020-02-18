@@ -30,7 +30,7 @@
             "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
         },
         "first_aid_kit": {
-            "name": "Pangunang Tulong-Lunas",
+            "name": "Kit ng Pangunang Tulong-Lunas",
             "description": "Ang Kit ng Pangunang Tulong-Lunas ay isang koleksyon ng mga kagamitan upang magamit sa mga pangunahing lunas.\nUpang gamitin ang Kit ng Pangunang Tulong-lunas, kailangan mo na i-hold ang [G] upang mailagay ito. Kapag ito ay nalagay na, hindi ito maaring maigalaw pa, pero ito ay maaring gamitin para sa iyo at ang iyong tauhan gamit ang pag-hold ng [F] para makakuha ulit ng health.\nAng isang nakalagay na Kit ng Pangunang Tulong-lunas ay maaring gamitin ng isang beses at pag ito ay nagamit na, ito ay mawawala."
         },
         "sentry_gun": {
