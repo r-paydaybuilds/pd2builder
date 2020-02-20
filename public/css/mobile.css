@@ -85,12 +85,13 @@ div.footer a:hover {
 
 #description_card a {
   position: absolute;
-  
+
   right: 5%;
   top: 5%;
-    
+
   width: 5vh;
-  height: 5vh;  
+  height: 5vh;
+  cursor: pointer;
 }
 
 #description_card a::before, 

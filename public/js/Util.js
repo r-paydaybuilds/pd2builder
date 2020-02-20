@@ -121,7 +121,24 @@ class Util {
         }
         return parent;
     }
+
+    /**
+     * Tells you if your touch id is in the touch list
+     * @static
+     * @param {TouchList} list 
+     * @param {Number} id
+     * @returns {false|Touch} 
+     */
+    static findTouch(list, id) {
+        for(const touch of list) {
+            if(touch.identifier === id) return touch;
+        }
+        return false;
+    }
 }
+
+Util.vw = document.documentElement.clientWidth/100;
+Util.vh = document.documentElement.clientHeight/100;
 
 /**
  * Map for storing skills that are active
@@ -346,5 +363,140 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-export { Util as default, SkillMap, DBMap, System };
+/**
+ * A class that transform X movement to X scroll
+ */
+class XScrollTransformer {
+    /**
+     * @param {HTMLElement} element 
+     * @param {Number} multiply
+     */
+    constructor(element, multiply = 1, propagate = true) {
+        const stopTab = ev => {
+                if(ev.button == 0) {
+                    ev.preventDefault();
+                    document.removeEventListener("mouseup", stopTab);
+                    document.removeEventListener("mousemove", moveTab);
+                }
+            }, moveTab = ev => {
+                element.scrollBy(ev.movementX * multiply, 0);
+            };
+
+        element.addEventListener("mousedown", ev => {
+            if(ev.button == 0) {
+                document.removeEventListener("mouseup", stopTab);
+                document.removeEventListener("mousemove", moveTab);
+                if(!propagate && ev.target.closest(".pk_deck_cards > div")) ev.stopPropagation();
+                ev.preventDefault();
+                document.addEventListener("mouseup", stopTab);
+                document.addEventListener("mousemove", moveTab, {
+                    passive: true
+                });
+            }
+        });
+    }
+}
+
+/**
+ * @callback MobileEvent
+ * @returns {void}
+ */
+
+class UIEventHandler {
+    /**
+     * 
+     * @param {Object} obj
+     * @param {HTMLElement} obj.element Element to handle
+     * @param {MobileEvent} obj.hold Function for handling element when its being clicked down for 250ms
+     * @param {MobileEvent} [obj.double] Function for handling double tap that means its touch only
+     * @param {MobileEvent} [obj.click] Function for handling a simple click 
+     */
+    constructor({ 
+        click = () => element.dispatchEvent(new MouseEvent("click", { detail: -1 })), 
+        double = () => element.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })), 
+        element, mobile, hold, propagate = false }) {
+
+        let touchId = null, last = [], remaining = [], holding = false, didDouble = false;
+        const start = ev => {
+                if(ev instanceof MouseEvent) {
+                    if(!propagate) ev.stopPropagation();
+                    if(ev.button != 0) return;
+                } else {
+                    ev.stopPropagation();
+                    if(touchId) return;
+                    const touch = ev.touches[0];
+                    touchId = touch.identifier;
+                    last = [touch.clientX, touch.clientY];
+                }
+                remaining = [Util.vw, Util.vh];
+                holding = setTimeout(() => {
+                    holding = true;
+                    removeListeners();
+                    hold();
+                }, 750);
+                removeListeners();
+                element.addEventListener("touchmove", move);
+                element.addEventListener("touchend", stop);
+                if(mobile) {
+                    element.addEventListener("mouseup", stop);
+                    element.addEventListener("mousemove", move);
+                }
+            }, move = ev => {
+                if(ev instanceof MouseEvent) {
+                    remaining[0] -= ev.movementX;
+                    remaining[1] -= ev.movementY;
+                } else {
+                    const touch = Util.findTouch(ev.changedTouches, touchId);
+                    if(!touch) return;
+                    remaining[0] -= Math.abs(touch.clientX - last[0]);
+                    remaining[1] -= Math.abs(touch.clientY - last[1]);
+                    last = [touch.clientX, touch.clientY];
+                }
+                if(remaining > 0) return;
+                clearTimeout(holding);
+                holding = null, touchId = null;
+                removeListeners();
+            }, stop = ev => {
+                if((ev instanceof MouseEvent && ev.button != 0) 
+                || (ev instanceof TouchEvent && Util.findTouch(ev.touches, touchId))) return;
+                ev.stopPropagation();
+                ev.preventDefault();
+                clearTimeout(holding);
+
+                if(ev instanceof MouseEvent) {
+                    removeListeners();
+                    return;
+                }
+
+                if(didDouble) {
+                    didDouble = false;
+                    removeListeners();
+                    double();
+                    return;
+                }
+
+                didDouble = true;
+                setTimeout(() => { 
+                    if(didDouble) {
+                        removeListeners();
+                        didDouble = false;
+                        click();
+                    }
+                }, 250);
+            },
+            removeListeners = () => {
+                element.removeEventListener("touchmove", move);
+                element.removeEventListener("touchend", stop);
+                if(mobile) {
+                    element.removeEventListener("mouseup", stop);
+                    element.removeEventListener("mousemove", move);
+                }
+            };
+        element.addEventListener("touchstart", start);
+        element.addEventListener("touchcancel", () => touchId = null);
+        if(mobile) element.addEventListener("mousedown", start);
+    }
+}
+
+export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler };
 export const { querySelector: $, querySelectorAll: $$, getElementById: $i, getElementsByClassName: $c, getElementsByTagName: $t } = document;

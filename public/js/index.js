@@ -3,7 +3,7 @@ if("serviceWorker" in navigator) {
 }
 
 import Builder from "./Builder.js";
-import Util from "./Util.js";
+import Util, { XScrollTransformer, UIEventHandler } from "./Util.js";
 
 const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
 let defaultLang = "en-us";
@@ -80,10 +80,14 @@ document.onreadystatechange = async () => {
 
     if(builder.mobile) {
         //Detect when you dont click on x part of the document
-        document.onclick = ev => {
-            if(!ev.target.closest("#description_card.active")) builder.gui.DescriptionCard_Show(false);
-            if(!ev.target.closest("#sk_tree_buttons button, sk_tree_button_group")) builder.gui.Tree_ShowSelection(false);
-        };
+        document.addEventListener("click", ev => {
+            if(document.querySelector("#description_card.active") && ev.target.tagName !== "BODY" && !ev.target.closest("#description_card.active")) {
+                builder.gui.DescriptionCard_Show(false);
+            }
+            if(document.querySelector(".sk_tree_button_group.active") && !ev.target.closest("#sk_tree_buttons button, .sk_tree_button_group")) {
+                builder.gui.Tree_ShowSelection(false);
+            }
+        });
 
         //Make the X of description do something
         document.querySelector("#description_card > a").addEventListener("click", () =>
@@ -91,7 +95,33 @@ document.onreadystatechange = async () => {
         );
         
         { //Slide to exit description
-            const desc = document.getElementById("description_card");
+            const desc = document.getElementById("description_card"),
+                descStop = ev => {
+                    for(const touch of ev.targetTouches) {
+                        if(touch.identifier === currentTouch) return;
+                    }
+                    if(ev.touches.length > 0) {
+                        currentTouch = ev.touches.item(0).identifier;
+                    } else { 
+                        currentTouch = null;
+                        if(remaining <= desc.clientWidth/-3) {
+                            builder.gui.DescriptionCard_Show(false);
+                        } else {
+                            builder.gui.DescriptionCard_Show();
+                        }
+                        desc.removeEventListener("touchend", descStop);
+                        desc.removeEventListener("touchmove", descMove);
+                    }
+                }, descMove = ev => {
+                    ev.preventDefault();
+                    for(const touch of ev.changedTouches) {
+                        if(touch.identifier !== currentTouch) continue;
+                        remaining = -(touch.clientX - startX);
+                        if(remaining > 0) remaining = 0;
+                        builder.gui.DescriptionCard_Analog(remaining);
+                        return;
+                    }
+                };
             let remaining = 0, startX = 0, currentTouch = null;
 
             desc.addEventListener("touchstart", ev => {
@@ -100,34 +130,10 @@ document.onreadystatechange = async () => {
                 currentTouch = touch.identifier;
 
                 startX = touch.clientX;
-            });
-
-            desc.addEventListener("touchmove", ev => {
-                ev.preventDefault();
-                if(currentTouch === null) return;
-                for(const touch of ev.changedTouches) {
-                    remaining = -(touch.clientX - startX);
-                    if(remaining > 0) remaining = 0;
-                    builder.gui.DescriptionCard_Analog(remaining);
-                    return;
-                }
-            });
-
-            desc.addEventListener("touchend", ev => {
-                if(currentTouch === null) return;
-                for(const touch of ev.targetTouches) {
-                    if(touch.identifier === currentTouch) return;
-                }
-                if(ev.touches.length > 0) {
-                    currentTouch = ev.touches.item(0).identifier;
-                } else { 
-                    currentTouch = null;
-                    if(remaining <= desc.clientWidth/-3) {
-                        builder.gui.DescriptionCard_Show(false);
-                    } else {
-                        builder.gui.DescriptionCard_Show();
-                    }
-                }
+                desc.addEventListener("touchend", descStop, {
+                    passive: true
+                });
+                desc.addEventListener("touchmove", descMove);
             });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
@@ -158,6 +164,8 @@ document.onreadystatechange = async () => {
             );
             trees[index + 1].click();
         });
+
+        new XScrollTransformer(document.getElementById("tab_page_buttons"), -1);
     }
 
     // Tab page navigation //
@@ -212,14 +220,13 @@ document.onreadystatechange = async () => {
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
         // Values for touch: double and successHolding being booleans and holding an ID for timeouts
-        let double = false, successHolding = false, holding;
+        let successHolding = false;
 
         // On click event, add skill
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
-                ev.preventDefault();
+                ev.stopPropagation();
                 return;
             }
 
@@ -291,57 +298,33 @@ document.onreadystatechange = async () => {
             }
         });
 
-        // when you stop touching the screen, check for holding and double tap
-        e.addEventListener("touchend", ev => {
-            ev.preventDefault();
-            clearTimeout(holding);
-            if(successHolding) {
-                successHolding = false;
-                return;
-            }
-            if(double) {
+        new UIEventHandler({
+            hold: () => {
+                successHolding = true;
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
+                builder.gui.Skill_DisplayDescription(id); 
+            },
+            double: () => {
                 const skill = builder.exp.skills.get(e.firstElementChild.id);
                 if(skill) {
                     Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })));
                 } else {
                     [0,1].forEach(() => e.click());
                 }
-                double = false;
-                return;
-            }
-            double = true;  
-            setTimeout(() => { 
-                if(double) {
-                    double = false;
-                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
-                }
-            }, 250);
-        }, false);
-
-        // Start timeout for holding and holding mouse for mobile too
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
-                successHolding = true;
-
-                const id = e.firstElementChild.id; 
-                if(builder.mobile) builder.gui.DescriptionCard_Show();
-                
-                builder.gui.Skill_DisplayDescription(id); 
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Perk deck buttons //
     for(const e of document.getElementsByClassName("pk_deck")) {
         // Values for successHolding being a boolean and holding an ID for timeouts
-        let successHolding = false, holding;
+        let successHolding = false;
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -359,7 +342,7 @@ document.onreadystatechange = async () => {
                 unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
             });
             
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used perk ${id}`,
@@ -368,72 +351,46 @@ document.onreadystatechange = async () => {
             }
         });
 
-        if(!builder.mobile) e.addEventListener("mouseenter", () => {
-            const id = e.id; 
-            if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
-                builder.gui.PerkDeck_DisplayDescription(id); 
-            }
-        });
+        if(!builder.mobile) {
+            e.addEventListener("mouseenter", () => {
+                const id = e.id; 
+                if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
+                    builder.gui.PerkDeck_DisplayDescription(id); 
+                }
+            });
+        } 
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            double: () => null,
+            hold: () => {
                 successHolding = true;
-
                 let id = e.firstElementChild.id; 
                 if(builder.mobile) {
                     builder.gui.DescriptionCard_Show();
                     id = e.id;
                 }
                 builder.gui.PerkDeck_DisplayDescription(id); 
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     } 
 
     // Perk deck cards highlight // 
     if(builder.mobile) {
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
-            let successHolding = false, holding;
-    
-            const start = ev => {
-                if(ev instanceof MouseEvent && ev.button != 0) return;
-                holding = setTimeout(() => {
-                    ev.preventDefault();
-                    ev.stopPropagation();
-                    successHolding = true;
-    
+            new XScrollTransformer(e.parentElement, -0.5, false);
+            new UIEventHandler({
+                click: () => e.parentElement.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
+                hold: () => {
                     builder.gui.DescriptionCard_Show();
                     builder.gui.PerkCard_DisplayDescription(e); 
-                }, 750);
-            };
-            const end = ev => {
-                if(ev instanceof MouseEvent && ev.button != 0) return;
-                clearTimeout(holding);
-                if(successHolding) {
-                    ev.preventDefault();
-                    ev.stopPropagation();
-                    successHolding = false;
-                    return;
-                }
-            };
-
-            e.addEventListener("mousedown", start);
-            e.addEventListener("touchstart", start);
-
-            e.addEventListener("mouseup", end);
-            e.addEventListener("touchend", end);
+                },
+                double: () => null,
+                mobile: true,
+                element: e,
+                propagate: true
+            });
         });
     } else {
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
@@ -445,17 +402,27 @@ document.onreadystatechange = async () => {
             e.addEventListener("mouseleave", () => {
                 builder.gui.PerkCard_HoveringHighlightOff(); 
             });
+
+            new UIEventHandler({
+                click: () => e.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
+                hold: () => {
+                    builder.gui.PerkCard_DisplayDescription(e); 
+                },
+                double: () => null,
+                mobile: false,
+                element: e
+            });
         });
     }
 
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
-        let holding, successHolding = false;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
+                ev.stopPropagation();
                 return;
             }
 
@@ -467,7 +434,7 @@ document.onreadystatechange = async () => {
             builder.gui.Armor_Select(e); 
             builder.gui.Armor_DisplayDescriptionCard(id);
 
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used armor ${id}`,
@@ -480,37 +447,26 @@ document.onreadystatechange = async () => {
             builder.gui.Armor_DisplayDescriptionCard(e.firstElementChild.id);
         });
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () => {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Armor_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            double: () => null,
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Throwables icon buttons // 
     for(const e of document.getElementsByClassName("th_icon")) {
-        let holding, successHolding = false;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -521,7 +477,7 @@ document.onreadystatechange = async () => {
             builder.exp.throwable = id;
             builder.gui.Throwable_Select(e);
 
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(builder.lang.used, builder.exp),
                     `used throwable ${id}`,
@@ -532,37 +488,26 @@ document.onreadystatechange = async () => {
 
         if(!builder.mobile) e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () =>  {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Throwable_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            double: () => null,
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Deployables icon buttons //
     for(const e of document.getElementsByClassName("dp_icon")) {
-        let double = false, successHolding = false, holding;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -609,40 +554,16 @@ document.onreadystatechange = async () => {
             builder.gui.Deployable_DisplayDescriptionCard(e.firstElementChild.id)
         );
 
-        e.addEventListener("touchend", ev => {
-            ev.preventDefault();
-            clearTimeout(holding);
-            if(successHolding) {
-                successHolding = false;
-                return;
-            }
-            if(double) {
-                double = false;
-                e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 }));
-                return;
-            }
-            double = true;  
-            setTimeout(() => { 
-                if(double) {
-                    double = false;
-                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
-                }
-            }, 250);
-        }, false);
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () => {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Deployable_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Share build section //
