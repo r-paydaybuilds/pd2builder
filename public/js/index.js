@@ -10,7 +10,7 @@ let defaultLang = "en-us";
 
 const builder = new Builder(window.innerWidth < 1003);
 
-//Change to mobile version if browser was resized to a very small size
+// Change from desktop or mobile version if screen is too big or too small
 window.addEventListener("resize", () => {
     const url = new URL(window.location.href);
     if(!builder.mobile && window.innerWidth < 1003) {
@@ -74,7 +74,7 @@ document.onreadystatechange = async () => {
             const choosenLang = e.target.value;
             sessionStorage.setItem("lang", choosenLang);
             builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
-            window.history.pushState(Util.makeState(builder.lang.used, builder.exp), `language changed to ${choosenLang}`);
+            window.history.pushState(Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current), `language changed to ${choosenLang}`);
         });
     }
 
@@ -181,6 +181,7 @@ document.onreadystatechange = async () => {
             builder.gui.HandleRequirements(e.getAttribute("id").replace(/tab_|_button/g, ""));
 
             builder.gui.Tab_ChangeTo(targetTab); 
+            window.sessionStorage.setItem("curTab", targetTab);
         });
     }); 
 
@@ -248,7 +249,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                         `added skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -279,7 +280,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(builder.lang.used, builder.exps, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -344,7 +345,7 @@ document.onreadystatechange = async () => {
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -436,7 +437,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                     `used armor ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -479,7 +480,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                     `used throwable ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -523,7 +524,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -540,7 +541,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                         `used perk ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -602,6 +603,10 @@ document.onreadystatechange = async () => {
                 sessionStorage.setItem("lang", value);
                 document.getElementById("langDrop").value = value;
                 builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
+                break;
+            case "tab":
+                sessionStorage.setItem("curTab", value);
+                builder.gui.Tab_ChangeTo(value);
                 break;
             case "skills":
                 for(const [key, value2] of [...builder.exp.skills].reverse()) {
@@ -674,9 +679,10 @@ document.onreadystatechange = async () => {
 
     // Load language
     builder.loadLanguage(await fetchLang, curLang);
+    
 
     // Prepare document when first opening // 
-    builder.gui.Tab_ChangeTo("tab_skills_page"); 
+    builder.gui.Tab_ChangeTo("tab_skills_page");
     builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
 
     builder.gui.Tree_ChangeTo("sk_mastermind_container");
@@ -686,6 +692,7 @@ document.onreadystatechange = async () => {
         builder.io.LoadBuildFromIterable(new URLSearchParams(window.location.search));
     }
     window.history.replaceState(Util.makeState(curLang, builder.exp), "PD2 Builder");
+    builder.gui.Tab_ChangeTo(window.sessionStorage.getItem("curTab") || "tab_skills_page");
 
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);

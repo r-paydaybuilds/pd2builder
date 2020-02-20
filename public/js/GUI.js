@@ -57,6 +57,14 @@ export default class GUI {
     Tab_IsOn(tabId) {
         return document.getElementById(tabId).offsetParent !== null; 
     }
+    
+    /**
+     * Gives current tab
+     * @returns {String} ID of current tab
+     */
+    get Tab_Current() {
+        return document.querySelector(".tab_selected").id.replace("_button", "_page");
+    }
 
     /** 
      * Opens/closes the description card, the place where every item's description is shown on mobile 

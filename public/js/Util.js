@@ -74,15 +74,16 @@ class Util {
         return params;
     }
 
-    static makeState(lang, exp) {
+    static makeState(lang, exp, tab) {
         return {
-            lang: lang,
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
             throwable: exp.throwable,
             deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary
+            deployableSecondary: exp.deployableSecondary,
+            tab,
+            lang
         };
     }
 
