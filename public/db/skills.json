@@ -69,16 +69,7 @@
         "ace": 4,
         "tier": 2,
         "subtree": "controller",
-        "tree": "mastermind",
-        "stats": {
-            "basic": [
-                {
-                    "type": "shout",
-                    "value": 1.5,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "mastermind"
     },
     "joker": {
         "name": "Joker",
@@ -234,16 +225,7 @@
         "ace": 3,
         "tier": 1,
         "subtree": "tank",
-        "tree": "enforcer",
-        "stats": {
-            "basic": [
-                {
-                    "type": "armorRecoveryRate",
-                    "value": 1.15,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "enforcer"
     },
     "die_hard": {
         "name": "Die Hard",
@@ -252,20 +234,7 @@
         "ace": 4,
         "tier": 2,
         "subtree": "tank",
-        "tree": "enforcer",
-        "stats": {
-            "ace": [
-                {
-                    "type": "armor",
-                    "value": 20,
-                    "whitelist": [
-                        "light_ballistic",
-                        "ballistic",
-                        "heavy_ballistic"
-                    ]
-                }
-            ]
-        }
+        "tree": "enforcer"
     },
     "transporter": {
         "name": "Transporter",
@@ -283,21 +252,7 @@
         "ace": 6,
         "tier": 3,
         "subtree": "tank",
-        "tree": "enforcer",
-        "stats": {
-            "basic": [
-                {
-                    "type": "armor",
-                    "value": 1.25,
-                    "multiply": true
-                },
-                {
-                    "type": "crewArmor",
-                    "value": 1.25,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "enforcer"
     },
     "bullseye": {
         "name": "Bullseye",
@@ -318,16 +273,7 @@
         "tree": "enforcer",
         "unlocks": [
             { "type": "armor", "name": "ictv", "whenState": 2 }
-        ],
-        "stats": {
-            "basic": [
-                {
-                    "type": "armor",
-                    "value": 1.30,
-                    "multiply": true
-                }
-            ]
-        }
+        ]
     },
     "scavenger": {
         "name": "Scavenger",

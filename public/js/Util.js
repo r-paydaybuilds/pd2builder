@@ -215,7 +215,7 @@ class DBMap extends Map {
                 fetch(`./db/${key}.json`)
                     .then( res => res.json() )
                     .then( json => {
-                        if(key === "skills" || key === "perk_cards") {
+                        if(key === "skills" || key === "perk_decks") {
                             for(const prop in json) {
                                 if(!json[prop].stats) continue;
                                 if(key === "skills") {
@@ -238,7 +238,6 @@ class DBMap extends Map {
      * @typedef {Object} StatModifier
      * @property {String} type The stat that is being modified
      * @property {String|Number} value Value to apply if is number. Value to make a function out of if it's an string (needs to return a number)
-     * @property {Boolean=} multiply Flag to check if you want to multiply the value
      * @property {String[]=} arguments Arguments that are stat names to apply to function if value is String
      * @property {String[]=} whitelist Armors that are in the whitelist
      * @property {String[]=} blacklist Armors that are in the blacklist
@@ -251,13 +250,7 @@ class DBMap extends Map {
     static processModifiers(...mods) {
         for(const mod of mods) {
             if(!mod) continue;
-            if(typeof mod.value === "number") {
-                if(mod.multiply) {
-                    mod.exec = x => x * mod.value;
-                } else {
-                    mod.exec = x => x + mod.value;
-                }
-            } else {
+            if(typeof mod.value === "string") {
                 const func = Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
                 if(mod.multiply) {
                     mod.exec = (x, ...args) => x * func.apply({}, args);
