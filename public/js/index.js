@@ -571,24 +571,42 @@ document.onreadystatechange = async () => {
         const searchBox = document.getElementById("primary_search"),
             select = document.getElementById("primary_select");
     
+        // Add search bar functionality
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
-            const text = ev.target.value.toLowerCase();
-            let contains = null;
+            const text = ev.target.value.toLowerCase(), contains = [];
+            let selected = null;
+            //If empty text, then dont do anything
             if(!text) {
+                for(const option of select.options) {
+                    option.hidden = false;
+                }
                 select.options[0].selected = true;
                 return;
             }
+            //Find similar text to what was just inputted
             for(const option of select.options) {
+                option.hidden = false;
                 if(option.disabled) continue;
-                if(option.label.toLowerCase().includes(text) && !contains) {
-                    contains = option;
+                if(option.label.toLowerCase().includes(text)) {
+                    contains.push(option);
                 }
-                if(option.label.toLowerCase().startsWith(text)) {
+                if(option.label.toLowerCase().startsWith(text) && !selected) {
                     option.selected = true;
-                    return;
+                    selected = true;
                 }
             }
-            if(contains) contains.selected = true;
+            //Hide all elements that are not similar to what was inputted
+            if(contains.length > 0) {
+                if(!selected) contains[0].selected = true;
+                for(const option of select.options) {
+                    if(option.disabled) {
+                        option.hidden = true;
+                        continue;
+                    }
+                    if(contains.some(opt => opt.value === option.value)) continue;
+                    option.hidden = true;
+                }
+            }
         });
     }
 
