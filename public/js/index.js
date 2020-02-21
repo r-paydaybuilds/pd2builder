@@ -567,6 +567,31 @@ document.onreadystatechange = async () => {
         });
     }
 
+    {
+        const searchBox = document.getElementById("primary_search"),
+            select = document.getElementById("primary_select");
+    
+        if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
+            const text = ev.target.value.toLowerCase();
+            let contains = null;
+            if(!text) {
+                select.options[0].selected = true;
+                return;
+            }
+            for(const option of select.options) {
+                if(option.disabled) continue;
+                if(option.label.toLowerCase().includes(text) && !contains) {
+                    contains = option;
+                }
+                if(option.label.toLowerCase().startsWith(text)) {
+                    option.selected = true;
+                    return;
+                }
+            }
+            if(contains) contains.selected = true;
+        });
+    }
+
     // Share build section //
     document.getElementById("io_copy_btn").addEventListener("click", () => {
         const e = document.getElementById("io_share_link"); 
