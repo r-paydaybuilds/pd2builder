@@ -40,7 +40,7 @@ String.prototype.toCamelCase = function() {
 };
 
 Number.prototype.maybeRound = function(precision) {
-    return Math.round(this) === this ? this : this.toFixed(precision);
+    return parseFloat(this.toFixed(precision));
 };
 
 /**
