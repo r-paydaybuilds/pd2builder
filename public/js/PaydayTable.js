@@ -3,6 +3,12 @@
  * @extends Map
  */
 export default class PaydayTable extends Map {
+    /**
+     * @param {Iterable<String>} columnTypes Name for each column
+     * @param {Iterable<String>} rowTypes Name for each row
+     * @param {Object} options
+     * @param {String} options.tableClass  
+     */
     constructor(columnTypes = [], rowTypes = [], options = {}) {
         super();
 
@@ -63,7 +69,7 @@ export default class PaydayTable extends Map {
     /**
      * Adds rows to the column
      * @param {String} columnName The column that will have it's values changed
-     * @param {Array<Array<Object>>} rows A 2d array which contains name of row and value 
+     * @param {Iterable<Iterable<Object>>} rows A 2d array which contains name of row and value 
      * @returns {PaydayTable}
      */
     addRows(columnName, [...rows]) {
@@ -81,7 +87,7 @@ export default class PaydayTable extends Map {
     /**
      * Adds columns to the rows
      * @param {String} rowName The row that will have it's values changed
-     * @param {Array<Array<Object>>} columns A 2d array which contains name of column and value 
+     * @param {Iterable<Iterable<Object>>} columns A 2d array which contains name of column and value 
      * @returns {PaydayTable}
      */
     addColumns(rowName, [...columns]) {
@@ -129,14 +135,18 @@ export default class PaydayTable extends Map {
         return html;
     }
 
+    /**
+     * Translates the table based on an object with key-value
+     * @param {Object<String>} obj Each property should be an id of the static rows/columsn and have a value that is the translation
+     */
     translate(obj = {}) {
         const staticRows = this.get("");
-        for(const [key, value] of Object.entries(obj.rows)) {
-            if(staticRows.has(key)) staticRows.set(key, value);
+        for(const key in obj.rows) {
+            if(staticRows.has(key)) staticRows.set(key, obj.rows[key]);
         }
         
-        for(const [key, value] of Object.entries(obj.columns)) {
-            if(this.columnNames.has(key)) this.columnNames.set(key, value);
+        for(const key in obj.columns) {
+            if(this.columnNames.has(key)) this.columnNames.set(key, obj.columns[key]);
         }
         return this;
     }
