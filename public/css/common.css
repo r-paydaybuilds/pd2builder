@@ -15,8 +15,6 @@ html {
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-
-  --color: #ddd transparent transparent transparent;
 }
 
 *,
@@ -247,35 +245,43 @@ select {
 }
 
 #loading_spinner > div {
-  position: absolute;
-
-  width: 100px;
-  height: 100px;
-
-  border: 12px solid #ddd;
-  border-radius: 50%;
-  border-color: var(--color);
-
-
-  animation: spin 2s infinite;
+  width: 5em;
+  height: 5em;
+  border: 0.3em solid;
+  border-radius: 80%;
+  animation: 1s spin, 2.3s color, 1.7s width;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-#loading_spinner > div:nth-child(1) {
-  animation-delay: -0.25s;
+@keyframes spin { 
+  to { 
+    transform: rotate(1turn); 
+  } 
 }
-
-#loading_spinner > div:nth-child(2) {
-  animation-delay: -0.1s;
-}
-
-@keyframes spin {
-  0% { 
-    transform: rotate(0deg); 
+@keyframes color {
+  0% {
+    border-color: transparent transparent transparent #57a6ff;
   }
-  100% { 
-    transform: rotate(360deg); 
+  25% {
+    border-color: #6d83ac transparent transparent transparent;
+  }
+  50% {
+    border-color: transparent #4f51a3 transparent transparent;
+  }
+  75% {
+    border-color: transparent transparent #8d5dfc transparent;
+  }
+  100% {
+    border-color: transparent transparent transparent #57a6ff;
   }
 }
+@keyframes width {
+  50% {
+    border-width: 0.13em;
+  }
+}
+
 
 /**********************************/
 /*          TAB PAGE CSS          */
