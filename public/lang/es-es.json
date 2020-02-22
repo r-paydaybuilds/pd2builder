@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "Cuando estas rodeado por tres enemigos o más, recibís 12% menos de daño de los enemigos.\nTu segundo y cada golpe melee consecutivo dentro de 1 segundo del anterior hará 10 veces el daño normal.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "basic_close_combat": {
@@ -1137,7 +1137,9 @@
             "p1": "Este sitio fue hecho posible por el esfuerzo combinado de la comunidad de r/paydaybuilds.",
             "p2": "Contribuidores del proyecto pueden ser encontrados &{acá}.",
             "license": "El software esta licensiado bajo la &{licensia MIT}. Hace lo que quieras con él, pero por favor respeta su naturaleza de codigo abierto.",
-            "reach": "Hablanós por: "
+            "reach": "Hablanós por: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "Inyector",
             "description": "Cuando es consumido el usuario deja de sentir dolor y se hace intrépido. La falta de dolor le permite al usuario desmandarse al corazón de las batallas mas tiempo que cualquier otro y la falta de miedo lo hace mas aterrador y amenaza obvia a sus enemigos."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }
