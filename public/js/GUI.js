@@ -502,26 +502,35 @@ export default class GUI {
         const desc = document.querySelector("#description_container, .arm_description");
         const arm = this.builder.dbs.get("armors").get(armorId);
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
-        const lang = this.builder.lang.get("system.armors.table");
+        const lang = this.builder.lang.get("system.armors.table"),
+            armStats = Object.entries(arm.stats);
 
         let html = `<p class="description_title">${this.builder.lang.get(`armors.${armorId}`).toUpperCase()}`;
 
 
         if(!oldArm) {
             html +=  "</p>" + new PaydayTable(["selected"], Object.keys(arm.stats), { tableClass: "armor_not_chosen" })
-                .addRows("selected", Object.entries(arm.stats))
+                .addRows("selected", armStats)
                 .translate(lang)
                 .toHTML();
         } else if(armorId === this.builder.exp.armor) {
+            const modified = this.builder.stats.getStats(...armStats);
+            const modify = [];
+            for(let i = 0; i < modified.length; i++) {
+                const stat = modified[i];
+                modify.push([stat[0], stat[1] - armStats[i][1]]);
+            }
             html += `<br><span>${this.builder.lang.get("system.equipped")}</span></p>` 
             + new PaydayTable(["total", "base", "skill"], Object.keys(arm.stats), { tableClass: "armor_details" })
-                .addRows("base", Object.entries(arm.stats))
+                .addRows("base", armStats)
+                .addRows("total", modified.map(stat => [stat[0], stat[1].maybeRound(1)] ))
+                .addRows("skill", modify.map(val => [val[0], val[1].maybeRound(1)] ))
                 .translate(lang)
                 .toHTML();
         } else {
             html += "</p>" + new PaydayTable(["equipped", "selected"], Object.keys(arm.stats), { tableClass: "armor_compare" })
                 .addRows("equipped", Object.entries(oldArm.stats))
-                .addRows("selected", Object.entries(arm.stats))
+                .addRows("selected", armStats)
                 .compare("equipped", "selected")
                 .translate(lang)
                 .toHTML();

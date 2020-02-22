@@ -12,6 +12,14 @@
             "testudo",
             "fast_and_furious",
             "hostage_situation"
+        ],
+        "stats": [
+            {
+                "id": 2,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.1
+            }
         ]
     },
     "muscle": {
@@ -27,6 +35,14 @@
             "disturbing_the_peace",
             "fast_and_furious",
             "800-pound_gorilla"
+        ],
+        "stats": [
+            {
+                "id": 9,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.8
+            }
         ]
     },
     "armorer": {
@@ -42,6 +58,14 @@
             "reinforced_armor",
             "fast_and_furious",
             "liquid_armor"
+        ],
+        "stats": [
+            {
+                "id": 3,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.35
+            }
         ]
     },
     "rogue": {
@@ -87,6 +111,15 @@
             "expert_composure",
             "fast_and_furious",
             "master_recovery"
+        ],
+        "stats": [
+            {
+                "id": 4,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.65,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
+            }
         ]
     },
     "burglar": {
@@ -135,7 +168,15 @@
             "fast_and_furious",
             "showdown"
         ],
-        "dlc": "Hotline Miami 2 Deluxe"
+        "dlc": "Hotline Miami 2 Deluxe",
+        "stats": [
+            {
+                "id": 5,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.2
+            }
+        ]
     },
     "gambler": {
         "name": "Gambler", 
@@ -150,6 +191,14 @@
             "more_healing_1",
             "fast_and_furious",
             "more_healing_2"
+        ],
+        "stats": [
+            {
+                "id": 10,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.4
+            }
         ]
     },
     "grinder": {
@@ -166,7 +215,15 @@
             "fast_and_furious",
             "euphoria"
         ],
-        "dlc": "Sokol Character Pack"
+        "dlc": "Sokol Character Pack",
+        "stats": [
+            {
+                "id": 11,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.4
+            }
+        ]
     },
     "yakuza": {
         "name": "Yakuza", 
@@ -197,6 +254,14 @@
             "awakening_earth",
             "fast_and_furious",
             "the_perfect_line"
+        ],
+        "stats": [
+            {
+                "id": 12,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.4
+            }
         ]
     },
     "maniac": {
@@ -228,7 +293,21 @@
             "fast_and_furious",
             "lust_for_life"
         ],
-        "dlc": "Sydney Character Pack"
+        "dlc": "Sydney Character Pack",
+        "stats": [
+            {
+                "id": 7,
+                "type": "armor",
+                "part": "armorFromHealthRatio",
+                "value": 1.2
+            },
+            {
+                "id": 13,
+                "type": "health",
+                "part": "healthToArmor",
+                "value": -0.5
+            }
+        ]
     },
     "biker": {
         "name": "Biker", 
@@ -263,7 +342,15 @@
         "unlocks": [
             { "type": "throwable", "name": "injector" }
         ],
-        "dlc": "Scarface Character Pack"
+        "dlc": "Scarface Character Pack",
+        "stats": [
+            {
+                "id": 14,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.8
+            }
+        ]
     },
     "sicario": {
         "name": "Sicario", 
@@ -299,6 +386,21 @@
         ],
         "unlocks": [
             { "type": "throwable", "name": "stoic_hip_flask" }
+        ],
+        "stats": [
+            {
+                "id": 8,
+                "type": "armor",
+                "part": "armorToHealth",
+                "value": -1
+            },
+            {
+                "id": 15,
+                "type": "health",
+                "part": "healthFromArmor",
+                "arguments": ["armorCore"],
+                "value": "armorCore"
+            }
         ]
     },
     "tag_team": {
@@ -318,7 +420,15 @@
         "unlocks": [
             { "type": "throwable", "name": "gas_dispenser" }
         ],
-        "dlc": "H3H3 Character Pack"
+        "dlc": "H3H3 Character Pack",
+        "stats": [
+            {
+                "id": 16,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.4
+            }
+        ]
     },
     "hacker": {
         "name": "Hacker", 
@@ -336,6 +446,14 @@
         ],
         "unlocks": [
             { "type": "throwable", "name": "pocket_ecm_device" }
+        ],
+        "stats": [
+            {
+                "id": 17,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
+            }
         ]
     }
 }

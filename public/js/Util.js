@@ -39,6 +39,10 @@ String.prototype.toCamelCase = function() {
     return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
 };
 
+Number.prototype.maybeRound = function(precision) {
+    return Math.round(this) === this ? this : this.toFixed(precision);
+}
+
 /**
  * A class that should be filled with absolutely not useless stuff
  * @static
@@ -236,11 +240,14 @@ class DBMap extends Map {
     /**
      * The unlocks of the object containing the properties of the type above for it to be unlocked
      * @typedef {Object} StatModifier
+     * @property {Number} id Unique number for override (simplest way i though to do it tbh)
      * @property {String} type The stat that is being modified
+     * @property {String} part In what part of the formula it is
      * @property {String|Number} value Value to apply if is number. Value to make a function out of if it's an string (needs to return a number)
      * @property {String[]=} arguments Arguments that are stat names to apply to function if value is String
      * @property {String[]=} whitelist Armors that are in the whitelist
      * @property {String[]=} blacklist Armors that are in the blacklist
+     * @property {Number[]=} overrides Modifiers that overrides
      */
 
     /**
@@ -251,12 +258,7 @@ class DBMap extends Map {
         for(const mod of mods) {
             if(!mod) continue;
             if(typeof mod.value === "string") {
-                const func = Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
-                if(mod.multiply) {
-                    mod.exec = (x, ...args) => x * func.apply({}, args);
-                } else {
-                    mod.exec = (x, ...args) => x + func.apply({}, args);
-                }
+                return Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
             }
         }
     }

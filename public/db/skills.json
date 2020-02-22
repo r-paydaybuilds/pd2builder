@@ -234,7 +234,18 @@
         "ace": 4,
         "tier": 2,
         "subtree": "tank",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "stats": {
+            "aced": [
+                {
+                    "id": 1,
+                    "type": "armor",
+                    "part": "armMod",
+                    "value": 20,
+                    "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
+                }    
+            ]
+        }
     },
     "transporter": {
         "name": "Transporter",
@@ -273,7 +284,17 @@
         "tree": "enforcer",
         "unlocks": [
             { "type": "armor", "name": "ictv", "whenState": 2 }
-        ]
+        ],
+        "stats": {
+            "basic": [
+                {
+                    "id": 6,
+                    "type": "armor",
+                    "part": "armBonus",
+                    "value": 0.30
+                }
+            ]
+        }
     },
     "scavenger": {
         "name": "Scavenger",
@@ -824,6 +845,16 @@
         "ace": 8,
         "tier": 4,
         "subtree": "brawler",
-        "tree": "fugitive"
+        "tree": "fugitive",
+        "stats": {
+            "basic": [
+                {
+                    "id": 18,
+                    "type": "health",
+                    "part": "healthFrenzy",
+                    "value": -0.7
+                }
+            ]
+        }
     }
 }
