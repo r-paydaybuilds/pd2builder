@@ -15,6 +15,8 @@ html {
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+
+  --color: #ddd transparent transparent transparent;
 }
 
 *,
@@ -232,6 +234,48 @@ select {
   background-size: 15px 15px;
 }
 
+#loading_spinner {
+  position: fixed;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+#loading_spinner > div {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  border: 12px solid #ddd;
+  border-radius: 50%;
+  border-color: var(--color);
+
+
+  animation: spin 2s infinite;
+}
+
+#loading_spinner > div:nth-child(1) {
+  animation-delay: -0.25s;
+}
+
+#loading_spinner > div:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
 
 /**********************************/
 /*          TAB PAGE CSS          */

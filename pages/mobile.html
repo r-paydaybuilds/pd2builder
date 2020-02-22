@@ -7,6 +7,18 @@
         url.pathname = url.pathname.replace("mobile.html", "");
         window.location.replace(url);
       }
+      {
+        const num = Math.floor(Math.random() * 4);
+        let string = "";
+        for(let i = 0; i < 4; i++) {
+            if(num === i) {
+                string += "#ddd ";
+            } else {
+                string += "transparent ";
+            }
+        }
+        document.querySelector("html").style.setProperty("--color", string);
+      }
     </script>
     <meta charset="utf-8">
     <meta name="language" content="english"> 
@@ -55,6 +67,12 @@
           <a href="bigoil.html" data-lang="system.bigoil">Big Oil Engine Calc</a>
         </div>
       </div>
+    </div>
+
+    <div id="loading_spinner">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
 
     <!-- Tab selector -->
@@ -795,9 +813,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div id="loading_spinner" style="display: none;">
-            <div class="spinner-border"></div>
           </div>
         </div>
       </div>
