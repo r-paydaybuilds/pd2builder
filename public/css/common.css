@@ -580,6 +580,23 @@ select {
 }
 
 
+/**********************************/
+/*       PRIMARY WEAPON CSS       */
+/**********************************/
+
+#pr_page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+#primary_search,
+#primary_select {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 230px;
+}
+
 
 /**********************************/
 /*          SAVE/LOAD CSS         */
