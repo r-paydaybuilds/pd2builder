@@ -94,17 +94,19 @@ export default class Stats {
         const modifiers = [], 
             perkDeck = this.builder.dbs.get("perk_decks").get(this.builder.exp.perkDeck),
             skills = this.builder.exp.skills,
-            armor = this.builder.exp.armor;
+            armor = this.builder.exp.armor,
+            skillDB = this.builder.dbs.get("skills");
 
         if(perkDeck && perkDeck.stats) {
             modifiers.push(...perkDeck.stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
         }
         
         for(const [id, { state }] of skills) {
-            const skill = this.builder.dbs.get(id);
-            modifiers.push(...skill.stats.basic.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            const skill = skillDB.get(id);
+            if(!skill.stats) continue;
+            if(skill.stats.basic) modifiers.push(...skill.stats.basic.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
             if(state == 1) continue;
-            modifiers.push(...skill.stats.ace.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            if(skill.stats.ace) modifiers.push(...skill.stats.ace.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
         }
 
         const over = [];
