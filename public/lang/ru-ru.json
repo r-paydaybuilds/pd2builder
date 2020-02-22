@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Медицинская сумка",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
+            "description": "Медицинская сумка - это переносная сумка, обычно используемая врачами или другими медиками для хранения медикаментов и медицинских принадлежностей.\nЧтобы использовать медицинскую сумку, Вам нужно установить её, зажав [G]. После установки её нельзя переместить, но можно использовать Вам и Вашим напарникам нажатием [F], чтобы восстановить здоровье. Каждый раз при использовании медицинской сумки вы будите сбрасывать счётчик падений до нуля. Тем самым, вы отсрочите своё путешествие под стражу.\nМедицинскую сумку можно использовать ограниченное количество раз. Она исчезнет после опустошения. Вы можете увидеть сколько еще раз можно использовать медицинскую сумку, посмотрев на неё."
         },
         "ecm_jammer": {
             "name": "Генератор помех",
@@ -304,7 +304,7 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "more_healing_2": {
-            "name": "More Healing 2",
+            "name": "Больше здоровья 2",
             "description": "Количество здоровья, получаемого из боеприпасов, оставленных противниками, увеличено еще на 8.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
@@ -560,7 +560,7 @@
         },
         "code_glitch": {
             "name": "Глюк в системе",
-            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+            "description": "Разблокирует и позволяет взять с собой карманный генератор помех.\nЕсли вы смените набор перков на другой, карманный генератор помех будет недоступен для использования. Карманный генератор помех использует слот для метательного оружия, но вы можете взять вместо него что-нибудь другое. Чтобы воспользоваться карманным генератором помех, достаточно нажать на кнопку для метательного оружия.\nЕсли генератор помех был использован до поднятия тревоги, то он отключит все пейджеры и электронику на 6 секунд. Использование генератора помех после поднятия тревоги будет генерировать поле, которое имеет шанс оглушить противников на 6 секунд.\nКарманный генератор помех имеет 2 заряда с 100 секундным временем восстановления, но каждое убийство уменьшает время восстановления на 6 секунд."
         },
         "opsec": {
             "name": "OpSec",
