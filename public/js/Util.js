@@ -41,7 +41,7 @@ String.prototype.toCamelCase = function() {
 
 Number.prototype.maybeRound = function(precision) {
     return Math.round(this) === this ? this : this.toFixed(precision);
-}
+};
 
 /**
  * A class that should be filled with absolutely not useless stuff
