@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "Загнанный зверь",
-            "description": "Когда по вам ведут огонь трое или более врагов, вы получаете на 12% меньше урона.\nВаш второй и каждый последующий удар в ближнем бою с перерывом не более чем в 1 секунду, нанесёт в 10 больше урона от базового урона оружия.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
         },
         "basic_close_combat": {
@@ -1137,7 +1137,9 @@
             "p1": "Это программное обеспечение стало возможно благодаря совместным усилиям сообщества r / paydaybuilds.",
             "p2": "Дополнительные участники могут быть найдены &{тут}.",
             "license": "Это программное обеспечение предоставляется под &{MIT лицензией}. Делайте то, что вы хотите с ним, но, пожалуйста, уважайте программное обеспечение с открытым исходным кодом. <br>Версия: 0.6.1",
-            "reach": "Связаться с нами по: "
+            "reach": "Связаться с нами по: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "Инъектор",
             "description": "Когда не чувствуешь боли и страха, то твоя битва будет более долгой и жестокой. Естественно, это привлечёт внимание противника. Ведь каждый захочет отомстить за своего падшего товарища."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }
