@@ -583,6 +583,10 @@ document.onreadystatechange = async () => {
                 select.options[0].selected = true;
                 return;
             }
+            //Unhide groups
+            for(const group of select.children) {
+                group.hidden = false;
+            }
             //Find similar text to what was just inputted
             for(const option of select.options) {
                 option.hidden = false;
@@ -605,6 +609,9 @@ document.onreadystatechange = async () => {
                     }
                     if(contains.some(opt => opt.value === option.value)) continue;
                     option.hidden = true;
+                }
+                for(const group of select.children) {
+                    if([...group.children].every(opt => opt.hidden)) group.hidden = true;
                 }
             }
         });
