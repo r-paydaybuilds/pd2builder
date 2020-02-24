@@ -660,3 +660,33 @@ div.footer a:hover {
   align-self: center; 
   font-size: 1.7em; 
 }
+
+
+
+/**********************************/
+/*             LANG CSS           */
+/**********************************/
+/*
+    This is where you can force certain elements have whatever you want them to have
+    (mostly font-size)
+*/
+
+#tab_page_buttons:lang(ru-ru) {
+  font-size: 0.9em; 
+}
+
+.sk_name:lang(ru-ru) {
+  font-size: 0.5em; 
+}
+
+.arm_icon.arm_selected:lang(ru-ru) > div::before {
+  font-size: 1.2em; 
+}
+
+.th_icon.th_selected:lang(ru-ru) > div::before {
+  font-size: 1em; 
+}
+
+.dp_icon.dp_selected:lang(ru-ru) > div::before {
+  font-size: 1.3em; 
+}
