@@ -12,7 +12,6 @@ tools.use(bodyParser.json());
 tools.use("/", express.static("./public"));
 tools.get("/", (req, res) => res.sendFile("index.html", { root: "./pages/"}));
 tools.get("/index.html", (req, res) => res.sendFile("index.html", { root: "./pages/"}));
-tools.get("/index_old.html", (req, res) => res.sendFile("index_old.html", { root: "./pages/"}));
 tools.get("/bigoil.html",  (req, res) => res.sendFile("bigoil.html", { root: "./pages/"}));
 tools.get("/mobile.html",  (req, res) => res.sendFile("mobile.html", { root: "./pages/"}));
 tools.get("/mask.html",  (req, res) => res.sendFile("mask.html", { root: "./pages/"}));
