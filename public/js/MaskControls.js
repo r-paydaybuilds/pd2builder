@@ -37,8 +37,14 @@ export default class MaskControls {
         if(!this.mouseStarted) return;
 
         ev.preventDefault();
-        this.object.rotation.y += 2 * Math.PI * ev.movementX / this.canvas.width;
-        this.object.rotation.x += 2 * Math.PI * ev.movementY / this.canvas.width;
+
+        const calc = 2 * Math.PI * ev.movementX / this.canvas.width, x = this.object.rotation.x, z = this.object.rotation.z;
+        this.object.rotation.x += 2 * Math.PI * ev.movementY / this.canvas.height;
+        if(x >= -1 && x <= 2 && z >= -1 && z <= 2) {
+            this.object.rotation.y += calc;
+        } else {
+            this.object.rotation.y -= calc;
+        }
         this.dispatchEvent({ type: "move" });
     }
 
@@ -58,7 +64,14 @@ export default class MaskControls {
             if(touch.identifier !== this.touch.identifier) continue;
             this.newVector.set(touch.pageX, touch.pageY);
             this.deltaVector.subVectors(this.newVector, this.lastVector);
-            this.object.rotation.y += 2 * Math.PI * this.deltaVector.x / this.canvas.width;
+
+            const calc = 2 * Math.PI * this.deltaVector.x / this.canvas.width, x = this.object.rotation.x, z = this.object.rotation.z;
+            if(x >= -1 && x <= 2 && z >= -1 && z <= 2) {
+                this.object.rotation.y += calc;
+            } else {
+                this.object.rotation.y -= calc;
+            }
+
             this.object.rotation.x += 2 * Math.PI * this.deltaVector.y / this.canvas.width;
             this.lastVector.copy(this.newVector);
             break;
@@ -87,12 +100,14 @@ export default class MaskControls {
 
     updateRotation() {
         if(this.mouseStarted || this.touch) return;
+        
         const clone = this.object.quaternion.clone();
-        if(clone.x == 0 && clone.z == 0) return;
         clone.x = 0, clone.z = 0;
         this.object.quaternion.slerp(clone, this.clock.getDelta() * 2);
+
+        if(this.object.quaternion.x <= .001 && this.object.quaternion.z <= .001 && this.object.quaternion.x >= -.001 && this.object.quaternion.z >= -.001) return;
         requestAnimationFrame(this.updateRotation.bind(this));
-    
+
         this.dispatchEvent({ type: "move" });
     }
 }
