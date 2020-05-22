@@ -1,29 +1,29 @@
 {
     "armors": {
-        "suit": "Two-Piece Suit",
-        "light_ballistic": "Light Ballistic Vest",
-        "ballistic": "Ballistic Vest",
-        "heavy_ballistic": "Heavy Ballistic Vest",
-        "flak": "Flak",
-        "ctv": "Combined Tactical Vest",
-        "ictv": "Improved Combined Tactical Vest"
+        "suit": "Terno",
+        "light_ballistic": "Colete Balístico Leve",
+        "ballistic": "Colete Balístico",
+        "heavy_ballistic": "Colete Balístico Pesado",
+        "flak": "Colete Flak",
+        "ctv": "Colete Tático",
+        "ictv": "Colete Tático Pesado"
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Ammo Bag",
-            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
+            "name": "Sacola de Munição",
+            "description": "Pra colocar a bolsa de munição, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir mais munição. Pode recuperar completamente a munição de uma das suas armas até 4 vezes. Quando a bolsa de munição estiver vazia, desaparecerá. Você pode ver quanta munição resta na bolsa de munição olhando-a. A bolsa de munição é portátil, originalmente pensada para que soldados carregarem munição extra em combate."
         },
         "armor_bag": {
-            "name": "Armor Bag",
-            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
+            "name": "Bolsa de Colete",
+            "description": "Para usar a bolsa de colete, segure [G] pra vestir o colete previamente selecionado. Até aí, você vai estar usando o Terno.\nA bolsa de colete tem uma única utilização e quando usada, sumirá. A bolsa de colete portátil é usada pra transportar um colete á sua escolha, e pode ser usada durante um assalto."
         },
         "body_bag_case": {
-            "name": "Body Bag Case",
-            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
+            "name": "Maleta de Bolsas para Cadáveres",
+            "description": "Pra colocar a maleta de bolsa de cadáveres, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir uma bolsa de cadáver. A maleta tem usos limitados, você poder ver seus usos restantes olhando-a.\nA maleta tem bolsas adicionais, usadas pra transportar corpos em missões sigilosas."
         },
         "doctor_bag": {
-            "name": "Doctor Bag",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
+            "name": "Bolsa Médica",
+            "description": "Para usar a Bolsa Médica, você coloca segurando [G]. Assim que for colocado não pode ser movido, mas você e o seu time podem usar por segurar [F] para recuperar vida. Usando a Bolsa Médica irá resetar a quantidade de quedas do jogador antes de ir pra custódia. Pode ser usado duas vezes.\nQuando a Bolsa Médica é usado, irá sumir. Você pode ver quantos usos restam por olhar na Bolsa.\nA Bolsa Médica é portátil, usado por um físico ou outra profissão de médico para transportar suprimentos e medicina."
         },
         "ecm_jammer": {
             "name": "ECM Jammer",

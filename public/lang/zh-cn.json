@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "统领上风",
-            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "当你的附近存在三个或以上敌人时，你将获得12%伤害减免。\n在你近战造成伤害后的1秒内，你的近战伤害将变为10倍。",
             "vr_description": "冲刺所消耗的耐力将为你回复2~6点护甲，每3秒最多触发3次。"
         },
         "basic_close_combat": {
@@ -1138,8 +1138,8 @@
             "p2": "您可以在&{此处}阅读贡献者名单。",
             "license": "本网站遵循&{MIT许可}。您可以随意使用我们的资源，但请遵守开源条例。",
             "reach": "联系我们：",
-            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
-            "mobilep2": "Licensed under the terms of the &{MIT license}."
+            "mobilep1": "特别感谢r/paydaybuilds社区。",
+            "mobilep2": "本网站遵循&{MIT许可}。"
         }
     },
     "throwables": {
@@ -1216,7 +1216,7 @@
         "nitrogen": "Nitrogen",
         "deuterium": "Deuterium",
         "helium": "Helium",
-        "lab": "LAB",
-        "stairs": "STAIRS"
+        "lab": "实验室",
+        "stairs": "阶梯"
     }
 }
