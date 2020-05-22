@@ -18,7 +18,7 @@
             "description": "Para usar a bolsa de colete, segure [G] para vestir o seu colete atual. Até lá, você vai tá usando o Terno.\nA bolsa de colete tem um único uso e quando usado, irá sumir. A bolsa de colete é portátil usado para transportar o colete de sua escolha, pode ser usado durante um assalto."
         },
         "body_bag_case": {
-            "name": "Body Bag Case",
+            "name": "Maleta de Bolsas para Cadáveres",
             "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
         },
         "doctor_bag": {
