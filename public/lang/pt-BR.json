@@ -11,7 +11,7 @@
     "deployables": {
         "ammo_bag": {
             "name": "Bolsa de Munição",
-            "description": "Para usar a bolsa de munição, você coloque por segurar o [G]. Assim que for colocado, não pode ser movido, mas você e o seu time podem usar por segurar o [F] para ter mais munição. Pode recuperar completamente a munição de uma das suas armas 4 vezes. Quando a bolsa de munição estiver vazia, irá sumir. Você pode ver quanto resta na bolsa de munição só por olhar na bolsa. A bolsa de munição é portátil, originalmente para permitir soldados carregarem munição extra enquanto em combate."
+            "description": "Pra colocar a bolsa de munição, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir mais munição. Pode recuperar completamente a munição de uma das suas armas até 4 vezes. Quando a bolsa de munição estiver vazia, desaparecerá. Você pode ver quanta munição resta na bolsa de munição olhando-a. A bolsa de munição é portátil, originalmente pensada para que soldados carregarem munição extra em combate."
         },
         "armor_bag": {
             "name": "Bolsa de Colete",
@@ -19,10 +19,10 @@
         },
         "body_bag_case": {
             "name": "Maleta de Bolsas para Cadáveres",
-            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
+            "description": "Pra colocar a maleta de bolsa de cadáveres, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir uma bolsa de cadáver. A maleta tem usos limitados, você poder ver seus usos restantes olhando-a.\nA maleta tem bolsas adicionais, usadas pra transportar corpos em missões sigilosas."
         },
         "doctor_bag": {
-            "name": "Doctor Bag",
+            "name": "Bolsa Médica",
             "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
         },
         "ecm_jammer": {
