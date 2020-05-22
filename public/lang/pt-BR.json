@@ -3,14 +3,14 @@
         "suit": "Terno",
         "light_ballistic": "Colete Balístico Leve",
         "ballistic": "Colete Balístico",
-        "heavy_ballistic": "Heavy Ballistic Vest",
-        "flak": "Flak",
-        "ctv": "Combined Tactical Vest",
-        "ictv": "Improved Combined Tactical Vest"
+        "heavy_ballistic": "Colete Balístico Pesado",
+        "flak": "Colete",
+        "ctv": "Colete Tático",
+        "ictv": "Colete Tático Pesado"
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Ammo Bag",
+            "name": "Bolsa de Munição",
             "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
         },
         "armor_bag": {
