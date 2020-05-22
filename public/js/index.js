@@ -40,10 +40,10 @@ document.onreadystatechange = async () => {
         if(params.has("lang") && langs.has(params.get("lang"))) {
             const lang = params.get("lang");
             curLang = lang;
-            sessionStorage.setItem("lang", lang);
+            localStorage.setItem("lang", lang);
         // If user already configured a lang use that one
-        } else if(sessionStorage.getItem("lang")) {
-            curLang = sessionStorage.getItem("lang");
+        } else if(localStorage.getItem("lang")) {
+            curLang = localStorage.getItem("lang");
         } else {
             // Check if we have the lang currently being used in the PC
             if(langs.has(navigator.language.toLowerCase())) {
@@ -72,7 +72,7 @@ document.onreadystatechange = async () => {
         // Bind event for when select is changed
         langDrop.addEventListener("change", async (e) => {
             const choosenLang = e.target.value;
-            sessionStorage.setItem("lang", choosenLang);
+            localStorage.setItem("lang", choosenLang);
             builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
             window.history.pushState(Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current), `language changed to ${choosenLang}`);
         });
@@ -650,12 +650,12 @@ document.onreadystatechange = async () => {
         for(const [type, value] of Object.entries(e.state)) {
             switch(type) {
             case "lang":
-                sessionStorage.setItem("lang", value);
+                localStorage.setItem("lang", value);
                 document.getElementById("langDrop").value = value;
                 builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
                 break;
             case "tab":
-                sessionStorage.setItem("curTab", value);
+                localStorage.setItem("curTab", value);
                 builder.gui.Tab_ChangeTo(value);
                 break;
             case "skills":
