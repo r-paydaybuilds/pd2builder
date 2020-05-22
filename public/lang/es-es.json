@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "Cuando estas rodeado por tres o más enemigos, recibís 12% menos daño de los enemigos.\nTu segundo golpe y cada golpe consecutivo en menos de 1 segundo del anterior hará 10 veces el daño normal.",
             "vr_description": "Después de correr, el jugador regenera desde 2 a un máximo de 6 de armadura dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo ocurrir 3 veces cada 3 segundos."
         },
         "basic_close_combat": {
@@ -485,12 +485,12 @@
         },
         "smoker": {
             "name": "Smoker",
-            "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
+            "description": "Desbloquea y equipa la Bomba de Humo.\nCuando sea lanzáda, la bomba de humo crea una pantalla de humo que dura 10 segundos. Mientras estás en la pantalla de humo, tú y cualquiera de tus aliados evitan automáticamente el 50% de todas las balas. Cualquier enemigo que se encuentre en el humo verá su precisión reducida en un 50%.\nDespués de que se disipa la pantalla de humo, la bomba de humo tomara 60 segundos para recargar, pero matar enemigos reducirá este tiempo de reutilización por 1 segundo.",
             "vr_description": "Después de correr, el jugador gana desde 1% a un máximo de 6% de evasión por 3 segundos dependiendo de la cantidad de resistencia (para esprintar) consumida."
         },
         "twitch": {
             "name": "Twitch",
-            "description": "Every time the player gets shot, 20% dodge chance is gained. This effect is reset once the player dodges and will not occur for the next 4 second.",
+            "description": "Cada vez que recibas un tiro, tendras un 20% de probabilidad de esquivar. Este efecto se reinicia una vez que el jugador esquive un atáque y no ocurrirá denuevo durante los siguientes 4 segundos.",
             "vr_description": "El efecto de correr es ahora desde 1% hasta un máximo de 7%."
         },
         "subtle-3": {
@@ -500,12 +500,12 @@
         },
         "agility_shield": {
             "name": "Agility Shield",
-            "description": "Dodging will replenish your armor.",
+            "description": "Esquivar recargará tu armadura.",
             "vr_description": "El efecto de correr es ahora desde 1% hasta un máximo de 9%."
         },
         "unseen_shadow": {
             "name": "Unseen Shadow",
-            "description": "All of your perk deck effects are increased by 100% while you are standing in the smoke screen. While any of your allies are standing in the smoke screen, they gain 10% dodge chance.",
+            "description": "Todos tus efectos del perk deck se incrementan en un 100% mientras estés en la pantalla de humo. Si tus compañeros estan en la pantalla de humo, ganan un 10% de posibilidad de esquivar.",
             "vr_description": "El efecto de correr es ahora desde 1% hasta un máximo de 10%."
         },
         "virtue": {
