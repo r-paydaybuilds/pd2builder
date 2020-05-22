@@ -523,6 +523,112 @@ body {
 
 
 /**********************************/
+/*           WEAPONS CSS          */
+/**********************************/
+
+#tab_weapons_page {
+  display: flex;
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#wp_navigator_wrapper {
+  width: 100%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: baseline; 
+}
+
+#wp_navigator_wrapper button {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+
+  cursor: pointer; 
+
+  padding: .375em 1.5em; 
+  border: 0; 
+  border-radius: 10px 10px 0px 0px; 
+  background: rgba(0, 0, 0, 0); 
+  
+  text-align: center; 
+  font-size: 22px;
+  color: rgb(40, 90, 130);   
+
+  -webkit-transition: background-color .15s, color .15s linear;
+  -moz-transition:    background-color .15s, color .15s linear;
+  -o-transition:      background-color .15s, color .15s linear;
+  transition:         background-color .15s, color .15s linear;
+}
+
+#wp_navigator_wrapper button:hover {
+  color: rgb(215, 220, 225);
+}
+
+#wp_navigator_wrapper button.wp_navigator_button_active {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#wp_page {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: stretch; 
+}
+
+#wp_selector_container,
+#wp_stats_container {
+  width: 25%; 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#wp_selector_container {
+  border-right: 10px solid transparent; 
+}
+
+#wp_stats_container {
+  border-left: 10px solid transparent; 
+}
+
+#wp_weapon_showcase {
+  width: 50%; 
+
+  border-image: url("../img/borders/skill_border.png") 3 15 repeat;
+  border-top: 3px solid transparent; 
+  border-bottom: 3px solid transparent; 
+
+  display: flex; 
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center; 
+}
+
+#wp_weapon_showcase > div {
+  background: center url("../img/weapons/weapon.png") no-repeat; 
+  background-size: 100% 100%;  
+
+  padding: 100px; 
+  width: 100%; 
+  height: 100%; 
+
+  border-image: url("../img/borders/skill_border_rotate.png") 15 3 repeat;
+  border-left: 3px solid transparent; 
+  border-right: 3px solid transparent; 
+}
+
+
+
+/**********************************/
 /*         ARMOR-TH-DP CSS        */
 /**********************************/
 

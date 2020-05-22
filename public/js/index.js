@@ -416,6 +416,14 @@ document.onreadystatechange = async () => {
         });
     }
 
+    // Weapon buttons // I don't know how to do this, send help
+    builder.gui.Weapon_ChangeTo("primary"); 
+    for(const e of document.querySelectorAll("#wp_navigator_wrapper button")) {
+        e.addEventListener("click", ev => { 
+            builder.gui.Weapon_ChangeTo(e.dataset.slot); 
+        }); 
+    }
+
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
         let successHolding = false;

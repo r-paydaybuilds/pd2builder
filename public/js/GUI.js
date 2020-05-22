@@ -462,6 +462,23 @@ export default class GUI {
     }
 
     /**
+     * Change page when clicking on one of the navigator buttons for the weapon slots 
+     * @param {string} weaponSlotName Name of the weapon slot to change page to
+     */
+    Weapon_ChangeTo(weaponSlotName) {
+        if (!weaponSlotName) return; 
+
+        const buttons = document.querySelectorAll("#wp_navigator_wrapper button"); 
+        for(const e of buttons) {
+            // if button is not the clicked button ...
+            e.classList.remove("wp_navigator_button_active"); 
+        }
+
+        const selected = document.querySelector("#wp_navigator_" + weaponSlotName); 
+        selected.classList.add("wp_navigator_button_active"); 
+    }
+
+    /**
      * Select a specified armor.
      * @param {HTMLDivElement} armor An element object representing the clicked armor icon
      */
