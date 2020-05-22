@@ -3,7 +3,7 @@ if("serviceWorker" in navigator) {
 }
 
 import Builder from "./Builder.js";
-import Util, { XScrollTransformer, UIEventHandler } from "./Util.js";
+import Util, { UIEventHandler } from "./Util.js";
 
 const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
 let defaultLang = "en-us";
@@ -118,7 +118,7 @@ window.onload = async () => {
                 }
             });
             desc.addEventListener("touchend", ev => {
-                if(!listen || Util.findTouch(ev.changedTouches, currentTouch)) return;
+                if(!listen || Util.findTouch(ev.touches, currentTouch)) return;
 
                 if(ev.touches.length > 0) {
                     currentTouch = ev.touches.item(0).identifier;
@@ -162,7 +162,7 @@ window.onload = async () => {
             trees[index + 1].click();
         });
 
-        new XScrollTransformer(document.getElementById("tab_page_buttons"), -1);
+        builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
     // Tab page navigation //
@@ -376,8 +376,11 @@ window.onload = async () => {
 
     // Perk deck cards highlight // 
     if(builder.mobile) {
+        
+        document.querySelectorAll(".pk_deck_cards").forEach(ring => 
+            builder.scrollTransformer.addContext(ring, -1, false)
+        );
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
-            new XScrollTransformer(e.parentElement, -0.5, false);
             new UIEventHandler({
                 click: () => e.parentElement.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
                 hold: () => {

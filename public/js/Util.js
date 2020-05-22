@@ -142,9 +142,6 @@ class Util {
     }
 }
 
-Util.vw = document.documentElement.clientWidth/100;
-Util.vh = document.documentElement.clientHeight/100;
-
 /**
  * Map for storing skills that are active
  * @extends {Map}
@@ -363,12 +360,11 @@ System.TIER_UTIL = [0, 1, 3, 16];
  * A class that transform X movement to X scroll
  */
 class XScrollTransformer {
-    /**
-     * @param {HTMLElement} element 
-     * @param {Number} multiply
-     */
-    constructor(element, multiply = 1, propagate = true) {
+
+    constructor() {
         this.down = false;
+        this.contexts = [];
+        this.curContext;
 
         document.addEventListener("mouseup", ev => {
             if(this.down && ev.button == 0) {
@@ -377,11 +373,24 @@ class XScrollTransformer {
             }
         });
         document.addEventListener("mousemove", ev => {
-            if(this.down) element.scrollBy(ev.movementX * multiply, 0);
+            if(this.down) this.curContext.element.scrollBy(ev.movementX * this.curContext.multiply, 0);
         }, { passive: true });
+    }
+
+    /**
+     * Add element for transforming
+     * @param {HTMLElement} element Element to listen to
+     * @param {Number} [multiply=1] Multiplier for x movement that translates to scroll
+     * @param {boolean} [propagate=true] Propagate mouse down event
+     */
+    addContext(element, multiply = 1, propagate = true) {
+        const context = {element, propagate, multiply};
+        this.contexts.push(context);
+
         element.addEventListener("mousedown", ev => {
             if(ev.button == 0) {
                 this.down = true;
+                this.curContext = context;
                 if(!propagate && ev.target.closest(".pk_deck_cards > div")) ev.stopPropagation();
                 ev.preventDefault();
             }
@@ -426,7 +435,10 @@ class UIEventHandler {
                     this.touchId = touch.identifier;
                     this.last = [touch.clientX, touch.clientY];
                 }
-                this.remaining = [Util.vw, Util.vh];
+                this.remaining = [
+                    (document.documentElement.clientWidth * 2)/100,
+                    (document.documentElement.clientHeight * 2)/100
+                ];
                 this.holding = setTimeout(() => {
                     this.holding = true;
                     this.touchId = null;
@@ -437,8 +449,8 @@ class UIEventHandler {
             }, move = ev => {
                 if(!this.listen) return;
                 if(ev instanceof MouseEvent) {
-                    this.remaining[0] -= ev.movementX;
-                    this.remaining[1] -= ev.movementY;
+                    this.remaining[0] -= Math.abs(ev.movementX);
+                    this.remaining[1] -= Math.abs(ev.movementY);
                 } else {
                     const touch = Util.findTouch(ev.changedTouches, this.touchId);
                     if(!touch) return;
@@ -446,10 +458,11 @@ class UIEventHandler {
                     this.remaining[1] -= Math.abs(touch.clientY - this.last[1]);
                     this.last = [touch.clientX, touch.clientY];
                 }
-                if(this.remaining.some(val => val > 0)) return;
-                clearTimeout(this.holding);
-                this.touchId = null;
-                this.listen = false;
+                if(this.remaining.some(val => val <= 0)) {
+                    clearTimeout(this.holding);
+                    this.touchId = null;
+                    this.listen = false;
+                }
             }, stop = ev => {
                 if(!this.listen
                 || (ev instanceof MouseEvent && ev.button !== 0) 

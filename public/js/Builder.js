@@ -1,4 +1,4 @@
-import { SkillMap, System, DBMap } from "./Util.js";
+import { SkillMap, System, DBMap, XScrollTransformer } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
@@ -64,7 +64,7 @@ export default class Builder {
         this.gui = new GUI(this);
         
         /**
-         * The Databases where you can find info of each type of thing
+         * The databases where you can find info of each type of thing
          * @type {DBMap}
          */
         this.dbs = new DBMap([
@@ -75,6 +75,12 @@ export default class Builder {
             ["throwables", null],
             ["armors", null]
         ]);
+
+        /**
+         * Util class that transforms X movement to X scrolling
+         * @type {XScrollTransformer}
+         */
+        this.scrollTransformer = new XScrollTransformer();
         
         /**
          * The promise of the fetching of all databases
