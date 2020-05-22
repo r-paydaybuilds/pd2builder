@@ -1,8 +1,8 @@
 {
     "armors": {
-        "suit": "Two-Piece Suit",
-        "light_ballistic": "Light Ballistic Vest",
-        "ballistic": "Ballistic Vest",
+        "suit": "Terno",
+        "light_ballistic": "Colete Balístico Leve",
+        "ballistic": "Colete Balístico",
         "heavy_ballistic": "Heavy Ballistic Vest",
         "flak": "Flak",
         "ctv": "Combined Tactical Vest",
