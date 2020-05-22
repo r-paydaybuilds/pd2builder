@@ -10,19 +10,19 @@ let defaultLang = "en-us";
 
 const builder = new Builder(window.innerWidth < 1003);
 
-// Change from desktop or mobile version if screen is too big or too small
-window.addEventListener("resize", () => {
-    const url = new URL(window.location.href);
-    if(!builder.mobile && window.innerWidth < 1003) {
-        url.pathname += "mobile.html";
-        window.location.replace(url);
-    } else if(builder.mobile && window.innerWidth >= 1003) {
-        url.pathname = url.pathname.replace("mobile.html", "");
-        window.location.replace(url);
-    }
-});
+window.onload = async () => {
+    // Change from desktop or mobile version if screen is too big or too small
+    window.addEventListener("resize", () => {
+        const url = new URL(window.location.href);
+        if(!builder.mobile && window.innerWidth < 1003) {
+            url.pathname += "mobile.html";
+            window.location.replace(url);
+        } else if(builder.mobile && window.innerWidth >= 1003) {
+            url.pathname = url.pathname.replace("mobile.html", "");
+            window.location.replace(url);
+        }
+    });
 
-document.onreadystatechange = async () => {
     let fetchLang, curLang;
     //
     // Bind Events on page 
@@ -95,34 +95,8 @@ document.onreadystatechange = async () => {
         );
         
         { //Slide to exit description
-            const desc = document.getElementById("description_card"),
-                descStop = ev => {
-                    for(const touch of ev.targetTouches) {
-                        if(touch.identifier === currentTouch) return;
-                    }
-                    if(ev.touches.length > 0) {
-                        currentTouch = ev.touches.item(0).identifier;
-                    } else { 
-                        currentTouch = null;
-                        if(remaining <= desc.clientWidth/-3) {
-                            builder.gui.DescriptionCard_Show(false);
-                        } else {
-                            builder.gui.DescriptionCard_Show();
-                        }
-                        desc.removeEventListener("touchend", descStop);
-                        desc.removeEventListener("touchmove", descMove);
-                    }
-                }, descMove = ev => {
-                    ev.preventDefault();
-                    for(const touch of ev.changedTouches) {
-                        if(touch.identifier !== currentTouch) continue;
-                        remaining = -(touch.clientX - startX);
-                        if(remaining > 0) remaining = 0;
-                        builder.gui.DescriptionCard_Analog(remaining);
-                        return;
-                    }
-                };
-            let remaining = 0, startX = 0, currentTouch = null;
+            const desc = document.getElementById("description_card");
+            let remaining = 0, startX = 0, currentTouch = null, listen = false;
 
             desc.addEventListener("touchstart", ev => {
                 if(currentTouch !== null) return;
@@ -130,11 +104,34 @@ document.onreadystatechange = async () => {
                 currentTouch = touch.identifier;
 
                 startX = touch.clientX;
-                desc.addEventListener("touchend", descStop, {
-                    passive: true
-                });
-                desc.addEventListener("touchmove", descMove);
+                listen = true;
             });
+            desc.addEventListener("touchmove", ev => {
+                if(!listen) return;
+                ev.preventDefault();
+
+                const touch = Util.findTouch(ev.changedTouches, currentTouch);
+                if(touch) {
+                    remaining = -(touch.clientX - startX);
+                    if(remaining > 0) remaining = 0;
+                    builder.gui.DescriptionCard_Analog(remaining);
+                }
+            });
+            desc.addEventListener("touchend", ev => {
+                if(!listen || Util.findTouch(ev.changedTouches, currentTouch)) return;
+
+                if(ev.touches.length > 0) {
+                    currentTouch = ev.touches.item(0).identifier;
+                } else { 
+                    currentTouch = null;
+                    if(remaining <= desc.clientWidth/-3) {
+                        builder.gui.DescriptionCard_Show(false);
+                    } else {
+                        builder.gui.DescriptionCard_Show();
+                    }
+                    listen = false;
+                }
+            }, { passive: true });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
                 builder.gui.DescriptionCard_Show();            
@@ -280,7 +277,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exps, builder.gui.Tab_Current),
+                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -655,7 +652,7 @@ document.onreadystatechange = async () => {
                 builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
                 break;
             case "tab":
-                localStorage.setItem("curTab", value);
+                sessionStorage.setItem("curTab", value);
                 builder.gui.Tab_ChangeTo(value);
                 break;
             case "skills":

@@ -368,26 +368,22 @@ class XScrollTransformer {
      * @param {Number} multiply
      */
     constructor(element, multiply = 1, propagate = true) {
-        const stopTab = ev => {
-                if(ev.button == 0) {
-                    ev.preventDefault();
-                    document.removeEventListener("mouseup", stopTab);
-                    document.removeEventListener("mousemove", moveTab);
-                }
-            }, moveTab = ev => {
-                element.scrollBy(ev.movementX * multiply, 0);
-            };
+        this.down = false;
 
+        document.addEventListener("mouseup", ev => {
+            if(this.down && ev.button == 0) {
+                ev.preventDefault();
+                this.down = false;
+            }
+        });
+        document.addEventListener("mousemove", ev => {
+            if(this.down) element.scrollBy(ev.movementX * multiply, 0);
+        }, { passive: true });
         element.addEventListener("mousedown", ev => {
             if(ev.button == 0) {
-                document.removeEventListener("mouseup", stopTab);
-                document.removeEventListener("mousemove", moveTab);
+                this.down = true;
                 if(!propagate && ev.target.closest(".pk_deck_cards > div")) ev.stopPropagation();
                 ev.preventDefault();
-                document.addEventListener("mouseup", stopTab);
-                document.addEventListener("mousemove", moveTab, {
-                    passive: true
-                });
             }
         });
     }
@@ -410,89 +406,94 @@ class UIEventHandler {
     constructor({ 
         click = () => element.dispatchEvent(new MouseEvent("click", { detail: -1 })), 
         double = () => element.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })), 
-        element, mobile, hold, propagate = false }) {
-
-        let touchId = null, last = [], remaining = [], holding = false, didDouble = false;
+        element, mobile, hold, propagate = false
+    }) {    
+        this.touchId = null;
+        this.last = [];
+        this.remaining = [];
+        this.holding = false;
+        this.didDouble = false;
+        this.listen = false;
         const start = ev => {
                 if(ev instanceof MouseEvent) {
                     if(!propagate) ev.stopPropagation();
                     if(ev.button != 0) return;
                 } else {
-                    ev.stopPropagation();
-                    if(touchId) return;
+                    ev.preventDefault();
+                    ev.stopImmediatePropagation();
+                    if(this.touchId !== null) return;
                     const touch = ev.touches[0];
-                    touchId = touch.identifier;
-                    last = [touch.clientX, touch.clientY];
+                    this.touchId = touch.identifier;
+                    this.last = [touch.clientX, touch.clientY];
                 }
-                remaining = [Util.vw, Util.vh];
-                holding = setTimeout(() => {
-                    holding = true;
-                    removeListeners();
+                this.remaining = [Util.vw, Util.vh];
+                this.holding = setTimeout(() => {
+                    this.holding = true;
+                    this.touchId = null;
+                    this.listen = false;
                     hold();
                 }, 750);
-                removeListeners();
-                element.addEventListener("touchmove", move);
-                element.addEventListener("touchend", stop);
-                if(mobile) {
-                    element.addEventListener("mouseup", stop);
-                    element.addEventListener("mousemove", move);
-                }
+                this.listen = true;
             }, move = ev => {
+                if(!this.listen) return;
                 if(ev instanceof MouseEvent) {
-                    remaining[0] -= ev.movementX;
-                    remaining[1] -= ev.movementY;
+                    this.remaining[0] -= ev.movementX;
+                    this.remaining[1] -= ev.movementY;
                 } else {
-                    const touch = Util.findTouch(ev.changedTouches, touchId);
+                    const touch = Util.findTouch(ev.changedTouches, this.touchId);
                     if(!touch) return;
-                    remaining[0] -= Math.abs(touch.clientX - last[0]);
-                    remaining[1] -= Math.abs(touch.clientY - last[1]);
-                    last = [touch.clientX, touch.clientY];
+                    this.remaining[0] -= Math.abs(touch.clientX - this.last[0]);
+                    this.remaining[1] -= Math.abs(touch.clientY - this.last[1]);
+                    this.last = [touch.clientX, touch.clientY];
                 }
-                if(remaining > 0) return;
-                clearTimeout(holding);
-                holding = null, touchId = null;
-                removeListeners();
+                if(this.remaining.some(val => val > 0)) return;
+                clearTimeout(this.holding);
+                this.touchId = null;
+                this.listen = false;
             }, stop = ev => {
-                if((ev instanceof MouseEvent && ev.button != 0) 
-                || (ev instanceof TouchEvent && Util.findTouch(ev.touches, touchId))) return;
+                if(!this.listen
+                || (ev instanceof MouseEvent && ev.button !== 0) 
+                || (ev.touches && Util.findTouch(ev.touches, this.touchId))
+                ) return;
                 ev.stopPropagation();
                 ev.preventDefault();
-                clearTimeout(holding);
+                clearTimeout(this.holding);
 
                 if(ev instanceof MouseEvent) {
-                    removeListeners();
+                    this.listen = false;
+                    this.touchId = null;
                     return;
                 }
 
-                if(didDouble) {
-                    didDouble = false;
-                    removeListeners();
+                if(this.didDouble) {
+                    this.didDouble = false;
+                    this.touchId = null;
+                    this.listen = false;
                     double();
                     return;
                 }
 
-                didDouble = true;
+                this.didDouble = true;
                 setTimeout(() => { 
-                    if(didDouble) {
-                        removeListeners();
-                        didDouble = false;
+                    if(this.didDouble) {
+                        this.listen = false;
+                        this.touchId = null;
+                        this.didDouble = false;
                         click();
                     }
                 }, 250);
-            },
-            removeListeners = () => {
-                element.removeEventListener("touchmove", move);
-                element.removeEventListener("touchend", stop);
-                if(mobile) {
-                    element.removeEventListener("mouseup", stop);
-                    element.removeEventListener("mousemove", move);
-                }
             };
+
         element.addEventListener("touchstart", start);
-        element.addEventListener("touchcancel", () => touchId = null);
-        if(mobile) element.addEventListener("mousedown", start);
+        element.addEventListener("touchcancel", () => this.touchId = null);
+        element.addEventListener("touchmove", move);
+        element.addEventListener("touchend", stop);
+        if(mobile) {
+            element.addEventListener("mouseup", stop);
+            element.addEventListener("mousemove", move);
+            element.addEventListener("mousedown", start);
+        }
     }
 }
 
 export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler };
-export const { querySelector: $, querySelectorAll: $$, getElementById: $i, getElementsByClassName: $c, getElementsByTagName: $t } = document;
