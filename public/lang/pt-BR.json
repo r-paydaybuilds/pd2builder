@@ -11,11 +11,11 @@
     "deployables": {
         "ammo_bag": {
             "name": "Bolsa de Munição",
-            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
+            "description": "Para usar a bolsa de munição, você coloque por segurar o [G]. Assim que for colocado, não pode ser movido, mas você e o seu time podem usar por segurar o [F] para ter mais munição. Pode recuperar completamente a munição de uma das suas armas 4 vezes. Quando a bolsa de munição estiver vazia, irá sumir. Você pode ver quanto resta na bolsa de munição só por olhar na bolsa. A bolsa de munição é portátil, originalmente para permitir soldados carregarem munição extra enquanto em combate."
         },
         "armor_bag": {
-            "name": "Armor Bag",
-            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
+            "name": "Bolsa de Colete",
+            "description": "Para usar a bolsa de colete, segure [G] para vestir o seu colete atual. Até lá, você vai tá usando o Terno.\nA bolsa de colete tem um único uso e quando usado, irá sumir. A bolsa de colete é portátil usado para transportar o colete de sua escolha, pode ser usado durante um assalto."
         },
         "body_bag_case": {
             "name": "Body Bag Case",
