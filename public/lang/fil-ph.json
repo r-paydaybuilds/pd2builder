@@ -814,7 +814,7 @@
             "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
-            "name": "Third Law",
+            "name": "Ikatlong Batas",
             "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
         },
         "sentry_targeting_package": {
@@ -838,7 +838,7 @@
             "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
         },
         "hardware_expert": {
-            "name": "Hardware Expert",
+            "name": "Eksperto ng Hardware",
             "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
@@ -987,11 +987,11 @@
             "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
         },
         "nine_lives": {
-            "name": "Nine Lives",
+            "name": "Siyam na Buhay",
             "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
-            "name": "Running from Death",
+            "name": "Tumatakbo mula kay Kamatayan",
             "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
