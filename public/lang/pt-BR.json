@@ -4,18 +4,18 @@
         "light_ballistic": "Colete Balístico Leve",
         "ballistic": "Colete Balístico",
         "heavy_ballistic": "Colete Balístico Pesado",
-        "flak": "Colete",
+        "flak": "Colete Flak",
         "ctv": "Colete Tático",
         "ictv": "Colete Tático Pesado"
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Bolsa de Munição",
+            "name": "Sacola de Munição",
             "description": "Pra colocar a bolsa de munição, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir mais munição. Pode recuperar completamente a munição de uma das suas armas até 4 vezes. Quando a bolsa de munição estiver vazia, desaparecerá. Você pode ver quanta munição resta na bolsa de munição olhando-a. A bolsa de munição é portátil, originalmente pensada para que soldados carregarem munição extra em combate."
         },
         "armor_bag": {
             "name": "Bolsa de Colete",
-            "description": "Para usar a bolsa de colete, segure [G] para vestir o seu colete atual. Até lá, você vai tá usando o Terno.\nA bolsa de colete tem um único uso e quando usado, irá sumir. A bolsa de colete é portátil usado para transportar o colete de sua escolha, pode ser usado durante um assalto."
+            "description": "Para usar a bolsa de colete, segure [G] pra vestir o colete previamente selecionado. Até aí, você vai estar usando o Terno.\nA bolsa de colete tem uma única utilização e quando usada, sumirá. A bolsa de colete portátil é usada pra transportar um colete á sua escolha, e pode ser usada durante um assalto."
         },
         "body_bag_case": {
             "name": "Maleta de Bolsas para Cadáveres",
@@ -23,7 +23,7 @@
         },
         "doctor_bag": {
             "name": "Bolsa Médica",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
+            "description": "Para usar a Bolsa Médica, você coloca segurando [G]. Assim que for colocado não pode ser movido, mas você e o seu time podem usar por segurar [F] para recuperar vida. Usando a Bolsa Médica irá resetar a quantidade de quedas do jogador antes de ir pra custódia. Pode ser usado duas vezes.\nQuando a Bolsa Médica é usado, irá sumir. Você pode ver quantos usos restam por olhar na Bolsa.\nA Bolsa Médica é portátil, usado por um físico ou outra profissão de médico para transportar suprimentos e medicina."
         },
         "ecm_jammer": {
             "name": "ECM Jammer",
