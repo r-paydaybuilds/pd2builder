@@ -107,7 +107,7 @@ export default class Builder {
      * @param {boolean} [push=true] Should push to history 
      */
     loadLanguage(curLang, push = true) {
-        if(push) window.history.pushState(Util.makeState(this.lang.used, this.exp, this.gui.Tab_Current), `language changed to ${curLang}`);
+        if(push) window.history.pushState(Util.makeState(null, this.exp, this.gui.Tab_Current), `language changed to ${curLang}`);
         document.documentElement.setAttribute("lang", curLang);
 
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>

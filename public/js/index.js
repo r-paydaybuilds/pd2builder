@@ -195,7 +195,7 @@ window.onload = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `added skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -226,7 +226,7 @@ window.onload = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -291,7 +291,7 @@ window.onload = async () => {
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -385,7 +385,7 @@ window.onload = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used armor ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -428,7 +428,7 @@ window.onload = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used throwable ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -472,7 +472,7 @@ window.onload = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -489,7 +489,7 @@ window.onload = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `used perk ${id}`,
                         builder.io.GetEncodedBuild()
                     );

@@ -1,4 +1,5 @@
 import "./Util.js";
+import Language from "./Language.js";
 
 // Full array of engines
 const engines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; 
