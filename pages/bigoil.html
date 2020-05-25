@@ -26,7 +26,7 @@
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <a href="#">PD2 Builder</a>
+      <a href="#" data-lang="system.name">PD2 Builder</a>
       <button>
         <span></span>
       </button>
@@ -35,10 +35,10 @@
           <select name="language" id="langDrop"></select>
         </div>
         <div>
-          <a href=".">Home</a>  
+          <a href="." data-lang="system.home">Home</a>  
         </div>
         <div>
-          <a class="current" href="#">Big Oil Engine Calc</a>
+          <a class="current" href="#" data-lang="system.bigoil">Big Oil Engine Calc</a>
         </div>
       </div>
     </div>
@@ -48,9 +48,9 @@
       <div>
         <div id="element">
           <div class="selected" id="noelement">???</div>
-          <div id="nitrogen">Nitrogen</div>
-          <div id="deuterium">Deuterium</div>
-          <div id="helium">Helium</div>
+          <div id="nitrogen" data-lang="bigoil.nitrogen">Nitrogen</div>
+          <div id="deuterium" data-lang="bigoil.deuterium">Deuterium</div>
+          <div id="helium" data-lang="bigoil.helium">Helium</div>
         </div>
         <div id="hydrogen">
           <div class="selected" id="nohydrogen">???</div>
@@ -78,7 +78,7 @@
         <div class="engine active" id="en11">11</div> 
       </div>
 
-      <div id="room_stairs"><span>LAB</span><span> STAIRS</span></div>
+      <div id="room_stairs"><span data-lang="bigoil.lab">LAB</span><span data-lang="bigoil.stairs"> STAIRS</span></div>
 
       <div id="room_right" class="engine_room">
         <div class="engine active" id="en2">2</div> 

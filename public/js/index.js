@@ -602,7 +602,7 @@ window.onload = async () => {
                 document.getElementById("langDrop").value = value;
                 builder.lang.loadDictionary(await fetch(`./lang/${value}.json`).then(res => res.json()));
                 builder.lang.used = value;
-                builder.loadLanguage(value, false);
+                builder.loadLanguage(value);
                 break;
             case "tab":
                 sessionStorage.setItem("curTab", value);
@@ -679,7 +679,7 @@ window.onload = async () => {
 
     // Load language
     builder.lang.loadDictionary(await fetchLang);
-    builder.loadLanguage(builder.lang.curLang, false);
+    builder.loadLanguage(builder.lang.curLang);
     
 
     // Prepare document when first opening // 
