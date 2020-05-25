@@ -999,70 +999,77 @@
       </div>
       <div id="wp_page">
         <div id="wp_selector_container" class="bordered">
-          <input type="search" id="wp_primary_search">
-          <select id="wp_primary_select">
-            <option value="" selected disabled>--Choose a primary weapon--</option>
-            <optgroup label="Assault Rifles">
-              <option value="golden_ak">Golden AK7.62</option>
-              <option value="amcar">AMCAR</option>
-              <option value="ak">AK</option>
-              <option value="car-4">CAR-4</option>
-              <option value="uar">UAR</option>
-              <option value="ak762">AK7.62</option>
-              <option value="jp36">JP36</option>
-              <option value="galant">Galant</option>
-              <option value="m308">M308</option>
-              <option value="ak5">AK5</option>
-              <option value="tempest">Tempest-21</option>
-              <option value="amr">AMR-16</option>
-              <option value="commando">Commando 553</option>
-              <option value="eagle_heavy">Eagle Heavy</option>
-              <option value="falcon">Falcon</option>
-              <option value="clarion">Clarion</option>
-              <option value="gecko762">Gecko 7.62</option>
-              <option value="gewehr3">Gewehr 3</option>
-              <option value="queenwrath">Queen's Wrath</option>
-              <option value="lionroar">Lion's Roar</option>
-              <option value="valkyria">Valkyria</option>
-              <option value="cavity9">Cavity 9mm</option>
-              <option value="bootleg">Bootleg</option>
-              <option value="littlefriend">Little Friend</option>
-              <option value="union">Union</option>
-              <option value="ak17">AK-17</option>          
-            </optgroup>
-            <optgroup label="Shotguns">
-              <option value="predator">Predator</option>
-              <option value="jocelyne">Jocelyne</option>
-              <option value="reinfield">Reinfield</option>
-              <option value="izhma">IZHMA</option>
-              <option value="mosconi">Mosconi</option>
-              <option value="m1014">M1014</option>
-              <option value="raven">Raven</option>
-              <option value="stakeout">Stakeout</option>
-              <option value="breaker">Breaker</option>
-            </optgroup>
-            <optgroup label="Specials">
-              <option value="xl556">XL 5.56 Microgun</option>
-              <option value="deca_tech_bow">DECA Technologies Compound Bow</option>
-              <option value="ove9000">OVE9000 Saw</option>
-              <option value="gl40">GL40</option>
-              <option value="vulcan">Vulcan Minigun</option>
-              <option value="piglet">Piglet</option>
-              <option value="flamethrower">Flamethrower</option>
-              <option value="plainsrider">Plainsrider</option>
-              <option value="light_crossbow">Light Crossbow</option>
-              <option value="english_longbow">English Longbow</option>
-              <option value="heavy_crossbow">Heavy Crossbow</option>
-              <option value="airbow">Airbow</option>
-            </optgroup>
-            <optgroup label="LMG">
-              <option value="rpk">RPK</option>
-              <option value="ksp">KSP</option>
-              <option value="ksp58">KSP 58</option>
-              <option value="buzzsaw42">Buzzsaw 42</option>
-              <option value="brenner21">Brenner-21</option>
-            </optgroup>
-          </select>
+          
+
+
+          <input type="search" id="wp_primary_search" class="wp_search">
+          <div id="wp_primary_div" class="wp_select">
+            <span value="">--Choose a primary weapon--</span>
+            <div class="wp_select_container">
+              <div class="wp_select_options">
+                <div data-label="Assault Rifles">
+                  <span data-value="golden_ak">Golden AK7.62</span>
+                  <span data-value="amcar">AMCAR</span>
+                  <span data-value="ak">AK</span>
+                  <span data-value="car-4">CAR-4</span>
+                  <span data-value="uar">UAR</span>
+                  <span data-value="ak762">AK7.62</span>
+                  <span data-value="jp36">JP36</span>
+                  <span data-value="galant">Galant</span>
+                  <span data-value="m308">M308</span>
+                  <span data-value="ak5">AK5</span>
+                  <span data-value="tempest">Tempest-21</span>
+                  <span data-value="amr">AMR-16</span>
+                  <span data-value="commando">Commando 553</span>
+                  <span data-value="eagle_heavy">Eagle Heavy</span>
+                  <span data-value="falcon">Falcon</span>
+                  <span data-value="clarion">Clarion</span>
+                  <span data-value="gecko762">Gecko 7.62</span>
+                  <span data-value="gewehr3">Gewehr 3</span>
+                  <span data-value="queenwrath">Queen's Wrath</span>
+                  <span data-value="lionroar">Lion's Roar</span>
+                  <span data-value="valkyria">Valkyria</span>
+                  <span data-value="cavity9">Cavity 9mm</span>
+                  <span data-value="bootleg">Bootleg</span>
+                  <span data-value="littlefriend">Little Friend</span>
+                  <span data-value="union">Union</span>
+                  <span data-value="ak17">AK-17</span>          
+                </div>
+                <div data-label="Shotguns">
+                  <span data-value="predator">Predator</span>
+                  <span data-value="jocelyne">Jocelyne</span>
+                  <span data-value="reinfield">Reinfield</span>
+                  <span data-value="izhma">IZHMA</span>
+                  <span data-value="mosconi">Mosconi</span>
+                  <span data-value="m1014">M1014</span>
+                  <span data-value="raven">Raven</span>
+                  <span data-value="stakeout">Stakeout</span>
+                  <span data-value="breaker">Breaker</span>
+                </div>
+                <div data-label="Specials">
+                  <span data-value="xl556">XL 5.56 Microgun</span>
+                  <span data-value="deca_tech_bow">DECA Technologies Compound Bow</span>
+                  <span data-value="ove9000">OVE9000 Saw</span>
+                  <span data-value="gl40">GL40</span>
+                  <span data-value="vulcan">Vulcan Minigun</span>
+                  <span data-value="piglet">Piglet</span>
+                  <span data-value="flamethrower">Flamethrower</span>
+                  <span data-value="plainsrider">Plainsrider</span>
+                  <span data-value="light_crossbow">Light Crossbow</span>
+                  <span data-value="english_longbow">English Longbow</span>
+                  <span data-value="heavy_crossbow">Heavy Crossbow</span>
+                  <span data-value="airbow">Airbow</span>
+                </div>
+                <div data-label="LMG">
+                  <span data-value="rpk">RPK</span>
+                  <span data-value="ksp">KSP</span>
+                  <span data-value="ksp58">KSP 58</span>
+                  <span data-value="buzzsaw42">Buzzsaw 42</span>
+                  <span data-value="brenner21">Brenner-21</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div id="wp_weapon_showcase">
           <div></div>

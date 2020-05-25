@@ -467,6 +467,7 @@ export default class GUI {
      */
     Weapon_ChangeTo(weaponSlotName) {
         if (!weaponSlotName) return; 
+        if (this.builder.mobile) return; // Working on desktop rn 
 
         const buttons = document.querySelectorAll("#wp_navigator_wrapper button"); 
         for(const e of buttons) {
