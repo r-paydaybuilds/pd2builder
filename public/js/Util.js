@@ -79,16 +79,17 @@ class Util {
     }
 
     static makeState(lang, exp, tab) {
-        return {
+        const state = {
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
             throwable: exp.throwable,
             deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary,
-            tab,
-            lang
+            deployableSecondary: exp.deployableSecondary
         };
+        if(tab) state.tab = tab;
+        if(lang) state.lang = lang;
+        return state;
     }
 
     /**

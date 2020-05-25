@@ -1,4 +1,4 @@
-import { SkillMap, System, DBMap, XScrollTransformer } from "./Util.js";
+import Util, { SkillMap, System, DBMap, XScrollTransformer } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
@@ -101,9 +101,14 @@ export default class Builder {
         this.lang;
     }
 
-    loadLanguage(obj, lang) {
-        this.lang = new Language(obj, lang);
-        document.documentElement.setAttribute("lang", lang);
+    /**
+     * Loads language to the Builder page
+     * @param {string} curLang Current lang that is being sued
+     * @param {boolean} [push=true] Should push to history 
+     */
+    loadLanguage(curLang, push = true) {
+        if(push) window.history.pushState(Util.makeState(this.lang.used, this.exp, this.gui.Tab_Current), `language changed to ${curLang}`);
+        document.documentElement.setAttribute("lang", curLang);
 
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
             e.setAttribute("data-equip", this.lang.get("system.equip"))
