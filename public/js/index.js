@@ -576,8 +576,8 @@ document.onreadystatechange = async () => {
     }
 
     {
-        const searchBox = document.getElementById("primary_search"),
-            select = document.getElementById("primary_select");
+        const searchBox = document.getElementById("wp_primary_search"),
+            select = document.getElementById("wp_primary_select");
     
         // Add search bar functionality
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
