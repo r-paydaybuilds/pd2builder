@@ -1137,7 +1137,9 @@
             "p1": "本网站的建立离不开r/paydaybuilds社区的帮助。",
             "p2": "您可以在&{此处}阅读贡献者名单。",
             "license": "本网站遵循&{MIT许可}。您可以随意使用我们的资源，但请遵守开源条例。",
-            "reach": "联系我们："
+            "reach": "联系我们：",
+            "mobilep1": "特别感谢r/paydaybuilds社区。",
+            "mobilep2": "本网站遵循&{MIT许可}。"
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "注射器",
             "description": "使用者将不惧疼痛且变得无所畏惧。不惧疼痛能使使用者的战斗之魂时刻燃起，无所畏惧则使使用者成为敌人面前的极大威胁。"
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "实验室",
+        "stairs": "阶梯"
     }
 }
