@@ -3,26 +3,26 @@ if("serviceWorker" in navigator) {
 }
 
 import Builder from "./Builder.js";
-import Util, { XScrollTransformer, UIEventHandler } from "./Util.js";
+import Util, { UIEventHandler } from "./Util.js";
 
 const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
 let defaultLang = "en-us";
 
 const builder = new Builder(window.innerWidth < 1003);
 
-// Change from desktop or mobile version if screen is too big or too small
-window.addEventListener("resize", () => {
-    const url = new URL(window.location.href);
-    if(!builder.mobile && window.innerWidth < 1003) {
-        url.pathname += "mobile.html";
-        window.location.replace(url);
-    } else if(builder.mobile && window.innerWidth >= 1003) {
-        url.pathname = url.pathname.replace("mobile.html", "");
-        window.location.replace(url);
-    }
-});
+window.onload = async () => {
+    // Change from desktop or mobile version if screen is too big or too small
+    window.addEventListener("resize", () => {
+        const url = new URL(window.location.href);
+        if(!builder.mobile && window.innerWidth < 1003) {
+            url.pathname += "mobile.html";
+            window.location.replace(url);
+        } else if(builder.mobile && window.innerWidth >= 1003) {
+            url.pathname = url.pathname.replace("mobile.html", "");
+            window.location.replace(url);
+        }
+    });
 
-document.onreadystatechange = async () => {
     let fetchLang, curLang;
     //
     // Bind Events on page 
@@ -40,10 +40,10 @@ document.onreadystatechange = async () => {
         if(params.has("lang") && langs.has(params.get("lang"))) {
             const lang = params.get("lang");
             curLang = lang;
-            sessionStorage.setItem("lang", lang);
+            localStorage.setItem("lang", lang);
         // If user already configured a lang use that one
-        } else if(sessionStorage.getItem("lang")) {
-            curLang = sessionStorage.getItem("lang");
+        } else if(localStorage.getItem("lang")) {
+            curLang = localStorage.getItem("lang");
         } else {
             // Check if we have the lang currently being used in the PC
             if(langs.has(navigator.language.toLowerCase())) {
@@ -72,7 +72,7 @@ document.onreadystatechange = async () => {
         // Bind event for when select is changed
         langDrop.addEventListener("change", async (e) => {
             const choosenLang = e.target.value;
-            sessionStorage.setItem("lang", choosenLang);
+            localStorage.setItem("lang", choosenLang);
             builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
             window.history.pushState(Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current), `language changed to ${choosenLang}`);
         });
@@ -95,34 +95,8 @@ document.onreadystatechange = async () => {
         );
         
         { //Slide to exit description
-            const desc = document.getElementById("description_card"),
-                descStop = ev => {
-                    for(const touch of ev.targetTouches) {
-                        if(touch.identifier === currentTouch) return;
-                    }
-                    if(ev.touches.length > 0) {
-                        currentTouch = ev.touches.item(0).identifier;
-                    } else { 
-                        currentTouch = null;
-                        if(remaining <= desc.clientWidth/-3) {
-                            builder.gui.DescriptionCard_Show(false);
-                        } else {
-                            builder.gui.DescriptionCard_Show();
-                        }
-                        desc.removeEventListener("touchend", descStop);
-                        desc.removeEventListener("touchmove", descMove);
-                    }
-                }, descMove = ev => {
-                    ev.preventDefault();
-                    for(const touch of ev.changedTouches) {
-                        if(touch.identifier !== currentTouch) continue;
-                        remaining = -(touch.clientX - startX);
-                        if(remaining > 0) remaining = 0;
-                        builder.gui.DescriptionCard_Analog(remaining);
-                        return;
-                    }
-                };
-            let remaining = 0, startX = 0, currentTouch = null;
+            const desc = document.getElementById("description_card");
+            let remaining = 0, startX = 0, currentTouch = null, listen = false;
 
             desc.addEventListener("touchstart", ev => {
                 if(currentTouch !== null) return;
@@ -130,11 +104,34 @@ document.onreadystatechange = async () => {
                 currentTouch = touch.identifier;
 
                 startX = touch.clientX;
-                desc.addEventListener("touchend", descStop, {
-                    passive: true
-                });
-                desc.addEventListener("touchmove", descMove);
+                listen = true;
             });
+            desc.addEventListener("touchmove", ev => {
+                if(!listen) return;
+                ev.preventDefault();
+
+                const touch = Util.findTouch(ev.changedTouches, currentTouch);
+                if(touch) {
+                    remaining = -(touch.clientX - startX);
+                    if(remaining > 0) remaining = 0;
+                    builder.gui.DescriptionCard_Analog(remaining);
+                }
+            });
+            desc.addEventListener("touchend", ev => {
+                if(!listen || Util.findTouch(ev.touches, currentTouch)) return;
+
+                if(ev.touches.length > 0) {
+                    currentTouch = ev.touches.item(0).identifier;
+                } else { 
+                    currentTouch = null;
+                    if(remaining <= desc.clientWidth/-3) {
+                        builder.gui.DescriptionCard_Show(false);
+                    } else {
+                        builder.gui.DescriptionCard_Show();
+                    }
+                    listen = false;
+                }
+            }, { passive: true });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
                 builder.gui.DescriptionCard_Show();            
@@ -165,7 +162,7 @@ document.onreadystatechange = async () => {
             trees[index + 1].click();
         });
 
-        new XScrollTransformer(document.getElementById("tab_page_buttons"), -1);
+        builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
     // Tab page navigation //
@@ -280,7 +277,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exps, builder.gui.Tab_Current),
+                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -379,8 +376,11 @@ document.onreadystatechange = async () => {
 
     // Perk deck cards highlight // 
     if(builder.mobile) {
+        
+        document.querySelectorAll(".pk_deck_cards").forEach(ring => 
+            builder.scrollTransformer.addContext(ring, -1, false)
+        );
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
-            new XScrollTransformer(e.parentElement, -0.5, false);
             new UIEventHandler({
                 click: () => e.parentElement.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
                 hold: () => {
@@ -650,7 +650,7 @@ document.onreadystatechange = async () => {
         for(const [type, value] of Object.entries(e.state)) {
             switch(type) {
             case "lang":
-                sessionStorage.setItem("lang", value);
+                localStorage.setItem("lang", value);
                 document.getElementById("langDrop").value = value;
                 builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
                 break;
