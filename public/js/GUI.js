@@ -502,6 +502,7 @@ export default class GUI {
         }
         // 
 
+        // All that's needed for filtering 
         for(const g in this_wp) { 
             for(const o in this_wp[g].opts) {
                 if (filterText === "" || this_wp[g].groupLabel.includes(filterText) || this_wp[g].opts[o].value.includes(filterText)) 
