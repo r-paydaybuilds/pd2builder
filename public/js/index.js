@@ -581,6 +581,12 @@ document.onreadystatechange = async () => {
     
         // Add search bar functionality
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
+            const wp_select = document.getElementById("wp_primary_select"); 
+            const text = ev.target.value.toLowerCase(); 
+            builder.gui.Weapon_FilterSelectbox(wp_select, text);
+        });
+        /* TRYING NEW 
+        if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
             const text = ev.target.value.toLowerCase(), contains = [];
             let selected = null;
             //If empty text, then dont do anything
@@ -622,7 +628,7 @@ document.onreadystatechange = async () => {
                     if([...group.children].every(opt => opt.hidden)) group.hidden = true;
                 }
             }
-        });
+        });*/
     }
 
     // Share build section //

@@ -480,6 +480,39 @@ export default class GUI {
     }
 
     /**
+     * Filter results in a selectbox based on submitted input 
+     * @param {HTMLDivElement} wp_select An element object representing the relative wp_select div 
+     * @param {string} filterText Text being entered in the filter input at the moment 
+     */
+    Weapon_FilterSelectbox(wp_select, filterText) {
+        if (!wp_select || !filterText) return; 
+
+        // This is very suboptimal, we should create and store it once maybe pre-do it in one of our dbs 
+        const this_wp = {}; // 
+        const groups = wp_select.querySelectorAll(".wp_select_option_group"); 
+        for(const group of groups) {
+            const groupLabel = group.dataset.label; 
+            this_wp[groupLabel] = { "groupLabel": groupLabel, "node": group }; 
+
+            const opts = group.querySelectorAll("span:not(.wp_select_group_label)"); 
+            this_wp[groupLabel].opts = {}; 
+            for(const opt of opts) {
+                this_wp[groupLabel].opts[opt.dataset.value] = { "node": opt, "value": opt.dataset.value }; 
+            }
+        }
+        // 
+
+        for(const g in this_wp) { 
+            for(const o in this_wp[g].opts) {
+                if (filterText === "" || this_wp[g].groupLabel.includes(filterText) || this_wp[g].opts[o].value.includes(filterText)) 
+                    this_wp[g].opts[o].node.style.display = "flex"; 
+                else 
+                    this_wp[g].opts[o].node.style.display = "none"; 
+            }
+        }
+    }
+
+    /**
      * Select a specified armor.
      * @param {HTMLDivElement} armor An element object representing the clicked armor icon
      */

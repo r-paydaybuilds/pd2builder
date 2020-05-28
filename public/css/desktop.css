@@ -691,12 +691,32 @@ body {
 
 .wp_select_options span {
   width: 100%; 
+
+  font-size: 14px; 
+  font-weight: normal; 
   text-align: center; 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center;
+  align-items: center; 
 }
 
 .wp_select_options span:hover {
   cursor: pointer; 
   background-color: rgb(190, 195, 200); 
+}
+
+.wp_select_options span.wp_select_group_label {
+  font-size: 16px; 
+  font-weight: bold; 
+}
+
+.wp_select_options span.wp_select_group_label::after {
+  content: "";
+
+  width: 80%; 
+  border-bottom: 1px solid rgb(0, 0, 0); 
 }
 
 /*
