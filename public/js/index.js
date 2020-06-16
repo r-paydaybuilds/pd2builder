@@ -419,7 +419,7 @@ document.onreadystatechange = async () => {
     // Weapon buttons // I don't know how to do this, send help
     builder.gui.Weapon_ChangeTo("primary"); 
     for(const e of document.querySelectorAll("#wp_navigator_wrapper button")) {
-        e.addEventListener("click", ev => { 
+        e.addEventListener("click", () => { 
             builder.gui.Weapon_ChangeTo(e.dataset.slot); 
         }); 
     }
@@ -577,7 +577,7 @@ document.onreadystatechange = async () => {
 
     {
         const searchBox = document.getElementById("wp_primary_search"),
-            select = document.getElementById("wp_primary_select");
+            options = document.querySelectorAll(".wp_select_option_group > span:not(.wp_select_group_label)");
     
         // Add search bar functionality
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
@@ -585,6 +585,13 @@ document.onreadystatechange = async () => {
             const text = ev.target.value.toLowerCase(); 
             builder.gui.Weapon_FilterSelectbox(wp_select, text);
         });
+
+        if(!builder.mobile) for(const option of options) {
+            option.addEventListener("click", () => {
+                builder.exp.primary.value = option.dataset.value;
+                builder.gui.Weapon_Activate(option);
+            });
+        }
         /* TRYING NEW 
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
             const text = ev.target.value.toLowerCase(), contains = [];

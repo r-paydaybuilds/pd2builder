@@ -11,7 +11,6 @@ export default class Builder {
     constructor(mobile = false) {
         /**
          * An object containing most info that should be exported
-         * @type {Object}
          */
         this.exp = {
             skills: new SkillMap(),
@@ -36,7 +35,15 @@ export default class Builder {
             perkDeck: null,
             throwable: null,
             deployable: null, 
-            deployableSecondary: null
+            deployableSecondary: null,
+            primary: {
+                value: null,
+                mods: []
+            },
+            secondary: {
+                value: null,
+                mods: []
+            }
         };
 
         /**
@@ -73,7 +80,8 @@ export default class Builder {
             ["perk_cards", null],
             ["deployables", null],
             ["throwables", null],
-            ["armors", null]
+            ["armors", null],
+            ["primaries", null]
         ]);
         
         /**

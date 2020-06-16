@@ -514,6 +514,18 @@ export default class GUI {
     }
 
     /**
+     * 
+     * @param {HTMLSpanElement} selected The weapon to make active
+     */
+    Weapon_Activate(selected) {
+        const alreadyActive = document.querySelector(".wp_select_option_group > span.active");
+        if(alreadyActive) alreadyActive.classList.remove("active");
+
+        selected.classList.add("active");
+        document.querySelector("#wp_primary_select > span").innerHTML = this.builder.dbs.get("primaries").get(selected.parentElement.dataset.label)[selected.dataset.value].name;
+    }
+
+    /**
      * Select a specified armor.
      * @param {HTMLDivElement} armor An element object representing the clicked armor icon
      */
