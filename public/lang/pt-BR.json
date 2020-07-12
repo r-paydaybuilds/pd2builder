@@ -27,7 +27,7 @@
         },
         "ecm_jammer": {
             "name": "ECM Jammer",
-            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
+            "description": "Para usar o Bloqueador de ECM, você precisa colocar segurando [G]. Assim que colocado não pode ser movido e vai está ativo por 20 segundos.\nVocê pode alternar o Bloqueador de ECM por apertar [F]. O Bloqueador de ECM tem uma chance de atordoar os seus inimigos com uma certa distância. Quando usado, para de funcionar.\nUm Eletrônico de Contra-Medida (ECM) é um dispositivo eletrônico usado para enganar o radar, sonar e outros sistemas de detecção, facilitando o seu trabalho."
         },
         "first_aid_kit": {
             "name": "First Aid Kit",
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Sneaky Bastard",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Second Wind",
