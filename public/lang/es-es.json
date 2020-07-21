@@ -484,7 +484,7 @@
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
         "smoker": {
-            "name": "Smoker",
+            "name": "Fumigador",
             "description": "Desbloquea y equipa la Bomba de Humo.\nCuando sea lanzáda, la bomba de humo crea una pantalla de humo que dura 10 segundos. Mientras estás en la pantalla de humo, tú y cualquiera de tus aliados evitan automáticamente el 50% de todas las balas. Cualquier enemigo que se encuentre en el humo verá su precisión reducida en un 50%.\nDespués de que se disipa la pantalla de humo, la bomba de humo tomara 60 segundos para recargar, pero matar enemigos reducirá este tiempo de reutilización por 1 segundo.",
             "vr_description": "Después de correr, el jugador gana desde 1% a un máximo de 6% de evasión por 3 segundos dependiendo de la cantidad de resistencia (para esprintar) consumida."
         },
@@ -499,7 +499,7 @@
             "vr_description": "El efecto de correr es ahora desde 1% hasta un máximo de 8%."
         },
         "agility_shield": {
-            "name": "Agility Shield",
+            "name": "Escudo de Agilidad",
             "description": "Esquivar recargará tu armadura.",
             "vr_description": "El efecto de correr es ahora desde 1% hasta un máximo de 9%."
         },
@@ -510,73 +510,73 @@
         },
         "virtue": {
             "name": "Virtue",
-            "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
+            "description": "Desbloquea y equipa el Frasco Estóico.\nDaño recibido ahora se reduce en un 75%. El daño restante se aplicará directamente.\nEl 75% de daño reducido se aplicará en un plazo de 12 segundos.\nPuedes utilizar la tecla arrojable para activar el Frasco Estóico e inmediatamente negar cualquier daño pendiente. El frasco tiene un tiempo de recarga de 10 segundos, pero el tiempo restante se reducirá 1 segundo por cada enemigo asesinado.",
             "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
         },
         "un-moved": {
             "name": "Un-moved",
-            "description": "All of your armor is converted and applied to your health.",
+            "description": "Toda tu armadura se convierte y se aplica como puntos de vida.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
         },
         "calm": {
-            "name": "Calm",
-            "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
+            "name": "Calma",
+            "description": "Después de no recibir daño durante 4 segundos, se negará el tiempo de daño que todavía esperas a recibir.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
         },
         "imperturbable": {
             "name": "Imperturbable",
-            "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
+            "description": "Cuando tu salud está por debajo del 35%, el tiempo de recarga de tu frasco se reducirá 2 segundos por cada enemigo que mates en lugar de 1 segundo.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
         },
         "enduring": {
             "name": "Enduring",
-            "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
+            "description": "Cuando tu daño sobre tiempo se acabe, se te curará un 50% adicional del tiempo restante de daño en ese momento.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
         "soul_mates": {
-            "name": "Soul Mates",
-            "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
+            "name": "Almas Gemelas",
+            "description": "Desbloquea y equipa el Dispensador de Gas.\nPara activar el Dispensador de Gas, necesitas mirar a otro aliado dentro de un radio de 18 metros con una línea clara de vista y presionar la tecla de arrojable para 'etiquetarlo'.\nCada enemigo que tu mates o que el aliado marcado mate te cura 15 puntos de vida y 7.5 puntos de vida a el aliado.\nAhora cada enemigo que mates prolongará la duración del efecto por 1.3 segundos y reduce el tiempo de recarga por 2 segundos.\nEl efecto durará 2 segundos y tiene un tiempo de recarga de 12 segundos.",
             "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
         },
         "scent": {
-            "name": "Scent",
-            "description": "Your maximum health is increased by 20%.",
+            "name": "Esencia",
+            "description": "Ganas 20% más de vida.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 6."
         },
         "synergy": {
-            "name": "Synergy",
-            "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
+            "name": "Sinergia",
+            "description": "Cada enemigo que tu o que el aliado marcado mates te darán 2 puntos de absorción, hasta un máximo de 20.\nEste efecto durará hasta que el Dispensador de Gas se acabe de recargar.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 9."
         },
         "inhale": {
-            "name": "Inhale",
-            "description": "Your maximum health is increased by 20%.",
+            "name": "Inhala",
+            "description": "Ganas 20% más de vida.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 12."
         },
         "harmony": {
-            "name": "Harmony",
-            "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
+            "name": "Armonía",
+            "description": "Cada enemigo el aliado marcado mate reducirá el temporizador de recarga de tu Dispensador de Gas por 2 segundos hasta que ya no esté marcado.",
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
         "code_glitch": {
-            "name": "Code Glitch",
-            "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+            "name": "Glitch de Código",
+            "description": "Desbloquea y equipa el dispositivo Pocket ECM.\nCambiar a otro perk deck hará que el Pocket ECM no esté disponible. El Pocket ECM toma lugar como un arrojable, o puede ser desequipado si se desea.\nEn juego, puedes usar la tecla arrojable para activar el Pocket ECM.\nActivar el dispositivo Pocket ECM antes de activar la alarma activará el efecto de interferencia electrónica, deshabilitando todos los electrónicos y radios por una duración de 6 segundos.\nActivar el dispositivo Pocket ECM después de activar la alarma activará el efecto de retroalimentación, otorgando la oportunidad de aturdir enemigos en el mapa cada segundo por una duración de 6 segundos.\nEl dispositivo Pocket ECM tiene 2 cargas con un temporizador de recarga de 100 segundos, pero cada enemigo que mates acortará el tiempo de enfriamiento por 6 segundos."
         },
         "opsec": {
             "name": "OpSec",
-            "description": "You gain 20% more health."
+            "description": "Ganas 20% más de vida."
         },
         "bit_decay": {
-            "name": "Bit Decay",
-            "description": "Killing an enemy while the feedback effect is active will regenerate 20 health."
+            "name": "Descomposición de Software",
+            "description": "Al matar a un enemigo mientras el efecto de retroalimentación esté activo, se recuperarán 20 puntos de vida."
         },
         "kluge": {
             "name": "Kluge",
-            "description": "Killing at least 1 enemy while the feedback or jamming effect is active will grant 20 dodge for 30 seconds."
+            "description": "Al matar al menos 1 enemigo mientras el efecto de retroalimentación o interferencia electrónica esté activo, recibiras 20 puntos de esquivar por 30 segundos."
         },
         "botnet": {
             "name": "Botnet",
-            "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health."
+            "description": "Mientras que el efecto de retroalimentación este activo, si un miembro de tu equipo mata a un enemigo, él recibirá 10 puntos de vida."
         }
     },
     "perk_decks": {
@@ -597,7 +597,7 @@
             "description": "The Rogue is a stealthy criminal, capable of sneaky tricks and deadly force. Versatile and deceptive, the Rogue is hired to do anything from pickpocketing, to burglaries and con jobs.\nThe trademark of a Rogue is his versatility - what he lacks in strength he makes up for in skill."
         },
         "hitman": {
-            "name": "Hitman",
+            "name": "Asesino",
             "description": "The Hitman is a professional killer from the criminal underworld who excels at close and ranged combat.\nCriminal syndicates will hire a hitman as a last resort to enforce criminal authority, deliver retribution or eliminate competition."
         },
         "crook": {
@@ -896,7 +896,7 @@
             "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
         },
         "sixth_sense": {
-            "name": "Sixth Sense",
+            "name": "Sexto Sentido",
             "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
         },
         "nimble": {
@@ -908,7 +908,7 @@
             "description": "BASIC: 3 points\tYour ECM jammer and feedback duration is increased by 25%.\nACE: 6 points\tYour ECM jammer can now also be used to open certain electronic doors."
         },
         "ecm_specialist": {
-            "name": "ECM Specialist",
+            "name": "Especialista de ECM",
             "description": "BASIC: 4 points\tYou can now place 2 ECM jammers instead of just one.\nACE: 8 points\tThe ECM jammer duration is increased by an additional 25% and the ECM feedback duration lasts 25% longer. Pagers are delayed by the ECM jammers."
         },
         "duck_and_cover": {
