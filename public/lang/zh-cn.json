@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "卑鄙小人",
-            "description": "基础：4点\t当你的暴露度低于35时，每降低3点暴露度都将获得1%闪避，最多增加10%。\n专精：8点\t当你的暴露度低于35时，每降低1点暴露度都将获得1%闪避，最多增加10%。"
+            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "第二春",
