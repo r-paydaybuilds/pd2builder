@@ -89,7 +89,7 @@
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
         "brute_strength-2": {
-            "name": "Fuerza Bruta",
+            "name": "Pez Gordo",
             "description": "Ganas 10% más de vida.",
             "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
         },
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Sneaky Bastard",
-            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Second Wind",
@@ -946,7 +946,7 @@
             "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
         },
         "the_professional": {
-            "name": "The Professional",
+            "name": "El Profesional",
             "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
             "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
         },
@@ -987,7 +987,7 @@
             "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
         },
         "nine_lives": {
-            "name": "Nine Lives",
+            "name": "Nueve Vidas",
             "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
@@ -999,7 +999,7 @@
             "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
         },
         "swan_song": {
-            "name": "Swan Song",
+            "name": "Canto del Cisne",
             "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
         },
         "feign_death": {
@@ -1007,7 +1007,7 @@
             "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
-            "name": "Messiah",
+            "name": "Mesías",
             "description": "BASIC: 4 points\tWhile in bleedout, you can revive yourself if you kill an enemy. You only have 1 charge.\nACE: 8 points\tYour messiah charge is replenished whenever you use a doctor bag."
         },
         "martial_arts": {
@@ -1023,7 +1023,7 @@
             "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage."
         },
         "counterstrike": {
-            "name": "Counterstrike",
+            "name": "Contraataque",
             "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks."
         },
         "berserker": {
@@ -1115,7 +1115,7 @@
                     "speed": "VELOCIDAD",
                     "dodge": "EVASIÓN",
                     "steadiness": "ESTABILIDAD",
-                    "stamina": "STAMINA"
+                    "stamina": "ESTAMINA"
                 }
             }
         },
@@ -1213,10 +1213,10 @@
         }
     },
     "bigoil": {
-        "nitrogen": "Nitrogen",
-        "deuterium": "Deuterium",
-        "helium": "Helium",
-        "lab": "LAB",
-        "stairs": "STAIRS"
+        "nitrogen": "Nitrógeno",
+        "deuterium": "Deuterio",
+        "helium": "Helio",
+        "lab": "ESCALERAS",
+        "stairs": "DEL LABO."
     }
 }
