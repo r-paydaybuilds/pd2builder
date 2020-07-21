@@ -89,7 +89,7 @@
             "vr_description": "El efecto de correr es ahora desde 0 hasta un máximo de 15."
         },
         "brute_strength-2": {
-            "name": "Pez Gordo",
+            "name": "Fuerza Bruta",
             "description": "Ganas 10% más de vida.",
             "vr_description": "Después de correr el jugador se curara desde 0 a un máximo de 3 de salud dependiendo de la cantidad de resistencia (para esprintar) consumida. Puede solo curar un máximo de 50 de salud cada 5 segundos."
         },
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Sneaky Bastard",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Second Wind",
