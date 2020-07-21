@@ -155,7 +155,7 @@
         },
         "shadow_warrior": {
             "name": "Воин в тени",
-            "description": "Шанс увернуться увеличен на 15%.",
+            "description": "Шанс увернуться на 15%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
         },
         "killer_instinct": {
@@ -189,7 +189,7 @@
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
         "subtle-2": {
-            "name": "Хитрец",
+            "name": "Коварный",
             "description": "Шанс увернуться увеличен на 15%.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
         },
@@ -305,7 +305,7 @@
         },
         "more_healing_2": {
             "name": "Больше здоровья 2",
-            "description": "Количество здоровья, получаемого из боеприпасов, оставленных противниками, увеличено еще на 8.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%.",
+            "description": "Количество здоровья, получаемого из боеприпасов, оставленных противниками увеличено на 8.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "histamine": {
@@ -350,7 +350,7 @@
         },
         "ryu_irezumi": {
             "name": "Татуировка дракона",
-            "description": "Чем ниже Ваше здоровье, тем быстрее восстонавливается Ваша броня. Когда Ваше здоровье ниже 25%, Ваша броня будет восстанавливаться на 20% быстрее.",
+            "description": "Чем ниже Ваше здоровье, тем быстрее восстанавливается ваша броня. Когда ваше здоровье ниже 25%, Ваша броня будет восстанавливаться на 20% быстрее.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "oni_irezumi": {
@@ -451,7 +451,7 @@
         "sgt-at-arms": {
             "name": "Старшина",
             "description": "Каждые 10% потерянной брони, увеличат количество восстанавливаемого здоровья за убийства на 1.",
-            "vr_description": "The dash effect .is now from 8 up to a maximum of 18."
+            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "prez": {
             "name": "Президент",
@@ -494,7 +494,7 @@
             "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
         },
         "subtle-3": {
-            "name": "Неуловимый",
+            "name": "Коварный",
             "description": "Шанс увернуться увеличен на 15%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
         },
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Подлый ублюдок",
-            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Второе дыхание",
