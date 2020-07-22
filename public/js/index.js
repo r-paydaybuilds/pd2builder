@@ -579,18 +579,51 @@ document.onreadystatechange = async () => {
         const searchBox = document.getElementById("wp_primary_search"),
             options = document.querySelectorAll(".wp_select_option_group > span:not(.wp_select_group_label)");
     
-        // Add search bar functionality
-        if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
-            const wp_select = document.getElementById("wp_primary_select"); 
-            const text = ev.target.value.toLowerCase(); 
-            builder.gui.Weapon_FilterSelectbox(wp_select, text);
-        });
+        
 
-        if(!builder.mobile) for(const option of options) {
-            option.addEventListener("click", () => {
-                builder.exp.primary.value = option.dataset.value;
-                builder.gui.Weapon_Activate(option);
+        if(!builder.mobile) {
+            // Add search bar functionality
+            let originalInput = "";
+            searchBox.addEventListener("keyup", () => {
+                const wp_select = document.getElementById("wp_primary_select"); 
+                builder.gui.Weapon_FilterSelectbox(wp_select, originalInput);
             });
+
+            searchBox.addEventListener("input", () => {
+                let text = searchBox.value.toLocaleLowerCase(builder.lang.used);
+                if(originalInput.length === text.length) {
+                    searchBox.value = searchBox.value.slice(0, -1);
+                    text = text.slice(0, -1);
+                }
+                originalInput = text;
+                if(!text) {
+                    builder.gui.Weapon_Unselect();
+                    return;
+                }
+
+                const chosenOne = [...options].find(weapon => {
+                    return weapon.innerHTML.toLocaleLowerCase(builder.lang.used).startsWith(text);
+                });
+                if(!chosenOne) {
+                    builder.gui.Weapon_Unselect();
+                    return;
+                }
+
+                chosenOne.click();
+                if(chosenOne.innerHTML.length === text.length) return;
+                searchBox.value = chosenOne.innerHTML;
+                searchBox.setSelectionRange(text.length, chosenOne.innerHTML.length);
+            });
+
+            for(const option of options) {
+                option.addEventListener("click", ev => {
+                    builder.gui.Weapon_Select(option);
+
+                    if(ev.isTrusted || ev.detail == -1) {
+                        searchBox.value = option.innerHTML;
+                    }
+                });
+            }
         }
         /* TRYING NEW 
         if(!builder.mobile) searchBox.addEventListener("keyup", ev => {

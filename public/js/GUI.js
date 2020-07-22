@@ -514,15 +514,26 @@ export default class GUI {
     }
 
     /**
-     * 
+     * Select the specified weapon
      * @param {HTMLSpanElement} selected The weapon to make active
      */
-    Weapon_Activate(selected) {
+    Weapon_Select(selected) {
         const alreadyActive = document.querySelector(".wp_select_option_group > span.active");
         if(alreadyActive) alreadyActive.classList.remove("active");
 
+        this.builder.exp.primary.value = selected.dataset.value;
         selected.classList.add("active");
         document.querySelector("#wp_primary_select > span").innerHTML = this.builder.dbs.get("primaries").get(selected.parentElement.dataset.label)[selected.dataset.value].name;
+    }
+    
+    /**
+     * Unselects the specified weapon
+     */
+    Weapon_Unselect() {
+        const alreadyActive = document.querySelector(".wp_select_option_group > span.active");
+        if(alreadyActive) alreadyActive.classList.remove("active");
+        this.builder.exp.primary.value = null;
+        document.querySelector("#wp_primary_select > span").innerHTML = "--Choose a primary weapon--";
     }
 
     /**
