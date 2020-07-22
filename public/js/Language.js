@@ -1,4 +1,4 @@
-const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
+const langs = new Map([["en-us", "English (American)"], ["ru-ru", "русский"], ["zh-cn", "中文"]]);
 let defaultLang = "en-us";
 
 /**
