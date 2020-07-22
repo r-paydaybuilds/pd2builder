@@ -584,21 +584,24 @@ document.onreadystatechange = async () => {
         if(!builder.mobile) {
             // Add search bar functionality
             let originalInput = "";
+
             searchBox.addEventListener("input", () => {
                 let text = searchBox.value.toLocaleLowerCase(builder.lang.used);
                 if(originalInput.length === text.length) {
                     searchBox.value = searchBox.value.slice(0, -1);
                     text = text.slice(0, -1);
                 }
-
-                //Filter select
-                const wp_select = document.getElementById("wp_primary_select"); 
-                builder.gui.Weapon_FilterSelectbox(wp_select, originalInput);
+                originalInput = text;
 
                 if(!text) {
                     builder.gui.Weapon_Unselect();
+                    for(const option of options) {
+                        option.style.display = "flex";
+                    }
                     return;
                 }
+                const wp_select = document.getElementById("wp_primary_select"); 
+                builder.gui.Weapon_FilterSelectbox(wp_select, text);
 
                 const chosenOne = [...options].find(weapon => {
                     return weapon.innerHTML.toLocaleLowerCase(builder.lang.used).startsWith(text);
