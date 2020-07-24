@@ -618,12 +618,9 @@ document.onreadystatechange = async () => {
             });
 
             for(const option of options) {
-                option.addEventListener("click", ev => {
+                option.addEventListener("click", () => {
                     builder.gui.Weapon_Select(option);
-
-                    if(ev.isTrusted || ev.detail == -1) {
-                        searchBox.value = option.innerHTML;
-                    }
+                    searchBox.value = option.innerHTML;
                 });
             }
         }
