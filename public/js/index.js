@@ -612,9 +612,9 @@ document.onreadystatechange = async () => {
                 }
 
                 chosenOne.click();
-                if(chosenOne.innerHTML.length === text.length) return;
-                searchBox.value = chosenOne.innerHTML;
-                searchBox.setSelectionRange(text.length, chosenOne.innerHTML.length);
+                if(chosenOne.innerHTML.length === text.length) {
+                    searchBox.setSelectionRange(text.length, chosenOne.innerHTML.length);
+                }
             });
 
             for(const option of options) {
