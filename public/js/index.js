@@ -612,7 +612,7 @@ document.onreadystatechange = async () => {
                 }
 
                 chosenOne.click();
-                if(chosenOne.innerHTML.length === text.length) {
+                if(chosenOne.innerHTML.length !== text.length) {
                     searchBox.setSelectionRange(text.length, chosenOne.innerHTML.length);
                 }
             });
