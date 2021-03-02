@@ -429,7 +429,6 @@ class UIEventHandler {
                     if(!propagate) ev.stopPropagation();
                     if(ev.button != 0) return;
                 } else {
-                    ev.preventDefault();
                     ev.stopImmediatePropagation();
                     if(this.touchId !== null) return;
                     const touch = ev.touches[0];
@@ -469,8 +468,7 @@ class UIEventHandler {
                 || (ev instanceof MouseEvent && ev.button !== 0) 
                 || (ev.touches && Util.findTouch(ev.touches, this.touchId))
                 ) return;
-                ev.stopPropagation();
-                ev.preventDefault();
+                ev.stopImmediatePropagation();
                 clearTimeout(this.holding);
 
                 if(ev instanceof MouseEvent) {
