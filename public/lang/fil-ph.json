@@ -30,7 +30,7 @@
             "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
         },
         "first_aid_kit": {
-            "name": "Pangunang Tulong-Lunas",
+            "name": "Kit ng Pangunang Tulong-Lunas",
             "description": "Ang Kit ng Pangunang Tulong-Lunas ay isang koleksyon ng mga kagamitan upang magamit sa mga pangunahing lunas.\nUpang gamitin ang Kit ng Pangunang Tulong-lunas, kailangan mo na i-hold ang [G] upang mailagay ito. Kapag ito ay nalagay na, hindi ito maaring maigalaw pa, pero ito ay maaring gamitin para sa iyo at ang iyong tauhan gamit ang pag-hold ng [F] para makakuha ulit ng health.\nAng isang nakalagay na Kit ng Pangunang Tulong-lunas ay maaring gamitin ng isang beses at pag ito ay nagamit na, ito ay mawawala."
         },
         "sentry_gun": {
@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
         },
         "basic_close_combat": {
@@ -814,7 +814,7 @@
             "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
-            "name": "Third Law",
+            "name": "Ikatlong Batas",
             "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
         },
         "sentry_targeting_package": {
@@ -838,7 +838,7 @@
             "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
         },
         "hardware_expert": {
-            "name": "Hardware Expert",
+            "name": "Eksperto ng Hardware",
             "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Sneaky Bastard",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Second Wind",
@@ -987,11 +987,11 @@
             "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
         },
         "nine_lives": {
-            "name": "Nine Lives",
+            "name": "Siyam na Buhay",
             "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
-            "name": "Running from Death",
+            "name": "Tumatakbo mula kay Kamatayan",
             "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
@@ -1137,7 +1137,9 @@
             "p1": "Ang site na ito ay ginawang posible mula sa pagsisikap ng r/paydaybuilds.",
             "p2": "Contributors of this project can be found &{here}.",
             "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
-            "reach": "Reach us at: "
+            "reach": "Reach us at: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "Injector",
             "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }

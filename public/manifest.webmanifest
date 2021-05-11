@@ -13,6 +13,18 @@
     }],
     "categories": ["games", "utilities"],
     "orientation": "any",
+    "shortcuts": [
+        {
+            "name": "Builder",
+            "url": "/"
+        },
+        {
+            "name": "Big Oil Calculator",
+            "short_name": "Big Oil",
+            "url": "/bigoil.html",
+            "description": "Calculator for knowing what engine is the one needed in the Big Oil heist"
+        }
+    ],
     "serviceworker": {
         "src": "sw.js"
     }

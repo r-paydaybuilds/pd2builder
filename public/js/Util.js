@@ -79,16 +79,17 @@ class Util {
     }
 
     static makeState(lang, exp, tab) {
-        return {
+        const state = {
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
             throwable: exp.throwable,
             deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary,
-            tab,
-            lang
+            deployableSecondary: exp.deployableSecondary
         };
+        if(tab) state.tab = tab;
+        if(lang) state.lang = lang;
+        return state;
     }
 
     /**
@@ -428,7 +429,6 @@ class UIEventHandler {
                     if(!propagate) ev.stopPropagation();
                     if(ev.button != 0) return;
                 } else {
-                    ev.preventDefault();
                     ev.stopImmediatePropagation();
                     if(this.touchId !== null) return;
                     const touch = ev.touches[0];
@@ -468,8 +468,7 @@ class UIEventHandler {
                 || (ev instanceof MouseEvent && ev.button !== 0) 
                 || (ev.touches && Util.findTouch(ev.touches, this.touchId))
                 ) return;
-                ev.stopPropagation();
-                ev.preventDefault();
+                ev.stopImmediatePropagation();
                 clearTimeout(this.holding);
 
                 if(ev instanceof MouseEvent) {

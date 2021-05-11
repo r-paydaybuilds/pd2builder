@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
         },
         "basic_close_combat": {
@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Sneaky Bastard",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Second Wind",
@@ -1137,7 +1137,9 @@
             "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
             "p2": "Contributors of this project can be found &{here}.",
             "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
-            "reach": "Reach us at: "
+            "reach": "Reach us at: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "Injector",
             "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }

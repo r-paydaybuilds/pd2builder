@@ -101,9 +101,12 @@ export default class Builder {
         this.lang;
     }
 
-    loadLanguage(obj, lang) {
-        this.lang = new Language(obj, lang);
-        document.documentElement.setAttribute("lang", lang);
+    /**
+     * Loads language to the Builder page
+     * @param {string} curLang Current lang that is being sued
+     */
+    loadLanguage(curLang) {
+        document.documentElement.setAttribute("lang", curLang);
 
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
             e.setAttribute("data-equip", this.lang.get("system.equip"))
