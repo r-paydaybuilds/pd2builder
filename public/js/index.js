@@ -642,7 +642,7 @@ window.onload = async () => {
     if (builder.io.HasToLoadBuild()) {
         builder.io.LoadBuildFromIterable(new URLSearchParams(window.location.search));
     }
-    const tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
+    let tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
     if (document.getElementById(tabChange) == null) tabChange = "tab_skills_page";
     builder.gui.Tab_ChangeTo(tabChange);
     window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
