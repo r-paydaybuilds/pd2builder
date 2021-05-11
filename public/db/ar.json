@@ -1,5 +1,6 @@
 [
     {
+        "key": "golden_ak",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Golden AK7.62",
@@ -19,6 +20,7 @@
         ]
     },
     {
+        "key": "amcar",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AMCAR",
@@ -38,6 +40,7 @@
         ]
     },
     {
+        "key": "ak",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AK",
@@ -57,6 +60,7 @@
         ]
     },
     {
+        "key": "car-4",
         "category": "primary",
         "type": "assault_rifle",
         "name": "CAR-4",
@@ -76,6 +80,7 @@
         ]
     },
     {
+        "key": "uar",
         "category": "primary",
         "type": "assault_rifle",
         "name": "UAR",
@@ -94,7 +99,8 @@
             "stock"
         ]
     },
-    {
+    {   
+        "key": "ak762",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AK7.62",
@@ -114,6 +120,7 @@
         ]
     },
     {
+        "key": "jp36",
         "category": "primary",
         "type": "assault_rifle",
         "name": "JP36",
@@ -133,6 +140,7 @@
         ]
     },
     {
+        "key": "galant",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Galant",
@@ -152,6 +160,7 @@
         ]
     },
     {
+        "key": "m308",
         "category": "primary",
         "type": "assault_rifle",
         "name": "M308",
@@ -171,6 +180,7 @@
         ]
     },
     {
+        "key": "ak5",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AK5",
@@ -190,6 +200,7 @@
         ]
     },
     {
+        "key": "tempest",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Tempest-21",
@@ -209,6 +220,7 @@
         ]
     },
     {
+        "key": "amr",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AMR-16",
@@ -228,6 +240,7 @@
         ]
     },
     {
+        "key": "commando",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Commando 553",
@@ -247,6 +260,7 @@
         ]
     },
     {
+        "key": "eagle_heavy",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Eagle Heavy",
@@ -266,6 +280,7 @@
         ]
     },
     {
+        "key": "falcon",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Falcon",
@@ -285,6 +300,7 @@
         ]
     },
     {
+        "key": "clarion",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Clarion",
@@ -304,6 +320,7 @@
         ]
     },
     {
+        "key": "gecko762",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Gecko 7.62",
@@ -323,6 +340,7 @@
         ]
     },
     {
+        "key": "gewehr3",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Gewehr 3",
@@ -342,6 +360,7 @@
         ]
     },
     {
+        "key": "queenwrath",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Queen's Wrath",
@@ -361,6 +380,7 @@
         ]
     },
     {
+        "key": "lionroar",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Lion's Roar",
@@ -380,6 +400,7 @@
         ]
     },
     {
+        "key": "valkyria",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Valkyria",
@@ -399,6 +420,7 @@
         ]
     },
     {
+        "key": "cavity9",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Cavity 9mm",
@@ -418,6 +440,7 @@
         ]
     },
     {
+        "key": "bootleg",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Bootleg",
@@ -437,6 +460,7 @@
         ]
     },
     {
+        "key": "littlefriend",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Little Friend",
@@ -456,6 +480,7 @@
         ]
     },
     {
+        "key": "union",
         "category": "primary",
         "type": "assault_rifle",
         "name": "Union",
@@ -475,6 +500,7 @@
         ]
     },
     {
+        "key": "ak17",
         "category": "primary",
         "type": "assault_rifle",
         "name": "AK-17",

@@ -1,72 +1,72 @@
 {
     "armors": {
-        "suit": "Two-Piece Suit",
-        "light_ballistic": "Light Ballistic Vest",
-        "ballistic": "Ballistic Vest",
-        "heavy_ballistic": "Heavy Ballistic Vest",
-        "flak": "Flak",
-        "ctv": "Combined Tactical Vest",
-        "ictv": "Improved Combined Tactical Vest"
+        "suit": "Terno",
+        "light_ballistic": "Colete Balístico Leve",
+        "ballistic": "Colete Balístico",
+        "heavy_ballistic": "Colete Balístico Pesado",
+        "flak": "Colete Flak",
+        "ctv": "Colete Tático",
+        "ictv": "Colete Tático Pesado"
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Ammo Bag",
-            "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
+            "name": "Sacola de Munição",
+            "description": "Pra colocar a bolsa de munição, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir mais munição. Pode recuperar completamente a munição de uma das suas armas até 4 vezes. Quando a bolsa de munição estiver vazia, desaparecerá. Você pode ver quanta munição resta na bolsa de munição olhando-a. A bolsa de munição é portátil, originalmente pensada para que soldados carregarem munição extra em combate."
         },
         "armor_bag": {
-            "name": "Armor Bag",
-            "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
+            "name": "Bolsa de Colete",
+            "description": "Para usar a bolsa de colete, segure [G] pra vestir o colete previamente selecionado. Até aí, você vai estar usando o Terno.\nA bolsa de colete tem uma única utilização e quando usada, sumirá. A bolsa de colete portátil é usada pra transportar um colete á sua escolha, e pode ser usada durante um assalto."
         },
         "body_bag_case": {
-            "name": "Body Bag Case",
-            "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
+            "name": "Maleta de Bolsas para Cadáveres",
+            "description": "Pra colocar a maleta de bolsa de cadáveres, segure [G]. Uma vez colocada, não pode ser movida, mas você e o seu time podem segurar [F] para conseguir uma bolsa de cadáver. A maleta tem usos limitados, você poder ver seus usos restantes olhando-a.\nA maleta tem bolsas adicionais, usadas pra transportar corpos em missões sigilosas."
         },
         "doctor_bag": {
-            "name": "Doctor Bag",
-            "description": "To use the Doctor Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health. Using the Doctor Bag will reset the amount of times the player can get downed before going into custody. It can only be used twice.\nWhen the Doctor Bag is consumed, it disappears. You see how many uses are left by looking at the Doctor Bag.\nThe Doctor Bag is a portable bag, usually used by a physician or other medical profession to transport medical supplies and medicine."
+            "name": "Bolsa Médica",
+            "description": "Para usar a Bolsa Médica, você coloca segurando [G]. Assim que for colocado não pode ser movido, mas você e o seu time podem usar por segurar [F] para recuperar vida. Usando a Bolsa Médica irá resetar a quantidade de quedas do jogador antes de ir pra custódia. Pode ser usado duas vezes.\nQuando a Bolsa Médica é usado, irá sumir. Você pode ver quantos usos restam por olhar na Bolsa.\nA Bolsa Médica é portátil, usado por um físico ou outra profissão de médico para transportar suprimentos e medicina."
         },
         "ecm_jammer": {
-            "name": "ECM Jammer",
-            "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
+            "name": "Bloqueador de ECM",
+            "description": "Para usar o Bloqueador de ECM, você precisa colocar segurando [G]. Assim que colocado não pode ser movido e vai está ativo por 20 segundos.\nVocê pode alternar o Bloqueador de ECM por apertar [F]. O Bloqueador de ECM tem uma chance de atordoar os seus inimigos com uma certa distância. Quando usado, para de funcionar.\nUm Eletrônico de Contra-Medida (ECM) é um dispositivo eletrônico usado para enganar o radar, sonar e outros sistemas de detecção, facilitando o seu trabalho."
         },
         "first_aid_kit": {
-            "name": "First Aid Kit",
-            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
+            "name": "Kit de Primeiro Socorros",
+            "description": "O Kit de Primeiros Socorros é uma coleção de suprimentos e equipamento para uso em dar primeiro socorro.\nPara usar o Kit de Primeiros Socorros, você precisa coloca segurando [G]. Assim que for colocado, não pode ser movido, mas você e o seu time podem usar segurando [F] para recuperar vida. Um Kit de Primeiros Socorros no chão pode ser usado e quando é consumido irá sumir."
         },
         "sentry_gun": {
-            "name": "Sentry Gun",
-            "description": "To use the Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention from you and your team."
+            "name": "Sentinela",
+            "description": "Para usar a Sentinela, você precisa coloca segurando [G]. Assim que for colocada, irá usar 30% da munição total da suas armas. Pode ser destruída por levar dano de tiros, mas desde que não for destruída, pegá-la irá automaticamente consertá-la e retornar a munição restante da Sentinela. Assim que a munição acabar irá parar de atirar e pode ser recarregado só por colocá-la de novo.\nA Sentinela automaticamente mira e atira nos alvos que forem detectados pelo seu sensor. É comum usar para distração pra você e o seu time."
         },
         "suppressed_sentry_gun": {
-            "name": "Suppressed Sentry Gun",
-            "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
+            "name": "Sentinela Silenciada",
+            "description": "Para usar a Sentinela Silenciada, você precisa coloca segurando [G]. Assim que for colocada, irá usar 30% da munição total da suas armas. Pode ser destruída por levar dano de tiros, mas desde que não for destruída, pegá-la irá automaticamente consertá-la e retornar a munição restante da Sentinela. Assim que a munição acabar irá parar de atirar e pode ser recarregado só por colocá-la de novo.\nA Sentinela Silenciada é o contrário da Sentinela barulhenta como é mais usado para matar inimigos do que uma clássica distração."
         },
         "trip_mines_and_shaped_charges": {
-            "name": "Trip Mines and Shaped Charges",
-            "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
+            "name": "Minas e Cargas Explosivas",
+            "description": "Para usar uma Mina, você precisa colocá-lo usando [G]. O laser de ativação pode ser alternado do modo explosivo e o sensor por apertar [F].\nPara usar a Carga Explosiva, você precisa colocá-lo segurando [G]. Assim que for colocado irá explodir dentro de alguns segundos. As Minas são armadilhas que irá machucar ou matar inimigos que cruzarem no laser. As Cargas Explosivas tem um uso comum em arrombar portas e cofres. Ambos são uma boa adição para todas as situações de combate."
         }
     },
     "perk_cards": {
         "helmet_popping": {
-            "name": "Helmet Popping",
-            "description": "Increases your headshot damage by 25%."
+            "name": "Capacete Voando",
+            "description": "Aumenta o seu dano de tiro na cabeça por 25%."
         },
         "blending_in": {
-            "name": "Blending In",
-            "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs."
+            "name": "Se misturando",
+            "description": "Você ganha mais 1 de Discrição.\nQuando estiver vestindo um colete, a sua velocidade de movimento é 15% menos afetada.\nVocê ganha 45% mais de experiência quando você completa os dias e os roubos."
         },
         "walk-in_closet": {
-            "name": "Walk-in Closet",
-            "description": "Unlocks an armor bag equipment for you to use. The armor bag can be used to change your armor during a heist.\nIncreases your ammo pickup to 135% of the normal rate."
+            "name": "Só por preocupação",
+            "description": "Desbloqueia a Bolsa de Colete para você usar. A Bolsa de Colete pode ser usada para mudar o seu colete durante o roubo.\nAumenta a sua munição de pegar no chão para 135% do ritmo normal."
         },
         "fast_and_furious": {
-            "name": "Fast and Furious",
-            "description": "You do 5% more damage. Does not apply to melee damage, throwables, grenade launchers or rocket launchers.\nIncreases your doctor bag interaction speed by 20%."
+            "name": "Rápido e Furioso",
+            "description": "Você faz 5% mais de dano. Isso não aplica para o dano das armas corpo-a-corpo, granadas, lança-granadas ou lança-foguetes.\nAumenta a velocidade de interação com a Bolsa Médica por 20%."
         },
         "brute_strength-1": {
-            "name": "Brute Strength",
-            "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "name": "Força Bruta",
+            "description": "Você garante 8% de redução de dano para os jogadores do seu grupo. Esse bônus é dobrado para você quando a sua vida estiver abaixo de 50%.",
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "marathon_man": {
             "name": "Marathon Man",
@@ -89,9 +89,9 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "brute_strength-2": {
-            "name": "Brute Strength",
+            "name": "Força Bruta",
             "description": "You gain 10% more health.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "meat_shield": {
             "name": "Meat Shield",
@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
         },
         "basic_close_combat": {
@@ -286,7 +286,7 @@
         "medical_supplies": {
             "name": "Medical Supplies",
             "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "ammo_give_out": {
             "name": "Ammo Give Out",
@@ -311,7 +311,7 @@
         "histamine": {
             "name": "Histamine",
             "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "adrenaline": {
             "name": "Adrenaline",
@@ -361,7 +361,7 @@
         "point_break": {
             "name": "Point Break",
             "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "the_emerging_force": {
             "name": "The Emerging Force",
@@ -461,7 +461,7 @@
         "bad_guy_coming_through": {
             "name": "Bad Guy Coming Through",
             "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "play_rough": {
             "name": "Play Rough",
@@ -511,7 +511,7 @@
         "virtue": {
             "name": "Virtue",
             "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "un-moved": {
             "name": "Un-moved",
@@ -536,7 +536,7 @@
         "soul_mates": {
             "name": "Soul Mates",
             "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "scent": {
             "name": "Scent",
@@ -968,7 +968,7 @@
         },
         "gun_nut": {
             "name": "Gun Nut",
-            "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
         },
         "akimbo": {
             "name": "Akimbo",
@@ -1137,7 +1137,9 @@
             "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
             "p2": "Contributors of this project can be found &{here}.",
             "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
-            "reach": "Reach us at: "
+            "reach": "Reach us at: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1209,5 +1211,12 @@
             "name": "Injector",
             "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }

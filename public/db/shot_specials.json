@@ -1,5 +1,6 @@
 [
     {
+        "key": "predator",
         "category": "primary",
         "type": "shotgun",
         "name": "Predator",
@@ -20,6 +21,7 @@
         ]
     },
     {
+        "key": "jocelyne",
         "category": "primary",
         "type": "shotgun",
         "name": "Jocelyne",
@@ -39,6 +41,7 @@
         ]
     },
     {
+        "key": "reinfield",
         "category": "primary",
         "type": "shotgun",
         "name": "Reinfield",
@@ -59,6 +62,7 @@
         ]
     },
     {
+        "key": "izhma",
         "category": "primary",
         "type": "shotgun",
         "name": "IZHMA",
@@ -78,6 +82,7 @@
         ]
     },
     {
+        "key": "mosconi",
         "category": "primary",
         "type": "shotgun",
         "name": "Mosconi",
@@ -97,6 +102,7 @@
         ]
     },
     {
+        "key": "m1014",
         "category": "primary",
         "type": "shotgun",
         "name": "M1014",
@@ -117,6 +123,7 @@
         ]
     },
     {
+        "key": "raven",
         "category": "primary",
         "type": "shotgun",
         "name": "Raven",
@@ -137,6 +144,7 @@
         ]
     },
     {
+        "key": "stakeout",
         "category": "primary",
         "type": "shotgun",
         "name": "Stakeout",
@@ -156,6 +164,7 @@
         ]
     },
     {
+        "key": "breaker",
         "category": "primary",
         "type": "shotgun",
         "name": "Breaker",
@@ -178,6 +187,7 @@
 
 
     {
+        "key": "xl556",
         "category": "primary",
         "type": "special",
         "name": "XL 5.56 Microgun",
@@ -197,6 +207,7 @@
         ]
     },
     {
+        "key": "deca_tech_bow",
         "category": "primary",
         "type": "special",
         "name": "DECA Technologies Compound Bow",
@@ -216,6 +227,7 @@
         ]
     },
     {
+        "key": "ove9000",
         "category": "primary",
         "type": "special",
         "name": "OVE9000 Saw",
@@ -235,6 +247,7 @@
         ]
     },
     {
+        "key": "gl40",
         "category": "primary",
         "type": "special",
         "name": "GL40",
@@ -254,6 +267,7 @@
         ]
     },
     {
+        "key": "vulcan",
         "category": "primary",
         "type": "special",
         "name": "Vulcan Minigun",
@@ -273,6 +287,7 @@
         ]
     },
     {
+        "key": "piglet",
         "category": "primary",
         "type": "special",
         "name": "Piglet",
@@ -293,6 +308,7 @@
         ]
     },
     {
+        "key": "flamethrower",
         "category": "primary",
         "type": "special",
         "name": "Flamethrower",
@@ -312,6 +328,7 @@
         ]
     },
     {
+        "key": "plainsrider",
         "category": "primary",
         "type": "special",
         "name": "Plainsrider",
@@ -331,6 +348,7 @@
         ]
     },
     {
+        "key": "light_crossbow",
         "category": "primary",
         "type": "special",
         "name": "Light Crossbow",
@@ -350,6 +368,7 @@
         ]
     },
     {
+        "key": "english_longbow",
         "category": "primary",
         "type": "special",
         "name": "English Longbow",
@@ -369,6 +388,7 @@
         ]
     },
     {
+        "key": "heavy_crossbow",
         "category": "primary",
         "type": "special",
         "name": "Heavy Crossbow",
@@ -388,6 +408,7 @@
         ]
     },
     {
+        "key": "airbow",
         "category": "primary",
         "type": "special",
         "name": "Airbow",

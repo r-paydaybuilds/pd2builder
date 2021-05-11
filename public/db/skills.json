@@ -69,16 +69,7 @@
         "ace": 4,
         "tier": 2,
         "subtree": "controller",
-        "tree": "mastermind",
-        "stats": {
-            "basic": [
-                {
-                    "type": "shout",
-                    "value": 1.5,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "mastermind"
     },
     "joker": {
         "name": "Joker",
@@ -234,16 +225,7 @@
         "ace": 3,
         "tier": 1,
         "subtree": "tank",
-        "tree": "enforcer",
-        "stats": {
-            "basic": [
-                {
-                    "type": "armorRecoveryRate",
-                    "value": 1.15,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "enforcer"
     },
     "die_hard": {
         "name": "Die Hard",
@@ -254,16 +236,14 @@
         "subtree": "tank",
         "tree": "enforcer",
         "stats": {
-            "ace": [
+            "aced": [
                 {
+                    "id": 1,
                     "type": "armor",
+                    "part": "armMod",
                     "value": 20,
-                    "whitelist": [
-                        "light_ballistic",
-                        "ballistic",
-                        "heavy_ballistic"
-                    ]
-                }
+                    "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
+                }    
             ]
         }
     },
@@ -283,21 +263,7 @@
         "ace": 6,
         "tier": 3,
         "subtree": "tank",
-        "tree": "enforcer",
-        "stats": {
-            "basic": [
-                {
-                    "type": "armor",
-                    "value": 1.25,
-                    "multiply": true
-                },
-                {
-                    "type": "crewArmor",
-                    "value": 1.25,
-                    "multiply": true
-                }
-            ]
-        }
+        "tree": "enforcer"
     },
     "bullseye": {
         "name": "Bullseye",
@@ -322,9 +288,10 @@
         "stats": {
             "basic": [
                 {
+                    "id": 6,
                     "type": "armor",
-                    "value": 1.30,
-                    "multiply": true
+                    "part": "armBonus",
+                    "value": 0.30
                 }
             ]
         }
@@ -878,6 +845,16 @@
         "ace": 8,
         "tier": 4,
         "subtree": "brawler",
-        "tree": "fugitive"
+        "tree": "fugitive",
+        "stats": {
+            "basic": [
+                {
+                    "id": 18,
+                    "type": "health",
+                    "part": "healthFrenzy",
+                    "value": -0.7
+                }
+            ]
+        }
     }
 }

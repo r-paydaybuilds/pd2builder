@@ -39,6 +39,10 @@ String.prototype.toCamelCase = function() {
     return this.replace(/(_\w)/g, (m) => m[1].toUpperCase());
 };
 
+Number.prototype.maybeRound = function(precision) {
+    return parseFloat(this.toFixed(precision));
+};
+
 /**
  * A class that should be filled with absolutely not useless stuff
  * @static
@@ -74,9 +78,8 @@ class Util {
         return params;
     }
 
-    static makeState(lang, exp) {
-        return {
-            lang: lang,
+    static makeState(lang, exp, tab) {
+        const state = {
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
@@ -84,6 +87,9 @@ class Util {
             deployable: exp.deployable,
             deployableSecondary: exp.deployableSecondary
         };
+        if(tab) state.tab = tab;
+        if(lang) state.lang = lang;
+        return state;
     }
 
     /**
@@ -120,6 +126,20 @@ class Util {
             parent = parent.parentElement;
         }
         return parent;
+    }
+
+    /**
+     * Tells you if your touch id is in the touch list
+     * @static
+     * @param {TouchList} list 
+     * @param {Number} id
+     * @returns {false|Touch} 
+     */
+    static findTouch(list, id) {
+        for(const touch of list) {
+            if(touch.identifier === id) return touch;
+        }
+        return false;
     }
 }
 
@@ -197,7 +217,7 @@ class DBMap extends Map {
                 fetch(`./db/${key}.json`)
                     .then( res => res.json() )
                     .then( json => {
-                        if(key === "skills" || key === "perk_cards") {
+                        if(key === "skills" || key === "perk_decks") {
                             for(const prop in json) {
                                 if(!json[prop].stats) continue;
                                 if(key === "skills") {
@@ -218,12 +238,14 @@ class DBMap extends Map {
     /**
      * The unlocks of the object containing the properties of the type above for it to be unlocked
      * @typedef {Object} StatModifier
+     * @property {Number} id Unique number for override (simplest way i though to do it tbh)
      * @property {String} type The stat that is being modified
+     * @property {String} part In what part of the formula it is
      * @property {String|Number} value Value to apply if is number. Value to make a function out of if it's an string (needs to return a number)
-     * @property {Boolean=} multiply Flag to check if you want to multiply the value
      * @property {String[]=} arguments Arguments that are stat names to apply to function if value is String
      * @property {String[]=} whitelist Armors that are in the whitelist
      * @property {String[]=} blacklist Armors that are in the blacklist
+     * @property {Number[]=} overrides Modifiers that overrides
      */
 
     /**
@@ -233,19 +255,8 @@ class DBMap extends Map {
     static processModifiers(...mods) {
         for(const mod of mods) {
             if(!mod) continue;
-            if(typeof mod.value === "number") {
-                if(mod.multiply) {
-                    mod.exec = x => x * mod.value;
-                } else {
-                    mod.exec = x => x + mod.value;
-                }
-            } else {
-                const func = Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
-                if(mod.multiply) {
-                    mod.exec = (x, ...args) => x * func.apply({}, args);
-                } else {
-                    mod.exec = (x, ...args) => x + func.apply({}, args);
-                }
+            if(typeof mod.value === "string") {
+                return Function.apply({}, [...mod.arguments, `return (${mod.value})`]);
             }
         }
     }
@@ -346,5 +357,155 @@ class System {
  */
 System.TIER_UTIL = [0, 1, 3, 16];
 
-export { Util as default, SkillMap, DBMap, System };
-export const { querySelector: $, querySelectorAll: $$, getElementById: $i, getElementsByClassName: $c, getElementsByTagName: $t } = document;
+/**
+ * A class that transform X movement to X scroll
+ */
+class XScrollTransformer {
+
+    constructor() {
+        this.down = false;
+        this.contexts = [];
+        this.curContext;
+
+        document.addEventListener("mouseup", ev => {
+            if(this.down && ev.button == 0) {
+                ev.preventDefault();
+                this.down = false;
+            }
+        });
+        document.addEventListener("mousemove", ev => {
+            if(this.down) this.curContext.element.scrollBy(ev.movementX * this.curContext.multiply, 0);
+        }, { passive: true });
+    }
+
+    /**
+     * Add element for transforming
+     * @param {HTMLElement} element Element to listen to
+     * @param {Number} [multiply=1] Multiplier for x movement that translates to scroll
+     * @param {boolean} [propagate=true] Propagate mouse down event
+     */
+    addContext(element, multiply = 1, propagate = true) {
+        const context = {element, propagate, multiply};
+        this.contexts.push(context);
+
+        element.addEventListener("mousedown", ev => {
+            if(ev.button == 0) {
+                this.down = true;
+                this.curContext = context;
+                if(!propagate && ev.target.closest(".pk_deck_cards > div")) ev.stopPropagation();
+                ev.preventDefault();
+            }
+        });
+    }
+}
+
+/**
+ * @callback MobileEvent
+ * @returns {void}
+ */
+
+class UIEventHandler {
+    /**
+     * 
+     * @param {Object} obj
+     * @param {HTMLElement} obj.element Element to handle
+     * @param {MobileEvent} obj.hold Function for handling element when its being clicked down for 250ms
+     * @param {MobileEvent} [obj.double] Function for handling double tap that means its touch only
+     * @param {MobileEvent} [obj.click] Function for handling a simple click 
+     */
+    constructor({ 
+        click = () => element.dispatchEvent(new MouseEvent("click", { detail: -1 })), 
+        double = () => element.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })), 
+        element, mobile, hold, propagate = false
+    }) {    
+        this.touchId = null;
+        this.last = [];
+        this.remaining = [];
+        this.holding = false;
+        this.didDouble = false;
+        this.listen = false;
+        const start = ev => {
+                if(ev instanceof MouseEvent) {
+                    if(!propagate) ev.stopPropagation();
+                    if(ev.button != 0) return;
+                } else {
+                    ev.stopImmediatePropagation();
+                    if(this.touchId !== null) return;
+                    const touch = ev.touches[0];
+                    this.touchId = touch.identifier;
+                    this.last = [touch.clientX, touch.clientY];
+                }
+                this.remaining = [
+                    (document.documentElement.clientWidth * 2)/100,
+                    (document.documentElement.clientHeight * 2)/100
+                ];
+                this.holding = setTimeout(() => {
+                    this.holding = true;
+                    this.touchId = null;
+                    this.listen = false;
+                    hold();
+                }, 750);
+                this.listen = true;
+            }, move = ev => {
+                if(!this.listen) return;
+                if(ev instanceof MouseEvent) {
+                    this.remaining[0] -= Math.abs(ev.movementX);
+                    this.remaining[1] -= Math.abs(ev.movementY);
+                } else {
+                    const touch = Util.findTouch(ev.changedTouches, this.touchId);
+                    if(!touch) return;
+                    this.remaining[0] -= Math.abs(touch.clientX - this.last[0]);
+                    this.remaining[1] -= Math.abs(touch.clientY - this.last[1]);
+                    this.last = [touch.clientX, touch.clientY];
+                }
+                if(this.remaining.some(val => val <= 0)) {
+                    clearTimeout(this.holding);
+                    this.touchId = null;
+                    this.listen = false;
+                }
+            }, stop = ev => {
+                if(!this.listen
+                || (ev instanceof MouseEvent && ev.button !== 0) 
+                || (ev.touches && Util.findTouch(ev.touches, this.touchId))
+                ) return;
+                ev.stopImmediatePropagation();
+                clearTimeout(this.holding);
+
+                if(ev instanceof MouseEvent) {
+                    this.listen = false;
+                    this.touchId = null;
+                    return;
+                }
+
+                if(this.didDouble) {
+                    this.didDouble = false;
+                    this.touchId = null;
+                    this.listen = false;
+                    double();
+                    return;
+                }
+
+                this.didDouble = true;
+                setTimeout(() => { 
+                    if(this.didDouble) {
+                        this.listen = false;
+                        this.touchId = null;
+                        this.didDouble = false;
+                        click();
+                    }
+                }, 250);
+            };
+
+        element.addEventListener("touchstart", start);
+        element.addEventListener("touchcancel", () => this.touchId = null);
+        element.addEventListener("touchmove", move);
+        element.addEventListener("touchend", stop);
+        if(mobile) {
+            element.addEventListener("mouseup", stop);
+            element.addEventListener("mousemove", move);
+            element.addEventListener("mousedown", start);
+        }
+    }
+}
+
+export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler };

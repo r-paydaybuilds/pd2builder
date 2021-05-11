@@ -3,87 +3,40 @@ if("serviceWorker" in navigator) {
 }
 
 import Builder from "./Builder.js";
-import Util from "./Util.js";
-
-const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
-let defaultLang = "en-us";
+import Util, { UIEventHandler } from "./Util.js";
+import Language from "./Language.js";
 
 const builder = new Builder(window.innerWidth < 1003);
 
-//Change to mobile version if browser was resized to a very small size
-window.addEventListener("resize", () => {
-    const url = new URL(window.location.href);
-    if(!builder.mobile && window.innerWidth < 1003) {
-        url.pathname += "mobile.html";
-        window.location.replace(url);
-    } else if(builder.mobile && window.innerWidth >= 1003) {
-        url.pathname = url.pathname.replace("mobile.html", "");
-        window.location.replace(url);
-    }
-});
+window.onload = async () => {
+    // Load language
+    builder.lang = new Language(document.getElementById("langDrop"));
+    const fetchLang = builder.lang.handleSelect(builder.loadLanguage, builder);
 
-document.onreadystatechange = async () => {
-    let fetchLang, curLang;
+    // Change from desktop or mobile version if screen is too big or too small
+    window.addEventListener("resize", () => {
+        const url = new URL(window.location.href);
+        if(!builder.mobile && window.innerWidth < 1003) {
+            url.pathname += "mobile.html";
+            window.location.replace(url);
+        } else if(builder.mobile && window.innerWidth >= 1003) {
+            url.pathname = url.pathname.replace("mobile.html", "");
+            window.location.replace(url);
+        }
+    });
+
     //
     // Bind Events on page 
-    {
-        const langDrop = document.getElementById("langDrop");
-        const params = new URLSearchParams(window.location.search);
-        // Fill the select node
-        for(const [langKey, langName] of langs) {
-            const option = new Option(langName, langKey);
-            langDrop.appendChild(option);
-        }
-
-        const langKeys = [...langs.keys()];
-        // If a param with lang has been included, force that one
-        if(params.has("lang") && langs.has(params.get("lang"))) {
-            const lang = params.get("lang");
-            curLang = lang;
-            sessionStorage.setItem("lang", lang);
-        // If user already configured a lang use that one
-        } else if(sessionStorage.getItem("lang")) {
-            curLang = sessionStorage.getItem("lang");
-        } else {
-            // Check if we have the lang currently being used in the PC
-            if(langs.has(navigator.language.toLowerCase())) {
-                defaultLang = navigator.language;
-            // Check if we have a variant of such 
-            } else if(langKeys.some(langKey => langKey.startsWith(navigator.language.split("-")[0]) )) {
-                defaultLang = langKeys.find(langKey => 
-                    langKey.startsWith(navigator.language.split("-")[0])
-                );
-            } else if(navigator.languages) {
-                // Check if we even have any of the languages the PC has
-                defaultLang = navigator.languages.find(e => langs.has(e.toLowerCase())) 
-                    // Then check if we have any other variants of the languages that the PC has
-                    || langKeys.find(langKey => navigator.languages.some(navLang => langKey.startsWith(navLang.split("-")[0]) ))
-                    // and then if nothing worked, just go for the already default language
-                    || defaultLang;
-            }
-
-            defaultLang = defaultLang.toLowerCase(),
-            curLang = defaultLang;
-        }
-        // Fetch it and put it as default on select
-        fetchLang = fetch(`./lang/${curLang}.json`).then(res => res.json()),
-        langDrop.value = curLang;
-
-        // Bind event for when select is changed
-        langDrop.addEventListener("change", async (e) => {
-            const choosenLang = e.target.value;
-            sessionStorage.setItem("lang", choosenLang);
-            builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
-            window.history.pushState(Util.makeState(builder.lang.used, builder.exp), `language changed to ${choosenLang}`);
-        });
-    }
-
     if(builder.mobile) {
         //Detect when you dont click on x part of the document
-        document.onclick = ev => {
-            if(!ev.target.closest("#description_card.active")) builder.gui.DescriptionCard_Show(false);
-            if(!ev.target.closest("#sk_tree_buttons button, sk_tree_button_group")) builder.gui.Tree_ShowSelection(false);
-        };
+        document.addEventListener("click", ev => {
+            if(document.querySelector("#description_card.active") && ev.target.tagName !== "BODY" && !ev.target.closest("#description_card.active")) {
+                builder.gui.DescriptionCard_Show(false);
+            }
+            if(document.querySelector(".sk_tree_button_group.active") && !ev.target.closest("#sk_tree_buttons button, .sk_tree_button_group")) {
+                builder.gui.Tree_ShowSelection(false);
+            }
+        });
 
         //Make the X of description do something
         document.querySelector("#description_card > a").addEventListener("click", () =>
@@ -92,7 +45,7 @@ document.onreadystatechange = async () => {
         
         { //Slide to exit description
             const desc = document.getElementById("description_card");
-            let remaining = 0, startX = 0, currentTouch = null;
+            let remaining = 0, startX = 0, currentTouch = null, listen = false;
 
             desc.addEventListener("touchstart", ev => {
                 if(currentTouch !== null) return;
@@ -100,24 +53,22 @@ document.onreadystatechange = async () => {
                 currentTouch = touch.identifier;
 
                 startX = touch.clientX;
+                listen = true;
             });
-
             desc.addEventListener("touchmove", ev => {
+                if(!listen) return;
                 ev.preventDefault();
-                if(currentTouch === null) return;
-                for(const touch of ev.changedTouches) {
+
+                const touch = Util.findTouch(ev.changedTouches, currentTouch);
+                if(touch) {
                     remaining = -(touch.clientX - startX);
                     if(remaining > 0) remaining = 0;
                     builder.gui.DescriptionCard_Analog(remaining);
-                    return;
                 }
             });
-
             desc.addEventListener("touchend", ev => {
-                if(currentTouch === null) return;
-                for(const touch of ev.targetTouches) {
-                    if(touch.identifier === currentTouch) return;
-                }
+                if(!listen || Util.findTouch(ev.touches, currentTouch)) return;
+
                 if(ev.touches.length > 0) {
                     currentTouch = ev.touches.item(0).identifier;
                 } else { 
@@ -127,8 +78,9 @@ document.onreadystatechange = async () => {
                     } else {
                         builder.gui.DescriptionCard_Show();
                     }
+                    listen = false;
                 }
-            });
+            }, { passive: true });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
                 builder.gui.DescriptionCard_Show();            
@@ -158,6 +110,8 @@ document.onreadystatechange = async () => {
             );
             trees[index + 1].click();
         });
+
+        builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
     // Tab page navigation //
@@ -173,6 +127,7 @@ document.onreadystatechange = async () => {
             builder.gui.HandleRequirements(e.getAttribute("id").replace(/tab_|_button/g, ""));
 
             builder.gui.Tab_ChangeTo(targetTab); 
+            window.sessionStorage.setItem("curTab", targetTab);
         });
     }); 
 
@@ -212,14 +167,13 @@ document.onreadystatechange = async () => {
     // Skill Icon buttons //
     for(const e of document.getElementsByClassName("sk_icon")) {
         // Values for touch: double and successHolding being booleans and holding an ID for timeouts
-        let double = false, successHolding = false, holding;
+        let successHolding = false;
 
         // On click event, add skill
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
-                ev.preventDefault();
+                ev.stopPropagation();
                 return;
             }
 
@@ -241,7 +195,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `added skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -272,7 +226,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -291,57 +245,33 @@ document.onreadystatechange = async () => {
             }
         });
 
-        // when you stop touching the screen, check for holding and double tap
-        e.addEventListener("touchend", ev => {
-            ev.preventDefault();
-            clearTimeout(holding);
-            if(successHolding) {
-                successHolding = false;
-                return;
-            }
-            if(double) {
+        new UIEventHandler({
+            hold: () => {
+                successHolding = true;
+                const id = e.firstElementChild.id; 
+                if(builder.mobile) builder.gui.DescriptionCard_Show();
+                builder.gui.Skill_DisplayDescription(id); 
+            },
+            double: () => {
                 const skill = builder.exp.skills.get(e.firstElementChild.id);
                 if(skill) {
                     Array.from(Array(skill.state)).forEach(() => e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 })));
                 } else {
                     [0,1].forEach(() => e.click());
                 }
-                double = false;
-                return;
-            }
-            double = true;  
-            setTimeout(() => { 
-                if(double) {
-                    double = false;
-                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
-                }
-            }, 250);
-        }, false);
-
-        // Start timeout for holding and holding mouse for mobile too
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
-                successHolding = true;
-
-                const id = e.firstElementChild.id; 
-                if(builder.mobile) builder.gui.DescriptionCard_Show();
-                
-                builder.gui.Skill_DisplayDescription(id); 
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Perk deck buttons //
     for(const e of document.getElementsByClassName("pk_deck")) {
         // Values for successHolding being a boolean and holding an ID for timeouts
-        let successHolding = false, holding;
+        let successHolding = false;
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -359,81 +289,57 @@ document.onreadystatechange = async () => {
                 unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
             });
             
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
             }
         });
 
-        if(!builder.mobile) e.addEventListener("mouseenter", () => {
-            const id = e.id; 
-            if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
-                builder.gui.PerkDeck_DisplayDescription(id); 
-            }
-        });
+        if(!builder.mobile) {
+            e.addEventListener("mouseenter", () => {
+                const id = e.id; 
+                if (document.getElementsByClassName("pk_description")[0].dataset.perkdeck !== id) {
+                    builder.gui.PerkDeck_DisplayDescription(id); 
+                }
+            });
+        } 
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            double: () => null,
+            hold: () => {
                 successHolding = true;
-
                 let id = e.firstElementChild.id; 
                 if(builder.mobile) {
                     builder.gui.DescriptionCard_Show();
                     id = e.id;
                 }
                 builder.gui.PerkDeck_DisplayDescription(id); 
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     } 
 
     // Perk deck cards highlight // 
     if(builder.mobile) {
+        document.querySelectorAll(".pk_deck_cards").forEach(ring => 
+            builder.scrollTransformer.addContext(ring, -1, false)
+        );
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
-            let successHolding = false, holding;
-    
-            const start = ev => {
-                if(ev instanceof MouseEvent && ev.button != 0) return;
-                holding = setTimeout(() => {
-                    ev.preventDefault();
-                    ev.stopPropagation();
-                    successHolding = true;
-    
+            new UIEventHandler({
+                click: () => e.parentElement.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
+                hold: () => {
                     builder.gui.DescriptionCard_Show();
                     builder.gui.PerkCard_DisplayDescription(e); 
-                }, 750);
-            };
-            const end = ev => {
-                if(ev instanceof MouseEvent && ev.button != 0) return;
-                clearTimeout(holding);
-                if(successHolding) {
-                    ev.preventDefault();
-                    ev.stopPropagation();
-                    successHolding = false;
-                    return;
-                }
-            };
-
-            e.addEventListener("mousedown", start);
-            e.addEventListener("touchstart", start);
-
-            e.addEventListener("mouseup", end);
-            e.addEventListener("touchend", end);
+                },
+                double: () => null,
+                mobile: true,
+                element: e,
+                propagate: true
+            });
         });
     } else {
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
@@ -445,17 +351,27 @@ document.onreadystatechange = async () => {
             e.addEventListener("mouseleave", () => {
                 builder.gui.PerkCard_HoveringHighlightOff(); 
             });
+
+            new UIEventHandler({
+                click: () => e.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
+                hold: () => {
+                    builder.gui.PerkCard_DisplayDescription(e); 
+                },
+                double: () => null,
+                mobile: false,
+                element: e
+            });
         });
     }
 
     // Armor icon buttons //
     for(const e of document.getElementsByClassName("arm_icon")) {
-        let holding, successHolding = false;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
                 successHolding = false;
+                ev.stopPropagation();
                 return;
             }
 
@@ -467,9 +383,9 @@ document.onreadystatechange = async () => {
             builder.gui.Armor_Select(e); 
             builder.gui.Armor_DisplayDescriptionCard(id);
 
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used armor ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -480,37 +396,26 @@ document.onreadystatechange = async () => {
             builder.gui.Armor_DisplayDescriptionCard(e.firstElementChild.id);
         });
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () => {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Armor_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            double: () => null,
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Throwables icon buttons // 
     for(const e of document.getElementsByClassName("th_icon")) {
-        let holding, successHolding = false;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -521,9 +426,9 @@ document.onreadystatechange = async () => {
             builder.exp.throwable = id;
             builder.gui.Throwable_Select(e);
 
-            if(ev.isTrusted) {
+            if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used throwable ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -532,37 +437,26 @@ document.onreadystatechange = async () => {
 
         if(!builder.mobile) e.addEventListener("mouseenter", () => builder.gui.Throwable_DisplayDescriptionCard(e.firstElementChild.id));
 
-        e.addEventListener("touchend", ev => {
-            clearTimeout(holding);
-            if(successHolding) {
-                ev.preventDefault();
-                successHolding = false;
-                return;
-            }
-        });
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () =>  {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Throwable_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            double: () => null,
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Deployables icon buttons //
     for(const e of document.getElementsByClassName("dp_icon")) {
-        let double = false, successHolding = false, holding;
+        let successHolding = false;
 
         e.addEventListener("click", ev => {
-            clearTimeout(holding);
             if(successHolding) {
+                ev.stopPropagation();
                 successHolding = false;
                 return;
             }
@@ -578,7 +472,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -595,7 +489,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `used perk ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -609,40 +503,16 @@ document.onreadystatechange = async () => {
             builder.gui.Deployable_DisplayDescriptionCard(e.firstElementChild.id)
         );
 
-        e.addEventListener("touchend", ev => {
-            ev.preventDefault();
-            clearTimeout(holding);
-            if(successHolding) {
-                successHolding = false;
-                return;
-            }
-            if(double) {
-                double = false;
-                e.dispatchEvent(new MouseEvent("contextmenu", { detail: -1 }));
-                return;
-            }
-            double = true;  
-            setTimeout(() => { 
-                if(double) {
-                    double = false;
-                    e.dispatchEvent(new MouseEvent("click", { detail: -1 }));
-                }
-            }, 250);
-        }, false);
-
-        const start = ev => {
-            if(ev instanceof MouseEvent && ev.button != 0) return;
-            holding = setTimeout(() => {
-                ev.preventDefault();
+        new UIEventHandler({
+            hold: () => {
                 successHolding = true;
-
                 const id = e.firstElementChild.id; 
                 if(builder.mobile) builder.gui.DescriptionCard_Show();
                 builder.gui.Deployable_DisplayDescriptionCard(id);
-            }, 750);
-        };
-        if(builder.mobile) e.addEventListener("mousedown", start);
-        e.addEventListener("touchstart", start);
+            },
+            element: e,
+            mobile: builder.mobile
+        });
     }
 
     // Share build section //
@@ -678,9 +548,15 @@ document.onreadystatechange = async () => {
         for(const [type, value] of Object.entries(e.state)) {
             switch(type) {
             case "lang":
-                sessionStorage.setItem("lang", value);
+                localStorage.setItem("lang", value);
                 document.getElementById("langDrop").value = value;
-                builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
+                builder.lang.loadDictionary(await fetch(`./lang/${value}.json`).then(res => res.json()));
+                builder.lang.used = value;
+                builder.loadLanguage(value);
+                break;
+            case "tab":
+                sessionStorage.setItem("curTab", value);
+                builder.gui.Tab_ChangeTo(value);
                 break;
             case "skills":
                 for(const [key, value2] of [...builder.exp.skills].reverse()) {
@@ -752,10 +628,12 @@ document.onreadystatechange = async () => {
     await builder.fetchPromises;
 
     // Load language
-    builder.loadLanguage(await fetchLang, curLang);
+    builder.lang.loadDictionary(await fetchLang);
+    builder.loadLanguage(builder.lang.curLang);
+    
 
     // Prepare document when first opening // 
-    builder.gui.Tab_ChangeTo("tab_skills_page"); 
+    builder.gui.Tab_ChangeTo("tab_skills_page");
     builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points); 
 
     builder.gui.Tree_ChangeTo("sk_mastermind_container");
@@ -764,7 +642,11 @@ document.onreadystatechange = async () => {
     if (builder.io.HasToLoadBuild()) {
         builder.io.LoadBuildFromIterable(new URLSearchParams(window.location.search));
     }
-    window.history.replaceState(Util.makeState(curLang, builder.exp), "PD2 Builder");
+    let tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
+    if (document.getElementById(tabChange) == null) tabChange = "tab_skills_page";
+    builder.gui.Tab_ChangeTo(tabChange);
+    window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
+    
 
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);

@@ -83,7 +83,7 @@ div.navbar {
 }
 
 div.navbar a {
-  font-size: 1.1em; 
+  font-size: min(1.1em, 24px); 
   line-height: 2em; 
   text-decoration: none; 
   background-color: transparent; 
@@ -182,7 +182,7 @@ div.navbar .navbar-dropdown > div {
 }
 
 div.navbar .navbar-dropdown a {
-  font-size: 0.8em; 
+  font-size: min(0.8em, 20px); 
 }
 
 div.navbar .navbar-dropdown a:not(.current) {
@@ -207,7 +207,7 @@ select {
   border: 1px solid rgb(204, 204, 204);
   border-radius: 4px;
   box-shadow: inset 1px 1px 2px rgb(215, 220, 225);
-  background: rgb(215, 220, 225) url("../img/dropdown-arrow.png") 95% / 15% no-repeat;  
+  background: rgb(215, 220, 225) url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='35' height='25' viewBox='0 0 38 48'><path d='M0,12 l25,25 l25,-25' fill='none' stroke='black' stroke-width='5'/%3E%3C/svg%3E") 95% / 15% no-repeat;  
 }
 
 
@@ -230,6 +230,56 @@ select {
 
   background-repeat: no-repeat;
   background-size: 15px 15px;
+}
+
+#loading_spinner {
+  position: fixed;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+#loading_spinner > div {
+  width: 5em;
+  height: 5em;
+  border: 0.3em solid;
+  border-radius: 80%;
+  animation: 1s spin, 2.3s color, 1.7s width;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin { 
+  to { 
+    transform: rotate(1turn); 
+  } 
+}
+@keyframes color {
+  0% {
+    border-color: transparent transparent transparent #57a6ff;
+  }
+  25% {
+    border-color: #6d83ac transparent transparent transparent;
+  }
+  50% {
+    border-color: transparent #4f51a3 transparent transparent;
+  }
+  75% {
+    border-color: transparent transparent #8d5dfc transparent;
+  }
+  100% {
+    border-color: transparent transparent transparent #57a6ff;
+  }
+}
+@keyframes width {
+  50% {
+    border-width: 0.13em;
+  }
 }
 
 
