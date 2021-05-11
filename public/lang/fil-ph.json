@@ -10,7 +10,7 @@
     },
     "deployables": {
         "ammo_bag": {
-            "name": "Ammo Bag",
+            "name": "Lalagyanan ng Bala",
             "description": "To use the Ammo Bag, you place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to gain more ammunition. It can fully replenish the ammunition of one of your weapons 4 times. When the Ammo Bag is depleted, it will disappear. You can see how many uses are left by looking at the Ammo Bag.\nThe ammo bag is a portable bag, originally inteded to allow soldiers to carry extra ammunition with them into combat."
         },
         "armor_bag": {
@@ -18,7 +18,7 @@
             "description": "To use the Armor Bag, hold [G] to put on your equipped armor. Until that, you will wear the Two-piece Suit.\nThe armor bag has only one use and when it is consumed, it disappears. The Armor Bag is a portable bag used to transport an armor of your choice, that can be used during a heist."
         },
         "body_bag_case": {
-            "name": "Body Bag Case",
+            "name": "Maleta ng Body Bag",
             "description": "To use the Body Bag Case, you place it by holding [G]. Once placed, it cannot be moved, but it can be used by you and your crew by holding [F] to gain a body bag.\nThe Body Bag Case has limited uses. You can see how many uses are left by looking at the Body Bag Case. The Body Bag Case carries additional bags, used for the transportation of corpses during stealth."
         },
         "doctor_bag": {
@@ -30,8 +30,8 @@
             "description": "To use the ECM Jammer, you need to place it by holding [G]. Once placed it cannot be moved and it will be active for 20 seconds.\nYou can toggle the ECM Jammer by pressing [F]. The ECM Jammer then has a chance to incapacitate your enemies within a certain radius. When consumed, it stops working.\nAn Electronic Countermeasure (ECM) is an electronic device designed to trick radar, sonar and other detection systems, easing your way towards your goal."
         },
         "first_aid_kit": {
-            "name": "First Aid Kit",
-            "description": "The First Aid Kit is a collection of supplies and equipment for use in giving first aid.\nTo use the First Aid Kit, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain health.\nA deployed First Aid Kit can be used once and when it is consumed, it disappears."
+            "name": "Kit ng Pangunang Tulong-Lunas",
+            "description": "Ang Kit ng Pangunang Tulong-Lunas ay isang koleksyon ng mga kagamitan upang magamit sa mga pangunahing lunas.\nUpang gamitin ang Kit ng Pangunang Tulong-lunas, kailangan mo na i-hold ang [G] upang mailagay ito. Kapag ito ay nalagay na, hindi ito maaring maigalaw pa, pero ito ay maaring gamitin para sa iyo at ang iyong tauhan gamit ang pag-hold ng [F] para makakuha ulit ng health.\nAng isang nakalagay na Kit ng Pangunang Tulong-lunas ay maaring gamitin ng isang beses at pag ito ay nagamit na, ito ay mawawala."
         },
         "sentry_gun": {
             "name": "Sentry Gun",
@@ -42,14 +42,14 @@
             "description": "To use the Suppressed Sentry Gun, you need to place it by holding [G]. Upon deployment it will use up 30% of your weapons' total ammo. It can be destroyed by firing at it, but as long as it is not completely destroyed, picking it up will automatically repair it and return the remaining Sentry Gun ammo. As it runs out of ammo it will stop firing but it can be reloaded by re-deploying it after pick up.\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction."
         },
         "trip_mines_and_shaped_charges": {
-            "name": "Trip Mines and Shaped Charges",
+            "name": "Mga Trip Mine at Shaped Charges",
             "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
         }
     },
     "perk_cards": {
         "helmet_popping": {
             "name": "Helmet Popping",
-            "description": "Increases your headshot damage by 25%."
+            "description": "Dagdagan ang iyong headshot damage ng 25%."
         },
         "blending_in": {
             "name": "Blending In",
@@ -65,22 +65,22 @@
         },
         "brute_strength-1": {
             "name": "Brute Strength",
-            "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "description": "Ikaw ay magkakaroon ng 8% damage reduction sa mga kalaro mo. Ito ay dodoble para sa iyo pag ikaw ay hindi aabot sa 50% health.",
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "marathon_man": {
             "name": "Marathon Man",
-            "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "description": "Ang iyong stamina at ang stamina ng iyong tauhan ay daragdag ng 50%.\nDagdagan ang iyong distansya ng sigaw ng 25%.\nKapag ikaw ay nasa kalagitnaan ng isang kalaban, ikaw ay babawasan ng 6% pinsala mula sa mga kalaban.",
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "wolf_pack": {
             "name": "Wolf Pack",
-            "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "description": "Ang mga tauhan mo ay madaragdagan ng 10% health.\nIkaw ay madaragdagan ng 20% health.\nPuna: Ang mga crew perks ay hindi nagpapatong-patong.",
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "testudo": {
             "name": "Testudo",
-            "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
+            "description": "Ikaw ay madaragdagan ng 10% armor.\nAng mga tauhan mo ay madaragdagan ng 5% armor.\nPuna: Ang mga crew perks ay hindi nagpapatong-patong.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "hostage_situation": {
@@ -91,17 +91,17 @@
         "brute_strength-2": {
             "name": "Brute Strength",
             "description": "You gain 10% more health.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "meat_shield": {
             "name": "Meat Shield",
             "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "giant_strength": {
             "name": "Giant Strength",
             "description": "You gain an additional 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "disturbing_the_peace": {
             "name": "Disturbing the Peace",
@@ -134,7 +134,7 @@
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
         "liquid_armor": {
-            "name": "Liquid Armor",
+            "name": "Likidong Armor",
             "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
             "vr_description": "The dash effect is now from 10 up to a maximum of 22."
         },
@@ -154,7 +154,7 @@
             "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
         },
         "shadow_warrior": {
-            "name": "Shadow Warrior",
+            "name": "Mandirigma ng Anino",
             "description": "Your chance to dodge is increased by an additional 15%.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
         },
@@ -224,17 +224,17 @@
             "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
         },
         "luck_of_the_irish": {
-            "name": "Luck of the Irish",
+            "name": "Swerte ng Irlandes",
             "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
         },
         "dutch_courage": {
-            "name": "Dutch Courage",
+            "name": "Lakas ng Loob ng Olandes",
             "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
         },
         "breath_of_fresh_air": {
-            "name": "Breath of Fresh Air",
+            "name": "Hinga ng Sariwang Hangin",
             "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
             "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
         },
@@ -286,17 +286,17 @@
         "medical_supplies": {
             "name": "Medical Supplies",
             "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "ammo_give_out": {
             "name": "Ammo Give Out",
             "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "sharing_is_caring": {
             "name": "Sharing Is Caring",
             "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "more_healing_1": {
             "name": "More Healing 1",
@@ -311,17 +311,17 @@
         "histamine": {
             "name": "Histamine",
             "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "adrenaline": {
             "name": "Adrenaline",
             "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "endorphins": {
             "name": "Endorphins",
             "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "dopamine": {
             "name": "Dopamine",
@@ -361,17 +361,17 @@
         "point_break": {
             "name": "Point Break",
             "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "the_emerging_force": {
             "name": "The Emerging Force",
             "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "life_of_ice": {
             "name": "Life of Ice",
             "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "awakening_earth": {
             "name": "Awakening Earth",
@@ -399,7 +399,7 @@
             "vr_description": "The dash effect is now from 6 up to a maximum of 14."
         },
         "recklessness": {
-            "name": "Recklessness",
+            "name": "Kawalang-ingat",
             "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
             "vr_description": "The dash effect is now from 8 up to a maximum of 18."
         },
@@ -461,20 +461,20 @@
         "bad_guy_coming_through": {
             "name": "Bad Guy Coming Through",
             "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "play_rough": {
             "name": "Play Rough",
             "description": "You gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "public_enemy_no_1": {
             "name": "Public Enemy No. 1",
             "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "balls_vs_bullets": {
-            "name": "Balls vs Bullets",
+            "name": "Mga Bola laban sa Mga Bala",
             "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
@@ -484,7 +484,7 @@
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
         "smoker": {
-            "name": "Smoker",
+            "name": "Pang-usok",
             "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
             "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
         },
@@ -511,17 +511,17 @@
         "virtue": {
             "name": "Virtue",
             "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "un-moved": {
             "name": "Un-moved",
             "description": "All of your armor is converted and applied to your health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "calm": {
-            "name": "Calm",
+            "name": "Kalmado",
             "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "imperturbable": {
             "name": "Imperturbable",
@@ -536,25 +536,25 @@
         "soul_mates": {
             "name": "Soul Mates",
             "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
-            "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+            "vr_description": "Pagkatapos sumugod, ang manlalaro ay magpapagaling ng 0 hanggang 3 heañth. Puwedeng mapagaling ng hanggang 50 health bawat limang segundo."
         },
         "scent": {
-            "name": "Scent",
+            "name": "Amoy",
             "description": "Your maximum health is increased by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 6 na ngayon."
         },
         "synergy": {
             "name": "Synergy",
             "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "Ang epekto ng sugod ay mula ng 0 hanggang 9 na ngayon."
         },
         "inhale": {
-            "name": "Inhale",
+            "name": "Langhap",
             "description": "Your maximum health is increased by 20%.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 12."
         },
         "harmony": {
-            "name": "Harmony",
+            "name": "Pagkakaisa",
             "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
             "vr_description": "The dash effect is now from 0 up to a maximum of 15."
         },
@@ -581,7 +581,7 @@
     },
     "perk_decks": {
         "crew_chief": {
-            "name": "Crew Chief",
+            "name": "Hepe ng Tauhan",
             "description": "The Crew Chief. also known as the Caporegime, is the head of a branch of an organized crime syndicate. The Crew Chief commands a crew of soldiers and reports directly to a boss or an underboss.\nWhen the crime syndicate needs to have someone dealt with, the Crew Chief and his soldiers make sure it's done."
         },
         "muscle": {
@@ -617,7 +617,7 @@
             "description": "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy."
         },
         "gambler": {
-            "name": "Gambler",
+            "name": "Sugalero",
             "description": "Heading into the furnace of battle requires skill, hardness and more than a little luck. Some people just have it.\nLuck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big."
         },
         "grinder": {
@@ -633,12 +633,12 @@
             "description": "The Ex-Presidents are one of the most daring heisting crews out there. Great risk takers and brothers in arms. Their lack of fear for their own mortality brought them together and made them as successful as they are.\nAn Ex-President follows no rules and only adheres to the Ozaki 8, a set of trials to honor their nature."
         },
         "maniac": {
-            "name": "Maniac",
+            "name": "Manyak",
             "description": "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit."
         },
         "anarchist": {
-            "name": "Anarchist",
-            "description": "The Anarchist refuses to acknowledge the arbitrary laws imposed by traditional authority. Kings, queens and presidents hold no sway over the Anarchist mind. Fly free and make your own rules is the motto. This refusal to abide by established truths enables the Anarchist to go where others cannot, employing unconventional tactics to slip through the cracks and reach seemingly impossible objectives."
+            "name": "Anarkista",
+            "description": "Ang Anarkista ay hindi kinikilanan ang mga batas ng traditional na autoridad. Mga hari, mga reyna at mga presidente ay hindi mapipigil ang isang isip ng isang Anarkista. \"Lumipad ng malaya at gumawa ng sarili mong patakaran\" ang kasabihan. Itong hinding pangsang-ayon sa katotohan ay nagbibigay-daan sa Anarkista kung saan hindi pwede makapunta ang iba at gumagamit ng mga taktika na hindi ikinakauligan upang dumulas sa mga bitak at makayanan ang mga tunguhin na mukhang imposible."
         },
         "biker": {
             "name": "Biker",
@@ -668,7 +668,7 @@
     "skills": {
         "combat_medic": {
             "name": "Combat Medic",
-            "description": "BASIC: 1 point\tYou gain a 30% damage reduction for 5 seconds both after and during reviving another player.\nACE: 3 points\tReviving a crew member gives them 30% more health."
+            "description": "BASIC: 1 punto\tIkaw ay makakakuha ng 30% damage reduction sa 5 segundo pagkatapos at habang muling binubuhayan ang isang manlalaro.\nACE: 3 punto\tAng manlalaro na binuhay ulit ay makakakuha ng 30% pa na health."
         },
         "quick_fix": {
             "name": "Quick Fix",
@@ -688,11 +688,11 @@
         },
         "inspire": {
             "name": "Inspire",
-            "description": "BASIC: 4 points\tYou revive crew members 100% faster. Shouting at your teammates will increase their movement and reload speed by 20% for 10 seconds.\nACE: 8 points\tThere is a 100% chance that you can revive crew members at a distance of up to 9 meters by shouting at them. This cannot occur more than every 20 seconds."
+            "description": "BASIC: 4 puntos\tAng bilis ng iyong revive speed ay mas mabilis ng 100%. Ang pagsigaw sa iyong kasamahan ay bibilisan ang kanilang paggalaw at reload speed ng 20% para sa 10 segundo.\nACE: 8 puntos\tMeron kang 100% na pagkakataon na ikaw ay makakabuhay ng ibang tauhan hanggang 9 metro sa pagsigaw. Hindi ito maaring mangyari ulit bawat 20 segundo."
         },
         "forced_friendship": {
-            "name": "Forced Friendship",
-            "description": "BASIC: 1 point\tIncrease your supply of cable ties by 4. You can cable tie hostages 75% faster.\nACE: 3 points\tYou and your crew gain 0.5 damage absorptions for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill."
+            "name": "Pinilit na Pagkakaibigan",
+            "description": "BASIC: 1 punto\tDagdagan ng 4 ang iyong mga cable ties. Ang iyong bilis sa pag-cable tie ng mga hostage ay mas magiging mabilis ng 75%.\nACE: 3 punto\tIkaw at ang mga ibang tauhan ay makakakuha ng 0.5 damage absorption para sa bawat isang hostage na meron kayo. Ito ay papantay hanggang 8 hostages.\nPuna: Ito ay hindi magpapatong-patong sa kakayahan na \"Pinilit na Pagkakaibigan\" mula sa ibang manlalaro."
         },
         "confident": {
             "name": "Confident",
@@ -753,11 +753,11 @@
             "description": "BASIC: 2 points\tYour weapon stability with all shotguns is increased by 8. You deal 5% more damage with Shotguns.\nACE: 4 points\tYou deal an additional 10% more damage with shotguns."
         },
         "far_away": {
-            "name": "Far Away",
+            "name": "Malayo",
             "description": "BASIC: 3 points\tYour accuracy bonus while aiming down sights with Shotguns is increased by 40%.\nACE: 6 points\tYou gain a 50% increased effective range with Shotguns when aiming down sights."
         },
         "close_by": {
-            "name": "Close By",
+            "name": "Malapit",
             "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells.",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
@@ -814,7 +814,7 @@
             "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
         },
         "third_law": {
-            "name": "Third Law",
+            "name": "Ikatlong Batas",
             "description": "BASIC: 1 point\tThe cost of deploying a sentry gun is reduced by 5%.\nACE: 3 points\tYour sentry guns gain a protective shield."
         },
         "sentry_targeting_package": {
@@ -838,7 +838,7 @@
             "description": "BASIC: 4 points\tYou can now carry 1 extra sentry gun.\nACE: 8 points\tYou can now carry an additional 2 extra sentry guns."
         },
         "hardware_expert": {
-            "name": "Hardware Expert",
+            "name": "Eksperto ng Hardware",
             "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
         },
         "combat_engineering": {
@@ -892,11 +892,11 @@
             "description": "BASIC: 1 point\tIncreases the time before you start getting detected by 25% while in casing mode. You can also mark enemies while in casing mode.\nACE: 3 points\tYou can pick up items while in casing mode. You can also gain 30% more value to items and cash that you pick up."
         },
         "cleaner": {
-            "name": "Cleaner",
+            "name": "Tagalinis",
             "description": "BASIC: 2 points\tYou gain 1 additional body bag in your inventory. Also increases the body bag inventory space to 3.\nACE: 4 points\tYou gain the ability to place 2 body bags cases."
         },
         "sixth_sense": {
-            "name": "Sixth Sense",
+            "name": "Pang-anim na Pakiramdam",
             "description": "BASIC: 2 points\tYou gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.\nACE: 4 points\tYou gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%."
         },
         "nimble": {
@@ -946,7 +946,7 @@
             "description": "BASIC: 2 points\tYou are 35% less likely to be targeted by enemies.\nACE: 4 points\tYou gain 1 concealment for each silenced weapon you equip and reduces the concealment penalty of silencers by 2."
         },
         "the_professional": {
-            "name": "The Professional",
+            "name": "Ang Propesyonal",
             "description": "BASIC: 2 points\tYou gain 8 weapon stability and 100% snap to zoom speed increase with silenced weapons.\nACE: 4 points\tYou gain 12 weapon accuracy with silenced weapons.",
             "vr_description": "Addition in VR:\tBASIC: Every kill while aiming down sight will regenerate 2% stamina."
         },
@@ -987,11 +987,11 @@
             "description": "BASIC: 4 points\tFor every hit with a pistol you gain a 120% damage boost that lasts for 2 seconds.\tStacks up to 1 time.\nACE: 8 points\tIncreases the damage boost duration to 4 seconds."
         },
         "nine_lives": {
-            "name": "Nine Lives",
+            "name": "Siyam na Buhay",
             "description": "BASIC: 1 point\tYou gain a 50% increase to your bleedout health.\nACE: 3 points\tYou gain the ability to get downed 1 more time before going into custody."
         },
         "running_from_death": {
-            "name": "Running from Death",
+            "name": "Tumatakbo mula kay Kamatayan",
             "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
         },
         "up_you_go": {
@@ -999,11 +999,11 @@
             "description": "BASIC: 2 points\tYou take 30% less damage for 10 seconds after being revived.\nACE: 4 points\tYou receive 40% more health when revived."
         },
         "swan_song": {
-            "name": "Swan Song",
+            "name": "Awit ng Swan",
             "description": "BASIC: 3 points\tInstead of getting downed instantly, you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.\nNote: Does not trigger on fall or fire damage.\nACE: 6 points\tIncreases the duration of Swan Song by 3 seconds. Ammunition won't be depleted while the effect is active."
         },
         "feign_death": {
-            "name": "Feign Death",
+            "name": "Pekeng Pagkakamatay",
             "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
         },
         "messiah": {
@@ -1053,13 +1053,13 @@
         "secondary": "SECONDARY",
         "colors": "(\\+ ?|- ?|\\b(?!OVE9000))[0-9]+([,.][0-9]+)?( point(s)?|%|cm)?",
         "skills": {
-            "title": "Skills",
-            "remaining": "Remaining skill points: ",
+            "title": "Mga Kakayahan",
+            "remaining": "Natitirang punto: ",
             "mastermind": {
-                "title": "MASTERMIND",
+                "title": "ANG UTAK",
                 "subtrees": {
-                    "medic": "MEDIC",
-                    "controller": "CONTROLLER",
+                    "medic": "MEDIKO",
+                    "controller": "TAGA-USISA",
                     "sharpshooter": "SHARPSHOOTER"
                 }
             },
@@ -1067,28 +1067,28 @@
                 "title": "ENFORCER",
                 "subtrees": {
                     "shotgunner": "SHOTGUNNER",
-                    "tank": "TANK",
+                    "tank": "TANGKE",
                     "ammo_specialist": "AMMO SPECIALIST"
                 }
             },
             "technician": {
-                "title": "TECHNICIAN",
+                "title": "TEKNIKO",
                 "subtrees": {
-                    "engineer": "ENGINEER",
+                    "engineer": "INHINYERO",
                     "breacher": "BREACHER",
-                    "oppressor": "OPPRESSOR"
+                    "oppressor": "MANINIIL"
                 }
             },
             "ghost": {
-                "title": "GHOST",
+                "title": "MULTO",
                 "subtrees": {
                     "shinobi": "SHINOBI",
                     "artful_dodger": "ARTFUL DODGER",
-                    "silent_killer": "SILENT KILLER"
+                    "silent_killer": "TAHIMIK NA MAMAMATAY"
                 }
             },
             "fugitive": {
-                "title": "FUGITIVE",
+                "title": "PUGANTE",
                 "subtrees": {
                     "gunslinger": "GUNSLINGER",
                     "revenant": "REVENANT",
@@ -1097,7 +1097,7 @@
             }
         },
         "perk_decks": {
-            "title": "Perk Decks"
+            "title": "Mga Perk Deck"
         },
         "armors": {
             "title": "Armors",
@@ -1129,12 +1129,12 @@
             "title": "Share Build",
             "description": "Share your Build with anyone!",
             "copy": "Copy Link",
-            "copied": "Copied!",
+            "copied": "Nakopya!",
             "native": "Share!"
         },
         "credits": {
             "title": "Credits",
-            "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
+            "p1": "Ang site na ito ay ginawang posible mula sa pagsisikap ng r/paydaybuilds.",
             "p2": "Contributors of this project can be found &{here}.",
             "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
             "reach": "Reach us at: ",
@@ -1144,7 +1144,7 @@
     },
     "throwables": {
         "matryoshka_grenade": {
-            "name": "Matryoshka Grenade",
+            "name": "Granadang Matryoshka",
             "description": "The Matryoshka Grenade is a throwable explosive device. The doll's outer layers hides its inner workings. Creates substantial damage at the same time as it pays tribute to the motherland."
         },
         "incendiary_grenade": {
@@ -1172,7 +1172,7 @@
             "description": "The Molotov cocktail is perhaps the simplest weapon that can call itself a grenade. Nothing more than a breakable bottle of flammable liquid with a 'fuse' replaced by a burning rag. It is cheap, simple and highly effective."
         },
         "dynamite": {
-            "name": "Dynamite",
+            "name": "Dinamita",
             "description": "Swedish engineer. Alfred Nobel, discovered dynamite and its effectiveness in blastic rock. But it was drunk prospector. Ol' Kenneth, who discovered its effectiveness in blasting people."
         },
         "shuriken": {
