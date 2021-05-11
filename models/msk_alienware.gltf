@@ -1,0 +1,172 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.0.5",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "1652340171247379845",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "translation" : [
+                -1.542091376904864e-05,
+                0.08049279451370239,
+                0.08897987008094788
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "14804691483393916889",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "roughnessFactor" : 0.8500000238418579
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "1652340171247379845",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "alienware_nm",
+            "uri" : "alienware_nm.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "alienware_df",
+            "uri" : "alienware_df.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "alienware_dfa",
+            "uri" : "alienware_dfa.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 779,
+            "max" : [
+                0.09843432903289795,
+                0.07710535824298859,
+                0.14225248992443085
+            ],
+            "min" : [
+                -0.09843432903289795,
+                -0.07710535824298859,
+                -0.14225248992443085
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 779,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 779,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 779,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 2826,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 9348,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9348,
+            "byteOffset" : 9348
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6232,
+            "byteOffset" : 18696
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6232,
+            "byteOffset" : 24928
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5652,
+            "byteOffset" : 31160
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 36812,
+            "uri" : "msk_alienware.bin"
+        }
+    ]
+}
