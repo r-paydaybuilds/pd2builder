@@ -598,8 +598,32 @@ body {
   border-right: 10px solid transparent; 
 }
 
+#wp_selector_container > div {
+  margin-bottom: 4px; 
+}
+
 #wp_stats_container {
   border-left: 10px solid transparent; 
+}
+
+.wp_search_container {
+  width: 100%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.wp_search_container > :first-child { /* worth to not use column-gap ? */
+  margin-right: 6px; 
+}
+.wp_search_container > :last-child { /* worth to not use column-gap ? */
+  margin-left: 6px; 
+}
+
+.wp_search_container span {
+  font-size: min(0.5em, 18px); 
 }
 
 .wp_select {
@@ -644,17 +668,19 @@ body {
   background-color: rgb(215, 220, 225);
 
   
-  -webkit-transition: height .3s ease-in-out; 
-  -moz-transition:    height .3s ease-in-out; 
-  -o-transition:      height .3s ease-in-out;
-  transition:         height .3s ease-in-out;
+  -webkit-transition: height .2s ease-in-out; 
+  -moz-transition:    height .2s ease-in-out; 
+  -o-transition:      height .2s ease-in-out;
+  transition:         height .2s ease-in-out;
 }
 
 .wp_select_options {
   height: 100%; 
   overflow-y: scroll;
+  scrollbar-width: thin; 
 }
 
+.wp_search_container:focus-within + * .wp_select_container, 
 .wp_select:hover .wp_select_container, 
 .wp_select:focus .wp_select_container, 
 .wp_select:active .wp_select_container,
@@ -702,7 +728,7 @@ body {
   align-items: center; 
 }
 
-.wp_select_options span:hover {
+.wp_select_options span:hover:not(.wp_select_group_label) {
   cursor: pointer; 
   background-color: rgb(190, 195, 200); 
 }
