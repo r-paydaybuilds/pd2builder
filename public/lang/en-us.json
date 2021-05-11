@@ -968,7 +968,7 @@
         },
         "gun_nut": {
             "name": "Gun Nut",
-            "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
         },
         "akimbo": {
             "name": "Akimbo",
