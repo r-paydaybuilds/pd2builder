@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "Подлый ублюдок",
-            "description": "BASIC: 4 points\tYou gain a 1% dodge chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
         },
         "second_wind": {
             "name": "Второе дыхание",
@@ -968,7 +968,7 @@
         },
         "gun_nut": {
             "name": "Фанат пистолетов",
-            "description": "БАЗОВЫЙ: 2 очка\tРазмер магазина вашего пистолета увеличен на 5 пуль.\nПРО: 4 очка\tПовышает скорострельность пистолетов на 50%."
+            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
         },
         "akimbo": {
             "name": "Акимбо",
