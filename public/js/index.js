@@ -171,6 +171,9 @@ window.onload = async () => {
 
         // On click event, add skill
         e.addEventListener("click", ev => {
+            // If mobile version, disregard user events. (they fire from UIEventHandler, click included)
+            if (builder.mobile && ev.isTrusted) return; 
+            
             if(successHolding) {
                 successHolding = false;
                 ev.stopPropagation();
