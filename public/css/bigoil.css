@@ -2,19 +2,37 @@
 /*         CALCULATOR CSS         */
 /**********************************/
 
+body {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center;
+  align-items: stretch; 
+}
+
 span.special_char {
   font-family: "Noto Sans", sans-serif; 
 }
 
+#container, 
 #selector {
-  padding: 2vh 3vw; 
-
-  color: rgb(140, 140, 140); 
-
   display: flex; 
   flex-flow: column nowrap; 
   justify-content: center; 
+}
+
+#container {
+  width: 100%;
+  max-width: 1200px;
+
+  align-self: center; 
+  align-items: stretch;
+}
+
+#selector {
+  padding: 2vh 3vw; 
   align-items: center; 
+
+  color: rgb(140, 140, 140); 
 }
 
 #selector > div {
@@ -61,7 +79,8 @@ span.special_char {
 #element > div,
 #hydrogen > div, 
 #pressure > div {
-  font-size: 1.5em; 
+  font-size: min(1.5em, 56px); 
+  cursor: pointer; 
 
   display: flex; 
   flex-flow: row nowrap; 
@@ -159,7 +178,7 @@ span.special_char {
 #result {
   flex-flow: row nowrap;
 
-  font-size: 1.5em; 
+  font-size: min(1.5em, 56px); 
 
   margin: 2vh 3vw; 
   padding: 20px; 

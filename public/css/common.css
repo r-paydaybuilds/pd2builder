@@ -83,7 +83,7 @@ div.navbar {
 }
 
 div.navbar a {
-  font-size: 1.1em; 
+  font-size: min(1.1em, 24px); 
   line-height: 2em; 
   text-decoration: none; 
   background-color: transparent; 
@@ -182,7 +182,7 @@ div.navbar .navbar-dropdown > div {
 }
 
 div.navbar .navbar-dropdown a {
-  font-size: 0.8em; 
+  font-size: min(0.8em, 20px); 
 }
 
 div.navbar .navbar-dropdown a:not(.current) {
