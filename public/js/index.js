@@ -650,7 +650,6 @@ window.onload = async () => {
     builder.gui.Tab_ChangeTo(tabChange);
     window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
     
-    
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
 };
