@@ -13,6 +13,7 @@ jobs:
       skip-cleanup: true
       github-token: "$GITHUB_TOKEN"
       local-dir: "./public/"
+      fqdn: "pd2build.ar"
 cache:
   directories:
   - node_modules

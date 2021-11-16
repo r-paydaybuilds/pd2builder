@@ -424,6 +424,9 @@ class UIEventHandler {
         this.holding = false;
         this.didDouble = false;
         this.listen = false;
+        /**
+         * @param {MouseEvent | TouchEvent} ev
+         */
         const start = ev => {
                 if(ev instanceof MouseEvent) {
                     if(!propagate) ev.stopPropagation();
@@ -446,7 +449,12 @@ class UIEventHandler {
                     hold();
                 }, 750);
                 this.listen = true;
-            }, move = ev => {
+                
+            },
+            /**
+             * @param {MouseEvent | TouchEvent} ev
+             */
+            move = ev => {
                 if(!this.listen) return;
                 if(ev instanceof MouseEvent) {
                     this.remaining[0] -= Math.abs(ev.movementX);
@@ -463,7 +471,11 @@ class UIEventHandler {
                     this.touchId = null;
                     this.listen = false;
                 }
-            }, stop = ev => {
+            },
+            /**
+             * @param {MouseEvent | TouchEvent} ev
+             */
+            stop = ev => {
                 if(!this.listen
                 || (ev instanceof MouseEvent && ev.button !== 0) 
                 || (ev.touches && Util.findTouch(ev.touches, this.touchId))
@@ -475,6 +487,8 @@ class UIEventHandler {
                     this.listen = false;
                     this.touchId = null;
                     return;
+                } else {
+                    ev.preventDefault();
                 }
 
                 if(this.didDouble) {
@@ -493,7 +507,7 @@ class UIEventHandler {
                         this.didDouble = false;
                         click();
                     }
-                }, 250);
+                }, 300);
             };
 
         element.addEventListener("touchstart", start);
