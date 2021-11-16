@@ -14,7 +14,7 @@ echo "Minifying JS..."
 cd ../public/js
 #minify js
 for file in ./*.js; do
-    terser -m module=true -c ecma=8,module=true -- $file > a
+    npx terser -m module=true -c ecma=8,module=true -- $file > a
     mv a $file
 done
 echo "done"
@@ -33,7 +33,7 @@ echo "Minifying CSS"
 cd ../css
 #minify css
 for file in ./*.css; do
-    postcss $file > a
+    npx postcss $file > a
     mv a $file
 done
 echo "done"
