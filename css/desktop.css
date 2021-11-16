@@ -1,0 +1,657 @@
+/**********************************/
+/*        HEADER AND FOOTER       */
+/**********************************/
+
+@media only screen and (min-width: 1003px) {
+  div.navbar a {
+    font-size: 24px; 
+  }
+
+  div.navbar .navbar-dropdown a {
+    font-size: 20px; 
+  }
+}
+
+body {
+  height: 100vh; 
+}
+
+/**********************************/
+/*          TAB PAGE CSS          */
+/**********************************/
+
+#tab_page_buttons_wrapper {
+  padding: 50px 15px; 
+}
+
+#tab_page_buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: stretch;
+  align-items: stretch; 
+
+  scrollbar-width: none; /* Moz experimental */ 
+}
+
+#tab_page_buttons button {
+  font-size: 22px; 
+  width: 100%; 
+
+  cursor: pointer; 
+}
+
+#tab_page_buttons button:hover {
+  color: rgb(215, 220, 225);
+
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgb(215, 220, 225); 
+  -moz-box-shadow: inset 0px 0px 0px 2px rgb(215, 220, 225); 
+  box-shadow: inset 0px 0px 0px 2px rgb(215, 220, 225); 
+}
+
+.tab_page_content {
+  width: 100%; 
+
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+
+  -webkit-transition: padding .15s linear;
+  -moz-transition:    padding .15s linear;
+  -o-transition:      padding .15s linear;
+  transition:         padding .15s linear;
+}
+
+/* For when it's wayyy too large */ 
+@media only screen and (max-width: 1366px) {
+  .tab_page_content {
+    padding: 0 15px 50px; 
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  .tab_page_content {
+    width: 100%; 
+    padding: 0 2em 50px;
+  }
+}
+
+.tab_page_content > div {
+  width: 100%; 
+}
+
+.description_container {
+  position: relative; 
+
+  width: 25% !important; 
+  border-left: 10px solid transparent;
+
+  align-self: stretch; 
+}
+
+.description_container > div {
+  position: absolute;
+  left: 0; 
+
+  width: 100%; 
+}
+
+.description_textbox {
+  height: 100%; 
+}
+
+.description_textbox p:not(.description_title) {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+}
+
+.description_textbox > div {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(240, 240, 240) rgba(0, 0, 0, 0.3);
+}
+
+.description_textbox > div::-webkit-scrollbar {
+  width: 4px; 
+}
+
+.description_textbox > div::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.3);   
+}
+
+.description_textbox > div::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 240); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.description_title {
+  font-size: 22px; 
+
+  margin-top: 0;
+}
+
+
+/**********************************/
+/*            SKILLS CSS          */
+/**********************************/
+
+#tab_skills_page {
+  flex-flow: column nowrap; 
+}
+
+#sk_tree_buttons {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: left; 
+  align-items: baseline; 
+
+  padding-left: 2vw; 
+}
+
+#sk_tree_buttons button {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-end; 
+  align-items: flex-end; 
+
+  cursor: pointer; 
+
+  padding: .375em .5em; 
+  border: 0; 
+  border-radius: 10px 10px 0px 0px; 
+  background: rgba(0, 0, 0, 0); 
+  
+  text-align: center; 
+  font-size: 20px;
+  color: rgb(40, 90, 130);   
+
+  -webkit-transition: background-color .15s, color .15s linear;
+  -moz-transition:    background-color .15s, color .15s linear;
+  -o-transition:      background-color .15s, color .15s linear;
+  transition:         background-color .15s, color .15s linear;
+}
+
+#sk_tree_buttons button:hover {
+  color: rgb(215, 220, 225);
+}
+
+#sk_tree_buttons button.sk_tree_button_active {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#sk_page {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+#sk_container_l {
+  width: 75%; 
+}
+
+.sk_tree {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: space-evenly; 
+}
+
+.sk_subtree {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly; 
+
+  background:         bottom center url("../img/skills/background.png") no-repeat;
+  background-size:    100% 25%;  
+
+  width: 100%; 
+  max-width: 33%; 
+  
+  margin: 0 5px;
+
+  -webkit-transition: background-size .4s ease, filter .1s linear;
+  -moz-transition:    background-size .4s ease, filter .1s linear;
+  -o-transition:      background-size .4s ease, filter .1s linear;
+  transition:         background-size .4s ease, filter .1s linear;
+}
+
+.sk_subtree:first-of-type {
+  margin-left: 0; 
+}
+
+.sk_subtree:last-of-type {
+  margin-right: 0; 
+}
+
+.sk_subtree_highlight {
+  filter: brightness(1.1); 
+}
+
+
+.sk_tier {
+  position: relative; 
+  
+  padding: 10px 0; 
+  flex-basis: 25%; 
+  max-height: 25%; 
+  
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+}
+
+.sk_tier:not(:first-child) {
+  border-top: 1px solid rgb(40, 100, 140); 
+}
+
+.sk_tier:not(:first-child)::before,
+.sk_tier:not(:first-child)::after {
+  content: ""; 
+  position: absolute; 
+  border-bottom: 2px solid white; 
+  width: 3%; 
+  height: 2px; 
+}
+
+.sk_tier:not(:first-child)::before {
+  top: 0; 
+  left: 0; 
+}
+
+.sk_tier:not(:first-child)::after {
+  top: 0;
+  right: 0; 
+}
+
+.sk_icon {
+  width: 80px; 
+
+  cursor: pointer; 
+}
+
+.sk_icon:hover + .sk_name {
+  visibility: visible; 
+}
+
+.sk_icon:not(.sk_locked):hover > div {
+  transform: scale(1.05); 
+}
+
+.sk_icon:not(.sk_locked):not(.sk_selected_basic):not(.sk_selected_aced):hover > div {
+  opacity: 0.3; 
+}
+
+.sk_name {
+  position: relative; 
+  display: block; 
+
+  visibility: hidden; 
+
+  font-size: 18px; 
+  line-height: 1em; 
+  text-align: center; 
+
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
+}
+
+#sk_subtree_names_container {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+.sk_subtree_name {
+  flex-basis: 25%; 
+  max-width: 25%; 
+
+  font-family: "DINEngschrift", "Noto Sans", sans-serif;
+  font-size: 36px; 
+  text-align: center; 
+  color: rgb(40, 90, 130);   
+}
+
+.sk_subtree_name > p {
+  margin: 0; 
+  word-break: break-all;
+}
+
+.sk_subtree_name.sk_subtree_name_highlight {
+  color: rgb(240, 240, 240); 
+}
+
+.sk_points_remaining {
+  height: 15%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.sk_points_remaining p {
+  margin: 0; 
+}
+
+.sk_points_remaining p, 
+.sk_points_remaining span {  
+  font-size: 26px;
+}
+
+#sk_description {
+  top: 15%; 
+  height: 85%; 
+}
+
+#sk_description > div {
+  width: 100%; 
+  height: 100%; 
+
+  overflow-y: scroll;  
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+
+/**********************************/
+/*         PERK DECKS CSS         */
+/**********************************/
+
+#tab_perk_decks_page {
+  flex-flow: row nowrap; 
+}
+
+#pk_page {
+  width: 75%; 
+  height: 600px; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#pk_container {
+  width: 100%; 
+  height: 100%; 
+  
+  overflow-y: scroll; 
+  scrollbar-width: thin;
+  scrollbar-color: rgb(240, 240, 240) rgba(0, 0, 0, 0.3);
+  
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+
+#pk_container::-webkit-scrollbar {
+  width: 4px; 
+}
+
+#pk_container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.3);   
+}
+
+#pk_container::-webkit-scrollbar-thumb {
+  background-color: rgb(240, 240, 240); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.pk_deck {
+  margin: 5px; 
+
+  -webkit-transition: opacity .15s ease;
+  -moz-transition:    opacity .15s ease;
+  -o-transition:      opacity .15s ease;
+  transition:         opacity .15s ease;
+}
+
+.pk_deck:not(.pk_selected):hover {
+  border: 2px solid rgb(190, 190, 190); 
+}
+
+.pk_deck.pk_deck_dim {
+  opacity: 0.6; 
+}
+
+.pk_deck p {
+  font-size: 24px; 
+  margin: 0; 
+  
+  margin-left: 5%; 
+
+  -webkit-transition: margin .15s ease;
+  -moz-transition:    margin .15s ease;
+  -o-transition:      margin .15s ease;
+  transition:         margin .15s ease;
+}
+
+.pk_deck_cards {
+  justify-content: center;
+}
+
+.pk_deck_cards > div {
+  position: relative; 
+
+  width: 64px; 
+  height: 92px; 
+
+  background: url("../img/perks/card.png") 0 0 no-repeat;  
+  
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: left;
+  align-items: center; 
+
+  -webkit-transition: opacity .15s ease;
+  -moz-transition:    opacity .15s ease;
+  -o-transition:      opacity .15s ease;
+  transition:         opacity .15s ease;
+}
+
+.pk_deck_cards > div:not(:last-of-type) {
+  -webkit-transition: opacity .15s ease, margin .15s ease;
+  -moz-transition:    opacity .15s ease, margin .15s ease;
+  -o-transition:      opacity .15s ease, margin .15s ease;
+  transition:         opacity .15s ease, margin .15s ease;
+}
+
+.pk_deck_cards > div::after {
+  content: ""; 
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0);
+  
+  width: 48px; 
+  height: 48px;  
+
+  background: url("../img/perks/icons.png") no-repeat;  
+  background-size: 500% 2200%; 
+}
+
+.pk_deck_cards > div.pk_card_dim {
+  opacity: 0.8; 
+}
+
+/* More large screen adaptation */ 
+@media only screen and (max-width: 1366px) {  
+  #pk_container {
+    padding: 0 10px; 
+  }
+
+  .pk_deck_cards > div:not(:last-of-type) {
+    margin-right: 10px; 
+  }
+}
+
+@media only screen and (min-width: 1367px) {  
+  #pk_container {
+    padding: 0 5vw; 
+  }
+
+  .pk_deck_cards > div:not(:last-of-type) {
+    margin-right: 20px; 
+  }
+}
+
+#pk_description > div {
+  width: 100%; 
+  height: 100%; 
+
+  overflow-y: scroll;  
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+
+
+/**********************************/
+/*         ARMOR-TH-DP CSS        */
+/**********************************/
+
+.th_icon {
+  max-width: 192px;
+}
+
+.arm_icon.arm_selected > div::before {    
+  font-size: 22px; 
+}
+
+.th_icon.th_selected > div::before {
+  font-size: 20px; 
+}
+
+.dp_icon.dp_selected > div::before, 
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  font-size: 22px; 
+}
+
+
+
+/**********************************/
+/*          SAVE/LOAD CSS         */
+/**********************************/
+
+#tab_io_page {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: stretch; 
+}
+
+#tab_io_page > div {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+#io_save p,
+#io_other p {
+  margin: 0; 
+  margin-bottom: 20px; 
+}
+
+#io_save p.section-title, 
+#io_other p.section-title {
+  margin-bottom: 40px; 
+}
+
+#io_other p a {
+  color: rgb(40, 90, 130); 
+
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
+}
+
+#io_other p a:hover {
+  color: rgb(50, 190, 255); 
+}
+
+.share-url-group {
+  font-size: 16px;
+  
+  -webkit-transition: width .15s ease;
+  -moz-transition:    width .15s ease;
+  -o-transition:      width .15s ease;
+  transition:         width .15s ease;
+}
+
+@media only screen and (min-width: 1367px) {  
+  .share-url-group {
+    width: 75%;
+    align-self: center; 
+  }
+}
+
+#io_other {
+  border-left: 10px solid transparent;
+}
+
+#io_other > p:not(.section-title) {
+  font-size: 18px; 
+}
+
+.section-title {
+  align-self: center; 
+  font-size: 28px; 
+}
+
+/**********************************/
+/*             LANG CSS           */
+/**********************************/
+/*
+    This is where you can force certain elements have whatever you want them to have
+    (mostly font-size)
+*/
+
+/* Russian */
+.sk_name:lang(ru-ru) {
+  font-size: 11pt;
+}
+
+table:lang(ru-ru) {
+  font-size: 11px;
+}
+
+.sk_subtree_name > p:lang(ru-ru) {
+  font-size: 24pt;
+}
+
+.sk_points_remaining:lang(ru-ru) p,
+.sk_points_remaining:lang(ru-ru) span {
+  font-size: 19px;
+}
+
+.description_title:lang(ru-ru) {
+  font-size: 17px;
+}
+
+.sk_subtree_name:lang(ru-ru) {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Chinese */
+.sk_subtree_name:lang(zh-cn) {
+  font-family: "Noto Sans", "Noto Sans SC", sans-serif;
+}

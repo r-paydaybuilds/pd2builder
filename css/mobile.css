@@ -1,0 +1,692 @@
+/**********************************/
+/*           GENERAL CSS          */
+/**********************************/
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; /* Fuck nexus and kindle fire */ 
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+} 
+
+/**********************************/
+/*        HEADER AND FOOTER       */
+/**********************************/
+
+div.footer {
+  width: 100%; 
+  padding: 2vh 6vw; 
+  font-family: "Noto Sans", sans-serif; 
+  font-size: 0.5em; 
+  font-style: italic; 
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center;
+  align-items: center; 
+}
+
+div.footer span {
+  text-align: center; 
+}
+
+div.footer a,
+div.footer a:visited,
+div.footer a:focus,
+div.footer a:hover {
+  color: rgb(240, 240, 240); 
+}
+
+#description_card {
+  position: fixed; 
+  z-index: 2000; 
+  top: 50%; 
+  right: -100%; 
+  
+  transform: translateY(-50%); 
+
+  width: 80vw;
+  height: 75vh; 
+
+  padding: 15px; 
+
+  overflow-y: scroll;
+
+  -webkit-overflow-scrolling: touch; /* "momentum" scrolling" */ 
+  overscroll-behavior: contain; /* don't propagate to parent */ 
+
+  background: rgb(0, 10, 30); 
+  border: 1px solid rgb(240, 240, 240); 
+
+  -webkit-box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6), 0px 0px 8px 8px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6), 0px 0px 8px 8px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6), 0px 0px 8px 8px rgba(0, 0, 0, 0.45);
+
+  transition: right 0.5s ease; /* ios 15 broke this it seems */
+}
+
+#description_card.active {
+  right: 0; 
+}
+
+#description_card div {
+  overscroll-behavior: contain; /* don't propagate to parent */ 
+}
+
+#description_card .description_title {
+  font-size: 1.7em; 
+}
+
+#description_card .description_title span {
+  font-size: 0.8em; 
+}
+
+#description_card .requires {
+  color: #ED6A71;
+}
+
+#description_card a {
+  position: absolute;
+
+  right: 5%;
+  top: 5%;
+
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+}
+
+#description_card a::before, 
+#description_card a::after {
+  content: ""; 
+  position: absolute;
+  
+  left: 15px;
+  height: 33px;
+  
+  width: 2px;
+  background-color: rgb(240, 240, 240);
+}
+
+#description_card a::before {
+  transform: rotate(45deg);
+}
+
+#description_card a::after {
+  transform: rotate(-45deg);
+}
+
+
+/**********************************/
+/*          TAB PAGE CSS          */
+/**********************************/
+
+#tab_page_buttons_wrapper {
+  position: relative; 
+  padding: 2vh 0; 
+}
+
+#tab_page_buttons_wrapper .fadeLeft,
+#tab_page_buttons_wrapper .fadeRight {
+  position: absolute; 
+  z-index: 1000; 
+  
+  pointer-events: none;
+
+  width: 50%; 
+  height: 100%; 
+
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+#tab_page_buttons_wrapper .fadeLeft {
+  left: 0; 
+
+  background: -moz-linear-gradient(left, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 35%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#tab_page_buttons_wrapper .fadeRight  {
+  right: 0; 
+
+  background: -moz-linear-gradient(right, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 35%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#tab_page_buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;   
+
+  overflow-x: scroll; 
+  overflow-y: hidden; 
+
+  -webkit-overflow-scrolling: touch; /* "momentum" scrolling" */ 
+  overscroll-behavior: contain; /* don't propagate to parent */ 
+
+  scrollbar-width: none; /* Moz experimental */ 
+}
+
+#tab_page_buttons button {
+  font-size: 1.2em; 
+}
+
+#tab_page_buttons .spacer {
+  flex: 1 0 50px; 
+}
+
+.tab_page_content {
+  width: 100%; 
+  padding: 0 3vw; 
+}
+
+/**********************************/
+/*            SKILL CSS           */
+/**********************************/
+
+.sk_points_remaining {
+  display: flex;
+  justify-content: center;
+}
+
+.sk_points_remaining > p {
+  margin-top: 0;
+  margin-bottom: 1%;
+}
+
+#sk_tree_buttons {
+  position: relative;
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center;  
+}
+
+#sk_tree_buttons button {
+  width: 60%; 
+
+  border: 1px solid rgb(240, 240, 240); 
+  border-bottom: none; 
+  border-radius: 10px 10px 0 0; 
+
+  padding: 5px 10px; 
+
+  background: rgba(0, 0, 0, 0); 
+  color: rgb(40, 90, 130);   
+  font-size: 1.2em; 
+  text-align: center;
+
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+  -moz-transition:    color 0.3s ease, background-color 0.3s ease;
+  -o-transition:      color 0.3s ease, background-color 0.3s ease;
+  transition:         color 0.3s ease, background-color 0.3s ease;
+}
+
+.sk_tree_easy {
+  flex-grow: 1; 
+  height: 100%;
+  padding-top: 5px; 
+
+  background: url("../img/dropdown-arrow.png") 50% / 30% no-repeat;  
+  filter: invert(26%) sepia(82%) saturate(374%) hue-rotate(162deg) brightness(104%) contrast(96%); 
+  /* filter: black -> rgb(40, 90, 130) */
+
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: baseline; 
+  align-items: baseline; 
+}
+
+#sk_prev_tree {
+  transform: rotate(90deg); 
+}
+
+#sk_next_tree {
+  transform: rotate(-90deg); 
+}
+
+#sk_prev_tree::after, 
+#sk_next_tree::after {
+  content: ""; 
+
+  width: 100%; 
+  padding-bottom: 50%; 
+}
+
+.sk_tree_easy:not(.hidden):hover,
+.sk_tree_easy:not(.hidden):active {
+  filter: invert(91%) sepia(8%) saturate(156%) hue-rotate(169deg) brightness(102%) contrast(82%);
+  /* filter: black -> rgb(215, 220, 225) */
+}
+
+.sk_tree_easy.hidden {
+  opacity: 0.2
+}
+
+#sk_tree_buttons button:focus,
+#sk_tree_buttons button:hover {
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  color: rgb(11, 11, 21); 
+}
+
+#sk_tree_buttons .sk_tree_button_group {
+  max-height: 0;
+  overflow: hidden;
+  
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  z-index: 2000; 
+
+  width: 60%; 
+  transform: translate(-50%, 0); 
+  transition: max-height 0.3s ease;
+
+  background: rgb(215, 220, 225); 
+  border: 1px solid rgb(240, 240, 240); 
+  border-top: none; 
+  border-radius: 0 0 10px 10px; 
+ 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+              0 3px 6px rgba(0, 0, 0, 0.23);
+
+  /* Align text children like cute ducks in a line */
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#sk_tree_buttons .sk_tree_button_group.active {
+  max-height: 20em;
+}
+
+.sk_tree_button_group > div {  
+  width: 100%; 
+  min-height: 40px;
+  height: 4vh;
+
+  background: rgb(215, 220, 225); 
+  background-size: 100% 100%; 
+  
+  color: rgb(11, 11, 21); 
+  font-size: 1.2rem; 
+  text-align: center; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.sk_tree_button_group > div:focus,
+.sk_tree_button_group > div:hover {
+  background: rgb(190, 195, 200); 
+}
+
+.sk_tree_button_group > div.sk_tree_button_active {
+  color: rgb(240, 240, 240);
+  background: rgb(55, 120, 175); 
+}
+
+
+.sk_tree {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly; 
+}
+
+.sk_subtree {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: space-evenly; 
+
+  background:         url("../img/skills/background-90deg.png") 0 0 no-repeat;
+  background-size:    25% 100%;  
+
+  max-height: 33%; 
+  
+  margin: 3px 0;
+
+  -webkit-transition: background-size .4s ease;
+  -moz-transition:    background-size .4s ease;
+  -o-transition:      background-size .4s ease;
+  transition:         background-size .4s ease;
+}
+
+.sk_tier {
+  position: relative; 
+  
+  padding: 3px 0; 
+  flex-basis: 25%; 
+  
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: space-evenly; 
+}
+
+.sk_tier:not(:last-child) {
+  border-right: 1px solid rgb(40, 100, 140); 
+}
+
+.sk_tier:not(:last-child)::before,
+.sk_tier:not(:last-child)::after {
+  content: ""; 
+  position: absolute; 
+  border-left: 2px solid white; 
+  width: 2px; 
+  height: 8%; 
+}
+
+.sk_tier:not(:last-child)::before {
+  top: 0; 
+  right: 0; 
+}
+
+.sk_tier:not(:last-child)::after {
+  bottom: 0;
+  right: 0; 
+}
+
+.sk_icon {
+  width: 75%; 
+  max-width: 80px; 
+}
+
+.sk_name {
+  position: relative; 
+  display: block; 
+
+  margin: 0 5px; 
+
+  font-size: 0.9em; 
+  line-height: 1em; 
+  text-align: center; 
+
+  -webkit-transition: color .1s ease;
+  -moz-transition:    color .1s ease;
+  -o-transition:      color .1s ease;
+  transition:         color .1s ease;
+}
+
+
+/**********************************/
+/*          PERK DECKS CSS        */
+/**********************************/
+
+#pk_page {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.pk_deck {
+  -webkit-transition: opacity .2s ease;
+  -moz-transition:    opacity .2s ease;
+  -o-transition:      opacity .2s ease;
+  transition:         opacity .2s ease;
+}
+
+.pk_deck p {
+  font-size: 1.4em; 
+
+  width: 75%; 
+  flex: 0 1 auto; 
+  
+  margin: 0; 
+  margin-left: 5%; 
+}
+
+.pk_preview_card {
+  width: 100%; 
+  max-width: 92px; 
+  
+  -webkit-transition: max-width .4s ease;
+  -moz-transition:    max-width .4s ease;
+  -o-transition:      max-width .4s ease;
+  transition:         max-width .4s ease;
+}
+
+.pk_selected .pk_preview_card {
+  max-width: 0; 
+}
+
+.pk_preview_card > div {
+  position: relative; 
+
+  width: 100%; 
+  height: 0;
+  padding-bottom: 100%; 
+
+  background: url("../img/perks/card.png") center center no-repeat;  
+  background-size: 75%; 
+
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center;   
+}
+
+.pk_preview_card > div > div {
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0); 
+
+  width: 100%; 
+  max-width: 48px;
+
+  -webkit-transition: max-width .4s ease;
+  -moz-transition:    max-width .4s ease;
+  -o-transition:      max-width .4s ease;
+  transition:         max-width .4s ease;
+}
+
+.pk_selected .pk_preview_card > div > div {
+  max-width: 0;
+}
+
+.pk_preview_card > div > div::after {
+  content: ""; 
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0); 
+  
+  width: 100%; 
+  height: 0;  
+  padding-bottom: 100%; 
+
+  background: url("../img/perks/icons.png") no-repeat; 
+  background-size: 500% 2200%; 
+}
+
+.pk_deck_cards_ring {
+  position: relative;
+
+  width: 100%; 
+  height: 0; 
+  
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+
+.pk_selected .pk_deck_cards_ring {
+  height: auto;
+}
+
+.pk_deck_cards_ring .fadeLeft, 
+.pk_deck_cards_ring .fadeRight {
+  position: absolute; 
+  z-index: 1000; 
+  
+  pointer-events: none;
+
+  width: 50%; 
+  height: 100%; 
+
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.pk_deck_cards_ring .fadeLeft {
+  left: 0; 
+
+  background: -moz-linear-gradient(left, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 25%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.pk_deck_cards_ring .fadeRight  {
+  right: 0; 
+
+  background: -moz-linear-gradient(right, rgba(0, 10, 30, 1) 0%, rgba(0, 10, 30, 0) 25%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(0, 10, 30, 1) 0%,rgba(0, 10, 30, 0) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.pk_deck_cards {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+  justify-content: left;
+}
+
+.pk_deck_cards::-webkit-scrollbar {
+  display: none; 
+}
+
+.pk_selected .pk_deck_cards .spacer {
+  flex: 1 0 50px; 
+}
+
+.pk_deck_cards > div {
+  position: relative;
+
+  width: 0; 
+  height: 0; 
+
+  flex: 0 0 auto; 
+
+  -webkit-transition: width .4s ease, height .4s ease;
+  -moz-transition:    width .4s ease, height .4s ease;
+  -o-transition:      width .4s ease, height .4s ease;
+  transition:         width .4s ease, height .4s ease;
+}
+
+.pk_selected .pk_deck_cards > div {
+  width: 64px; 
+  height: 92px; 
+
+  background: url("../img/perks/card.png") 0 0 no-repeat;  
+  
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: left;
+  align-items: center; 
+}
+
+.pk_selected .pk_deck_cards > div::after {
+  content: ""; 
+  position: absolute; 
+
+  top: 50%; 
+  left: 50%; 
+  transform: translate3d(-50%, -50%, 0);
+  
+  width: 48px; 
+  height: 48px;  
+
+  background: url("../img/perks/icons.png") no-repeat;  
+  background-size: 500% 2200%; 
+}
+
+ 
+
+/**********************************/
+/*         ARMOR-TH-DP CSS        */
+/**********************************/
+
+.th_icon {
+  max-width: 128px;  
+}
+
+.arm_icon.arm_selected > div::before {    
+  font-size: 1.5em; 
+}
+
+.th_icon.th_selected > div::before {
+  font-size: 1.2em; 
+}
+
+.dp_icon.dp_selected > div::before, 
+.dp_icon.dp_primary > div::before,
+.dp_icon.dp_secondary > div::before {
+  font-size: 1.6em; 
+}
+
+
+
+/**********************************/
+/*          SAVE/LOAD CSS         */
+/**********************************/
+
+#tab_io_page,
+#tab_io_page > div {
+  display: flex; 
+  flex-flow: column nowrap; 
+  justify-content: center; 
+}
+
+#io_save p,
+#io_other p {
+  margin: 0;
+  margin-bottom: 2vh; 
+}
+
+#io_save {
+  margin-bottom: 2vh; 
+}
+
+.section-title {
+  align-self: center; 
+  font-size: 1.7em; 
+}
+
+
+
+/**********************************/
+/*             LANG CSS           */
+/**********************************/
+/*
+    This is where you can force certain elements have whatever you want them to have
+    (mostly font-size)
+*/
+
+#tab_page_buttons:lang(ru-ru) {
+  font-size: 0.9em; 
+}
+
+.sk_name:lang(ru-ru) {
+  font-size: 0.5em; 
+}
+
+.arm_icon.arm_selected:lang(ru-ru) > div::before {
+  font-size: 1.2em; 
+}
+
+.th_icon.th_selected:lang(ru-ru) > div::before {
+  font-size: 1em; 
+}
+
+.dp_icon.dp_selected:lang(ru-ru) > div::before {
+  font-size: 1.3em; 
+}
