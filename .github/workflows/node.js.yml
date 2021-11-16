@@ -1,0 +1,77 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run lint
+  deploy:
+    if: ${{ github.event_name == "push" }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Predeploy
+      run: |
+        chmod +x predeploy.sh
+        ./predeploy.sh
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # Set a target branch for deployment.
+        #publish_branch: # optional, default is gh-pages
+        # Set an input directory for deployment.
+        #publish_dir: # optional, default is public
+        # Set an destination subdirectory for deployment.
+        #destination_dir: # optional, default is 
+        # Set Git user.name
+        #user_name: # optional
+        # Set Git user.email
+        #user_email: # optional
+        # Set a custom commit message with a triggered commit hash
+        #commit_message: # optional
+        # Set a custom full commit message without a triggered commit hash
+        #full_commit_message: # optional
+        # Set tag name
+        #tag_name: # optional
+        # Set tag message
+        #tag_message: # optional
+        # Set custom domain
+        cname: pd2build.ar
+        # Set files or directories to exclude from a publish directory.
+        #exclude_assets: # optional, default is .github
+
