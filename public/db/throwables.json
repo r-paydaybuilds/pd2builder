@@ -93,5 +93,10 @@
             { "type": "perk_deck", "name": "kingpin" }
         ],
         "dlc": "Scarface Character Pack"
+    },
+    "x1_zapper": {
+        "name": "X1-ZAPper",
+        "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
+        "dlc": "Jiu Feng Smuggler Pack 2"
     }
 }

@@ -589,7 +589,8 @@ export default class GUI {
     Throwable_DisplayDescriptionCard(throwableId) {
         const desc = document.querySelector("#description_container, .th_description");
         const th = this.builder.dbs.get("throwables").get(throwableId);
-        const lang = this.builder.lang.get("throwables." + throwableId);
+        let lang = this.builder.lang.get("throwables." + throwableId);
+        if (!lang) lang = th; 
 
         let html = `<p class="description_title">${lang.name}`;
 
