@@ -1210,6 +1210,10 @@
         "injector": {
             "name": "注射器",
             "description": "使用者将不惧疼痛且变得无所畏惧。不惧疼痛能使使用者的战斗之魂时刻燃起，无所畏惧则使使用者成为敌人面前的极大威胁。"
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper",
+            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
         }
     },
     "bigoil": {
