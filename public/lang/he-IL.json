@@ -1210,6 +1210,10 @@
         "injector": {
             "name": "Injector",
             "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper",
+            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
         }
     },
     "bigoil": {
