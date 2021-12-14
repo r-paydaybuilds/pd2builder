@@ -69,24 +69,24 @@
             "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "marathon_man": {
-            "name": "Marathon Man",
-            "description": "You and your crew's stamina is increased by 50%.\nIncreases your shout distance by 25%.\nWhen you are within medium range of an enemy, you receive 6% less damage from enemies.\tNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "Homem de Maratona",
+            "description": "A sua resistência e da equipe é aumentada em 50%.\nAumenta a distância do seu grito em 25%.\nQuando você estiver em uma distância média de um inimigo, você recebe 6% de redução de dano dos inimigos.\nNota: Isso não soma com os outros jogadores.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "wolf_pack": {
-            "name": "Wolf Pack",
-            "description": "Your crew will gain 10% more health.\nYou will gain 20% more health.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "Pacote do Lobo",
+            "description": "O seu grupo vai ter 10% a mais de vida.\nVocê vai ter 20% a mais de vida.\nNota: Isso não soma com os outros jogadores.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "testudo": {
             "name": "Testudo",
-            "description": "You gain 10% more armor and your crew gains an additional 5% more armor.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "description": "Você ganha 10% a mais de armadura e a sua equipe também ganha 5% de armadura adicional.\nNota: Isso não soma com os outros jogadores.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "hostage_situation": {
-            "name": "Hostage Situation",
-            "description": "You and your crew will gain 6% max health and 12% stamina for each hostage up to 4 times.\nYou and your crew will gain 8% damage reduction for having one or more hostages.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "Situação de Refém",
+            "description": "Você e a sua equipe vão ter a vida máxima aumentada em 6% e 12% de resistência para cada refém até 4 vezes.\nVocê e a sua equipe vão ter 8% de redução de dano por ter um refém ou mais.\nNota: Isso não soma com os outros jogadores.",
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "brute_strength-2": {
             "name": "Força Bruta",
@@ -94,369 +94,369 @@
             "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "meat_shield": {
-            "name": "Meat Shield",
-            "description": "You are 15% more likely to be targeted when you are close to your crew members.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "Chamativo",
+            "description": "Você é 15% mais chamativo para os policiais quando você estiver perto dos seus aliados.\nVocê ganha 10% a mais de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "giant_strength": {
-            "name": "Giant Strength",
-            "description": "You gain an additional 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "Força Gigantesca",
+            "description": "Você ganha um adicional de 20% a mais de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "disturbing_the_peace": {
-            "name": "Disturbing the Peace",
-            "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "Paz não é o meu forte",
+            "description": "Todos os tiros vão ter uma chance de fazer os seus inimigos entrarem em pânico.\nO pânico vai fazer com que os seus inimigos tenham curtos períodos de medo incontrolável.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "800-pound_gorilla": {
-            "name": "800-pound Gorilla",
-            "description": "You gain an additional 40% more health.\nYou regenerate 3% of your life every 5 seconds.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "800 quilos de Gorilla",
+            "description": "Você ganha um adicional de 40% a mais de vida.\nVocê regenera 3% da sua vida a cada 5 segundos.",
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "type_1_armor": {
-            "name": "Type I Armor",
-            "description": "You gain 10% more armor",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "Tipo I de Colete",
+            "description": "Você ganha 10% a mais de armadura.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 3 segundos."
         },
         "type_2_armor": {
-            "name": "Type II Armor",
-            "description": "You gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Tipo II de Colete",
+            "description": "Você ganha um adicional de 10% a mais de armadura.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "type_3_armor": {
-            "name": "Type III Armor",
-            "description": "You gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Tipo III de Colete",
+            "description": "Você ganha um adicional de 10% a mais de armadura.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "reinforced_armor": {
-            "name": "Reinforced Armor",
-            "description": "Your armor recovery rate is increased by 10%.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "Colete Reforçado",
+            "description": "A sua velocidade de recuperação da armadura é aumentada em 10%.\nQuando a sua armadura acaba, você vai ser imune a dano por 2 segundos. Isso não poderá ocorrer mais de uma vez durante 15 segundos.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "liquid_armor": {
-            "name": "Liquid Armor",
-            "description": "You gain an additional 5% more armor.\nReduces the armor recovery time for you and your crew by 10%.\nNote: Crew perks do not stack.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Colete Líquido",
+            "description": "Você ganha um adicional de 5% de armadura.\nReduz o tempo para recuperação da armadura para você e a sua equipe em 10%,\nNota: Isso não soma com os outros jogadores.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "subtle-1": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "name": "Sútil",
+            "description": "A sua chance de Dodge é aumentada em 15%.",
+            "vr_description": "Depois do dash, o jogador ganhará 1% até no máximo de 6% de Dodge por 3 segundos, dependendo da resistência consumida."
         },
         "elusive": {
-            "name": "Elusive",
-            "description": "You are 15% less likely to be targeted when you are close to your crew members.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "name": "Ilusório",
+            "description": "Você terá 15% menos de probabilidade de ser mirado enquanto estiver perto dos seus aliados.",
+            "vr_description": "O efeito do dash é agora de 1% até no máximo de 7%."
         },
         "evasive": {
-            "name": "Evasive",
-            "description": "Your chance to dodge is increased by an additional 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+            "name": "Evasivo",
+            "description": "A sua chance de Dodge é aumentada em mais 15%.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 8%."
         },
         "shadow_warrior": {
-            "name": "Shadow Warrior",
-            "description": "Your chance to dodge is increased by an additional 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+            "name": "Guerreiro Sombrio",
+            "description": "A sua chance de Dodge é aumentada em mais 15%.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo 9%."
         },
         "killer_instinct": {
-            "name": "Killer Instinct",
-            "description": "All your weapons have a 25% chance to pierce enemy armor.\nIncreases weapon swapping speed by 80%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "name": "Instinto de Assassino",
+            "description": "Todas as suas armas tem uma chance de 25% de perfurar o colete blindado dos inimigos.\nAumenta a velocidade de troca de armas em 80%.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 10%."
         },
         "basic_recovery": {
-            "name": "Basic Recovery",
-            "description": "Your armor recovery rate is increased by 5%.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "Recuperação Básica",
+            "description": "A sua armadura se recupera 5% mais rápido.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 3 segundos."
         },
         "ambidexterity": {
-            "name": "Ambidexterity",
-            "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Habilidoso",
+            "description": "As armas de duas mãos tem -16 de penalidade de Estabilidade.\nA sua armadura se recupera 10% mais rápido.\nA capacidade de munição das suas armas de duas mãos é aumentada em 50%.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "advanced_recovery": {
-            "name": "Advanced Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Recuperação Avançada",
+            "description": "A sua armadura se recupera 10% mais rápido.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "expert_recovery": {
-            "name": "Expert Recovery",
-            "description": "Your armor recovery rate is increased by an additional 10%.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "Recuperação Expert",
+            "description": "A sua armadura se recupera 10% mais rápido.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "tooth_and_claw": {
-            "name": "Tooth and Claw",
-            "description": "Your armor recovery rate is increased by an additional 10%.\nYour armor will recover 1.5 seconds after being broken no matter what the situation.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Dente e Garra",
+            "description": "A sua armadura se recupera 10% mais rápido.\nA sua armadura irá se recuperar após 1.5 segundo depois de ter acabado, não importa a situação.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "subtle-2": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+            "name": "Sútil",
+            "description": "A sua chance de Dodge é aumentada em 15%.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo de 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes cada 3 segundos."
         },
         "basic_composure": {
-            "name": "Basic Composure",
-            "description": "Your chance to dodge is increased by 5% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Compostura Básica",
+            "description": "A sua chance de Dodge é aumentada em 5% para as armaduras ballistic vests.\nA sua armadura é aumentada em 20% para as armaduras ballistic vests.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "advanced_composure": {
-            "name": "Advanced Composure",
-            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 20% for ballistic vests.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Compostura Avançada",
+            "description": "A sua chance de Dodge é aumentada em 10% para as armaduras ballistic vests.\nA sua armadura é aumentada em 20% para as armaduras ballistic vests.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "expert_composure": {
-            "name": "Expert Composure",
-            "description": "Your chance to dodge is increased by 10% for ballistic vests.\nYour armor is increased by 25% for ballistic vests.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "Compostura Expert",
+            "description": "A sua chance de Dodge é aumentada em 10% para as armaduras ballistic vests.\nA sua armadura é aumentada em 25% para as armaduras ballistic vests.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "master_recovery": {
-            "name": "Master Recovery",
-            "description": "Your armor recovery rate is increased by 10%.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Mestre em Recuperação",
+            "description": "A sua armadura se recupera 10% mais rápido.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "sneaky": {
-            "name": "Sneaky",
-            "description": "Your chance to dodge is increased by 20%.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "name": "Despercebido",
+            "description": "A sua chance de Dodge é aumentada em 20%.",
+            "vr_description": "Depois do dash, o jogador ganhará 1% até no máximo de 6% de Dodge por 3 segundos, dependendo da resistência consumida."
         },
         "bag_of_tricks": {
-            "name": "Bag of Tricks",
-            "description": "Standing still and crouching decreases your chances to be targeted by 10%.\nYou bag corpses 20% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "name": "Truque das Bolsas",
+            "description": "Ficar parado e agachado diminui a chance de ser visto em 10%.\nVocê é capaz de colocar os corpos nas bolsas 20% mais rápido.",
+            "vr_description": "O efeito do dash é agora de 1% até no máximo de 7%."
         },
         "luck_of_the_irish": {
-            "name": "Luck of the Irish",
-            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou pick locks 20% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%"
+            "name": "Sorte de Irlandesa",
+            "description": "A sua chance de Dodge é aumentada em mais 5%.\nA sua chance de ser visto enquanto fica parado e agachado é diminuido em mais 5%.\nVocê destranca as fechaduras 20% mais rápido.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 8%."
         },
         "dutch_courage": {
-            "name": "Dutch Courage",
-            "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%"
+            "name": "Bravura de Holandesa",
+            "description": "A sua chance de Dodge é aumentada em mais 5%.\nA sua chance de ser o alvo enquanto fica parado e agachado é diminuido em mais 5%.\nVocê responde os pagers 10% mais rápido.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 9%"
         },
         "breath_of_fresh_air": {
-            "name": "Breath of Fresh Air",
-            "description": "Standing still and crouching increases your armor recovery rate by 20%.\nYou gain 10% crouching movement speed.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "name": "Respirando um Ar Fresco",
+            "description": "Ficar parado e agachado aumenta a velocidade da sua armadura se recuperar em 20%.\nA sua velocidade de andar agachado aumenta em 10%.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 10%."
         },
         "overdog": {
-            "name": "OVERDOG",
-            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "Pressionado",
+            "description": "Quando você estiver cercado por três inimigos ou mais, você recebe uma redução de 12% de dano dos inimigos.\nPor segundo e a cada acerto consecutivo com a sua arma de corpo-a-corpo dentro de 1 segundo do último acerto vai dar 10 vezes do seu dano normal.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 3 segundos."
         },
         "basic_close_combat": {
-            "name": "Basic Close Combat",
-            "description": "When you are within medium range of an enemy, you receive 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Combate de Perto Básico",
+            "description": "Quando você estiver em uma distância média de um inimigo, você recebe 8% de redução de dano dos seus inimigos.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "advanced_close_combat": {
-            "name": "Advanced Close Combat",
-            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Combate de Perto Avançado",
+            "description": "Quando você estiver em uma distância média de um inimigo, você recebe mais 8% de redução de dano dos seus inimigos.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "expert_close_combat": {
-            "name": "Expert Close Combat",
-            "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "Combate de Perto Expert",
+            "description": "Quando você estiver em uma distância média de um inimigo, você recebe mais 8% de redução de dano dos seus inimigos.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "life_drain": {
-            "name": "Life Drain",
-            "description": "Striking an enemy with your melee weapon regenerates 20% of your health. This cannot occur more than once every 10 seconds.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Sugando Sangue",
+            "description": "Batendo em um inimigo com a sua arma de corpo-a-corpo irá regenerar 20% da sua vida. Isso não pode ocorrer mais de uma vez durante 10 segundos.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "tension": {
-            "name": "Tension",
-            "description": "Killing an enemy regenerates 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Tensão",
+            "description": "Matando um inimigo irá regenerar 30 de armadura.\nIsso não pode ocorrer mais de uma vez durante 1 segundo.\nVocê ganha mais 10% de armadura.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "clean_hit": {
-            "name": "Clean Hit",
-            "description": "Killing an enemy with a melee weapon regenerates 10% health.\nThis cannot occur more than once every 1 second.\nWhen you are within medium range of an enemy you receive 8% less damage.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Acerto Limpo",
+            "description": "Matando um inimigo com a sua arma de corpo-a-corpo irá regenerar 10% da sua vida.\nIsso não pode ocorrer mais de uma vez durante 1 segundo.\nQuando você estiver em uma distância média de um inimigo, você recebe 8% a menos de dano.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "overdose": {
             "name": "Overdose",
-            "description": "Killing an enemy at medium range recovers 30 armor.\nThis cannot occur more than once every 1 second.\nYou gain an additional 10% more armor.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "description": "Matando um inimigo em uma distância média irá recuperar 30 de armadura.\nIsso não pode ocorrer mais de uma vez durante 1 segundo.\nVocê ganha mais 10% de armadura.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "showdown": {
-            "name": "Showdown",
-            "description": "Killing an enemy at medium range has a 75% chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.\nThis cannot occur more than once every 1 second.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Confronto",
+            "description": "Matando um inimigo em uma distância média tem uma chance de 75% de fazer os inimigos perto de você terem pânico.\nO pânico vai fazer os seus inimigos terem curtos períodos de medo.\nIsso não poderá ocorrer mais de uma vez durante 1 segundo.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "medical_supplies": {
-            "name": "Medical Supplies",
-            "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
+            "name": "Suprimentos Médicos",
+            "description": "As munições que você pegar no chão também vai dar suprimentos de médico e cura a você de 16 até 24 de vida.\nIsso não poderá ocorrer mais de uma vez durante 3 segundos.\nSe a vida do \"Gambler\" for abaixo do outro jogador, o efeito de cura do \"Gambler\" é aumentado em 20%. Isso pode ser multiplicado em até três vezes.",
             "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "ammo_give_out": {
-            "name": "Ammo Give Out",
-            "description": "When you pick up ammo, you trigger an ammo pickup for 50% of normal pickup to the other players in your team.\nCannot occur more than once every 5 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "Munição Pra Todo Mundo",
+            "description": "Quando você pega a munição do chão, você aumenta 50% da munição que os outros pegarem no chão em seu time.\nIsso não poderá ocorrer durante 5 segundos.\nVocê ganha 20% a mais de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "sharing_is_caring": {
-            "name": "Sharing Is Caring",
-            "description": "When you get healed from picking up ammo packs, your teammates also get healed for 50% of the amount.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "Compartilhar É Bonito",
+            "description": "Quando você pega a munição do chão, os seus aliados vão receber 50% de cura.\nVocê ganha 20% a mais de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "more_healing_1": {
-            "name": "More Healing 1",
-            "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "Mais Cura 1",
+            "description": "Aumenta a cura da munição do chão em 8.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "more_healing_2": {
-            "name": "More Healing 2",
-            "description": "Increase health gained from ammo packs by additional 8.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "Mais Cura 2",
+            "description": "Aumenta a cura da munição do chão em 8.",
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "histamine": {
-            "name": "Histamine",
-            "description": "Damaging an enemy heals 1 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
+            "name": "Histamina",
+            "description": "Causando dano em um inimigo cura 1 ponto de vida por 0.3 segundos durante 3 segundos.\nEsse efeito soma, mas não pode ocorrer mais de uma vez durante 1.5 segundos e só funciona quando você estiver vestindo o Terno ou Colete Balístico Leve.",
             "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "adrenaline": {
-            "name": "Adrenaline",
-            "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "Adrenalina",
+            "description": "Causando dano em um inimigo agora cura 2 pontos de vida por 0.3 segundos durante 3 segundos.\nVocê ganha 20% a mais de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "endorphins": {
-            "name": "Endorphins",
-            "description": "Damaging an enemy now heals 3 life points every 0.3 seconds for 3 seconds.\nIncreases your chance to pierce enemy armor by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "Endorfina",
+            "description": "Causando dano em um inimigo agora cura 3 pontos de vida por 0.3 segundos durante 3 segundos.\nAumenta a chance de perfurar o colete a prova de balas dos inimigos em 10%.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "dopamine": {
-            "name": "Dopamine",
-            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "Dopamina",
+            "description": "Causando dano em um inimigo agora cura 4 pontos de vida por 0.3 segundos durante 3 segundos.\nVocê ganha mais 20% de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "euphoria": {
-            "name": "Euphoria",
-            "description": "Damaging an enemy now heals 4 life points every 0.3 seconds for 4.2 seconds.\nIncrease your chance to pierce enemy armor by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "Euforia",
+            "description": "Causando dano em um inimigo agora cura 4 pontos de vida por 0.3 segundos durante 4.2 segundos.\nAumenta a chance de perfurar o colete a prova de balas dos inimigos em 20%.",
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "koi_irezumi": {
             "name": "Koi Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to 20% armor recovery rate.\nNOTE: Entering this state negates third party regeneration effects.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "description": "Quanto mais baixo a sua vida, mais rápido a sua armadura irá se recuperar. Quando a sua vida estiver abaixo de 25%, você vai ganhar até 20% de recuperação de armadura.\nNOTA: Ativando isso vai negativar os efeitos de regeneração de terceiros.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 3 segundos."
         },
         "hebi_irezumi": {
             "name": "Hebi Irezumi",
-            "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "description": "Quanto mais baixo a sua vida, mais rápido a sua movimentação vai ficar. Quando a sua vida estiver abaixo de 25%, você vai ganhar até 20% de velocidade de movimento.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "tora_irezumi": {
             "name": "Tora Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "description": "Quanto mais baixo a sua vida, mais rápido a sua armadura irá se recuperar. Quando a sua vida estiver abaixo de 25%, você vai ganhar mais 20% de recuperação de armadura.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "ryu_irezumi": {
             "name": "Ryu Irezumi",
-            "description": "The lower your health, the more armor recovery rate you have. When your health is below 25%, you will gain up to an additional 20% armor recovery rate.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "description": "Quanto mais baixo a sua vida, mais rápido a sua armadura irá se recuperar. Quando a sua vida estiver abaixo de 25%, você vai ganhar mais 20% de recuperação de armadura.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "oni_irezumi": {
             "name": "Oni Irezumi",
-            "description": "All berserker state effects in this perk deck will start at 50% health instead of 25%.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "description": "Todo efeito de Berserker desse Perk Deck vai entrar em efeito em 50%, ao invés de 25%.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "point_break": {
-            "name": "Point Break",
-            "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
+            "name": "Ponto de Ruptura",
+            "description": "Quando a sua armadura estiver cheia, você vai guardar 4 de vida para cada inimigo que você e o seu time eliminar.\nQuando a sua armadura acabar e começar a se recuperar, você irá regenerar a sua vida com a quantidade que você guardou.\nMáxima quantidade de vida guardada depende da sua armadura equipada.",
             "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
         },
         "the_emerging_force": {
-            "name": "The Emerging Force",
-            "description": "Increases the amount of health stored from kills by 4.\nYou gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "name": "Força Emergente",
+            "description": "Aumenta a quantidade de vida guardada que você mata por 4.\nVocê ganha mais 10% de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "life_of_ice": {
-            "name": "Life of Ice",
-            "description": "Increases the maximum health that can be stored by 50%.\nYou gain 10% more health.\nYour chance to dodge is increased by 10%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "name": "Vida Fria",
+            "description": "Aumenta a vida máxima que pode ser guardada em 50%.\nVocê ganha mais 10% de vida.\nA sua chance de Dodge é aumentada em 10%.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "awakening_earth": {
-            "name": "Awakening Earth",
-            "description": "Increases the amount of health stored from kills by 4.\nYou gain 20% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "name": "Despertando a Terra",
+            "description": "Aumenta a quantidade de vida guardada que você mata por 4.\nVocê ganha mais 20% de vida.",
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "the_perfect_line": {
-            "name": "The Perfect Line",
-            "description": "Killing an enemy speeds up your armor recovery time depending on how much armor you have. The more armor the less recovery speed gained per kill.\tArmor recovery speed is reset whenever your armor recovers.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "name": "A Linha Perfeita",
+            "description": "Matando um inimigo aumenta a velocidade da recuperação da sua armadura, dependendo da armadura que você estiver vestindo. Quanto mais armadura você estiver vestindo menos velocidade você ganha quando você mata.\nA velocidade da recuperação de armadura volta pro padrão quando você recupera a sua armadura.",
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "excitement": {
-            "name": "Excitement",
-            "description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
+            "name": "Excitação",
+            "description": "100% do dano que você causa é convertido em Pedaços de Histeria, até 240 por 4 segundos. O máximo é 600.\nPedaços de Histeria: Você ganha 1 de absorção de dano para cada 30 Pedaços de Histeria. Pedaços de Histeria cai 60% + 80 a cada 8 segundos.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 3 segundos."
         },
         "outburst": {
-            "name": "Outburst",
-            "description": "Members of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Explosão",
+            "description": "Os membros do seu grupo também vão ganhar o efeito dos seus Pedaços de Histeria.\nOs Pedaços de Histeria de vários membros do grupo não aumentam e só aumenta para aquele que dá a maior absorção de dano enquanto tiver no efeito.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "fervor": {
-            "name": "Fervor",
-            "description": "Change the decay of your Hysteria Stacks to 60% + 40 every 8 seconds.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "Intensidade",
+            "description": "Muda a queda de sua Histeria para 60% + 40 a cada 8 segundos.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "recklessness": {
-            "name": "Recklessness",
-            "description": "Change the damage absorption of your Hysteria Stacks on you and your crew to 1 damage absorption for every 25 stacks of Hysteria.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "name": "Imprudência",
+            "description": "Muda a absorção de dano dos seus Pedaços de Histeria em você e seu grupo para 1 absorção de dano para cada 25 Pedaços de Histeria.",
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "insanity": {
-            "name": "Insanity",
-            "description": "Damage absorption from Hysteria Stacks on you is increased by 100%.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "name": "Insanidade",
+            "description": "A Absorção de dano dos seus Pedaços de Histeria é aumentado em 100%.",
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "blitzkrieg_bop": {
-            "name": "Blitzkrieg Bop",
-            "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-            "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds."
+            "name": "Ataque de Murro",
+            "description": "Ao invés de recuperar a armadura inteira fora do combate, o \"Anarchist\" vai continuar a recuperar a sua armadura enquanto estiver em combate. Quanto mais pesado a armadura é, vai recuperar mais armadura, porém vai demorar mais.\nQuando a sua armadura estiver vazia, você estará imune a qualquer dano por 2 segundos. Isso não poderá ocorrer mais de uma vez por 15 segundos.\nNota: As skills e os perks que aumentam a velocidade de recuperação de armadura não funcionam com esse Perk Deck.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 1 até no máximo 3 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes a cada 5 segundos."
         },
         "straight_edge": {
-            "name": "Straight Edge",
-            "description": "50% of your health is converted into 100% armor.",
-            "vr_description": "The dash effect is now from 2 up to a maximum of 5."
+            "name": "Direto pro Abismo",
+            "description": "50% da sua vida é convertida em 100% de armadura.",
+            "vr_description": "O efeito de dash é agora de 2 até no máximo de 5."
         },
         "death_or_glory": {
-            "name": "Death or Glory",
-            "description": "50% of your health is converted into 110% armor.",
-            "vr_description": "The dash effect is now from 3 up to a maximum of 7."
+            "name": "Morte ou Glória",
+            "description": "50% da sua vida é convertida em 110% de armadura.",
+            "vr_description": "O efeito de dash é agora de 3 até no máximo de 7."
         },
         "rise_above": {
-            "name": "Rise Above",
-            "description": "50% of your health is converted into 120% armor.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 9."
+            "name": "Crescendo Demais",
+            "description": "50% da sua vida é convertida em 120% de armadura.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo de 9."
         },
         "lust_for_life": {
-            "name": "Lust for Life",
-            "description": "Dealing damage will grant you 10 armor - this can only occur once every 1.5 seconds.",
-            "vr_description": "The dash effect is now from 5 up to a maximum of 11."
+            "name": "Luxúria à Vida",
+            "description": "Causando dano irá te dar 10 de armadura, isso não poderá ocorrer mais de uma vez por 1.5 segundos.",
+            "vr_description": "O efeito de dash é agora de 5 até no máximo de 11."
         },
         "prospect": {
-            "name": "Prospect",
-            "description": "Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 4 times every 4 seconds.",
-            "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+            "name": "Prospecto",
+            "description": "Toda vez que você e o seu grupo matar um inimigo, você ganha 5 de vida e 5 de armadura. Isso não poderá ocorrer mais do que 4 vezes a cada 4 segundos.",
+            "vr_description": "Depois do dash, o jogador irá regenerar de 2 até no máximo de 6 de colete, dependendo da resistência consumida. Só poderá ocorrer 3 vezes cada 3 segundos."
         },
         "tail_gunner": {
-            "name": "Tail Gunner",
-            "description": "Every 10% health missing will increase the amount of armor gained from kills by 1.",
-            "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+            "name": "Rabo do Caçador",
+            "description": "Cada 10% de vida que estiver faltando vai aumentar a quantidade de armadura ganha em 1.",
+            "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "road_captain": {
-            "name": "Road Captain",
-            "description": "Every 10% health missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
-            "vr_description": "The dash effect is now from 6 up to a maximum of 14."
+            "name": "O Capitão da Rua",
+            "description": "Cada 10% de vida que estiver faltando irá reduzir o tempo em 4 segundos de regeneração por 0.1 segundo.",
+            "vr_description": "O efeito de dash é agora de 6 até no máximo de 14."
         },
         "sgt-at-arms": {
             "name": "Sgt-at-Arms",
             "description": "Every 10% armor missing will increase the amount of health gained from kills by 1.",
-            "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+            "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "prez": {
             "name": "Prez",
             "description": "Every 10% armor missing will reduce the 4 second cooldown to kill regen by 0.1 second.",
-            "vr_description": "The dash effect is now from 10 up to a maximum of 22."
+            "vr_description": "O efeito de dash é agora de 10 até no máximo 22."
         },
         "bad_guy_coming_through": {
             "name": "Bad Guy Coming Through",
@@ -466,47 +466,47 @@
         "play_rough": {
             "name": "Play Rough",
             "description": "You gain 10% more health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "public_enemy_no_1": {
             "name": "Public Enemy No. 1",
             "description": "You gain 10% more health.\nEnemies nearby will prefer targeting you, whenever possible, while the Injector effect is active.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "balls_vs_bullets": {
             "name": "Balls vs Bullets",
             "description": "You gain 20% more health.\nThe amount of health received during the Injector effect is increased by 25% while below 50% health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "right_to_the_top": {
             "name": "Right to the Top",
             "description": "You gain 40% more health.\nFor every 5 points of health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by 1 second.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "smoker": {
             "name": "Smoker",
             "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
-            "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+            "vr_description": "Depois do dash, o jogador ganhará 1% até no máximo de 6% de Dodge por 3 segundos, dependendo da resistência consumida."
         },
         "twitch": {
             "name": "Twitch",
             "description": "Every time the player gets shot, 20% dodge chance is gained. This effect is reset once the player dodges and will not occur for the next 4 second.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+            "vr_description": "O efeito do dash é agora de 1% até no máximo de 7%."
         },
         "subtle-3": {
-            "name": "Subtle",
-            "description": "Your chance to dodge is increased by 15%.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 8%."
+            "name": "Sútil",
+            "description": "A sua chance de Dodge é aumentada em 15%.",
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 8%."
         },
         "agility_shield": {
             "name": "Agility Shield",
             "description": "Dodging will replenish your armor.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 9%."
+            "vr_description": "O efeito de dash é agora de 1% até no máximo 9%."
         },
         "unseen_shadow": {
             "name": "Unseen Shadow",
             "description": "All of your perk deck effects are increased by 100% while you are standing in the smoke screen. While any of your allies are standing in the smoke screen, they gain 10% dodge chance.",
-            "vr_description": "The dash effect is now from 1% up to a maximum of 10%."
+            "vr_description": "O efeito de dash é agora de 1% até no máximo de 10%."
         },
         "virtue": {
             "name": "Virtue",
@@ -516,22 +516,22 @@
         "un-moved": {
             "name": "Un-moved",
             "description": "All of your armor is converted and applied to your health.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "calm": {
             "name": "Calm",
             "description": "After not taking damage for 4 seconds any damage-over-time you are still waiting to receive will be negated.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "imperturbable": {
             "name": "Imperturbable",
             "description": "When your health is below 35%, the cooldown of your flask will be reduced by 2 seconds for each enemy you kill instead of 1 second.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "enduring": {
             "name": "Enduring",
             "description": "When damage-over-time is removed you will be healed for an additional 50% of the damage-over-time remaining at that point.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "soul_mates": {
             "name": "Soul Mates",
@@ -541,22 +541,22 @@
         "scent": {
             "name": "Scent",
             "description": "Your maximum health is increased by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "synergy": {
             "name": "Synergy",
             "description": "Each enemy you or the tagged unit kills will now grant you 2 absorption up to a maximum of 20.\nThis effect will last until the perk deck item goes out of cooldown.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 9."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 9."
         },
         "inhale": {
             "name": "Inhale",
             "description": "Your maximum health is increased by 20%.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+            "vr_description": "O efeito de dash é agora de 0 até no máximo de 12."
         },
         "harmony": {
             "name": "Harmony",
             "description": "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by 2 seconds until you are no longer paired.",
-            "vr_description": "The dash effect is now from 0 up to a maximum of 15."
+            "vr_description": "O efeito de dash é de 0 até no máximo de 15."
         },
         "code_glitch": {
             "name": "Code Glitch",
