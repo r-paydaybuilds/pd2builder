@@ -37,3 +37,5 @@ echo "done"
 #    mv a $file
 #done
 #echo "done"
+
+mv ../../LICENSE ../
