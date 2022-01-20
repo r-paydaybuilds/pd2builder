@@ -2,9 +2,6 @@ import Builder from "./Builder.js";
 import Util, { UIEventHandler } from "./Util.js";
 import Language from "./Language.js";
 
-if("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js");
-}
 // Change from desktop or mobile version if screen is too big or too small
 window.addEventListener("resize", () => {
     const url = new URL(window.location.href);
@@ -632,6 +629,21 @@ window.onload = async () => {
     builder.lang.loadDictionary(await fetchLang);
     builder.loadLanguage(builder.lang.curLang);
     
+    // Check on Service Worker and if its not in dev environment
+    if("serviceWorker" in navigator /*){//*/&& location.port !== "9999") {
+        navigator.serviceWorker.register("./sw.js").then(req => {
+            req.onupdatefound = () => {
+                const sw = req.installing;
+                sw.onstatechange = () => {
+                    if(sw.state !== "installed" || !navigator.serviceWorker.controller) return;
+                    if(window.confirm(builder.lang.get("system.update"))) {
+                        location.reload();
+                    }
+                }; 
+            };
+        });
+    }
+
 
     // Prepare document when first opening // 
     builder.gui.Tab_ChangeTo("tab_skills_page");
