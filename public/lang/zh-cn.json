@@ -1046,6 +1046,7 @@
             "skill": "需要拥有%{name}技能",
             "deployable": "需要装备放置物%{name}"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "已装备",
         "equip": "已装备",
         "selected": "已选择",
