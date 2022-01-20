@@ -1046,6 +1046,7 @@
             "skill": "ТРЕБУЕТСЯ НАВЫК %{name}",
             "deployable": "ТРЕБУЕТСЯ ВЫБРАТЬ СНАРЯЖЕНИЕ %{name}"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "ВЫБРАНО",
         "equip": "ВЫБРАНО",
         "selected": "СРАВНЕНИЕ",
