@@ -1046,6 +1046,7 @@
             "skill": "REQUIERE LA HABILIDAD %{name}",
             "deployable": "REQUIERE EL DESPLEGABLE %{name} EQUIPADO"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "EQUIPADO",
         "equip": "EQUIP.",
         "selected": "SELECCIONADO",
