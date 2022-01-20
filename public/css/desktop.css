@@ -106,6 +106,9 @@ body {
 }
 
 .description_textbox > div {
+  position: sticky; 
+  top: 50px; 
+
   scrollbar-width: thin;
   scrollbar-color: rgb(240, 240, 240) rgba(0, 0, 0, 0.3);
 }
