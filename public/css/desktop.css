@@ -522,6 +522,7 @@ body {
 #pk_description > div {
   width: 100%;
   height: 85vh;
+  max-height: 100%;
 
   overflow-y: scroll;  
 
