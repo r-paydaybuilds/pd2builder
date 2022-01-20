@@ -98,5 +98,12 @@
         "name": "X1-ZAPper",
         "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
         "dlc": "Jiu Feng Smuggler Pack 2"
+    },
+    "leech_ampule": {
+        "name": "Leech Ampule",
+        "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts.",
+        "requires": [
+            { "type": "perk_deck", "name": "leech" }
+        ]
     }
 }

@@ -455,5 +455,23 @@
                 "value": 0.2
             }
         ]
+    },
+    "leech": {
+        "name": "Leech",
+        "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team.",
+        "perks": [
+            "momentum",
+            "helmet_popping",
+            "indomitable",
+            "blending_in",
+            "stalwart",
+            "walk-in_closet",
+            "built_different",
+            "fast_and_furious",
+            "symbiosis"
+        ],
+        "unlocks": [
+            { "type": "throwable", "name": "leech_ampule" }
+        ]
     }
 }
