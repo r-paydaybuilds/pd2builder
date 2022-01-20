@@ -18,12 +18,12 @@ async function checkCacheOrFetch(ev) {
     const match = await (await caches.open("v1")).match(ev.request, { ignoreSearch: true });
     if(match === undefined) {
         return fetch(ev.request.clone())
-        .then(r =>
-            caches.open("v1").then(cache => {
-                cache.put(ev.request.url.replace(/\?.*/, ""), r.clone());
-                return r;
-            })
-        );
+            .then(r =>
+                caches.open("v1").then(cache => {
+                    cache.put(ev.request.url.replace(/\?.*/, ""), r.clone());
+                    return r;
+                })
+            );
     }
     return match;
 }
