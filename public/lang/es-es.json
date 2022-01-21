@@ -1046,6 +1046,7 @@
             "skill": "REQUIERE LA HABILIDAD %{name}",
             "deployable": "REQUIERE EL DESPLEGABLE %{name} EQUIPADO"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "EQUIPADO",
         "equip": "EQUIP.",
         "selected": "SELECCIONADO",
@@ -1210,6 +1211,10 @@
         "injector": {
             "name": "Inyector",
             "description": "Cuando es consumido el usuario deja de sentir dolor y se hace intrépido. La falta de dolor le permite al usuario desmandarse al corazón de las batallas mas tiempo que cualquier otro y la falta de miedo lo hace mas aterrador y amenaza obvia a sus enemigos."
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper",
+            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
         }
     },
     "bigoil": {

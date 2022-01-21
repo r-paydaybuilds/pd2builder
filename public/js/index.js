@@ -2,9 +2,6 @@ import Builder from "./Builder.js";
 import Util, { UIEventHandler } from "./Util.js";
 import Language from "./Language.js";
 
-if("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js");
-}
 // Change from desktop or mobile version if screen is too big or too small
 window.addEventListener("resize", () => {
     const url = new URL(window.location.href);
@@ -632,6 +629,21 @@ window.onload = async () => {
     builder.lang.loadDictionary(await fetchLang);
     builder.loadLanguage(builder.lang.curLang);
     
+    // Check on Service Worker and if its not in dev environment
+    if("serviceWorker" in navigator /*){//*/&& location.port !== "9999") {
+        navigator.serviceWorker.register("./sw.js").then(req => {
+            req.onupdatefound = () => {
+                const sw = req.installing;
+                sw.onstatechange = () => {
+                    if(sw.state !== "installed" || !navigator.serviceWorker.controller) return;
+                    if(window.confirm(builder.lang.get("system.update"))) {
+                        location.reload();
+                    }
+                }; 
+            };
+        });
+    }
+
 
     // Prepare document when first opening // 
     builder.gui.Tab_ChangeTo("tab_skills_page");
@@ -643,10 +655,13 @@ window.onload = async () => {
     if (builder.io.HasToLoadBuild()) {
         builder.io.LoadBuildFromIterable(new URLSearchParams(window.location.search));
     }
-    let tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
-    if (document.getElementById(tabChange) == null) tabChange = "tab_skills_page";
-    builder.gui.Tab_ChangeTo(tabChange);
-    window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
+    {
+        let tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
+        if (document.getElementById(tabChange) == null) tabChange = "tab_skills_page";
+        builder.gui.HandleRequirements(tabChange.replace(/tab_|_page/g, ""));
+        builder.gui.Tab_ChangeTo(tabChange);
+        window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
+    }
     
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);

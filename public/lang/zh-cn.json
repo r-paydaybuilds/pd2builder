@@ -935,7 +935,7 @@
         },
         "sneaky_bastard": {
             "name": "卑鄙小人",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "基础：4点\t当你的暴露度低于35时，每降低3点暴露度都将获得1%闪避，最多增加10%。\n专精：8点\t当你的暴露度低于35时，每降低1点暴露度都将获得1%闪避，最多增加10%。"
         },
         "second_wind": {
             "name": "第二春",
@@ -968,7 +968,7 @@
         },
         "gun_nut": {
             "name": "枪械狂",
-            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "基础：2点\t增加5发手枪的弹匣容量。\n专精：4点\t提升50%手枪射速。"
         },
         "akimbo": {
             "name": "双持",
@@ -1046,6 +1046,7 @@
             "skill": "需要拥有%{name}技能",
             "deployable": "需要装备放置物%{name}"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "已装备",
         "equip": "已装备",
         "selected": "已选择",
@@ -1210,6 +1211,10 @@
         "injector": {
             "name": "注射器",
             "description": "使用者将不惧疼痛且变得无所畏惧。不惧疼痛能使使用者的战斗之魂时刻燃起，无所畏惧则使使用者成为敌人面前的极大威胁。"
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper电磁手雷",
+            "description": "手雷破片虽然靠谱，但对某些东西你必须得来点“刺激”的。这个强劲的小宝贝可适合用高电压给敌人点个外焦里嫩了。"
         }
     },
     "bigoil": {

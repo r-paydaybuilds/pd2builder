@@ -1046,6 +1046,7 @@
             "skill": "ТРЕБУЕТСЯ НАВЫК %{name}",
             "deployable": "ТРЕБУЕТСЯ ВЫБРАТЬ СНАРЯЖЕНИЕ %{name}"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "ВЫБРАНО",
         "equip": "ВЫБРАНО",
         "selected": "СРАВНЕНИЕ",
@@ -1210,6 +1211,10 @@
         "injector": {
             "name": "Инъектор",
             "description": "Когда не чувствуешь боли и страха, то твоя битва будет более долгой и жестокой. Естественно, это привлечёт внимание противника. Ведь каждый захочет отомстить за своего падшего товарища."
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper",
+            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
         }
     },
     "bigoil": {
