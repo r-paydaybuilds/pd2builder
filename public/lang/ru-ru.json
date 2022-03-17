@@ -1028,7 +1028,7 @@
         },
         "feign_death": {
             "name": "Притвориться мёртвым",
-            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
+            "description": "БАЗОВЫЙ: 3 очка\tКогда вы упали, у вас есть 15% шанс подняться без чьей-либо помощи.\nПРО: 6 очков\tШанс подняться увеличен на 30%."
         },
         "messiah": {
             "name": "Мессия",
@@ -1044,11 +1044,11 @@
         },
         "pumping_iron": {
             "name": "Качая железо",
-            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage."
+            "description": "БАЗОВЫЙ: 2 очка\tВаши рукопашные атаки наносят на 100% больше урона (всем, кроме специальных юнитов). \nПРО: 4 очка\tВаши рукопашные атаки наносят на 100% больше урона специальным юнитам."
         },
         "counterstrike": {
             "name": "Контрудар",
-            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks."
+            "description": "БАЗОВЫЙ: 3 очка\tВы будете контратаковать противников и сбивать их с ног, если держите оружие ближнего боя наготове. Контратакуя, вы не наносите урона.\nПРО: 6 очков\tВы можете контратаковать клокеров."
         },
         "berserker": {
             "name": "Берсеркер",
@@ -1056,12 +1056,12 @@
         },
         "frenzy": {
             "name": "Безумие",
-            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%."
+            "description": "БАЗОВЫЙ: 4 очка\tТеперь у вас только 30% от максимального запаса здоровья и вы не сможете восполнить его выше этой отметки. Вы получаете на 10% меньше урона. Вы восполняете на 75% меньше здоровья.\nПРО: 8 очков\tТеперь вы получаете на 25% меньше урона. Вы восполняете на 0% меньше здоровья."
         }
     },
     "system": {
         "name": "Payday 2 Билдер / Сброс",
-        "home": "Home",
+        "home": "НА ГЛАВНУЮ",
         "bigoil": "Big Oil Engine Calc",
         "requires": {
             "perk_deck": "ТРЕБУЕТСЯ ВЫБРАТЬ КОЛОДУ ПЕРКА %{name}",
@@ -1238,11 +1238,11 @@
         },
         "x1_zapper": {
             "name": "X1-ZAPper",
-            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
+            "description": "Шрапнель, несомненно, хорошая штука, но некоторые вещи так и хочется поджарить и это малышка - идеальный монстр для нанесения  урона с помощью высокого напряжения. \nПереносимое количество - 4шт."
         },
         "leech_ampule": {
-            "name": "Leech Ampule",
-            "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts."
+            "name": "Ампула Кровопийцы",
+            "description": "Для активации способности Кровопийцы нужно надломить под носом небольшую стеклянною ампулу и глубоко вдохнуть. Вы ничего не знаете о содержимом, но с ним мир приобретает четкие очертания, а сердце колотит от адреналина. Ясно лишь одно: это чёрт возьми, точно не нашатырь."
         }
     },
     "bigoil": {
