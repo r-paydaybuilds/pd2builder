@@ -579,24 +579,24 @@
             "description": "Пока активен карманный генератор помех, вы и члены вашей команды будете восстанавливать по 10 единиц здоровья за каждое убийство.\nБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличена на 10%."
         },
         "momentum": {
-            "name": "Momentum",
-            "description": "Unlocks and equips the Leech Ampule.\tChanging to another perk deck will make the Leech Ampule unavailable again. The Leech Ampule replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\tWhile in game you can use throwable key to activate the Leech Ampule.\tActivating the Leech Ampule will restore 40% health and disables your armor for the duration of the Leech Ampule.\tWhile the Leech Ampule is active your health is divided into segments of 20% and damage taken from enemies removes one segment. Killing 2 enemies will restore one segment of your health and block damage for 1 second. Anytime you take damage your teammates are healed for 5% of their health.\tThe Leech Ampule lasts 6 seconds with a 30 seconds cooldown."
+            "name": "Инверция",
+            "description": "Открывает и экипирует Ампулу Кроворийцы.\t Смена активного набора перков вновь заблокирует Ампулу Кровопийцы. Ампула Кровопийцы экипируется в ячейку метательного и заменит текущее метательное оружие, но при желании может быть заменена.\tНаходясь в ограблениях, вы можете нажать наклавишу метательного [3], чтобы акивировать Ампулу Кровопийцы.\tАктивация Ампулы восстаналивает 40% здоровья и отключает броню на время действия.\tПока Ампула Кровопийцы активна, ваше здоровье разбивается на сегменты, равные 20% вашего макс. здоровья,и любой полученный урон отнимает один сегмент. Убийство 2 противников восстонливает один сегмент здоровья и даёт секунду неуязвисимости. Каждый раз, когда вы получае урон, ваши союзники восстонавливают 5% своего здоровья.\tЭффект Ампулы Кровопийцы длится 6 сек. и может быть снова активирован через 30 сек."
         },
         "indomitable": {
-            "name": "Indomitable",
-            "description": "Your maximum health is increased by 20%.\tWhile the Leech Ampule is active you cannot go into bleedout, but being out of health will slow you down by 80%."
+            "name": "Непокоримый",
+            "description": "Ваш запас здоровья увеличен на 20%.\tПока Ампула Кровопийцы активна, вы не можете упасть, но при потере вашего здоровья вы будите двигаться на 80% медленнее."
         },
         "stalwart": {
-            "name": "Stalwart",
-            "description": "The Leech Ampule duration is increased to 10 seconds.\tKilling an enemy reduces the cooldown of the Leech Ampule by 1 second(s).\tTaking damage now heals teammates by 10% of their health."
+            "name": "Непоколебимый",
+            "description": "Длительность эффекта Ампулы Кровпийцы увеличена до 10 сек.\tУбийство потивника ускоряет восстановление Ампулы на 1 секу.\tПолучения урона теперь восстоноввливает союзникам 10% от их здоровья."
         },
         "built_different": {
-            "name": "Built Different",
+            "name": "Не как все",
             "description": "Здоровье увеличено на 20%."
         },
         "symbiosis": {
-            "name": "Symbiosis",
-            "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%."
+            "name": "Симбиоз",
+            "description": "Теперь вы можете активировать Ампулу Кровопийцы после падения, что временно поднимает вас на ноги до истечения эффекта Ампулы. Если вы успешно поднимаете союзника или используйте медицинскую сумку до окончания эффекта Ампулы и ваше здоровья будет выше 0, вы останетесь в живых.\tПока Ампула Кровопийцы активна, ваше здоровье разбивается на сегменты, равне 10% вашего макс, здоровья.\tВаш запас увеличен на 60%\tБонус завершения ряда: Вероятность получить предмет высокого качества после завершения контракта увеличенна на 10% "
         }
     },
     "perk_decks": {
@@ -613,8 +613,8 @@
             "description": "В прошлом, работа оружейника заключалась в содержании, починке и улучшении брони.\nЛюбому сильному синдикату требуется человек, способный предоставить бойцам достойную экипировку для работы."
         },
         "rogue": {
-            "name": "Шпион",
-            "description": "Шпион - скрытный преступник, способный действовать тихо. Известен за гибкость и изворотливость. Его нанимают не только для совершения мелких краж, но и для более масштабных работ.\nВизитная карточка шпиона - подвижность, Недостаток в силе он компенсирует опытом."
+            "name": "Мошенник",
+            "description": "Мошенник - скрытный преступник, способный действовать тихо. Известен за гибкость и изворотливость. Его нанимают не только для совершения мелких краж, но и для более масштабных работ.\nВизитная карточка мошенника - подвижность, Недостаток в силе он компенсирует опытом."
         },
         "hitman": {
             "name": "Киллер",
@@ -685,8 +685,8 @@
             "description": "Благодаря остроумию и снаряжению, вы можете покорить себе любую охранную систему одним нажатием кнопки. Камерам и охране придётся попотеть, чтобы заметить ваш след. Если вдруг что-то пойдёт не так, то ваши знания пригодятся и в бою."
         },
         "leech": {
-            "name": "Leech",
-            "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team."
+            "name": "КРОВОПИЙЦА",
+            "description": "В бою - избирательный паразит, тянущий соки из противников, чтобы усилить себя и своих товарищей. При этом вы не какой-то тупой верзила, способный лишь терпеть удары. Вы более чем способны наносить боль в ответ и укреплять этой агрессией свою команду."
         }
     },
     "skills": {
@@ -700,7 +700,7 @@
         },
         "painkillers": {
             "name": "Обезболивающее",
-            "description": "BASIC: 2 points\tCrew members you revive take 30% less damage for 5 seconds.\nACE: 4 points\tThe damage reduction is increased by an additional 50%."
+            "description": "БАЗОВЫЙ: 2 очка\tНапарники, поднятые вами, получают на 30% меньше урона в течение 5 секунд.\nПРО: 4 очка\tНапарники поднятые вами получают ещё на 50%, меньше урона"
         },
         "uppers": {
             "name": "Колёса",
@@ -782,7 +782,7 @@
         },
         "close_by": {
             "name": "Вблизи",
-            "description": "BASIC: 3 points\tYou can now hip-fire with your Shotguns while sprinting.\nACE: 6 points\tYour rate of fire is increased by 35% while firing from the hip with single shot Shotguns. Sotguns with magazines have their magazine sizes increased by 15 shells.",
+            "description": "БАЗОВЫЙ: 3 очка\tСтрельба на бегу: вы можете стрелять из дробовиков от бедра во время бега.\nПРО: 6 очков\tВаша скорострельность будет увеличена на 35% при стрельбе от бедра из дробовиков с одиночным режимом стрельбы. Магазинные дробовики получают прибавку в размере 15 патронов в магазин.",
             "vr_description": "Addition in VR:\tBASIC: After dashing the player kills have a 100% chance to fear enemies within 8 meters of the player for 1 up to a maximum of 3 seconds depending on the amount of stamina consumed by the jump."
         },
         "overkill": {
@@ -835,7 +835,7 @@
         },
         "fully_loaded": {
             "name": "Вооружен до зубов",
-            "description": "BASIC: 4 points\tYour total ammo capacity is increased by 25%.\nACE: 8 points\tIncreases the amount of ammo you gain from ammo boxes by 75%. You also gain a 5% base chance to get a throwable from an ammo box. The base chance is increased by 1% for each ammo box you pick up that does not contain a throwable. When a throwable has been found, the chance is reset to it's base value.\nNote: Does not stack with the perk deck skill \"Walk-in Closet\"."
+            "description": "БАЗОВЫЙ: 4 очка\tПовышает количество переносимых боеприпасов на 25%.\nПРО: 8 очков\tВраги оставляют на 75% больше боеприпасов. У вас есть 5% шанс найти метательное оружие в оставленных врагами боеприпасах. Шанс устанавливается на 1% за каждый подобранный боеприпас, в котором не было метательного оружия. Когда метательное оружие будет найдено в боеприпасах,шанс будет сброшен к стандартному значению. Данный навык не складывается с бонусом ''Тяжёлый пехотинец'' из набора перков."
         },
         "third_law": {
             "name": "Третий закон",
@@ -863,7 +863,7 @@
         },
         "hardware_expert": {
             "name": "Эксперт по технике",
-            "description": "BASIC: 1 point\tYou fix drills and saws 25% faster. Drills and saws are also silent. Civilians and guards must see the drill or saw in order to become alerted.\nACE: 3 points\tGives your drills and saws a 10% chance to automatically restart after breaking.\nNote: Skill does not affect the OVE9000 saw."
+            "description": "БАЗОВЫЙ: 1 очко\tВы чините дрель и пилу на 25% быстрее. Уменьшает время, нужное для установки мин на 20%. Ваша пила и дрель бесшумны. Гражданские и охранники должны увидеть их, чтобы поднять тревогу.\nПРО: 3 очка\tДаёт пиле и дрели 10% шанс автоматической поичинки, если они сломались\nВнимание: навык не распространяется на пилу OVE9000"
         },
         "combat_engineering": {
             "name": "Военный инженер",
@@ -871,11 +871,11 @@
         },
         "drill_sawgeant": {
             "name": "Капитан дрель",
-            "description": "BASIC: 2 points\tYour drill and saw timer is decreased by 15%.\nACE: 4 points\tYour drill and saw timer is decreased by an additional 15%.\nNote: Skill does not affect the OVE9000 saw."
+            "description": "БАЗОВЫЙ: 2 очка\tПовышает эффективность вашей пилы и дрели, делая их на 15% быстрее.\nПРО: 4 очка\tПовышает эффективность пилы и дрели ещё на 15%.\nВнимание: действие навыка не распространяется на пилу OVE9000."
         },
         "more_firepower": {
             "name": "Больше взрывчатки",
-            "description": "BASIC: 3 points\tYou gain 1 more shaped charge and 4 more trip mines.\nACE: 6 points\tYou gain 2 more shaped charges and 7 more trip mines."
+            "description": "БАЗОВЫЙ: 3 очка\tВы получаете ещё 1 кумулятивный заряд и 4 мины.\nПРО: 6 очков\tВы получаете ещё 2 кумулятивных заряда и 7 мин."
         },
         "kickstarter": {
             "name": "С полпинка",
@@ -905,7 +905,7 @@
         },
         "surefire": {
             "name": "Шквальный огонь",
-            "description": "BASIC: 3 points\tYour SMGs, LMGs and Assault Rifles gain 15 more bullets in their magazines. This does not affect the \"Lock n' Load\" Ace skill.\nAce: 6 points\tYour ranged weapons can now pierce through enemy body armor.\nNote: Does not apply to throwable weapons."
+            "description": "БАЗОВЫЙ: 3 очка\tВаши пистолеты-пулемёты, пулемёты и штурмовые винтовки получают прибавку в виде 15 патронов в магазин. Данный навык не работает с ПРО версией навыка ``Оружие к бою``.\nПРО: 6 очков\tВаше оружие получает возможность пробивать вражескую броню.\nВнимание: данный навык не работает с метательным оружием."
         },
         "body_expertise": {
             "name": "Хирургическая точность",
@@ -942,7 +942,7 @@
         },
         "parkour": {
             "name": "Паркур",
-            "description": "BASIC: 2 points\tYou gain 10% additional movement speed and 20% increased speed while climbing ladders.\nACE: 4 points\tYou gain the ability to sprint in any direction.\nRun and reload — you can reload your weapons while sprinting.",
+            "description": "БАЗОВЫЙ: 2 очка\tСкорость вашего передвижения увеличена на 10%. Скорость подъёма по навесным лестницам увеличена на 20%.\nПРО: 4 очка\tПозволяет бегать в любом направлении.\nПерезарядка на бегу: вы можете перезаряжаться во время бега.",
             "vr_description": "Addition in VR:\tACE: After dashing you will get 20% up to a maximum of 50% reload speed increase."
         },
         "inner_pockets": {
@@ -959,7 +959,7 @@
         },
         "sneaky_bastard": {
             "name": "Подлый ублюдок",
-            "description": "BASIC: 4 points\tYou gain a 1% chance for every 3 points of detection rate under 35 up to 10%.\nACE: 8 points\tYou gain a 1% dodge chance for every 1 point of detection rate under 35 up to 10%."
+            "description": "БАЗОВЫЙ: 4 очка\tШанс увернуться от вражеского огня увеличивается на 1% за каждые 3 пункта риска обнаружения меньше 35. Навык складывается вплоть до 10%. \nПРО: 8 очков\tШанс увернуться от вражеского огня увеличивается на 1% за каждый 1 пункт риска обнаружения меньше 35. Навык складывается вплоть до 10%."
         },
         "second_wind": {
             "name": "Второе дыхание",
@@ -992,7 +992,7 @@
         },
         "gun_nut": {
             "name": "Фанат пистолетов",
-            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "БАЗОВЫЙ: 2 очка\tРазмер магазина вашего пистолета увеличен на 5 пуль.\nПРО: 4 очка\tПовышает скорострельность пистолетов на 50%."
         },
         "akimbo": {
             "name": "Акимбо",
@@ -1004,7 +1004,7 @@
         },
         "desperado": {
             "name": "Отчаянный",
-            "description": "BASIC: 3 points\tEach successful pistol hit gives you a 10% accuracy bonus for 10 seconds and you can stack it 4 times.\nACE: 6 points\tYou reload all pistols 50% faster."
+            "description": "БАЗОВЫЙ: 3 очка\tКаждое попадание из пистолета увеличивает вашу точность на 10% в течение 10 секунд и может складываться до 4 раз.\nПРО: 6 очков \tВы перезаряжаете пистолеты на 50% быстрее."
         },
         "trigger_happy": {
             "name": "Неудержимый стрелок",
@@ -1016,7 +1016,7 @@
         },
         "running_from_death": {
             "name": "Убегая от смерти",
-            "description": "BASIC: 2 points\tYou reload and swap weapons 100% faster for 10 seconds after being revived.\nACE: 4 points\tYou move 30% faster for 10 seconds after being revived."
+            "description": "БАЗОВЫЙ: 2 очка\tВы перезаряжаетесь и переключаетесь между оружием на 100% быстрее в течение 10 секунд после того, как вас подняли.\nПРО: 4 очка\tСкорость вашего передвижения увеличена на 30% в течение 10 секунд после того, как вас подняли."
         },
         "up_you_go": {
             "name": "Проснись и пой",
@@ -1028,7 +1028,7 @@
         },
         "feign_death": {
             "name": "Притвориться мёртвым",
-            "description": "BASIC: 3 points\tWhen you get downed, you have a 15% chance to instantly get revived.\nACE: 6 points\tThe chance to get instantly revived is increased by an additional 30%."
+            "description": "БАЗОВЫЙ: 3 очка\tКогда вы упали, у вас есть 15% шанс подняться без чьей-либо помощи.\nПРО: 6 очков\tШанс подняться увеличен на 30%."
         },
         "messiah": {
             "name": "Мессия",
@@ -1044,11 +1044,11 @@
         },
         "pumping_iron": {
             "name": "Качая железо",
-            "description": "BASIC: 2 points\tYour melee attacks against non-special enemies do 100% more damage.\nACE: 4 points\tYour melee attacks against special enemies do 100% more damage."
+            "description": "БАЗОВЫЙ: 2 очка\tВаши рукопашные атаки наносят на 100% больше урона (всем, кроме специальных юнитов). \nПРО: 4 очка\tВаши рукопашные атаки наносят на 100% больше урона специальным юнитам."
         },
         "counterstrike": {
             "name": "Контрудар",
-            "description": "BASIC: 3 points\tWhen charging your melee weapons you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage.\nACE: 6 points\tYou gain the ability to counterattack cloakers and their kicks."
+            "description": "БАЗОВЫЙ: 3 очка\tВы будете контратаковать противников и сбивать их с ног, если держите оружие ближнего боя наготове. Контратакуя, вы не наносите урона.\nПРО: 6 очков\tВы можете контратаковать клокеров."
         },
         "berserker": {
             "name": "Берсеркер",
@@ -1056,12 +1056,12 @@
         },
         "frenzy": {
             "name": "Безумие",
-            "description": "BASIC: 4 points\tYou only get 30% of your maximum health and cannot heal above it but you take 10% less damage and healing received is reduced by 75%.\nACE: 8 points\tDamage taken is now reduced by 25% and healing received is reduced by 0%."
+            "description": "БАЗОВЫЙ: 4 очка\tТеперь у вас только 30% от максимального запаса здоровья и вы не сможете восполнить его выше этой отметки. Вы получаете на 10% меньше урона. Вы восполняете на 75% меньше здоровья.\nПРО: 8 очков\tТеперь вы получаете на 25% меньше урона. Вы восполняете на 0% меньше здоровья."
         }
     },
     "system": {
         "name": "Payday 2 Билдер / Сброс",
-        "home": "Home",
+        "home": "НА ГЛАВНУЮ",
         "bigoil": "Big Oil Engine Calc",
         "requires": {
             "perk_deck": "ТРЕБУЕТСЯ ВЫБРАТЬ КОЛОДУ ПЕРКА %{name}",
@@ -1238,11 +1238,11 @@
         },
         "x1_zapper": {
             "name": "X1-ZAPper",
-            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
+            "description": "Шрапнель, несомненно, хорошая штука, но некоторые вещи так и хочется поджарить и это малышка - идеальный монстр для нанесения  урона с помощью высокого напряжения. \nПереносимое количество - 4шт."
         },
         "leech_ampule": {
-            "name": "Leech Ampule",
-            "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts."
+            "name": "Ампула Кровопийцы",
+            "description": "Для активации способности Кровопийцы нужно надломить под носом небольшую стеклянною ампулу и глубоко вдохнуть. Вы ничего не знаете о содержимом, но с ним мир приобретает четкие очертания, а сердце колотит от адреналина. Ясно лишь одно: это чёрт возьми, точно не нашатырь."
         }
     },
     "bigoil": {
