@@ -988,7 +988,7 @@
         },
         "equilibrium": {
             "name": "Equilibrium",
-            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+            "description": "BASIC: 1 point\tDecreases the time it takes to draw and holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
             "name": "Gun Nut",
