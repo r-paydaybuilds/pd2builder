@@ -1,796 +1,2791 @@
 {
-    "assault_rifle": {
-        "golden_ak": {
-            "name": "Golden AK7.62",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 90,
-                "rof": 561,
-                "damage": 97,
-                "accuracy": 60,
-                "stability": 44,
-                "concealment": 11,
-                "threat": 22,
-                "reload_speed": 3.9
-            }
-        },
-        "amcar": {
-            "name": "AMCAR",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 220,
-                "rof": 545,
-                "damage": 42,
-                "accuracy": 36,
-                "stability": 76,
-                "concealment": 21,
-                "threat": 14,
-                "reload_speed": 3
-            }
-        },
-        "ak": {
-            "name": "AK",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 652,
-                "damage": 56,
-                "accuracy": 48,
-                "stability": 60,
-                "concealment": 16,
-                "threat": 14,
-                "reload_speed": 3.9
-            }
-        },
-        "car-4": {
-            "name": "CAR-4",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 600,
-                "damage": 52,
-                "accuracy": 44,
-                "stability": 60,
-                "concealment": 20,
-                "threat": 14,
-                "reload_speed": 3.4
-            }
-        },
-        "uar": {
-            "name": "UAR",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 750,
-                "damage": 55,
-                "accuracy": 64,
-                "stability": 40,
-                "concealment": 20,
-                "threat": 14,
-                "reload_speed": 3.3
-            }
-        },
-        "ak762": {
-            "name": "AK7.62",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 90,
-                "rof": 561,
-                "damage": 97,
-                "accuracy": 60,
-                "stability": 44,
-                "concealment": 13,
-                "threat": 22,
-                "reload_speed": 3.9
-            }
-        },
-        "jp36": {
-            "name": "JP36",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 240,
-                "rof": 706,
-                "damage": 44,
-                "accuracy": 40,
-                "stability": 64,
-                "concealment": 19,
-                "threat": 13,
-                "reload_speed": 3.9
-            }
-        },
-        "galant": {
-            "name": "Galant",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 8,
-                "max_ammo": 72,
-                "rof": 600,
-                "damage": 160,
-                "accuracy": 84,
-                "stability": 36,
-                "concealment": 20,
-                "threat": 31,
-                "reload_speed": 1.5
-            }
-        },
-        "m308": {
-            "name": "M308",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 10,
-                "max_ammo": 70,
-                "rof": 706,
-                "damage": 160,
-                "accuracy": 84,
-                "stability": 36,
-                "concealment": 8,
-                "threat": 31,
-                "reload_speed": 3.1
-            }
-        },
-        "ak5": {
-            "name": "AK5",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 706,
-                "damage": 56,
-                "accuracy": 60,
-                "stability": 60,
-                "concealment": 18,
-                "threat": 14,
-                "reload_speed": 3.1
-            }
-        },
-        "tempest": {
-            "name": "Tempest-21",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 800,
-                "damage": 58,
-                "accuracy": 60,
-                "stability": 52,
-                "concealment": 26,
-                "threat": 12,
-                "reload_speed": 3.4
-            }
-        },
-        "amr": {
-            "name": "AMR-16",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 90,
-                "rof": 857,
-                "damage": 94,
-                "accuracy": 56,
-                "stability": 32,
-                "concealment": 17,
-                "threat": 14,
-                "reload_speed": 3.7
-            }
-        },
-        "commando": {
-            "name": "Commando 553",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 240,
-                "rof": 714,
-                "damage": 42,
-                "accuracy": 36,
-                "stability": 36,
-                "concealment": 22,
-                "threat": 12,
-                "reload_speed": 2.4
-            }
-        },
-        "eagle_heavy": {
-            "name": "Eagle Heavy",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 100,
-                "rof": 612,
-                "damage": 98,
-                "accuracy": 72,
-                "stability": 44,
-                "concealment": 8,
-                "threat": 22,
-                "reload_speed": 3.3
-            }
-        },
-        "falcon": {
-            "name": "Falcon",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 100,
-                "rof": 698,
-                "damage": 98,
-                "accuracy": 68,
-                "stability": 44,
-                "concealment": 10,
-                "threat": 22,
-                "reload_speed": 3.3
-            }
-        },
-        "clarion": {
-            "name": "Clarion",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 240,
-                "rof": 1000,
-                "damage": 41,
-                "accuracy": 36,
-                "stability": 68,
-                "concealment": 24,
-                "threat": 14,
-                "reload_speed": 3.8
-            }
-        },
-        "gecko762": {
-            "name": "Gecko 7.62",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 845,
-                "damage": 57,
-                "accuracy": 48,
-                "stability": 68,
-                "concealment": 15,
-                "threat": 24,
-                "reload_speed": 4.2
-            }
-        },
-        "gewehr3": {
-            "name": "Gewehr 3",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 100,
-                "rof": 652,
-                "damage": 99,
-                "accuracy": 68,
-                "stability": 48,
-                "concealment": 11,
-                "threat": 12,
-                "reload_speed": 2
-            }
-        },
-        "queenwrath": {
-            "name": "Queen's Wrath",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 723,
-                "damage": 58,
-                "accuracy": 64,
-                "stability": 60,
-                "concealment": 16,
-                "threat": 12,
-                "reload_speed": 4.5
-            }
-        },
-        "lionroar": {
-            "name": "Lion's Roar",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 857,
-                "damage": 58,
-                "accuracy": 60,
-                "stability": 64,
-                "concealment": 17,
-                "threat": 12,
-                "reload_speed": 4.8
-            }
-        },
-        "valkyria": {
-            "name": "Valkyria",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 220,
-                "rof": 896,
-                "damage": 41,
-                "accuracy": 56,
-                "stability": 64,
-                "concealment": 226,
-                "threat": 0,
-                "reload_speed": 3.7
-            }
-        },
-        "cavity9": {
-            "name": "Cavity 9mm",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 33,
-                "max_ammo": 66,
-                "rof": 706,
-                "damage": 160,
-                "accuracy": 72,
-                "stability": 32,
-                "concealment": 27,
-                "threat": 31,
-                "reload_speed": 3.3
-            }
-        },
-        "bootleg": {
-            "name": "Bootleg",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 100,
-                "max_ammo": 200,
-                "rof": 667,
-                "damage": 40,
-                "accuracy": 24,
-                "stability": 52,
-                "concealment": 20,
-                "threat": 14,
-                "reload_speed": 4.7
-            }
-        },
-        "littlefriend": {
-            "name": "Little Friend",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 20,
-                "max_ammo": 40,
-                "rof": 614,
-                "damage": 160,
-                "accuracy": 72,
-                "stability": 44,
-                "concealment": 8,
-                "threat": 22,
-                "reload_speed": 3.2
-            }
-        },
-        "union": {
-            "name": "Union",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 30,
-                "max_ammo": 150,
-                "rof": 857,
-                "damage": 58,
-                "accuracy": 68,
-                "stability": 68,
-                "concealment": 20,
-                "threat": 12,
-                "reload_speed": 2.9
-            }
-        },
-        "ak17": {
-            "name": "AK-17",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 35,
-                "max_ammo": 105,
-                "rof": 652,
-                "damage": 99,
-                "accuracy": 60,
-                "stability": 60,
-                "concealment": 16,
-                "threat": 14,
-                "reload_speed": 3.4
-            }
-        }
+  "assault_rifles": {
+    "golden_ak": {
+      "name": "Golden AK7.62",
+      "content_origin": "Community Item",
+      "required_rep_level": 95,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 561,
+        "damage": 101.9,
+        "accuracy": 60,
+        "stability": 44,
+        "concealment": 11,
+        "threat": 22,
+        "reload_speed": 3.9
+      }
     },
-    "shotgun": {
-        "predator": {
-            "name": "Predator",
-            "reload_shell": 0.8,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 6,
-                "max_ammo": 66,
-                "rof": 300,
-                "damage": 55,
-                "accuracy": 28,
-                "stability": 44,
-                "concealment": 14,
-                "threat": 28,
-                "reload_speed": 4.8
-            }
-        },
-        "jocelyne": {
-            "name": "Jocelyne",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 2,
-                "max_ammo": 28,
-                "rof": 500,
-                "damage": 155,
-                "accuracy": 60,
-                "stability": 28,
-                "concealment": 5,
-                "threat": 28,
-                "reload_speed": 5
-            }
-        },
-        "reinfield": {
-            "name": "Reinfield",
-            "reload_shell": 0.8,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 6,
-                "max_ammo": 42,
-                "rof": 104,
-                "damage": 90,
-                "accuracy": 40,
-                "stability": 32,
-                "concealment": 11,
-                "threat": 28,
-                "reload_speed": 4.8
-            }
-        },
-        "izhma": {
-            "name": "IZHMA",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 7,
-                "max_ammo": 70,
-                "rof": 333,
-                "damage": 42,
-                "accuracy": 28,
-                "stability": 44,
-                "concealment": 13,
-                "threat": 28,
-                "reload_speed": 4
-            }
-        },
-        "mosconi": {
-            "name": "Mosconi",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 2,
-                "max_ammo": 32,
-                "rof": 500,
-                "damage": 155,
-                "accuracy": 60,
-                "stability": 36,
-                "concealment": 17,
-                "threat": 37,
-                "reload_speed": 2.5
-            }
-        },
-        "m1014": {
-            "name": "M1014",
-            "reload_shell": 0.75,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 8,
-                "max_ammo": 64,
-                "rof": 429,
-                "damage": 55,
-                "accuracy": 28,
-                "stability": 44,
-                "concealment": 12,
-                "threat": 26,
-                "reload_speed": 5.9
-            }
-        },
-        "raven": {
-            "name": "Raven",
-            "reload_shell": 0.7,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 14,
-                "max_ammo": 42,
-                "rof": 104,
-                "damage": 90,
-                "accuracy": 44,
-                "stability": 44,
-                "concealment": 22,
-                "threat": 28,
-                "reload_speed": 9.6
-            }
-        },
-        "stakeout": {
-            "name": "Stakeout",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 8,
-                "max_ammo": 72,
-                "rof": 300,
-                "damage": 42,
-                "accuracy": 28,
-                "stability": 44,
-                "concealment": 9,
-                "threat": 28,
-                "reload_speed": 4.1
-            }
-        },
-        "breaker": {
-            "name": "Breaker",
-            "reload_shell": 0.6,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 7,
-                "max_ammo": 21,
-                "rof": 80,
-                "damage": 155,
-                "accuracy": 48,
-                "stability": 28,
-                "concealment": 20,
-                "threat": 28,
-                "reload_speed": 4.1
-            }
-        }
+    "amcar": {
+      "name": "AMCAR Rifle",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 220,
+        "rof": 545,
+        "damage": 47.3,
+        "accuracy": 36,
+        "stability": 76,
+        "concealment": 21,
+        "threat": 14,
+        "reload_speed": 3
+      }
     },
-    "special": {
-        "xl556": {
-            "name": "XL 5.56 Microgun",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 750,
-                "max_ammo": 750,
-                "rof": 200,
-                "damage": 35,
-                "accuracy": 32,
-                "stability": 24,
-                "concealment": 5,
-                "threat": 31,
-                "reload_speed": 7.8
-            }
-        },
-        "deca_tech_bow": {
-            "name": "DECA Technologies Compound Bow",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 30,
-                "rof": 300,
-                "damage": 2000,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 27,
-                "threat": 37,
-                "reload_speed": 1.3
-            }
-        },
-        "ove9000": {
-            "name": "OVE9000 Saw",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 150,
-                "max_ammo": 300,
-                "rof": 400,
-                "damage": 23,
-                "accuracy": 8,
-                "stability": 24,
-                "concealment": 16,
-                "threat": 24,
-                "reload_speed": 3.8
-            }
-        },
-        "gl40": {
-            "name": "GL40",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 6,
-                "rof": 300,
-                "damage": 1300,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 18,
-                "threat": 37,
-                "reload_speed": 3.1
-            }
-        },
-        "vulcan": {
-            "name": "Vulcan Minigun",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 750,
-                "max_ammo": 750,
-                "rof": 3000,
-                "damage": 25,
-                "accuracy": 32,
-                "stability": 24,
-                "concealment": 5,
-                "threat": 31,
-                "reload_speed": 7.8
-            }
-        },
-        "piglet": {
-            "name": "Piglet",
-            "reload_shell": 2.55,
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 6,
-                "max_ammo": 12,
-                "rof": 60,
-                "damage": 1300,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 10,
-                "threat": 37,
-                "reload_speed": 15.3
-            }
-        },
-        "flamethrower": {
-            "name": "Flamethrower",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 900,
-                "max_ammo": 1800,
-                "rof": 2000,
-                "damage": 7,
-                "accuracy": 0,
-                "stability": 0,
-                "concealment": 7,
-                "threat": 37,
-                "reload_speed": 8.5
-            }
-        },
-        "plainsrider": {
-            "name": "Plainsrider",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 50,
-                "rof": 300,
-                "damage": 1000,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 30,
-                "threat": 37,
-                "reload_speed": 1
-            }
-        },
-        "light_crossbow": {
-            "name": "Light Crossbow",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 50,
-                "rof": 40,
-                "damage": 750,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 29,
-                "threat": 10,
-                "reload_speed": 1.5
-            }
-        },
-        "english_longbow": {
-            "name": "English Longbow",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 35,
-                "rof": 300,
-                "damage": 2000,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 29,
-                "threat": 27,
-                "reload_speed": 1.5
-            }
-        },
-        "heavy_crossbow": {
-            "name": "Heavy Crossbow",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 1,
-                "max_ammo": 35,
-                "rof": 21,
-                "damage": 2000,
-                "accuracy": 96,
-                "stability": 96,
-                "concealment": 28,
-                "threat": 10,
-                "reload_speed": 2.5
-            }
-        },
-        "airbow": {
-            "name": "Airbow",
-            "mod_slots": ["barrel_ext", "bonus", "stock"],
-            "stats": {
-                "mag_size": 6,
-                "max_ammo": 30,
-                "rof": 120,
-                "damage": 700,
-                "accuracy": 84,
-                "stability": 84,
-                "concealment": 5,
-                "threat": 10,
-                "reload_speed": 3
-            }
-        }
+    "ak": {
+      "name": "AK Rifle",
+      "content_origin": null,
+      "required_rep_level": 1,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 652,
+        "damage": 66.2,
+        "accuracy": 48,
+        "stability": 60,
+        "concealment": 16,
+        "threat": 14,
+        "reload_speed": 3.9
+      }
     },
-    "lmg": {
-        "rpk": {
-            "name": "RPK",
-            "mod_slots": ["bonus"],
-            "stats": {
-                "mag_size": 100,
-                "max_ammo": 300,
-                "rof": 750,
-                "damage": 120,
-                "accuracy": 28,
-                "stability": 8,
-                "concealment": 1,
-                "threat": 22,
-                "reload_speed": 4.56
-            }
-        },
-        "ksp58": {
-            "name": "KSP 58",
-            "mod_slots": ["bonus"],
-            "stats": {
-                "mag_size": 200,
-                "max_ammo": 400,
-                "rof": 909,
-                "damage": 80,
-                "accuracy": 52,
-                "stability": 28,
-                "concealment": 1,
-                "threat": 31,
-                "reload_speed": 6.5
-            }
-        },
-        "ksp": {
-            "name": "KSP",
-            "mod_slots": ["bonus"],
-            "stats": {
-                "mag_size": 200,
-                "max_ammo": 400,
-                "rof": 909,
-                "damage": 80,
-                "accuracy": 48,
-                "stability": 28,
-                "concealment": 1,
-                "threat": 31,
-                "reload_speed": 5.62
-            }
-        },
-        "buzzsaw42": {
-            "name": "Buzzsaw 42",
-            "mod_slots": ["bonus"],
-            "buzzsaw42": {
-                "mag_size": 150,
-                "max_ammo": 450,
-                "rof": 1200,
-                "damage": 80,
-                "accuracy": 48,
-                "stability": 28,
-                "concealment": 1,
-                "threat": 31,
-                "reload_speed": 6.5
-            }
-        },
-        "brenner21": {
-            "name": "Brenner-21",
-            "mod_slots": ["bonus"],
-            "stats": {
-                "mag_size": 150,
-                "max_ammo": 300,
-                "rof": 723,
-                "damage": 120,
-                "accuracy": 36,
-                "stability": 8,
-                "concealment": 1,
-                "threat": 37,
-                "reload_speed": 6.7
-            }
-        }
+    "car-4": {
+      "name": "CAR-4 Rifle",
+      "content_origin": null,
+      "required_rep_level": 4,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "exclusive set",
+        "foregrip",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 600,
+        "damage": 65.1,
+        "accuracy": 44,
+        "stability": 60,
+        "concealment": 20,
+        "threat": 14,
+        "reload_speed": 3.4
+      }
+    },
+    "uar": {
+      "name": "UAR Rifle",
+      "content_origin": null,
+      "required_rep_level": 4,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "gadget",
+        "lower_receiver",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 750,
+        "damage": 68.3,
+        "accuracy": 64,
+        "stability": 40,
+        "concealment": 20,
+        "threat": 14,
+        "reload_speed": 3.3
+      }
+    },
+    "ak762": {
+      "name": "AK7.62 Rifle",
+      "content_origin": null,
+      "required_rep_level": 4,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 561,
+        "damage": 101.9,
+        "accuracy": 60,
+        "stability": 44,
+        "concealment": 13,
+        "threat": 22,
+        "reload_speed": 3.9
+      }
+    },
+    "jp36": {
+      "name": "JP36 Rifle",
+      "content_origin": null,
+      "required_rep_level": 16,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 240,
+        "rof": 706,
+        "damage": 56.7,
+        "accuracy": 40,
+        "stability": 64,
+        "concealment": 19,
+        "threat": 13,
+        "reload_speed": 3.9
+      }
+    },
+    "galant": {
+      "name": "Galant Rifle",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "foregrip",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 8,
+        "max_ammo": 72,
+        "rof": 600,
+        "damage": 168,
+        "accuracy": 84,
+        "stability": 36,
+        "concealment": 20,
+        "threat": 31,
+        "reload_speed": 1.5
+      }
+    },
+    "m308": {
+      "name": "M308 Rifle",
+      "content_origin": null,
+      "required_rep_level": 26,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 70,
+        "rof": 706,
+        "damage": 168,
+        "accuracy": 84,
+        "stability": 36,
+        "concealment": 8,
+        "threat": 31,
+        "reload_speed": 3.1
+      }
+    },
+    "ak5": {
+      "name": "AK5 Rifle",
+      "content_origin": null,
+      "required_rep_level": 33,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 706,
+        "damage": 69.3,
+        "accuracy": 60,
+        "stability": 60,
+        "concealment": 18,
+        "threat": 14,
+        "reload_speed": 3.1
+      }
+    },
+    "tempest": {
+      "name": "Tempest-21 Rifle",
+      "content_origin": null,
+      "required_rep_level": 38,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 800,
+        "damage": 65.1,
+        "accuracy": 60,
+        "stability": 52,
+        "concealment": 26,
+        "threat": 12,
+        "reload_speed": 3.4
+      }
+    },
+    "amr": {
+      "name": "AMR-16 Rifle",
+      "content_origin": null,
+      "required_rep_level": 39,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 857,
+        "damage": 98.7,
+        "accuracy": 56,
+        "stability": 32,
+        "concealment": 17,
+        "threat": 14,
+        "reload_speed": 3.7
+      }
+    },
+    "commando": {
+      "name": "Commando 553",
+      "content_origin": "Armored Transport DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 240,
+        "rof": 714,
+        "damage": 54.6,
+        "accuracy": 36,
+        "stability": 36,
+        "concealment": 22,
+        "threat": 12,
+        "reload_speed": 2.4
+      }
+    },
+    "eagle_heavy": {
+      "name": "Eagle Heavy Rifle",
+      "content_origin": "Gage Weapon Pack #01 DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 100,
+        "rof": 612,
+        "damage": 102.9,
+        "accuracy": 72,
+        "stability": 44,
+        "concealment": 8,
+        "threat": 22,
+        "reload_speed": 3.1
+      }
+    },
+    "falcon": {
+      "name": "Falcon Rifle",
+      "content_origin": "Big Bank Heist DLC",
+      "required_rep_level": 42,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 100,
+        "rof": 698,
+        "damage": 102.9,
+        "accuracy": 68,
+        "stability": 44,
+        "concealment": 10,
+        "threat": 22,
+        "reload_speed": 3.3
+      }
+    },
+    "clarion": {
+      "name": "Clarion Rifle",
+      "content_origin": "Gage Assault Pack DLC",
+      "required_rep_level": 27,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 240,
+        "rof": 1000,
+        "damage": 53.6,
+        "accuracy": 36,
+        "stability": 68,
+        "concealment": 24,
+        "threat": 14,
+        "reload_speed": 3.8
+      }
+    },
+    "gecko762": {
+      "name": "Gecko 7.62 Rifle",
+      "content_origin": "Gage Assault Pack DLC",
+      "required_rep_level": 34,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 35,
+        "max_ammo": 175,
+        "rof": 845,
+        "damage": 70.4,
+        "accuracy": 48,
+        "stability": 68,
+        "concealment": 15,
+        "threat": 24,
+        "reload_speed": 3
+      }
+    },
+    "gewehr3": {
+      "name": "Gewehr 3 Rifle",
+      "content_origin": "Gage Assault Pack DLC",
+      "required_rep_level": 52,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 100,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 48,
+        "concealment": 12,
+        "threat": 26,
+        "reload_speed": 2
+      }
+    },
+    "queenwrath": {
+      "name": "Queen's Wrath Rifle",
+      "content_origin": "Clover Character Pack DLC",
+      "required_rep_level": 24,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 723,
+        "damage": 68.3,
+        "accuracy": 64,
+        "stability": 60,
+        "concealment": 16,
+        "threat": 12,
+        "reload_speed": 4.5
+      }
+    },
+    "lionroar": {
+      "name": "Lion's Roar Rifle",
+      "content_origin": "Dragan Character Pack DLC",
+      "required_rep_level": 28,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 180,
+        "rof": 857,
+        "damage": 81.9,
+        "accuracy": 60,
+        "stability": 64,
+        "concealment": 17,
+        "threat": 12,
+        "reload_speed": 3.7
+      }
+    },
+    "valkyria": {
+      "name": "Valkyria Rifle",
+      "content_origin": "Sokol Character Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 220,
+        "rof": 896,
+        "damage": 52.5,
+        "accuracy": 56,
+        "stability": 72,
+        "concealment": 26,
+        "threat": 0,
+        "reload_speed": 3.7
+      }
+    },
+    "cavity9": {
+      "name": "Cavity 9mm Rifle",
+      "content_origin": "The Golden Grin Casino Heist DLC",
+      "required_rep_level": 15,
+      "mod_slots": ["barrel_ext", "boost", "foregrip", "gadget", "sight"],
+      "stats": {
+        "mag_size": 33,
+        "max_ammo": 66,
+        "rof": 706,
+        "damage": 168,
+        "accuracy": 72,
+        "stability": 32,
+        "concealment": 27,
+        "threat": 31,
+        "reload_speed": 3.3
+      }
+    },
+    "bootleg": {
+      "name": "Bootleg Rifle",
+      "content_origin": "Syndey Character Pack DLC",
+      "required_rep_level": 21,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 100,
+        "max_ammo": 200,
+        "rof": 667,
+        "damage": 73.5,
+        "accuracy": 24,
+        "stability": 52,
+        "concealment": 14,
+        "threat": 14,
+        "reload_speed": 3.9
+      }
+    },
+    "littlefriend": {
+      "name": "Little Friend 7.62 Assault Rifle",
+      "content_origin": "Scarface Character Pack DLC",
+      "required_rep_level": 41,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "sight",
+        "underbarrel"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 60,
+        "rof": 612,
+        "damage": 168,
+        "accuracy": 72,
+        "stability": 44,
+        "concealment": 8,
+        "threat": 22,
+        "reload_speed": 3.2
+      }
+    },
+    "union": {
+      "name": "Union 5.56 Rifle",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "lower_receiver",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 857,
+        "damage": 62,
+        "accuracy": 68,
+        "stability": 68,
+        "concealment": 20,
+        "threat": 12,
+        "reload_speed": 2.9
+      }
+    },
+    "ak17": {
+      "name": "AK-17 Rifle",
+      "content_origin": "Gage Russian Weapon Pack DLC",
+      "required_rep_level": 16,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 35,
+        "max_ammo": 105,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 60,
+        "stability": 60,
+        "concealment": 16,
+        "threat": 14,
+        "reload_speed": 3.4
+      }
+    },
+    "ketchnov": {
+      "name": "KETCHNOV Byk-1 Assault Rifle",
+      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "required_rep_level": 12,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "underbarrel"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 80,
+        "rof": 698,
+        "damage": 92.4,
+        "accuracy": 72,
+        "stability": 52,
+        "concealment": 8,
+        "threat": 12,
+        "reload_speed": 2.9
+      }
+    },
+    "ks12": {
+      "name": "KS12 Urban",
+      "content_origin": "Jiu Fang Smuggler Pack #3 DLC",
+      "required_rep_level": 40,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "extra",
+        "gadget",
+        "sight",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 500,
+        "damage": 120.8,
+        "accuracy": 44,
+        "stability": 28,
+        "concealment": 16,
+        "threat": 10,
+        "reload_speed": 2.9
+      }
     }
+  },
+  "shotguns": {
+    "predator": {
+      "name": "Predator 12G Shotgun",
+      "content_origin": "Community Item",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "reload_shell": 0.8,
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 66,
+        "rof": 300,
+        "damage": 57.8,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 14,
+        "threat": 28,
+        "reload_speed": 4.8
+      }
+    },
+    "joceline": {
+      "name": "Joceline O/U 12G Shotgun",
+      "content_origin": "Community Item",
+      "required_rep_level": 43,
+      "mod_slots": ["ammunition", "barrel", "boost", "stock"],
+      "stats": {
+        "mag_size": 2,
+        "max_ammo": 28,
+        "rof": 500,
+        "damage": 162.8,
+        "accuracy": 60,
+        "stability": 28,
+        "concealment": 5,
+        "threat": 37,
+        "reload_speed": 2.7
+      }
+    },
+    "reinfeld": {
+      "name": "Reinfeld 880 Shotgun",
+      "content_origin": null,
+      "required_rep_level": 8,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "barrel",
+        "boost",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "reload_shell": 0.8,
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 42,
+        "rof": 104,
+        "damage": 94.5,
+        "accuracy": 40,
+        "stability": 32,
+        "concealment": 11,
+        "threat": 28,
+        "reload_speed": 4.8
+      }
+    },
+    "izhma": {
+      "name": "IZHMA 12G Shotgun",
+      "content_origin": null,
+      "required_rep_level": 26,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 7,
+        "max_ammo": 70,
+        "rof": 333,
+        "damage": 44.1,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 13,
+        "threat": 28,
+        "reload_speed": 4
+      }
+    },
+    "mosconi": {
+      "name": "Mosconi 12G Shotgun",
+      "content_origin": null,
+      "required_rep_level": 39,
+      "mod_slots": ["ammunition", "barrel", "boost", "stock"],
+      "stats": {
+        "mag_size": 2,
+        "max_ammo": 32,
+        "rof": 500,
+        "damage": 162.8,
+        "accuracy": 60,
+        "stability": 36,
+        "concealment": 7,
+        "threat": 37,
+        "reload_speed": 2.5
+      }
+    },
+    "tacmosconi": {
+      "name": "Mosconi 12G Tactical Shotgun",
+      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "required_rep_level": 12,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 7,
+        "max_ammo": 42,
+        "rof": 150,
+        "damage": 115.5,
+        "accuracy": 36,
+        "stability": 32,
+        "concealment": 19,
+        "threat": 28,
+        "reload_speed": 3.8
+      }
+    },
+    "m1014": {
+      "name": "M1014 Shotgun",
+      "content_origin": "Gage Shotgun Pack DLC",
+      "required_rep_level": 15,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "reload_shell": 0.75,
+      "stats": {
+        "mag_size": 8,
+        "max_ammo": 64,
+        "rof": 429,
+        "damage": 57.8,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 12,
+        "threat": 26,
+        "reload_speed": 5.9
+      }
+    },
+    "raven": {
+      "name": "Raven Shotgun",
+      "content_origin": "Gage Shotgun Pack DLC",
+      "required_rep_level": 22,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight"
+      ],
+      "reload_shell": 0.7,
+      "stats": {
+        "mag_size": 14,
+        "max_ammo": 42,
+        "rof": 104,
+        "damage": 94.5,
+        "accuracy": 44,
+        "stability": 44,
+        "concealment": 22,
+        "threat": 28,
+        "reload_speed": 9.6
+      }
+    },
+    "stakeout": {
+      "name": "Stakeout 12G Shotgun",
+      "content_origin": "BBQ Weapon Pack DLC",
+      "required_rep_level": 52,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 8,
+        "max_ammo": 72,
+        "rof": 300,
+        "damage": 44.1,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 9,
+        "threat": 28,
+        "reload_speed": 4.1
+      }
+    },
+    "breaker": {
+      "name": "Breaker 12G Shotgun",
+      "content_origin": "Biker Character Pack DLC",
+      "required_rep_level": 3,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "lower_receiver",
+        "sight"
+      ],
+      "reload_shell": 0.6,
+      "stats": {
+        "mag_size": 7,
+        "max_ammo": 21,
+        "rof": 80,
+        "damage": 162.8,
+        "accuracy": 48,
+        "stability": 28,
+        "concealment": 20,
+        "threat": 28,
+        "reload_speed": 4.1
+      }
+    }
+  },
+  "akimbo_pistols": {
+    "bernetti9": {
+      "name": "Akimbo Bernetti 9 Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "slide"],
+      "stats": {
+        "mag_size": 28,
+        "max_ammo": 168,
+        "rof": 361,
+        "damage": 55.7,
+        "accuracy": 52,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 4,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_chimano_compact": {
+      "name": "Akimbo Chimano Compact Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 160,
+        "rof": 667,
+        "damage": 55.7,
+        "accuracy": 60,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_crosskill": {
+      "name": "Akimbo Crosskill Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 100,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 40,
+        "concealment": 27,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_deagle": {
+      "name": "Akimbo Deagle Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 60,
+        "rof": 240,
+        "damage": 126,
+        "accuracy": 84,
+        "stability": 16,
+        "concealment": 26,
+        "threat": 24,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_chimano_custom": {
+      "name": "Akimbo Chimano Custom Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 32,
+        "max_ammo": 96,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 40,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_chimano_88": {
+      "name": "Akimbo Chimano 88 Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "magazine"],
+      "stats": {
+        "mag_size": 34,
+        "max_ammo": 170,
+        "rof": 480,
+        "damage": 55.7,
+        "accuracy": 60,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 8,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_interceptor_45": {
+      "name": "Akimbo Interceptor 45 Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 26,
+        "max_ammo": 104,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 40,
+        "concealment": 29,
+        "threat": 8,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_crosskill_guard": {
+      "name": "Akimbo Crosskill Guard Pistols",
+      "content_origin": null,
+      "required_rep_level": 27,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 34,
+        "max_ammo": 170,
+        "rof": 667,
+        "damage": 55.7,
+        "accuracy": 72,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 8,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_castigo_44": {
+      "name": "Akimbo Castigo 44 Revolvers",
+      "content_origin": null,
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "boost", "grip"],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 72,
+        "rof": 361,
+        "damage": 189,
+        "accuracy": 84,
+        "stability": 0,
+        "concealment": 28,
+        "threat": 24,
+        "reload_speed": 3.47
+      }
+    },
+    "akimbo_contractor": {
+      "name": "Akimbo Contractor Pistols",
+      "content_origin": "John Wick Weapon Pack DLC",
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "sight"],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 48,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_m13_9mm": {
+      "name": "Akimbo M13 9mm Pistols",
+      "content_origin": null,
+      "required_rep_level": 15,
+      "mod_slots": ["barrel", "barrel_ext", "boost", "gadget", "grip"],
+      "stats": {
+        "mag_size": 26,
+        "max_ammo": 156,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 52,
+        "stability": 36,
+        "concealment": 30,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_bernetti_auto": {
+      "name": "Akimbo Bernetti Auto Pistols",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 210,
+        "rof": 1101,
+        "damage": 26.3,
+        "accuracy": 48,
+        "stability": 64,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_czech_92": {
+      "name": "Akimbo Czech 92 Pistols",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 180,
+        "rof": 1000,
+        "damage": 39.9,
+        "accuracy": 68,
+        "stability": 48,
+        "concealment": 26,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_igor_automatik": {
+      "name": "Akimbo Igor Automatik Pistols",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 120,
+        "rof": 750,
+        "damage": 68.3,
+        "accuracy": 64,
+        "stability": 16,
+        "concealment": 26,
+        "threat": 8,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_holt_9mm": {
+      "name": "Akimbo HOLT 9mm Pistols",
+      "content_origin": "Fugitive Weapon Pack DLC",
+      "required_rep_level": 30,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "magazine"],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 72,
+        "stability": 56,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_frenchman": {
+      "name": "Akimbo Frenchman Model 87 Revolvers",
+      "content_origin": "Gunslinger Weapon Pack DLC",
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "boost", "grip"],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 96,
+        "rof": 361,
+        "damage": 136.5,
+        "accuracy": 84,
+        "stability": 16,
+        "concealment": 26,
+        "threat": 22,
+        "reload_speed": 3.47
+      }
+    },
+    "akimbo_crosskill_chunky": {
+      "name": "Akimbo Crosskill Chunky Compact",
+      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "required_rep_level": 24,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 24,
+        "max_ammo": 72,
+        "rof": 361,
+        "damage": 115.5,
+        "accuracy": 72,
+        "stability": 20,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_kang_54": {
+      "name": "Akimbo Káng Arms Model 54 Pistols",
+      "content_origin": "Jiu Fang Smuggler Pack #3 DLC",
+      "required_rep_level": 24,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "underbarrel"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 80,
+        "rof": 361,
+        "damage": 89.3,
+        "accuracy": 72,
+        "stability": 24,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_gecko": {
+      "name": "Akimbo Káng Arms Model 54 Pistols",
+      "content_origin": "Jiu Fang Smuggler Pack #4 DLC",
+      "required_rep_level": 24,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "underbarrel"
+      ],
+      "stats": {
+        "mag_size": 34,
+        "max_ammo": 82,
+        "rof": 361,
+        "damage": 105,
+        "accuracy": 72,
+        "stability": 40,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_stryk_18c": {
+      "name": "Akimbo STRYK 18c Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "magazine"],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 200,
+        "rof": 909,
+        "damage": 36.8,
+        "accuracy": 60,
+        "stability": 44,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_leo": {
+      "name": "Akimbo LEO Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 38,
+        "max_ammo": 114,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 40,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_matever": {
+      "name": "Akimbo Matever .357 Revolvers",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 60,
+        "rof": 361,
+        "damage": 189,
+        "accuracy": 92,
+        "stability": 0,
+        "concealment": 20,
+        "threat": 24,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_parabellum": {
+      "name": "Akimbo Parabellum Pistols",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": ["barrel", "boost", "grip"],
+      "stats": {
+        "mag_size": 16,
+        "max_ammo": 64,
+        "rof": 361,
+        "damage": 189,
+        "accuracy": 84,
+        "stability": 12,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_broomstick": {
+      "name": "Akimbo Broomstick Pistols",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 100,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 88,
+        "stability": 48,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_baby_deagle": {
+      "name": "Akimbo Baby Deagle Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver"
+      ],
+      "stats": {
+        "mag_size": 24,
+        "max_ammo": 72,
+        "rof": 361,
+        "damage": 126,
+        "accuracy": 76,
+        "stability": 20,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_white_streak": {
+      "name": "Akimbo White Streak Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
+      "stats": {
+        "mag_size": 24,
+        "max_ammo": 72,
+        "rof": 361,
+        "damage": 126,
+        "accuracy": 76,
+        "stability": 20,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_bronco_44": {
+      "name": "Akimbo Bronco .44 Revolvers",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "grip", "slide", "upper_receiver"],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 72,
+        "rof": 361,
+        "damage": 183.8,
+        "accuracy": 84,
+        "stability": 0,
+        "concealment": 26,
+        "threat": 24,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_gruber_kurz": {
+      "name": "Akimbo Gruber Kruz Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "slide"],
+      "stats": {
+        "mag_size": 28,
+        "max_ammo": 168,
+        "rof": 361,
+        "damage": 55.7,
+        "accuracy": 52,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 4,
+        "reload_speed": 4
+      }
+    },
+    "akimbo_signature_40": {
+      "name": "Akimbo Signature .40 Pistols",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 24,
+        "max_ammo": 96,
+        "rof": 361,
+        "damage": 84,
+        "accuracy": 76,
+        "stability": 40,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 4
+      }
+    }
+  },
+  "akimbo_smg": {
+    "akimbo_krinkov": {
+      "name": "Akimbo Krinkov Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 180,
+        "rof": 822,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 32,
+        "concealment": 21,
+        "threat": 22,
+        "reload_speed": 3.5
+      }
+    },
+    "akimbo_swedish": {
+      "name": "Akimbo Swedish K Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 180,
+        "rof": 822,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 32,
+        "concealment": 21,
+        "threat": 22,
+        "reload_speed": 3.5
+      }
+    },
+    "akimbo_compact5": {
+      "name": "Akimbo Compact-5 Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 300,
+        "rof": 750,
+        "damage": 46.2,
+        "accuracy": 52,
+        "stability": 68,
+        "concealment": 24,
+        "threat": 6,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_specops": {
+      "name": "Akimbo SpecOps Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 200,
+        "rof": 952,
+        "damage": 73.5,
+        "accuracy": 72,
+        "stability": 56,
+        "concealment": 23,
+        "threat": 8,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_heather": {
+      "name": "Akimbo Heather Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 64,
+        "max_ammo": 224,
+        "rof": 750,
+        "damage": 60.9,
+        "accuracy": 60,
+        "stability": 56,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 2.08
+      }
+    },
+    "akimbo_cr805b": {
+      "name": "Akimbo CR 805B Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 180,
+        "rof": 750,
+        "damage": 104,
+        "accuracy": 80,
+        "stability": 56,
+        "concealment": 18,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_mark10": {
+      "name": "Akimbo Mark 10 Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "gadget",
+        "lower_receiver",
+        "magazine",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 80,
+        "max_ammo": 240,
+        "rof": 1000,
+        "damage": 60.9,
+        "accuracy": 56,
+        "stability": 52,
+        "concealment": 27,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_jacket": {
+      "name": "Akimbo Jackets Piece",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 64,
+        "max_ammo": 224,
+        "rof": 1200,
+        "damage": 59.9,
+        "accuracy": 60,
+        "stability": 56,
+        "concealment": 25,
+        "threat": 10,
+        "reload_speed": 2.5
+      }
+    },
+    "akimbo_chicago": {
+      "name": "Akimbo Chicago Typewriter SMGs",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip"
+      ],
+      "stats": {
+        "mag_size": 100,
+        "max_ammo": 230,
+        "rof": 723,
+        "damage": 60.9,
+        "accuracy": 56,
+        "stability": 56,
+        "concealment": 18,
+        "threat": 12,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_miyaka": {
+      "name": "Akimbo Miyaka 10 Special SMGs",
+      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "required_rep_level": 17,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 50,
+        "max_ammo": 275,
+        "rof": 1101,
+        "damage": 63,
+        "accuracy": 36,
+        "stability": 44,
+        "concealment": 26,
+        "threat": 10,
+        "reload_speed": 2.7
+      }
+    },
+    "akimbo_cobra": {
+      "name": "Akimbo Cobra Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 280,
+        "rof": 1000,
+        "damage": 46.2,
+        "accuracy": 36,
+        "stability": 56,
+        "concealment": 28,
+        "threat": 6,
+        "reload_speed": 2
+      }
+    },
+    "akimbo_microuzi": {
+      "name": "Akimbo Micro Uzi Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel", "barrel_ext", "boost", "custom", "gadget"],
+      "stats": {
+        "mag_size": 64,
+        "max_ammo": 288,
+        "rof": 1200,
+        "damage": 46.2,
+        "accuracy": 36,
+        "stability": 64,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_cmp": {
+      "name": "Akimbo CMP Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "custom", "gadget", "magazine"],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 270,
+        "rof": 952,
+        "damage": 52.5,
+        "accuracy": 36,
+        "stability": 64,
+        "concealment": 26,
+        "threat": 8,
+        "reload_speed": 2
+      }
+    },
+    "akimbo_para": {
+      "name": "Akimbo Para Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 50,
+        "max_ammo": 225,
+        "rof": 684,
+        "damage": 68.3,
+        "accuracy": 52,
+        "stability": 52,
+        "concealment": 24,
+        "threat": 14,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_jackal": {
+      "name": "Akimbo Jackal Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "vertical_grip"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 180,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 40,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_signature": {
+      "name": "Akimbo Signature Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 20,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 280,
+        "rof": 750,
+        "damage": 60.9,
+        "accuracy": 72,
+        "stability": 32,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_akgen21": {
+      "name": "Akimbo AK Gen 21 Tactical SMGs",
+      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "required_rep_level": 24,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 240,
+        "rof": 750,
+        "damage": 75.6,
+        "accuracy": 52,
+        "stability": 56,
+        "concealment": 23,
+        "threat": 6,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_mp40": {
+      "name": "Akimbo MP40 Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "custom", "gadget"],
+      "stats": {
+        "mag_size": 80,
+        "max_ammo": 160,
+        "rof": 600,
+        "damage": 104,
+        "accuracy": 76,
+        "stability": 32,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_blaster": {
+      "name": "Akimbo Blaster 9mm Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 32,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 280,
+        "rof": 896,
+        "damage": 46.2,
+        "accuracy": 36,
+        "stability": 64,
+        "concealment": 27,
+        "threat": 12,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_kobus": {
+      "name": "Akimbo Kobus 90 Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "lower_receiver",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 100,
+        "max_ammo": 250,
+        "rof": 909,
+        "damage": 58.8,
+        "accuracy": 60,
+        "stability": 48,
+        "concealment": 25,
+        "threat": 12,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_kross": {
+      "name": "Akimbo Kross Vertex Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "custom", "gadget"],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 240,
+        "rof": 1200,
+        "damage": 60.9,
+        "accuracy": 60,
+        "stability": 64,
+        "concealment": 20,
+        "threat": 10,
+        "reload_speed": 2.5
+      }
+    },
+    "akimbo_tatonka": {
+      "name": "Akimbo Tatonka Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "custom", "gadget", "grip"],
+      "stats": {
+        "mag_size": 128,
+        "max_ammo": 180,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 60,
+        "stability": 48,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 2.5
+      }
+    },
+    "akimbo_patchett": {
+      "name": "Akimbo Patchett L2A1 Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 48,
+        "max_ammo": 168,
+        "rof": 545,
+        "damage": 104,
+        "accuracy": 60,
+        "stability": 64,
+        "concealment": 20,
+        "threat": 12,
+        "reload_speed": 3
+      }
+    },
+    "akimbo_uzi": {
+      "name": "Akimbo Uzi Submachine Guns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["barrel_ext", "boost", "custom", "foregrip", "gadget"],
+      "stats": {
+        "mag_size": 80,
+        "max_ammo": 160,
+        "rof": 698,
+        "damage": 94.5,
+        "accuracy": 60,
+        "stability": 56,
+        "concealment": 24,
+        "threat": 12,
+        "reload_speed": 3
+      }
+    }
+  },
+  "akimbo_shotguns": {
+    "akimbo_goliath": {
+      "name": "Akimbo Goliath 12G Shotguns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["ammunition", "barrel", "barrel_ext", "boost", "gadget"],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 72,
+        "rof": 333,
+        "damage": 44.1,
+        "accuracy": 64,
+        "stability": 32,
+        "concealment": 13,
+        "threat": 28,
+        "reload_speed": 3.5
+      }
+    },
+    "akimbo_grimm": {
+      "name": "Akimbo Brothers Grimm 12G Shotguns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine"
+      ],
+      "stats": {
+        "mag_size": 16,
+        "max_ammo": 96,
+        "rof": 333,
+        "damage": 18.9,
+        "accuracy": 20,
+        "stability": 36,
+        "concealment": 21,
+        "threat": 28,
+        "reload_speed": 3.5
+      }
+    },
+    "akimbo_judge": {
+      "name": "Akimbo Judge Shotguns",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "lower_receiver"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 40,
+        "rof": 500,
+        "damage": 162.8,
+        "accuracy": 60,
+        "stability": 16,
+        "concealment": 29,
+        "threat": 28,
+        "reload_speed": 3.5
+      }
+    }
+  },
+  "sniper": {
+    "rattlesnake": {
+      "name": "Rattlesnake Sniper Rifle",
+      "content_origin": "Gage Sniper Pack DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 40,
+        "rof": 60,
+        "damage": 258.3,
+        "accuracy": 88,
+        "stability": 28,
+        "concealment": 5,
+        "threat": 26,
+        "reload_speed": 3.7
+      }
+    },
+    "r700": {
+      "name": "R700 Sniper Rifle",
+      "content_origin": "Fugitive Weapon Pack DLC",
+      "required_rep_level": 23,
+      "mod_slots": ["barrel", "boost", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 40,
+        "rof": 75,
+        "damage": 258.3,
+        "accuracy": 92,
+        "stability": 28,
+        "concealment": 10,
+        "threat": 28,
+        "reload_speed": 4.7
+      }
+    },
+    "bernetti": {
+      "name": "Bernetti Rangehitter Sniper Rifle",
+      "content_origin": "Gunslinger Weapon Pack DLC",
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "boost", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 50,
+        "rof": 120,
+        "damage": 205.8,
+        "accuracy": 68,
+        "stability": 20,
+        "concealment": 19,
+        "threat": 28,
+        "reload_speed": 7.1
+      }
+    },
+    "kang": {
+      "name": "Káng Arms X1 Sniper Rifle",
+      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "required_rep_level": 28,
+      "mod_slots": ["barrel", "boost", "gadget", "magazine", "sight"],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 40,
+        "rof": 150,
+        "damage": 168,
+        "accuracy": 80,
+        "stability": 48,
+        "concealment": 12,
+        "threat": 12,
+        "reload_speed": 3.3
+      }
+    },
+    "platypus": {
+      "name": "Platypus 70 Sniper Rifle",
+      "content_origin": null,
+      "required_rep_level": 32,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "sight"],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 30,
+        "rof": 60,
+        "damage": 504,
+        "accuracy": 92,
+        "stability": 12,
+        "concealment": 6,
+        "threat": 28,
+        "reload_speed": 4.5
+      }
+    },
+    "lebensauger": {
+      "name": "Lebensauger .308 Sniper Rifle",
+      "content_origin": "Gage Ninja Pack DLC",
+      "required_rep_level": 33,
+      "mod_slots": ["barrel", "boost", "gadget", "grip", "sight"],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 60,
+        "rof": 150,
+        "damage": 168,
+        "accuracy": 92,
+        "stability": 20,
+        "concealment": 16,
+        "threat": 12,
+        "reload_speed": 4.1
+      }
+    },
+    "desertfox": {
+      "name": "Desertfox Sniper Rifle",
+      "content_origin": "John Wick Weapon Pack DLC",
+      "required_rep_level": 34,
+      "mod_slots": ["barrel", "boost", "gadget", "sight"],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 30,
+        "rof": 60,
+        "damage": 504,
+        "accuracy": 76,
+        "stability": 12,
+        "concealment": 19,
+        "threat": 28,
+        "reload_speed": 3.9
+      }
+    },
+    "contractor308": {
+      "name": "Contractor .308 Sniper Rifle",
+      "content_origin": "John Wick Heists DLC",
+      "required_rep_level": 34,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "grip", "sight", "stock"],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 40,
+        "rof": 150,
+        "damage": 168,
+        "accuracy": 60,
+        "stability": 4,
+        "concealment": 16,
+        "threat": 12,
+        "reload_speed": 3.3
+      }
+    },
+    "r93": {
+      "name": "R93 Sniper Rifle",
+      "content_origin": "Gage Sniper Pack DLC",
+      "required_rep_level": 35,
+      "mod_slots": ["barrel", "boost", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 30,
+        "rof": 50,
+        "damage": 504,
+        "accuracy": 92,
+        "stability": 12,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 3.8
+      }
+    },
+    "repeater1874": {
+      "name": "Repeater 1874 Sniper Rifle",
+      "content_origin": "The Butcher's Western Pack DLC",
+      "required_rep_level": 36,
+      "mod_slots": ["barrel", "boost", "sight"],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 45,
+        "rof": 86,
+        "damage": 258.3,
+        "accuracy": 92,
+        "stability": 20,
+        "concealment": 12,
+        "threat": 28,
+        "reload_speed": 9.9
+      }
+    },
+    "thanatos": {
+      "name": "Thanatos .50 cal Sniper Rifle",
+      "content_origin": "Gage Sniper Pack DLC",
+      "required_rep_level": 65,
+      "mod_slots": ["barrel", "boost", "gadget", "grip", "sight"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 30,
+        "rof": 50,
+        "damage": 504,
+        "accuracy": 92,
+        "stability": 12,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 3.8
+      }
+    },
+    "nagant": {
+      "name": "Nagant Sniper Rifle",
+      "content_origin": "Gage Historical Pack DLC",
+      "required_rep_level": 54,
+      "mod_slots": ["barrel", "bayonet", "boost", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 25,
+        "rof": 60,
+        "damage": 504,
+        "accuracy": 92,
+        "stability": 12,
+        "concealment": 6,
+        "threat": 28,
+        "reload_speed": 3.9
+      }
+    },
+    "grom": {
+      "name": "Grom Sniper Rifle",
+      "content_origin": "Gage Russian Weapon Pack DLC",
+      "required_rep_level": 46,
+      "mod_slots": ["barrel", "boost", "foregrip", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 40,
+        "rof": 150,
+        "damage": 168,
+        "accuracy": 72,
+        "stability": 4,
+        "concealment": 16,
+        "threat": 12,
+        "reload_speed": 3.3
+      }
+    }
+  },
+  "special": {
+    "xl556": {
+      "name": "XL 5.56 Microgun",
+      "mod_slots": ["barrel_ext", "bonus", "stock"],
+      "stats": {
+        "mag_size": 750,
+        "max_ammo": 750,
+        "rof": 200,
+        "damage": 35,
+        "accuracy": 32,
+        "stability": 24,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 7.8
+      }
+    },
+    "deca_tech_bow": {
+      "name": "DECA Technologies Compound Bow",
+      "content_origin": null,
+      "required_rep_level": 37,
+      "mod_slots": ["ammunition", "boost", "grip", "sight", "upper_receiver"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 30,
+        "rof": 300,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 27,
+        "threat": 37,
+        "reload_speed": 1.3
+      }
+    },
+    "ove9000": {
+      "name": "OVE9000 Saw",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["boost", "lower_receiver", "magazine"],
+      "stats": {
+        "mag_size": 150,
+        "max_ammo": 300,
+        "rof": 400,
+        "damage": 23,
+        "accuracy": 8,
+        "stability": 24,
+        "concealment": 16,
+        "threat": 24,
+        "reload_speed": 3.8
+      }
+    },
+    "gl40": {
+      "name": "GL40",
+      "content_origin": "Gage Assault Pack DLC",
+      "required_rep_level": 46,
+      "mod_slots": ["ammunition", "barrel", "bipod", "boost", "stock"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 6,
+        "rof": 30,
+        "damage": 1300,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 18,
+        "threat": 37,
+        "reload_speed": 3.1
+      }
+    },
+    "vulcan": {
+      "name": "Vulcan Minigun",
+      "content_origin": "Overkill Pack DLC",
+      "required_rep_level": 40,
+      "mod_slots": ["barrel", "boost", "extra", "gadget"],
+      "stats": {
+        "mag_size": 750,
+        "max_ammo": 750,
+        "rof": 3000,
+        "damage": 25,
+        "accuracy": 32,
+        "stability": 24,
+        "concealment": 5,
+        "threat": 31,
+        "reload_speed": 7.8
+      }
+    },
+    "piglet": {
+      "name": "Piglet",
+      "reload_shell": 2.55,
+      "content_origin": "BBQ Weapon Pack DLC",
+      "required_rep_level": 43,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "bipod",
+        "boost",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 12,
+        "rof": 60,
+        "damage": 1300,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 10,
+        "threat": 37,
+        "reload_speed": 15.3
+      }
+    },
+    "flamethrower": {
+      "name": "Flamethrower Mk. 1",
+      "content_origin": "BBQ Weapon Pack DLC",
+      "required_rep_level": 44,
+      "mod_slots": ["boost", "magazine"],
+      "stats": {
+        "mag_size": 900,
+        "max_ammo": 1800,
+        "rof": 2000,
+        "damage": 7.4,
+        "accuracy": 0,
+        "stability": 0,
+        "concealment": 7,
+        "threat": 37,
+        "reload_speed": 8.5
+      }
+    },
+    "plainsrider": {
+      "name": "Plainsrider",
+      "content_origin": "Western Weapon Pack DLC",
+      "required_rep_level": 15,
+      "mod_slots": ["ammunition", "boost"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 50,
+        "rof": 300,
+        "damage": 1000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 30,
+        "threat": 37,
+        "reload_speed": 1
+      }
+    },
+    "light_crossbow": {
+      "name": "Light Crossbow",
+      "content_origin": "Gage Chivalry Pack DLC",
+      "required_rep_level": 17,
+      "mod_slots": ["ammunition", "boost"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 50,
+        "rof": 40,
+        "damage": 750,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 1.5
+      }
+    },
+    "english_longbow": {
+      "name": "English Longbow",
+      "content_origin": "Gage Chivalry Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": ["ammunition", "boost"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 35,
+        "rof": 300,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 29,
+        "threat": 37,
+        "reload_speed": 1.5
+      }
+    },
+    "heavy_crossbow": {
+      "name": "Heavy Crossbow",
+      "content_origin": "Gage Chivalry Pack DLC",
+      "required_rep_level": 0,
+      "mod_slots": ["ammunition", "boost"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 35,
+        "rof": 21,
+        "damage": 2000,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 2.5
+      }
+    },
+    "airbow": {
+      "name": "Airbow",
+      "content_origin": "H3H3 Character Pack DLC",
+      "required_rep_level": 0,
+      "mod_slots": ["ammunition", "boost", "sight", "stock"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 30,
+        "rof": 120,
+        "damage": 700,
+        "accuracy": 84,
+        "stability": 84,
+        "concealment": 5,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    }
+  },
+  "lmg": {
+    "rpk": {
+      "name": "RPK",
+      "content_origin": "Gage Weapon Pack #02 DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "bipod",
+        "boost",
+        "foregrip",
+        "gadget",
+        "grip",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 100,
+        "max_ammo": 300,
+        "rof": 750,
+        "damage": 120,
+        "accuracy": 28,
+        "stability": 8,
+        "concealment": 5,
+        "threat": 22,
+        "reload_speed": 4.6
+      }
+    },
+    "ksp58": {
+      "name": "KSP 58",
+      "content_origin": null,
+      "required_rep_level": 23,
+      "mod_slots": ["barrel", "barrel_ext", "bipod", "boost", "gadget"],
+      "stats": {
+        "mag_size": 200,
+        "max_ammo": 400,
+        "rof": 909,
+        "damage": 80,
+        "accuracy": 52,
+        "stability": 28,
+        "concealment": 1,
+        "threat": 31,
+        "reload_speed": 6.5
+      }
+    },
+    "ksp": {
+      "name": "KSP",
+      "content_origin": "Gage Weapon Pack #02 DLC",
+      "required_rep_level": 45,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "bipod",
+        "boost",
+        "foregrip",
+        "gadget",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 200,
+        "max_ammo": 400,
+        "rof": 909,
+        "damage": 80,
+        "accuracy": 48,
+        "stability": 28,
+        "concealment": 1,
+        "threat": 31,
+        "reload_speed": 5.62
+      }
+    },
+    "buzzsaw42": {
+      "name": "Buzzsaw 42",
+      "content_origin": "Gage Historical Pack DLC",
+      "required_rep_level": 71,
+      "mod_slots": ["barrel", "barrel_ext", "bipod", "boost", "gadget"],
+      "buzzsaw42": {
+        "mag_size": 150,
+        "max_ammo": 450,
+        "rof": 1200,
+        "damage": 80,
+        "accuracy": 48,
+        "stability": 28,
+        "concealment": 1,
+        "threat": 31,
+        "reload_speed": 6.5
+      }
+    },
+    "brenner21": {
+      "name": "Brenner 21",
+      "content_origin": "Gage Weapon Pack #02 DLC",
+      "required_rep_level": 75,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "bipod",
+        "boost",
+        "foregrip",
+        "gadget",
+        "grip"
+      ],
+      "stats": {
+        "mag_size": 150,
+        "max_ammo": 300,
+        "rof": 723,
+        "damage": 120,
+        "accuracy": 36,
+        "stability": 8,
+        "concealment": 1,
+        "threat": 37,
+        "reload_speed": 6.7
+      }
+    },
+    "m60": {
+      "name": "M60",
+      "content_origin": "Fugitive Weapon Pack DLC",
+      "required_rep_level": 33,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "bipod",
+        "boost",
+        "foregrip",
+        "gadget"
+      ],
+      "stats": {
+        "mag_size": 200,
+        "max_ammo": 300,
+        "rof": 550,
+        "damage": 120,
+        "accuracy": 56,
+        "stability": 20,
+        "concealment": 1,
+        "threat": 34,
+        "reload_speed": 6.3
+      }
+    },
+    "versteckt": {
+      "name": "Versteckt 51D",
+      "content_origin": "McShay Weapon Pack DLC",
+      "required_rep_level": 38,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 60,
+        "max_ammo": 180,
+        "rof": 667,
+        "damage": 110,
+        "accuracy": 40,
+        "stability": 4,
+        "concealment": 19,
+        "threat": 37,
+        "reload_speed": 3.6
+      }
+    }
+  }
 }
