@@ -1,0 +1,1755 @@
+{
+  "pistols": {
+    "interceptor_45": {
+      "name": "Interceptor 45 Pistol",
+      "content_origin": "Community Item",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 13,
+        "max_ammo": 31,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 52,
+        "concealment": 29,
+        "threat": 8,
+        "reload_speed": 2.2
+      }
+    },
+    "chimano_88": {
+      "name": "Chimano 88 Pistol",
+      "content_origin": "Community Item",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 17,
+        "max_ammo": 153,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 52,
+        "stability": 60,
+        "concealment": 30,
+        "threat": 8,
+        "reload_speed": 2.12
+      }
+    },
+    "gruber_kurz": {
+      "name": "Gruber Kurz Pistol",
+      "content_origin": "Armored Transport DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 14,
+        "max_ammo": 154,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 44,
+        "stability": 60,
+        "concealment": 30,
+        "threat": 4,
+        "reload_speed": 2.12
+      }
+    },
+    "signature_40": {
+      "name": "Signature .40 Pistol",
+      "content_origin": "Gage Weapon Pack #01 DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 84,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 52,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.2
+      }
+    },
+    "crosskill": {
+      "name": "Crosskill Pistol",
+      "content_origin": null,
+      "required_rep_level": 2,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 90,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 52,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 2.12
+      }
+    },
+    "bernetti_9": {
+      "name": "Bernetti 9 Pistol",
+      "content_origin": null,
+      "required_rep_level": 6,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "sight",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 14,
+        "max_ammo": 154,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 56,
+        "stability": 60,
+        "concealment": 30,
+        "threat": 6,
+        "reload_speed": 2.2
+      }
+    },
+    "bronco_44": {
+      "name": "Bronco .44 Revolver",
+      "content_origin": null,
+      "required_rep_level": 6,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "extra",
+        "gadget",
+        "grip",
+        "sight",
+        "slide",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 54,
+        "rof": 400,
+        "damage": 183.8,
+        "accuracy": 76,
+        "stability": 4,
+        "concealment": 26,
+        "threat": 24,
+        "reload_speed": 2.25
+      }
+    },
+    "crosskill_chunky": {
+      "name": "Crosskill Chunky Compact Pistol",
+      "content_origin": "Jiu Feng Smuggler Pack DLC",
+      "required_rep_level": 6,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 60,
+        "rof": 480,
+        "damage": 115.5,
+        "accuracy": 64,
+        "stability": 32,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 2.12
+      }
+    },
+    "gecko_m2": {
+      "name": "Gecko M2 Pistol",
+      "content_origin": "Jiu Feng Smuggler Pack #4 DLC",
+      "required_rep_level": 12,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 17,
+        "max_ammo": 68,
+        "rof": 480,
+        "damage": 105,
+        "accuracy": 64,
+        "stability": 44,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.15
+      }
+    },
+    "white_streak": {
+      "name": "White Streak Pistol",
+      "content_origin": null,
+      "required_rep_level": 14,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 60,
+        "rof": 400,
+        "damage": 126,
+        "accuracy": 68,
+        "stability": 32,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.12
+      }
+    },
+    "baby_deagle": {
+      "name": "Baby Deagle",
+      "content_origin": "The Point Break Heists DLC",
+      "required_rep_level": 14,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 60,
+        "rof": 400,
+        "damage": 126,
+        "accuracy": 68,
+        "stability": 32,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.12
+      }
+    },
+    "m13": {
+      "name": "M13 9mm Pistol",
+      "content_origin": null,
+      "required_rep_level": 15,
+      "mod_slots": ["barrel", "barrel_ext", "boost", "gadget", "grip", "sight"],
+      "stats": {
+        "mag_size": 13,
+        "max_ammo": 156,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 44,
+        "stability": 48,
+        "concealment": 30,
+        "threat": 9,
+        "reload_speed": 2.15
+      }
+    },
+    "chimano_custom": {
+      "name": "Chimano Custom Pistol",
+      "content_origin": "Community Item",
+      "required_rep_level": 22,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 16,
+        "max_ammo": 96,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 52,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.2
+      }
+    },
+    "broomstick": {
+      "name": "Broomstick Pistol",
+      "content_origin": "Gage Historical Pack DLC",
+      "required_rep_level": 23,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "slide",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 90,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 80,
+        "stability": 60,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 4.17
+      }
+    },
+    "kang_54": {
+      "name": "Káng Arms Model 54 Pistol",
+      "content_origin": "Jiu Feng Smuggler Pack #3 DLC",
+      "required_rep_level": 24,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "underbarrel"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 60,
+        "rof": 480,
+        "damage": 89.3,
+        "accuracy": 64,
+        "stability": 36,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 2.15
+      }
+    },
+    "parabellum": {
+      "name": "Parabellum Pistol",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": ["barrel", "boost", "grip", "sight"],
+      "stats": {
+        "mag_size": 8,
+        "max_ammo": 56,
+        "rof": 400,
+        "damage": 189,
+        "accuracy": 76,
+        "stability": 24,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.1
+      }
+    },
+    "57_ap": {
+      "name": "5/7 AP Pistol",
+      "content_origin": "Community Item",
+      "required_rep_level": 26,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 45,
+        "rof": 600,
+        "damage": 126,
+        "accuracy": 48,
+        "stability": 36,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.15
+      }
+    },
+    "castigo_44": {
+      "name": "Castigo .44 Revolver",
+      "content_origin": null,
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "boost", "grip"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 54,
+        "rof": 400,
+        "damage": 189,
+        "accuracy": 76,
+        "stability": 4,
+        "concealment": 28,
+        "threat": 24,
+        "reload_speed": 2.97
+      }
+    },
+    "contractor_pistol": {
+      "name": "Contractor Pistol",
+      "content_origin": "John Wick Weapon Pack DLC",
+      "required_rep_level": 26,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "sight"],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 90,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 60,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.32
+      }
+    },
+    "frenchman_87": {
+      "name": "Frenchman Model 87 Revolver",
+      "content_origin": "Gunslinger Weapon Pack DLC",
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "boost", "grip"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 66,
+        "rof": 400,
+        "damage": 136.5,
+        "accuracy": 76,
+        "stability": 28,
+        "concealment": 26,
+        "threat": 22,
+        "reload_speed": 2.47
+      }
+    },
+    "rus_12": {
+      "name": "RUS-12 Angry Tiger Revolver",
+      "content_origin": "Jiu Feng Smuggler Pack #3 DLC",
+      "required_rep_level": 26,
+      "mod_slots": ["barrel", "barrel_ext", "boost", "gadget", "grip", "sight"],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 20,
+        "rof": 400,
+        "damage": 220.5,
+        "accuracy": 52,
+        "stability": 20,
+        "concealment": 25,
+        "threat": 28,
+        "reload_speed": 2.25
+      }
+    },
+    "chimano_compact": {
+      "name": "Chimano Compact Pistol",
+      "content_origin": "Community Item",
+      "required_rep_level": 22,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "lower_receiver",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 150,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 52,
+        "stability": 60,
+        "concealment": 30,
+        "threat": 4,
+        "reload_speed": 2.12
+      }
+    },
+    "crosskill_guard": {
+      "name": "Crosskill Guard Pistol",
+      "content_origin": null,
+      "required_rep_level": 27,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 17,
+        "max_ammo": 153,
+        "rof": 545,
+        "damage": 55.7,
+        "accuracy": 64,
+        "stability": 60,
+        "concealment": 30,
+        "threat": 8,
+        "reload_speed": 2.12
+      }
+    },
+    "leo": {
+      "name": "LEO Pistol",
+      "content_origin": "The Bomb Heists DLC",
+      "required_rep_level": 28,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 19,
+        "max_ammo": 95,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 68,
+        "stability": 52,
+        "concealment": 29,
+        "threat": 9,
+        "reload_speed": 2.12
+      }
+    },
+    "stryk_18c": {
+      "name": "STRYK 18c Pistol",
+      "content_origin": null,
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 160,
+        "rof": 909,
+        "damage": 36.8,
+        "accuracy": 52,
+        "stability": 56,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 2.12
+      }
+    },
+    "bernetti_auto": {
+      "name": "Bernetti Auto Pistol",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 195,
+        "rof": 1101,
+        "damage": 26.3,
+        "accuracy": 40,
+        "stability": 64,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 2.12
+      }
+    },
+    "czech_92": {
+      "name": "Czech 92 Pistol",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 150,
+        "rof": 1000,
+        "damage": 39.9,
+        "accuracy": 60,
+        "stability": 60,
+        "concealment": 26,
+        "threat": 10,
+        "reload_speed": 2.12
+      }
+    },
+    "igor_automatik": {
+      "name": "Igor Automatik Pistol",
+      "content_origin": "Federales Weapon Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 80,
+        "rof": 750,
+        "damage": 68.3,
+        "accuracy": 56,
+        "stability": 28,
+        "concealment": 25,
+        "threat": 8,
+        "reload_speed": 2.7
+      }
+    },
+    "holt_9mm": {
+      "name": "HOLT 9MM Pistol",
+      "content_origin": "Fugitive Weapon Pack DLC",
+      "required_rep_level": 30,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 15,
+        "max_ammo": 90,
+        "rof": 480,
+        "damage": 84,
+        "accuracy": 60,
+        "stability": 68,
+        "concealment": 28,
+        "threat": 9,
+        "reload_speed": 2.15
+      }
+    },
+    "peacemaker": {
+      "name": "Peacemaker .45 Revolver",
+      "content_origin": "Western Weapon Pack DLC",
+      "required_rep_level": 31,
+      "mod_slots": ["boost", "grip", "slide", "stock"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 36,
+        "rof": 400,
+        "damage": 241.5,
+        "accuracy": 84,
+        "stability": 12,
+        "concealment": 26,
+        "threat": 28,
+        "reload_speed": 7.09
+      }
+    },
+    "matever": {
+      "name": "Matever .357 Revolver",
+      "content_origin": "Alesso Heist DLC",
+      "required_rep_level": 34,
+      "mod_slots": ["barrel", "boost", "gadget", "grip"],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 54,
+        "rof": 400,
+        "damage": 189,
+        "accuracy": 84,
+        "stability": 12,
+        "concealment": 20,
+        "threat": 24,
+        "reload_speed": 3.6
+      }
+    },
+    "deagle": {
+      "name": "Deagle Pistol",
+      "content_origin": null,
+      "required_rep_level": 36,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "extra",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "slide"
+      ],
+      "stats": {
+        "mag_size": 10,
+        "max_ammo": 60,
+        "rof": 400,
+        "damage": 126,
+        "accuracy": 76,
+        "stability": 28,
+        "concealment": 28,
+        "threat": 24,
+        "reload_speed": 3.1
+      }
+    }
+  },
+  "smg": {
+    "swedish_k": {
+      "name": "Swedish K Submachine Gun",
+      "content_origin": "Armored Transport DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 80,
+        "rof": 600,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 44,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3.9
+      }
+    },
+    "spec_ops": {
+      "name": "SpecOps Submachine Gun",
+      "content_origin": "Gage Weapon Pack #01 DLC",
+      "required_rep_level": 0,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 140,
+        "rof": 952,
+        "damage": 73.5,
+        "accuracy": 64,
+        "stability": 68,
+        "concealment": 23,
+        "threat": 8,
+        "reload_speed": 2.45
+      }
+    },
+    "mark_10": {
+      "name": "Mark 10 Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 2,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "gadget",
+        "lower_receiver",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 160,
+        "rof": 1000,
+        "damage": 60.9,
+        "accuracy": 48,
+        "stability": 64,
+        "concealment": 27,
+        "threat": 10,
+        "reload_speed": 2.7
+      }
+    },
+    "cr805b": {
+      "name": "CR 805B Submachine Gun",
+      "content_origin": "Biker Heist DLC",
+      "required_rep_level": 2,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 750,
+        "damage": 104,
+        "accuracy": 72,
+        "stability": 68,
+        "concealment": 18,
+        "threat": 10,
+        "reload_speed": 3.5
+      }
+    },
+    "akgen21": {
+      "name": "AK Gen 21 Tactical Submachine Gun",
+      "content_origin": "Jiu Feng Smuggler Pack",
+      "required_rep_level": 6,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 750,
+        "damage": 75.6,
+        "accuracy": 64,
+        "stability": 68,
+        "concealment": 23,
+        "threat": 14,
+        "reload_speed": 3.08
+      }
+    },
+    "jackets_piece": {
+      "name": "Jacket's Piece",
+      "content_origin": "Hotline Miami 2: Wrong Number - Digital Special Edition DLC",
+      "required_rep_level": 12,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 32,
+        "max_ammo": 150,
+        "rof": 1200,
+        "damage": 59.9,
+        "accuracy": 52,
+        "stability": 68,
+        "concealment": 25,
+        "threat": 10,
+        "reload_speed": 3
+      }
+    },
+    "compact_5": {
+      "name": "Compact-5 Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 13,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 210,
+        "rof": 750,
+        "damage": 46.2,
+        "accuracy": 44,
+        "stability": 80,
+        "concealment": 24,
+        "threat": 6,
+        "reload_speed": 3.6
+      }
+    },
+    "chicago_typewriter": {
+      "name": "Chicago Typewriter Submachine Gun",
+      "content_origin": "Community Item",
+      "required_rep_level": 14,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "foregrip",
+        "gadget",
+        "grip",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 50,
+        "max_ammo": 150,
+        "rof": 723,
+        "damage": 60.9,
+        "accuracy": 48,
+        "stability": 68,
+        "concealment": 18,
+        "threat": 12,
+        "reload_speed": 4.5
+      }
+    },
+    "wasp_ds": {
+      "name": "Wasp-DS SMG",
+      "content_origin": "Jiu Feng Smuggler Pack #4 DLC",
+      "required_rep_level": 15,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "exclusive_set",
+        "extra",
+        "gadget",
+        "magazine",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 240,
+        "rof": 1333,
+        "damage": 42,
+        "accuracy": 56,
+        "stability": 36,
+        "concealment": 29,
+        "threat": 22,
+        "reload_speed": 2.48
+      }
+    },
+    "miyaka_10": {
+      "name": "Miyaka 10 Submachine Gun",
+      "content_origin": "Jiu Feng Smuggler Pack #2 DLC",
+      "required_rep_level": 17,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 25,
+        "max_ammo": 175,
+        "rof": 1100,
+        "damage": 63,
+        "accuracy": 28,
+        "stability": 56,
+        "concealment": 26,
+        "threat": 10,
+        "reload_speed": 2.6
+      }
+    },
+    "cobra": {
+      "name": "Cobra Submachine Gun",
+      "content_origin": "Hotline Miami DLC",
+      "required_rep_level": 18,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 220,
+        "rof": 1000,
+        "damage": 46.2,
+        "accuracy": 28,
+        "stability": 68,
+        "concealment": 28,
+        "threat": 6,
+        "reload_speed": 2.75
+      }
+    },
+    "cmp": {
+      "name": "CMP Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 19,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 210,
+        "rof": 952,
+        "damage": 52.5,
+        "accuracy": 28,
+        "stability": 76,
+        "concealment": 26,
+        "threat": 8,
+        "reload_speed": 2.48
+      }
+    },
+    "para": {
+      "name": "Para Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 9,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 25,
+        "max_ammo": 150,
+        "rof": 682,
+        "damage": 68.3,
+        "accuracy": 44,
+        "stability": 64,
+        "concealment": 24,
+        "threat": 14,
+        "reload_speed": 3.23
+      }
+    },
+    "micro_uzi": {
+      "name": "Micro Uzi Submachine Gun",
+      "content_origin": "Yakuza Character Pack",
+      "required_rep_level": 19,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 32,
+        "max_ammo": 224,
+        "rof": 1200,
+        "damage": 46.2,
+        "accuracy": 28,
+        "stability": 76,
+        "concealment": 29,
+        "threat": 10,
+        "reload_speed": 2.6
+      }
+    },
+    "signature": {
+      "name": "Signature Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 20,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 200,
+        "rof": 750,
+        "damage": 60.9,
+        "accuracy": 64,
+        "stability": 44,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 2.85
+      }
+    },
+    "jackal": {
+      "name": "Jackal Submachine Gun",
+      "content_origin": "John Wick Weapon Pack DLC",
+      "required_rep_level": 20,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock",
+        "vertical_grip"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 60,
+        "stability": 52,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3.62
+      }
+    },
+    "mp40": {
+      "name": "Signature Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": ["barrel_ext", "boost", "gadget", "sight", "stock"],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 80,
+        "rof": 600,
+        "damage": 104,
+        "accuracy": 68,
+        "stability": 44,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3.05
+      }
+    },
+    "heather": {
+      "name": "Signature Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 25,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 32,
+        "max_ammo": 160,
+        "rof": 750,
+        "damage": 60.9,
+        "accuracy": 52,
+        "stability": 68,
+        "concealment": 28,
+        "threat": 10,
+        "reload_speed": 4
+      }
+    },
+    "krinkov": {
+      "name": "Krinkov Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 29,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "extra",
+        "foregrip",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 90,
+        "rof": 822,
+        "damage": 104,
+        "accuracy": 60,
+        "stability": 44,
+        "concealment": 21,
+        "threat": 22,
+        "reload_speed": 3.9
+      }
+    },
+    "blaster_9mm": {
+      "name": "Blaster 9mm Submachine Gun",
+      "content_origin": "Hotline Miami DLC",
+      "required_rep_level": 32,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 20,
+        "max_ammo": 220,
+        "rof": 896,
+        "damage": 46.2,
+        "accuracy": 28,
+        "stability": 76,
+        "concealment": 27,
+        "threat": 13,
+        "reload_speed": 3.28
+      }
+    },
+    "kobus_90": {
+      "name": "Kobus Submachine Gun",
+      "content_origin": null,
+      "required_rep_level": 36,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "lower_receiver",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 50,
+        "max_ammo": 150,
+        "rof": 909,
+        "damage": 58.8,
+        "accuracy": 52,
+        "stability": 60,
+        "concealment": 25,
+        "threat": 12,
+        "reload_speed": 3.4
+      }
+    },
+    "kross_vertex": {
+      "name": "Kross Vertex Submachine Gun",
+      "content_origin": "Gage Ninja Pack DLC",
+      "required_rep_level": 39,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 30,
+        "max_ammo": 150,
+        "rof": 1200,
+        "damage": 60.9,
+        "accuracy": 52,
+        "stability": 76,
+        "concealment": 20,
+        "threat": 10,
+        "reload_speed": 2.5
+      }
+    },
+    "tatonka": {
+      "name": "Tatonka Submachine Gun",
+      "content_origin": "Gage Russian Weapon Pack DLC",
+      "required_rep_level": 42,
+      "mod_slots": ["barrel_ext", "boost", "custom", "gadget", "grip", "sight"],
+      "stats": {
+        "mag_size": 64,
+        "max_ammo": 128,
+        "rof": 652,
+        "damage": 104,
+        "accuracy": 52,
+        "stability": 60,
+        "concealment": 24,
+        "threat": 10,
+        "reload_speed": 3.27
+      }
+    },
+    "patchett_l2a1": {
+      "name": "Patchett L2A1 Submachine Gun",
+      "content_origin": "Gage Historical Pack DLC",
+      "required_rep_level": 51,
+      "mod_slots": [
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 24,
+        "max_ammo": 96,
+        "rof": 545,
+        "damage": 104,
+        "accuracy": 52,
+        "stability": 76,
+        "concealment": 20,
+        "threat": 12,
+        "reload_speed": 3.3
+      }
+    },
+    "uzi": {
+      "name": "Uzi Submachine Gun",
+      "content_origin": "Hotline Miami DLC",
+      "required_rep_level": 55,
+      "mod_slots": [
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 40,
+        "max_ammo": 120,
+        "rof": 698,
+        "damage": 94.5,
+        "accuracy": 52,
+        "stability": 68,
+        "concealment": 24,
+        "threat": 12,
+        "reload_speed": 3.52
+      }
+    }
+  },
+  "special": {
+    "pistol_crossbow": {
+      "name": "Pistol Crossbow",
+      "content_origin": "Gage Ninja Pack DLC",
+      "required_rep_level": 16,
+      "mod_slots": ["ammunition", "barrel", "boost", "grip", "sight"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 25,
+        "rof": 50,
+        "damage": 350,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 26,
+        "threat": 10,
+        "reload_speed": 1.2
+      }
+    },
+    "compact_40mm": {
+      "name": "Compact 40MM Grenade Launcher",
+      "content_origin": null,
+      "required_rep_level": 20,
+      "mod_slots": ["ammunition", "boost", "charm", "gadget", "sight"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 6,
+        "rof": 30,
+        "damage": 1300,
+        "accuracy": 84,
+        "stability": 84,
+        "concealment": 22,
+        "threat": 37,
+        "reload_speed": 2.5
+      }
+    },
+    "hrl7": {
+      "name": "HRL-7 Rocket Launcher",
+      "content_origin": "Overkill Pack DLC",
+      "required_rep_level": 38,
+      "mod_slots": ["boost", "gadget", "sight"],
+      "stats": {
+        "mag_size": 1,
+        "max_ammo": 4,
+        "rof": 30,
+        "damage": 12500,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 5,
+        "threat": 37,
+        "reload_speed": 4.7
+      }
+    },
+    "china_puff": {
+      "name": "China Puff 40mm Grenade Launcher",
+      "content_origin": "Wolf Pack DLC",
+      "required_rep_level": 29,
+      "mod_slots": ["ammunition", "boost", "stock"],
+      "stats": {
+        "mag_size": 3,
+        "max_ammo": 6,
+        "rof": 50,
+        "damage": 960,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 18,
+        "threat": 37,
+        "reload_speed": 6.98
+      }
+    },
+    "commando_101": {
+      "name": "Commando 101 Rocket Launcher",
+      "content_origin": "Scarface Heist Pack DLC",
+      "required_rep_level": 41,
+      "mod_slots": ["boost"],
+      "stats": {
+        "mag_size": 4,
+        "max_ammo": 8,
+        "rof": 60,
+        "damage": 6200,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 5,
+        "threat": 37,
+        "reload_speed": 5.75
+      }
+    },
+    "ma_17": {
+      "name": "MA-17 Flamethrower",
+      "content_origin": null,
+      "required_rep_level": 47,
+      "mod_slots": ["barrel", "boost", "gadget", "magazine"],
+      "stats": {
+        "mag_size": 700,
+        "max_ammo": 1400,
+        "rof": 2000,
+        "damage": 7.4,
+        "accuracy": 0,
+        "stability": 0,
+        "concealment": 15,
+        "threat": 37,
+        "reload_speed": 8.5
+      }
+    },
+    "basilisk": {
+      "name": "Basilisk 3V Grenade Launcher",
+      "content_origin": "McShay Weapon Pack DLC",
+      "required_rep_level": 47,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "boost",
+        "exclusive_set",
+        "gadget",
+        "receiver",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 3,
+        "max_ammo": 9,
+        "rof": 182,
+        "damage": 320,
+        "accuracy": 36,
+        "stability": 76,
+        "concealment": 21,
+        "threat": 37,
+        "reload_speed": 7.33
+      }
+    },
+    "ove9000": {
+      "name": "OVE9000 Saw",
+      "content_origin": null,
+      "required_rep_level": 0,
+      "mod_slots": ["boost", "lower_receiver", "magazine"],
+      "stats": {
+        "mag_size": 150,
+        "max_ammo": 300,
+        "rof": 400,
+        "damage": 24.2,
+        "accuracy": 8,
+        "stability": 24,
+        "concealment": 16,
+        "threat": 24,
+        "reload_speed": 3.75
+      }
+    },
+    "arbiter": {
+      "name": "Arbiter Grenade Launcher",
+      "content_origin": "Gage Spec Ops Pack DLC",
+      "required_rep_level": 47,
+      "mod_slots": ["ammunition", "barrel", "boost", "gadget", "sight"],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 15,
+        "rof": 80,
+        "damage": 480,
+        "accuracy": 96,
+        "stability": 96,
+        "concealment": 18,
+        "threat": 37,
+        "reload_speed": 4.5
+      }
+    }
+  },
+  "shotgun": {
+    "locomotive": {
+      "name": "Locomotive 12G Shotgun",
+      "content_origin": null,
+      "required_rep_level": 13,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "grip",
+        "magazine",
+        "sight",
+        "stock",
+        "upper_receiver"
+      ],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 42,
+        "rof": 160,
+        "damage": 94.5,
+        "accuracy": 48,
+        "stability": 36,
+        "concealment": 23,
+        "threat": 28,
+        "reload_speed": 5
+      }
+    },
+    "gsps": {
+      "name": "GSPS 12G Shotgun",
+      "content_origin": "The Goat Simulator Heist DLC",
+      "required_rep_level": 23,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 42,
+        "rof": 160,
+        "damage": 94.5,
+        "accuracy": 48,
+        "stability": 36,
+        "concealment": 23,
+        "threat": 28,
+        "reload_speed": 5
+      }
+    },
+    "goliath": {
+      "name": "Goliath 12G Shotgun",
+      "content_origin": null,
+      "required_rep_level": 23,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 6,
+        "max_ammo": 54,
+        "rof": 333,
+        "damage": 44.1,
+        "accuracy": 56,
+        "stability": 44,
+        "concealment": 13,
+        "threat": 28,
+        "reload_speed": 2.55
+      }
+    },
+    "grimm": {
+      "name": "Grimm 12G Shotgun",
+      "content_origin": null,
+      "required_rep_level": 28,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "custom",
+        "foregrip",
+        "gadget",
+        "magazine",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 8,
+        "max_ammo": 104,
+        "rof": 300,
+        "damage": 18.9,
+        "accuracy": 12,
+        "stability": 48,
+        "concealment": 21,
+        "threat": 28,
+        "reload_speed": 2.9
+      }
+    },
+    "street_sweeper": {
+      "name": "Street Sweeper Shotgun",
+      "content_origin": "Gage Shotgun Pack DLC",
+      "required_rep_level": 33,
+      "mod_slots": [
+        "ammunition",
+        "barrel",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 12,
+        "max_ammo": 72,
+        "rof": 429,
+        "damage": 44.1,
+        "accuracy": 28,
+        "stability": 44,
+        "concealment": 21,
+        "threat": 28,
+        "reload_speed": 8
+      }
+    },
+    "argos": {
+      "name": "Argos III Shotgun",
+      "content_origin": "Jiu Feng Smuggler Pack #4 DLC",
+      "required_rep_level": 34,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "exclusive_set",
+        "extra",
+        "gadget",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 7,
+        "max_ammo": 35,
+        "rof": 270,
+        "damage": 115.5,
+        "accuracy": 48,
+        "stability": 40,
+        "concealment": 24,
+        "threat": 28,
+        "reload_speed": 3
+      }
+    },
+    "judge": {
+      "name": "The Judge Shotgun",
+      "content_origin": "Community Item",
+      "required_rep_level": 35,
+      "mod_slots": [
+        "ammunition",
+        "barrel_ext",
+        "boost",
+        "gadget",
+        "lower_receiver",
+        "sight"
+      ],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 35,
+        "rof": 500,
+        "damage": 162.8,
+        "accuracy": 52,
+        "stability": 28,
+        "concealment": 29,
+        "threat": 28,
+        "reload_speed": 2.25
+      }
+    },
+    "claire": {
+      "name": "Claire 12G Shotgun",
+      "content_origin": "Community Item",
+      "required_rep_level": 43,
+      "mod_slots": ["ammunition", "barrel", "boost", "stock"],
+      "stats": {
+        "mag_size": 2,
+        "max_ammo": 44,
+        "rof": 500,
+        "damage": 162.8,
+        "accuracy": 56,
+        "stability": 44,
+        "concealment": 10,
+        "threat": 28,
+        "reload_speed": 2.2
+      }
+    }
+  },
+  "sniper": {
+    "pronghorn": {
+      "name": "Pronghorn Sniper Rifle",
+      "content_origin": "McShay Weapon Pack DLC",
+      "required_rep_level": 19,
+      "mod_slots": [
+        "barrel",
+        "bolt",
+        "boost",
+        "exclusive_set",
+        "gadget",
+        "magazine",
+        "sight",
+        "stock"
+      ],
+      "stats": {
+        "mag_size": 5,
+        "max_ammo": 20,
+        "rof": 60,
+        "damage": 258.3,
+        "accuracy": 72,
+        "stability": 12,
+        "concealment": 18,
+        "threat": 28,
+        "reload_speed": 5.3
+      }
+    }
+  }
+}
