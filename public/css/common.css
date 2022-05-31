@@ -336,6 +336,54 @@ select {
 /*            SKILLS CSS          */
 /**********************************/
 
+.css_checkbox {
+  width: 100%; 
+}
+
+.css_checkbox input[type="checkbox"] {
+  opacity: 0;
+
+  padding: 0; 
+  margin: 0; 
+  
+  height: 0;
+  width: 0;
+}
+
+.css_checkbox, 
+.css_checkbox input[type="checkbox"] + label {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.css_checkbox input[type="checkbox"] + label {
+  column-gap: 6px; 
+}
+
+.css_checkbox input[type="checkbox"] + label,
+.css_checkbox input[type="checkbox"] + label::before {
+  padding: 0;
+  margin: 0; 
+}
+
+.css_checkbox input[type="checkbox"] + label::before {
+  content: ""; 
+  display: inline-block; 
+  
+  width: 24px;
+  height: 24px;
+
+  background: url('../img/checkbox.png') 0 0 / 24px 24px no-repeat;
+}
+
+.css_checkbox input[type="checkbox"]:checked + label::before {
+  content: ""; 
+  background: url('../img/checkbox_marked.png') 0 0 / 24px 24px no-repeat;
+}
+
+
 #sk_container_l {
   position: relative; 
   width: 100%; 

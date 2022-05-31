@@ -86,12 +86,14 @@ body {
   border-left: 10px solid transparent;
 
   align-self: stretch; 
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  align-items: center; 
 }
 
 .description_container > div {
-  position: absolute;
-  left: 0; 
-
   width: 100%; 
 }
 
@@ -333,13 +335,24 @@ body {
   color: rgb(240, 240, 240); 
 }
 
+.sk_disable_infamy, 
 .sk_points_remaining {
-  height: 15%; 
-
   display: flex; 
   flex-flow: row nowrap; 
   justify-content: center;
   align-items: center; 
+}
+
+.sk_disable_infamy {
+  height: 7%; 
+}
+
+.sk_disable_infamy label {
+  font-size: 16px; 
+}
+
+.sk_points_remaining {
+  height: 8%; 
 }
 
 .sk_points_remaining p {
