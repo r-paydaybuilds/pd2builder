@@ -686,7 +686,7 @@
     },
     "ketchnov": {
       "name": "KETCHNOV Byk-1 Assault Rifle",
-      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #2 DLC",
       "required_rep_level": 12,
       "mod_slots": [
         "barrel",
@@ -713,7 +713,7 @@
     },
     "ks12": {
       "name": "KS12 Urban",
-      "content_origin": "Jiu Fang Smuggler Pack #3 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #3 DLC",
       "required_rep_level": 40,
       "mod_slots": [
         "barrel_ext",
@@ -859,7 +859,7 @@
     },
     "tacmosconi": {
       "name": "Mosconi 12G Tactical Shotgun",
-      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "content_origin": "Jiu Feng Smuggler Pack DLC",
       "required_rep_level": 12,
       "mod_slots": [
         "ammunition",
@@ -988,7 +988,7 @@
     }
   },
   "akimbo_pistols": {
-    "bernetti9": {
+    "akimbo_bernetti9": {
       "name": "Akimbo Bernetti 9 Pistols",
       "content_origin": null,
       "required_rep_level": 0,
@@ -1319,7 +1319,7 @@
     },
     "akimbo_crosskill_chunky": {
       "name": "Akimbo Crosskill Chunky Compact",
-      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "content_origin": "Jiu Feng Smuggler Pack DLC",
       "required_rep_level": 24,
       "mod_slots": ["barrel_ext", "boost", "gadget", "magazine", "slide"],
       "stats": {
@@ -1336,7 +1336,7 @@
     },
     "akimbo_kang_54": {
       "name": "Akimbo Káng Arms Model 54 Pistols",
-      "content_origin": "Jiu Fang Smuggler Pack #3 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #3 DLC",
       "required_rep_level": 24,
       "mod_slots": [
         "barrel",
@@ -1360,7 +1360,7 @@
     },
     "akimbo_gecko": {
       "name": "Akimbo Káng Arms Model 54 Pistols",
-      "content_origin": "Jiu Fang Smuggler Pack #4 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #4 DLC",
       "required_rep_level": 24,
       "mod_slots": [
         "barrel",
@@ -1791,7 +1791,7 @@
     },
     "akimbo_miyaka": {
       "name": "Akimbo Miyaka 10 Special SMGs",
-      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #2 DLC",
       "required_rep_level": 17,
       "mod_slots": [
         "barrel",
@@ -1952,7 +1952,7 @@
     },
     "akimbo_akgen21": {
       "name": "Akimbo AK Gen 21 Tactical SMGs",
-      "content_origin": "Jiu Fang Smuggler Pack DLC",
+      "content_origin": "Jiu Feng Smuggler Pack DLC",
       "required_rep_level": 24,
       "mod_slots": [
         "barrel",
@@ -2245,7 +2245,7 @@
     },
     "kang": {
       "name": "Káng Arms X1 Sniper Rifle",
-      "content_origin": "Jiu Fang Smuggler Pack #2 DLC",
+      "content_origin": "Jiu Feng Smuggler Pack #2 DLC",
       "required_rep_level": 28,
       "mod_slots": ["barrel", "boost", "gadget", "magazine", "sight"],
       "stats": {

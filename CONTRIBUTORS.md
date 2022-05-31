@@ -35,5 +35,10 @@ pd2builder Contributors
   * Shout out to **[联合汉化组](https://modworkshop.net/mod/25388)**, most of skill/item name are based on their translation
   * **![√](https://cdn.discordapp.com/attachments/671478410220142592/678430571600412700/nice.jpg)**
 
+* **[Peter](https://github.com/pmvogt)**
+  * Data contributions
+  * Big kingpin guy
+
+
 [More contributors may or may not be found here](https://github.com/r-paydaybuilds/pd2builder/graphs/contributors)
 ### YOU ARE FREE TO ADD YOURSELF ON THIS IF YOU AT LEAST CONTRIBUTED ON SOMETHING.
