@@ -521,14 +521,16 @@ window.onload = async () => {
         });
     }
 
-<<<<<<< HEAD
     {
-        const searchBox = document.getElementById("wp_primary_search"),
-            options = document.querySelectorAll(".wp_select_option_group > span:not(.wp_select_group_label)");
-    
-        
+        const searchBox = document.getElementById("wp_primary_search");
+        const options = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"] > span:not(.wp_select_group_label)");
+        const weaponTypeButtons = document.querySelectorAll("#wp_navigator_wrapper > button");
 
         if(!builder.mobile) {
+            weaponTypeButtons.forEach(button => {
+                button.addEventListener("click", () => builder.gui.Weapon_ToggleType());
+            });
+
             // Add search bar functionality
             let originalInput = "";
 
@@ -617,8 +619,6 @@ window.onload = async () => {
         });*/
     }
 
-=======
->>>>>>> develop
     // Share build section //
     document.getElementById("io_copy_btn").addEventListener("click", () => {
         const e = document.getElementById("io_share_link"); 

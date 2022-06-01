@@ -537,6 +537,22 @@ export default class GUI {
     }
 
     /**
+     * Toggles between primary and secondary
+     */
+    Weapon_ToggleType() {
+        const isPrimary = document.querySelector("#wp_navigator_primary.wp_navigator_button_active") !== null;
+        const primaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"] > span:not(.wp_select_group_label)");
+        const secondaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"secondary\"] > span:not(.wp_select_group_label)");
+        if(isPrimary) {
+            primaryOptions.forEach(el => el.hidden = false);
+            secondaryOptions.forEach(el => el.hidden = true);
+        } else {
+            primaryOptions.forEach(el => el.hidden = true);
+            secondaryOptions.forEach(el => el.hidden = false);
+        }
+    }
+
+    /**
      * Select a specified armor.
      * @param {HTMLDivElement} armor An element object representing the clicked armor icon
      */
