@@ -29,11 +29,13 @@ for file in ./*.json; do
 done
 echo "done"
 
-echo "Minifying CSS"
-cd ../css
+#echo "Minifying CSS"
+#cd ../css
 #minify css
-for file in ./*.css; do
-    npx postcss $file > a
-    mv a $file
-done
-echo "done"
+#for file in ./*.css; do
+#    npx postcss $file > a
+#    mv a $file
+#done
+#echo "done"
+
+mv ../../LICENSE ../

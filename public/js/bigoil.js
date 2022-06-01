@@ -1,8 +1,9 @@
 import "./Util.js";
+import Language from "./Language.js";
 
+const lang = new Language(document.getElementById("langDrop"));
 // Full array of engines
 const engines = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; 
-
 // Valid engines 
 const valid_engines = {
     h_1: [1, 2],
@@ -15,7 +16,12 @@ const valid_engines = {
     lower: [1, 3, 4, 5, 7, 8, 9, 10]
 };
 
-document.onreadystatechange = () => {
+window.onload = () => {
+    lang.handleSelect(loadLanguage).then(obj => {
+        lang.loadDictionary(obj);
+        loadLanguage(lang.used);
+    });
+
     for(const e of document.getElementById("hydrogen").children) {
         e.addEventListener("click", () => {
             document.querySelector("#hydrogen > .selected").classList.remove("selected");
@@ -30,6 +36,7 @@ document.onreadystatechange = () => {
             }
         });
     }
+
     for(const e of document.getElementById("element").children) {
         e.addEventListener("click", () => {
             document.querySelector("#element > .selected").classList.remove("selected");
@@ -44,6 +51,7 @@ document.onreadystatechange = () => {
             }
         });
     }
+
     for(const e of document.getElementById("pressure").children) {
         e.addEventListener("click", () => {
             document.querySelector("#pressure > .selected").classList.remove("selected");
@@ -59,6 +67,12 @@ document.onreadystatechange = () => {
         });
     }
 };
+
+function loadLanguage(curLang) {
+    document.documentElement.setAttribute("lang", curLang);
+
+    document.querySelectorAll("[data-lang]").forEach(e => e.innerHTML = lang.get(e.dataset.lang));
+}
 
 function calculate() {
     const array = [];

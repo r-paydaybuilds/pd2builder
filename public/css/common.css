@@ -34,6 +34,7 @@ button {
   font-family: inherit; 
   line-height: inherit; 
   text-transform: none;
+  color: #000;
 }
 
 body {
@@ -83,7 +84,7 @@ div.navbar {
 }
 
 div.navbar a {
-  font-size: 1.1em; 
+  font-size: min(1.1em, 24px); 
   line-height: 2em; 
   text-decoration: none; 
   background-color: transparent; 
@@ -182,7 +183,7 @@ div.navbar .navbar-dropdown > div {
 }
 
 div.navbar .navbar-dropdown a {
-  font-size: 0.8em; 
+  font-size: min(0.8em, 20px); 
 }
 
 div.navbar .navbar-dropdown a:not(.current) {
@@ -335,6 +336,54 @@ select {
 /*            SKILLS CSS          */
 /**********************************/
 
+.css_checkbox {
+  width: 100%; 
+}
+
+.css_checkbox input[type="checkbox"] {
+  opacity: 0;
+
+  padding: 0; 
+  margin: 0; 
+  
+  height: 0;
+  width: 0;
+}
+
+.css_checkbox, 
+.css_checkbox input[type="checkbox"] + label {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.css_checkbox input[type="checkbox"] + label {
+  column-gap: 6px; 
+}
+
+.css_checkbox input[type="checkbox"] + label,
+.css_checkbox input[type="checkbox"] + label::before {
+  padding: 0;
+  margin: 0; 
+}
+
+.css_checkbox input[type="checkbox"] + label::before {
+  content: ""; 
+  display: inline-block; 
+  
+  width: 24px;
+  height: 24px;
+
+  background: url('../img/checkbox.png') 0 0 / 24px 24px no-repeat;
+}
+
+.css_checkbox input[type="checkbox"]:checked + label::before {
+  content: ""; 
+  background: url('../img/checkbox_marked.png') 0 0 / 24px 24px no-repeat;
+}
+
+
 #sk_container_l {
   position: relative; 
   width: 100%; 
@@ -389,7 +438,14 @@ select {
   align-items: center; 
 
   width: 100%; 
-  height: 100%; 
+  height: 100%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .sk_icon {
@@ -464,6 +520,13 @@ select {
   padding: 5px; 
 
   border: 2px solid transparent; 
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .pk_deck.pk_selected {
@@ -520,6 +583,13 @@ select {
   width: 50%; 
 
   border: 3px solid transparent; 
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .arm_icon,

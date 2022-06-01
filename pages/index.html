@@ -19,6 +19,9 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <meta name="apple-mobile-web-app-title" content="PD2Builder">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
     <title>PD2 Builder</title>
 
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -31,6 +34,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="license" href="./LICENSE">
   </head>
   <body>
     <!-- Navbar -->
@@ -785,6 +789,12 @@
           </div>
         </div>
         <div id="sk_description_container" class="description_container">
+          <div class="sk_disable_infamy">
+            <div class="css_checkbox">
+              <input type="checkbox" id="chk_disable_infamy">
+              <label for="chk_disable_infamy">Disable Infamy</label>
+            </div>
+          </div>
           <div class="sk_points_remaining">
             <p>Remaining skill points: <span></span></p> 
           </div>
@@ -973,6 +983,14 @@
             </div>
           </div>
           <div id="hacker" class="pk_deck">
+            <div class="pk_preview">
+              <p>HACKER</p>
+            </div>
+            <div class="pk_deck_cards">
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div id="leech" class="pk_deck">
             <div class="pk_preview">
               <p>HACKER</p>
             </div>
@@ -1267,6 +1285,12 @@
         <div class="th_icon">
           <div id="injector"></div>
         </div>
+        <div class="th_icon">
+          <div id="x1_zapper"></div>
+        </div>
+        <div class="th_icon">
+          <div id="leech_ampule"></div>
+        </div>
       </div>
       <div id="th_description_container" class="description_container">
         <div id="th_description" class="description_textbox bordered">
@@ -1316,7 +1340,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Save/Load Tab Content -->
     <div id="tab_io_page" class="tab_page_content">
       <div id="io_save" class="bordered">

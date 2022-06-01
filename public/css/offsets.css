@@ -342,419 +342,438 @@
 /* CREW CHIEF */ 
 
 #crew_chief .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((48% / (1056 - 48)) * 100);
+  background-position: 0 calc((48% / (1104 - 48)) * 100);
 }
 #crew_chief .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((48% / (1104 - 48)) * 100);
 }
 #crew_chief .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((48% / (1104 - 48)) * 100);
 }
 #crew_chief .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((48% / (1104 - 48)) * 100);
 }
 #crew_chief .pk_deck_cards > div:nth-of-type(9)::after,
 #crew_chief .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((48% / (1056 - 48)) * 100);  
+  background-position: calc((192% / (240 - 48)) * 100) calc((48% / (1104 - 48)) * 100);  
 }
 
 
 /* MUSCLE */ 
 
 #muscle .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((96% / (1056 - 48)) * 100);
+  background-position: 0 calc((96% / (1104 - 48)) * 100);
 }
 #muscle .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((96% / (1104 - 48)) * 100);
 }
 #muscle .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((96% / (1104 - 48)) * 100);
 }
 #muscle .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((96% / (1104 - 48)) * 100);
 }
 #muscle .pk_deck_cards > div:nth-of-type(9)::after,
 #muscle .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((96% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((96% / (1104 - 48)) * 100);
 }
 
 
 /* ARMORER */ 
 
 #armorer .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((144% / (1056 - 48)) * 100);
+  background-position: 0 calc((144% / (1104 - 48)) * 100);
 }
 #armorer .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((144% / (1104 - 48)) * 100);
 }
 #armorer .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((144% / (1104 - 48)) * 100);
 }
 #armorer .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((144% / (1104 - 48)) * 100);
 }
 #armorer .pk_deck_cards > div:nth-of-type(9)::after,
 #armorer .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((144% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((144% / (1104 - 48)) * 100);
 }
 
 
 /* ROGUE */ 
 
 #rogue .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((192% / (1056 - 48)) * 100); 
+  background-position: 0 calc((192% / (1104 - 48)) * 100); 
 }
 #rogue .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((192% / (1104 - 48)) * 100);
 }
 #rogue .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((192% / (1104 - 48)) * 100);
 }
 #rogue .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((192% / (1104 - 48)) * 100);
 }
 #rogue .pk_deck_cards > div:nth-of-type(9)::after,
 #rogue .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((192% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((192% / (1104 - 48)) * 100);
 }
 
 
 /* HITMAN */ 
 
 #hitman .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((240% / (1056 - 48)) * 100); 
+  background-position: 0 calc((240% / (1104 - 48)) * 100); 
 }
 #hitman .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((240% / (1104 - 48)) * 100);
 }
 #hitman .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((240% / (1104 - 48)) * 100);
 }
 #hitman .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((240% / (1104 - 48)) * 100);
 }
 #hitman .pk_deck_cards > div:nth-of-type(9)::after,
 #hitman .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((240% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((240% / (1104 - 48)) * 100);
 }
 
 /* CROOK */ 
 
 #crook .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((288% / (1056 - 48)) * 100); 
+  background-position: 0 calc((288% / (1104 - 48)) * 100); 
 }
 #crook .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((288% / (1104 - 48)) * 100);
 }
 #crook .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((288% / (1104 - 48)) * 100);
 }
 #crook .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((288% / (1104 - 48)) * 100);
 }
 #crook .pk_deck_cards > div:nth-of-type(9)::after,
 #crook .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((288% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((288% / (1104 - 48)) * 100);
 }
 
 
 /* BURGLAR */ 
 
 #burglar .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((336% / (1056 - 48)) * 100); 
+  background-position: 0 calc((336% / (1104 - 48)) * 100); 
 }
 #burglar .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((336% / (1104 - 48)) * 100);
 }
 #burglar .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((336% / (1104 - 48)) * 100);
 }
 #burglar .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((336% / (1104 - 48)) * 100);
 }
 #burglar .pk_deck_cards > div:nth-of-type(9)::after,
 #burglar .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((336% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((336% / (1104 - 48)) * 100);
 }
 
 
 /* INFILTRATOR */ 
 
 #infiltrator .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((384% / (1056 - 48)) * 100); 
+  background-position: 0 calc((384% / (1104 - 48)) * 100); 
 }
 #infiltrator .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((384% / (1104 - 48)) * 100);
 }
 #infiltrator .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((384% / (1104 - 48)) * 100);
 }
 #infiltrator .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((384% / (1104 - 48)) * 100);
 }
 #infiltrator .pk_deck_cards > div:nth-of-type(9)::after,
 #infiltrator .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((384% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((384% / (1104 - 48)) * 100);
 }
 
 
 /* SOCIOPATH */ 
 
 #sociopath .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((432% / (1056 - 48)) * 100); 
+  background-position: 0 calc((432% / (1104 - 48)) * 100); 
 }
 #sociopath .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((432% / (1104 - 48)) * 100);
 }
 #sociopath .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((432% / (1104 - 48)) * 100);
 }
 #sociopath .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((432% / (1104 - 48)) * 100);
 }
 #sociopath .pk_deck_cards > div:nth-of-type(9)::after,
 #sociopath .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((432% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((432% / (1104 - 48)) * 100);
 }
 
 
 /* GAMBLER */ 
 
 #gambler .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((480% / (1056 - 48)) * 100); 
+  background-position: 0 calc((480% / (1104 - 48)) * 100); 
 }
 #gambler .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((480% / (1104 - 48)) * 100);
 }
 #gambler .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((480% / (1104 - 48)) * 100);
 }
 #gambler .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((480% / (1104 - 48)) * 100);
 }
 #gambler .pk_deck_cards > div:nth-of-type(9)::after,
 #gambler .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((480% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((480% / (1104 - 48)) * 100);
 }
 
 
 /* GRINDER */ 
 
 #grinder .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((528% / (1056 - 48)) * 100); 
+  background-position: 0 calc((528% / (1104 - 48)) * 100); 
 }
 #grinder .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((528% / (1104 - 48)) * 100);
 }
 #grinder .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((528% / (1104 - 48)) * 100);
 }
 #grinder .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((528% / (1104 - 48)) * 100);
 }
 #grinder .pk_deck_cards > div:nth-of-type(9)::after,
 #grinder .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((528% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((528% / (1104 - 48)) * 100);
 }
 
 
 /* YAKUZA */ 
 
 #yakuza .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((576% / (1056 - 48)) * 100); 
+  background-position: 0 calc((576% / (1104 - 48)) * 100); 
 }
 #yakuza .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((576% / (1104 - 48)) * 100);
 }
 #yakuza .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((576% / (1104 - 48)) * 100);
 }
 #yakuza .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((576% / (1104 - 48)) * 100);
 }
 #yakuza .pk_deck_cards > div:nth-of-type(9)::after,
 #yakuza .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((576% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((576% / (1104 - 48)) * 100);
 }
 
 
 /* EX-PRESIDENT */ 
 
 #ex-president .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((624% / (1056 - 48)) * 100); 
+  background-position: 0 calc((624% / (1104 - 48)) * 100); 
 }
 #ex-president .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((624% / (1104 - 48)) * 100);
 }
 #ex-president .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((624% / (1104 - 48)) * 100);
 }
 #ex-president .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((624% / (1104 - 48)) * 100);
 }
 #ex-president .pk_deck_cards > div:nth-of-type(9)::after,
 #ex-president .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((624% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((624% / (1104 - 48)) * 100);
 }
 
 
 /* MANIAC */ 
 
 #maniac .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((672% / (1056 - 48)) * 100); 
+  background-position: 0 calc((672% / (1104 - 48)) * 100); 
 }
 #maniac .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((672% / (1104 - 48)) * 100);
 }
 #maniac .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((672% / (1104 - 48)) * 100);
 }
 #maniac .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((672% / (1104 - 48)) * 100);
 }
 #maniac .pk_deck_cards > div:nth-of-type(9)::after,
 #maniac .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((672% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((672% / (1104 - 48)) * 100);
 }
 
 
 /* ANARCHIST */ 
 
 #anarchist .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((720% / (1056 - 48)) * 100); 
+  background-position: 0 calc((720% / (1104 - 48)) * 100); 
 }
 #anarchist .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((720% / (1104 - 48)) * 100);
 }
 #anarchist .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((720% / (1104 - 48)) * 100);
 }
 #anarchist .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((720% / (1104 - 48)) * 100);
 }
 #anarchist .pk_deck_cards > div:nth-of-type(9)::after,
 #anarchist .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((720% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((720% / (1104 - 48)) * 100);
 }
 
 
 /* BIKER */ 
 
 #biker .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((768% / (1056 - 48)) * 100); 
+  background-position: 0 calc((768% / (1104 - 48)) * 100); 
 }
 #biker .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((768% / (1104 - 48)) * 100);
 }
 #biker .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((768% / (1104 - 48)) * 100);
 }
 #biker .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((768% / (1104 - 48)) * 100);
 }
 #biker .pk_deck_cards > div:nth-of-type(9)::after,
 #biker .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((768% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((768% / (1104 - 48)) * 100);
 }
 
 
 /* KINGPIN */ 
 
 #kingpin .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((816% / (1056 - 48)) * 100); 
+  background-position: 0 calc((816% / (1104 - 48)) * 100); 
 }
 #kingpin .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((816% / (1104 - 48)) * 100);
 }
 #kingpin .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((816% / (1104 - 48)) * 100);
 }
 #kingpin .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((816% / (1104 - 48)) * 100);
 }
 #kingpin .pk_deck_cards > div:nth-of-type(9)::after,
 #kingpin .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((816% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((816% / (1104 - 48)) * 100);
 }
 
 
 /* SICARIO */ 
 
 #sicario .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((864% / (1056 - 48)) * 100); 
+  background-position: 0 calc((864% / (1104 - 48)) * 100); 
 }
 #sicario .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((864% / (1104 - 48)) * 100);
 }
 #sicario .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((864% / (1104 - 48)) * 100);
 }
 #sicario .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((864% / (1104 - 48)) * 100);
 }
 #sicario .pk_deck_cards > div:nth-of-type(9)::after,
 #sicario .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((864% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((864% / (1104 - 48)) * 100);
 }
 
 
 /* STOIC */ 
 
 #stoic .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((912% / (1056 - 48)) * 100); 
+  background-position: 0 calc((912% / (1104 - 48)) * 100); 
 }
 #stoic .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((912% / (1104 - 48)) * 100);
 }
 #stoic .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((912% / (1104 - 48)) * 100);
 }
 #stoic .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((912% / (1104 - 48)) * 100);
 }
 #stoic .pk_deck_cards > div:nth-of-type(9)::after,
 #stoic .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((912% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((912% / (1104 - 48)) * 100);
 }
 
 
 /* TAG TEAM */ 
 
 #tag_team .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((960% / (1056 - 48)) * 100); 
+  background-position: 0 calc((960% / (1104 - 48)) * 100); 
 }
 #tag_team .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((960% / (1104 - 48)) * 100);
 }
 #tag_team .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((960% / (1104 - 48)) * 100);
 }
 #tag_team .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((960% / (1104 - 48)) * 100);
 }
 #tag_team .pk_deck_cards > div:nth-of-type(9)::after,
 #tag_team .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((960% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((960% / (1104 - 48)) * 100);
 }
 
 
 /* HACKER */ 
 
 #hacker .pk_deck_cards > div:nth-of-type(1)::after {
-  background-position: 0 calc((1008% / (1056 - 48)) * 100); 
+  background-position: 0 calc((1008% / (1104 - 48)) * 100); 
 }
 #hacker .pk_deck_cards > div:nth-of-type(3)::after {
-  background-position: calc((48% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+  background-position: calc((48% / (240 - 48)) * 100) calc((1008% / (1104 - 48)) * 100);
 }
 #hacker .pk_deck_cards > div:nth-of-type(5)::after {
-  background-position: calc((96% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+  background-position: calc((96% / (240 - 48)) * 100) calc((1008% / (1104 - 48)) * 100);
 }
 #hacker .pk_deck_cards > div:nth-of-type(7)::after {
-  background-position: calc((144% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+  background-position: calc((144% / (240 - 48)) * 100) calc((1008% / (1104 - 48)) * 100);
 }
 #hacker .pk_deck_cards > div:nth-of-type(9)::after,
 #hacker .pk_preview_card > div > div::after {
-  background-position: calc((192% / (240 - 48)) * 100) calc((1008% / (1056 - 48)) * 100);
+  background-position: calc((192% / (240 - 48)) * 100) calc((1008% / (1104 - 48)) * 100);
+}
+
+/* LEECH */ 
+
+#leech .pk_deck_cards > div:nth-of-type(1)::after {
+  background-position: 0 calc((1056% / (1104 - 48)) * 100); 
+}
+#leech .pk_deck_cards > div:nth-of-type(3)::after {
+  background-position: calc((48% / (240 - 48)) * 100) calc((1056% / (1104 - 48)) * 100);
+}
+#leech .pk_deck_cards > div:nth-of-type(5)::after {
+  background-position: calc((96% / (240 - 48)) * 100) calc((1056% / (1104 - 48)) * 100);
+}
+#leech .pk_deck_cards > div:nth-of-type(7)::after {
+  background-position: calc((144% / (240 - 48)) * 100) calc((1056% / (1104 - 48)) * 100);
+}
+#leech .pk_deck_cards > div:nth-of-type(9)::after,
+#leech .pk_preview_card > div > div::after {
+  background-position: calc((192% / (240 - 48)) * 100) calc((1056% / (1104 - 48)) * 100);
 }
 
 
@@ -863,6 +882,14 @@
 
 #injector {
   background-image: url("../img/throwables/injector.png"); 
+}
+
+#x1_zapper {
+  background-image: url("../img/throwables/x1_zapper.png"); 
+}
+
+#leech_ampule {
+  background-image: url("../img/throwables/leech_ampule.png"); 
 }
 
 

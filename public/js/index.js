@@ -1,83 +1,27 @@
-if("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js");
-}
-
 import Builder from "./Builder.js";
-import Util, { XScrollTransformer, UIEventHandler } from "./Util.js";
-
-const langs = new Map([["en-us", "English (American)"], ["ru-ru", "Russian"], ["zh-cn", "Simplified Chinese"]]);
-let defaultLang = "en-us";
-
-const builder = new Builder(window.innerWidth < 1003);
+import Util, { UIEventHandler } from "./Util.js";
+import Language from "./Language.js";
 
 // Change from desktop or mobile version if screen is too big or too small
 window.addEventListener("resize", () => {
     const url = new URL(window.location.href);
-    if(!builder.mobile && window.innerWidth < 1003) {
+    if(!url.pathname.endsWith("mobile.html") && window.innerWidth < 1003) {
         url.pathname += "mobile.html";
         window.location.replace(url);
-    } else if(builder.mobile && window.innerWidth >= 1003) {
+    } else if(url.pathname.endsWith("mobile.html") && window.innerWidth >= 1003) {
         url.pathname = url.pathname.replace("mobile.html", "");
         window.location.replace(url);
     }
 });
 
-document.onreadystatechange = async () => {
-    let fetchLang, curLang;
-    //
+const builder = new Builder(window.innerWidth < 1003);
+
+window.onload = async () => {
+    // Load language
+    builder.lang = new Language(document.getElementById("langDrop"));
+    const fetchLang = builder.lang.handleSelect(builder.loadLanguage, builder);
+
     // Bind Events on page 
-    {
-        const langDrop = document.getElementById("langDrop");
-        const params = new URLSearchParams(window.location.search);
-        // Fill the select node
-        for(const [langKey, langName] of langs) {
-            const option = new Option(langName, langKey);
-            langDrop.appendChild(option);
-        }
-
-        const langKeys = [...langs.keys()];
-        // If a param with lang has been included, force that one
-        if(params.has("lang") && langs.has(params.get("lang"))) {
-            const lang = params.get("lang");
-            curLang = lang;
-            sessionStorage.setItem("lang", lang);
-        // If user already configured a lang use that one
-        } else if(sessionStorage.getItem("lang")) {
-            curLang = sessionStorage.getItem("lang");
-        } else {
-            // Check if we have the lang currently being used in the PC
-            if(langs.has(navigator.language.toLowerCase())) {
-                defaultLang = navigator.language;
-            // Check if we have a variant of such 
-            } else if(langKeys.some(langKey => langKey.startsWith(navigator.language.split("-")[0]) )) {
-                defaultLang = langKeys.find(langKey => 
-                    langKey.startsWith(navigator.language.split("-")[0])
-                );
-            } else if(navigator.languages) {
-                // Check if we even have any of the languages the PC has
-                defaultLang = navigator.languages.find(e => langs.has(e.toLowerCase())) 
-                    // Then check if we have any other variants of the languages that the PC has
-                    || langKeys.find(langKey => navigator.languages.some(navLang => langKey.startsWith(navLang.split("-")[0]) ))
-                    // and then if nothing worked, just go for the already default language
-                    || defaultLang;
-            }
-
-            defaultLang = defaultLang.toLowerCase(),
-            curLang = defaultLang;
-        }
-        // Fetch it and put it as default on select
-        fetchLang = fetch(`./lang/${curLang}.json`).then(res => res.json()),
-        langDrop.value = curLang;
-
-        // Bind event for when select is changed
-        langDrop.addEventListener("change", async (e) => {
-            const choosenLang = e.target.value;
-            sessionStorage.setItem("lang", choosenLang);
-            builder.loadLanguage(await fetch(`./lang/${choosenLang}.json`).then(res => res.json()), choosenLang);
-            window.history.pushState(Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current), `language changed to ${choosenLang}`);
-        });
-    }
-
     if(builder.mobile) {
         //Detect when you dont click on x part of the document
         document.addEventListener("click", ev => {
@@ -95,34 +39,8 @@ document.onreadystatechange = async () => {
         );
         
         { //Slide to exit description
-            const desc = document.getElementById("description_card"),
-                descStop = ev => {
-                    for(const touch of ev.targetTouches) {
-                        if(touch.identifier === currentTouch) return;
-                    }
-                    if(ev.touches.length > 0) {
-                        currentTouch = ev.touches.item(0).identifier;
-                    } else { 
-                        currentTouch = null;
-                        if(remaining <= desc.clientWidth/-3) {
-                            builder.gui.DescriptionCard_Show(false);
-                        } else {
-                            builder.gui.DescriptionCard_Show();
-                        }
-                        desc.removeEventListener("touchend", descStop);
-                        desc.removeEventListener("touchmove", descMove);
-                    }
-                }, descMove = ev => {
-                    ev.preventDefault();
-                    for(const touch of ev.changedTouches) {
-                        if(touch.identifier !== currentTouch) continue;
-                        remaining = -(touch.clientX - startX);
-                        if(remaining > 0) remaining = 0;
-                        builder.gui.DescriptionCard_Analog(remaining);
-                        return;
-                    }
-                };
-            let remaining = 0, startX = 0, currentTouch = null;
+            const desc = document.getElementById("description_card");
+            let remaining = 0, startX = 0, currentTouch = null, listen = false;
 
             desc.addEventListener("touchstart", ev => {
                 if(currentTouch !== null) return;
@@ -130,11 +48,34 @@ document.onreadystatechange = async () => {
                 currentTouch = touch.identifier;
 
                 startX = touch.clientX;
-                desc.addEventListener("touchend", descStop, {
-                    passive: true
-                });
-                desc.addEventListener("touchmove", descMove);
+                listen = true;
             });
+            desc.addEventListener("touchmove", ev => {
+                if(!listen) return;
+                ev.preventDefault();
+
+                const touch = Util.findTouch(ev.changedTouches, currentTouch);
+                if(touch) {
+                    remaining = -(touch.clientX - startX);
+                    if(remaining > 0) remaining = 0;
+                    builder.gui.DescriptionCard_Analog(remaining);
+                }
+            });
+            desc.addEventListener("touchend", ev => {
+                if(!listen || Util.findTouch(ev.touches, currentTouch)) return;
+
+                if(ev.touches.length > 0) {
+                    currentTouch = ev.touches.item(0).identifier;
+                } else { 
+                    currentTouch = null;
+                    if(remaining <= desc.clientWidth/-3) {
+                        builder.gui.DescriptionCard_Show(false);
+                    } else {
+                        builder.gui.DescriptionCard_Show();
+                    }
+                    listen = false;
+                }
+            }, { passive: true });
             desc.addEventListener("touchcancel", () => {
                 currentTouch = null;
                 builder.gui.DescriptionCard_Show();            
@@ -165,7 +106,7 @@ document.onreadystatechange = async () => {
             trees[index + 1].click();
         });
 
-        new XScrollTransformer(document.getElementById("tab_page_buttons"), -1);
+        builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
     // Tab page navigation //
@@ -225,6 +166,9 @@ document.onreadystatechange = async () => {
 
         // On click event, add skill
         e.addEventListener("click", ev => {
+            // If mobile version, disregard user events. (they fire from UIEventHandler, click included)
+            if (builder.mobile && ev.isTrusted) return; 
+            
             if(successHolding) {
                 successHolding = false;
                 ev.stopPropagation();
@@ -249,7 +193,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `added skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -280,7 +224,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exps, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `removed skill ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -345,7 +289,7 @@ document.onreadystatechange = async () => {
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -379,8 +323,10 @@ document.onreadystatechange = async () => {
 
     // Perk deck cards highlight // 
     if(builder.mobile) {
+        document.querySelectorAll(".pk_deck_cards").forEach(ring => 
+            builder.scrollTransformer.addContext(ring, -1, false)
+        );
         document.querySelectorAll(".pk_deck_cards > div").forEach(e => {
-            new XScrollTransformer(e.parentElement, -0.5, false);
             new UIEventHandler({
                 click: () => e.parentElement.parentElement.dispatchEvent(new MouseEvent("click", { detail: -1 })),
                 hold: () => {
@@ -445,7 +391,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used armor ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -488,7 +434,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used throwable ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -532,7 +478,7 @@ document.onreadystatechange = async () => {
 
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
-                    Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                     `used perk ${id}`,
                     builder.io.GetEncodedBuild()
                 );
@@ -549,7 +495,7 @@ document.onreadystatechange = async () => {
 
                 if(ev.isTrusted || ev.detail == -1) {
                     window.history.pushState(
-                        Util.makeState(builder.lang.used, builder.exp, builder.gui.Tab_Current),
+                        Util.makeState(null, builder.exp, builder.gui.Tab_Current),
                         `used perk ${id}`,
                         builder.io.GetEncodedBuild()
                     );
@@ -575,6 +521,7 @@ document.onreadystatechange = async () => {
         });
     }
 
+<<<<<<< HEAD
     {
         const searchBox = document.getElementById("wp_primary_search"),
             options = document.querySelectorAll(".wp_select_option_group > span:not(.wp_select_group_label)");
@@ -670,6 +617,8 @@ document.onreadystatechange = async () => {
         });*/
     }
 
+=======
+>>>>>>> develop
     // Share build section //
     document.getElementById("io_copy_btn").addEventListener("click", () => {
         const e = document.getElementById("io_share_link"); 
@@ -703,9 +652,11 @@ document.onreadystatechange = async () => {
         for(const [type, value] of Object.entries(e.state)) {
             switch(type) {
             case "lang":
-                sessionStorage.setItem("lang", value);
+                localStorage.setItem("lang", value);
                 document.getElementById("langDrop").value = value;
-                builder.loadLanguage(await fetch(`./lang/${value}.json`).then(res => res.json()), value);
+                builder.lang.loadDictionary(await fetch(`./lang/${value}.json`).then(res => res.json()));
+                builder.lang.used = value;
+                builder.loadLanguage(value);
                 break;
             case "tab":
                 sessionStorage.setItem("curTab", value);
@@ -781,8 +732,24 @@ document.onreadystatechange = async () => {
     await builder.fetchPromises;
 
     // Load language
-    builder.loadLanguage(await fetchLang, curLang);
+    builder.lang.loadDictionary(await fetchLang);
+    builder.loadLanguage(builder.lang.curLang);
     
+    // Check on Service Worker and if its not in dev environment
+    if("serviceWorker" in navigator /*){//*/&& location.port !== "9999") {
+        navigator.serviceWorker.register("./sw.js").then(req => {
+            req.onupdatefound = () => {
+                const sw = req.installing;
+                sw.onstatechange = () => {
+                    if(sw.state !== "installed" || !navigator.serviceWorker.controller) return;
+                    if(window.confirm(builder.lang.get("system.update"))) {
+                        location.reload();
+                    }
+                }; 
+            };
+        });
+    }
+
 
     // Prepare document when first opening // 
     builder.gui.Tab_ChangeTo("tab_skills_page");
@@ -794,9 +761,14 @@ document.onreadystatechange = async () => {
     if (builder.io.HasToLoadBuild()) {
         builder.io.LoadBuildFromIterable(new URLSearchParams(window.location.search));
     }
-    window.history.replaceState(Util.makeState(curLang, builder.exp), "PD2 Builder");
-    builder.gui.Tab_ChangeTo(window.sessionStorage.getItem("curTab") || "tab_skills_page");
-
+    {
+        let tabChange = window.sessionStorage.getItem("curTab") || "tab_skills_page";
+        if (document.getElementById(tabChange) == null) tabChange = "tab_skills_page";
+        builder.gui.HandleRequirements(tabChange.replace(/tab_|_page/g, ""));
+        builder.gui.Tab_ChangeTo(tabChange);
+        window.history.replaceState(Util.makeState(builder.lang.used, builder.exp, tabChange), "PD2 Builder");
+    }
+    
     // Disable the loading spinner so people know that they should touch things now //
     builder.gui.LoadingSpinner_Display(false);
 };

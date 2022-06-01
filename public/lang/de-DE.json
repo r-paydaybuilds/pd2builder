@@ -240,7 +240,7 @@
         },
         "overdog": {
             "name": "OVERDOG",
-            "description": "When you are surrounded by threee enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
+            "description": "When you are surrounded by three enemies or more, you receive 12% less damage from enemies.\nYour second and each consecutive melee hit within 1 second of the last one will deal 10 times its normal damage.",
             "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds."
         },
         "basic_close_combat": {
@@ -577,6 +577,26 @@
         "botnet": {
             "name": "Botnet",
             "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health."
+        },
+        "momentum": {
+            "name": "Momentum",
+            "description": "Unlocks and equips the Leech Ampule.\tChanging to another perk deck will make the Leech Ampule unavailable again. The Leech Ampule replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\tWhile in game you can use throwable key to activate the Leech Ampule.\tActivating the Leech Ampule will restore 40% health and disables your armor for the duration of the Leech Ampule.\tWhile the Leech Ampule is active your health is divided into segments of 20% and damage taken from enemies removes one segment. Killing 2 enemies will restore one segment of your health and block damage for 1 second. Anytime you take damage your teammates are healed for 5% of their health.\tThe Leech Ampule lasts 6 seconds with a 30 seconds cooldown."
+        },
+        "indomitable": {
+            "name": "Indomitable",
+            "description": "Your maximum health is increased by 20%.\tWhile the Leech Ampule is active you cannot go into bleedout, but being out of health will slow you down by 80%."
+        },
+        "stalwart": {
+            "name": "Stalwart",
+            "description": "The Leech Ampule duration is increased to 10 seconds.\tKilling an enemy reduces the cooldown of the Leech Ampule by 1 second(s).\tTaking damage now heals teammates by 10% of their health."
+        },
+        "built_different": {
+            "name": "Built Different",
+            "description": "Your maximum health is increased by 20%."
+        },
+        "symbiosis": {
+            "name": "Symbiosis",
+            "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%."
         }
     },
     "perk_decks": {
@@ -663,6 +683,10 @@
         "hacker": {
             "name": "Hacker",
             "description": "Using your sharp mind and gear, you can bring any security system to its knees with the push of a button. You are never caught unaware by a camera or security guard, but if things do go awry, you can just as easily brute-force your way into enemy comms to deliver a nasty surprise for anyone listening."
+        },
+        "leech": {
+            "name": "Leech",
+            "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team."
         }
     },
     "skills": {
@@ -964,11 +988,11 @@
         },
         "equilibrium": {
             "name": "Equilibrium",
-            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+            "description": "BASIC: 1 point\tDecreases the time it takes to draw and holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
             "name": "Gun Nut",
-            "description": "BASIC: 2 points\tYour pistoll magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
+            "description": "BASIC: 2 points\tYour pistol magazine sizes are increased by 5 bullets.\nACE: 4 points\tYou gain a 50% increased rate of fire with pistols."
         },
         "akimbo": {
             "name": "Akimbo",
@@ -1046,6 +1070,7 @@
             "skill": "REQUIRES THE %{name} SKILL",
             "deployable": "REQUIRES THE %{name} DEPLOYABLE EQUIPPED"
         },
+        "update": "An update was found and downloaded, do you want to refresh?",
         "equipped": "EQUIPPED",
         "equip": "EQUIP.",
         "selected": "SELECTED",
@@ -1137,7 +1162,9 @@
             "p1": "This site was made possible by the combined effort of r/paydaybuilds community.",
             "p2": "Contributors of this project can be found &{here}.",
             "license": "This software is provided under the &{MIT License}. Do what you want with it, but please respect its open-source nature.",
-            "reach": "Reach us at: "
+            "reach": "Reach us at: ",
+            "mobilep1": "Courtesy of r/paydaybuilds subreddit.",
+            "mobilep2": "Licensed under the terms of the &{MIT license}."
         }
     },
     "throwables": {
@@ -1208,6 +1235,21 @@
         "injector": {
             "name": "Injector",
             "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies."
+        },
+        "x1_zapper": {
+            "name": "X1-ZAPper",
+            "description": "Shrapnel is all well and good, but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage."
+        },
+        "leech_ampule": {
+            "name": "Leech Ampule",
+            "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts."
         }
+    },
+    "bigoil": {
+        "nitrogen": "Nitrogen",
+        "deuterium": "Deuterium",
+        "helium": "Helium",
+        "lab": "LAB",
+        "stairs": "STAIRS"
     }
 }

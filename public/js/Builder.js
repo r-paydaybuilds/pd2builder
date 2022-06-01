@@ -1,4 +1,4 @@
-import { SkillMap, System, DBMap } from "./Util.js";
+import { SkillMap, System, DBMap, XScrollTransformer } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
@@ -71,7 +71,7 @@ export default class Builder {
         this.gui = new GUI(this);
         
         /**
-         * The Databases where you can find info of each type of thing
+         * The databases where you can find info of each type of thing
          * @type {DBMap}
          */
         this.dbs = new DBMap([
@@ -83,6 +83,12 @@ export default class Builder {
             ["armors", null],
             ["primaries", null]
         ]);
+
+        /**
+         * Util class that transforms X movement to X scrolling
+         * @type {XScrollTransformer}
+         */
+        this.scrollTransformer = new XScrollTransformer();
         
         /**
          * The promise of the fetching of all databases
@@ -103,9 +109,12 @@ export default class Builder {
         this.lang;
     }
 
-    loadLanguage(obj, lang) {
-        this.lang = new Language(obj, lang);
-        document.documentElement.setAttribute("lang", lang);
+    /**
+     * Loads language to the Builder page
+     * @param {string} curLang Current lang that is being sued
+     */
+    loadLanguage(curLang) {
+        document.documentElement.setAttribute("lang", curLang);
 
         document.querySelectorAll(".arm_icon > div, .th_icon > div, .dp_icon > div").forEach(e =>
             e.setAttribute("data-equip", this.lang.get("system.equip"))
