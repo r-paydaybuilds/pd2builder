@@ -1,5 +1,5 @@
 {
-  "assault_rifles": {
+  "assault_rifle": {
     "golden_ak": {
       "name": "Golden AK7.62",
       "content_origin": "Community Item",
@@ -736,7 +736,7 @@
       }
     }
   },
-  "shotguns": {
+  "shotgun": {
     "predator": {
       "name": "Predator 12G Shotgun",
       "content_origin": "Community Item",
@@ -987,7 +987,7 @@
       }
     }
   },
-  "akimbo_pistols": {
+  "akimbo_pistol": {
     "akimbo_bernetti9": {
       "name": "Akimbo Bernetti 9 Pistols",
       "content_origin": null,
@@ -1359,7 +1359,7 @@
       }
     },
     "akimbo_gecko": {
-      "name": "Akimbo Káng Arms Model 54 Pistols",
+      "name": "Akimbo Gecko M2",
       "content_origin": "Jiu Feng Smuggler Pack #4 DLC",
       "required_rep_level": 24,
       "mod_slots": [
@@ -2117,7 +2117,7 @@
       }
     }
   },
-  "akimbo_shotguns": {
+  "akimbo_shotgun": {
     "akimbo_goliath": {
       "name": "Akimbo Goliath 12G Shotguns",
       "content_origin": null,
