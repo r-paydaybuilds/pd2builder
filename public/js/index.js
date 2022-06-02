@@ -526,7 +526,7 @@ window.onload = async () => {
         const options = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"] > span:not(.wp_select_group_label)");
         const weaponTypeButtons = document.querySelectorAll("#wp_navigator_wrapper > button");
 
-        if(!builder.mobile) {
+        if(!builder.mobile && false) {
             weaponTypeButtons.forEach(button => {
                 button.addEventListener("click", () => builder.gui.Weapon_ToggleType());
             });

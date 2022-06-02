@@ -540,9 +540,10 @@ export default class GUI {
      * Toggles between primary and secondary
      */
     Weapon_ToggleType() {
+        // FIXME: This doesn't work. We need to refactor the list tbh
         const isPrimary = document.querySelector("#wp_navigator_primary.wp_navigator_button_active") !== null;
-        const primaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"] > span:not(.wp_select_group_label)");
-        const secondaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"secondary\"] > span:not(.wp_select_group_label)");
+        const primaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"]");
+        const secondaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"secondary\"]");
         if(isPrimary) {
             primaryOptions.forEach(el => el.hidden = false);
             secondaryOptions.forEach(el => el.hidden = true);
