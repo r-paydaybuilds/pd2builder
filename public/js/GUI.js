@@ -518,6 +518,7 @@ export default class GUI {
      * @param {HTMLSpanElement} selected The weapon to make active
      */
     Weapon_Select(selected) {
+        //FIXME builder.exp is done by logic in index.js
         const alreadyActive = document.querySelector(".wp_select_option_group > span.active");
         if(alreadyActive) alreadyActive.classList.remove("active");
 
@@ -530,6 +531,7 @@ export default class GUI {
      * Unselects the specified weapon
      */
     Weapon_Unselect() {
+        //FIXME builder.exp is done by logic in index.js
         const alreadyActive = document.querySelector(".wp_select_option_group > span.active");
         if(alreadyActive) alreadyActive.classList.remove("active");
         this.builder.exp.primary.value = null;
@@ -847,7 +849,7 @@ export default class GUI {
      */
 
     /**
-     * Allow or disallow double deployable options according to the jack of all trades skill state. 
+     * Locks the no longer unlocked object
      * @param {Object} object
      * @param {String=} object.type Type of the object
      * @param {String} object.id ID of the object
@@ -892,6 +894,16 @@ export default class GUI {
                     this.builder.exp[type] = secondary;
                     this.DeployableSecondary_Unselect();
                     this.Deployable_Select(document.getElementById(secondary).parentElement);
+                }
+                break;
+            case "primary":
+            case "secondary":
+                if(!name) {
+                    this[methodType + "_Unselect"]();
+                    this.builder.exp[type] = { value: null, mods: [] };
+                } else if(this.builder.exp[type] === name) {
+                    this[methodType + "_Unselect"]();
+                    this.builder.exp[type] = { value: null, mods: [] };
                 }
                 break;
             default:
