@@ -529,7 +529,7 @@ export class MappedDataList extends HTMLDataListElement {
         super();
 
         const options = [...this.options];
-        this.data = new Map(options.map(opt => [opt.dataset.value, opt]));
+        this.data = new Map(options.map(opt => [opt.id, opt]));
         this.namedData = new Map(options.map(opt => [opt.value, opt]));
     }
 

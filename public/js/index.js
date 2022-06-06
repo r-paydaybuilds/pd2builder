@@ -547,7 +547,7 @@ window.onload = async () => {
             searchBox.addEventListener("input", () => {
                 const type = currentList === primaryList ? "primary" : "secondary";
                 if(currentList.namedData.has(searchBox.value)) {
-                    builder.exp[type].value = currentList.namedData.get(searchBox.value).dataset.value;
+                    builder.exp[type].value = currentList.namedData.get(searchBox.value).id;
                 } else {
                     builder.exp[type].value = null;
                 }

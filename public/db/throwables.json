@@ -87,7 +87,6 @@
   "viper_grenade": {
     "name": "Viper Grenade",
     "description": "(The) Viper Grenade lets you lock down an area in a debilitating smoke letting you easily deal with any survivors stumbling out of the affected area.",
-    "requires": [{ "type": "achievement", "name": "plague_doctor" }],
     "dlc": "McShay Weapon Pack"
   }
 }

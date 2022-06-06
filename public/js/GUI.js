@@ -553,6 +553,24 @@ export default class GUI {
     }
 
     /**
+     * Locks the weapon so it cant be chosen
+     * @param {HTMLOptionElement} weapon 
+     */
+    Weapon_Lock(weapon) {
+        //TODO
+        console.log(weapon);
+    }
+
+    /**
+     * Unlocks the weapon so it can be chosen
+     * @param {HTMLOptionElement} weapon 
+     */
+    Weapon_Unlock(weapon) {
+        //TODO
+        console.log(weapon);
+    }
+
+    /**
      * Select a specified armor.
      * @param {HTMLDivElement} armor An element object representing the clicked armor icon
      */
@@ -898,6 +916,10 @@ export default class GUI {
         if(!db) return;
         for(const [key, value] of db) {
             if(!value.requires) continue;
+            console.log(key);
+            //FIXME: We should change every method to not need to be given the parent element
+            //       but instead the element with the ID so information isnt lost in cases like
+            //       weapons which doesnt have a unique parent element
             const e = document.getElementById(key).parentElement;
             for(const obj of value.requires) {
                 const exp = this.builder.exp[obj.type.toCamelCase() + "s"] || this.builder.exp[obj.type.toCamelCase()],
