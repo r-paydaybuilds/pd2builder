@@ -412,6 +412,8 @@ export class UIEventHandler {
      * @param {MobileEvent} obj.hold Function for handling element when its being clicked down for 250ms
      * @param {MobileEvent} [obj.double] Function for handling double tap that means its touch only
      * @param {MobileEvent} [obj.click] Function for handling a simple click 
+     * @param {boolean} mobile If it should listen to mouse based events too
+     * @param {boolean} [propagate=false] If the event should propagate
      */
     constructor({ 
         click = () => element.dispatchEvent(new MouseEvent("click", { detail: -1 })), 
@@ -529,7 +531,6 @@ export class MappedDataList extends HTMLDataListElement {
         const options = [...this.options];
         this.data = new Map(options.map(opt => [opt.dataset.value, opt]));
         this.namedData = new Map(options.map(opt => [opt.value, opt]));
-        console.log(this);
     }
 
     static register(name = "map-datalist") {

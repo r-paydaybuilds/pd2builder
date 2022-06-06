@@ -209,8 +209,8 @@ export default class IO {
      */
     loadSkills(skills) {
         for(const e of document.getElementsByClassName("sk_subtree")) {
-            let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
-            let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
+            let subtreeBasicChar = this.DecodeByte(skills.substring(0, 1)); 
+            let subtreeAcedChar = this.DecodeByte(skills.substring(1, 2));  
             let mask = 1; 
 
             const tiers = [...e.querySelectorAll(".sk_tier")];
@@ -230,7 +230,7 @@ export default class IO {
                     mask = mask << 1; 
                 })
             );
-            skills = skills.substr(2); 
+            skills = skills.substring(2); 
         } 
     }
 
@@ -293,8 +293,8 @@ export default class IO {
      */
     loadDeployable(deployable) {
         let dpParam = String(deployable); 
-        let dp1 = parseInt(dpParam.substr(0, 1)); // === deployable if deployable.length === 1
-        let dp2 = parseInt(dpParam.length > 1 ? dpParam.substr(1, 1) : -1); 
+        let dp1 = parseInt(dpParam.substring(0, 1)); // === deployable if deployable.length === 1
+        let dp2 = parseInt(dpParam.length > 1 ? dpParam.substring(1, 2) : -1); 
         let dp2Found;
 
         document.querySelectorAll(".dp_icon").forEach((e, index) => {

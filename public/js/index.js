@@ -556,11 +556,11 @@ window.onload = async () => {
     }
 
     // Share build section //
-    document.getElementById("io_copy_btn").addEventListener("click", () => {
+    document.getElementById("io_copy_btn").addEventListener("click", async () => {
         const e = document.getElementById("io_share_link"); 
 
         e.select();
-        document.execCommand("copy");
+        await navigator.clipboard.writeText(e.value);
         e.blur(); 
 
         builder.gui.IO_CopyLinkFlash(); 
