@@ -538,19 +538,18 @@ export default class GUI {
 
     /**
      * Toggles between primary and secondary
+     * @returns {boolean} If it's primary then its true
      */
     Weapon_ToggleType() {
-        // FIXME: This doesn't work. We need to refactor the list tbh
         const isPrimary = document.querySelector("#wp_navigator_primary.wp_navigator_button_active") !== null;
-        const primaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"]");
-        const secondaryOptions = document.querySelectorAll(".wp_select_option_group[data-type=\"secondary\"]");
+        const searchBox = document.getElementById("wp_primary_search");
+
         if(isPrimary) {
-            primaryOptions.forEach(el => el.hidden = false);
-            secondaryOptions.forEach(el => el.hidden = true);
+            searchBox.setAttribute("list", "wp_primary_list");
         } else {
-            primaryOptions.forEach(el => el.hidden = true);
-            secondaryOptions.forEach(el => el.hidden = false);
+            searchBox.setAttribute("list", "wp_secondary_list");
         }
+        return isPrimary;
     }
 
     /**

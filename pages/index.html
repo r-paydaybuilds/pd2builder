@@ -1020,10 +1020,10 @@
           
           <div class="wp_search_container">
             <span>Type to filter ...</span>
-            <input type="search" id="wp_primary_search" list="wp_primary_list" class="wp_search">
+            <input type="text" id="wp_primary_search" list="wp_primary_list" class="wp_search" autocomplete="off">
 
             <!-- Primary list -->
-            <datalist id="wp_primary_list">
+            <datalist id="wp_primary_list" is="map-datalist">
               <optgroup data-label="assault_rifle" label="Assault Rifles">
                 <option data-value="golden_ak" value="Golden AK7.62">
                 <option data-value="amcar" value="AMCAR Rifle">
@@ -1169,7 +1169,7 @@
             </datalist>
 
             <!-- Secondary List -->
-            <datalist id="wp_secondary_list">
+            <datalist id="wp_secondary_list" is="map-datalist">
               <optgroup data-label="pistol" label="Pistols">
                 <option data-value="interceptor_45" value="Interceptor 45 Pistol">
                 <option data-value="chimano_88" value="Chimano 88 Pistol">

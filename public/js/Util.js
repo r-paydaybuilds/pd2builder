@@ -47,7 +47,7 @@ Number.prototype.maybeRound = function(precision) {
  * A class that should be filled with absolutely not useless stuff
  * @static
  */
-class Util {
+export default class Util {
     constructor() {
         throw new Error("This class isn't supposed to be initialized");
     }
@@ -147,7 +147,7 @@ class Util {
  * Map for storing skills that are active
  * @extends {Map}
  */
-class SkillMap extends Map {
+export class SkillMap extends Map {
     constructor(...args) {
         super(...args);
         this.points = 120;
@@ -209,7 +209,7 @@ class SkillMap extends Map {
  * @extends {Map<String,Map<String,Object>>}
  * 
  */
-class DBMap extends Map {
+export class DBMap extends Map {
     fetchAll() {
         const array = [];
         for(const [key] of this) {
@@ -265,7 +265,7 @@ class DBMap extends Map {
 /**
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
-class System {
+export class System {
     constructor(builder) {
         /**
          * The Builder instance that instantiated this
@@ -360,7 +360,7 @@ System.TIER_UTIL = [0, 1, 3, 16];
 /**
  * A class that transform X movement to X scroll
  */
-class XScrollTransformer {
+export class XScrollTransformer {
 
     constructor() {
         this.down = false;
@@ -404,7 +404,7 @@ class XScrollTransformer {
  * @returns {void}
  */
 
-class UIEventHandler {
+export class UIEventHandler {
     /**
      * 
      * @param {Object} obj
@@ -522,4 +522,34 @@ class UIEventHandler {
     }
 }
 
-export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler };
+export class MappedDataList extends HTMLDataListElement {
+    constructor() {
+        super();
+
+        const options = [...this.options];
+        this.data = new Map(options.map(opt => [opt.dataset.value, opt]));
+        this.namedData = new Map(options.map(opt => [opt.value, opt]));
+        console.log(this);
+    }
+
+    static register(name = "map-datalist") {
+        customElements.define(name, MappedDataList, { extends: "datalist" });
+    }
+
+    static get observedAttributes() {
+        return ["data-value", "value"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        switch(name) {
+        case "data-value":
+            this.data.set(newValue, this.data.get(oldValue));
+            this.data.delete(oldValue);
+            break;
+        case "value":
+            this.namedData.set(newValue, this.namedData.get(oldValue));
+            this.namedData.delete(oldValue);
+            break;
+        }
+    }
+}

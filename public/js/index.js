@@ -1,5 +1,5 @@
 import Builder from "./Builder.js";
-import Util, { UIEventHandler } from "./Util.js";
+import Util, { MappedDataList, UIEventHandler } from "./Util.js";
 import Language from "./Language.js";
 
 // Change from desktop or mobile version if screen is too big or too small
@@ -15,6 +15,7 @@ window.addEventListener("resize", () => {
 });
 
 const builder = new Builder(window.innerWidth < 1003);
+MappedDataList.register();
 
 window.onload = async () => {
     // Load language
@@ -521,102 +522,37 @@ window.onload = async () => {
         });
     }
 
+    // Weapon tab
     {
         const searchBox = document.getElementById("wp_primary_search");
-        const options = document.querySelectorAll(".wp_select_option_group[data-type=\"primary\"] > span:not(.wp_select_group_label)");
         const weaponTypeButtons = document.querySelectorAll("#wp_navigator_wrapper > button");
-
-        if(!builder.mobile && false) {
+        const primaryList = document.getElementById("wp_primary_list");
+        const secondaryList = document.getElementById("wp_secondary_list");
+        let currentList = primaryList;
+        
+        if(!builder.mobile) {
             weaponTypeButtons.forEach(button => {
-                button.addEventListener("click", () => builder.gui.Weapon_ToggleType());
+                button.addEventListener("click", () => {
+                    const isPrimary = builder.gui.Weapon_ToggleType();
+                    currentList = isPrimary ? primaryList : secondaryList;
+                    const type = isPrimary ? "primary" : "secondary";
+                    if(builder.exp[type].value) {
+                        searchBox.value = currentList.data.get(builder.exp[type].value).value;
+                    } else {
+                        searchBox.value = "";
+                    }
+                });
             });
-
-            // Add search bar functionality
-            let originalInput = "";
 
             searchBox.addEventListener("input", () => {
-                let text = searchBox.value.toLocaleLowerCase(builder.lang.used);
-                if(originalInput.length === text.length) {
-                    searchBox.value = searchBox.value.slice(0, -1);
-                    text = text.slice(0, -1);
-                }
-                originalInput = text;
-
-                if(!text) {
-                    builder.gui.Weapon_Unselect();
-                    for(const option of options) {
-                        option.style.display = "flex";
-                    }
-                    return;
-                }
-                const wp_select = document.getElementById("wp_primary_select"); 
-                builder.gui.Weapon_FilterSelectbox(wp_select, text);
-
-                const chosenOne = [...options].find(weapon => {
-                    return weapon.innerHTML.toLocaleLowerCase(builder.lang.used).startsWith(text);
-                });
-                if(!chosenOne) {
-                    builder.gui.Weapon_Unselect();
-                    return;
-                }
-
-                chosenOne.click();
-                if(chosenOne.innerHTML.length !== text.length) {
-                    searchBox.setSelectionRange(text.length, chosenOne.innerHTML.length);
+                const type = currentList === primaryList ? "primary" : "secondary";
+                if(currentList.namedData.has(searchBox.value)) {
+                    builder.exp[type].value = currentList.namedData.get(searchBox.value).dataset.value;
+                } else {
+                    builder.exp[type].value = null;
                 }
             });
-
-            for(const option of options) {
-                option.addEventListener("click", () => {
-                    builder.gui.Weapon_Select(option);
-                    searchBox.value = option.innerHTML;
-                });
-            }
         }
-        /* TRYING NEW 
-        if(!builder.mobile) searchBox.addEventListener("keyup", ev => {
-            const text = ev.target.value.toLowerCase(), contains = [];
-            let selected = null;
-            //If empty text, then dont do anything
-            if(!text) {
-                for(const option of select.options) {
-                    option.hidden = false;
-                }
-                select.options[0].selected = true;
-                return;
-            }
-            //Unhide groups
-            for(const group of select.children) {
-                group.hidden = false;
-            }
-            //Find similar text to what was just inputted
-            for(const option of select.options) {
-                option.hidden = false;
-                if(option.disabled) continue;
-                if(option.label.toLowerCase().includes(text)) {
-                    contains.push(option);
-                }
-                if(option.label.toLowerCase().startsWith(text) && !selected) {
-                    option.selected = true;
-                    selected = true;
-                }
-            }
-            //Hide all elements that are not similar to what was inputted
-            if(contains.length > 0) {
-                if(!selected) contains[0].selected = true;
-                for(const option of select.options) {
-                    if(option.disabled) {
-                        option.hidden = true;
-                        continue;
-                    }
-                    if(contains.some(opt => opt.value === option.value)) continue;
-                    option.hidden = true;
-                }
-                for(const group of select.children) {
-                    if([...group.children].every(opt => opt.hidden)) group.hidden = true;
-                }
-            }
-        });*/
     }
 
     // Share build section //
