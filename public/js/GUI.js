@@ -916,7 +916,6 @@ export default class GUI {
         if(!db) return;
         for(const [key, value] of db) {
             if(!value.requires) continue;
-            console.log(key);
             //FIXME: We should change every method to not need to be given the parent element
             //       but instead the element with the ID so information isnt lost in cases like
             //       weapons which doesnt have a unique parent element
