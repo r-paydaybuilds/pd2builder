@@ -38,6 +38,6 @@
     "html-minifier": "^4.0.0",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "terser": "^5.10.0"
+    "terser": "^5.14.2"
   }
 }
