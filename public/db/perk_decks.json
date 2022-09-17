@@ -15,10 +15,59 @@
         ],
         "stats": [
             {
+                "id": 18,
+                "type": "damage",
+                "part": "damageReduction",
+                "value": 0.08
+            },
+            {
+                "id": 19,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.08,
+                "conditional": "halfHealth"
+            },
+            {
+                "id": 20,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.06,
+                "conditional": "mediumRange"
+            },
+            {
+                "id": 21,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
+            },
+            {
                 "id": 2,
                 "type": "armor",
                 "part": "armBonus",
                 "value": 0.1
+            },
+            {
+                "id": 22,
+                "type": "health",
+                "part": "scalingHealthBonus",
+                "value": 0.06,
+                "conditional": "hostage",
+                "max": 4
+            },
+            {
+                "id": 23,
+                "type": "stamina",
+                "part": "scalingStaminaBonus",
+                "value": 0.12,
+                "conditional": "hostage",
+                "max": 4
+            },
+            {
+                "id": 24,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.08,
+                "conditional": "hostage"
             }
         ]
     },
@@ -152,6 +201,22 @@
             "fast_and_furious",
             "life_drain"
         ],
+        "stats": [
+            {
+                "id": 25,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.24,
+                "conditional": "mediumRange"
+            },
+            {
+                "id": 26,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.12,
+                "conditional": "threeTargetingEnemies"
+            }
+        ],
         "dlc": "Dragan Character Pack"
     },
     "sociopath": {
@@ -171,10 +236,24 @@
         "dlc": "Hotline Miami 2 Deluxe",
         "stats": [
             {
+                "id": 27,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.12,
+                "conditional": "threeTargetingEnemies"
+            },
+            {
                 "id": 5,
                 "type": "armor",
                 "part": "armBonus",
                 "value": 0.2
+            },
+            {
+                "id": 28,
+                "type": "damage",
+                "part": "conditionalReduction",
+                "value": 0.08,
+                "conditional": "mediumRange"
             }
         ]
     },

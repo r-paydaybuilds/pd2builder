@@ -16,6 +16,10 @@ export default class Stats {
          * @type {Builder}
          */
         this.builder = builder;
+
+        // Values for the brakpoints calculation
+        this.hostages = 0;
+        this.converts = 0;
     }
 
     //Armor stats
@@ -69,12 +73,102 @@ export default class Stats {
     }
 
     get netHealth() {
-        const health = this.healthCore;
+        let health = this.healthCore;
+        for(const bonus of this.getModifiersOf("conditionalHealthBonus")) {
+            health += this.queryConditionals(bonus) * 230;
+        }
+        for(const bonus of this.getModifiersOf("scalingHealthBonus")) {
+            health += this.queryScalingMods(bonus) * 230;
+        }
         let frenzy = 1;
         for(const removed of this.getModifiersOf("healthFrenzy")) {
             frenzy += Stats.calculate(removed);
         }
         return health * frenzy;
+    }
+
+    // Returns total damage reduction including skills and perk deck
+    get netDamageReduction() {
+        let dr = 0;
+        for(const reduction of this.getModifiersOf("damageReduction")) {
+            dr += Stats.calculate(reduction);
+        }
+        for(const reduction of this.getModifiersOf("conditionalReduction")) {
+            dr += this.queryConditionals(reduction);
+        }
+        return dr;
+    }
+
+    // Returns total damage absorbtion including skills and perk deck
+    get netDamageAbsorbtion() {
+        let da = 0;
+        for(const reduction of this.getModifiersOf("damageAbsorbtion")) {
+            da += Stats.calculate(reduction);
+        }
+        for(const bonus of this.getModifiersOf("scalingAbsorbtion")) {
+            da += this.queryScalingMods(bonus);
+        }
+        return da;
+    }
+
+    damageReductionAtRange(range) {
+        let dr = 0
+        switch (range) {
+            case 'close':
+                for(const reduction of this.getModifiersOf("conditionalReduction")) {
+                    if (reduction.conditional === "closeRange" || reduction.conditional === "mediumRange" || reduction.conditional === "longRange") {
+                        dr += Stats.calculate(reduction);
+                    }
+                }
+                return dr;
+            case 'medium':
+                for(const reduction of this.getModifiersOf("conditionalReduction")) {
+                    if (reduction.conditional === "mediumRange" || reduction.conditional === "longRange") {
+                        dr += Stats.calculate(reduction);
+                    }
+                }
+                return dr;
+            case 'long':
+                for(const reduction of this.getModifiersOf("conditionalReduction")) {
+                    if (reduction.conditional === "longRange") {
+                        dr += Stats.calculate(reduction);
+                    }
+                }
+                return dr;
+        }
+    }
+
+    damageAtRange(range) {
+        const baseDamage = 225;
+        let dr = this.netDamageReduction + this.damageReductionAtRange(range);
+        return baseDamage * (1 - dr);
+    }
+
+    threeEnemyDamage(range) {
+        const baseDamage = 225;
+        let dr = this.netDamageReduction + this.damageReductionAtRange(range);
+        for(const reduction of this.getModifiersOf("conditionalReduction")) {
+            if (reduction.conditional === "threeTargetingEnemies") {
+                dr += Stats.calculate(reduction);
+            }
+        }
+        return baseDamage * (1 - dr);
+    }
+
+    armorShotLimit(range) {
+        return this.netArmor / this.damageAtRange(range);
+    }
+
+    armorShotLimit3(range) {
+        return this.netArmor / this.threeEnemyDamage(range);
+    }
+
+    healthShotLimit(range) {
+        return this.netHealth / this.damageAtRange(range);
+    }
+
+    healthShotLimit3(range) {
+        return this.netHealth / this.threeEnemyDamage(range);
     }
 
     /**
@@ -145,6 +239,14 @@ export default class Stats {
         return arr;
     }
 
+    setHostages(val) {
+        this.hostages = val;
+    }
+
+    setConverts(val) {
+        this.converts = val;
+    }
+
     /**
      * Check if armor is whitelisted in stat
      * @static
@@ -179,6 +281,40 @@ export default class Stats {
             args.push(this[arg]);
         }
         return modifier.exec(...args);
+    }
+
+    /**
+     * Applies conditional stats if their condition is met
+     */
+    queryConditionals(modifier) {
+        let value = 0;
+        switch (modifier.conditional) {
+            case undefined:
+                value = modifier.value;
+                break;
+            case 'hostage':
+                if (this.hostages + this.converts >= 1) {
+                    value = modifier.value;
+                }
+                break;
+            case 'convert':
+                if (this.converts >= 1) {
+                    value = modifier.value;
+                }
+                break;
+          }
+        return value
+    }
+
+
+    queryScalingMods(modifier) {
+        let value = 0;
+        switch (modifier.conditional) {
+            case 'hostage':
+                value = modifier.value * Math.min(this.hostages + this.converts, modifier.max);
+                break;
+          }
+        return value
     }
 }
 

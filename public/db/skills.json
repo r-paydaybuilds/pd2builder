@@ -60,7 +60,19 @@
         "ace": 3,
         "tier": 1,
         "subtree": "controller",
-        "tree": "mastermind"
+        "tree": "mastermind",
+        "stats": {
+            "ace": [
+                {
+                    "id": 23,
+                    "type": "damage",
+                    "part": "scalingAbsorbtion",
+                    "value": 0.5,
+                    "conditional": "hostage",
+                    "max": 8
+                }
+            ]
+        }
     },
     "confident": {
         "name": "Confident",
@@ -96,7 +108,18 @@
         "ace": 6,
         "tier": 3,
         "subtree": "controller",
-        "tree": "mastermind"
+        "tree": "mastermind",
+        "stats": {
+            "ace": [
+                {
+                    "id": 19,
+                    "type": "health",
+                    "part": "conditionalHealthBonus",
+                    "value": 0.3,
+                    "conditional": "convert"
+                }
+            ]
+        }
     },
     "hostage_taker": {
         "name": "Hostage Taker",
@@ -169,7 +192,18 @@
         "ace": 3,
         "tier": 1,
         "subtree": "shotgunner",
-        "tree": "enforcer"
+        "tree": "enforcer",
+        "stats": {
+            "ace": [
+                {
+                    "id": 22,
+                    "type": "damage",
+                    "part": "conditionalReduction",
+                    "value": 0.1,
+                    "conditional": "threeTargetingEnemies"
+                }
+            ]
+        }
     },
     "shotgun_cqb": {
         "name": "Shotgun CQB",
@@ -236,7 +270,7 @@
         "subtree": "tank",
         "tree": "enforcer",
         "stats": {
-            "aced": [
+            "ace": [
                 {
                     "id": 1,
                     "type": "armor",
@@ -853,6 +887,20 @@
                     "type": "health",
                     "part": "healthFrenzy",
                     "value": -0.7
+                },
+                {
+                    "id": 20,
+                    "type": "damage",
+                    "part": "damageReduction",
+                    "value": 0.1
+                }
+            ],
+            "ace": [
+                {
+                    "id": 21,
+                    "type": "damage",
+                    "part": "damageReduction",
+                    "value": 0.15
                 }
             ]
         }
