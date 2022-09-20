@@ -276,6 +276,7 @@ export default class Stats {
      */
     static calculate(modifier) {
         if(!modifier.exec) return modifier.value;
+        console.log('heyo');
         const args = [];
         for(const arg of modifier.arguments) {
             args.push(this[arg]);

@@ -6,7 +6,18 @@
         "ace": 3,
         "tier": 1,
         "subtree": "medic",
-        "tree": "mastermind"
+        "tree": "mastermind",
+        "stats": {
+            "basic": [
+                {
+                    "id": 24,
+                    "type": "damange",
+                    "part": "conditionalReduction",
+                    "value": 0.3,
+                    "conditional": "reviving"
+                }
+            ]
+        }
     },
     "quick_fix": {
         "name": "Quick Fix",
@@ -270,6 +281,15 @@
         "subtree": "tank",
         "tree": "enforcer",
         "stats": {
+            "basic": [
+                {
+                    "id": 24,
+                    "type": "damange",
+                    "part": "conditionalReduction",
+                    "value": 0.5,
+                    "conditional": "interacting"
+                }
+            ],
             "ace": [
                 {
                     "id": 1,
