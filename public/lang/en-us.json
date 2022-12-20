@@ -597,6 +597,38 @@
         "symbiosis": {
             "name": "Symbiosis",
             "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%."
+        },
+        "tactical_reload": {
+            "name": "Tactical Reload",
+            "description": "Auto-reload secondary after performing 10 kills with primary, and vice versa.\n\nIncreases weapon swapping speed by 320%."
+        },
+        "head_games": {
+            "name": "Head Games",
+            "description": "Each headshot you land heals 10 health points."
+        },
+        "is_this_your_bullet": {
+            "name": "Is This Your Bullet?",
+            "description": "Dodged bullets will ricochet back on the enemy that fired them."
+        },
+        "grace_period": {
+            "name": "Grace Period",
+            "description": "When your health gets below 50% you will be immune to health damage for 2 seconds.\n\nThis cannot occur more than once every 15 seconds."
+        },
+        "thriving": {
+            "name": "Thriving",
+            "description": "Your maximum health is increased by 20%."
+        },
+        "toughen_up": {
+            "name": "Toughen Up",
+            "description": "You gain 5% more armor."
+        },
+        "cat-like_reflex": {
+            "name": "Cat-Like Reflex", 
+            "description": "Your chance to dodge is increased by 5%."
+        },
+        "fleet-footed": {
+            "name": "Fleet-Footed", 
+            "description": "Your crouched and carry movement speed is increased by 10%."
         }
     },
     "perk_decks": {
@@ -687,7 +719,11 @@
         "leech": {
             "name": "Leech",
             "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team."
-        }    
+        },
+        "copycat": {
+            "name": "Copycat",
+            "description": "With an eidetic memory and photographic reflexes, the Copycat is a physical phenomenon. Anticipating movement has made you quick on your feet, to the point that you can dodge and even deflect bullets with ease. You've studied the other perk decks closely, and you can now mimic their base abilities to enhance your own. Mix and match techniques to create a style both echoic and unique. If others accuse you of stealing, remind them that imitation is the sincerest form of flattery."
+        }
     },
     "skills": {
         "combat_medic": {

@@ -473,11 +473,6 @@ body {
   height: 92px; 
 
   background: url("../img/perks/card.png") 0 0 no-repeat;  
-  
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: left;
-  align-items: center; 
 
   -webkit-transition: opacity .15s ease;
   -moz-transition:    opacity .15s ease;

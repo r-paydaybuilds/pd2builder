@@ -473,5 +473,20 @@
         "unlocks": [
             { "type": "throwable", "name": "leech_ampule" }
         ]
+    },
+    "copycat": {
+        "name": "Copycat",
+        "description": "With an eidetic memory and photographic reflexes, the Copycat is a physical phenomenon. Anticipating movement has made you quick on your feet, to the point that you can dodge and even deflect bullets with ease. You've studied the other perk decks closely, and you can now mimic their base abilities to enhance your own. Mix and match techniques to create a style both echoic and unique. If others accuse you of stealing, remind them that imitation is the sincerest form of flattery.",
+        "perks": [
+            "tactical_reload",
+            "helmet_popping",
+            "head_games",
+            "blending_in",
+            "is_this_your_bullet",
+            "walk-in_closet",
+            "grace_period",
+            "fast_and_furious",
+            "mimicry"
+        ]
     }
 }

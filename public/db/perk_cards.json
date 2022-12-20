@@ -30,7 +30,8 @@
     "brute_strength-1": {
         "name": "Brute Strength",
         "description": "You grant 8% damage reduction for players in your group. This bonus is doubled for you when you are under 50% health.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
+        "copycat_mimicry_available": true
     },
     "marathon_man": {
         "name": "Marathon Man",
@@ -133,7 +134,8 @@
     "disturbing_the_peace": {
         "name": "Disturbing the Peace",
         "description": "All firearms have a chance to spread panic among your enemies.\nPanic will make enemies go into short bursts of uncontrollable fear.",
-        "vr_description": "The dash effect is now from 0 up to a maximum of 12."
+        "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
+        "copycat_mimicry_available": true
     },
     "800-pound_gorilla": {
         "name": "800-pound Gorilla",
@@ -162,7 +164,8 @@
                 "value": 1.1,
                 "multiply": true
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "type_2_armor": {
         "name": "Type II Armor",
@@ -238,7 +241,8 @@
     "elusive": {
         "name": "Elusive",
         "description": "You are 15% less likely to be targeted when you are close to your crew members.",
-        "vr_description": "The dash effect is now from 1% up to a maximum of 7%."
+        "vr_description": "The dash effect is now from 1% up to a maximum of 7%.",
+        "copycat_mimicry_available": true
     },
     "evasive": {
         "name": "Evasive",
@@ -293,13 +297,15 @@
         "name": "Ambidexterity",
         "description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 10%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
         "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
+        "copycat_description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 15%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
         "stats": [
             {
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "advanced_recovery": {
         "name": "Advanced Recovery",
@@ -375,7 +381,8 @@
                     "heavy_ballistic"
                 ]
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "advanced_composure": {
         "name": "Advanced Composure",
@@ -477,13 +484,15 @@
         "name": "Dutch Courage",
         "description": "Your chance to dodge is increased by an additional 5%.\nYour chance to be targeted while standing still and crouching is decreased by an additional 5%.\nYou answer pagers 10% faster.",
         "vr_description": "The dash effect is now from 1% up to a maximum of 9%",
+        "copycat_description": "Your chance to dodge is increased by 20%.\nStanding still and crouching decreases your chance of being targeted by 20%.",
         "stats": [
             {
                 "type": "dodge",
                 "value": 1.05,
                 "multiply": true
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "breath_of_fresh_air": {
         "name": "Breath of Fresh Air",
@@ -509,7 +518,9 @@
     "expert_close_combat": {
         "name": "Expert Close Combat",
         "description": "When you are within medium range of an enemy, you receive an additional 8% less damage from enemies.",
-        "vr_description": "The dash effect is now from 8 up to a maximum of 18."
+        "copycat_description": "When you are within medium range of an enemy, you receive 24% less damage from enemies.",
+        "vr_description": "The dash effect is now from 8 up to a maximum of 18.",
+        "copycat_mimicry_available": true
     },
     "life_drain": {
         "name": "Life Drain",
@@ -527,7 +538,8 @@
                 "value": 1.1,
                 "multiply": true
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "clean_hit": {
         "name": "Clean Hit",
@@ -555,7 +567,8 @@
     "medical_supplies": {
         "name": "Medical Supplies",
         "description": "Ammo packs you pick up also yield medical supplies and heals you for 16 to 24 health.\nCannot occur more than once every 3 seconds.\nIf the Gambler's current health is lower than another player's, the heal effect on the Gambler is increased by 20%. Stacks up to three times.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
+        "copycat_mimicry_available": true
     },
     "ammo_give_out": {
         "name": "Ammo Give Out",
@@ -600,7 +613,9 @@
     "adrenaline": {
         "name": "Adrenaline",
         "description": "Damaging an enemy now heals 2 life points every 0.3 seconds for 3 seconds.\nYou gain 20% more health.",
-        "vr_description": "The dash effect is now from 0 up to a maximum of 6."
+        "copycat_description": "Damaging an enemy heals 2 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds, and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
+        "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
+        "copycat_mimicry_available": true
     },
     "endorphins": {
         "name": "Endorphins",
@@ -633,7 +648,8 @@
     "hebi_irezumi": {
         "name": "Hebi Irezumi",
         "description": "The lower your health, the more movement speed you gain. When your health is below 25%, you will gain up to 20% movement speed.",
-        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
+        "copycat_mimicry_available": true
     },
     "tora_irezumi": {
         "name": "Tora Irezumi",
@@ -654,6 +670,7 @@
     "point_break": {
         "name": "Point Break",
         "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
+        "copycat_description": "While your armor is up, you will store 8 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.\nYou gain 10% more health.",
         "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
     },
     "the_emerging_force": {
@@ -666,7 +683,8 @@
                 "value": 1.1,
                 "multiply": true
             }
-        ]
+        ],
+        "copycat_mimicry_available": true
     },
     "life_of_ice": {
         "name": "Life of Ice",
@@ -711,7 +729,9 @@
     "outburst": {
         "name": "Outburst",
         "description": "Members of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
-        "vr_description": "The dash effect is now from 4 up to a maximum of 10."
+        "copycat_description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.\nMembers of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
+        "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
+        "copycat_mimicry_available": true
     },
     "fervor": {
         "name": "Fervor",
@@ -732,7 +752,8 @@
     "blitzkrieg_bop": {
         "name": "Blitzkrieg Bop",
         "description": "Instead of fully regenerating armor when out of combat, The Anarchist will continuously regenerate armor throughout the entire combat. Heavier armor regenerates more armor, but during longer intervals.\nWhen your armor gets depleted you will be immune to health damage for 2 seconds. This cannot occur more often than once every 15 seconds.\nNote: Skills and perks that increases the armor recovery rate are disabled when using this perk deck.",
-        "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds"
+        "vr_description": "After dashing the player will regenerate from 1 up to a maximum of 3 armor depending on the amount of stamina consumed. Can only occur 3 times every 5 seconds",
+        "copycat_mimicry_available": true
     },
     "straight_edge": {
         "name": "Straight Edge",
@@ -796,7 +817,8 @@
     "prospect": {
         "name": "Prospect",
         "description": "Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 4 times every 4 seconds.",
-        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds"
+        "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds",
+        "copycat_mimicry_available": true
     },
     "tail_gunner": {
         "name": "Tail Gunner",
@@ -822,7 +844,9 @@
     "bad_guy_coming_through": {
         "name": "Bad Guy Coming Through",
         "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
+        "copycat_description": "Unlocks and equips the Kingpin Injector.\nActivating the Injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.\nUnlisted effect: Every kill reduces the cooldown by 1 second.",
+        "copycat_mimicry_available": true
     },
     "play_rough": {
         "name": "Play Rough",
@@ -876,7 +900,8 @@
     "smoker": {
         "name": "Smoker",
         "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
-        "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed."
+        "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed.",
+        "copycat_mimicry_available": true
     },
     "twitch": {
         "name": "Twitch",
@@ -909,7 +934,8 @@
     "virtue": {
         "name": "Virtue",
         "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
+        "copycat_mimicry_available": true
     },
     "un-moved": {
         "name": "Un-moved",
@@ -947,7 +973,8 @@
     "soul_mates": {
         "name": "Soul Mates",
         "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
+        "copycat_mimicry_available": true
     },
     "scent": {
         "name": "Scent",
@@ -986,7 +1013,8 @@
     },
     "code_glitch": {
         "name": "Code Glitch",
-        "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds."
+        "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds.",
+        "copycat_mimicry_available": true
     },
     "opsec": {
         "name": "OpSec",
@@ -1014,7 +1042,8 @@
     },
     "momentum": {
         "name": "Momentum",
-        "description": "Unlocks and equips the Leech Ampule.\tChanging to another perk deck will make the Leech Ampule unavailable again. The Leech Ampule replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\tWhile in game you can use throwable key to activate the Leech Ampule.\tActivating the Leech Ampule will restore 40% health and disables your armor for the duration of the Leech Ampule.\tWhile the Leech Ampule is active your health is divided into segments of 20% and damage taken from enemies removes one segment. Killing 2 enemies will restore one segment of your health and block damage for 1 second. Anytime you take damage your teammates are healed for 5% of their health.\tThe Leech Ampule lasts 6 seconds with a 30 seconds cooldown."
+        "description": "Unlocks and equips the Leech Ampule.\tChanging to another perk deck will make the Leech Ampule unavailable again. The Leech Ampule replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\tWhile in game you can use throwable key to activate the Leech Ampule.\tActivating the Leech Ampule will restore 40% health and disables your armor for the duration of the Leech Ampule.\tWhile the Leech Ampule is active your health is divided into segments of 20% and damage taken from enemies removes one segment. Killing 2 enemies will restore one segment of your health and block damage for 1 second. Anytime you take damage your teammates are healed for 5% of their health.\tThe Leech Ampule lasts 6 seconds with a 30 seconds cooldown.",
+        "copycat_mimicry_available": true
     },
     "indomitable": {
         "name": "Indomitable",
@@ -1032,5 +1061,45 @@
         "name": "Symbiosis",
         "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%.",
         "deck_completion_bonus": true
+    },
+    "tactical_reload": {
+        "name": "Tactical Reload",
+        "description": "Auto-reload secondary after performing 10 kills with primary, and vice versa.\n\nIncreases weapon swapping speed by 320%.",
+        "has_copycat_boost": true
+    },
+    "head_games": {
+        "name": "Head Games",
+        "description": "Each headshot you land heals 10 health points.",
+        "has_copycat_boost": true
+    },
+    "is_this_your_bullet": {
+        "name": "Is This Your Bullet?",
+        "description": "Dodged bullets will ricochet back on the enemy that fired them.",
+        "has_copycat_boost": true
+    },
+    "grace_period": {
+        "name": "Grace Period",
+        "description": "When your health gets below 50% you will be immune to health damage for 2 seconds.\n\nThis cannot occur more than once every 15 seconds.",
+        "has_copycat_boost": true
+    },
+    "thriving": {
+        "name": "Thriving",
+        "description": "Your maximum health is increased by 20%.",
+        "is_copycat_boost": true
+    },
+    "toughen_up": {
+        "name": "Toughen Up",
+        "description": "You gain 5% more armor.",
+        "is_copycat_boost": true
+    },
+    "cat-like_reflex": {
+        "name": "Cat-Like Reflex", 
+        "description": "Your chance to dodge is increased by 5%.",
+        "is_copycat_boost": true
+    },
+    "fleet-footed": {
+        "name": "Fleet-Footed", 
+        "description": "Your crouched and carry movement speed is increased by 10%.",
+        "is_copycat_boost": true
     }
 }
