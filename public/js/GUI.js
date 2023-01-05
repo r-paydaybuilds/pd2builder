@@ -439,6 +439,17 @@ export default class GUI {
             .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.innerHTML = html;
+
+        // Copycat mockup 
+        if (!card.id || !this.builder.dbs.get("perk_cards").get(card.id).has_copycat_boost) return; 
+        const boosts = [...this.builder.dbs.get("perk_cards").entries()].filter(c => c[1].is_copycat_boost); 
+        const boostLabel = card.querySelector("span").innerText.split("/"); 
+
+        desc.innerHTML += `<br><p class="description_title">${boosts[boostLabel[0] - 1][1].name.toUpperCase()}<span class="description_title_sub"> (boost)</span></p>`; 
+        desc.innerHTML += `<p>${boosts[boostLabel[0] - 1][1].description}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
     }
 
     /**

@@ -136,6 +136,12 @@ body {
   margin-top: 0;
 }
 
+.description_title_sub {
+  font-size: 18px; 
+  
+  margin-top: 0; 
+}
+
 .requires {
   color: #ED6A71;
 }

@@ -321,6 +321,20 @@ window.onload = async () => {
         });
     } 
 
+    // Perk card clickables (with boosts) //
+    for(const e of document.querySelectorAll(".pk_deck_cards .pk_has_boost")) {
+        e.addEventListener("click", ev => {
+            if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
+
+            const boostLabel = e.querySelector("span").innerText.split("/"); 
+
+            // Mockup of functionality
+            e.querySelector("span").innerText = (++boostLabel[0] > boostLabel[1] ? "1" : boostLabel[0]) + "/" + boostLabel[1]; 
+            builder.gui.PerkCard_DisplayDescription(e); 
+        }); 
+    }
+
+
     // Perk deck cards highlight // 
     if(builder.mobile) {
         document.querySelectorAll(".pk_deck_cards").forEach(ring => 

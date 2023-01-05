@@ -562,7 +562,7 @@ select {
 }
 
 .pk_has_boost > span {
-  font-size: min(1.1em, 22px);
+  font-size: min(1.1em, 20px);
   color:rgb(0, 0, 0);
 }
 
