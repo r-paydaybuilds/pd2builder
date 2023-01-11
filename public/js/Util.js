@@ -83,6 +83,8 @@ class Util {
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
+            copycat: exp.copycat,
+            copycat_mimic: exp.copycat_mimic,
             throwable: exp.throwable,
             deployable: exp.deployable,
             deployableSecondary: exp.deployableSecondary

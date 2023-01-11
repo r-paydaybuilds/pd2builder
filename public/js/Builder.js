@@ -34,10 +34,13 @@ export default class Builder {
             },
             armor: null,
             perkDeck: null,
+            copycat: null,
+            copycat_mimic: null,
             throwable: null,
             deployable: null, 
             deployableSecondary: null
         };
+
 
         /**
          * The stats manager
@@ -71,6 +74,8 @@ export default class Builder {
             ["skills", null],
             ["perk_decks", null],
             ["perk_cards", null],
+            ["copycat_boosts",null],
+            ["copycat_mimicry",null],
             ["deployables", null],
             ["throwables", null],
             ["armors", null]
@@ -120,6 +125,8 @@ export default class Builder {
             const query = document.querySelector(`#${key}.pk_selected p`);
             if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
         }
+
+
     
         for(const [key] of this.dbs.get("skills")) {
             document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
@@ -133,6 +140,47 @@ export default class Builder {
             e.innerHTML = Language.ref.has(e.dataset.lang) ? lang(Language.ref.get(e.dataset.lang)) : lang;
         });
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
+    }
+
+
+    changeCardBoost = function(cardElement, newBoost){
+        const boostLabel = cardElement.querySelector("span").innerText.split("/");
+
+        const oldBoost = boostLabel[0];
+    
+        if (newBoost === undefined){
+            newBoost = ++boostLabel[0];
+            newBoost = (newBoost > boostLabel[1]) ? 1 : newBoost;
+        } else if (newBoost <= 0 || newBoost > boostLabel[1]){
+            newBoost = 1;
+        }
+    
+        // Mockup of functionality
+        cardElement.querySelector("span").innerText = (newBoost) + "/" + boostLabel[1];
+
+        
+        const isMimicry = !!(this.dbs.get("perk_cards").get(cardElement.id).has_mimicry_boost);
+
+        if (isMimicry){
+
+            const oldMimic = [...this.dbs.get("copycat_mimicry").entries()][oldBoost-1][1];
+            if (oldMimic.throwable){
+                this.gui.Throwable_Lock(document.getElementById(oldMimic.throwable));
+            }
+
+            const thisMimic = [...this.dbs.get("copycat_mimicry").entries()][newBoost-1];
+
+            this.exp.copycat_mimicry = thisMimic[0];
+
+            if (thisMimic[1].throwable){
+                const thisThrow = thisMimic[1].throwable;
+                this.gui.Throwable_Unlock(document.getElementById(thisThrow));
+                this.gui.Throwable_Select(document.getElementById(thisThrow));
+                this.exp.throwable = thisThrow;
+            }
+        }
+        this.io.GetEncodedBuild();
+
     }
 }
 

@@ -49,7 +49,13 @@ export default class IO {
         if(this.builder.exp.skills.points !== 120) url.searchParams.set("s", this.encodeSkills()); 
 
         // Manage Perk Decks
-        if(this.builder.exp.perkDeck) url.searchParams.set("p", this.encodePerkDeck());
+        if(this.builder.exp.perkDeck){
+            url.searchParams.set("p", this.encodePerkDeck());
+
+            if (this.encodePerkDeck() == "m"){ // If copycat is chosen, encode the current copycat boosts.
+                url.searchParams.set("c",this.encodeCopycatBoosts());
+            }
+        }
 
         // Manage Armors
         if(this.builder.exp.armor) url.searchParams.set("a", this.encodeArmor());
@@ -107,6 +113,18 @@ export default class IO {
             pkCount++; 
         }
         return this.EncodeByte(pkCount);
+    }
+
+    /**
+     * Encodes selected copycat boosts into a loadable string
+     * @returns {String}
+     */
+    encodeCopycatBoosts(){
+        let ccVals = [];
+        for (const card of document.getElementsByClassName("pk_has_boost")){
+            ccVals.push(this.EncodeByte(card.querySelector("span").innerText.split("/")[0]));
+        }
+        return ccVals.join("");
     }
 
     /**
@@ -189,6 +207,9 @@ export default class IO {
             case "p":
                 this.loadPerkDeck(parseInt(this.DecodeByte(decompressed)));
                 break;
+            case "c":
+                this.loadCopycatBoosts(decompressed);
+                break;
             case "a":
                 this.loadArmor(parseInt(decompressed));
                 break;
@@ -259,6 +280,17 @@ export default class IO {
             }
         }); 
     } 
+
+    loadCopycatBoosts(ccBoosts){
+
+        const boostCards = document.getElementsByClassName("pk_has_boost");
+        for (let i = 0; i < ccBoosts.length; i++) {
+            const thisBoostNum = this.DecodeByte(ccBoosts.charAt(i));
+            const thisBoostCard = boostCards.item(i);
+            this.builder.changeCardBoost(thisBoostCard, thisBoostNum);
+        }
+        
+    }
 
     /**
      * Loads a parameter to the UI

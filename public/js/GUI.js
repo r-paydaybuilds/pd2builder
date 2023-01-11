@@ -421,15 +421,21 @@ export default class GUI {
      * @param {HTMLDivElement} card An element object representing the hovered perk deck card 
      */
     PerkCard_DisplayDescription(card) {
+
         if (!card) return; 
 
         const desc = document.querySelector("#description_container, .pk_description"); 
         const pk = this.builder.dbs.get("perk_decks").get(
             util.parentElement(card, this.builder.mobile ? 3 : 2).id
         );
-        const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
-            e instanceof Element && e.tagName === "DIV"
-        )]}`);
+        
+        const perkCard = this.builder.lang.get(
+            `perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
+                e instanceof Element && e.tagName === "DIV"
+            )]}`, 
+            this.builder.dbs.get("perk_cards").get(card.id) // fallback so the final card of copycat will work without changing en-us.json
+        );
+
 
         let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
         
@@ -441,12 +447,13 @@ export default class GUI {
         desc.innerHTML = html;
 
         // Copycat mockup 
+
         if (!card.id || !this.builder.dbs.get("perk_cards").get(card.id).has_copycat_boost) return; 
-        const boosts = [...this.builder.dbs.get("perk_cards").entries()].filter(c => c[1].is_copycat_boost); 
+        const boosts = (this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost) ? [...this.builder.dbs.get("copycat_mimicry").entries()] : [...this.builder.dbs.get("copycat_boosts").entries()]; 
         const boostLabel = card.querySelector("span").innerText.split("/"); 
 
         desc.innerHTML += `<br><p class="description_title">${boosts[boostLabel[0] - 1][1].name.toUpperCase()}<span class="description_title_sub"> (boost)</span></p>`; 
-        desc.innerHTML += `<p>${boosts[boostLabel[0] - 1][1].description}</p>`
+        desc.innerHTML += `<p>${(boosts[boostLabel[0] - 1][1].copycat_description) ? (boosts[boostLabel[0] - 1][1].copycat_description) : (boosts[boostLabel[0] - 1][1].description)}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
@@ -817,6 +824,7 @@ export default class GUI {
         const db = this.builder.dbs.get(type);
         if(!db) return;
         for(const [key, value] of db) {
+            let unlocked = false;
             if(!value.requires) continue;
             const e = document.getElementById(key).parentElement;
             for(const obj of value.requires) {
@@ -826,16 +834,19 @@ export default class GUI {
                     const requirement = exp.get(obj.name);
                     if(requirement && requirement.state >= obj.state) {
                         this[`${methodType}_Unlock`](e);
+                        unlocked = true;
                     } else {
                         this[`${methodType}_Lock`](e);
                     }
                 } else {
                     if(exp === obj.name) {
                         this[`${methodType}_Unlock`](e);
+                        unlocked = true;
                     } else {
                         this[`${methodType}_Lock`](e);
                     }
                 }
+                if (unlocked) continue;
             }
         }
     }

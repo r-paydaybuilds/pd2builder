@@ -16,6 +16,7 @@ window.addEventListener("resize", () => {
 
 const builder = new Builder(window.innerWidth < 1003);
 
+
 window.onload = async () => {
     // Load language
     builder.lang = new Language(document.getElementById("langDrop"));
@@ -326,11 +327,21 @@ window.onload = async () => {
         e.addEventListener("click", ev => {
             if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
 
-            const boostLabel = e.querySelector("span").innerText.split("/"); 
+            builder.changeCardBoost(e);
+
+            //const boostLabel = e.querySelector("span").innerText.split("/"); 
 
             // Mockup of functionality
-            e.querySelector("span").innerText = (++boostLabel[0] > boostLabel[1] ? "1" : boostLabel[0]) + "/" + boostLabel[1]; 
+            //e.querySelector("span").innerText = (++boostLabel[0] > boostLabel[1] ? "1" : boostLabel[0]) + "/" + boostLabel[1]; 
             builder.gui.PerkCard_DisplayDescription(e); 
+
+            if(ev.isTrusted || ev.detail == -1) {
+                window.history.pushState(
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
+                    `used perk ${e.id}`,
+                    builder.io.GetEncodedBuild()
+                );
+            }
         }); 
     }
 
