@@ -44,6 +44,10 @@
         "trip_mines_and_shaped_charges": {
             "name": "Trip Mines and Shaped Charges",
             "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
+        },
+        "ordnance_bag" : {
+            "name": "Ordnance Bag",
+            "description": "To use the Ordnance Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain throwable ammo (but does not work for perk deck-exclusive throwables). Using the Ordnance Bag will fully replenish the user's throwable ammo supply. It can only be used four times.\nWhen the Ordnance Bag is consumed, it disappears. You see how many uses are left by looking at the Ordnance Bag."
         }
     },
     "perk_cards": {
@@ -687,6 +691,11 @@
         "leech": {
             "name": "Leech",
             "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team."
+        },
+        "copycat":
+        {
+            "name": "Copycat",
+            "description": "With an eidetic memory and photographic reflexes, the Copycat is a physical phenomenon. Anticipating movement has made you quick on your feet, to the point that you can dodge and even deflect bullets with ease. You've studied the other perk decks closely, and you can now mimic their base abilities to enhance your own. Mix and match techniques to create a style both echoic and unique. If others accuse you of stealing, remind them that imitation is the sincerest form of flattery."
         }    
     },
     "skills": {
@@ -1243,6 +1252,18 @@
         "leech_ampule": {
             "name": "Leech Ampule",
             "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts."
+        },
+        "viper_grenade": {
+            "name": "Viper Grenade",
+            "description": "The Viper Grenade lets you lock down an area in a debilitating smoke, letting you easily deal with any survivors stumbling out of the affected area."
+        },
+        "adhesive_grenade": {
+            "name": "Adhesive Grenade",
+            "description": "The Adhesive Grenades will let you throw a grenade at a wall or on a roof and have it stick, exposing enemies to the deadly blast. For comedic effect, stick an enemy directly and watch him inadvertently walk a deadly explosive into his own ranks."
+        },
+        "snowball": {
+            "name": "Snowball",
+            "description": "Dunk them in water, toss them in the freezer, and then you get a deadly throwing weapon.\nSimple."
         }    
     },
     "bigoil": {
