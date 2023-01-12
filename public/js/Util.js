@@ -207,6 +207,33 @@ class SkillMap extends Map {
 }
 
 /**
+ * Class object for holding the copycat boosts
+ */
+class CopycatBoosts {
+
+    constructor(builder){
+        /**
+         * The Builder instance that instantiated this
+         * @type {Builder}
+         */
+        this.builder = builder;
+
+        this.boostA = 1;
+        this.boostB = 1;
+        this.boostC = 1;
+        this.boostD = 1;
+        this.mimic = 1;
+    }
+
+    isCopycatActive(){
+        return this.builder.exp.perkDeck === "copycat";
+    }
+
+    
+
+}
+
+/**
  * Map for storing all DBs
  * @extends {Map<String,Map<String,Object>>}
  * 
@@ -524,4 +551,4 @@ class UIEventHandler {
     }
 }
 
-export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler };
+export { Util as default, SkillMap, DBMap, System, XScrollTransformer, UIEventHandler, CopycatBoosts };

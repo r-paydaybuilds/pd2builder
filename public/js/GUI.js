@@ -824,7 +824,6 @@ export default class GUI {
         const db = this.builder.dbs.get(type);
         if(!db) return;
         for(const [key, value] of db) {
-            let unlocked = false;
             if(!value.requires) continue;
             const e = document.getElementById(key).parentElement;
             for(const obj of value.requires) {
@@ -834,19 +833,16 @@ export default class GUI {
                     const requirement = exp.get(obj.name);
                     if(requirement && requirement.state >= obj.state) {
                         this[`${methodType}_Unlock`](e);
-                        unlocked = true;
                     } else {
                         this[`${methodType}_Lock`](e);
                     }
                 } else {
                     if(exp === obj.name) {
                         this[`${methodType}_Unlock`](e);
-                        unlocked = true;
                     } else {
                         this[`${methodType}_Lock`](e);
                     }
                 }
-                if (unlocked) continue;
             }
         }
     }

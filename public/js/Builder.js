@@ -1,4 +1,4 @@
-import { SkillMap, System, DBMap, XScrollTransformer } from "./Util.js";
+import { SkillMap, System, DBMap, XScrollTransformer, CopycatBoosts } from "./Util.js";
 import GUI from "./GUI.js";
 import IO from "./IO.js";
 import Language from "./Language.js";
@@ -35,11 +35,17 @@ export default class Builder {
             armor: null,
             perkDeck: null,
             copycat: null,
-            copycat_mimic: null,
+            copycat_mimicry: null,
             throwable: null,
             deployable: null, 
             deployableSecondary: null
         };
+
+        /**
+         * Some sort of class to hold active copycat boosts I guess?
+         * @type {CopycatBoosts} 
+         */
+        this.copycat = new CopycatBoosts(this);
 
 
         /**
@@ -163,21 +169,25 @@ export default class Builder {
 
         if (isMimicry){
 
+            /*
             const oldMimic = [...this.dbs.get("copycat_mimicry").entries()][oldBoost-1][1];
             if (oldMimic.throwable){
                 this.gui.Throwable_Lock(document.getElementById(oldMimic.throwable));
             }
+            */
 
             const thisMimic = [...this.dbs.get("copycat_mimicry").entries()][newBoost-1];
 
             this.exp.copycat_mimicry = thisMimic[0];
 
+            /*
             if (thisMimic[1].throwable){
                 const thisThrow = thisMimic[1].throwable;
                 this.gui.Throwable_Unlock(document.getElementById(thisThrow));
                 this.gui.Throwable_Select(document.getElementById(thisThrow));
                 this.exp.throwable = thisThrow;
             }
+            */
         }
         this.io.GetEncodedBuild();
 
