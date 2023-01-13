@@ -279,7 +279,8 @@ window.onload = async () => {
             const pastId = builder.exp.perkDeck;
             if (builder.exp.perkDeck === id) return; 
 
-            builder.exp.perkDeck = id; 
+            builder.exp.perkDeck = id;
+            builder.perkDeckUnlockHandler();
             builder.gui.PerkDeck_Select(e);
 
             if(pastId) builder.gui.HandleUnlocks({
@@ -287,6 +288,19 @@ window.onload = async () => {
                 id: pastId,
                 unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
             });
+            /*
+            if(pastId) builder.gui.HandleUnlocks({
+                type: "perk_deck_unlock",
+                id: pastId,
+                unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
+            });
+
+            if ((pastId) && (id === "copycat")) builder.gui.HandleUnlocks({
+                type: "mimic",
+                id: id,
+                unlocks: builder.dbs.get("copycat_mimicry").get(builder.exp.copycat.mimicry).unlocks
+            });
+            */
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
@@ -338,7 +352,7 @@ window.onload = async () => {
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(null, builder.exp, builder.gui.Tab_Current),
-                    `used perk ${e.id}`,
+                    `used perk boost ${e.id}`,
                     builder.io.GetEncodedBuild()
                 );
             }

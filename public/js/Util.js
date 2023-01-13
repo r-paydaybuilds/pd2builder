@@ -85,6 +85,7 @@ class Util {
             perkDeck: exp.perkDeck,
             copycat: exp.copycat,
             copycat_mimic: exp.copycat_mimic,
+            perk_deck_unlock: exp.perk_deck_unlock,
             throwable: exp.throwable,
             deployable: exp.deployable,
             deployableSecondary: exp.deployableSecondary
