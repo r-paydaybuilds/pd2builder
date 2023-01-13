@@ -677,15 +677,7 @@
     "point_break": {
         "name": "Point Break",
         "description": "While your armor is up, you will store 4 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.",
-        "copycat_description": "While your armor is up, you will store 8 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.\nYou gain 10% more health.",
-        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
-        "stats": [
-            {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
-            }
-        ]
+        "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds."
     },
     "the_emerging_force": {
         "name": "The Emerging Force",
@@ -1089,6 +1081,13 @@
     "symbiosis": {
         "name": "Symbiosis",
         "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%.",
+        "stats": [
+            {
+                "type": "hp",
+                "value": 1.6,
+                "multiply": true
+            }
+        ],
         "deck_completion_bonus": true
     },
     "tactical_reload": {
