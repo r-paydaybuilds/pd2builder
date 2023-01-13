@@ -175,16 +175,16 @@ export default class Builder {
     }
 
 
-    changeCardBoost = function(cardElement, newBoost){
-        const boostLabel = cardElement.querySelector("span").innerText.split("/");
+    changeCardBoost(cardElement, newBoost){
+        //const boostLabel = cardElement.querySelector("span").innerText.split("/");
 
 
         const boost_quantity = cardElement.querySelector(".copycat_boosts_num").innerText;
 
         if (newBoost === undefined){
             newBoost = ++cardElement.querySelector(".copycat_current_num").innerText;
-            newBoost = (newBoost > boostLabel[1]) ? 1 : newBoost;
-        } else if (newBoost <= 0 || newBoost > boostLabel[1]){
+            newBoost = (newBoost > boost_quantity) ? 1 : newBoost;
+        } else if (newBoost <= 0 || newBoost > boost_quantity){
             newBoost = 1;
         }
     
