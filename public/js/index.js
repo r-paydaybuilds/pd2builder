@@ -283,25 +283,12 @@ window.onload = async () => {
             builder.exp.perkDeck = id;
             builder.perkDeckUnlockHandler();
             builder.gui.PerkDeck_Select(e);
-            /*
-            if(pastId) builder.gui.HandleUnlocks({
-                type: "perkDeck",
-                id: pastId,
-                unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
-            });
-            */
+
             if(pastUnlock && (pastUnlock != builder.exp.perkDeckUnlock)) builder.gui.HandleUnlocks({
                 type: "perkDeckUnlock",
                 id: pastUnlock,
                 unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
             });
-            /*
-            if ((pastId) && (id === "copycat")) builder.gui.HandleUnlocks({
-                type: "mimic",
-                id: id,
-                unlocks: builder.dbs.get("copycat_mimicry").get(builder.exp.copycat.mimicry).unlocks
-            });
-            */
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(

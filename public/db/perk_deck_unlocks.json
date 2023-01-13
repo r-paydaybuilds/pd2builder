@@ -1,35 +1,51 @@
 {
     "crew_chief": {
+        "unlocks": []
     },
     "muscle": {
+        "unlocks": []
     },
     "armorer": {
+        "unlocks": []
     },
     "rogue": {
+        "unlocks": []
     },
     "hitman": {
+        "unlocks": []
     },
     "crook": {
+        "unlocks": []
     },
     "burglar": {
+        "unlocks": []
     },
     "infiltrator": {
+        "unlocks": []
     },
     "sociopath": {
+        "unlocks": []
     },
     "gambler": {
+        "unlocks": []
     },
     "grinder": {
+        "unlocks": []
     },
     "yakuza": {
+        "unlocks": []
     },
     "ex-president": {
+        "unlocks": []
     },
     "maniac": {
+        "unlocks": []
     },
     "anarchist": {
+        "unlocks": []
     },
     "biker": {
+        "unlocks": []
     },
     "kingpin": {
         "unlocks": [
@@ -62,5 +78,6 @@
         ]
     },
     "copycat": {
+        "unlocks": []
     }
 }

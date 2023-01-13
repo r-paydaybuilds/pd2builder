@@ -122,7 +122,7 @@ export default class IO {
     encodeCopycatBoosts(){
         let ccVals = [];
         for (const card of document.getElementsByClassName("pk_has_boost")){
-            ccVals.push(this.EncodeByte(card.querySelector("span").innerText.split("/")[0]));
+            ccVals.push(this.EncodeByte(card.querySelector(".copycat_current_num").innerText));
         }
         return ccVals.join("");
     }

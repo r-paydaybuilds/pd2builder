@@ -42,7 +42,6 @@ export default class Builder {
                 grace_period: null,
                 mimicry: null
             },
-            copycat_mimicry: null,
             perkDeckUnlock: null,
             throwable: null,
             deployable: null, 
@@ -50,12 +49,6 @@ export default class Builder {
         };
 
 
-
-        /**
-         * Some sort of class to hold active copycat boosts I guess?
-         * @type {CopycatBoosts} 
-         */
-        this.copycat = new CopycatBoosts(this);
 
 
         /**
@@ -92,6 +85,7 @@ export default class Builder {
             ["perk_cards", null],
             ["copycat_boosts",null],
             ["copycat_mimicry",null],
+            ["perk_deck_unlocks",null],
             ["deployables", null],
             ["throwables", null],
             ["armors", null]
@@ -136,11 +130,11 @@ export default class Builder {
     {
 
         if (this.exp.perkDeck === "copycat"){
-            if (this.exp.copycat_mimicry === null){
+            if (this.exp.copycat.mimicry === null){
                 this.exp.perkDeckUnlock = null;
                 return;
             }
-            this.exp.perkDeckUnlock = this.dbs.get(`copycat_mimicry`).get(this.exp.copycat_mimicry).mimics;
+            this.exp.perkDeckUnlock = this.dbs.get(`copycat_mimicry`).get(this.exp.copycat.mimicry).mimics;
         } else {
             this.exp.perkDeckUnlock = this.exp.perkDeck;
         }
@@ -187,48 +181,35 @@ export default class Builder {
     changeCardBoost = function(cardElement, newBoost){
         const boostLabel = cardElement.querySelector("span").innerText.split("/");
 
-        const oldBoost = boostLabel[0];
-    
+
+        const boost_quantity = cardElement.querySelector(".copycat_boosts_num").innerText;
+
         if (newBoost === undefined){
-            newBoost = ++boostLabel[0];
+            newBoost = ++cardElement.querySelector(".copycat_current_num").innerText;
             newBoost = (newBoost > boostLabel[1]) ? 1 : newBoost;
         } else if (newBoost <= 0 || newBoost > boostLabel[1]){
             newBoost = 1;
         }
     
         // Mockup of functionality
-        cardElement.querySelector("span").innerText = (newBoost) + "/" + boostLabel[1];
+        cardElement.querySelector(".copycat_current_num").innerText = newBoost;
         
         const isMimicry = !!(this.dbs.get("perk_cards").get(cardElement.id).has_mimicry_boost);
 
-        if (isMimicry){
-
-            /*
-            const oldMimic = [...this.dbs.get("copycat_mimicry").entries()][oldBoost-1][1];
-            if (oldMimic.throwable){
-                this.gui.Throwable_Lock(document.getElementById(oldMimic.throwable));
-            }
-            */
-
-            const thisMimic = [...this.dbs.get("copycat_mimicry").entries()][newBoost-1];
-
-            this.exp.copycat_mimicry = thisMimic[0];
-
-            /*
-            if (thisMimic[1].throwable){
-                const thisThrow = thisMimic[1].throwable;
-                this.gui.Throwable_Unlock(document.getElementById(thisThrow));
-                this.gui.Throwable_Select(document.getElementById(thisThrow));
-                this.exp.throwable = thisThrow;
-            }
-            */
-        }
+        /*
+        const newBoostID = (
+            (isMimicry)
+            ?   [...this.dbs.get("copycat_mimicry").entries()]
+            :   [...this.dbs.get("copycat_boosts").entries()]
+        )[newBoost-1][0];
+        this.exp.copycat[cardElement.id] = newBoostID;
+        */
 
         this.exp.copycat[cardElement.id] = (
             (isMimicry)
-            ?   [...this.dbs.get("copycat_mimicry").entries()][newBoost-1][0]
-            :   [...this.dbs.get("copycat_boosts").entries()][newBoost-1][0]
-        );
+            ?   [...this.dbs.get("copycat_mimicry").entries()]
+            :   [...this.dbs.get("copycat_boosts").entries()]
+        )[newBoost-1][0];
 
         this.perkDeckUnlockHandler();
 

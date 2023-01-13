@@ -451,11 +451,16 @@ export default class GUI {
         if (!card.id || !this.builder.dbs.get("perk_cards").get(card.id).has_copycat_boost) return; 
 
 
-        const boosts = (this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost) ? [...this.builder.dbs.get("copycat_mimicry").entries()] : [...this.builder.dbs.get("copycat_boosts").entries()]; 
-        const boostLabel = card.querySelector("span").innerText.split("/"); 
+        const boosts = (
+            (this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost) 
+            ? [...this.builder.dbs.get("copycat_mimicry").entries()]
+            : [...this.builder.dbs.get("copycat_boosts").entries()]
+        ); 
 
-        desc.innerHTML += `<br><p class="description_title">${boosts[boostLabel[0] - 1][1].name.toUpperCase()}<span class="description_title_sub"> (boost)</span></p>`; 
-        desc.innerHTML += `<p>${(boosts[boostLabel[0] - 1][1].copycat_description) ? (boosts[boostLabel[0] - 1][1].copycat_description) : (boosts[boostLabel[0] - 1][1].description)}</p>`
+        const selectedBoost = boosts[card.querySelector(".copycat_current_num").innerText -1][1];
+
+        desc.innerHTML += `<br><p class="description_title">${selectedBoost.name.toUpperCase()}<span class="description_title_sub"> (boost)</span></p>`; 
+        desc.innerHTML += `<p>${(selectedBoost.copycat_description) ? (selectedBoost.copycat_description) : (selectedBoost.description)}</p>`
             .replace(/\n/g, "</p><p>")
             .replace(/\t/g, "<br>")
             .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
@@ -771,7 +776,6 @@ export default class GUI {
      */
     HandleUnlocks(...objects) {
         const ret = [];
-        console.log(objects);
         for(const { type, id, unlocks } of objects) {
             if(!unlocks) continue;
             switch(type) {
@@ -820,7 +824,6 @@ export default class GUI {
                 }
             }
         }
-        console.log(ret);
         return ret;
     }
 
