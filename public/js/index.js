@@ -277,16 +277,31 @@ window.onload = async () => {
 
             const id = e.id; 
             const pastId = builder.exp.perkDeck;
+            const pastUnlock = builder.exp.perkDeckUnlock;
             if (builder.exp.perkDeck === id) return; 
 
-            builder.exp.perkDeck = id; 
+            builder.exp.perkDeck = id;
+            builder.perkDeckUnlockHandler();
             builder.gui.PerkDeck_Select(e);
-
+            /*
             if(pastId) builder.gui.HandleUnlocks({
                 type: "perkDeck",
                 id: pastId,
                 unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
             });
+            */
+            if(pastUnlock && (pastUnlock != builder.exp.perkDeckUnlock)) builder.gui.HandleUnlocks({
+                type: "perkDeckUnlock",
+                id: pastUnlock,
+                unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+            });
+            /*
+            if ((pastId) && (id === "copycat")) builder.gui.HandleUnlocks({
+                type: "mimic",
+                id: id,
+                unlocks: builder.dbs.get("copycat_mimicry").get(builder.exp.copycat.mimicry).unlocks
+            });
+            */
             
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
@@ -329,6 +344,15 @@ window.onload = async () => {
 
             builder.changeCardBoost(e);
 
+            const pastUnlock = builder.exp.perkDeckUnlock;
+            if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
+                builder.gui.HandleUnlocks({
+                    type: "perkDeckUnlock",
+                    id: pastUnlock,
+                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                });
+            }
+
             //const boostLabel = e.querySelector("span").innerText.split("/"); 
 
             // Mockup of functionality
@@ -338,7 +362,7 @@ window.onload = async () => {
             if(ev.isTrusted || ev.detail == -1) {
                 window.history.pushState(
                     Util.makeState(null, builder.exp, builder.gui.Tab_Current),
-                    `used perk ${e.id}`,
+                    `used perk boost ${e.id}`,
                     builder.io.GetEncodedBuild()
                 );
             }

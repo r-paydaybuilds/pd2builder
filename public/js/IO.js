@@ -278,7 +278,8 @@ export default class IO {
                     () => e.scrollIntoView({ block: "center" }),
                     { once: true });
             }
-        }); 
+        });
+        this.builder.perkDeckUnlockHandler(); 
     } 
 
     loadCopycatBoosts(ccBoosts){
@@ -289,7 +290,7 @@ export default class IO {
             const thisBoostCard = boostCards.item(i);
             this.builder.changeCardBoost(thisBoostCard, thisBoostNum);
         }
-        
+        this.builder.perkDeckUnlockHandler();
     }
 
     /**
