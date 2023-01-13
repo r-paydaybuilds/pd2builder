@@ -1120,7 +1120,7 @@
     },
     "mimicry": {
         "name": "Mimicry",
-        "description": "Pick 1 of the following boosts:",
+        "description": "Choose 1 of the following perks:",
         "deck_completion_bonus": true,
         "has_copycat_boost": true,
         "has_mimicry_boost": true

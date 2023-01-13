@@ -614,6 +614,10 @@
             "name": "Grace Period",
             "description": "When your health gets below 50% you will be immune to health damage for 2 seconds.\n\nThis cannot occur more than once every 15 seconds."
         },
+        "mimicry": {
+            "name": "Mimicry",
+            "description": "Choose 1 of the following perks:"
+        },
         "thriving": {
             "name": "Thriving",
             "description": "Your maximum health is increased by 20%."

@@ -1,52 +1,20 @@
 {
-    "crew_chief": {
-        "unlocks": []
-    },
-    "muscle": {
-        "unlocks": []
-    },
-    "armorer": {
-        "unlocks": []
-    },
-    "rogue": {
-        "unlocks": []
-    },
-    "hitman": {
-        "unlocks": []
-    },
-    "crook": {
-        "unlocks": []
-    },
-    "burglar": {
-        "unlocks": []
-    },
-    "infiltrator": {
-        "unlocks": []
-    },
-    "sociopath": {
-        "unlocks": []
-    },
-    "gambler": {
-        "unlocks": []
-    },
-    "grinder": {
-        "unlocks": []
-    },
-    "yakuza": {
-        "unlocks": []
-    },
-    "ex-president": {
-        "unlocks": []
-    },
-    "maniac": {
-        "unlocks": []
-    },
-    "anarchist": {
-        "unlocks": []
-    },
-    "biker": {
-        "unlocks": []
-    },
+    "crew_chief": {},
+    "muscle": {},
+    "armorer": {},
+    "rogue": {},
+    "hitman": {},
+    "crook": {},
+    "burglar": {},
+    "infiltrator": {},
+    "sociopath": {},
+    "gambler": {},
+    "grinder": {},
+    "yakuza": {},
+    "ex-president": {},
+    "maniac": {},
+    "anarchist": {},
+    "biker": {},
     "kingpin": {
         "unlocks": [
             { "type": "throwable", "name": "injector" }
@@ -77,7 +45,5 @@
             { "type": "throwable", "name": "leech_ampule" }
         ]
     },
-    "copycat": {
-        "unlocks": []
-    }
+    "copycat": {}
 }
