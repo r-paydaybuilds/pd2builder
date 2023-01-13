@@ -43,7 +43,7 @@ export default class Builder {
                 mimicry: null
             },
             copycat_mimicry: null,
-            perk_deck_unlock: null,
+            perkDeckUnlock: null,
             throwable: null,
             deployable: null, 
             deployableSecondary: null
@@ -128,7 +128,7 @@ export default class Builder {
 
     /**
      * Validates the 'exp' object
-     * setting the 'perk_deck_unlock' value of it to
+     * setting the 'perkDeckUnlock' value of it to
      * either the id of the equipped perk deck
      * or the id of the equipped copycat mimicry.mimics if the perk deck is 'copycat'
      */
@@ -137,16 +137,12 @@ export default class Builder {
 
         if (this.exp.perkDeck === "copycat"){
             if (this.exp.copycat_mimicry === null){
-                this.exp.perk_deck_unlock = null;
+                this.exp.perkDeckUnlock = null;
                 return;
             }
-            //console.log(this.exp.copycat_mimicry);
-            //console.log(this.dbs.get(`copycat_mimicry`));
-            //console.log(this.dbs.get(`copycat_mimicry`).get(this.exp.copycat_mimicry));
-            //console.log(this.dbs.get(`copycat_mimicry`).get(this.exp.copycat_mimicry).mimics);
-            this.exp.perk_deck_unlock = this.dbs.get(`copycat_mimicry`).get(this.exp.copycat_mimicry).mimics;
+            this.exp.perkDeckUnlock = this.dbs.get(`copycat_mimicry`).get(this.exp.copycat_mimicry).mimics;
         } else {
-            this.exp.perk_deck_unlock = this.exp.perkDeck;
+            this.exp.perkDeckUnlock = this.exp.perkDeck;
         }
 
     }

@@ -277,24 +277,25 @@ window.onload = async () => {
 
             const id = e.id; 
             const pastId = builder.exp.perkDeck;
+            const pastUnlock = builder.exp.perkDeckUnlock;
             if (builder.exp.perkDeck === id) return; 
 
             builder.exp.perkDeck = id;
             builder.perkDeckUnlockHandler();
             builder.gui.PerkDeck_Select(e);
-
+            /*
             if(pastId) builder.gui.HandleUnlocks({
                 type: "perkDeck",
                 id: pastId,
                 unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
             });
-            /*
-            if(pastId) builder.gui.HandleUnlocks({
-                type: "perk_deck_unlock",
-                id: pastId,
-                unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
+            */
+            if(pastUnlock && (pastUnlock != builder.exp.perkDeckUnlock)) builder.gui.HandleUnlocks({
+                type: "perkDeckUnlock",
+                id: pastUnlock,
+                unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
             });
-
+            /*
             if ((pastId) && (id === "copycat")) builder.gui.HandleUnlocks({
                 type: "mimic",
                 id: id,
@@ -342,6 +343,15 @@ window.onload = async () => {
             if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
 
             builder.changeCardBoost(e);
+
+            const pastUnlock = builder.exp.perkDeckUnlock;
+            if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
+                builder.gui.HandleUnlocks({
+                    type: "perkDeckUnlock",
+                    id: pastUnlock,
+                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                });
+            }
 
             //const boostLabel = e.querySelector("span").innerText.split("/"); 
 

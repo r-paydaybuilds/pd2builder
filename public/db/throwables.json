@@ -76,7 +76,7 @@
         "name": "Smoke Bomb",
         "description": "Drop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you. Dodging bullets is a piece of cake when they can't see you properly.",
         "requires": [
-            { "type": "perk_deck", "name": "sicario" }
+            { "type": "perk_deck_unlock", "name": "sicario" }
         ]
     },
     "gas_dispenser": {
