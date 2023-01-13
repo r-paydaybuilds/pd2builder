@@ -175,7 +175,15 @@ export default class Builder {
     }
 
 
-    changeCardBoost(cardElement, newBoost){
+    /**
+     * Give this sucker a copycat perk card (and the number of the new boost to give it (or don't give it to increment the boost number))
+     * and boom it will change that card to the new boost and update the backendy logic stuff to take that boost into account too.
+     * 
+     * very epic I know :)
+     * @param {Element} cardElement 
+     * @param {number} newBoost new boost number to use (if not given, increments the current boost number by 1)
+     */
+    changeCardBoost(cardElement, newBoost = undefined){
         //const boostLabel = cardElement.querySelector("span").innerText.split("/");
 
 
@@ -188,7 +196,7 @@ export default class Builder {
             newBoost = 1;
         }
     
-        // Mockup of functionality
+        
         cardElement.querySelector(".copycat_current_num").innerText = newBoost;
         
         const isMimicry = !!(this.dbs.get("perk_cards").get(cardElement.id).has_mimicry_boost);
