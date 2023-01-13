@@ -36,7 +36,8 @@ pd2builder Contributors
   * **![√](https://cdn.discordapp.com/attachments/671478410220142592/678430571600412700/nice.jpg)**
 
 * **[11BelowStudio](https://github.com/11BelowStudio)**
-  * Worked out how to save/load selected copycat boosts
+  * Fumbled around with the backend code a bit and somehow got Copycat working.
+  * Does not know how any of this web development malarkey works.
 
 [More contributors may or may not be found here](https://github.com/r-paydaybuilds/pd2builder/graphs/contributors)
 ### YOU ARE FREE TO ADD YOURSELF ON THIS IF YOU AT LEAST CONTRIBUTED ON SOMETHING.
