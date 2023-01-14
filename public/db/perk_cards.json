@@ -705,7 +705,7 @@
             },
             {
                 "type": "dodge",
-                "value": 1.1,
+                "value": 1.15,
                 "multiply": true
             }
         ]
@@ -1036,7 +1036,14 @@
     },
     "bit_decay": {
         "name": "Bit Decay",
-        "description": "Killing an enemy while the feedback effect is active will regenerate 20 health."
+        "description": "Killing an enemy while the feedback effect is active will regenerate 20 health.",
+        "stats": [
+            {
+                "type": "dodge",
+                "value": 1.15,
+                "multiply": true
+            }
+        ]
     },
     "kluge": {
         "name": "Kluge",
@@ -1045,6 +1052,13 @@
     "botnet": {
         "name": "Botnet",
         "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health.",
+        "stats": [
+            {
+                "type": "dodge",
+                "value": 1.15,
+                "multiply": true
+            }
+        ],
         "deck_completion_bonus": true
     },
     "momentum": {
