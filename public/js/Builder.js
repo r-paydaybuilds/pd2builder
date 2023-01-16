@@ -42,6 +42,10 @@ export default class Builder {
                 grace_period: null,
                 mimicry: null
             },
+            /* perkDeckUnlock is used to lock/unlock perk deck throwables
+            (specified as the 'requirement' in throwables.json).
+            Updated via calling builder.perkDeckUnlockHandler()
+            */
             perkDeckUnlock: null,
             throwable: null,
             deployable: null, 
@@ -80,8 +84,8 @@ export default class Builder {
             ["skills", null],
             ["perk_decks", null],
             ["perk_cards", null],
-            ["copycat_boosts",null],
-            ["copycat_mimicry",null],
+            //["copycat_boosts",null],
+            //["copycat_mimicry",null],
             ["perk_deck_unlocks",null],
             ["deployables", null],
             ["throwables", null],

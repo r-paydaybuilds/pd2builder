@@ -223,7 +223,6 @@
             { "type": "throwable", "name": "pocket_ecm_device" }
         ],
         "mimics": "hacker"
-
     },
     "momentum": {
         "name": "Momentum",
