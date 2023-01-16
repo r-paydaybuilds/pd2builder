@@ -84,9 +84,6 @@ export default class Builder {
             ["skills", null],
             ["perk_decks", null],
             ["perk_cards", null],
-            //["copycat_boosts",null],
-            //["copycat_mimicry",null],
-            ["perk_deck_unlocks",null],
             ["deployables", null],
             ["throwables", null],
             ["armors", null]

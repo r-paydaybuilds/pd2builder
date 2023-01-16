@@ -891,9 +891,6 @@
         "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
         "copycat_description": "Unlocks and equips the Kingpin Injector.\nActivating the Injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.\nUnlisted effect: Every kill reduces the cooldown by 1 second.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "injector" }
-        ],
         "mimics": "kingpin"
     },
     "play_rough": {
@@ -950,9 +947,6 @@
         "description": "Unlocks and equips the throwable Smoke Bomb.\nWhen deployed, the smoke bomb creates a smoke screen that lasts for 10 seconds. While standing inside the smoke screen, you and any of your allies automatically avoid 50% of all bullets. Any enemies that stand in the smoke will see their accuracy reduced by 50%.\nAfter the smoke screen dissipates, the Smoke Bomb is on a cooldown for 60 seconds, but killing enemies will reduce this cooldown by 1 second.",
         "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "smoke_bomb" }
-        ],
         "mimics": "sicario"
     },
     "twitch": {
@@ -988,9 +982,6 @@
         "description": "Unlocks and equips the Stoic Hip Flask.\nDamage taken is now reduced by 75%. The remaining damage will be applied directly.\nThe 75% reduced damage will be applied over-time (12 seconds) instead.\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any pending damage. The flask has a 10 second cooldown but time remaining will be lessened by 1 second per enemy killed.",
         "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "stoic_hip_flask" }
-        ],
         "mimics": "stoic"
     },
     "un-moved": {
@@ -1031,9 +1022,6 @@
         "description": "Unlocks and equips the Gas Dispenser.\nTo activate the Gas Dispenser you need to look at another allied unit within a 18 meter radius with clear line of sight and press the throwable key to tag them.\nEach enemy you or the tagged unit kills will now heal you for 15 health and the tagged unit for 7.5 health.\nEach enemy you kill will now extend the duration of the effect by 1.3 seconds and reduce the cooldown timer by 2 seconds.\nThe effect will last for a duration of 2 seconds and has a cooldown of 12 seconds.",
         "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "gas_dispenser" }
-        ],
         "mimics": "tag_team"
     },
     "scent": {
@@ -1075,9 +1063,6 @@
         "name": "Code Glitch",
         "description": "Unlocks and equips the Pocket ECM Device.\nChanging to another perk deck will make the Pocket ECM Device unavailable again. The Pocket ECM Device replaces your current throwable, it can be switched out if desired.\tWhile in game you can use the throwable key to activate the Pocket ECM Device.\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a 6 second duration.\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a 6 second duration.\nThe Pocket ECM Device has 2 charges with a 100 second cooldown timer, but each kill you perform will shorten the cooldown time by 6 seconds.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "pocket_ecm_device" }
-        ],
         "mimics": "hacker"
     },
     "opsec": {
@@ -1122,9 +1107,6 @@
         "name": "Momentum",
         "description": "Unlocks and equips the Leech Ampule.\tChanging to another perk deck will make the Leech Ampule unavailable again. The Leech Ampule replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\tWhile in game you can use throwable key to activate the Leech Ampule.\tActivating the Leech Ampule will restore 40% health and disables your armor for the duration of the Leech Ampule.\tWhile the Leech Ampule is active your health is divided into segments of 20% and damage taken from enemies removes one segment. Killing 2 enemies will restore one segment of your health and block damage for 1 second. Anytime you take damage your teammates are healed for 5% of their health.\tThe Leech Ampule lasts 6 seconds with a 30 seconds cooldown.",
         "copycat_mimicry_available": true,
-        "unlocks": [
-            { "type": "throwable", "name": "leech_ampule" }
-        ],
         "mimics": "leech"
     },
     "indomitable": {
