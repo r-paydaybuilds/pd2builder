@@ -8,6 +8,7 @@ import Stats from "./Stats.js";
  * Singleton class containing million of things (gangs of four accepts this)
  */
 export default class Builder {
+
     constructor(mobile = false) {
         /**
          * An object containing most info that should be exported
@@ -34,6 +35,18 @@ export default class Builder {
             },
             armor: null,
             perkDeck: null,
+            copycat: {
+                tactical_reload: null,
+                head_games: null,
+                is_this_your_bullet: null,
+                grace_period: null,
+                mimicry: null
+            },
+            /* perkDeckUnlock is used to lock/unlock perk deck throwables
+            (specified as the 'requirement' in throwables.json).
+            Updated via calling builder.perkDeckUnlockHandler()
+            */
+            perkDeckUnlock: null,
             throwable: null,
             deployable: null, 
             deployableSecondary: null
@@ -99,6 +112,31 @@ export default class Builder {
          * @type {Language}
          */
         this.lang;
+
+        // and also calls the perkDeckUnlockHandler thingy
+        this.perkDeckUnlockHandler();
+    }
+
+
+    /**
+     * Validates the 'exp' object
+     * setting the 'perkDeckUnlock' value of it to
+     * either the id of the equipped perk deck
+     * or the id of the equipped copycat mimicry.mimics if the perk deck is 'copycat'
+     */
+    perkDeckUnlockHandler()
+    {
+
+        if (this.exp.perkDeck === "copycat"){
+            if (this.exp.copycat.mimicry === null){
+                this.exp.perkDeckUnlock = null;
+                return;
+            }
+            this.exp.perkDeckUnlock = this.dbs.get(`copycat_mimicry`).get(this.exp.copycat.mimicry).mimics;
+        } else {
+            this.exp.perkDeckUnlock = this.exp.perkDeck;
+        }
+
     }
 
     /**
@@ -120,6 +158,8 @@ export default class Builder {
             const query = document.querySelector(`#${key}.pk_selected p`);
             if(query) query.textContent = `${this.lang.get("system.equipped")}: ${this.lang.get(`perk_decks.${key}.name`).toLocaleUpperCase()}`;
         }
+
+
     
         for(const [key] of this.dbs.get("skills")) {
             document.getElementById(key).parentElement.nextElementSibling.textContent = this.lang.get(`skills.${key}.name`).toLocaleUpperCase();
@@ -133,6 +173,54 @@ export default class Builder {
             e.innerHTML = Language.ref.has(e.dataset.lang) ? lang(Language.ref.get(e.dataset.lang)) : lang;
         });
         GUI.COLOR_PATTERN = new RegExp(this.lang.get("system.colors"), "g");
+    }
+
+
+    /**
+     * Give this sucker a copycat perk card (and the number of the new boost to give it (or don't give it to increment the boost number))
+     * and boom it will change that card to the new boost and update the backendy logic stuff to take that boost into account too.
+     * 
+     * very epic I know :)
+     * @param {Element} cardElement 
+     * @param {number} newBoost new boost number to use (if not given, increments the current boost number by 1)
+     */
+    changeCardBoost(cardElement, newBoost = undefined){
+        //const boostLabel = cardElement.querySelector("span").innerText.split("/");
+
+
+        const boost_quantity = cardElement.querySelector(".copycat_boosts_num").innerText;
+
+        if (newBoost === undefined){
+            newBoost = ++cardElement.querySelector(".copycat_current_num").innerText;
+            newBoost = (newBoost > boost_quantity) ? 1 : newBoost;
+        } else if (newBoost <= 0 || newBoost > boost_quantity){
+            newBoost = 1;
+        }
+    
+        
+        cardElement.querySelector(".copycat_current_num").innerText = newBoost;
+        
+        const isMimicry = !!(this.dbs.get("perk_cards").get(cardElement.id).has_mimicry_boost);
+
+        /*
+        const newBoostID = (
+            (isMimicry)
+            ?   [...this.dbs.get("copycat_mimicry").entries()]
+            :   [...this.dbs.get("copycat_boosts").entries()]
+        )[newBoost-1][0];
+        this.exp.copycat[cardElement.id] = newBoostID;
+        */
+
+        this.exp.copycat[cardElement.id] = (
+            (isMimicry)
+            ?   [...this.dbs.get("copycat_mimicry").entries()]
+            :   [...this.dbs.get("copycat_boosts").entries()]
+        )[newBoost-1][0];
+
+        this.perkDeckUnlockHandler();
+
+        this.io.GetEncodedBuild();
+
     }
 }
 

@@ -114,13 +114,17 @@ export default class Language {
     /**
      * Returns the requested object or string
      * @param {String} loc Location of the wanted value
+     * @param {any} fallback Return this instead if loc is undefined (needed to test the final card of Copycat)
      * @returns {Object}
      */
-    get(loc = "") {
+    get(loc = "", fallback = undefined) {
         const array = loc.split(".");
         let res = this.dictionary;
         for(const value of array) {
             res = res[value];
+        }
+        if (res === undefined){
+            return fallback;
         }
         return res;
     }

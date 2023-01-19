@@ -83,6 +83,9 @@ class Util {
             skills: exp.skills.toJSON(),
             armor: exp.armor,
             perkDeck: exp.perkDeck,
+            copycat: exp.copycat,
+            copycat_mimic: exp.copycat_mimic,
+            perk_deck_unlock: exp.perk_deck_unlock,
             throwable: exp.throwable,
             deployable: exp.deployable,
             deployableSecondary: exp.deployableSecondary
@@ -204,6 +207,8 @@ class SkillMap extends Map {
     }
 }
 
+
+
 /**
  * Map for storing all DBs
  * @extends {Map<String,Map<String,Object>>}
@@ -227,6 +232,25 @@ class DBMap extends Map {
                                     DBMap.processModifiers(...json[prop].stats);
                                 }
                             }
+                        }
+                        else if (key === "perk_cards") {
+                            const copycat_boosts = [];
+                            const copycat_mimicry = [];
+                            for (const prop in json){
+                                if (json[prop].is_copycat_boost){
+                                    copycat_boosts.push(json[prop]);
+                                } else if (json[prop].copycat_mimicry_available){
+                                    /**
+                                     * TODO: if object has "copycat_description" and/or "copycat_stats",
+                                     *  maybe push a copy of that object but with the description/stats
+                                     *  overwritten with the copycat version of those things
+                                     *  into the copycat_mimicry map?
+                                     */
+                                    copycat_mimicry.push(json[prop]);
+                                }
+                            }
+                            this.set("copycat_boosts", new Map(Object.entries(copycat_boosts)));
+                            this.set("copycat_mimicry", new Map(Object.entries(copycat_mimicry)));
                         }
                         this.set(key, new Map(Object.entries(json)));
                     })
