@@ -186,6 +186,10 @@ div.footer a:hover {
 /*            SKILL CSS           */
 /**********************************/
 
+.sk_disable_infamy {
+  margin-bottom: 4px; 
+}
+
 .sk_points_remaining {
   display: flex;
   justify-content: center;
