@@ -28,7 +28,7 @@
   "homepage": "https://github.com/r-paydaybuilds/pd2builder#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-rate-limit": "^3.3.2",
     "helmet": "^3.21.1"
   },
