@@ -37,6 +37,7 @@ pd2builder Contributors
 
 * **[11BelowStudio](https://github.com/11BelowStudio)**
   * Fumbled around with the backend code a bit and somehow got Copycat working.
+  * Added the Snowball, Viper Grenade, Adhesive Grenade, and Ordnance Bag
   * Does not know how any of this web development malarkey works.
 
 [More contributors may or may not be found here](https://github.com/r-paydaybuilds/pd2builder/graphs/contributors)

@@ -914,7 +914,17 @@
   background-image: url("../img/throwables/leech_ampule.png"); 
 }
 
+#viper_grenade {
+  background-image: url("../img/throwables/viper_grenade.png")
+}
 
+#adhesive_grenade {
+  background-image: url("../img/throwables/adhesive_grenade.png")
+}
+
+#snowball {
+  background-image: url("../img/throwables/snowball.png")
+}
 
 /**********************************/
 /*       DEPLOYABLES ICONS        */
@@ -956,3 +966,6 @@
   background-image: url("../img/deployables/trip_mine.png"); 
 }
 
+#ordnance_bag {
+  background-image: url("../img/deployables/ordnance_bag.png");
+}
