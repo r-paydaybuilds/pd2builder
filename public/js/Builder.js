@@ -212,9 +212,9 @@ export default class Builder {
         */
 
         this.exp.copycat[cardElement.id] = (
-            (isMimicry)
-            ?   [...this.dbs.get("copycat_mimicry").entries()]
-            :   [...this.dbs.get("copycat_boosts").entries()]
+            isMimicry ?
+                [...this.dbs.get("copycat_mimicry").entries()] :
+                [...this.dbs.get("copycat_boosts").entries()]
         )[newBoost-1][0];
 
         this.perkDeckUnlockHandler();
