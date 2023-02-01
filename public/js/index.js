@@ -276,7 +276,7 @@ window.onload = async () => {
             }
 
             const id = e.id; 
-            const pastId = builder.exp.perkDeck;
+            // const pastId = builder.exp.perkDeck;
             const pastUnlock = builder.exp.perkDeckUnlock;
             if (builder.exp.perkDeck === id) return; 
 
