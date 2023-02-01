@@ -452,9 +452,9 @@ export default class GUI {
 
 
         const boosts = (
-            (this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost) 
-            ? [...this.builder.dbs.get("copycat_mimicry").entries()]
-            : [...this.builder.dbs.get("copycat_boosts").entries()]
+            this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost ?
+                [...this.builder.dbs.get("copycat_mimicry").entries()] :
+                [...this.builder.dbs.get("copycat_boosts").entries()]
         ); 
 
         const selectedBoost = boosts[card.querySelector(".copycat_current_num").innerText -1][1];
