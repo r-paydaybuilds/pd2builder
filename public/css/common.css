@@ -554,6 +554,18 @@ select {
   align-items: center; 
 }
 
+.pk_has_boost {
+  display: flex; 
+  flex-flow: row nowrap; 
+  justify-content: center; 
+  align-items: flex-start; 
+}
+
+.pk_has_boost > span {
+  font-size: min(1.1em, 20px);
+  color:rgb(0, 0, 0);
+}
+
 
 
 /**********************************/

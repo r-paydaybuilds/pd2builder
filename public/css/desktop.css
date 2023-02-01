@@ -136,6 +136,12 @@ body {
   margin-top: 0;
 }
 
+.description_title_sub {
+  font-size: 18px; 
+  
+  margin-top: 0; 
+}
+
 .requires {
   color: #ED6A71;
 }
@@ -473,11 +479,6 @@ body {
   height: 92px; 
 
   background: url("../img/perks/card.png") 0 0 no-repeat;  
-  
-  display: flex; 
-  flex-flow: row nowrap; 
-  justify-content: left;
-  align-items: center; 
 
   -webkit-transition: opacity .15s ease;
   -moz-transition:    opacity .15s ease;
@@ -504,7 +505,7 @@ body {
   height: 48px;  
 
   background: url("../img/perks/icons.png") no-repeat;  
-  background-size: 500% 2300%; 
+  background-size: 500% 2400%; 
 }
 
 .pk_deck_cards > div.pk_card_dim {

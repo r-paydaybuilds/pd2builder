@@ -16,6 +16,7 @@ window.addEventListener("resize", () => {
 
 const builder = new Builder(window.innerWidth < 1003);
 
+
 window.onload = async () => {
     // Load language
     builder.lang = new Language(document.getElementById("langDrop"));
@@ -276,15 +277,17 @@ window.onload = async () => {
 
             const id = e.id; 
             const pastId = builder.exp.perkDeck;
+            const pastUnlock = builder.exp.perkDeckUnlock;
             if (builder.exp.perkDeck === id) return; 
 
-            builder.exp.perkDeck = id; 
+            builder.exp.perkDeck = id;
+            builder.perkDeckUnlockHandler();
             builder.gui.PerkDeck_Select(e);
 
-            if(pastId) builder.gui.HandleUnlocks({
-                type: "perkDeck",
-                id: pastId,
-                unlocks: builder.dbs.get("perk_decks").get(pastId).unlocks
+            if(pastUnlock && (pastUnlock != builder.exp.perkDeckUnlock)) builder.gui.HandleUnlocks({
+                type: "perkDeckUnlock",
+                id: pastUnlock,
+                unlocks: builder.dbs.get("perk_decks").get(pastUnlock).unlocks
             });
             
             if(ev.isTrusted || ev.detail == -1) {
@@ -320,6 +323,35 @@ window.onload = async () => {
             mobile: builder.mobile
         });
     } 
+
+    // Perk card clickables (with boosts) //
+    for(const e of document.querySelectorAll(".pk_deck_cards .pk_has_boost")) {
+        e.addEventListener("click", ev => {
+            if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
+
+            builder.changeCardBoost(e);
+
+            const pastUnlock = builder.exp.perkDeckUnlock;
+            if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
+                builder.gui.HandleUnlocks({
+                    type: "perkDeckUnlock",
+                    id: pastUnlock,
+                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                });
+            }
+
+            builder.gui.PerkCard_DisplayDescription(e); 
+
+            if(ev.isTrusted || ev.detail == -1) {
+                window.history.pushState(
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
+                    `used perk boost ${e.id}`,
+                    builder.io.GetEncodedBuild()
+                );
+            }            
+        }); 
+    }
+
 
     // Perk deck cards highlight // 
     if(builder.mobile) {

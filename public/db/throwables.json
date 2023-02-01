@@ -62,35 +62,35 @@
         "name": "Stoic's Hip Flask",
         "description": "An antique flask from 1882 bearing the inscription \"Stoic\" and \"JW Spirits\", given to Duke in his youth when he trained with Buddhist monks. Duke keeps it filled with his favorite whiskey; taking a swig is a symbolic gesture of calming and gives the bearer a moment of zen-like focus, easing away damage.",
         "requires": [
-            { "type": "perk_deck", "name": "stoic" }
+            { "type": "perk_deck_unlock", "name": "stoic" }
         ]
     },
     "pocket_ecm_device": {
         "name": "Pocket ECM Device",
         "description": "A small device for intercepting and overriding nearby encrypted signals. With sophisticated algorithms for sniffing out and disrupting wireless data, the Pocket ECM Device gives the user an edge both while hiding in the shadows and in the heat of combat.",
         "requires": [
-            { "type": "perk_deck", "name": "hacker" }
+            { "type": "perk_deck_unlock", "name": "hacker" }
         ]
     },
     "smoke_bomb": {
         "name": "Smoke Bomb",
         "description": "Drop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you. Dodging bullets is a piece of cake when they can't see you properly.",
         "requires": [
-            { "type": "perk_deck", "name": "sicario" }
+            { "type": "perk_deck_unlock", "name": "sicario" }
         ]
     },
     "gas_dispenser": {
         "name": "Gas Dispenser",
         "description": "A small gas dispenser that temporarily enhance the body's senses and provide healing effect for two allies.",
         "requires": [
-            { "type": "perk_deck", "name": "tag_team" }
+            { "type": "perk_deck_unlock", "name": "tag_team" }
         ]
     },
     "injector": {
         "name": "Injector",
         "description": "When consumed the user ceases to feel pain and becomes fearless. The lack of pain lets the user rampage through the heart of battles longer than any other and the lack of fear makes him a frightening and obvious threat for his enemies.",
         "requires": [
-            { "type": "perk_deck", "name": "kingpin" }
+            { "type": "perk_deck_unlock", "name": "kingpin" }
         ],
         "dlc": "Scarface Character Pack"
     },
@@ -103,7 +103,7 @@
         "name": "Leech Ampule",
         "description": "Activating the Leech ability requires you to break a small glass ampule under your nose and take a deep breath. You're not quite sure what's in it, but it makes the world come into focus, and causes your adrenaline to spike. One thing is certain; it sure as shit isn't smelling salts.",
         "requires": [
-            { "type": "perk_deck", "name": "leech" }
+            { "type": "perk_deck_unlock", "name": "leech" }
         ]
     },
     "viper_grenade": {

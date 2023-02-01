@@ -421,15 +421,21 @@ export default class GUI {
      * @param {HTMLDivElement} card An element object representing the hovered perk deck card 
      */
     PerkCard_DisplayDescription(card) {
+
         if (!card) return; 
 
         const desc = document.querySelector("#description_container, .pk_description"); 
         const pk = this.builder.dbs.get("perk_decks").get(
             util.parentElement(card, this.builder.mobile ? 3 : 2).id
         );
-        const perkCard = this.builder.lang.get(`perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
-            e instanceof Element && e.tagName === "DIV"
-        )]}`);
+        
+        const perkCard = this.builder.lang.get(
+            `perk_cards.${pk.perks[util.getNodeIndex(card, (e) => 
+                e instanceof Element && e.tagName === "DIV"
+            )]}`, 
+            this.builder.dbs.get("perk_cards").get(card.id) // fallback so the final card of copycat will work without changing en-us.json
+        );
+
 
         let html = `<p class="description_title">${perkCard.name.toUpperCase()}`;
         
@@ -439,6 +445,27 @@ export default class GUI {
             .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
 
         desc.innerHTML = html;
+
+        // Copycat mockup 
+
+        if (!card.id || !this.builder.dbs.get("perk_cards").get(card.id).has_copycat_boost) return; 
+
+
+        const boosts = (
+            (this.builder.dbs.get("perk_cards").get(card.id).has_mimicry_boost) 
+            ? [...this.builder.dbs.get("copycat_mimicry").entries()]
+            : [...this.builder.dbs.get("copycat_boosts").entries()]
+        ); 
+
+        const selectedBoost = boosts[card.querySelector(".copycat_current_num").innerText -1][1];
+
+        desc.innerHTML += `<br><p class="description_title">${selectedBoost.name.toUpperCase()}<span class="description_title_sub"> (boost)</span></p>`; 
+        desc.innerHTML += `<p>${(selectedBoost.copycat_description) ? (selectedBoost.copycat_description) : (selectedBoost.description)}</p>`
+            .replace(/\n/g, "</p><p>")
+            .replace(/\t/g, "<br>")
+            .replace(this.constructor.COLOR_PATTERN, match => `<span class="color_number">${match}</span>`);
+
+        
     }
 
     /**
@@ -596,9 +623,11 @@ export default class GUI {
 
         if(document.getElementById(throwableId).parentElement.classList.contains("th_locked")) {
             for(const requirement of th.requires) {
+                const getThisReqTypeFromLang = (requirement.type === "perk_deck_unlock") ? "perk_deck" : requirement.type;
+                // Obtains 'perk_deck' instead of 'perk_deck_unlock' from lang (crappy workaround to avoid errors with the throwable unlock workaround for copycat)
                 html += "<br><span class=\"requires\">" + util.resolveRequire(
-                    requirement.type,
-                    this.builder.lang.get(`${requirement.type}s.${requirement.name}.name`),
+                    getThisReqTypeFromLang, //requirement.type,
+                    this.builder.lang.get(`${getThisReqTypeFromLang}s.${requirement.name}.name`),
                     this.builder.lang
                 ) + "</span>";
             }
