@@ -44,6 +44,10 @@
         "trip_mines_and_shaped_charges": {
             "name": "Mga Trip Mine at Shaped Charges",
             "description": "To use the Trip Mine, you need to place it by holding [G]. The trigger laser can be toggled between explosive mode and sensor by pressing [F].\nTo use Shaped Charges, you need to place it by holding [G]. Once placed it will detonate within a few seconds. Trip Mines are basically traps that will hurt or kill enemies crossing the beam. Shaped Charges are commonly used to open safes and doors. Both are a good addition to all combat situations."
+        },
+        "ordnance_bag": {
+            "name": "Ordnance Bag",
+            "description": "To use the Ordnance Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain throwable ammo (but does not work for perk deck-exclusive throwables). Using the Ordnance Bag will fully replenish the user's throwable ammo supply. It can only be used four times.\nWhen the Ordnance Bag is consumed, it disappears. You see how many uses are left by looking at the Ordnance Bag."
         }
     },
     "perk_cards": {
