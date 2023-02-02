@@ -326,10 +326,20 @@ window.onload = async () => {
 
     // Perk card clickables (with boosts) //
     for(const e of document.querySelectorAll(".pk_deck_cards .pk_has_boost")) {
-        e.addEventListener("click", ev => {
+        e.addEventListener("mousedown", ev => {
+
+
             if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
 
-            builder.changeCardBoost(e);
+            switch (ev.button){
+            case 0: // left-click
+                builder.changeCardBoost(e);
+                break;
+            case 2: // right-click
+                builder.changeCardBoost(e, -1);
+                break;
+            default:
+            }
 
             const pastUnlock = builder.exp.perkDeckUnlock;
             if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
@@ -349,7 +359,9 @@ window.onload = async () => {
                     builder.io.GetEncodedBuild()
                 );
             }            
-        }); 
+        });
+        
+        
     }
 
 
