@@ -68,7 +68,7 @@ jobs:
         # Set tag message
         #tag_message: # optional
         # Set custom domain
-        cname: pd2build.ar
+        # cname: pd2build.ar
         # Set files or directories to exclude from a publish directory.
         #exclude_assets: # optional, default is .github
 
