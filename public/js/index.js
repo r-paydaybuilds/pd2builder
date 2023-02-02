@@ -326,8 +326,11 @@ window.onload = async () => {
 
     // Perk card clickables (with boosts) //
     for(const e of document.querySelectorAll(".pk_deck_cards .pk_has_boost")) {
+        // left-click
         e.addEventListener("click", ev => {
-            if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost) return; 
+
+            // expecting a left-click
+            if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost || ev.button != 0) return; 
 
             builder.changeCardBoost(e);
 
@@ -349,7 +352,37 @@ window.onload = async () => {
                     builder.io.GetEncodedBuild()
                 );
             }            
-        }); 
+        });
+        
+        // right-click
+        e.addEventListener("contextmenu", ev => {
+            ev.preventDefault(); 
+
+            // expecting a right-click
+            if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost || ev.button != 2) return; 
+
+            builder.changeCardBoost(e, -1);
+
+            const pastUnlock = builder.exp.perkDeckUnlock;
+            if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
+                builder.gui.HandleUnlocks({
+                    type: "perkDeckUnlock",
+                    id: pastUnlock,
+                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                });
+            }
+
+            builder.gui.PerkCard_DisplayDescription(e); 
+
+            if(ev.isTrusted || ev.detail == -1) {
+                window.history.pushState(
+                    Util.makeState(null, builder.exp, builder.gui.Tab_Current),
+                    `used perk boost ${e.id}`,
+                    builder.io.GetEncodedBuild()
+                );
+            } 
+                       
+        });
     }
 
 
