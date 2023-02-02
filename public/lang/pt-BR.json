@@ -171,6 +171,7 @@
         "ambidexterity": {
             "name": "Habilidoso",
             "description": "As armas de duas mãos tem -16 de penalidade de Estabilidade.\nA sua armadura se recupera 10% mais rápido.\nA capacidade de munição das suas armas de duas mãos é aumentada em 50%.",
+            "copycat_description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 15%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
             "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "advanced_recovery": {
@@ -231,6 +232,7 @@
         "dutch_courage": {
             "name": "Bravura de Holandesa",
             "description": "A sua chance de Dodge é aumentada em mais 5%.\nA sua chance de ser o alvo enquanto fica parado e agachado é diminuido em mais 5%.\nVocê responde os pagers 10% mais rápido.",
+            "copycat_description": "Your chance to dodge is increased by 20%.\nStanding still and crouching decreases your chance of being targeted by 20%.",
             "vr_description": "O efeito de dash é agora de 1% até no máximo de 9%"
         },
         "breath_of_fresh_air": {
@@ -256,6 +258,7 @@
         "expert_close_combat": {
             "name": "Combate de Perto Expert",
             "description": "Quando você estiver em uma distância média de um inimigo, você recebe mais 8% de redução de dano dos seus inimigos.",
+            "copycat_description": "When you are within medium range of an enemy, you receive 24% less damage from enemies.",
             "vr_description": "O efeito de dash é agora de 8 até no máximo de 18."
         },
         "life_drain": {
@@ -316,6 +319,7 @@
         "adrenaline": {
             "name": "Adrenalina",
             "description": "Causando dano em um inimigo agora cura 2 pontos de vida por 0.3 segundos durante 3 segundos.\nVocê ganha 20% a mais de vida.",
+            "copycat_description": "Damaging an enemy heals 2 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds, and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
             "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "endorphins": {
@@ -366,6 +370,7 @@
         "the_emerging_force": {
             "name": "Força Emergente",
             "description": "Aumenta a quantidade de vida guardada que você mata por 4.\nVocê ganha mais 10% de vida.",
+            "copycat_description": "While your armor is up, you will store 8 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.\nYou gain 10% more health.",
             "vr_description": "O efeito de dash é agora de 0 até no máximo de 6."
         },
         "life_of_ice": {
@@ -391,6 +396,7 @@
         "outburst": {
             "name": "Explosão",
             "description": "Os membros do seu grupo também vão ganhar o efeito dos seus Pedaços de Histeria.\nOs Pedaços de Histeria de vários membros do grupo não aumentam e só aumenta para aquele que dá a maior absorção de dano enquanto tiver no efeito.",
+            "copycat_description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.\nMembers of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
             "vr_description": "O efeito de dash é agora de 4 até no máximo 10."
         },
         "fervor": {
@@ -461,7 +467,8 @@
         "bad_guy_coming_through": {
             "name": "Bad Guy Coming Through",
             "description": "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.",
-            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos."
+            "vr_description": "Depois de tracejar, o jogador irá curar de 0 até um máximo de 3 de vida dependendo da quantidade de energia consumida. Só pode curar no máximo de 50 de vida a cada 5 segundos.",
+            "copycat_description": "Unlocks and equips the Kingpin Injector.\nActivating the Injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.\nUnlisted effect: Every kill reduces the cooldown by 1 second."
         },
         "play_rough": {
             "name": "Play Rough",
@@ -597,6 +604,42 @@
         "symbiosis": {
             "name": "Symbiosis",
             "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%."
+        },
+        "tactical_reload": {
+            "name": "Tactical Reload",
+            "description": "Auto-reload secondary after performing 10 kills with primary, and vice versa.\n\nIncreases weapon swapping speed by 320%."
+        },
+        "head_games": {
+            "name": "Head Games",
+            "description": "Each headshot you land heals 10 health points."
+        },
+        "is_this_your_bullet": {
+            "name": "Is This Your Bullet?",
+            "description": "Dodged bullets will ricochet back on the enemy that fired them."
+        },
+        "grace_period": {
+            "name": "Grace Period",
+            "description": "When your health gets below 50% you will be immune to health damage for 2 seconds.\n\nThis cannot occur more than once every 15 seconds."
+        },
+        "mimicry": {
+            "name": "Mimicry",
+            "description": "Choose 1 of the following perks:"
+        },
+        "thriving": {
+            "name": "Thriving",
+            "description": "Your maximum health is increased by 20%."
+        },
+        "toughen_up": {
+            "name": "Toughen Up",
+            "description": "You gain 5% more armor."
+        },
+        "cat-like_reflex": {
+            "name": "Cat-Like Reflex",
+            "description": "Your chance to dodge is increased by 5%."
+        },
+        "fleet-footed": {
+            "name": "Fleet-Footed",
+            "description": "Your crouched and carry movement speed is increased by 10%."
         }
     },
     "perk_decks": {
@@ -687,6 +730,10 @@
         "leech": {
             "name": "Leech",
             "description": "You are a selective parasite in combat, draining your foes to strengthen yourself and your teammates. Still, you're not just some brick shithouse that can take a beating. You can dish out the pain and use that aggression to bolster your team."
+        },
+        "copycat": {
+            "name": "Copycat",
+            "description": "With an eidetic memory and photographic reflexes, the Copycat is a physical phenomenon. Anticipating movement has made you quick on your feet, to the point that you can dodge and even deflect bullets with ease. You've studied the other perk decks closely, and you can now mimic their base abilities to enhance your own. Mix and match techniques to create a style both echoic and unique. If others accuse you of stealing, remind them that imitation is the sincerest form of flattery."
         }
     },
     "skills": {
@@ -988,7 +1035,7 @@
         },
         "equilibrium": {
             "name": "Equilibrium",
-            "description": "BASIC: 1 point\tDecreases the time it takes to draw and holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
+            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
             "name": "Gun Nut",
