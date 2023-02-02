@@ -171,6 +171,7 @@
         "ambidexterity": {
             "name": "两手同利",
             "description": "所有的双持武器都将获得-16点稳定惩罚，同时备弹提升50%。\n额外提升10%护甲恢复速度。",
+            "copycat_description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 15%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
             "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "advanced_recovery": {
@@ -231,6 +232,7 @@
         "dutch_courage": {
             "name": "酒后胆大",
             "description": "额外提升5%闪避。\n当你站定不动且蹲下时，将额外降低5%被视作攻击目标的几率。\n提升10%回答对讲机的速度。",
+            "copycat_description": "Your chance to dodge is increased by 20%.\nStanding still and crouching decreases your chance of being targeted by 20%.",
             "vr_description": "消耗耐力的闪避提升量提升至1%~9%。"
         },
         "breath_of_fresh_air": {
@@ -256,6 +258,7 @@
         "expert_close_combat": {
             "name": "专家近战",
             "description": "当你的中距离范围内存在敌人，则额外获得8%伤害减免。",
+            "copycat_description": "When you are within medium range of an enemy, you receive 24% less damage from enemies.",
             "vr_description": "消耗耐力的回复护甲量提升至8~18点护甲。"
         },
         "life_drain": {
@@ -316,6 +319,7 @@
         "adrenaline": {
             "name": "肾上腺素",
             "description": "对一名敌人造成伤害将会使你每0.3秒回复2点血量，效果持续3秒。\n你将获得20%额外血量。",
+            "copycat_description": "Damaging an enemy heals 2 life points every 0.3 seconds for 3 seconds.\nThis effect stacks but cannot occur more than once every 1.5 seconds, and only while wearing the Two-piece Suit or Lightweight Ballistic Vest.",
             "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "endorphins": {
@@ -366,6 +370,7 @@
         "the_emerging_force": {
             "name": "新兴之力",
             "description": "提升4点杀敌后的储血量。\n你将获得10%额外血量。",
+            "copycat_description": "While your armor is up, you will store 8 health for every 1 enemy you or your crew kills.\nWhen your armor has been completely depleted and then starts to regenerate, you will gain health equal to the stored health amount.\nMaximum amount of stored health depends on your equipped armor.\nYou gain 10% more health.",
             "vr_description": "消耗耐力的回血量提升至0~6点血。"
         },
         "life_of_ice": {
@@ -391,6 +396,7 @@
         "outburst": {
             "name": "爆发",
             "description": "你的团队成员将共享你的狂躁槽效果。\n多位玩家同时使用\"狂人\"天赋时，狂躁槽不叠加，只取最高伤害吸收的效果。",
+            "copycat_description": "100% of damage you deal is converted into Hysteria Stacks, up to 240 every 4 seconds. Max amount of stacks is 600.\nHysteria Stacks:\tYou gain 1 damage absorption for every 30 stacks of Hysteria. Hysteria Stacks decays 60% + 80 every 8 seconds.\nMembers of your crew also gains the effect of your Hysteria Stacks.\nHysteria Stacks from multiple crew members do not stack and only the stacks that gives the highest damage absorption will have an effect.",
             "vr_description": "消耗耐力的回复护甲量提升至4~10点护甲。"
         },
         "fervor": {
@@ -461,7 +467,8 @@
         "bad_guy_coming_through": {
             "name": "坏蛋来临",
             "description": "解锁并装备霸王注射器。\t切换成其他的天赋牌组会使注射器失效。\t注射器会替换你当前的投掷物，但你仍可以在你的投掷物栏中自由切换装备。\n在游戏中你可以使用投掷物键来激活注射器。\t注射器持续时间为6秒，注射器效果内，你将回复等同于你所受到伤害量75%的血量。\t持续效果内你依然会受到伤害。\n注射器冷却时间为30秒，从注射开始计算。\t每杀死一名敌人将减少1秒冷却时间。",
-            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。"
+            "vr_description": "冲刺所消耗的耐力将为你回复0~3点血量，每5秒最多回复50点血。",
+            "copycat_description": "Unlocks and equips the Kingpin Injector.\nActivating the Injector will heal you with 75% of all damage taken for 6 seconds.\nYou can still take damage during the effect. The Injector can only be used once every 30 seconds.\nUnlisted effect: Every kill reduces the cooldown by 1 second."
         },
         "play_rough": {
             "name": "铁血铮铮",
@@ -597,6 +604,42 @@
         "symbiosis": {
             "name": "共生互利",
             "description": "你可以在倒地状态(非完全倒地)下使用水蛭精华，并在水蛭效果内强制起身活动，直至效果结束。\t如果在水蛭效果结束前，你成功救起一名队友或使用一次医疗箱，且血量不处于空血，你将维持起身状态。\t\t水蛭效果内，转化血点时的血量判定将细分至10%。\t\t你获得60%额外血量。"
+        },
+        "tactical_reload": {
+            "name": "Tactical Reload",
+            "description": "Auto-reload secondary after performing 10 kills with primary, and vice versa.\n\nIncreases weapon swapping speed by 320%."
+        },
+        "head_games": {
+            "name": "Head Games",
+            "description": "Each headshot you land heals 10 health points."
+        },
+        "is_this_your_bullet": {
+            "name": "Is This Your Bullet?",
+            "description": "Dodged bullets will ricochet back on the enemy that fired them."
+        },
+        "grace_period": {
+            "name": "Grace Period",
+            "description": "When your health gets below 50% you will be immune to health damage for 2 seconds.\n\nThis cannot occur more than once every 15 seconds."
+        },
+        "mimicry": {
+            "name": "Mimicry",
+            "description": "Choose 1 of the following perks:"
+        },
+        "thriving": {
+            "name": "Thriving",
+            "description": "你获得20%额外血量。"
+        },
+        "toughen_up": {
+            "name": "Toughen Up",
+            "description": "You gain 5% more armor."
+        },
+        "cat-like_reflex": {
+            "name": "Cat-Like Reflex",
+            "description": "Your chance to dodge is increased by 5%."
+        },
+        "fleet-footed": {
+            "name": "Fleet-Footed",
+            "description": "Your crouched and carry movement speed is increased by 10%."
         }
     },
     "perk_decks": {
@@ -687,6 +730,10 @@
         "leech": {
             "name": "水蛭",
             "description": "在战场上，你是只有选择性的寄生虫，你懂得如何利用自身来消磨敌人，以辅佐队友。当然这并不代表你是只会挨打的铁王八，你可以承受疼痛，并将其化为增强队伍的动力。"
+        },
+        "copycat": {
+            "name": "Copycat",
+            "description": "With an eidetic memory and photographic reflexes, the Copycat is a physical phenomenon. Anticipating movement has made you quick on your feet, to the point that you can dodge and even deflect bullets with ease. You've studied the other perk decks closely, and you can now mimic their base abilities to enhance your own. Mix and match techniques to create a style both echoic and unique. If others accuse you of stealing, remind them that imitation is the sincerest form of flattery."
         }
     },
     "skills": {
@@ -988,7 +1035,7 @@
         },
         "equilibrium": {
             "name": "沉着",
-            "description": "基础：1点\t减少33%切换手枪的时间。\n专精：3点\t提升8点手枪的精准。"
+            "description": "BASIC: 1 point\tDecreases the time it takes to draw end holster pistols by 33%.\nACE: 3 points\tYou gain 8 weapon accuracy with all pistols."
         },
         "gun_nut": {
             "name": "枪械狂",
