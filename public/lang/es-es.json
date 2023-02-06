@@ -44,6 +44,10 @@
         "trip_mines_and_shaped_charges": {
             "name": "Mina de Sensor - Carga Hueca",
             "description": "Para usar la Mina de Sensor, debes desplegarla manteniendo [G]. Esta se puede alternar entre modo explosivo (láser rojo. detonará con cualquier enemigo) o detector (láser azul, marcará enemigos no especiales en sigilo y enemigos especiales en combate). Para usar una Carga Hueca, debes plantarla manteniendo [F].\nLa mina de sensor es un dispositivo diseñado para eliminar o detectar a quienes pasen frente al láser. La carga hueca suele ser usada para abrir puertas u cajas fuertes. Ambas pueden son muy útiles en un combate."
+        },
+        "ordnance_bag": {
+            "name": "Ordnance Bag",
+            "description": "To use the Ordnance Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain throwable ammo (but does not work for perk deck-exclusive throwables). Using the Ordnance Bag will fully replenish the user's throwable ammo supply. It can only be used four times.\nWhen the Ordnance Bag is consumed, it disappears. You see how many uses are left by looking at the Ordnance Bag."
         }
     },
     "perk_cards": {
