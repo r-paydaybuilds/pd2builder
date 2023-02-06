@@ -182,7 +182,8 @@ export default class Builder {
      * 
      * very epic I know :)
      * @param {Element} cardElement 
-     * @param {number} newBoost new boost number to use (if not given, increments the current boost number by 1)
+     * @param {number} newBoost new boost number to use
+     * (if not given, increments the current boost number by 1. If -1 is given, decrements current boost number by 1)
      */
     changeCardBoost(cardElement, newBoost = undefined){
         //const boostLabel = cardElement.querySelector("span").innerText.split("/");
@@ -190,7 +191,10 @@ export default class Builder {
 
         const boost_quantity = cardElement.querySelector(".copycat_boosts_num").innerText;
 
-        if (newBoost === undefined){
+        if (newBoost === -1){
+            newBoost = --cardElement.querySelector(".copycat_current_num").innerText;
+            newBoost = (newBoost <= 0) ? boost_quantity : newBoost;
+        } else if (newBoost === undefined){
             newBoost = ++cardElement.querySelector(".copycat_current_num").innerText;
             newBoost = (newBoost > boost_quantity) ? 1 : newBoost;
         } else if (newBoost <= 0 || newBoost > boost_quantity){

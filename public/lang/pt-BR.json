@@ -44,6 +44,10 @@
         "trip_mines_and_shaped_charges": {
             "name": "Minas e Cargas Explosivas",
             "description": "Para usar uma Mina, você precisa colocá-lo usando [G]. O laser de ativação pode ser alternado do modo explosivo e o sensor por apertar [F].\nPara usar a Carga Explosiva, você precisa colocá-lo segurando [G]. Assim que for colocado irá explodir dentro de alguns segundos. As Minas são armadilhas que irá machucar ou matar inimigos que cruzarem no laser. As Cargas Explosivas tem um uso comum em arrombar portas e cofres. Ambos são uma boa adição para todas as situações de combate."
+        },
+        "ordnance_bag": {
+            "name": "Ordnance Bag",
+            "description": "To use the Ordnance Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain throwable ammo (but does not work for perk deck-exclusive throwables). Using the Ordnance Bag will fully replenish the user's throwable ammo supply. It can only be used four times.\nWhen the Ordnance Bag is consumed, it disappears. You see how many uses are left by looking at the Ordnance Bag."
         }
     },
     "perk_cards": {

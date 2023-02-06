@@ -44,6 +44,10 @@
         "trip_mines_and_shaped_charges": {
             "name": "绊雷与塑性炸药",
             "description": "按住[G]来放置绊雷。\n你可以通过对绊雷进行交互(按下[F])来切换它的爆炸和探测模式。\n对可放置塑性炸药的地方进行交互将放置塑性炸药，它将在几秒钟后爆炸并摧毁接触的物体。\n绊雷可以伤害到经过它的人，而塑性炸药则被广泛用于破门与炸开保险箱，两者都适合在战斗中使用。"
+        },
+        "ordnance_bag": {
+            "name": "Ordnance Bag",
+            "description": "To use the Ordnance Bag, you need to place it by holding [G]. Once placed it cannot be moved, but it can be used by you and your crew by holding [F] to regain throwable ammo (but does not work for perk deck-exclusive throwables). Using the Ordnance Bag will fully replenish the user's throwable ammo supply. It can only be used four times.\nWhen the Ordnance Bag is consumed, it disappears. You see how many uses are left by looking at the Ordnance Bag."
         }
     },
     "perk_cards": {
