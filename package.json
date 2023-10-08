@@ -36,7 +36,7 @@
     "cssnano": "^5.0.15",
     "eslint": "^8.7.0",
     "html-minifier": "^4.0.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.31",
     "postcss-cli": "^9.1.0",
     "terser": "^5.14.2"
   }
