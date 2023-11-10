@@ -1175,6 +1175,9 @@
         "perk_decks": {
             "title": "Perk Decks"
         },
+        "stats": {
+            "title": "Stats"
+        },
         "armors": {
             "title": "Armors",
             "table": {

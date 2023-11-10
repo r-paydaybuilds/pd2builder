@@ -68,6 +68,7 @@
         <button id="tab_armors_button" data-name="armors" data-lang="system.armors.title">Armors</button>
         <button id="tab_throwables_button" data-name="throwables" data-lang="system.throwables.title">Throwables</button>
         <button id="tab_deployables_button" data-name="deployables" data-lang="system.deployables.title">Deployables</button>
+        <button id="tab_break_points_button" data-name="break_points" data-lang="system.stats.title">Stats</button>
         <button id="tab_io_button" data-name="share" data-lang="system.share.title">Share Build</button>
       </div>
     </div>
@@ -1175,6 +1176,96 @@
         <div id="dp_description" class="description_textbox bordered">
           <div>
             <p class="dp_description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Tab Content -->
+    <div id="tab_break_points_page" class="tab_page_content">
+      <div id="bp_page" class="bordered">
+        <table>
+          <thead>
+            <th></th>
+            <th>
+              Close Range
+            </th>
+            <th>
+              3+ Enemies
+            </th>
+            <th>
+              Medium Range
+            </th>
+            <th>
+              3+ Enemies
+            </th>
+            <th>
+              Long Range
+            </th>
+            <th>
+              3+ Enemies
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Damage Taken</td>
+              <td id="close_range_stats_damage"></td>
+              <td id="close_range_stats_damage_3"></td>
+              <td id="medium_range_stats_damage"></td>
+              <td id="medium_range_stats_damage_3"></td>
+              <td id="long_range_stats_damage"></td>
+              <td id="long_range_stats_damage_3"></td>
+            </tr>
+            <tr>
+              <td>Shots to deplete armor</td>
+              <td id="close_range_stats_armor_shots"></td>
+              <td id="close_range_stats_armor_shots_3"></td>
+              <td id="medium_range_stats_armor_shots"></td>
+              <td id="medium_range_stats_armor_shots_3"></td>
+              <td id="long_range_stats_armor_shots"></td>
+              <td id="long_range_stats_armor_shots_3"></td>
+            </tr>
+            <tr>
+              <td>Shots to deplete health</td>
+              <td id="close_range_stats_health_shots"></td>
+              <td id="close_range_stats_health_shots_3"></td>
+              <td id="medium_range_stats_health_shots"></td>
+              <td id="medium_range_stats_health_shots_3"></td>
+              <td id="long_range_stats_health_shots"></td>
+              <td id="long_range_stats_health_shots_3"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="bp_description_container" class="description_container">
+        <div id="bp_description" class="description_textbox bordered">
+          <div>
+            <p class="bp_description">
+              <p>Health: <span id="dynamic_health_value"></span></p>
+              <p>Armor: <span id="dynamic_armor_value"></span></p>
+              <p>Base Damage Reduction: <span id="dynamic_dr_value"></span></p>
+              <p>Damage Absorbtion: <span id="dynamic_da_value"></span></p>
+              <hr/>
+              <label for="converts">Convert Quantity</label>
+              <select name="converts" id="breakpoints_converts">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+              <hr/>
+              <label for="hostages">Hostage Quantity</label>
+              <select name="hostages" id="breakpoints_hostages">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,11 @@
+{
+    "heavy_swat": {
+        "damage": 225
+    },
+    "light_swat": {
+        "damage": 67.5
+    },
+    "shield": {
+        "damage": 67.5
+    }
+}

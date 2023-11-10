@@ -121,9 +121,10 @@ window.onload = async () => {
             }
 
             builder.gui.HandleRequirements(e.getAttribute("id").replace(/tab_|_button/g, ""));
-
+            console.log(builder)
             builder.gui.Tab_ChangeTo(targetTab); 
             window.sessionStorage.setItem("curTab", targetTab);
+            updateDynamicValues()
         });
     }); 
 
@@ -604,6 +605,31 @@ window.onload = async () => {
         }
     }
 
+    const updateDynamicValues = () => {
+        document.getElementById('dynamic_health_value').innerText = builder.stats.netHealth.toFixed(2);
+        document.getElementById('dynamic_armor_value').innerText = builder.stats.netArmor.toFixed(2);
+        document.getElementById('dynamic_dr_value').innerText = `${builder.stats.netDamageReduction.toFixed(2) * 100}%`;
+        document.getElementById('dynamic_da_value').innerText = builder.stats.netDamageAbsorbtion.toFixed(2);
+
+        ['close', 'medium', 'long'].map(distance => {
+            document.getElementById(`${distance}_range_stats_damage`).innerText = builder.stats.damageAtRange(distance).toFixed(2);
+            document.getElementById(`${distance}_range_stats_damage_3`).innerText = builder.stats.threeEnemyDamage(distance).toFixed(2);
+            document.getElementById(`${distance}_range_stats_armor_shots`).innerText = Math.ceil(builder.stats.armorShotLimit(distance));
+            document.getElementById(`${distance}_range_stats_armor_shots_3`).innerText = Math.ceil(builder.stats.armorShotLimit3(distance));
+            document.getElementById(`${distance}_range_stats_health_shots`).innerText = Math.ceil(builder.stats.healthShotLimit(distance));
+            document.getElementById(`${distance}_range_stats_health_shots_3`).innerText = Math.ceil(builder.stats.healthShotLimit3(distance));
+        })
+    }
+
+    document.getElementById("breakpoints_converts").addEventListener("change", (e) => {
+        builder.stats.setConverts(parseInt(e.target.value))
+        updateDynamicValues()
+    });
+
+    document.getElementById("breakpoints_hostages").addEventListener("change", (e) => {
+        builder.stats.setHostages(parseInt(e.target.value))
+        updateDynamicValues()
+    });
 
     // When in popups, do like the popups do (history pop event)
     window.onpopstate = async e => {
