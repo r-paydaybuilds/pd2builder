@@ -110,6 +110,14 @@ window.onload = async () => {
         builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
+    // in which I add an event listener to the disable infamy checkbox
+    document.getElementById("chk_disable_infamy").addEventListener("change", ev => {
+        // TODO remove this line.
+        alert(`infamy checkbox is changed (it's now ${ev.target.checked})`);
+        
+        // TODO toggle an 'infamy_off' value somewhere
+    });
+
     // Tab page navigation //
     document.querySelectorAll("#tab_page_buttons button").forEach(e => {      
         e.addEventListener("click", () => {
