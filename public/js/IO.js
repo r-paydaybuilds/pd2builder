@@ -65,6 +65,9 @@ export default class IO {
 
         // Manage Deployables
         if(this.builder.exp.deployable) url.searchParams.set("d", this.encodeDeployables());
+
+        // Manage disabled infamy (encoded as 'n' (as in "no infamy") rather than 'i' - as 'i' would denote 'yes infamy value' when this is a 'no infamy value')
+        if(this.builder.exp.infamyDisabled) url.searchParams.set("n", this.encodeInfamyDisabled());
         
         for(const [key, value] of url.searchParams) {
             url.searchParams.set(key, this.compressData(value));
@@ -190,6 +193,14 @@ export default class IO {
     }
 
     /**
+     * Encodes 'infamyDisabled' into a loadable number (true -> 1, false/null -> 0)
+     * @returns {Number}
+     */
+    encodeInfamyDisabled() {
+        return this.builder.exp.infamyDisabled ? 1 : 0;
+    }
+
+    /**
      * Decodes the parameters in the iterable, and sets the current build to match it the build encoded in it. 
      * @param {Iterable<String[]>} iterable to load
      * @returns {void}
@@ -218,6 +229,9 @@ export default class IO {
                 break;
             case "d":
                 this.loadDeployable(decompressed); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
+                break;
+            case "n":
+                this.loadInfamyDisabled(parseInt(decompressed));
                 break;
             }
         }
@@ -338,6 +352,21 @@ export default class IO {
             }
         }); 
         if(dp2Found) dp2Found.dispatchEvent(new MouseEvent("contextmenu"));
+    }
+
+    /**
+     * loads i parameter into the UI
+     * @param {Number} infamyDisabledNum true if infamy is supposed to be disabled (otherwise false)
+     * @returns {void}
+     */
+    loadInfamyDisabled(infamyDisabledNum){
+        
+        // TODO verify that this can also handle the actual logic for disabling infamy
+        const infDisabledBool = (infamyDisabledNum !== 0);
+        const infCheckbox = document.getElementById("chk_disable_infamy");
+        if (infCheckbox.checked != infDisabledBool){
+            infCheckbox.click();
+        }
     }
 
     /**

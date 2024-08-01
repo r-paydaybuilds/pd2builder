@@ -116,6 +116,18 @@ window.onload = async () => {
         alert(`infamy checkbox is changed (it's now ${ev.target.checked})`);
         
         // TODO toggle an 'infamy_off' value somewhere
+        builder.exp.infamyDisabled = ev.target.checked;
+
+        // TODO update the skill requirements accordingly
+
+        // TODO then update URL params
+        if(ev.isTrusted || ev.detail == -1) {
+            window.history.pushState(
+                Util.makeState(null, builder.exp, builder.gui.Tab_Current),
+                `infamy checkbox changed to ${ev.target.checked}`,
+                builder.io.GetEncodedBuild()
+            );
+        }
     });
 
     // Tab page navigation //

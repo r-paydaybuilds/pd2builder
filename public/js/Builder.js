@@ -49,7 +49,9 @@ export default class Builder {
             perkDeckUnlock: null,
             throwable: null,
             deployable: null, 
-            deployableSecondary: null
+            deployableSecondary: null,
+            /* set to true if infamy is disabled */
+            infamyDisabled: null
         };
 
         /**
