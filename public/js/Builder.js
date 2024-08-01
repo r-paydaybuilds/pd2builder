@@ -228,6 +228,20 @@ export default class Builder {
         this.io.GetEncodedBuild();
 
     }
+
+    /**
+     * Obtains the appropriate array of cumulative tier costs for skills based on value of this.exp.infamyDisabled
+     * If infamy is enabled (infamyDisabled is false/null), will return array of [0, 1, 2, 13] (16 total points for tier 4)
+     * If infamy is disabled, will return array of [0, 1, 2, 15] (18 total points for tier 4)
+     * @returns {Array<Number>}
+     */
+    getSkillTierCosts() {
+        if (this.exp.infamyDisabled){
+            return [0, 1, 2, 15]; // 18 total points for T4 if no infamy
+        } else {
+            return [0, 1, 2, 13]; // 16 total points for T4 if infamy
+        }
+    }
 }
 
 /**
