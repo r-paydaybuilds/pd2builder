@@ -624,7 +624,10 @@ class System {
 
     /**
      * Call this to (hopefully) validate all of the skills in the skillmap,
-     * 
+     * automagically remove any skills at a higher tier than the player can afford,
+     * automagically unequip things that now can't be equipped,
+     * and also updates the UI and the export string appropriately.
+     * It's overengineered af but it somehow works. I think.
      * @param {String} [checkThisSubtree] the subtree we want to validate (or undefined to validate all of them at once) 
      */
     Validate_Skills(checkThisSubtree){
@@ -710,7 +713,7 @@ class System {
                 }
             }
 
-            // if we're removing jack of all trades it handles the thing
+            // if we're removing jack of all trades, it'll handle the thing
             if (allInvalidSkills.has("jack_of_all_trades")){
                 // do the thing
                 this.builder.gui.HandleJoat(true);
@@ -726,7 +729,8 @@ class System {
                     unlocks: this.builder.dbs.get("skills").get(skill).unlocks
                 });
             }
-
+            
+            // and now we update the export string appropriately
             window.history.pushState(
                 Util.makeState(null, this.builder.exp, this.builder.gui.Tab_Current),
                 "removed invalid skills",
@@ -736,8 +740,6 @@ class System {
     }
 
     
-
-
     Skill_Add(skillId) {
         /**
          * @type {import("./Builder").Exp}
