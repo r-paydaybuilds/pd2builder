@@ -505,6 +505,14 @@ export default class GUI {
     }
 
     /**
+     * Automagically finds and selects the named armour.
+     * @param {String} armourId the ID of the armour to select
+     */
+    Armor_SelectById(armourId){
+        this.Armor_Select(document.getElementById(armourId).parentElement);
+    }
+
+    /**
      * Unselect selected armor
      */
     Armor_Unselect() {

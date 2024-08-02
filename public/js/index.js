@@ -203,9 +203,27 @@ window.onload = async () => {
             }
 
             if (builder.sys.Skill_Add(id)) {
-                builder.gui.Skill_Add(e); 
+                builder.gui.Skill_Add(e);
 
-                if(id === "jack_of_all_trades" && e.classList.contains("sk_selected_aced")) builder.gui.HandleJoat(); 
+                switch(id){
+                case "iron_man":
+                    // if the user just equipped Iron Man aced, give them a free ICTV.
+                    if (e.classList.contains("sk_selected_aced")){
+                        builder.exp.armor = "ictv";
+                        builder.gui.Armor_SelectById("ictv");
+                    }
+                    break;
+                
+                case "jack_of_all_trades":
+                    // if the user just equipped JOAT aced
+                    if (e.classList.contains("sk_selected_aced")){
+                        // do the thing
+                        builder.gui.HandleJoat();
+                    }
+                    break;
+                }
+
+                //if(id === "jack_of_all_trades" && e.classList.contains("sk_selected_aced")) builder.gui.HandleJoat(); 
 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
