@@ -119,7 +119,7 @@ window.onload = async () => {
         builder.exp.infamyDisabled = ev.target.checked;
 
         // TODO update the skill requirements accordingly
-        builder.sys.Update_Tier_Thresholds(); // TODO finish this function.
+        builder.sys.Validate_Skills(); // TODO finish this function.
 
         // TODO then update URL params
         if(ev.isTrusted || ev.detail == -1) {

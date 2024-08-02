@@ -20,7 +20,7 @@ import Stats from "./Stats.js";
  *  perkDeck: String, copycat: expCopycat, perkDeckUnlock: String,
  *  throwable: String, deployable: String, deployableSecondary: String,
  *  infamyDisabled: Boolean
- * }} exp
+ * }} Exp
  */
 // #endregion
 
@@ -32,7 +32,7 @@ export default class Builder {
     constructor(mobile = false) {
         /**
          * An object containing most info that should be exported
-         * @type {exp}
+         * @type {Exp}
          */
         this.exp = {
             skills: new SkillMap(),
@@ -204,13 +204,11 @@ export default class Builder {
      * 
      * very epic I know :)
      * @param {Element} cardElement 
-     * @param {number} newBoost new boost number to use
+     * @param {number} [newBoost] new boost number to use
      * (if not given, increments the current boost number by 1. If -1 is given, decrements current boost number by 1)
      */
     changeCardBoost(cardElement, newBoost = undefined){
-        //const boostLabel = cardElement.querySelector("span").innerText.split("/");
-
-
+        
         const boost_quantity = cardElement.querySelector(".copycat_boosts_num").innerText;
 
         if (newBoost === -1){

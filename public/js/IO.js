@@ -12,7 +12,7 @@ export default class IO {
         
         /**
          * The Builder instance that instantiated this
-         * @type {Builder}
+         * @type {import("./Builder").default}
          */
         this.builder = builder;
     }
@@ -248,6 +248,9 @@ export default class IO {
                 break;
             }
         }
+
+        this.builder.sys.Validate_Skills();
+
         /*
         if (c != null){
             this.loadCopycatBoosts(c);
@@ -280,16 +283,16 @@ export default class IO {
      */
     loadSkills(skills) {
         for(const e of document.getElementsByClassName("sk_subtree")) {
-            console.log(e.id);
+            //console.log(e.id);
             let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
             let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
             let mask = 1; 
 
-            console.log(subtreeBasicChar);
-            console.log(subtreeAcedChar);
+            //console.log(subtreeBasicChar);
+            //console.log(subtreeAcedChar);
 
             const tiers = [...e.querySelectorAll(".sk_tier")];
-            console.log(tiers);
+            //console.log(tiers);
             (this.builder.mobile ? tiers : tiers.reverse()).forEach(el =>
                 [...el.querySelectorAll(".sk_icon")].reverse().forEach(ele => {
                     let skillBasicBit = subtreeBasicChar & mask;
