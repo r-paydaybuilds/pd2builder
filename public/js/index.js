@@ -110,22 +110,20 @@ window.onload = async () => {
         builder.scrollTransformer.addContext(document.getElementById("tab_page_buttons"), -1);
     }
 
-    // in which I add an event listener to the disable infamy checkbox
+    // in which we add an event listener to the disable infamy checkbox to make it Do A Thing
     document.getElementById("chk_disable_infamy").addEventListener("change", ev => {
-        // TODO remove this line.
-        //alert(`infamy checkbox is changed (it's now ${ev.target.checked})`);
         
-        // TODO toggle an 'infamy_off' value somewhere
+        // first things first, we update this infamyDisabled value.
         builder.exp.infamyDisabled = ev.target.checked;
 
-        // TODO update the skill requirements accordingly
-        builder.sys.Validate_Skills(); // TODO finish this function.
+        // then we Validate Skills where all the complex stuff happens
+        builder.sys.Validate_Skills(); // (this is very overengineered)
 
-        // TODO then update URL params
+        // then update URL params with our newly validated build
         if(ev.isTrusted || ev.detail == -1) {
             window.history.pushState(
                 Util.makeState(null, builder.exp, builder.gui.Tab_Current),
-                `infamy checkbox changed to ${ev.target.checked}`,
+                `disable infamy checkbox changed to ${ev.target.checked}`,
                 builder.io.GetEncodedBuild()
             );
         }
@@ -231,9 +229,67 @@ window.onload = async () => {
             const id = e.firstElementChild.id; 
 
             if (builder.sys.Skill_Remove(id)) { 
-                builder.gui.Skill_Remove(e); 
+
+                // but first, we need to make sure we unselect things we now can't use
+                switch(id){
+                case "iron_man":
+                    // if we're removing the aced version, unequip ICTV if equipped.
+                    if (e.classList.contains("sk_selected_aced")){
+                        if (builder.exp.armor === "ictv"){
+                            builder.gui.Armor_Unselect();
+                            builder.exp.armor = null;
+                        }
+                    }
+                    break;
                 
-                if(id === "jack_of_all_trades" && !e.classList.contains("sk_selected_aced")) builder.gui.HandleJoat(); 
+                case "engineering":
+                    // remove suppressed sentries if removing basic tier.
+                    if (e.classList.contains("sk_selected_basic")){
+                        if (builder.exp.deployableSecondary === "suppressed_sentry_gun"){
+                            // if our secondary is suppressed, we discard it.
+                            builder.exp.deployableSecondary = null;
+                            builder.gui.DeployableSecondary_Unselect();
+                        } else if (builder.exp.deployable === "suppressed_sentry_gun"){
+                            // if our primary is suppressed
+                            if (builder.exp.deployableSecondary !== null){
+                                // we first see if we have a secondary deployable.
+                                // if so, we promote our secondary deployable to our primary deployable
+                                const secondaryDep = document.querySelector(".dp_secondary");
+                                builder.gui.DeployableSecondary_Unselect();
+                                builder.exp.deployable = builder.exp.deployableSecondary;
+                                builder.exp.deployableSecondary = null;
+                                builder.gui.Deployable_Select(secondaryDep);
+                            } else {
+                                // otherwise, we just unselect our one deployable.
+                                builder.exp.deployable = null;
+                                builder.gui.Deployable_Unselect(
+                                    document.querySelector(".dp_primary, .dp_selected")
+                                );
+                            }
+                        }
+                    }
+                    break;
+                
+                case "jack_of_all_trades":
+                    // if we're removing jack of all trades aced
+                    if (e.classList.contains("sk_selected_aced")){
+                        // do the thing
+                        builder.gui.HandleJoat(true);
+                        // unselect our secondary deployable
+                        builder.exp.deployableSecondary = null;
+                        builder.gui.DeployableSecondary_Unselect();
+                    }
+                    break;
+                }
+
+                // now we remove the skill in the GUI
+                builder.gui.Skill_Remove(e);
+                
+                
+                /*
+                if(id === "jack_of_all_trades" && !e.classList.contains("sk_selected_aced")){
+                    builder.gui.HandleJoat(); 
+                }*/
 
                 const s = builder.dbs.get("skills").get(id);
                 builder.gui.Skill_UpdatePointsRemaining(builder.exp.skills.points);
@@ -353,14 +409,15 @@ window.onload = async () => {
             // expecting a left-click
             if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost || ev.button != 0) return; 
 
+            const pastUnlock = builder.exp.perkDeckUnlock;
             builder.changeCardBoost(e);
 
-            const pastUnlock = builder.exp.perkDeckUnlock;
+            //const pastUnlock = builder.exp.perkDeckUnlock;
             if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
                 builder.gui.HandleUnlocks({
                     type: "perkDeckUnlock",
                     id: pastUnlock,
-                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                    unlocks: builder.dbs.get("perk_decks").get(pastUnlock).unlocks
                 });
             }
 
@@ -379,17 +436,18 @@ window.onload = async () => {
         e.addEventListener("contextmenu", ev => {
             ev.preventDefault(); 
 
-            // expecting a right-click
+            // if we're not expecting a right-click, do nothing.
             if (!e.id || !builder.dbs.get("perk_cards").get(e.id).has_copycat_boost || ev.button != 2) return; 
 
+            const pastUnlock = builder.exp.perkDeckUnlock;
             builder.changeCardBoost(e, -1);
 
-            const pastUnlock = builder.exp.perkDeckUnlock;
+            //const pastUnlock = builder.exp.perkDeckUnlock;
             if (pastUnlock && (builder.exp.perkDeckUnlock != pastUnlock)){
                 builder.gui.HandleUnlocks({
                     type: "perkDeckUnlock",
                     id: pastUnlock,
-                    unlocks: builder.dbs.get("perk_deck_unlocks").get(pastUnlock).unlocks
+                    unlocks: builder.dbs.get("perk_decks").get(pastUnlock).unlocks
                 });
             }
 

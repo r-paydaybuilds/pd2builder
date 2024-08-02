@@ -593,6 +593,14 @@ export default class GUI {
     }
 
     /**
+     * Automagically finds and selects the named throwable.
+     * @param {String} throwableId the ID of the throwable to select
+     */
+    Throwable_SelectById(throwableId){
+        this.Throwable_Select(document.getElementById(throwableId).parentElement);
+    }
+
+    /**
      * Unselect selected throwable
      */
     Throwable_Unselect() {

@@ -350,7 +350,7 @@ class SkillSubtree extends Map {
                 ? this.getMaximumUnlockedTier(_infamyDisabled)
                 : _maxTier
         );
-        console.log(maxTier);
+        //console.log(maxTier);
         //const maxTier = this.getMaximumUnlockedTier(_infamyDisabled);
 
         // if we've unlocked tier 4, we have nothing to worry about :)
@@ -658,13 +658,13 @@ class System {
             //console.log(subTree);
 
             const invalidSubtreeSkills = subTree.getInvalidSkills(exp.infamyDisabled);
-            console.log(invalidSubtreeSkills);
+            //console.log(invalidSubtreeSkills);
 
             for (const skillName of invalidSubtreeSkills){
                 allInvalidSkills.add(skillName);
                 this.Skill_Remove(skillName, true);
             }
-            console.log(subTree);
+            //console.log(subTree);
 
             this.builder.gui.Subtree_MoveBackground(
                 subtreeName,
@@ -675,10 +675,50 @@ class System {
 
         // if any skills had to be removed
         if (allInvalidSkills.size > 0){
-            if (allInvalidSkills.has("jack_of_all_trades")){
-                this.builder.gui.HandleJoat(true);
+
+            // handles unselecting the ICTV if we lost iron man
+            if (allInvalidSkills.has("iron_man")){
+                if (exp.armor === "ictv"){
+                    this.builder.gui.Armor_Unselect();
+                    exp.armor = null;
+                }
             }
-            // TODO: handle iron man ICTV stuff
+
+            // handles unselecting suppressed sentries if we lost engineering
+            if (allInvalidSkills.has("engineering")){
+                if (exp.deployableSecondary === "suppressed_sentry_gun"){
+                    // if our secondary is suppressed, we discard it.
+                    exp.deployableSecondary = null;
+                    this.builder.gui.DeployableSecondary_Unselect();
+                } else if (exp.deployable === "suppressed_sentry_gun"){
+                    // if our primary is suppressed
+                    if (exp.deployableSecondary !== null){
+                        // we first see if we have a secondary deployable.
+                        // if so, we promote our secondary deployable to our primary deployable
+                        const secondaryDep = document.querySelector(".dp_secondary");
+                        this.builder.gui.DeployableSecondary_Unselect();
+                        exp.deployable = exp.deployableSecondary;
+                        exp.deployableSecondary = null;
+                        this.builder.gui.Deployable_Select(secondaryDep);
+                    } else {
+                        // otherwise, we just unselect our one deployable.
+                        exp.deployable = null;
+                        this.builder.gui.Deployable_Unselect(
+                            document.querySelector(".dp_primary, .dp_selected")
+                        );
+                    }
+                }
+            }
+
+            // if we're removing jack of all trades it handles the thing
+            if (allInvalidSkills.has("jack_of_all_trades")){
+                // do the thing
+                this.builder.gui.HandleJoat(true);
+                // unselect our secondary deployable
+                exp.deployableSecondary = null;
+                this.builder.gui.DeployableSecondary_Unselect();
+            }
+
             for(const skill in allInvalidSkills){
                 this.builder.gui.HandleUnlocks({
                     type: "skill",
@@ -686,46 +726,16 @@ class System {
                     unlocks: this.builder.dbs.get("skills").get(skill).unlocks
                 });
             }
+
+            window.history.pushState(
+                Util.makeState(null, this.builder.exp, this.builder.gui.Tab_Current),
+                "removed invalid skills",
+                this.builder.io.GetEncodedBuild()
+            );
         }
     }
 
-    Update_Tier_Thresholds(){
-        /** @type {import("./Builder").Exp} */
-        const exp = this.builder.exp;
-        //const skillStore = this.builder.dbs.get("skills");
-
-        //console.log(exp.skills);
-        //console.log(exp.subtrees);
-        //console.log(Object.values(exp.subtrees));
-        //console.log(Object.keys(exp.subtrees));
-
-        
-        // TODO: iterate through exp.subtrees, recalculate System.getSubtreeTierLevel(subtree.points, exp.infamyDisabled); 
-        Object.entries(exp.subtrees).forEach(([name, tree]) => {
-            //console.log(name);
-            //console.log(tree);
-
-            tree.tier = System.getSubtreeTierLevel(
-                //tree.points,
-                exp.skills.getTiersToFloorPoints(
-                    3,
-                    name,
-                    exp.skills
-                ),
-                exp.infamyDisabled
-            );
-            //console.log(tree);
-
-            // TODO: work out if there are any skills above the exp.subtree tier
-            // TODO: remove those skills.
-        });
-
-
-        // TODO: update tier thresholds based on whether or not infamy should be disabled
-        // TODO: remove newly-invalid skills from tiers if appropriate.
-
-
-    }
+    
 
 
     Skill_Add(skillId) {
@@ -830,7 +840,7 @@ class System {
                 exp.skills.delete_subtree(
                     skillId, skillStore.subtree, skillStore.tier
                 );
-                console.log(exp.skills);
+                //console.log(exp.skills);
 
             } else {
                 subtree.points -= skillStore.ace;

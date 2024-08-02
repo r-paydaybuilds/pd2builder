@@ -141,24 +141,59 @@ export default class Builder {
 
 
     /**
-     * Validates the 'exp' object
-     * setting the 'perkDeckUnlock' value of it to
-     * either the id of the equipped perk deck
-     * or the id of the equipped copycat mimicry.mimics if the perk deck is 'copycat'
+     * Validates the 'exp' object, setting the 'perkDeckUnlock' value of it to
+     * either the id of the equipped perk deck 
+     * or the id of the equipped copycat mimicry.mimics 
+     * if the perk deck is 'copycat'
      */
     perkDeckUnlockHandler()
     {
 
+        // what was previously unlocked?
+        const oldDeck = this.exp.perkDeckUnlock;
+
         if (this.exp.perkDeck === "copycat"){
+            // if copycat perk deck is being used
             if (this.exp.copycat.mimicry === null){
+                // if we aren't mimicking anything (somehow), nothing's unlocked
                 this.exp.perkDeckUnlock = null;
-                return;
+            } else {
+                // we unlock the same thing as the perk deck we're mimicking
+                this.exp.perkDeckUnlock = this.dbs.get("copycat_mimicry").get(this.exp.copycat.mimicry).mimics;
             }
-            this.exp.perkDeckUnlock = this.dbs.get("copycat_mimicry").get(this.exp.copycat.mimicry).mimics;
         } else {
+            // we unlock the appropriate thing for the perk deck
             this.exp.perkDeckUnlock = this.exp.perkDeck;
         }
 
+        // if we've now unlocked a different thing to what we previously had unlocked
+        if (oldDeck !== this.exp.perkDeckUnlock){
+            if (oldDeck !== null){
+                // if we had something unlocked
+                const oldUnlocks = this.dbs.get("perk_decks").get(oldDeck).unlocks;
+                if (oldUnlocks !== undefined){
+                    for (const oldUnlock of oldUnlocks){
+                        if (oldUnlock.type === "throwable" && oldUnlock.name === this.exp.throwable){
+                            this.exp.throwable = null;
+                            this.gui.Throwable_Unselect();
+                        }
+                    }
+                }
+            }
+            if (this.exp.perkDeckUnlock !== null){
+                // if we now have Something unlocked
+                const newUnlocks = this.dbs.get("perk_decks").get(this.exp.perkDeckUnlock).unlocks;
+                if (newUnlocks !== undefined){
+                    for (const newUnlock of newUnlocks){
+                        if (newUnlock.type === "throwable"){
+                            this.exp.throwable = newUnlock.name;
+                            this.gui.Throwable_SelectById(this.exp.throwable);
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 
     /**
