@@ -202,14 +202,23 @@ export default class IO {
 
     /**
      * Decodes the parameters in the iterable, and sets the current build to match it the build encoded in it. 
-     * @param {Iterable<String[]>} iterable to load
+     * @param {Iterable<String[Object]>|URLSearchParams} iterable to load
      * @returns {void}
      */
     LoadBuildFromIterable(iterable) {
+
+        //let s = null;
+        //let c = null;
+        //let a = null;
+        //let t = null;
+        //let d = null;
+        
+
         for(const [key, value] of iterable) {
             const decompressed = this.decompressData(value);
             switch(key) {
             case "s":
+                //s = decompressed;
                 this.loadSkills(decompressed);
                 break;
             case "k":
@@ -219,15 +228,19 @@ export default class IO {
                 this.loadPerkDeck(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "c":
+                //c = decompressed;
                 this.loadCopycatBoosts(decompressed);
                 break;
             case "a":
+                //a = decompressed;
                 this.loadArmor(parseInt(decompressed));
                 break;
             case "t":
+                //t = decompressed;
                 this.loadThrowable(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "d":
+                //d = decompressed;
                 this.loadDeployable(decompressed); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
                 break;
             case "n":
@@ -235,6 +248,29 @@ export default class IO {
                 break;
             }
         }
+        /*
+        if (c != null){
+            this.loadCopycatBoosts(c);
+        }
+        if (t != null){
+            this.loadThrowable(parseInt(this.DecodeByte(t)));
+        }
+        if (s != null){
+            this.loadSkills(s);
+        }
+        if (a != null){
+            this.loadArmor(a);
+        }
+        if (d != null){
+            this.loadDeployable(d);
+        }
+
+        window.history.pushState(
+            Util.makeState(null, this.builder.exp, this.builder.gui.Tab_Current),
+            "loaded the build.",
+            this.GetEncodedBuild()
+        );
+        */
     }
 
     /**
@@ -244,12 +280,17 @@ export default class IO {
      */
     loadSkills(skills) {
         for(const e of document.getElementsByClassName("sk_subtree")) {
+            console.log(e.id);
             let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
             let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
             let mask = 1; 
 
+            console.log(subtreeBasicChar);
+            console.log(subtreeAcedChar);
+
             const tiers = [...e.querySelectorAll(".sk_tier")];
-            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el => 
+            console.log(tiers);
+            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el =>
                 [...el.querySelectorAll(".sk_icon")].reverse().forEach(ele => {
                     let skillBasicBit = subtreeBasicChar & mask;
                     let skillAcedBit = subtreeAcedChar & mask; 

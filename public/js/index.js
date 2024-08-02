@@ -113,12 +113,13 @@ window.onload = async () => {
     // in which I add an event listener to the disable infamy checkbox
     document.getElementById("chk_disable_infamy").addEventListener("change", ev => {
         // TODO remove this line.
-        alert(`infamy checkbox is changed (it's now ${ev.target.checked})`);
+        //alert(`infamy checkbox is changed (it's now ${ev.target.checked})`);
         
         // TODO toggle an 'infamy_off' value somewhere
         builder.exp.infamyDisabled = ev.target.checked;
 
         // TODO update the skill requirements accordingly
+        builder.sys.Update_Tier_Thresholds(); // TODO finish this function.
 
         // TODO then update URL params
         if(ev.isTrusted || ev.detail == -1) {

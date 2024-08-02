@@ -4,6 +4,26 @@ import IO from "./IO.js";
 import Language from "./Language.js";
 import Stats from "./Stats.js";
 
+// #region expDefs
+/**
+ * @typedef {{tier: Number, points: Number}} expSubtree
+ * @typedef {{medic: expSubtree, controller: expSubtree, sharpshooter: expSubtree,
+ *  shotgunner: expSubtree,tank: expSubtree, ammo_specialist: expSubtree,
+ *  engineer: expSubtree, breacher: expSubtree, oppressor: expSubtree,
+ *  shinobi: expSubtree, artful_dodger: expSubtree, silent_killer: expSubtree,
+ *  gunslinger: expSubtree, revenant: expSubtree, brawler: expSubtree}
+ * } expSubtrees
+ * @typedef {{tactical_reload: Number, head_games: Number, is_this_your_bullet: Number, grace_period: Number, mimicry: Number}
+ * } expCopycat
+ * @typedef {{
+ *  skills: SkillMap, subtrees: expSubtrees, armor: String,
+ *  perkDeck: String, copycat: expCopycat, perkDeckUnlock: String,
+ *  throwable: String, deployable: String, deployableSecondary: String,
+ *  infamyDisabled: Boolean
+ * }} exp
+ */
+// #endregion
+
 /**
  * Singleton class containing million of things (gangs of four accepts this)
  */
@@ -12,7 +32,7 @@ export default class Builder {
     constructor(mobile = false) {
         /**
          * An object containing most info that should be exported
-         * @type {Object}
+         * @type {exp}
          */
         this.exp = {
             skills: new SkillMap(),
@@ -208,15 +228,6 @@ export default class Builder {
         
         const isMimicry = !!(this.dbs.get("perk_cards").get(cardElement.id).has_mimicry_boost);
 
-        /*
-        const newBoostID = (
-            (isMimicry)
-            ?   [...this.dbs.get("copycat_mimicry").entries()]
-            :   [...this.dbs.get("copycat_boosts").entries()]
-        )[newBoost-1][0];
-        this.exp.copycat[cardElement.id] = newBoostID;
-        */
-
         this.exp.copycat[cardElement.id] = (
             isMimicry ?
                 [...this.dbs.get("copycat_mimicry").entries()] :
@@ -233,7 +244,7 @@ export default class Builder {
      * Obtains the appropriate array of cumulative tier costs for skills based on value of this.exp.infamyDisabled
      * If infamy is enabled (infamyDisabled is false/null), will return array of [0, 1, 2, 13] (16 total points for tier 4)
      * If infamy is disabled, will return array of [0, 1, 2, 15] (18 total points for tier 4)
-     * @returns {Array<Number>}
+     * @returns {Array<Number>} the cumulative costs for each tier in the subtree
      */
     getSkillTierCosts() {
         if (this.exp.infamyDisabled){
@@ -242,10 +253,29 @@ export default class Builder {
             return [0, 1, 2, 13]; // 16 total points for T4 if infamy
         }
     }
+
+    /**
+     * Function called to add a skill (called via the html element of the skill)
+     * to the build. Returns true if it could be added, otherwise false.
+     * @param {Element} e the HTML element for the skill we want to add
+     * @returns {bool} true if the skill could be added, otherwise false.
+     *
+    AddSkillHtmlElement(e){
+        const id = e.firstElementChild.id;
+        if (e.classList.contains("sk_locked") || e.classList.contains("sk_selected_aced")) {
+            //this.gui.Skill_AnimateInvalid(e);
+            return false;
+        }
+
+        if (this.sys.Skill_Add(id)) {
+
+        }
+    }
+        */
 }
 
 /**
  * Array that keeps the name of each skill tree
- * @type {Array}
+ * @type {Array[String]}
  */
 Builder.TREES = ["mastermind", "enforcer", "technician", "ghost", "fugitive"];
