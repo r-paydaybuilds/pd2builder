@@ -857,7 +857,8 @@ select {
 
   text-align: center;
 
-  width: 25%;
+  width: 15%;
+  font-size: 0.5em;
   margin: auto;
   margin-top: 2vh;
 }
