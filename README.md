@@ -4,7 +4,7 @@
 [![Crowdin](https://badges.crowdin.net/pd2builder/localized.svg)](https://crowdin.com/project/pd2builder)
 # pd2builder, a loadout simulator of Payday 2 that works
 
-#### You can currently find a demo in [here](https://pd2builder.netlify.com/)
+#### You can currently find demos on [netlify](https://pd2builder.netlify.app/) and [github pages](https://r-paydaybuilds.github.io/pd2builder/)
 #### Kind of a to-do list can be found in the [wiki](https://github.com/r-paydaybuilds/pd2builder/wiki/To-Do-list)
 
 ## Running locally

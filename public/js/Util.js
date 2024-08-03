@@ -43,6 +43,7 @@ Number.prototype.maybeRound = function(precision) {
     return parseFloat(this.toFixed(precision));
 };
 
+
 /**
  * A class that should be filled with absolutely not useless stuff
  * @static
@@ -88,7 +89,8 @@ class Util {
             perk_deck_unlock: exp.perk_deck_unlock,
             throwable: exp.throwable,
             deployable: exp.deployable,
-            deployableSecondary: exp.deployableSecondary
+            deployableSecondary: exp.deployableSecondary,
+            infamyDisabled: exp.infamyDisabled
         };
         if(tab) state.tab = tab;
         if(lang) state.lang = lang;
@@ -147,13 +149,312 @@ class Util {
 }
 
 /**
+ * An object representing a skill's state.
+ * state = 1 if 'basic' version is unlocked. state = 2 if 'aced' version is unlocked.
+ * @typedef {{state: Number}} SkillState
+ */
+
+
+/**
+ * This is used to organize skills based on their subtrees or something like that y'know?
+ * holds a map of {tier number : {skill name: skill state}}
+ * (intended to make SkillMap less of a pain in the arse to use later on probably)
+ * @extends {Map<Number, Map<String, Number>>}
+ */
+class SkillSubtree extends Map {
+
+    constructor(){
+        super([
+            [1, new Map()],
+            [2, new Map()],
+            [3, new Map()],
+            [4, new Map()]
+        ]);
+        /** holds the number of points invested in each tier
+         * @type {Map<Number, Number>} tierPoints */
+        this.tierPoints = new Map([
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [4, 0]
+        ]);
+
+        /**
+         * The maximum tier we can use
+         * @type {Number} 
+         */
+        this.maxTier = 1;
+
+        /**
+         * The number of points we have invested in this tree
+         * @type {Number}
+         */
+        this.points = 0;
+    }
+
+    
+
+    /**
+     * Updates the specified tier to hold the skill with
+     * the given name and its current state.
+     * @param {Number} _tierNum
+     * @param {String} _skillName 
+     * @param {Number} _skillState 
+     */
+    setSkill(_tierNum, _skillName, _skillState){
+        /**
+         * this tier's skills
+         * @type {Map<String, Number>}
+         * @const */
+        const tierSkills = this.get(_tierNum);
+
+        tierSkills.set(_skillName, _skillState);
+        this.set(_tierNum, tierSkills);
+        this.__updateTierPoints2(_tierNum,tierSkills);
+        this.__updateTotalPoints();
+    }
+
+    /**
+     * DO NOT CALL THIS DIRECTLY (PLEASE CALL setSkill INSTEAD!)
+     * @param {Number} _tierNum tier number 
+     * @param {Map<String, Number>} _tierSkills map of {skill name: state} for the tier
+     * @returns {SkillSubtree}
+     * @inheritdoc
+     */
+    set(_tierNum, _tierSkills){
+        super.set(_tierNum, _tierSkills);
+        if (this.tierPoints === undefined){
+            return;
+        }
+
+        // only call these if the tierpoints map has been created
+        //this.__updateTierPoints2(_tierNum,_tierSkills);
+        //this.__updateTotalPoints();
+    }
+
+    /**
+     * use this to delete a skill if we don't know the tier of the skill rn
+     * @param {String} _skillName 
+     * @returns {Boolean}
+     */
+    deleteSkillUnknownTier(_skillName){
+        let tierNum = 0;
+        for(const [tnum, skills] in this){
+            if (skills.has(_skillName)){
+                tierNum = tnum;
+                break;
+            }
+        }
+        return this.deleteSkill(tierNum, _skillName);
+    }
+
+    /**
+     * Removes a skill from the subtree.
+     * @param {Number} _tierNum the tier number of the skill 
+     * @param {String} _skillName the name of the skill
+     * @returns {Boolean}
+     */
+    deleteSkill(_tierNum, _skillName){
+        /**
+         * this tier's skills
+         * @type {Map<String, Number>}
+         * @const */
+        const tierSkills = this.get(_tierNum);
+        const result = tierSkills.delete(_skillName);
+        this.set(_tierNum, tierSkills);
+        this.__updateTierPoints2(_tierNum,tierSkills);
+        this.__updateTotalPoints();
+        return result;
+    }
+
+    /**
+     * Use this to refresh the points invested in a certain tier
+     * (passing an existing reference to that tier's skills + states)
+     * @param {Number} _tierNum the tier number we want to update 
+     * @param {Map<String, Number>} _tierSkills the name:state map for the tier we're doing stuff with
+     */
+    __updateTierPoints2(_tierNum,_tierSkills){
+        let points = 0;
+        for (const skillState of [..._tierSkills.values()]){
+            // points += System.SKILL_COST_PER_TIER[_tierNum][skillState];
+            for (let i = 1; i <= skillState; i++){
+                points += System.SKILL_COST_PER_TIER[_tierNum][i];
+            }
+        }
+        this.tierPoints.set(_tierNum, points);
+    }
+
+    /**
+     * Use this to refresh the points invested in a certain tier.
+     * @param {Number} _tierNum the tier number we want to update 
+     */
+    __updateTierPoints(_tierNum){
+        this.__updateTierPoints2(this.get(_tierNum));
+    }
+    
+    /**
+     * sets this.points to be the sum of each of the tierPoints values
+     */
+    __updateTotalPoints(){
+        this.points = [...this.tierPoints.values()].reduce((total, tierPts) => total + tierPts, 0);
+    }
+
+    /**
+     * Find out what the highest unlocked tier should be.
+     * @param {Boolean} _infamyDisabled set this to true if we're using non-infamy thresholds
+     * @returns {Number} the highest unlocked tier number (based on points invested) 
+     */
+    getMaximumUnlockedTier(_infamyDisabled){
+        /**
+         * this holds the costs to unlock each tier. 0-indexed.
+         * each entry in this array is the total number of points needed for each tier
+         * [t1 cost (0), t2 cost, t3 cost, t4 cost]
+         * @type {Array<Number>}
+         * @const */
+        const tierCosts = System.getTierUtil(_infamyDisabled);
+
+        let maxTier = 1;
+        let investedPoints = 0;
+
+        // we go through the tier costs array, skipping index 0 (we do indices 1-3)
+        for(let i = 1; i < tierCosts.length; i++){
+            investedPoints += this.tierPoints.get(i); // add Tier i points to total invested points
+            if (investedPoints >= tierCosts[i]){
+                // if we have invested enough points to unlock the next tier
+                maxTier++; // increase maxTier
+            } else{
+                break; // otherwise, we stop where we are.
+            }
+        }
+
+        this.maxTier = maxTier;
+        return maxTier; // This is the maximum tier we can use.
+
+    }
+
+
+    /**
+     * Use this method to go through all of the skills in this subtree,
+     * and look for any skills which are invalid (at a higher tier than should be allowed)
+     * @param {Boolean} _infamyDisabled true if infamy should be disabled, otherwise false.
+     * @param {Number} [_maxTier = undefined] the maximum tier for the subtree (if undefined, will work that out on the fly)
+     * @returns {Array[String]} names of all invalid skills (at a higher tier than we've unlocked)
+     */
+    getInvalidSkills(_infamyDisabled, _maxTier = undefined){
+        /**
+         * the highest tier that we can use based on point investment so far
+         * @type {Number}
+         * @const */
+        const maxTier = (
+            _maxTier === undefined
+                ? this.getMaximumUnlockedTier(_infamyDisabled)
+                : _maxTier
+        );
+        //console.log(maxTier);
+        //const maxTier = this.getMaximumUnlockedTier(_infamyDisabled);
+
+        // if we've unlocked tier 4, we have nothing to worry about :)
+        if (maxTier == 4){
+            return [];
+        }
+
+        /**
+         * list of all the names of the invalid skills (which shouldn't be unlocked)
+         * @type {Array<String>}
+         */
+        let invalidSkillNames = [];
+
+        [...this.keys()].filter(
+            tierNum => tierNum > maxTier
+        ).forEach(
+            tierNum2 => invalidSkillNames.push(...this.get(tierNum2).keys())
+        );
+        
+        return invalidSkillNames;
+    }
+    
+}
+
+/**
  * Map for storing skills that are active
- * @extends {Map}
+ * @extends {Map<String, SkillState>}
  */
 class SkillMap extends Map {
     constructor(...args) {
         super(...args);
+        /** @type {Number} */
         this.points = 120;
+        /** 
+         * Holds the named subtrees for all the skills we have
+         * @type {Map<String, SkillSubtree>}
+         */
+        this.subtrees = new Map();
+    }
+    
+    /**
+     * Mildly overrides the 'set' function to also categorize the skill into its subtree and tier
+     * (for validation and stuff later on)
+     * @param {String} skillName skill name
+     * @param {SkillState} skillState skill state
+     * @param {String} subtreeName name of the subtree that this skill is in
+     * @param {Number} skillTier the tier of this skill
+     * @returns {SkillMap}
+     */
+    set_subtree(skillName, skillState, subtreeName, skillTier){
+        super.set(skillName, skillState);
+        if (!this.subtrees.has(subtreeName)){
+            this.subtrees.set(subtreeName, new SkillSubtree());
+        }
+        this.subtrees.get(subtreeName).setSkill(
+            skillTier, skillName, skillState.state
+        );
+        return this;
+    }
+
+    /**
+     * Mildly overrides the 'set' function to warn about not to using this directly.
+     * @param {String} key 
+     * @param {SkillState} value 
+     * @returns {SkillMap}
+     */
+    set(key, value){
+        console.warn("Please avoid using SkillMap.set, please use SkillMap.set_subtree instead if possible");
+        super.set(key, value);
+        return this;
+    }
+
+    /**
+     * Used to delete a skill from the skill map and also from the subtree it's in
+     * @param {String} skillName name of the skill to delete
+     * @param {String} subtreeName name of the subtree it's in
+     * @param {Number} [skillTier = undefined] the tier of the skill (or undefined if unknown, no biggie)
+     * @returns {Boolean} whether or not the super.delete was successful
+     */
+    delete_subtree(skillName, subtreeName, skillTier){
+        const result = super.delete(skillName);
+
+        if (this.subtrees.has(subtreeName)){
+            if (skillTier === undefined){
+                this.subtrees.get(subtreeName).deleteSkillUnknownTier(
+                    skillName
+                );
+            } else {
+                this.subtrees.get(subtreeName).deleteSkill(
+                    skillTier, skillName
+                );
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Mildly overrides the 'delete' function to warn about not to using this directly.
+     * @param {String} key 
+     * @returns {Boolean}
+     */
+    delete(key){
+        console.warn("Please avoid using SkillMap.delete, please use SkillMap.delete_subtree instead if possible");
+        return super.delete(key);
     }
 
     /**
@@ -165,6 +466,7 @@ class SkillMap extends Map {
     getTierPoints(tier, subtree, skills) {
         let points = 0;
 
+        
         for (const [key, value] of this) {
             const skill = skills.get(key);
 
@@ -195,6 +497,9 @@ class SkillMap extends Map {
         return points;
     }
 
+    
+    
+
     /**
      * 
      */
@@ -207,7 +512,12 @@ class SkillMap extends Map {
     }
 }
 
-
+// #region DBmapTypeDefs
+/**
+ * @typedef {{name: String, description: String, basic: Number,
+ * ace: Number, tier: Number, subtree: String, tree: String}} SkillData
+ */
+// #endregion
 
 /**
  * Map for storing all DBs
@@ -215,6 +525,16 @@ class SkillMap extends Map {
  * 
  */
 class DBMap extends Map {
+
+    /**
+     * @inheritdoc
+     * @param {String} key
+     * @returns {Map<String, SkillData> | Map<String, Any> | undefined}
+     */
+    get(key){
+        return super.get(key);
+    }
+
     fetchAll() {
         const array = [];
         for(const [key] of this) {
@@ -290,36 +610,186 @@ class DBMap extends Map {
  * Class object for management of the system functions (underlying system of keeping track of the build).   
  */
 class System {
+
+    /**
+     * @param {import("./Builder").default} builder The Builder instance that instantiated this
+     */
     constructor(builder) {
-        /**
+        /** 
          * The Builder instance that instantiated this
-         * @type {Builder}
-         */
+         * @type {import("./Builder").default} */
         this.builder = builder;
     }
 
-    Skill_Add(skillId) {
+
+    /**
+     * Call this to (hopefully) validate all of the skills in the skillmap,
+     * automagically remove any skills at a higher tier than the player can afford,
+     * automagically unequip things that now can't be equipped,
+     * and also updates the UI and the export string appropriately.
+     * It's overengineered af but it somehow works. I think.
+     * @param {String} [checkThisSubtree] the subtree we want to validate (or undefined to validate all of them at once) 
+     */
+    Validate_Skills(checkThisSubtree){
+        /** @type {import("./Builder").Exp} */
         const exp = this.builder.exp;
+        /** @type {SkillMap} */
+        const skills = exp.skills;
+
+
+        /** Names of all invalid skills
+         * @type {Set<String>} */
+        let allInvalidSkills = new Set();
+
+        /** the name(s) of the subtree to check.
+         * If we gave a subtree name, we will only check the named subtree.
+         * Otherwise, we check all subtrees.
+         * @type {Iterable<String>} */
+        const treesToCheck = (checkThisSubtree === undefined ?
+            skills.subtrees.keys() : [checkThisSubtree]
+        );
+
+        //console.log(exp);
+        //console.log(exp.skills);
+        //console.log(exp.skills.subtrees);
+
+        for (const subtreeName of treesToCheck){
+            /** @type {SkillSubtree} */
+            const subTree = skills.subtrees.get(subtreeName);
+
+            //console.log(subtreeName);
+            //console.log(subTree);
+
+            const invalidSubtreeSkills = subTree.getInvalidSkills(exp.infamyDisabled);
+            //console.log(invalidSubtreeSkills);
+
+            for (const skillName of invalidSubtreeSkills){
+                allInvalidSkills.add(skillName);
+                this.Skill_Remove(skillName, true);
+            }
+            //console.log(subTree);
+
+            this.builder.gui.Subtree_MoveBackground(
+                subtreeName,
+                subTree.points
+            );
+        }
+        this.builder.gui.Skill_UpdatePointsRemaining(exp.skills.points);
+
+        // if any skills had to be removed
+        if (allInvalidSkills.size > 0){
+
+            // handles unselecting the ICTV if we lost iron man
+            if (allInvalidSkills.has("iron_man")){
+                if (exp.armor === "ictv"){
+                    this.builder.gui.Armor_Unselect();
+                    exp.armor = null;
+                }
+            }
+
+            // handles unselecting suppressed sentries if we lost engineering
+            if (allInvalidSkills.has("engineering")){
+                if (exp.deployableSecondary === "suppressed_sentry_gun"){
+                    // if our secondary is suppressed, we discard it.
+                    exp.deployableSecondary = null;
+                    this.builder.gui.DeployableSecondary_Unselect();
+                } else if (exp.deployable === "suppressed_sentry_gun"){
+                    // if our primary is suppressed
+                    if (exp.deployableSecondary !== null){
+                        // we first see if we have a secondary deployable.
+                        // if so, we promote our secondary deployable to our primary deployable
+                        const secondaryDep = document.querySelector(".dp_secondary");
+                        this.builder.gui.DeployableSecondary_Unselect();
+                        exp.deployable = exp.deployableSecondary;
+                        exp.deployableSecondary = null;
+                        this.builder.gui.Deployable_Select(secondaryDep);
+                    } else {
+                        // otherwise, we just unselect our one deployable.
+                        exp.deployable = null;
+                        this.builder.gui.Deployable_Unselect(
+                            document.querySelector(".dp_primary, .dp_selected")
+                        );
+                    }
+                }
+            }
+
+            // if we're removing jack of all trades, it'll handle the thing
+            if (allInvalidSkills.has("jack_of_all_trades")){
+                // do the thing
+                this.builder.gui.HandleJoat(true);
+                // unselect our secondary deployable
+                exp.deployableSecondary = null;
+                this.builder.gui.DeployableSecondary_Unselect();
+            }
+
+            for(const skill in allInvalidSkills){
+                this.builder.gui.HandleUnlocks({
+                    type: "skill",
+                    skill,
+                    unlocks: this.builder.dbs.get("skills").get(skill).unlocks
+                });
+            }
+            
+            // and now we update the export string appropriately
+            window.history.pushState(
+                Util.makeState(null, this.builder.exp, this.builder.gui.Tab_Current),
+                "removed invalid skills",
+                this.builder.io.GetEncodedBuild()
+            );
+        }
+    }
+
+    
+    Skill_Add(skillId) {
+        /**
+         * @type {import("./Builder").Exp}
+         */
+        const exp = this.builder.exp;
+        /** @type {SkillState} */
         const skill = exp.skills.get(skillId);
+        /** @type {SkillData} */
         const skillStore = this.builder.dbs.get("skills").get(skillId);
+        /** @type {import("./Builder").expSubtree} name of this skill's subtree */
         const subtree = exp.subtrees[skillStore.subtree];
+
+        const skillTier = skillStore.tier;
+        const currentTreeTier = subtree.tier;
+
+        if (skillTier > currentTreeTier){
+            console.error(`skill ID ${skillId} invalid.\n`+
+                `Skill tier ${skillTier}, tree tier ${currentTreeTier}.\n` +
+                `(only ${subtree.points} pts in tier)\nSkill has not been added.`
+            );
+            return false;
+        }
 
         if (skill) { // If given skill is present in exp.skills, (is already basic) 
             if (exp.skills.points-skillStore.ace >= 0) {
                 subtree.points += skillStore.ace;
                 exp.skills.points -= skillStore.ace;
                 skill.state = 2;
-                subtree.tier = System.getSubtreeTierLevel(subtree.points);
-
+                exp.skills.set_subtree(
+                    skillId,
+                    skill,
+                    skillStore.subtree,
+                    skillStore.tier
+                );
+                subtree.tier = System.getSubtreeTierLevel(subtree.points, exp.infamyDisabled);
+                //console.log(`${subtree.tier}, ${subtree.points}, ${this.builder.exp.subtrees[skillStore.subtree].tier}, ${this.builder.exp.subtrees[skillStore.subtree].points}`);
                 return true; 
             }
         } else { 
             if (exp.skills.points-skillStore.basic >= 0) {
                 subtree.points += skillStore.basic;
                 exp.skills.points -= skillStore.basic;
-                exp.skills.set(skillId, { state: 1 });
-                subtree.tier = System.getSubtreeTierLevel(subtree.points);
-
+                exp.skills.set_subtree(
+                    skillId,
+                    {state: 1},
+                    skillStore.subtree,
+                    skillStore.tier
+                );
+                subtree.tier = System.getSubtreeTierLevel(subtree.points, exp.infamyDisabled);
+                //console.log(`${subtree.tier}, ${subtree.points}, ${this.builder.exp.subtrees[skillStore.subtree].tier}, ${this.builder.exp.subtrees[skillStore.subtree].points}`);
                 return true; 
             }
         }
@@ -327,59 +797,123 @@ class System {
         return false;
     }
 
-    Skill_Remove(skillId) {
+    /**
+     * 
+     * @param {String} skillId 
+     * @param {Boolean} [fullyRemove = false] set this to 'true' if we want to fully remove the skill, regardless of it being aced/other reasons.
+     * @returns 
+     */
+    Skill_Remove(skillId, fullyRemove = false) {
+        /** @type {import("./Builder").Exp} */
         const exp = this.builder.exp;
+        /** @type {SkillState} */
         const skill = exp.skills.get(skillId);
+        /** @type {Map<String, SkillData>} */
         const skills = this.builder.dbs.get("skills");
+        /** @type {SkillData} */
         const skillStore = skills.get(skillId);
-        if (!skill) return false; // If the skill is not owned    
+        if (!skill) return false; // If the skill is not owned, do nothing 
 
-        for (let i = skillStore.tier; i < 4; i++) {
-            if (exp.skills.getTierPoints(i+1, skillStore.subtree, skills) !== 0) { // Check if the tier above the given skill's tier is empty, else keep looking till top
-                const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
-                
-                if (skill.state === 2) { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
-                    if (tierPoints-skillStore.ace < this.constructor.TIER_UTIL[i]) { 
-                        return false; 
-                    }
-                } else {
-                    if (tierPoints-skillStore.basic < this.constructor.TIER_UTIL[i]) {
-                        return false; 
+        // if we aren't doing 'fullyRemove', we ensure that this won't lock any higher tiers of skills first.
+        if (!fullyRemove){
+            for (let i = skillStore.tier; i < 4; i++) {
+                if (exp.skills.getTierPoints(i+1, skillStore.subtree, skills) !== 0) { // Check if the tier above the given skill's tier is empty, else keep looking till top
+                    const tierPoints = exp.skills.getTiersToFloorPoints(i, skillStore.subtree, skills);
+
+                    if (skill.state === 2) { // If removing the ace/basic points from the subtree makes the invested total go under the required for owned tiers, quit
+                        if (tierPoints-skillStore.ace < this.constructor.getTierUtil(this.builder.exp.infamyDisabled)[i]) { 
+                            return false; 
+                        }
+                    } else {
+                        if (tierPoints-skillStore.basic < this.constructor.getTierUtil(this.builder.exp.infamyDisabled)[i]) {
+                            return false; 
+                        }
                     }
                 }
             }
         }
-        
+
+        /** @type {import("./Builder").expSubtree} */
         const subtree = exp.subtrees[skillStore.subtree];
         if (skill.state === 2) {
-            subtree.points -= skillStore.ace;
-            exp.skills.points += skillStore.ace;
-            skill.state = 1;
+            if (fullyRemove){
+                subtree.points -= (skillStore.ace + skillStore.basic);
+                exp.skills.points += (skillStore.ace + skillStore.basic);
+                exp.skills.delete_subtree(
+                    skillId, skillStore.subtree, skillStore.tier
+                );
+                //console.log(exp.skills);
+
+            } else {
+                subtree.points -= skillStore.ace;
+                exp.skills.points += skillStore.ace;
+                skill.state = 1;
+                exp.skills.set_subtree(skillId, skill, skillStore.subtree, skillStore.tier);
+            }
         } else if (skill.state === 1) {
             subtree.points -= skillStore.basic;
             exp.skills.points += skillStore.basic;
-            exp.skills.delete(skillId);
+            //exp.skills.delete(skillId);
+            exp.skills.delete_subtree(skillId, skillStore.subtree, skillStore.tier);
         }
 
-        subtree.tier = System.getSubtreeTierLevel(subtree.points);
+        subtree.tier = System.getSubtreeTierLevel(subtree.points, exp.infamyDisabled);
 
         return true; 
     }
+
+
+
+
+    /**
+     * Returns THIS.TIER_UTIL_NON_INFAMY if given truthy, or this.TIER_UTIL if given falsey/undefined
+     * @param {Boolean} [infamyDisabled=False] should infamy be disabled yes or no
+     * @returns {Array<Number>} TIER_UTIL_NON_INFAMY if truthy, TIER_UTIL if falsey
+     */
+    static getTierUtil(infamyDisabled){
+        return infamyDisabled ? this.TIER_UTIL_NON_INFAMY : this.TIER_UTIL;
+    }
     
-    static getSubtreeTierLevel(subtreePoints) {
-        // Will never return `0`, only 1-3 or -1 for tier 4
-        let subtreeTierLevel = this.TIER_UTIL.findIndex(tierPoints => subtreePoints <= tierPoints);
-        if (subtreeTierLevel === -1) { subtreeTierLevel = this.TIER_UTIL.length; }
+
+    static getSubtreeTierLevel(subtreePoints, infamyDisabled) {
+        const tier_array = this.getTierUtil(infamyDisabled);
+        // Will never return `0`, only 1-3 or -1 for tier 4 - LIES!
+        let subtreeTierLevel = tier_array.findIndex(tierPoints => subtreePoints <= tierPoints);
+        if (subtreeTierLevel === -1) { subtreeTierLevel = tier_array.length; }
+        else {
+            // otherwise we need to increment the tier by 1 (as arrays are zero-indexed.)
+            subtreeTierLevel++;
+        }
 
         return subtreeTierLevel;
     }
 }
 
 /**
- * Array which keeps the necessary points for each tier
- * @type {Array}
+ * Array which keeps the necessary points for each tier with infamy
+ * (0 for t1, 1 for t2, 3 for t3, 16 for t4)
+ * @type {Array<Number>}
  */
-System.TIER_UTIL = [0, 1, 3, 16];
+System.TIER_UTIL = Object.freeze([0, 1, 3, 16]);
+
+/**
+ * Array which keeps the necessary NON-INFAMY points for each tier
+ * (0 for t1, 1 for t2, 3 for t3, 18 for t4)
+ * @type {Array<Number>}
+ */
+System.TIER_UTIL_NON_INFAMY = Object.freeze([0, 1, 3, 18]);
+
+/**
+ * Object that holds the aced/non-aced cost of skills in each tier.
+ * schema: {tier: {1 : non-ace cost, 2: ace cost }} 
+ * @type {Number : {Number: Number, Number: Number}}
+ */
+System.SKILL_COST_PER_TIER = Object.freeze({
+    1: Object.freeze({1: 1, 2: 3}),
+    2: Object.freeze({1: 2, 2: 4}),
+    3: Object.freeze({1: 3, 2: 6}),
+    4: Object.freeze({1: 4, 2: 8})
+});
 
 /**
  * A class that transform X movement to X scroll

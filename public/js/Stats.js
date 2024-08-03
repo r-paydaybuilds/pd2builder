@@ -3,7 +3,7 @@
  */
 export default class Stats {
     /**
-     * @param {Builder} builder 
+     * @param {import("./Builder.js").default} builder 
      */
     constructor(builder) {
         /**
@@ -13,7 +13,7 @@ export default class Stats {
         this.baseStats = new Map(Stats.definedBaseStats);
         /**
          * The Builder instance that instantiated this
-         * @type {Builder}
+         * @type {import("./Builder.js").default}
          */
         this.builder = builder;
     }
@@ -77,6 +77,42 @@ export default class Stats {
         return health * frenzy;
     }
 
+    get netDodge(){
+        let stat = this.baseStats.get("dodge");
+        for(const dodgeMod of this.getModifiersOf("dodgeMod")) {
+            stat += Stats.calculate(dodgeMod);
+        }
+        let bonus = 1;
+        for(const bonusMod of this.getModifiersOf("dodgeBonus")) {
+            bonus += Stats.calculate(bonusMod);
+        }
+        return stat * bonus;
+    }
+
+    get netSpeed(){
+        let stat = this.baseStats.get("speed");
+        for(const speedMod of this.getModifiersOf("speedMod")) {
+            stat += Stats.calculate(speedMod);
+        }
+        let bonus = 1;
+        for(const bonusMod of this.getModifiersOf("speedBonus")) {
+            bonus += Stats.calculate(bonusMod);
+        }
+        return stat * bonus;
+    }
+
+    get netConcealment(){
+        let stat = this.baseStats.get("concealment");
+        for(const concealmentMod of this.getModifiersOf("concealmentMod")) {
+            stat += Stats.calculate(concealmentMod);
+        }
+        let bonus = 1;
+        for(const bonusMod of this.getModifiersOf("concealmentBonus")) {
+            bonus += Stats.calculate(bonusMod);
+        }
+        return stat * bonus;
+    }
+
     /**
      * Returns active modifiers that are in x part of the formula
      * @param {String} part 
@@ -93,12 +129,63 @@ export default class Stats {
     get modifiers() {
         const modifiers = [], 
             perkDeck = this.builder.dbs.get("perk_decks").get(this.builder.exp.perkDeck),
+
+            allPerks = this.builder.dbs.get("perk_cards"),
             skills = this.builder.exp.skills,
             armor = this.builder.exp.armor,
             skillDB = this.builder.dbs.get("skills");
 
+        //console.log(perkDeck);
+        
+        if (perkDeck) {
+            const deckCards = perkDeck.perks.map(perkName => allPerks.get(perkName)).filter(
+                card => card.stats !== undefined
+            );
+
+            //console.log(deckCards);
+
+            for (const card of deckCards){
+                //console.log(card);
+                modifiers.push(...card.stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            }
+        }
+
+        if (this.builder.exp.perkDeck === "copycat"){
+            const ccBoosts = Array.from(allPerks.values()).filter(
+                perkCard => (perkCard.is_copycat_boost !== undefined) && (perkCard.is_copycat_boost) 
+            );
+
+            //console.log(ccBoosts);
+            //console.log(modifiers);
+
+            for (const boost of [this.builder.exp.copycat.tactical_reload, this.builder.exp.copycat.head_games, this.builder.exp.copycat.is_this_your_bullet, this.builder.exp.copycat.grace_period]){
+                //console.log(boost);
+                //console.log(ccBoosts[boost]);
+                if (ccBoosts[boost].stats !== undefined){
+                    modifiers.push(...ccBoosts[boost].stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+                }
+                //console.log(modifiers);
+            }
+
+            const mimicBoosts = Array.from(allPerks.values()).filter(
+                perkCard => (perkCard.copycat_mimicry_available !== undefined) && (perkCard.copycat_mimicry_available) 
+            );
+
+            const mimicryCard = mimicBoosts[this.builder.exp.copycat.mimicry];
+
+            if (mimicryCard.copycat_stats !== undefined){
+                modifiers.push(...mimicryCard.copycat_stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            } else if (mimicryCard.stats !== undefined){
+                modifiers.push(...mimicryCard.stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            }
+
+
+        }
+
+        //const deckCards = perkDeck.perks.array.map(perkName => allPerks.get(perkName));
+
         if(perkDeck && perkDeck.stats) {
-            modifiers.push(...perkDeck.stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
+            //modifiers.push(...perkDeck.stats.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
         }
         
         for(const [id, { state }] of skills) {
@@ -108,6 +195,8 @@ export default class Stats {
             if(state == 1) continue;
             if(skill.stats.ace) modifiers.push(...skill.stats.ace.filter(stat => !Stats.isBlacklisted(armor, stat) && Stats.isWhitelisted(armor, stat)));
         }
+
+        //console.log(modifiers);
 
         const over = [];
         for(const { overrides } of modifiers) {

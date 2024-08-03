@@ -7,12 +7,12 @@ import PaydayTable from "./PaydayTable.js";
 export default class GUI {
     
     /**
-     * @param {Builder} builder 
+     * @param {import("./Builder.js").default} builder 
      */
     constructor(builder) {  
         /**
          * The Builder instance that instantiated this
-         * @type {Builder}
+         * @type {import("./Builder.js").default}
          */
         this.builder = builder;
     }
@@ -216,6 +216,7 @@ export default class GUI {
 
     /**
      * Raise or lower the subtree background according to points set in it.
+     * This will also call Tier_Unlock and Tier_Lock appropriately (the latter will unselect newly-locked skills)
      * @param {String} subtreeId Id of the subtree to move
      * @param {Number} pointsInTree Number of points to "move to"
      */
@@ -224,7 +225,7 @@ export default class GUI {
         let progress = 0;
         let points = pointsInTree;
 
-        for(const [index, pointsNeeded] of [0, 1, 2, 13].entries()) {
+        for(const [index, pointsNeeded] of this.builder.getSkillTierCosts().entries()) {
             if(pointsNeeded <= points) {
                 points -= pointsNeeded;
                 progress += 25;
@@ -274,7 +275,10 @@ export default class GUI {
      */
     Tier_Lock(subtreeId, tierId) {
         document.querySelectorAll(`#sk_${subtreeId}_subtree > .sk_tier[data-tier='${tierId}'] > div > .sk_icon:not(.sk_locked)`).forEach(
-            e => e.classList.add("sk_locked")
+            e => {
+                e.classList.add("sk_locked");
+                this.Skill_Remove(e, true);
+            }
         );
     }
 
@@ -349,11 +353,14 @@ export default class GUI {
      * Supposed to be triggered by clicking on an icon of a skill. 
      * This checks the state of the clicked skill and removes it basic or aced, accordingly to the state it is in. 
      * @param {HTMLDivElement} skill An element object representing the clicked parent div of the skill icon  
+     * @param {Boolean} [forceRemove = false] if set to true, the skill will be completely removed (instead of downgraded to basic) if it was aced.
      */
-    Skill_Remove({ classList }) {
+    Skill_Remove({ classList }, forceRemove = false) {
         if (classList.contains("sk_selected_aced")) {
-            classList.remove("sk_selected_aced"); 
-            classList.add("sk_selected_basic"); 
+            classList.remove("sk_selected_aced");
+            if (!forceRemove){ // if NOT forceRemove, downgrade to 'basic'
+                classList.add("sk_selected_basic");
+            } 
         } else if (classList.contains("sk_selected_basic")) {
             classList.remove("sk_selected_basic"); 
         }
@@ -498,6 +505,14 @@ export default class GUI {
     }
 
     /**
+     * Automagically finds and selects the named armour.
+     * @param {String} armourId the ID of the armour to select
+     */
+    Armor_SelectById(armourId){
+        this.Armor_Select(document.getElementById(armourId).parentElement);
+    }
+
+    /**
      * Unselect selected armor
      */
     Armor_Unselect() {
@@ -531,6 +546,7 @@ export default class GUI {
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
         const lang = this.builder.lang.get("system.armors.table"),
             armStats = Object.entries(arm.stats);
+        
 
         let html = `<p class="description_title">${this.builder.lang.get(`armors.${armorId}`).toUpperCase()}`;
 
@@ -583,6 +599,14 @@ export default class GUI {
     Throwable_Select({ classList }) {
         this.Throwable_Unselect();
         classList.add("th_selected");
+    }
+
+    /**
+     * Automagically finds and selects the named throwable.
+     * @param {String} throwableId the ID of the throwable to select
+     */
+    Throwable_SelectById(throwableId){
+        this.Throwable_Select(document.getElementById(throwableId).parentElement);
     }
 
     /**
@@ -748,11 +772,12 @@ export default class GUI {
 
     /**
      * Checks if primary deployable has selected instead of primary class and viceversa
+     * @param {Boolean} [disableJoat] set this to true if we're explicitly disabling JOAT.
      */
-    HandleJoat() {
+    HandleJoat(disableJoat) {
         const query = document.querySelector(".dp_selected, .dp_primary");
         if(!query) return;
-        if(query.classList.contains("dp_selected")) {
+        if(query.classList.contains("dp_selected") && !disableJoat) {
             query.classList.replace("dp_selected", "dp_primary");
         } else {
             query.classList.replace("dp_primary", "dp_selected");

@@ -12,7 +12,7 @@ export default class IO {
         
         /**
          * The Builder instance that instantiated this
-         * @type {Builder}
+         * @type {import("./Builder").default}
          */
         this.builder = builder;
     }
@@ -65,6 +65,9 @@ export default class IO {
 
         // Manage Deployables
         if(this.builder.exp.deployable) url.searchParams.set("d", this.encodeDeployables());
+
+        // Manage disabled infamy (encoded as 'n' (as in "no infamy") rather than 'i' - as 'i' would denote 'yes infamy value' when this is a 'no infamy value')
+        if(this.builder.exp.infamyDisabled) url.searchParams.set("n", this.encodeInfamyDisabled());
         
         for(const [key, value] of url.searchParams) {
             url.searchParams.set(key, this.compressData(value));
@@ -190,11 +193,20 @@ export default class IO {
     }
 
     /**
+     * Encodes 'infamyDisabled' into a loadable number (true -> 1, false/null -> 0)
+     * @returns {Number}
+     */
+    encodeInfamyDisabled() {
+        return this.builder.exp.infamyDisabled ? 1 : 0;
+    }
+
+    /**
      * Decodes the parameters in the iterable, and sets the current build to match it the build encoded in it. 
-     * @param {Iterable<String[]>} iterable to load
+     * @param {Iterable<String[Object]>|URLSearchParams} iterable to load
      * @returns {void}
      */
     LoadBuildFromIterable(iterable) {
+
         for(const [key, value] of iterable) {
             const decompressed = this.decompressData(value);
             switch(key) {
@@ -219,8 +231,13 @@ export default class IO {
             case "d":
                 this.loadDeployable(decompressed); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
                 break;
+            case "n":
+                this.loadInfamyDisabled(parseInt(decompressed));
+                break;
             }
         }
+
+        this.builder.sys.Validate_Skills();
     }
 
     /**
@@ -230,12 +247,17 @@ export default class IO {
      */
     loadSkills(skills) {
         for(const e of document.getElementsByClassName("sk_subtree")) {
-            let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
-            let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
+            //console.log(e.id);
+            let subtreeBasicChar = this.DecodeByte(skills.charAt(0));//skills.substr(0, 1));
+            let subtreeAcedChar = this.DecodeByte(skills.charAt(1));//skills.substr(1, 1));  
             let mask = 1; 
 
+            //console.log(subtreeBasicChar);
+            //console.log(subtreeAcedChar);
+
             const tiers = [...e.querySelectorAll(".sk_tier")];
-            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el => 
+            //console.log(tiers);
+            (this.builder.mobile ? tiers : tiers.reverse()).forEach(el =>
                 [...el.querySelectorAll(".sk_icon")].reverse().forEach(ele => {
                     let skillBasicBit = subtreeBasicChar & mask;
                     let skillAcedBit = subtreeAcedChar & mask; 
@@ -251,7 +273,7 @@ export default class IO {
                     mask = mask << 1; 
                 })
             );
-            skills = skills.substr(2); 
+            skills = skills.slice(2);//skills.substr(2); 
         } 
     }
 
@@ -338,6 +360,20 @@ export default class IO {
             }
         }); 
         if(dp2Found) dp2Found.dispatchEvent(new MouseEvent("contextmenu"));
+    }
+
+    /**
+     * loads n (infamy disabled) parameter and Does The Thing accordingly
+     * @param {Number} infamyDisabledNum true if infamy is supposed to be disabled (otherwise false)
+     * @returns {void}
+     */
+    loadInfamyDisabled(infamyDisabledNum){
+        
+        const infDisabledBool = (infamyDisabledNum !== 0);
+        const infCheckbox = document.getElementById("chk_disable_infamy");
+        if (infCheckbox.checked != infDisabledBool){
+            infCheckbox.click();
+        }
     }
 
     /**

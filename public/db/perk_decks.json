@@ -19,6 +19,12 @@
                 "type": "armor",
                 "part": "armBonus",
                 "value": 0.1
+            },
+            {
+                "id": 25,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -81,6 +87,14 @@
             "shadow_warrior",
             "fast_and_furious",
             "killer_instinct"
+        ],
+        "stats": [
+            {
+                "id": 26,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 45
+            }
         ]
     },
     "hitman": {
@@ -119,6 +133,19 @@
                 "part": "armBonus",
                 "value": 0.65,
                 "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
+            },
+            {
+                "id": 23,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 15
+            },
+            {
+                "id": 24,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 25,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             }
         ]
     },
@@ -136,7 +163,15 @@
             "fast_and_furious",
             "breath_of_fresh_air"
         ],
-        "dlc": "Clover Character Pack"
+        "dlc": "Clover Character Pack",
+        "stats": [
+            {
+                "id": 22,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 25
+            }
+        ]
     },
     "infiltrator": {
         "name": "Infiltrator", 
@@ -261,6 +296,12 @@
                 "type": "health",
                 "part": "healthBonus",
                 "value": 0.4
+            },
+            {
+                "id": 21,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -368,6 +409,14 @@
         ],
         "unlocks": [
             { "type": "throwable", "name": "smoke_bomb" }
+        ],
+        "stats": [
+            {
+                "id": 20,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 15
+            }
         ]
     },
     "stoic": {
@@ -453,6 +502,12 @@
                 "type": "health",
                 "part": "healthBonus",
                 "value": 0.2
+            },
+            {
+                "id": 27,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 30
             }
         ]
     },
@@ -472,6 +527,14 @@
         ],
         "unlocks": [
             { "type": "throwable", "name": "leech_ampule" }
+        ],
+        "stats": [
+            {
+                "id": 19,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.8
+            }
         ]
     },
     "copycat": {
