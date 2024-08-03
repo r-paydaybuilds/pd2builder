@@ -680,7 +680,8 @@ window.onload = async () => {
         const e = document.getElementById("io_share_link"); 
 
         e.select();
-        document.execCommand("copy");
+        navigator.clipboard.writeText(e.value);
+        //document.execCommand("copy"); //it's deprecated.
         e.blur(); 
 
         builder.gui.IO_CopyLinkFlash(); 

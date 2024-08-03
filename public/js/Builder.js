@@ -6,6 +6,8 @@ import Stats from "./Stats.js";
 
 // #region expDefs
 /**
+ * bunch of typedefs for the builder.exp object (prepare thyself)
+ * 
  * @typedef {{tier: Number, points: Number}} expSubtree
  * @typedef {{medic: expSubtree, controller: expSubtree, sharpshooter: expSubtree,
  *  shotgunner: expSubtree,tank: expSubtree, ammo_specialist: expSubtree,

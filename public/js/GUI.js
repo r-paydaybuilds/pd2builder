@@ -546,6 +546,7 @@ export default class GUI {
         const oldArm = this.builder.dbs.get("armors").get(this.builder.exp.armor);
         const lang = this.builder.lang.get("system.armors.table"),
             armStats = Object.entries(arm.stats);
+        
 
         let html = `<p class="description_title">${this.builder.lang.get(`armors.${armorId}`).toUpperCase()}`;
 

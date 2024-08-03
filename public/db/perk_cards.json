@@ -8,13 +8,16 @@
         "description": "You gain +1 increased concealment.\nWhen wearing armor, your movement speed is 15% less affected.\nYou gain 45% more experience when you complete days and jobs.",
         "stats": [
             {
+                "id": 5,
                 "type": "concealment",
+                "part": "concealmentMod",
                 "value": 1
             },
             {
+                "id": 6,
                 "type": "speed",
-                "value": 1.15,
-                "multiply": true,
+                "part": "speedBonus",
+                "value": 0.15,
                 "blacklist": ["suit"]
             }
         ]
@@ -40,16 +43,19 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "stamina",
-                "value": 1.5,
-                "multiply": true
+                "id": 7,
+                "type": "stam",
+                "part": "stamBonus",
+                "value": 0.15
             },
             {
+                "id": 8,
                 "type": "crewStamina",
                 "value": 1.5,
                 "multiply": true
             },
             {
+                "id": 9,
                 "type": "shout",
                 "value": 1.25,
                 "multiply": true
@@ -62,11 +68,13 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 9.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 10,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             },
             {
+                "id": 11,
                 "type": "crewHp",
                 "value": 1.1,
                 "multiply": true
@@ -79,11 +87,13 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
         "stats": [
             {
+                "id": 12,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             },
             {
+                "id": 13,
                 "type": "crewArmor",
                 "value": 1.05,
                 "multiply": true
@@ -102,9 +112,10 @@
         "vr_description": "After dashing the player will heal from 0 up to a maximum of 3 health depending on the amount of stamina consumed. Can only heal a maximum of 50 health every 5 seconds.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 14,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             }
         ]
     },
@@ -114,9 +125,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 15,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             }
         ]
     },
@@ -126,9 +138,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 9.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 16,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -146,11 +159,13 @@
         "deck_completion_bonus": true,
         "stats": [
             {
-                "type": "hp",
-                "value": 1.4,
-                "multiply": true
+                "id": 17,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.4
             },
             {
+                "id": 18,
                 "type": "hpRegen",
                 "value": 3
             }
@@ -162,9 +177,10 @@
         "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds.",
         "stats": [
             {
+                "id": 19,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             }
         ],
         "copycat_mimicry_available": true,
@@ -176,9 +192,10 @@
         "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
         "stats": [
             {
+                "id": 20,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             }
         ]
     },
@@ -188,9 +205,10 @@
         "vr_description": "The dash effect is now from 6 up to a maximum of 14.",
         "stats": [
             {
+                "id": 21,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             }
         ]
     },
@@ -200,6 +218,7 @@
         "vr_description": "The dash effect is now from 8 up to a maximum of 18.",
         "stats": [
             {
+                "id": 22,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -213,16 +232,19 @@
         "deck_completion_bonus": true,
         "stats": [
             {
+                "id": 23,
                 "type": "armor",
-                "value": 1.05,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.05
             },
             {
+                "id": 24,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
             },
             {
+                "id": 25,
                 "type": "crewArmorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -235,9 +257,10 @@
         "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed.",
         "stats": [
             {
+                "id": 26,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -254,9 +277,10 @@
         "vr_description": "The dash effect is now from 1% up to a maximum of 8%.",
         "stats": [
             {
+                "id": 27,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -266,9 +290,10 @@
         "vr_description": "The dash effect is now from 1% up to a maximum of 9%.",
         "stats": [
             {
+                "id": 28,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -279,6 +304,7 @@
         "deck_completion_bonus": true,
         "stats": [
             {
+                "id": 29,
                 "type": "swapSpeed",
                 "value": 1.80,
                 "multiply": true
@@ -291,6 +317,7 @@
         "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds.",
         "stats": [
             {
+                "id": 30,
                 "type": "armorRecoveryRate",
                 "value": 1.05,
                 "multiply": true
@@ -304,6 +331,7 @@
         "copycat_description": "Dual wielded weapons have a -16 stability penalty.\nYour armor recovery rate is increased by an additional 15%.\nAmmo capacity for your akimbo weapons are increased by 50%.",
         "stats": [
             {
+                "id": 31,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -311,6 +339,7 @@
         ],
         "copycat_stats": [
             {
+                "id": 32,
                 "type": "armorRecoveryRate",
                 "value": 1.15,
                 "multiply": true
@@ -325,6 +354,7 @@
         "vr_description": "The dash effect is now from 6 up to a maximum of 14.",
         "stats": [
             {
+                "id": 33,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -337,6 +367,7 @@
         "vr_description": "The dash effect is now from 8 up to a maximum of 18.",
         "stats": [
             {
+                "id": 34,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -350,6 +381,7 @@
         "deck_completion_bonus": true,
         "stats": [
             {
+                "id": 35,
                 "type": "armorRecoveryRate",
                 "value": 1.1,
                 "multiply": true
@@ -362,9 +394,10 @@
         "vr_description": "After dashing the player will regenerate from 2 up to a maximum of 6 armor depending on the amount of stamina consumed. Can only occur 3 times every 3 seconds",
         "stats": [
             {
+                "id": 36,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -374,24 +407,18 @@
         "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
         "stats": [
             {
-                "type": "dodge",
-                "value": 1.05,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 37,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.2,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             },
             {
-                "type": "armor",
-                "value": 1.2,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 38,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 5,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             }
         ],
         "copycat_mimicry_available": true,
@@ -403,24 +430,18 @@
         "vr_description": "The dash effect is now from 6 up to a maximum of 14.",
         "stats": [
             {
-                "type": "dodge",
-                "value": 1.1,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 39,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.2,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             },
             {
-                "type": "armor",
-                "value": 1.2,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 40,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 10,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             }
         ]
     },
@@ -430,24 +451,18 @@
         "vr_description": "The dash effect is now from 8 up to a maximum of 18.",
         "stats": [
             {
-                "type": "dodge",
-                "value": 1.1,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 41,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.25,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             },
             {
-                "type": "armor",
-                "value": 1.25,
-                "multiply": true,
-                "whitelist": [
-                    "light_ballistic",
-                    "ballistic",
-                    "heavy_ballistic"
-                ]
+                "id": 42,
+                "type": "dodge",
+                "part": "dodgeMod",
+                "value": 10,
+                "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
             }
         ]
     },
@@ -458,6 +473,7 @@
         "deck_completion_bonus": true,
         "stats": [
             {
+                "id": 43,
                 "type": "dodge",
                 "value": 1.1,
                 "multiply": true
@@ -470,9 +486,10 @@
         "vr_description": "After dashing the player will gain 1% up to a maximum of 6% dodge for 3 seconds depending on the amount of stamina consumed.",
         "stats": [
             {
+                "id": 44,
                 "type": "dodge",
-                "value": 1.2,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 20
             }
         ]
     },
@@ -487,9 +504,10 @@
         "vr_description": "The dash effect is now from 1% up to a maximum of 8%",
         "stats": [
             {
+                "id": 45,
                 "type": "dodge",
-                "value": 1.05,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 5
             }
         ]
     },
@@ -500,16 +518,18 @@
         "copycat_description": "Your chance to dodge is increased by 20%.\nStanding still and crouching decreases your chance of being targeted by 20%.",
         "stats": [
             {
+                "id": 46,
                 "type": "dodge",
-                "value": 1.05,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 5
             }
         ],
         "copycat_stats": [
             {
+                "id": 47,
                 "type": "dodge",
-                "value": 1.2,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 20
             }
         ],
         "copycat_mimicry_available": true,
@@ -556,9 +576,10 @@
         "vr_description": "The dash effect is now from 4 up to a maximum of 10.",
         "stats": [
             {
+                "id": 48,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             }
         ],
         "copycat_mimicry_available": true,
@@ -575,9 +596,10 @@
         "vr_description": "The dash effect is now from 8 up to a maximum of 18.",
         "stats": [
             {
+                "id": 49,
                 "type": "armor",
-                "value": 1.1,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.1
             }
         ]
     },
@@ -600,9 +622,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 50,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -612,9 +635,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 9.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 51,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -641,18 +665,13 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 52,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ],
-        "copycat_stats": [
-            {
-                "type": "hp",
-                "value": 1,
-                "multiply": true
-            }
-        ],
+        "copycat_stats": [],
         "copycat_mimicry_available": true,
         "mimics": "grinder"
     },
@@ -667,9 +686,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 53,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -719,9 +739,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 54,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             }
         ],
         "copycat_mimicry_available": true,
@@ -733,14 +754,16 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 9.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 55,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             },
             {
+                "id": 56,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 10
             }
         ]
     },
@@ -750,9 +773,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 57,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -839,14 +863,16 @@
         "vr_description": "The dash effect is now from 4 up to a maximum of 9.",
         "stats": [
             {
+                "id": 58,
                 "type": "armor",
-                "arguments": ["hp"],
-                "value": "(0.5*hp)*2.2"
+                "part": "armorFromHealthRatio",
+                "value": 1.2
             },
             {
-                "type": "hp",
-                "value": 0.5,
-                "multiply": true
+                "id": 59,
+                "type": "health",
+                "part": "healthToArmor",
+                "value": -0.5
             }
         ],
         "overrides": "death_or_glory"
@@ -899,9 +925,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 60,
+                "type": "armor",
+                "part": "armBonus",
+                "value": 0.1
             }
         ]
     },
@@ -911,9 +938,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 9.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.1,
-                "multiply": true
+                "id": 61,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             }
         ]
     },
@@ -923,9 +951,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 62,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -936,9 +965,10 @@
         "deck_completion_bonus": true,
         "stats": [
             {
-                "type": "hp",
-                "value": 1.4,
-                "multiply": true
+                "id": 63,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.1
             }
         ]
     },
@@ -960,9 +990,10 @@
         "vr_description": "The dash effect is now from 1% up to a maximum of 8%.",
         "stats": [
             {
+                "id": 64,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -990,14 +1021,17 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "arguments": ["armor"],
-                "value": "armor"
+                "id": 65,
+                "type": "armor",
+                "part": "armorToHealth",
+                "value": -1
             },
             {
-                "type": "armor",
-                "arguments": ["armor"],
-                "value": "-armor"
+                "id": 66,
+                "type": "health",
+                "part": "healthFromArmor",
+                "arguments": ["armorCore"],
+                "value": "armorCore"
             }
         ]
     },
@@ -1030,9 +1064,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 6.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 67,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1047,9 +1082,10 @@
         "vr_description": "The dash effect is now from 0 up to a maximum of 12.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 68,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1070,9 +1106,10 @@
         "description": "You gain 20% more health.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": 69,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1081,9 +1118,10 @@
         "description": "Killing an enemy while the feedback effect is active will regenerate 20 health.",
         "stats": [
             {
+                "id": 70,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ]
     },
@@ -1096,9 +1134,10 @@
         "description": "Crew members killing enemies while the feedback effect is active will regenerate 10 health.",
         "stats": [
             {
+                "id": 71,
                 "type": "dodge",
-                "value": 1.15,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 15
             }
         ],
         "deck_completion_bonus": true
@@ -1114,9 +1153,10 @@
         "description": "Your maximum health is increased by 20%.\tWhile the Leech Ampule is active you cannot go into bleedout, but being out of health will slow you down by 80%.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.20,
-                "multiply": true
+                "id": 72,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1129,9 +1169,10 @@
         "description": "Your maximum health is increased by 20%.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.20,
-                "multiply": true
+                "id": 73,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1140,9 +1181,10 @@
         "description": "You can now activate Leech Ampule while downed, temporarily reviving you until the end of the Leech Ampule. If you successfully revive a teammate or use a doctor bag before the Leech Ampule ends, you may stay alive if you are above 0 health.\tWhile the Leech Ampule is active your health is now divided into segments of 10%.\tYour maximum health is increased by 60%.",
         "stats": [
             {
-                "type": "hp",
-                "value": 1.6,
-                "multiply": true
+                "id": 74,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.6
             }
         ],
         "deck_completion_bonus": true
@@ -1152,6 +1194,7 @@
         "description": "Auto-reload secondary after performing 10 kills with primary, and vice versa.\n\nIncreases weapon swapping speed by 320%.",
         "stats": [
             {
+                "id": 75,
                 "type": "swapSpeed",
                 "value": 3.20,
                 "multiply": true
@@ -1187,9 +1230,10 @@
         "is_copycat_boost": true,
         "stats": [
             {
-                "type": "hp",
-                "value": 1.2,
-                "multiply": true
+                "id": -1,
+                "type": "health",
+                "part": "healthBonus",
+                "value": 0.2
             }
         ]
     },
@@ -1199,9 +1243,10 @@
         "is_copycat_boost": true,
         "stats": [
             {
+                "id": -2,
                 "type": "armor",
-                "value": 1.05,
-                "multiply": true
+                "part": "armBonus",
+                "value": 0.05
             }
         ]
     },
@@ -1211,9 +1256,10 @@
         "is_copycat_boost": true,
         "stats": [
             {
+                "id": -3,
                 "type": "dodge",
-                "value": 1.05,
-                "multiply": true
+                "part": "dodgeMod",
+                "value": 5
             }
         ]
     },

@@ -207,18 +207,10 @@ export default class IO {
      */
     LoadBuildFromIterable(iterable) {
 
-        //let s = null;
-        //let c = null;
-        //let a = null;
-        //let t = null;
-        //let d = null;
-        
-
         for(const [key, value] of iterable) {
             const decompressed = this.decompressData(value);
             switch(key) {
             case "s":
-                //s = decompressed;
                 this.loadSkills(decompressed);
                 break;
             case "k":
@@ -228,19 +220,15 @@ export default class IO {
                 this.loadPerkDeck(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "c":
-                //c = decompressed;
                 this.loadCopycatBoosts(decompressed);
                 break;
             case "a":
-                //a = decompressed;
                 this.loadArmor(parseInt(decompressed));
                 break;
             case "t":
-                //t = decompressed;
                 this.loadThrowable(parseInt(this.DecodeByte(decompressed)));
                 break;
             case "d":
-                //d = decompressed;
                 this.loadDeployable(decompressed); // Passed as string, because it's two different numbers beside each other. Sliced inside the function
                 break;
             case "n":
@@ -250,30 +238,6 @@ export default class IO {
         }
 
         this.builder.sys.Validate_Skills();
-
-        /*
-        if (c != null){
-            this.loadCopycatBoosts(c);
-        }
-        if (t != null){
-            this.loadThrowable(parseInt(this.DecodeByte(t)));
-        }
-        if (s != null){
-            this.loadSkills(s);
-        }
-        if (a != null){
-            this.loadArmor(a);
-        }
-        if (d != null){
-            this.loadDeployable(d);
-        }
-
-        window.history.pushState(
-            Util.makeState(null, this.builder.exp, this.builder.gui.Tab_Current),
-            "loaded the build.",
-            this.GetEncodedBuild()
-        );
-        */
     }
 
     /**
@@ -284,8 +248,8 @@ export default class IO {
     loadSkills(skills) {
         for(const e of document.getElementsByClassName("sk_subtree")) {
             //console.log(e.id);
-            let subtreeBasicChar = this.DecodeByte(skills.substr(0, 1)); 
-            let subtreeAcedChar = this.DecodeByte(skills.substr(1, 1));  
+            let subtreeBasicChar = this.DecodeByte(skills.charAt(0));//skills.substr(0, 1));
+            let subtreeAcedChar = this.DecodeByte(skills.charAt(1));//skills.substr(1, 1));  
             let mask = 1; 
 
             //console.log(subtreeBasicChar);
@@ -309,7 +273,7 @@ export default class IO {
                     mask = mask << 1; 
                 })
             );
-            skills = skills.substr(2); 
+            skills = skills.slice(2);//skills.substr(2); 
         } 
     }
 
@@ -399,13 +363,12 @@ export default class IO {
     }
 
     /**
-     * loads i parameter into the UI
+     * loads n (infamy disabled) parameter and Does The Thing accordingly
      * @param {Number} infamyDisabledNum true if infamy is supposed to be disabled (otherwise false)
      * @returns {void}
      */
     loadInfamyDisabled(infamyDisabledNum){
         
-        // TODO verify that this can also handle the actual logic for disabling infamy
         const infDisabledBool = (infamyDisabledNum !== 0);
         const infCheckbox = document.getElementById("chk_disable_infamy");
         if (infCheckbox.checked != infDisabledBool){

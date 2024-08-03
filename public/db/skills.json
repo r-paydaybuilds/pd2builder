@@ -236,7 +236,7 @@
         "subtree": "tank",
         "tree": "enforcer",
         "stats": {
-            "aced": [
+            "ace": [
                 {
                     "id": 1,
                     "type": "armor",
@@ -288,7 +288,7 @@
         "stats": {
             "basic": [
                 {
-                    "id": 6,
+                    "id": 2,
                     "type": "armor",
                     "part": "armBonus",
                     "value": 0.30
@@ -592,7 +592,17 @@
         "ace": 4,
         "tier": 2,
         "subtree": "artful_dodger",
-        "tree": "ghost"
+        "tree": "ghost",
+        "stats": {
+            "basic": [
+                {
+                    "id": 3,
+                    "type": "speed",
+                    "part": "speedBonus",
+                    "value": 0.10
+                }
+            ]
+        }
     },
     "inner_pockets": {
         "name": "Inner Pockets",
@@ -601,7 +611,18 @@
         "ace": 4,
         "tier": 2,
         "subtree": "artful_dodger",
-        "tree": "ghost"
+        "tree": "ghost",
+        "stats": {
+            "ace": [
+                {
+                    "id": 76,
+                    "type": "concealment",
+                    "part": "concealmentMod",
+                    "value": 4,
+                    "whitelist": ["light_ballistic", "ballistic", "heavy_ballistic"]
+                }
+            ]
+        }
     },
     "dire_need": {
         "name": "Dire Need",
@@ -849,7 +870,7 @@
         "stats": {
             "basic": [
                 {
-                    "id": 18,
+                    "id": 4,
                     "type": "health",
                     "part": "healthFrenzy",
                     "value": -0.7
